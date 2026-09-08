@@ -8,3 +8,12 @@
 {"at":"2026-09-08T13:37:04.799Z","kind":"goal-added","goal":"w-history","needs":"curation"}
 {"at":"2026-09-08T13:44:20.738Z","kind":"goal-added","goal":"c-commit-recovery-point","needs":"curation"}
 {"at":"2026-09-08T13:44:24.849Z","kind":"goal-added","goal":"c-work-at-risk","needs":"curation"}
+{"at":"2026-09-08T15:24:05.927Z","kind":"retired","goal":"c-commit-recovery-point","reason":"Held back from the first release. Its criterion needs rewriting for a course where students direct an agent rather than running git themselves."}
+{"at":"2026-09-08T15:24:05.968Z","kind":"retired","goal":"c-work-at-risk","reason":"Held back from the first release. Replaced in draft by a comprehension goal about what the agent tells you, which is not settled yet."}
+{"at":"2026-09-08T15:24:06.004Z","kind":"curated","goal":"o-orientation"}
+{"at":"2026-09-08T15:24:06.041Z","kind":"curated","goal":"w-repository"}
+{"at":"2026-09-08T15:24:06.078Z","kind":"curated","goal":"w-commit"}
+{"at":"2026-09-08T15:24:06.111Z","kind":"curated","goal":"w-uncommitted"}
+{"at":"2026-09-08T15:24:06.146Z","kind":"curated","goal":"w-staging-area"}
+{"at":"2026-09-08T15:24:06.184Z","kind":"curated","goal":"w-diff"}
+{"at":"2026-09-08T15:24:06.218Z","kind":"curated","goal":"w-history"}
