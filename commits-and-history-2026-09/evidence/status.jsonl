@@ -1,0 +1,10 @@
+{"at":"2026-09-08T13:36:00.620Z","kind":"created"}
+{"at":"2026-09-08T13:36:00.625Z","kind":"goal-added","goal":"o-orientation","needs":"curation"}
+{"at":"2026-09-08T13:36:11.365Z","kind":"goal-added","goal":"w-repository","needs":"curation"}
+{"at":"2026-09-08T13:36:16.723Z","kind":"goal-added","goal":"w-commit","needs":"curation"}
+{"at":"2026-09-08T13:36:20.713Z","kind":"goal-added","goal":"w-uncommitted","needs":"curation"}
+{"at":"2026-09-08T13:36:24.766Z","kind":"goal-added","goal":"w-staging-area","needs":"curation"}
+{"at":"2026-09-08T13:37:00.231Z","kind":"goal-added","goal":"w-diff","needs":"curation"}
+{"at":"2026-09-08T13:37:04.799Z","kind":"goal-added","goal":"w-history","needs":"curation"}
+{"at":"2026-09-08T13:44:20.738Z","kind":"goal-added","goal":"c-commit-recovery-point","needs":"curation"}
+{"at":"2026-09-08T13:44:24.849Z","kind":"goal-added","goal":"c-work-at-risk","needs":"curation"}
