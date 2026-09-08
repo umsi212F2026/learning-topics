@@ -24,9 +24,14 @@ easier than it sounds.
 
 ## What's here now
 
-Nothing yet. The workflows in
-[course-materials](https://github.com/umsi212F2026/course-materials) create topic folders here
-when you start one. A folder looks roughly like this:
+**One topic, ready to start: `commits-and-history-2026-09`.** That one ships with this
+repository rather than being one you began, so its goals and its activities were written for
+you in advance. Open its `goals.md` first: three sections near the top are deliberately blank,
+and they are yours to fill in.
+
+Every other topic gets created here by the workflows in
+[course-materials](https://github.com/umsi212F2026/course-materials) when you start one. A
+folder looks roughly like this:
 
     reading-bpmn-diagrams-2026-09/
       goals.md         what you want to be able to do, and what would count as getting there
