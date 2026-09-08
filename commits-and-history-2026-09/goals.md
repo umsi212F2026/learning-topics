@@ -172,14 +172,7 @@ only on disk" from output put in front of you, not to author queries against the
 
 - **goal:** make use of commits
 - **criterion:** Can ask the agent to commit saved work. Can ask the agent to recover all files to where they were at any commit.
-
-### `c-work-at-risk`
-
-- **goal:** say what work is at risk before running something that rewrites the files
-- **criterion:** shown `git status` and `git diff` for a working tree they did not make, says
-  which changes exist only on disk and which are already in the record, and says whether a
-  named operation (a pull, or an agent rewriting a file that is open in the editor) would
-  destroy any of them; specimen has some changes staged and some not
+- **origin:** course
 
 ### `o-orientation`
 
@@ -190,6 +183,7 @@ only on disk" from output put in front of you, not to author queries against the
 - **recurrence:** never
 - **is_required:** no
 - **group:** orientation
+- **origin:** course
 
 ### `w-repository`
 
@@ -201,6 +195,7 @@ only on disk" from output put in front of you, not to author queries against the
 - **what it names:** the boundary around what git is keeping track of
 - **when it bites:** when a command's effect depends on which project you are standing in
 - **nearest confusable:** folder
+- **origin:** course
 
 ### `w-commit`
 
@@ -212,6 +207,7 @@ only on disk" from output put in front of you, not to author queries against the
 - **what it names:** the unit the record is made of, and the act of adding one
 - **when it bites:** when you want a point you could come back to
 - **nearest confusable:** save
+- **origin:** course
 
 ### `w-uncommitted`
 
@@ -223,6 +219,7 @@ only on disk" from output put in front of you, not to author queries against the
 - **what it names:** the gap between what is on disk and what is in the record
 - **when it bites:** when something is about to rewrite the files underneath you
 - **nearest confusable:** unsaved
+- **origin:** course
 
 ### `w-staging-area`
 
@@ -234,6 +231,7 @@ only on disk" from output put in front of you, not to author queries against the
 - **what it names:** the third place, sitting between the files and the record
 - **when it bites:** when only part of what you changed belongs in the next commit
 - **nearest confusable:** working directory
+- **origin:** course
 
 ### `w-diff`
 
@@ -245,6 +243,7 @@ only on disk" from output put in front of you, not to author queries against the
 - **what it names:** the answer to "what changed", in a form you can read
 - **when it bites:** when "I changed something" is not a good enough answer
 - **nearest confusable:** status
+- **origin:** course
 
 ### `w-history`
 
@@ -256,3 +255,4 @@ only on disk" from output put in front of you, not to author queries against the
 - **what it names:** what the commits add up to once there is more than one
 - **when it bites:** when the question is when, or why, something got this way
 - **nearest confusable:** an editor's undo history
+- **origin:** course
