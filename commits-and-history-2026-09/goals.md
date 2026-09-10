@@ -270,7 +270,8 @@ needed for the occasion this topic exists for.
 - **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
-- **what it names:** what happens when two lines of work are combined
+- **what it names:** combines the contents of two branches, in a commit that keeps both histories
+  as parents
 - **when it bites:** when you pull the instructor's updates and your own work is in the way
 - **nearest confusable:** rebase
 - **origin:** course
@@ -282,7 +283,8 @@ needed for the occasion this topic exists for.
 - **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
-- **what it names:** changing what your own work is built on top of
+- **what it names:** replays changes from one branch onto the latest commit from another, as new
+  commits
 - **when it bites:** when taking the instructor's updates stops dead until someone picks a way to
   reconcile, and the thing asking you offers only this one
 - **nearest confusable:** merge
@@ -298,4 +300,17 @@ needed for the occasion this topic exists for.
 - **what it names:** a line of work that can move on independently of others
 - **when it bites:** when your copy and the instructor's copy have both moved on since you cloned
 - **nearest confusable:** fork
+- **origin:** course
+
+### `w-merge-conflict`
+
+- **goal:** merge conflict
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** where git stops rather than choose between two changes to the same lines
+- **when it bites:** when the instructor's update touches a file you had also changed, and the
+  update stops half done with both versions left sitting in the file
+- **nearest confusable:** an error
 - **origin:** course
