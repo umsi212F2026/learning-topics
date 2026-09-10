@@ -256,3 +256,28 @@ only on disk" from output put in front of you, not to author queries against the
 - **when it bites:** when the question is when, or why, something got this way
 - **nearest confusable:** an editor's undo history
 - **origin:** course
+
+### `w-merge`
+
+- **goal:** merge
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** what happens when two lines of work have to become one record
+- **when it bites:** when the agent stops and says it cannot combine two things without you
+- **nearest confusable:** rebase
+- **origin:** course
+
+### `w-rebase`
+
+- **goal:** rebase
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** moving your work so it sits on top of someone else's, rather than joining the
+  two
+- **when it bites:** when the agent offers to tidy up the history before anyone else sees it
+- **nearest confusable:** merge
+- **origin:** course
