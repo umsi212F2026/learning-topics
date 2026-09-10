@@ -45,39 +45,41 @@ with the learner.
   account, about 5 minutes). The first page only, not the rest of the W3Schools Git tutorial. It
   holds "What is Git?", a "Key Git Concepts" list of eight terms (Repository, Clone, Stage,
   Commit, Branch, Merge, Pull, Push), "Working with Git" and "Why Git?". It names repository,
-  commit, stage, merge and history in place. It does not name uncommitted, staging area, diff,
-  rebase or merge conflict.
+  commit, stage, merge and history in place. It does not name uncommitted, staging area, diff or
+  merge conflict.
 - **verified:** 2026-09-08
 - **learner does:** works through the page top to bottom, stopping at anything they cannot restate
   in their own words and asking the tutor to explain it there and then rather than reading on.
-  Before finishing, must raise the five words the page never mentions (uncommitted, staging area,
-  diff, rebase, merge conflict) and get an explanation of each. Ends by writing a one line gloss,
-  in their own words, of all ten words in this topic: repository, commit, uncommitted, staging
-  area, diff, history, branch, merge, rebase, merge conflict.
+  Before finishing, must raise the four words the page never mentions (uncommitted, staging area,
+  diff, merge conflict) and get an explanation of each. Ends by writing a one line gloss, in their
+  own words, of all eight words in this topic: repository, commit, uncommitted, staging area,
+  diff, history, merge, merge conflict.
 - **tutor role:** explainer
 - **tutor does:** explains on demand, in the page's own order, and does not lecture ahead of the
-  question. Steers past Clone, Pull and Push, which are about collaborating with other people and
-  are not in this topic, naming them as out of scope rather than teaching them. Branch and Merge
-  are both words in this topic, so answer those in full when they come up, and expect rebase and
-  merge conflict to need raising because the page names neither. Makes sure the five missing words
-  get raised, and raises them if the learner does not. Ends by
-  putting the criterion question directly: could you now ask your agent to commit this work, and
-  follow what it tells you back, with this page still open beside you?
+  question. Answers in full on Merge, Pull and Push: the learner pulls the instructor's updates
+  and pushes to their own repository, and that pull is what makes a merge, and a merge conflict,
+  happen at all. Steers past Clone and Branch only, as out of scope for now rather than as things
+  they will never need: the clone already happened on day one and their agent did it, and branches
+  do not appear until their tooling starts making them later in the term. Expects merge conflict
+  to need raising, because the page never says it. Makes sure the four missing words get raised,
+  and raises them if the learner does not. Ends by putting the criterion question directly: could
+  you now ask your agent to commit this work, and follow what it tells you back, with this page
+  still open beside you?
 - **done when:** criterion met. The bar for this goal is did it once, and help while reading is
   expected, so the tutor is ruling on the learner's own indication of readiness, not on whether it
   thinks they are ready.
 - **kind:** single instance
 - **worked example:** if the learner stalls on the glosses, hand them one finished gloss for
-  repository and let them do the other nine. The page is otherwise its own worked example.
+  repository and let them do the other seven. The page is otherwise its own worked example.
 - **doesn't show:** the learner is saying they feel ready, which is what this goal asks for and all
   it asks for. It shows nothing about whether they can actually direct an agent to commit or
-  restore anything, and nothing about the ten words beyond a gloss written with the page open.
+  restore anything, and nothing about the eight words beyond a gloss written with the page open.
   There is only one instance, which is fine here because this goal never recurs.
 - **offer as:** the short one. Five minutes of plain text, no terminal anywhere in it, no command
   line assumed, and you set the pace while the tutor fills the gaps as you go, which is the only
-  reason a page this short is enough. Three of its eight key concepts (Clone, Pull and Push) are
-  about collaborating with other people and are not part of this topic, and two of the topic's
-  words, rebase and merge conflict, are not on the page at all.
+  reason a page this short is enough. Six of its eight key concepts are in this topic; only Clone
+  and Branch are set aside, and one of the topic's words, merge conflict, is not on the page at
+  all.
 
 ### `a-w-repository`
 
@@ -238,24 +240,6 @@ with the learner.
 - **origin:** generated
 - **serves:** `w-merge`
 - **checks:** `w-merge`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-rebase`
-
-- **origin:** generated
-- **serves:** `w-rebase`
-- **checks:** `w-rebase`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-branch`
-
-- **origin:** generated
-- **serves:** `w-branch`
-- **checks:** `w-branch`
 - **learner does:** whatever the goal's supply instantiates (see
   workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
 - **offer as:** the only candidate; which move gets set is the supply's, not this entry's

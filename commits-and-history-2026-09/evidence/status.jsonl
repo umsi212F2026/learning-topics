@@ -16,10 +16,6 @@
 {"at":"2026-09-08T15:24:06.218Z","kind":"curated","goal":"w-history"}
 {"at":"2026-09-08T17:01:24.199Z","kind":"curated","goal":"c-commit-recovery-point"}
 {"at":"2026-09-10T11:23:45.452Z","kind":"goal-added","goal":"w-merge","needs":"curation"}
-{"at":"2026-09-10T11:23:49.419Z","kind":"goal-added","goal":"w-rebase","needs":"curation"}
 {"at":"2026-09-10T11:34:08.238Z","kind":"curated","goal":"w-merge"}
-{"at":"2026-09-10T11:34:08.289Z","kind":"curated","goal":"w-rebase"}
-{"at":"2026-09-10T11:38:16.168Z","kind":"goal-added","goal":"w-branch","needs":"curation"}
-{"at":"2026-09-10T11:38:52.772Z","kind":"curated","goal":"w-branch"}
 {"at":"2026-09-10T12:10:08.592Z","kind":"goal-added","goal":"w-merge-conflict","needs":"curation"}
 {"at":"2026-09-10T12:10:47.693Z","kind":"curated","goal":"w-merge-conflict"}
