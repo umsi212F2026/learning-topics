@@ -62,8 +62,9 @@ _Yours to fill in. Say where your knowledge stops, not what you have heard of._
 
 ## What I'll use it for
 
-_Yours to fill in. The course supplies one occasion (you commit to this repository all term);
-name any others you have._
+_Yours to fill in. The course supplies two occasions: you commit to this repository all term,
+and you pull the instructor's updates into work you have already changed. Name any others you
+have._
 
 <!--
   The use, and a concrete occasion.
@@ -73,11 +74,16 @@ name any others you have._
 
 ## Depth
 
-**Author from scratch** on the making side; **read it** on the history side.
+**Recognize it, and read what your agent tells you.** Not authoring, and not judging someone
+else's work either. You will not type a git command in this course, and nothing here will hand
+you raw `git status` or `git diff` output to interpret.
 
-You will be producing commits in this repository all term, so making them has to be production
-depth. History only has to be readable: you need to answer "what changed here, and is any of it
-only on disk" from output put in front of you, not to author queries against the log.
+What that buys is enough to stay in charge of an agent that is doing the git work for you:
+recognizing these words when they turn up in what it says, following what it reports back
+closely enough to know whether it actually did what you asked, and being able to ask for a
+commit or a restore in your own words in the first place. Authoring commands, resolving a
+conflict by hand, and querying the log yourself are all past that line, and none of them is
+needed for the occasion this topic exists for.
 
 ## Goals
 
@@ -265,7 +271,7 @@ only on disk" from output put in front of you, not to author queries against the
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** what happens when two lines of work have to become one record
-- **when it bites:** when the agent stops and says it cannot combine two things without you
+- **when it bites:** when you pull the instructor's updates and your own work is in the way
 - **nearest confusable:** rebase
 - **origin:** course
 
@@ -278,6 +284,19 @@ only on disk" from output put in front of you, not to author queries against the
 - **group:** vocabulary
 - **what it names:** moving your work so it sits on top of someone else's, rather than joining the
   two
-- **when it bites:** when the agent offers to tidy up the history before anyone else sees it
+- **when it bites:** when that same pull could either join the two histories or replay yours on
+  top of the new ones, and the agent asks which
 - **nearest confusable:** merge
+- **origin:** course
+
+### `w-branch`
+
+- **goal:** branch
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a line of work that can move on without disturbing another
+- **when it bites:** when your copy and the instructor's copy have both moved on since you cloned
+- **nearest confusable:** fork
 - **origin:** course

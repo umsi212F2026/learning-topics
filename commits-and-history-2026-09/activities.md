@@ -52,15 +52,15 @@ with the learner.
   in their own words and asking the tutor to explain it there and then rather than reading on.
   Before finishing, must raise the four words the page never mentions (uncommitted, staging area,
   diff, rebase) and get an explanation of each. Ends by writing a one line gloss, in their own
-  words, of all eight words in this topic: repository, commit, uncommitted, staging area, diff,
-  history, merge, rebase.
+  words, of all nine words in this topic: repository, commit, uncommitted, staging area, diff,
+  history, branch, merge, rebase.
 - **tutor role:** explainer
 - **tutor does:** explains on demand, in the page's own order, and does not lecture ahead of the
   question. Steers past Clone, Pull and Push, which are about collaborating with other people and
   are not in this topic, naming them as out of scope rather than teaching them. Branch and Merge
-  are not in that group: merge is one of this topic's words and branch is what merge presupposes,
-  so answer those if they come up, and expect rebase to need raising because the page never says
-  it. Makes sure the four missing words get raised, and raises them if the learner does not. Ends by
+  are both words in this topic, so answer those in full when they come up, and expect rebase to
+  need raising because the page never says it. Makes sure the four missing words get raised, and
+  raises them if the learner does not. Ends by
   putting the criterion question directly: could you now ask your agent to commit this work, and
   follow what it tells you back, with this page still open beside you?
 - **done when:** criterion met. The bar for this goal is did it once, and help while reading is
@@ -68,10 +68,10 @@ with the learner.
   thinks they are ready.
 - **kind:** single instance
 - **worked example:** if the learner stalls on the glosses, hand them one finished gloss for
-  repository and let them do the other seven. The page is otherwise its own worked example.
+  repository and let them do the other eight. The page is otherwise its own worked example.
 - **doesn't show:** the learner is saying they feel ready, which is what this goal asks for and all
   it asks for. It shows nothing about whether they can actually direct an agent to commit or
-  restore anything, and nothing about the eight words beyond a gloss written with the page open.
+  restore anything, and nothing about the nine words beyond a gloss written with the page open.
   There is only one instance, which is fine here because this goal never recurs.
 - **offer as:** the short one. Five minutes of plain text, no terminal anywhere in it, no command
   line assumed, and you set the pace while the tutor fills the gaps as you go, which is the only
@@ -247,6 +247,15 @@ with the learner.
 - **origin:** generated
 - **serves:** `w-rebase`
 - **checks:** `w-rebase`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-branch`
+
+- **origin:** generated
+- **serves:** `w-branch`
+- **checks:** `w-branch`
 - **learner does:** whatever the goal's supply instantiates (see
   workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
 - **offer as:** the only candidate; which move gets set is the supply's, not this entry's
