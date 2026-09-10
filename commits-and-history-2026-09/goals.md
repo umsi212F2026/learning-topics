@@ -279,8 +279,7 @@ needed for the occasion this topic exists for.
 - **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
-- **what it names:** combines the contents of two lines of work that had diverged, in a commit
-  that keeps both histories as parents
+- **what it names:** what happens when two diverged lines of work are made one record
 - **nearest confusable:** rebase
 - **origin:** course
 
