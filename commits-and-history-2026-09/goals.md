@@ -75,8 +75,9 @@ have._
 ## Depth
 
 **Recognize it, and read what your agent tells you.** Not authoring, and not judging someone
-else's work either. You will not type a git command in this course, and nothing here will hand
-you raw `git status` or `git diff` output to interpret.
+else's work either. You will not type a git command in this course, and you will never be asked
+to make sense of raw `git status` or `git diff` output on your own. You may well see some, with
+someone narrating it as it goes, which is a different thing.
 
 What that buys is enough to stay in charge of an agent that is doing the git work for you:
 recognizing these words when they turn up in what it says, following what it reports back
