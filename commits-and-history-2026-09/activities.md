@@ -5,18 +5,47 @@ with the learner.
 
 ## Check notes
 
-<!--
-  Authored by curation/critique and placed by the orchestrator. Rewritten wholesale each pass,
-  so don't edit it — it will be replaced.
+2026-09-10. The learner sections of `goals.md`, where this came from, what I already have, and
+what I'll use it for, are all blank, so this menu was written for someone starting cold: a guided
+read, a narrated demo, worked examples before problems. If this learner has used git before, three
+of the five curated entries are beneath them, and you are the first person who will find that out.
+Ask before you offer.
 
-  Dated, and short. What the tutor should know about this file as a whole before using it:
-  the menu skews toward reading, two capabilities are thinner than they look, the depth
-  runs heavier than goals.md asks for. Only things that survived the revision round —
-  anything that got fixed doesn't belong here.
+Every entry here needs you in the session except the run of `a-commit-own-repo`, which is also the
+only one that touches the learner's own repository. If a live session is not available, the only
+path forward is the riskiest one.
 
-  Empty is a legitimate and good outcome. Say "nothing at file level" rather than inventing
-  an observation.
--->
+The menu leans toward reading and watching on purpose. The depth stops at recognizing these words
+and following what an agent reports back, so do not correct the skew by adding authoring tasks.
+
+**On `o-orientation`.** `orientation`, in full: the learner has indicated they could now attempt
+the real thing with the artifact still beside them. Deliberately weak evidence. The bar is did it
+once, help while reading is expected, and you are the adjudicator: the ruling is on their
+indication, not on whether you think they are ready.
+
+Only `a-read-git-intro-page` carries `checks` for this goal, so the two reads are a sequence rather
+than a choice. A learner who prefers the picture route in `a-place-the-eight-words` will still need
+the W3Schools read afterwards to close the goal. Offer the picture on its merits, and say that the
+short read follows.
+
+**On `c-commit-recovery-point`.** Two capabilities in one criterion, commit and restore, and no
+partial credit. The bar is one unaided pass, so both halves have to land in the same attempt: a
+learner who commits cleanly and then botches the restore records a miss on the whole goal.
+
+Not every instance reaches the second half. A Medium or Hard drill instance does, and so does a
+later `a-commit-own-repo` run aimed at an earlier session's commit. An Easy drill instance and a
+first `a-commit-own-repo` run both target the commit just made, so neither establishes "any
+commit"; do not log either as met.
+
+The adjudicator is the default fresh judge, who was not there. An attempt leaves nothing to rule on
+unless the requests and the replies are written down. `a-commit-own-repo` says to keep the
+transcript; `a-commit-restore-drill` does not, and you should keep one anyway.
+
+What a met goal here does not claim: both checks examine whether the learner can ask, not whether
+they can tell that the asking worked. Neither ever puts a false report in front of them, and
+neither examines work that was never committed and cannot come back, which is the case that
+actually costs people an afternoon. That case is demonstrated once, in `a-narrated-commit-restore`,
+which cannot check anything, and is otherwise reachable only through `w-uncommitted`.
 
 ## Goals
 
@@ -36,8 +65,8 @@ with the learner.
 
 | goal | study | checks | notes |
 | ---- | ----- | ------ | ----- |
-| `o-orientation` | `a-place-the-eight-words` | `a-read-git-intro-page` | |
-| `c-commit-recovery-point` | `a-narrated-commit-restore` | `a-commit-restore-drill`, `a-commit-own-repo` | |
+| `o-orientation` | `a-place-the-eight-words` | `a-read-git-intro-page` | see Check notes |
+| `c-commit-recovery-point` | `a-narrated-commit-restore` | `a-commit-restore-drill`, `a-commit-own-repo` | see Check notes |
 
 ---
 
@@ -57,8 +86,9 @@ with the learner.
 - **verified:** 2026-09-10
 - **learner does:** works through the page top to bottom, stopping at anything they cannot restate
   in their own words: says what they think it means, or says they have nothing, and gets it
-  explained there and then rather than reading on. Before finishing, must raise the four words the
-  page never mentions (uncommitted, staging area, diff, merge conflict) and hear what each one is.
+  explained there and then rather than reading on. Before finishing, must raise the three words the
+  page never mentions (uncommitted, diff, merge conflict) and hear what each one is, and must get
+  the page's Stage tied to this topic's staging area, which is the same step under a shorter name.
   Nothing gets written up. The obligation is a running check-my-understanding conversation, not a
   set of definitions: the eight words in this topic each have their own activity and their own
   bar, and this activity is not allowed to meet those on their behalf.
@@ -68,11 +98,18 @@ with the learner.
   and pushes to their own repository, and that pull is what makes a merge, and a merge conflict,
   happen at all. Steers past Clone and Branch only, as out of scope for now rather than as things
   they will never need: the clone already happened on day one and their agent did it, and branches
-  do not appear until their tooling starts making them later in the term. Expects merge conflict
-  to need raising, because the page never says it. Makes sure the four missing words get raised,
-  and raises them if the learner does not. Ends by putting the criterion question directly: could
-  you now ask your agent to commit this work, and then ask it to put every file back to that
-  commit, and follow what it tells you back both times, with this page still open beside you?
+  do not appear until their tooling starts making them later in the term. Expects merge conflict to
+  need raising: the body never says it, and the one place the phrase appears is a left hand
+  navigation link ("Merge Conflicts", under Git Advanced), so a learner who scans the sidebar may
+  arrive with the phrase and nothing attached to it. Makes sure the three missing words get raised,
+  and raises them if the learner does not. Says explicitly that the page's Stage ("Tell Git
+  which changes you want to save next", and again under "Working with Git", where the modified
+  files are selected to Stage and the staged files are Committed) is this topic's staging area:
+  what the page withholds is the phrase, not the step, so the phrase gets introduced as a name for
+  something the page has already said twice and not as a fourth thing the page left out. Ends by
+  putting the criterion question directly: could you now ask your agent to commit this work, and
+  then ask it to put every file back to that commit, and follow what it tells you back both times,
+  with this page still open beside you?
 - **done when:** criterion met. The bar for this goal is did it once, and help while reading is
   expected, so the tutor is ruling on the learner's own indication of readiness, not on whether it
   thinks they are ready. That indication is the only thing adjudicated here. How well anything got
@@ -89,15 +126,20 @@ with the learner.
   never recurs.
 - **offer as:** the guided read, in a page's own order, with someone answering as you go. Plain
   text, no terminal anywhere in it, no command line assumed, and you set the pace while the tutor
-  fills the gaps, which is the only reason a page this short is enough. The page is five minutes;
-  the session around it is more like 25 to 30, because you stop at every term you cannot restate
-  and because four of the topic's eight words (uncommitted, staging area, diff, merge conflict)
-  are not on the page at all and have to be raised. Three of the page's eight key concepts are
-  goals in this topic: Repository, Commit and Merge. The alternative first read is
+  fills the gaps, which is what makes a page this short enough: the reading is the small half of
+  the session. The body is 289 words, two or three minutes; the session around it is more like 25
+  to 30, because you stop at every term you cannot restate and because three of the topic's eight
+  words (uncommitted, diff, merge conflict) are not on the page at all and have to be raised. Four
+  of the page's eight key concepts are goals in this topic: Repository, Commit, Merge, and Stage,
+  which is the staging area under a shorter name. The alternative first read is
   `a-place-the-eight-words`, which gives you a picture and asks you to place the words on it
   yourself before anyone explains anything; take this one instead if you would rather be walked
   through a text in order. This is also the entry the orientation goal is adjudicated in, and the
   other one is not.
+- **check note:** The closing question is compound: commit, then restore, then follow the report
+  back both times. A hedged answer, comfortable with asking for the commit and unsure about the
+  restore, is not the indication this criterion asks for. Take it as `criterion: unclear`, explain
+  the restore half again, and put the question again, rather than reading it as a yes.
 
 ### `a-place-the-eight-words`
 
@@ -114,22 +156,30 @@ with the learner.
   place without using the word, as the modified state ("you have changed the file but have not
   committed it to your database yet"). It does not name uncommitted, diff, merge or merge
   conflict.
+- **verified:** 2026-09-10
 - **learner does:** looks at the three figures and their captions only, and says what they expect
   the page to claim, before reading a word of it. Then reads it once through. Then draws their own
   version of Figure 6 and marks on it where each of the topic's eight words belongs: repository,
-  commit, uncommitted, staging area, diff, history, merge, merge conflict. Says which ones the
-  page gave them nowhere to put, and asks about those. Placing a word is not defining it: nothing
-  written here is a definition, and this activity settles none of the word goals.
+  commit, uncommitted, staging area, diff, history, merge, merge conflict. Says which ones the page
+  gave them nowhere to put, and asks about those. Uncommitted is a case of its own and is not one
+  of them: the page does give it a place, as the modified state, so what to look for is the place
+  and not the word, and "there is somewhere for this, but the page never calls it uncommitted" is
+  the right answer here. Placing a word is not defining it: nothing written here is a definition,
+  and this activity settles none of the word goals.
 - **tutor role:** explainer
 - **tutor does:** stays quiet until the prediction from the figures has been made, then says which
   parts of it the page will bear out and which it will not. While the words are being placed,
   corrects a misplacement by asking what would have to be true for the word to live where it was
-  put, rather than by moving it. Supplies the four the page leaves no room for (uncommitted, diff,
-  merge, merge conflict) once the learner has said they cannot place them, and ties the last two
-  to the occasion this topic exists for: pulling the instructor's updates into files the learner
-  has already changed, where their own work is in the way. Treats anything on the page beyond
-  these eight as out of scope for now and does not go into it. Writes no commands on the sketch or
-  anywhere else, and hands over no command output.
+  put, rather than by moving it. Supplies the three the page leaves no room for (diff, merge, merge
+  conflict) once the learner has said they cannot place them, and ties the last two to the occasion
+  this topic exists for: pulling the instructor's updates into files the learner has already
+  changed, where their own work is in the way. Handles uncommitted the other way round, because the
+  page places it and withholds only the word: if the learner cannot find where it goes, points at
+  the modified state in Figure 6 and the sentence beside it ("you have changed the file but have
+  not committed it to your database yet") and lets the word land on a place the page already gave
+  them, rather than supplying it as a fourth thing the page is missing. Treats anything on the page
+  beyond these eight as out of scope for now and does not go into it. Writes no commands on the
+  sketch or anywhere else, and hands over no command output.
 - **done when:** all eight words are placed somewhere on the sketch the learner can point at, and
   the learner says they could now attempt asking an agent for a commit and for a restore with the
   sketch beside them. This entry carries no `checks` and cannot settle `o-orientation`: the
@@ -137,12 +187,30 @@ with the learner.
 - **offer as:** the picture rather than the prose, and you go first. Same kind of thing as
   `a-read-git-intro-page` (a short free page, nothing to type, no terminal in it) and the
   differences are real: you predict from the figures before reading rather than following the
-  page's order, you place all eight words yourself rather than meeting four of them where a page
-  happens to mention them, and the two pages are short of different words. This one has the
-  staging area and no merge; the W3Schools page has merge and no staging area. Take this one if
-  lists of terms slide off you, or if what you want first is a picture of where uncommitted work
-  sits relative to a commit. It settles nothing on its own, and it makes the five minute page that
-  does settle the goal quick when you get to it.
+  page's order, you place all eight words yourself rather than meeting five of them where a page
+  happens to mention them, and the two pages are short of different words. This one names the
+  staging area and puts uncommitted work in a picture, but never says merge; the W3Schools page
+  says merge, and names the same step "Stage" without ever using the phrase staging area. Take this
+  one if lists of terms slide off you, or if what you want first is a picture of where uncommitted
+  work sits relative to a commit. It settles nothing on its own, and taking it first is what leaves
+  the page that does settle the goal (289 words, two or three minutes of reading) with almost
+  nothing left to explain when you get to it.
+- **check note:** This entry cannot close `o-orientation`, however well its `done when` goes. It
+  takes exactly the readiness indication the criterion asks for, but only an entry carrying
+  `checks` can finish a goal, so log nothing against the goal from it and treat the indication as
+  rehearsal for the one that counts. The W3Schools read in `a-read-git-intro-page` still has to
+  follow, and what to budget for it is its session and not its reading: the page is two or three
+  minutes, the session built on it is billed at 25 to 30, and taking this activity first is what
+  makes it shorter, though by how much neither entry commits to. Offer the picture on its merits,
+  and say that the short read follows.
+  `done when` asks for all eight words placed somewhere the learner can point at, but three of
+  them (diff, merge, merge conflict) have nowhere on the page to go and arrive from you. Read that
+  half of `done when` as a completeness check on the sketch rather than as evidence about those
+  three. Nothing here is evidence about any word; the word goals have their own supply.
+  Take the prediction from the figures before you say anything at all, and have it written down.
+  You answer it before the read rather than after, so the page itself never checks it, and an
+  unwritten prediction quietly becomes "yes, that is what I thought."
+  No `kind` is given; treat it as a single instance.
 
 ### `a-w-repository`
 
@@ -226,6 +294,30 @@ with the learner.
 - **offer as:** the one to take before you have done any of this yourself. It shows the deliberation
   and the false starts that a finished example has edited out, which is the one thing reading
   cannot give you. It needs a live session and cannot be done alone.
+- **check note:** This is the only place in the topic where the learner sees real commands and
+  real output, and the depth in `goals.md` allows it on one condition: that someone is narrating
+  it as it goes. The narration is the load-bearing part, not the output. Do not leave anything on
+  screen unexplained while you move on, do not hand them a hunk to work out for themselves, and if
+  they ask what a line means, answer it rather than turning it into a test. Making sense of output
+  unaided is still past the line for this course; watching you make sense of it is the whole point
+  of the exception.
+  Because the commands are visible here, the predictions slide easily. `learner does` asks what
+  they would ask an agent for at that point and what they expect it to tell them back, not what
+  command comes next. If a prediction comes back as a command, take it, then put the question again
+  in the form the entry asks for. That form is what they will need in `a-commit-restore-drill` and
+  in their own sessions, and this is the one activity where the screen is quietly pulling them the
+  other way.
+  Get each prediction said out loud before you act, and written down. The entry asks them to write
+  the divergences afterwards, which is how a prediction quietly turns into "yes, that is what I
+  thought." The record has to exist before the reveal or it is worth nothing.
+  Make the false start land. Trying to recover a change that was never committed, and finding it
+  simply gone, is the only place in this topic the learner is shown that case, and nothing
+  afterwards examines it, not here and not in either check. Give it room, and say plainly that this
+  is the one failure their agent cannot undo for them.
+  Two smaller things. The two requests they write at the end are worth keeping: that is the wording
+  they will reuse when they reach `a-commit-restore-drill`. And seeing "staging area" or a diff on
+  screen settles none of the word goals, which come from their own supply. No `kind` is given here;
+  treat it as a single instance.
 
 ### `a-commit-restore-drill`
 
@@ -281,6 +373,17 @@ with the learner.
   else's choice, which makes this the only candidate that shows whether you can recover something
   you did not break. It needs a live session, because someone has to play the agent and someone
   has to do the wrecking.
+- **check note:** Write the session down as it happens, the learner's requests and your replies as
+  the played agent, verbatim. The adjudicator for this goal is a fresh judge who was not in the
+  room, and this entry, unlike `a-commit-own-repo`, preserves nothing for them to rule on.
+  Two places to run this harder than it reads. `learner does` has them open one wrecked file, but
+  the criterion says all files, and on a Medium or Hard instance the deleted or renamed one is
+  exactly what a learner will not think to open, so have them account for every damaged thing
+  rather than one. And the Hard instance's new file, the one no commit contains, is built into the
+  material but nothing asks the learner to notice it: ask them what cannot come back and why,
+  because nothing else in this topic examines that.
+  Easy is for the worked example and for a second try with help. A pass at Easy does not clear the
+  goal.
 
 ### `a-commit-own-repo`
 
@@ -346,6 +449,21 @@ with the learner.
   you to break a real file on purpose, which not everyone will want to do. On a later run it also
   asks you to send the whole repository back to a commit from an earlier session and then bring it
   forward again, which is the only place in this topic that happens to work you care about.
+- **check note:** Set the recovery target before they start. `tutor role: none` describes the run
+  only, and the generator does not work without you: which commit you name is the difference
+  between a first run and one that reaches the "any commit" half of the criterion.
+  A first run, aimed at the commit they just made, does not clear this goal however well it goes,
+  for the reason the entry's own `doesn't show` gives. Only a later run, aimed at an earlier
+  session's commit, reaches the whole criterion. Do not log a first run as met.
+  Their agent's "nothing is uncommitted" is a claim, not proof, and it is the kind of claim this
+  topic teaches them not to take on trust. Untracked and ignored files are what it routinely
+  misses, and the scratch note covers one file, not the tree they are about to send backwards. Look
+  at the repository yourself before a whole-tree restore to an earlier session's commit, or keep
+  that move in `a-commit-restore-drill`, where the repository is a throwaway.
+  When they ask the agent which commit came before today's work, expect the answer to arrive with
+  hashes and dates in it. Tell them beforehand that they can ask for it in words and do not have to
+  read the rest. Expect the transcript you read afterwards to contain commands and diffs their own
+  agent printed, which is not the same thing as the learner having been asked to interpret them.
 
 
 ### `a-w-merge`
