@@ -270,7 +270,7 @@ needed for the occasion this topic exists for.
 - **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
-- **what it names:** what happens when two lines of work have to become one record
+- **what it names:** what happens when two lines of work are combined
 - **when it bites:** when you pull the instructor's updates and your own work is in the way
 - **nearest confusable:** rebase
 - **origin:** course
@@ -282,10 +282,9 @@ needed for the occasion this topic exists for.
 - **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
-- **what it names:** moving your work so it sits on top of someone else's, rather than joining the
-  two
-- **when it bites:** when that same pull could either join the two histories or replay yours on
-  top of the new ones, and the agent asks which
+- **what it names:** changing what your own work is built on top of
+- **when it bites:** when taking the instructor's updates stops dead until someone picks a way to
+  reconcile, and the thing asking you offers only this one
 - **nearest confusable:** merge
 - **origin:** course
 
@@ -296,7 +295,7 @@ needed for the occasion this topic exists for.
 - **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
-- **what it names:** a line of work that can move on without disturbing another
+- **what it names:** a line of work that can move on independently of others
 - **when it bites:** when your copy and the instructor's copy have both moved on since you cloned
 - **nearest confusable:** fork
 - **origin:** course
