@@ -41,17 +41,6 @@ Which of these will you not be able to get back from the repository afterward?
 3. A file that Tuesday's commit contains, which you deleted on Wednesday.
 4. The version of notes.md from a commit made before Tuesday.
 
-### q-new-file-no-commit
-
-After Tuesday's commit, your agent created a new file, genres.py, for task 2, and nothing has been
-committed since. You now ask the agent to put every file back to how it was at Tuesday's commit.
-Why is genres.py a special case, and what would you want the agent to tell you about it?
-
-### q-one-commit-recovers
-
-On GitHub, your commit "Add rating filter to task 1" shows twelve green lines added to task1.py and
-nothing else. If that one commit were the only thing you could recover your work from, what could
-you get back from it?
 
 ### q-good-moment-commit
 
@@ -59,8 +48,4 @@ You have just got task 1 producing a correct top-ten list, and you have saved ev
 plan to have your agent try a completely different approach to task 2, which may not work. Is now a
 good moment to ask for a commit? Say why.
 
-### q-message-needs-and
 
-Your agent proposes a commit with the message "Fix the rating filter in task 1 and start counting
-genres for task 2". The fix is in task1.py, and the genre counting is in a new file, task2.py. Is
-that one good commit? Say why, and what you would ask for instead.

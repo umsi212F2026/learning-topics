@@ -26,11 +26,8 @@ with the files in it, and the commits are only kept on GitHub." What is wrong wi
 
 You ask your agent to commit your work, and it replies: "I can't include ps1-notes.txt in the
 commit: it's in your Documents folder, outside the assignments repo." What is the agent telling
-you, and what does that rule out?
+you, and what is the effect does not having it in the commit?
 
-### q-define-commit
-
-Say what a commit is, in your own words.
 
 ### q-commit-vs-save
 
@@ -70,9 +67,8 @@ your editor right now is in your last commit." What is wrong with what it said?
 
 ### q-local-changes-restore
 
-You ask your agent to put your files back to Thursday's commit, and it replies: "Before I do that:
-task1.py has local changes that aren't in any commit. Should I go ahead?" What is the agent telling
-you, and what does it rule out?
+You ask your agent to revert your files back to Thursday's commit, and it replies: "Before I do that:
+task1.py has local changes that aren't in any commit. Should I go ahead?" If you go ahead, what's the risk for you?
 
 ### q-staging-vs-working-directory
 
@@ -98,15 +94,6 @@ out of the staging area. Nothing is committed yet." Which of these is true right
 3. The changes to results.json have been thrown away.
 4. If a commit is made now, it will include all three files, because all three have changes.
 
-### q-diff-vs-status
-
-Your agent can tell you the status of your repository, or it can show you a diff. What is the
-difference between what those two tell you?
-
-### q-diff-is-commit
-
-A classmate, looking at a commit on GitHub, says: "The red and green lines are what this commit
-contains. Git only stores the lines that changed." What is wrong with what they said?
 
 ### q-diff-omits-file
 
@@ -117,7 +104,7 @@ anywhere, so notes.md must have been deleted." What is wrong with what they said
 
 Your agent says: "I compared your commit from Thursday with your latest commit. The only
 differences are in task1.py: three lines changed near the top, where the ratings file is loaded."
-What is being claimed, and what does it rule out?
+What is being claimed?
 
 ### q-define-history
 
@@ -138,18 +125,13 @@ they said?
 
 It is Sunday, and you have been working on task1.py since Thursday. Your agent says: "Your log
 shows the last commit was on Thursday afternoon, 'Add rating filter to task 1'. Nothing has been
-committed since." What does that tell you about the work you have done since Thursday, and what
-does it rule out?
+committed since." Has your work since Thursday been deleted?
 
 ### q-define-merge
 
 In this course you pull the instructor's updates into repositories where you have already made
 commits of your own, and when that happens git does a merge. Say what a merge is.
 
-### q-merge-vs-rebase
-
-When you pull the instructor's updates into work you have already committed, an agent may ask
-whether to merge or to rebase. What is the difference between the two?
 
 ### q-merge-drops-mine
 
@@ -187,12 +169,6 @@ README.txt and I changed task1.py." What is wrong with what they said?
 A classmate says: "Don't worry about merge conflicts. When two changes hit the same lines, git just
 keeps whichever change is newer." What is wrong with what they said?
 
-### q-conflict-report
-
-Your agent says: "Pulling the instructor's updates stopped with a conflict in task1.py. You and the
-instructor both changed the lines that load the ratings file. Everything else came in without
-trouble. Do you want to keep your version of those lines, the instructor's, or combine them?" What
-is the agent telling you, and what does it rule out?
 
 ### q-what-makes-conflict
 

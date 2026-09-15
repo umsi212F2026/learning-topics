@@ -8,16 +8,15 @@ Answers for `tasks/words.md`. **Do not read this before attempting the questions
 - **goal:** w-repository
 - **move:** DISTINGUISH
 - **answer:** an ordinary folder is only a place where files sit, holding their current contents
-  and nothing more. A repository is a boundary git is keeping track of: git keeps a record of the
+  and nothing more. A repository is a folder git is keeping track of: git keeps a record of the
   files inside it (the history of commits), so an earlier state of those files can be looked at or
   got back. In a folder that is not a repository, a file that is overwritten or deleted has no
   record to come back from.
 - **credit:** full credit for saying that a repository comes with a record or history of what is
   inside it (or that git keeps track of changes to what is inside it), so earlier versions can be
-  seen or got back. Half credit for "git tracks the files in a repository" with no mention of a
-  record, a history, or getting anything back; half credit also for "a repository has a hidden .git
-  folder" if it adds that this is where the history is kept, and no credit for the hidden folder
-  alone. Do not accept incidental differences: that a repository is on GitHub, that it holds code
+  seen or got back. Also full credit for "git tracks the files in a repository" with no mention of a
+  record, a history, or getting anything back; full credit also for "a repository has a hidden .git
+  folder". Do not accept incidental differences: that a repository is on GitHub, that it holds code
   rather than documents, that it is shared, or that it is bigger.
 
 ### q-scratch-folder-tracked
@@ -43,7 +42,7 @@ Answers for `tasks/words.md`. **Do not read this before attempting the questions
   the history of commits, commits are made there in the first place, and earlier states can be
   restored from it without going to GitHub.
 - **credit:** full credit for saying the laptop copy is a repository in its own right, with the
-  commits (the history) in it. Half credit for "commits are made on your laptop first" without
+  commits (the history) in it. Full credit for "commits are made on your laptop first" without
   saying the laptop copy holds the history. Do not accept a different quibble as the error: that
   they should push more often, that GitHub is a backup, or that "real" is the wrong word. Do not
   accept "the GitHub one is the copy and the laptop one is the real one", which only reverses the
@@ -59,28 +58,11 @@ Answers for `tasks/words.md`. **Do not read this before attempting the questions
   out getting an earlier version of ps1-notes.txt back from the repository's history, and rules
   out a restore of the repository protecting or bringing back that file.
 - **credit:** full credit needs both halves: (a) the file is not inside the repository, so git has
-  no record of it and cannot commit it; (b) one thing that rules out, such as no earlier version of
+  no record of it and cannot commit it; (b) one thing that not having it in the commit rules out, such as no earlier version of
   it can come back from the history, or a restore will not touch or protect it. Half credit for
   either half alone. No credit for reading "outside the repo" as the agent lacking permission, the
   file being broken, or the file having been deleted.
 
-### q-define-commit
-
-- **type:** free
-- **goal:** w-commit
-- **move:** DEFINE
-- **answer:** a recorded state of the repository's files at one moment, added to the repository's
-  history with a message, that you can later go back to or compare against; also the act of adding
-  one. It holds the whole state of the files, not just what changed, and earlier commits stay in
-  the history beside it.
-- **credit:** full credit for saying it records the state of the files at a moment into the history,
-  or as a point that can be gone back to. The message and the act of making one are welcome and not
-  required. Half credit for "a snapshot" or "a save point" with nothing about what it is a snapshot
-  of or that it can be returned to, and half credit at most for an answer that says a commit holds
-  only the changes or the changed lines, since it holds the whole state. No credit for an answer
-  that is only "saving your work", "saving to git", "a save" or "a version", which name the thing
-  again or name its confusable rather than saying what it is. No credit for W3Schools' line "save a
-  snapshot of your changes" given back with the words swapped.
 
 ### q-commit-vs-save
 
@@ -137,9 +119,8 @@ Answers for `tasks/words.md`. **Do not read this before attempting the questions
   them. No commit holds them, so if the files are overwritten they cannot be got back from the
   history.
 - **credit:** full credit for saying the saved files differ from what the last commit recorded (work
-  done since the last commit that is not in the history yet). Half credit for "changes that haven't
-  been committed" together with a correct consequence (they cannot be restored if lost), since that
-  takes the word apart and adds only what follows from it; no credit for "not committed yet" alone.
+  done since the last commit that is not in the history yet). Full credit for "changes that haven't
+  been committed" together with a correct consequence (they cannot be restored if lost); no credit for "not committed yet" alone.
   No credit for "unsaved" or "not saved", which is a different gap, between the editor and the disk.
   No credit for "local changes" alone, which is another name for the same thing and not a
   definition.
@@ -195,11 +176,9 @@ Answers for `tasks/words.md`. **Do not read this before attempting the questions
 - **move:** INTERPRET
 - **answer:** task1.py, as saved on disk, holds changes that no commit recorded. If the restore goes
   ahead, Thursday's version replaces them, and since no commit holds them they cannot be brought
-  back afterward. It rules out getting the current task1.py back from the history later, so they
+  back afterward. The risk is that you can't get the current task1.py back from the history later, so they
   would need committing (or copying somewhere) first if they matter.
-- **credit:** full credit needs both halves: (a) task1.py has saved changes that are not in any
-  commit; (b) what that rules out: once the restore replaces them they cannot come back from any
-  commit. Half credit for either half alone. No credit for reading "local changes" as unsaved edits
+- **credit:** full credit for saying the changes to task1.py will be lost and/or it won't be possible to recover them. No credit for reading "local changes" as unsaved edits
   in the editor, or as changes that are merely on the laptop and not yet on GitHub. Do not require
   anything about the other files.
 
@@ -254,36 +233,6 @@ Answers for `tasks/words.md`. **Do not read this before attempting the questions
   "left out of the staging area" as discarded; the changes are still in the working directory. 4
   ignores the staging area: having changes is not the same as being marked for the next commit.
 
-### q-diff-vs-status
-
-- **type:** free
-- **goal:** w-diff
-- **move:** DISTINGUISH
-- **answer:** status says which files are in which state (which have changed since the last commit,
-  which are staged, which are new) without showing what changed inside them. A diff shows what
-  actually changed: the lines added, removed or altered, worked out by comparing two versions, such
-  as two commits, or the last commit and the files as they are now.
-- **credit:** full credit for both: status is a summary of which files are changed, staged or new,
-  and a diff shows the changed content itself, line by line. Half credit for one side right and the
-  other vague ("status is an overview") or missing. No credit for "status covers the whole
-  repository and a diff covers one file" (a diff can cover many files), for "a diff is in colour",
-  or for any other difference in how they look rather than what they report.
-
-### q-diff-is-commit
-
-- **type:** free
-- **goal:** w-diff
-- **move:** CATCH
-- **answer:** a commit stores the whole state of the files, not the change. The red and green lines
-  are a diff, worked out by comparing this commit with the one before it; they are what GitHub
-  computes and shows, not what the commit holds.
-- **credit:** full credit for saying the commit holds the whole state (every file as it was), with or
-  without saying the lines are computed by comparing it with the previous commit. Half credit for
-  saying the lines are "only a comparison" or "just what changed" without saying what the commit
-  itself holds. Do not accept a different quibble as the error: that red and green are only GitHub's
-  colours, or that GitHub is not git. Do not require, and do not reward, anything about how git
-  compresses what it stores; an answer that mentions compression and still says a commit is a whole
-  state gets full credit.
 
 ### q-diff-omits-file
 
@@ -323,7 +272,7 @@ Answers for `tasks/words.md`. **Do not read this before attempting the questions
 - **answer:** all the commits made in the repository, taken together in order: the record of each
   committed state, with its message, that can be looked back through, compared, and returned to.
 - **credit:** full credit for saying it is the repository's commits taken together (the sequence or
-  record of committed states). Half credit for "a record of past versions" that does not tie those
+  record of committed states). Full credit for "a record of past versions" even if it does not tie those
   versions to commits. No credit for "the log" alone, which is another name for it, and no credit
   for "a record of every change you have made", which would include edits that were never committed.
 
@@ -361,13 +310,11 @@ Answers for `tasks/words.md`. **Do not read this before attempting the questions
 - **type:** free
 - **goal:** w-history
 - **move:** INTERPRET
-- **answer:** none of the work since Thursday is in the history; the latest point that can be
+- **answer:** Probably not deleted, though you'd have to check separately for that. None of the work since Thursday is in the history; the latest point that can be
   returned to is Thursday's "Add rating filter to task 1" commit. That rules out getting back any
   in-between version of task1.py from the history, and it means a restore to Thursday's commit would
   lose the work since. The work may still be in the files, uncommitted, but no commit holds it.
-- **credit:** full credit for both: the work since Thursday is not in the history (it is uncommitted,
-  or unsaved), and what that rules out (no in-between version can be restored from it, or a restore
-  to Thursday would lose the work). Half credit for either alone. No credit for reading the message as
+- **credit:** full credit for saying it's not necessarily deleted but that if it does get deleted it can't be recovered. No credit for reading the message as
   saying the work since Thursday is already lost or deleted: it says only that none has been
   committed.
 
@@ -381,28 +328,12 @@ Answers for `tasks/words.md`. **Do not read this before attempting the questions
   lines of commits, joined together.
 - **credit:** full credit for saying two lines of work that went separate ways are combined into one,
   with both sides' changes kept. Mentioning the commit that joins them is good and is not required.
-  Half credit for "combining changes" with no idea of two separate lines of work, for "bringing in the
-  instructor's updates" that says nothing about the student's own work being kept, and for the
-  W3Schools line "combine changes from different branches" given back as it stands. No credit for
+  No penalty if they don't mention explicitly that both lines of work are kept, with neither replaced.
+No credit for
   "pulling" or "updating", which name the occasion rather than the thing, or for any answer in which
   one side's work replaces the other's.
 
-### q-merge-vs-rebase
 
-- **type:** free
-- **goal:** w-merge
-- **move:** DISTINGUISH
-- **answer:** both end with your changes and the instructor's together in the files. A merge keeps
-  both lines of commits as they happened and joins them with a new commit, so the history shows two
-  lines coming together. A rebase rewrites your commits so they are replayed on top of the
-  instructor's, and the history reads as one straight line, as if you had started after their
-  updates.
-- **credit:** full credit for the difference in what happens to the history: a merge keeps both
-  lines and joins them, a rebase rewrites (replays) your commits after the other work to make one
-  line. Half credit for "a merge makes an extra commit and a rebase doesn't" with nothing about a
-  rebase rewriting or replaying your commits. No credit for a difference that is wrong or incidental:
-  that only one of them keeps your changes (both do), that a rebase is how you fix a conflict, that a
-  merge is safe and a rebase breaks things, or that one is newer.
 
 ### q-merge-drops-mine
 
@@ -450,8 +381,8 @@ Answers for `tasks/words.md`. **Do not read this before attempting the questions
   Nothing is broken: the merge is paused, waiting for someone to decide what those lines should say,
   and it can finish once they do.
 - **credit:** full credit for saying a conflict is git deliberately stopping so someone can choose
-  between two changes to the same lines, and not something having failed or broken. Half credit for
-  "a conflict needs someone to decide" without saying it is not a failure, or for "nothing is
+  between two changes to the same lines, and not something having failed or broken. Full credit for
+  "a conflict needs someone to decide" without saying it is not a failure. Half credit for "nothing is
   broken" without saying why git stopped. No credit for "a conflict is a kind of error that happens
   when two people edit a file", or for incidental differences such as the wording or colour of the
   message.
@@ -476,27 +407,13 @@ Answers for `tasks/words.md`. **Do not read this before attempting the questions
 - **move:** CATCH
 - **answer:** git does not choose between two changes to the same lines, by date or in any other way.
   That is exactly where it stops: a merge conflict is the place git refuses to choose, and someone
-  has to decide.
+  has to decide, either a person or their agent.
 - **credit:** full credit for saying git does not pick a side but stops and leaves the choice to a
   person (or to the agent, with the person). An answer saying git cannot tell which is newer counts
   only if it also says git stops instead of choosing. Do not accept a different quibble as the error:
   that the instructor's change should win, that conflicts are rare, or that "newer" is hard to
   define.
 
-### q-conflict-report
-
-- **type:** free
-- **goal:** w-merge-conflict
-- **move:** INTERPRET
-- **answer:** both sides changed the same lines in task1.py, and git stopped rather than choose
-  between them; the merge is waiting for a decision about those lines. That rules out anything having
-  failed or broken, rules out git having already picked a version, and rules out anything else (other
-  files, or the rest of task1.py) needing a decision.
-- **credit:** full credit for recovering the claim (git stopped because both sides changed the same
-  lines of task1.py, and it needs a decision) and at least one thing it rules out (nothing else needs
-  deciding, git has not chosen, nothing has failed). Half credit for the claim alone. No credit for
-  reading it as the pull having failed, the instructor's updates being lost, or the repository being
-  damaged.
 
 ### q-what-makes-conflict
 

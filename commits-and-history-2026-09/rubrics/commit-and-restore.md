@@ -16,11 +16,10 @@ Answers for `tasks/commit-and-restore.md`. **Do not read this before attempting 
 - **credit:** full credit needs both: (a) the commit identified unambiguously, and (b) all the files
   put back to their state at that commit, not one file and not "my changes". Half credit for one of
   the two, for example "go back to an earlier version" with no commit named, or the commit named but
-  only task1.py asked for. Half credit at most for "undo that commit" or "revert that commit": those
+  only task1.py asked for. Full credit for "revert to last Thursday's commit" or "restore last Thursday's commit."
+  Half credit at most for "undo that commit" or "revert that commit": those
   ask to take away the changes that commit made, which is a different request from going back to it
-  ("revert to that commit", in the ordinary sense of going back to it, is fine). A git command earns
-  nothing on its own: grade the words around it, and give no credit to an answer that is only a
-  command. Do not require the uncommitted check or the confirmation, and do not mark down informal
+  ("revert to that commit", in the ordinary sense of going back to it, is fine). A git command is also fine, but don't expect those. Do not require the uncommitted check or the confirmation, and do not mark down informal
   wording.
 
 ### q-ask-commit-open-edits
@@ -48,14 +47,11 @@ Answers for `tasks/commit-and-restore.md`. **Do not read this before attempting 
   same as going back to Thursday), and it mentions only task1.py, not every file, so the deleted file
   and any other changed file may not be back. To check, open the files that had changed or been
   deleted since Thursday, not only task1.py, and see whether their contents are what they were at
-  Thursday's commit.
-- **credit:** full credit needs both: (a) the reply does not establish the request was done, with at
+  Thursday's commit. Or ask the agent for more details.
+- **credit:** full credit needs that the reply does not establish the request was done, with at
   least one concrete reason (no commit named, "normal" is not Thursday's commit, or only task1.py is
-  mentioned when every file was asked for); and (b) opening the files themselves to look at their
-  contents, including at least one beyond task1.py or the file that had been deleted. Half credit for
-  (a) alone, for (a) with a check of task1.py only, or for (b) alone. No credit for accepting the
-  reply because it says "Done". Asking the agent a follow-up question is a fine addition, but it does
-  not replace opening a file, because the point is not to rest on the agent's report.
+  mentioned when every file was asked for). No credit for accepting the
+  reply because it says "Done".
 
 ### q-commit-reply-staged
 
@@ -79,34 +75,6 @@ Answers for `tasks/commit-and-restore.md`. **Do not read this before attempting 
   comes back too, because Tuesday's commit contains that file. 4 is in an earlier commit, which stays
   in the history and can still be restored.
 
-### q-new-file-no-commit
-
-- **type:** free
-- **goal:** c-commit-recovery-point
-- **answer:** no commit contains genres.py, so Tuesday's commit has no version of it to put back, and
-  if it is deleted or overwritten nothing in the history can bring it back. "Every file as it was at
-  Tuesday's commit" could mean leaving it where it is, as a file that commit does not have, or
-  removing it, and removing it would lose it for good. The agent's report should say which it did;
-  better still, before the restore, ask the agent to commit it, or say whether it should be kept.
-- **credit:** full credit needs both: (a) genres.py is in no commit, so it cannot be recovered from
-  the history (Tuesday's commit has no version of it); and (b) wanting the report to say explicitly
-  what happened to genres.py, or arranging before the restore for it to be committed or copied
-  somewhere safe. Half credit for either alone. No credit for "the restore will bring back Tuesday's
-  version of genres.py", since there is none. Do not require a claim about what happens to such a
-  file by default, which depends on how the agent carries out the restore; an answer that states one
-  outcome as certain does not lose credit for that if (a) and (b) are there.
-
-### q-one-commit-recovers
-
-- **type:** free
-- **goal:** c-commit-recovery-point
-- **answer:** every file in the repository as it was at that commit: the whole state, not just the
-  twelve green lines and not just task1.py. The green lines are a diff, computed by comparing this
-  commit with the one before; the commit itself holds all the files.
-- **credit:** full credit for all the files as they were at that commit (the whole project as it
-  stood). Half credit for "all of task1.py as it was at that commit", which has the whole file but
-  only that file. No credit for "only the twelve lines", "only the changes in that commit", or "only
-  task1.py's new lines". Do not require the explanation of the green lines.
 
 ### q-good-moment-commit
 
@@ -121,16 +89,3 @@ Answers for `tasks/commit-and-restore.md`. **Do not read this before attempting 
   with only a general one such as "commit often". No credit for "no", and no credit for a reason
   based on size ("it's enough work now", "wait until there's more"), since size is not the rule.
 
-### q-message-needs-and
-
-- **type:** free
-- **goal:** c-commit-recovery-point
-- **answer:** no, it should be two commits. The message needs the word "and" because it bundles two
-  separate things, the task 1 fix and the start of task 2, so going back to that commit brings both
-  and there is no commit holding the fix without the half-started task 2. Ask for two commits
-  instead: one with the task 1 fix in task1.py, and one with the genre counting in task2.py.
-- **credit:** full credit for saying it bundles two separate things (the "and" is the tell) and
-  asking for them to be committed separately. Half credit for "should be two commits" with no
-  reason, or for the reason with no alternative asked for. No credit for "yes", or for an answer
-  based on size ("too many lines", "too small") or on the message being too long, since neither is
-  the rule.
