@@ -315,6 +315,6 @@ Planning the app is your agent's job too, with you approving what it proposes.
 - **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
-- **what it names:** the link between the browser address bar (URL) and what is on screen
+- **what it names:** the link between the URL in the browser's address bar and what is on screen
 - **nearest confusable:** loading a new page
 - **synonyms:** client-side routing
