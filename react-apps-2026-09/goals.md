@@ -46,9 +46,13 @@
 
 ## Where this came from
 
+_Yours to fill in. Nobody can answer this one for you._
+
 <!-- Which of A / B / C / D, and the answer to the follow-up. -->
 
 ## What I already have
+
+_Yours to fill in. Say where your knowledge stops, not what you have heard of._
 
 <!--
   The nearest thing already known well, and where it stops.
@@ -58,6 +62,10 @@
 
 ## What I'll use it for
 
+_Yours to fill in. The course supplies two occasions: the in-class lab where your agent builds an
+app of your own design, and Problem Set 2, where it builds one with a backend. Name any others you
+have._
+
 <!--
   The use, and a concrete occasion.
   If several uses apply, rank them: the top one sets the depth, the rest are cut first
@@ -66,10 +74,16 @@
 
 ## Depth
 
-<!--
-  Which of: recognize it / read it / modify something existing / author from scratch /
-  judge someone else's work. One line on why that's enough.
--->
+**Recognize it, and tell your agent what you are seeing.** Not authoring, and not reading code
+either. You will not be asked to open a component file and find your way around it. Everything
+in this topic is judged from the running app in your browser and from what your agent says about
+it.
+
+What that buys is enough to stay useful when the app your agent built does not behave:
+recognizing these words when the agent uses them, knowing where to look when something breaks,
+and describing the problem precisely enough that it can be fixed. Writing or reading React code,
+deciding how an app is split into components, and debugging it by hand are all past that line.
+Planning the app is your agent's job too, with you approving what it proposes.
 
 ## Goals
 
@@ -169,6 +183,13 @@
   placeholder capability entry; an empty section is the honest signal.
 -->
 
+### `c-describe-app-bug`
+
+- **goal:** tell the agent what is going wrong in a running app
+- **criterion:** Given a problem in a running app, writes the request they would send the agent.
+  It passes when someone who never saw the problem could make it happen again from that request
+  alone, and could tell when it had been fixed.
+
 ### `o-orientation`
 
 - **goal:** get the shape of this area before working on any particular part of it
@@ -178,3 +199,121 @@
 - **recurrence:** never
 - **is_required:** no
 - **group:** orientation
+
+### `w-component`
+
+- **goal:** component
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the pieces a React screen is assembled from
+- **nearest confusable:** a file
+
+### `w-state`
+
+- **goal:** state
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** what the app is remembering at this moment
+- **nearest confusable:** data saved in a database
+
+### `w-render`
+
+- **goal:** render
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** what a component does to put itself on the screen
+- **nearest confusable:** reloading the page
+
+### `w-event-handler`
+
+- **goal:** event handler
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** what a click or a keystroke is connected to
+- **nearest confusable:** the event itself
+- **synonyms:** handler, event listener
+
+### `w-dev-server`
+
+- **goal:** dev server
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** what `npm run dev` leaves running while you work
+- **nearest confusable:** the backend
+- **synonyms:** development server
+
+### `w-jsx`
+
+- **goal:** JSX
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the HTML-looking parts of a component
+- **nearest confusable:** HTML
+- **synonyms:** TSX
+
+### `w-dependency`
+
+- **goal:** dependency
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** what `npm install` fetches for a project
+- **nearest confusable:** a program installed on your computer
+- **synonyms:** package
+
+### `w-single-page-app`
+
+- **goal:** single-page app
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a site that never loads a second page
+- **nearest confusable:** an app with only one screen
+- **synonyms:** SPA
+
+### `w-build`
+
+- **goal:** build
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** what the project becomes when it is ready to leave your laptop
+- **nearest confusable:** dev server
+- **synonyms:** production build
+
+### `w-hot-reload`
+
+- **goal:** hot reload
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the page changing by itself when a file is saved
+- **nearest confusable:** refreshing the page
+- **synonyms:** hot module replacement, HMR
+
+### `w-browser-console`
+
+- **goal:** browser console
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** where the page reports what went wrong, out of the user's sight
+- **nearest confusable:** the terminal
+- **synonyms:** JavaScript console, DevTools console
