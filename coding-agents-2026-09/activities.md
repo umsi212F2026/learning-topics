@@ -820,6 +820,11 @@ with the learner.
   guide, https://developers.openai.com/api/docs/guides/prompt-caching. And OpenAI's API pricing page,
   https://developers.openai.com/api/docs/pricing, used only for the flaw that sets OpenAI's list
   against U-M's page.
+- **verified:** 2026-09-17 for OpenAI's "Prompt caching" guide, OpenAI's API pricing rows for the four
+  models, and the Codex log facts behind the flaw list, against the openai/codex source. U-M's pricing
+  page 2026-09-17, read in a browser by the instructor: one table of prompt and completion rates per
+  1M tokens, no cached-input rate, gpt-5.6-sol at $5.00 / $30.00, and gpt-5.6-terra, gpt-5.6-luna and
+  gpt-5-mini at the same rates as OpenAI's list.
 - **learner does:** reads three replies an agent might give when asked what a finished chat cost,
   each with a short description of the chat beside it. For each reply, writes: what the figure is
   based on, as far as the reply says (which model's prices, which counts); anything wrong with that
