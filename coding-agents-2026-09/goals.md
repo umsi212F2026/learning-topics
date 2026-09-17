@@ -190,7 +190,7 @@ an agent beyond choosing its model, and nothing about how a model works inside.
 - **goal:** tell when to split work off into a new chat or a subagent, and when to keep going
 - **criterion:** given a few short situations partway through work with an agent, some where
   splitting helps and some where it would lose something the next step needs, says which is
-  which. For each split, names the reason that applies (independence, a fresh start, or saving
+  which. When arguing for a split, names the reason that applies (independence/fresh start vs. saving
   tokens) and ties it to something in the situation. Naming a reason without that tie does not
   meet it.
 
@@ -200,13 +200,3 @@ an agent beyond choosing its model, and nothing about how a model works inside.
 - **criterion:** Can ask the agent to estimate what a chat cost, or what a planned piece of work
   would cost. Can say what the figure it gives back is based on: which model's prices, and
   which token counts.
-
-### `o-orientation`
-
-- **goal:** get the shape of this area before working on any particular part of it
-- **criterion:** orientation
-- **adjudicator:** tutor
-- **bar:** did it once
-- **recurrence:** never
-- **is_required:** no
-- **group:** orientation
