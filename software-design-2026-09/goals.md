@@ -80,8 +80,10 @@ asks you questions, puts choices in front of you, and waits for your approval mo
 topic is enough to do each of those on purpose, rather than saying yes to whatever comes next.
 
 What sits past that line: how the app is organized inside, which technologies it uses, and whether
-the plan's steps will actually work are all the agent's to decide. Checking the finished app
-against what you agreed is a later topic.
+the plan's steps will actually work are all the agent's to work out. When the agent offers you
+approaches that differ in those things, choosing between them is still yours, by what each would
+mean for the app rather than by the technology itself. Checking the finished app against what you
+agreed is a later topic.
 
 ## Goals
 
@@ -184,15 +186,18 @@ against what you agreed is a later topic.
 ### `c-write-success-criteria`
 
 - **goal:** say what done looks like for an app, in a form anyone could check
-- **criterion:** For an app idea, their own or one they are given, writes the success criteria
-  they would want in its spec. It passes when someone who never heard the idea could use the
-  finished app and say of each criterion whether it was met, and when an app that runs but misses
-  the point of the idea would fail at least one of them.
+- **criterion:** For an app idea, their own or one they are given, first says in a sentence or two
+  what the app is for, in their own words, then writes the success criteria they would want in
+  its spec. It passes when someone who never heard the idea could use the finished app and say of
+  each criterion whether it was met, and when an app that runs but misses what they said it is
+  for would fail at least one of them. A list of the app's features does not count as saying what
+  it is for.
 
 ### `c-choose-approach`
 
 - **goal:** choose between approaches an agent proposes, for a reason that belongs to this app
-- **criterion:** Given two or three approaches to the same app, each with its tradeoffs, picks
+- **criterion:** Given two or three approaches to the same app, each with its tradeoffs, and a
+  description of the app's situation that includes facts with no bearing on the choice, picks
   one, says what that choice gives up, and gives a reason that comes from something in the app's
   situation as described. A reason that would hold for any app, including that the agent
   recommended it, does not meet it.
