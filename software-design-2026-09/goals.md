@@ -74,16 +74,18 @@ app with a backend. Name any others you have._
 
 ## Depth
 
-**Judge what your agent proposes, and answer what it asks.** Not writing a spec or a plan
-yourself, and not reading the code a plan is full of. Before an agent builds an app with you, it
-asks you questions, puts choices in front of you, and waits for your approval more than once. This
-topic is enough to do each of those on purpose, rather than saying yes to whatever comes next.
+**Answer what your agent asks, and choose among the approaches it offers.** Not writing a spec or
+a plan yourself, and not reading the code a plan is full of. Before an agent builds an app with
+you, it asks what the app is for and what would count as done, and it puts approaches in front of
+you to choose between. This topic is enough to do both on purpose, rather than going along with
+whatever it suggests.
 
 What sits past that line: how the app is organized inside, which technologies it uses, and whether
 the plan's steps will actually work are all the agent's to work out. When the agent offers you
 approaches that differ in those things, choosing between them is still yours, by what each would
-mean for the app rather than by the technology itself. Checking the finished app against what you
-agreed is a later topic.
+mean for the app rather than by the technology itself. Checking that the spec the agent writes
+still says what you agreed is not part of this topic, and checking the finished app against it is
+a later one.
 
 ## Goals
 
@@ -189,9 +191,10 @@ agreed is a later topic.
 - **criterion:** For an app idea, their own or one they are given, first says in a sentence or two
   what the app is for, in their own words, then writes the success criteria they would want in
   its spec. It passes when someone who never heard the idea could use the finished app and say of
-  each criterion whether it was met, and when an app that runs but misses what they said it is
-  for would fail at least one of them. A list of the app's features does not count as saying what
-  it is for.
+  each criterion whether it was met, and when an app that misses what they said it is for would
+  fail at least one of them, counting only apps an honest builder, working from their sentence
+  and their criteria alone, might plausibly ship. A list of the app's features does not count as
+  saying what it is for.
 
 ### `c-choose-approach`
 
@@ -199,8 +202,8 @@ agreed is a later topic.
 - **criterion:** Given two or three approaches to the same app, each with its tradeoffs, and a
   description of the app's situation that includes facts with no bearing on the choice, picks
   one, says what that choice gives up, and gives a reason that comes from something in the app's
-  situation as described. A reason that would hold for any app, including that the agent
-  recommended it, does not meet it.
+  situation, as described, that bears on the choice. A reason that would hold for any app,
+  including that the agent recommended it, does not meet it.
 
 ### `w-spec`
 

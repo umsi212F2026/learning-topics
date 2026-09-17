@@ -5,26 +5,17 @@ with the learner.
 
 ## Check notes
 
-2026-09-17. Meeting both goals does not cover everything the Depth section of `goals.md` promises.
-It says the agent waits for the learner's approval more than once, and neither criterion examines
-an approval: noticing that a design section or the spec has reworded or dropped the learner's
-criteria, or that the approaches on offer differ only in technology or leave out the recommended
-one's costs. Only `a-critique-agent-excerpt` works on those moments, and it checks nothing. Neither
-check shows, either, that the learner knows which facts about their own app to tell the agent in
-the first place. A learner who has met both goals has been shown ready to answer and to choose, not
-to approve.
-
-`goals.md` carries no orientation entry, although its guidance ships one in every topic unless What
-I already have says the learner has seen the area laid out, and that section is blank. The two
-orienting reads, `a-read-brainstorming-skill` and `a-read-spec-kit-post`, still end on the
-orientation question, so the learner's answer to it is recorded against no goal.
+2026-09-17. `goals.md` carries no orientation entry, although its guidance ships one in every
+topic unless What I already have says the learner has seen the area laid out, and that section is
+blank. The two orienting reads, `a-read-brainstorming-skill` and `a-read-spec-kit-post`, still end
+on the orientation question, so the learner's answer to it is recorded against no goal.
 
 ## Goals
 
 | id | Goal | Criterion: what gets examined, and what counts |
 | -- | ---- | ---------------------------------------------- |
-| `c-write-success-criteria` | say what done looks like for an app, in a form anyone could check | For an app idea, their own or one they are given, first says in a sentence or two what the app is for, in their own words, then writes the success criteria they would want in its spec. It passes when someone who never heard the idea could use the finished app and say of each criterion whether it was met, and when an app that runs but misses what they said it is for would fail at least one of them. A list of the app's features does not count as saying what it is for. |
-| `c-choose-approach` | choose between approaches an agent proposes, for a reason that belongs to this app | Given two or three approaches to the same app, each with its tradeoffs, and a description of the app's situation that includes facts with no bearing on the choice, picks one, says what that choice gives up, and gives a reason that comes from something in the app's situation as described. A reason that would hold for any app, including that the agent recommended it, does not meet it. |
+| `c-write-success-criteria` | say what done looks like for an app, in a form anyone could check | For an app idea, their own or one they are given, first says in a sentence or two what the app is for, in their own words, then writes the success criteria they would want in its spec. It passes when someone who never heard the idea could use the finished app and say of each criterion whether it was met, and when an app that misses what they said it is for would fail at least one of them, counting only apps an honest builder, working from their sentence and their criteria alone, might plausibly ship. A list of the app's features does not count as saying what it is for. |
+| `c-choose-approach` | choose between approaches an agent proposes, for a reason that belongs to this app | Given two or three approaches to the same app, each with its tradeoffs, and a description of the app's situation that includes facts with no bearing on the choice, picks one, says what that choice gives up, and gives a reason that comes from something in the app's situation, as described, that bears on the choice. A reason that would hold for any app, including that the agent recommended it, does not meet it. |
 
 ## Coverage
 
