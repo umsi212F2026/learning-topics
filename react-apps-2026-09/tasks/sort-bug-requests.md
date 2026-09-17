@@ -70,10 +70,14 @@ could not have seen.
 
 > The whole page goes white after Clear done. At http://localhost:5173, tick the Done box on "Buy
 > milk", then click Clear done. The page goes completely white: no heading, no list, no message.
-> The browser console shows this in red, copied as it appeared:
+> The browser console shows this, copied as it appeared:
 >
->     Uncaught TypeError: Cannot read properties of undefined (reading 'filter')
->         at clearDone (App.jsx:31:22)
+>     Uncaught TypeError: Cannot read properties of undefined (reading 'map')
+>         at TaskList (TaskList.jsx:12:18)
+>     An error occurred in the <TaskList> component.
+>
+>     Consider adding an error boundary to your tree to customize error handling behavior.
+>     Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
 >
 > Reloading brings the app back. I expected "Buy milk" to disappear and the other two tasks to
 > stay. It's fixed when those two steps leave "Walk dog" and "Call Sam" on screen and nothing red
@@ -91,7 +95,7 @@ could not have seen.
 ### r8
 
 > The app crashes to a white screen when I click one of the buttons. The console had a red error
-> saying something about "filter" being undefined. It's fixed when it doesn't go white.
+> saying something about "map" being undefined. It's fixed when it doesn't go white.
 
 ---
 

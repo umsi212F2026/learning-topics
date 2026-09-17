@@ -305,7 +305,6 @@ instance.
   through to but not when its address is pasted, a saved change that doesn't appear, a white page
   whose only explanation is in the console, and a problem visible on one screen. 20 to 25 minutes.
   No app or browser needed.
-- **verified:** 2026-09-17
 - **learner does:** reads the app description, then answers the file's two questions for each of
   the eight requests: could someone who never saw the problem make it happen and tell when it's
   fixed from this alone (and if not, the one thing that stops them), and is any guess kept apart and
@@ -330,11 +329,6 @@ instance.
   the problems this topic's words explain (a reload, a pasted address, a change that doesn't show,
   a white page with the reason only in the console). Pick `a-read-tatham-bug-reports` if you'd
   rather have the reasons first.
-- **check note:** `r6` and `r8` pair a white page with an error thrown in the Clear done click
-  handler. In a real React app such an error on its own leaves the page as it was; a white page
-  comes from an error while the page is being drawn, and its console output carries extra lines
-  from React. No verdict in the key depends on this, so keep the discussion on what each request
-  gives a stranger, and don't present `r6`'s console text as what a white page's console will show.
 
 ### `a-narrated-planted-bug`
 
