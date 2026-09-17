@@ -282,7 +282,7 @@ Planning the app is your agent's job too, with you approving what it proposes.
 - **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
-- **what it names:** what the project becomes when it is ready to leave your laptop
+- **what it names:** what the project becomes when it is ready to leave your laptop; as a verb, the process creating it
 - **nearest confusable:** dev server
 - **synonyms:** production build
 
