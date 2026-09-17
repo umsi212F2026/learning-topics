@@ -196,13 +196,3 @@ against what you agreed is a later topic.
   one, says what that choice gives up, and gives a reason that comes from something in the app's
   situation as described. A reason that would hold for any app, including that the agent
   recommended it, does not meet it.
-
-### `o-orientation`
-
-- **goal:** get the shape of this area before working on any particular part of it
-- **criterion:** orientation
-- **adjudicator:** tutor
-- **bar:** did it once
-- **recurrence:** never
-- **is_required:** no
-- **group:** orientation
