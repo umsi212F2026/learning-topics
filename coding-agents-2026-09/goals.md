@@ -46,9 +46,13 @@
 
 ## Where this came from
 
+_Yours to fill in. The course seeded this topic, so only you can say how it reached you._
+
 <!-- Which of A / B / C / D, and the answer to the follow-up. -->
 
 ## What I already have
+
+_Yours to fill in. Say where your knowledge stops, not what you have heard of._
 
 <!--
   The nearest thing already known well, and where it stops.
@@ -58,6 +62,10 @@
 
 ## What I'll use it for
 
+_Yours to fill in. The course supplies two occasions: you say what your app cost when you demo
+it in session 8, and you build PS2 on the same $50 a month as everything else this term. Name
+any others you have._
+
 <!--
   The use, and a concrete occasion.
   If several uses apply, rank them: the top one sets the depth, the rest are cut first
@@ -66,10 +74,10 @@
 
 ## Depth
 
-<!--
-  Which of: recognize it / read it / modify something existing / author from scratch /
-  judge someone else's work. One line on why that's enough.
--->
+**Judge a situation with a few rules of thumb, and ask the agent for the numbers.** Enough to
+decide, partway through real work, whether a better model is worth trying and whether to split
+work off, and to get a cost estimate you can trust. Not estimating costs by hand, not setting up
+an agent beyond choosing its model, and nothing about how a model works inside.
 
 ## Goals
 
@@ -168,6 +176,30 @@
   orientation entry are in their own groups and don't count towards it. So never write a
   placeholder capability entry; an empty section is the honest signal.
 -->
+
+### `c-choose-model`
+
+- **goal:** tell when a better model might be worth trying, and when it is overkill
+- **criterion:** given a few short situations from work with an agent, some where a better
+  model is worth trying and some where it would be overkill, says which is which and gives a
+  reason for each that comes from the situation described. A general preference for cheaper,
+  or for better, does not meet it.
+
+### `c-split-chats`
+
+- **goal:** tell when to split work off into a new chat or a subagent, and when to keep going
+- **criterion:** given a few short situations partway through work with an agent, some where
+  splitting helps and some where it would lose something the next step needs, says which is
+  which. For each split, names the reason that applies (independence, a fresh start, or saving
+  tokens) and ties it to something in the situation. Naming a reason without that tie does not
+  meet it.
+
+### `c-ask-cost-estimate`
+
+- **goal:** ask an agent what a piece of agent work cost
+- **criterion:** Can ask the agent to estimate what a chat cost, or what a planned piece of work
+  would cost. Can say what the figure it gives back is based on: which model's prices, and
+  which token counts.
 
 ### `o-orientation`
 
