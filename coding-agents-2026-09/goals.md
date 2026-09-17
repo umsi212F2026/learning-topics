@@ -197,6 +197,6 @@ an agent beyond choosing its model, and nothing about how a model works inside.
 ### `c-ask-cost-estimate`
 
 - **goal:** ask an agent what a piece of agent work cost
-- **criterion:** Can ask the agent to estimate what a chat cost, or what a planned piece of work
-  would cost. Can say what the figure it gives back is based on: which model's prices, and
+- **criterion:** Can ask the agent to estimate what a run that has already happened cost, such
+  as one chat. Can say what the figure it gives back is based on: which model's prices, and
   which token counts.
