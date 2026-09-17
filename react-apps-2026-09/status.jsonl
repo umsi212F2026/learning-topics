@@ -6,9 +6,9 @@
 {"at":"2026-09-17T11:10:12.547Z","kind":"goal-added","goal":"w-event-handler","needs":"curation"}
 {"at":"2026-09-17T11:10:12.586Z","kind":"goal-added","goal":"w-dev-server","needs":"curation"}
 {"at":"2026-09-17T11:10:12.663Z","kind":"goal-added","goal":"w-dependency","needs":"curation"}
-{"at":"2026-09-17T11:10:12.701Z","kind":"goal-added","goal":"w-single-page-app","needs":"curation"}
 {"at":"2026-09-17T11:10:12.742Z","kind":"goal-added","goal":"w-build","needs":"curation"}
 {"at":"2026-09-17T11:10:12.777Z","kind":"goal-added","goal":"w-hot-reload","needs":"curation"}
 {"at":"2026-09-17T11:10:12.812Z","kind":"goal-added","goal":"w-browser-console","needs":"curation"}
 {"at":"2026-09-17T11:11:01.803Z","kind":"goal-added","goal":"c-describe-app-bug","needs":"curation"}
 {"at":"2026-09-17T11:23:14.222Z","kind":"goal-added","goal":"w-hard-reload","needs":"curation"}
+{"at":"2026-09-17T11:29:05.747Z","kind":"goal-added","goal":"w-routing","needs":"curation"}

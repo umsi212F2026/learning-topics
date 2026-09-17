@@ -264,17 +264,6 @@ Planning the app is your agent's job too, with you approving what it proposes.
 - **nearest confusable:** a program installed on your computer
 - **synonyms:** package
 
-### `w-single-page-app`
-
-- **goal:** single-page app
-- **criterion:** vocabulary
-- **supply:** vocabulary
-- **bar:** one production pass
-- **group:** vocabulary
-- **what it names:** a site that never loads a second page
-- **nearest confusable:** an app with only one screen
-- **synonyms:** SPA
-
 ### `w-build`
 
 - **goal:** build
@@ -318,3 +307,14 @@ Planning the app is your agent's job too, with you approving what it proposes.
 - **what it names:** a reload that doesn't trust what the browser kept from last time
 - **nearest confusable:** refreshing the page
 - **synonyms:** hard refresh, force reload
+
+### `w-routing`
+
+- **goal:** routing
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the link between the address bar and what is on screen
+- **nearest confusable:** loading a new page
+- **synonyms:** client-side routing
