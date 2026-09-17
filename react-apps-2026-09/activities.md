@@ -5,18 +5,28 @@ with the learner.
 
 ## Check notes
 
-<!--
-  Authored by curation/critique and placed by the orchestrator. Rewritten wholesale each pass,
-  so don't edit it — it will be replaced.
+2026-09-17. Settle three things before offering anything, because they decide what can count:
+whether the learner's Vite + React starter project is on their laptop and runs, whether this
+session can run hidden subagents (or the learner can open a separate session for setup), and
+whether you have a headless browser. Until the learner's own app exists, each capability's only
+check runs on that starter. `a-describe-planted-bug` needs the hidden setup or every attempt is
+`unaided: no`, and a headless browser is what tests its reproduction clause; without one,
+`a-run-tutor-agent-check` is limited to checks whose output is fixed by construction.
 
-  Dated, and short. What the tutor should know about this file as a whole before using it:
-  the menu skews toward reading, two capabilities are thinner than they look, the depth
-  runs heavier than goals.md asks for. Only things that survived the revision round —
-  anything that got fixed doesn't belong here.
+**On `c-describe-app-bug`.** Both checks test the "could make it happen again" part directly only
+when a headless browser follows the request. Without one, `a-describe-planted-bug` is ruled by a
+judge who already holds the true steps and `a-describe-own-app-bug` leaves that part unexamined; in
+either, you can give a fresh subagent only the request, have it write out what it would do from a
+freshly opened page and every place it would have to guess, and send that to the adjudicator as
+well. The guess clause is examined only when a guess or a theory is in play, so make the learner's
+first counting planted instance one whose complaint carries a theory.
 
-  Empty is a legitimate and good outcome. Say "nothing at file level" rather than inventing
-  an observation.
--->
+**On `c-run-browser-check`.** Either check can meet this goal without the learner ever choosing
+the app's tab unprompted or turning down a request aimed outside their app: a Medium
+`a-run-tutor-agent-check` instance names the app in the request, and a real agent seldom asks for
+anything elsewhere. To have that part of the criterion examined before the goal is met, make the
+learner's first counting `a-run-tutor-agent-check` attempt a Hard `unnamed-tab` or `elsewhere`
+instance.
 
 ## Goals
 
@@ -38,8 +48,8 @@ with the learner.
 | goal | study | checks | notes |
 | ---- | ----- | ------ | ----- |
 | `o-orientation` | `a-tour-starter-app-words`, `a-read-why-frameworks-exist` | `a-dry-run-both-asks` | |
-| `c-describe-app-bug` | `a-read-tatham-bug-reports`, `a-sort-bug-requests`, `a-narrated-planted-bug` | `a-describe-planted-bug`, `a-describe-own-app-bug` | |
-| `c-run-browser-check` | `a-read-devtools-on-starter`, `a-judge-check-reports` | `a-run-tutor-agent-check`, `a-report-own-agent-check` | |
+| `c-describe-app-bug` | `a-read-tatham-bug-reports`, `a-sort-bug-requests`, `a-narrated-planted-bug` | `a-describe-planted-bug`, `a-describe-own-app-bug` | see Check notes |
+| `c-run-browser-check` | `a-read-devtools-on-starter`, `a-judge-check-reports` | `a-run-tutor-agent-check`, `a-report-own-agent-check` | see Check notes |
 
 ---
 
@@ -233,6 +243,9 @@ with the learner.
 - **offer as:** the short step that closes orientation, after either `a-tour-starter-app-words` or
   `a-read-why-frameworks-exist`. Not an alternative to them: they give you the shape, and this is
   where you say whether you have it. Ten minutes, on the app you already have.
+- **check note:** `done when` covers only a yes with a hedge and a no to both halves. A plain no to
+  either half is `criterion: not met`, handled like the no to both but offering study on the half
+  they said no to; a hedge on both halves is `criterion: unclear`, handled like a single hedge.
 
 ### `a-read-tatham-bug-reports`
 
@@ -317,6 +330,11 @@ with the learner.
   the problems this topic's words explain (a reload, a pasted address, a change that doesn't show,
   a white page with the reason only in the console). Pick `a-read-tatham-bug-reports` if you'd
   rather have the reasons first.
+- **check note:** `r6` and `r8` pair a white page with an error thrown in the Clear done click
+  handler. In a real React app such an error on its own leaves the page as it was; a white page
+  comes from an error while the page is being drawn, and its console output carries extra lines
+  from React. No verdict in the key depends on this, so keep the discussion on what each request
+  gives a stranger, and don't present `r6`'s console text as what a white page's console will show.
 
 ### `a-narrated-planted-bug`
 
@@ -356,6 +374,11 @@ with the learner.
   left in. The only candidate that shows the weighing a finished request hides, and the only study
   route where you use a running app before being checked on one. Needs a live session and a
   scratch copy of your starter project. Pick `a-sort-bug-requests` for a faster route with no app.
+- **check note:** The learner finds the steps and you narrate only the writing, and the entry says
+  nothing about a learner who can't make the problem happen, which is likely with `pasted-address`.
+  Nothing is checked here, so think out loud about what to try next from the complaint (what does
+  someone who is sent a link do with it?), since that weighing is also hidden in a finished request;
+  if it still stalls, read `ground-truth.md` yourself and steer from it without showing it.
 
 ### `a-describe-planted-bug`
 
@@ -479,6 +502,10 @@ with the learner.
   that fails, a change that never shows up, a white page) actually come up. Available now, before
   your own app exists. Needs a live session and 20 to 25 minutes. `a-describe-own-app-bug` is the
   same capability on a real problem in your own app.
+- **check note:** Tell the setup subagent to reply with nothing but the path to `for-learner.md` and
+  whether setup succeeded. Anything else it says about the plant lands in your context before the
+  attempt and in the scrollback the learner can open, which is the leak this setup exists to
+  prevent.
 
 ### `a-describe-own-app-bug`
 
@@ -716,6 +743,14 @@ with the learner.
   exactly what a complete report should hold, so what you missed comes back specific. Available now,
   before your own app exists; 15 minutes and a live session. `a-report-own-agent-check` is the same
   thing when your real agent asks during real work.
+- **check note:** In any instance with the MDN tab open, choose a check whose correct report could
+  not also have come from the MDN page: a button count qualifies (the starter has one button, the
+  MDN page many), but whether a heading exists, or a snippet that throws the same error on any page,
+  does not, and with those a reply run in the wrong tab reads as a pass. Have the learner open the
+  MDN tab early in the session rather than just before the request, so the setup doesn't announce
+  what is being tested. Before the request, tell the learner only that you are playing their agent
+  and where a screenshot goes; the reporting rules in `learner does`, read out just beforehand,
+  would make the attempt a checklist and give an `elsewhere` instance away.
 
 ### `a-report-own-agent-check`
 
