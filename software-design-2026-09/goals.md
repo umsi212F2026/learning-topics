@@ -181,14 +181,6 @@ against what you agreed is a later topic.
   placeholder capability entry; an empty section is the honest signal.
 -->
 
-### `c-split-big-idea`
-
-- **goal:** tell when an app idea is too big to design in one go, and choose a first piece of it
-- **criterion:** Given a few short app ideas, some small enough to design in one go and some not,
-  says which is which. For each one that is too big, names a first piece that someone could use
-  on its own, and says what waits for later. A first piece that is only useful once a later one
-  is built does not meet it.
-
 ### `c-write-success-criteria`
 
 - **goal:** say what done looks like for an app, in a form anyone could check
