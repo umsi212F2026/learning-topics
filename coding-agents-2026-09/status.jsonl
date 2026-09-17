@@ -1,1 +1,14 @@
 {"at":"2026-09-17T10:37:49.179Z","kind":"created"}
+{"at":"2026-09-17T11:22:16.284Z","kind":"goal-added","goal":"w-token","needs":"curation"}
+{"at":"2026-09-17T11:22:19.851Z","kind":"goal-added","goal":"w-input-tokens","needs":"curation"}
+{"at":"2026-09-17T11:22:23.207Z","kind":"goal-added","goal":"w-output-tokens","needs":"curation"}
+{"at":"2026-09-17T11:22:26.825Z","kind":"goal-added","goal":"w-prompt-caching","needs":"curation"}
+{"at":"2026-09-17T11:22:30.062Z","kind":"goal-added","goal":"w-model","needs":"curation"}
+{"at":"2026-09-17T11:22:34.517Z","kind":"goal-added","goal":"w-reasoning-effort","needs":"curation"}
+{"at":"2026-09-17T11:22:38.181Z","kind":"goal-added","goal":"w-context","needs":"curation"}
+{"at":"2026-09-17T11:22:41.565Z","kind":"goal-added","goal":"w-context-window","needs":"curation"}
+{"at":"2026-09-17T11:22:45.060Z","kind":"goal-added","goal":"w-compaction","needs":"curation"}
+{"at":"2026-09-17T11:22:48.395Z","kind":"goal-added","goal":"w-system-prompt","needs":"curation"}
+{"at":"2026-09-17T11:23:34.156Z","kind":"goal-added","goal":"c-choose-model","needs":"curation"}
+{"at":"2026-09-17T11:23:37.296Z","kind":"goal-added","goal":"c-split-chats","needs":"curation"}
+{"at":"2026-09-17T11:23:41.135Z","kind":"goal-added","goal":"c-ask-cost-estimate","needs":"curation"}

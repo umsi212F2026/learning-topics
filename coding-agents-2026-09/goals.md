@@ -200,3 +200,113 @@ an agent beyond choosing its model, and nothing about how a model works inside.
 - **criterion:** Can ask the agent to estimate what a run that has already happened cost, such
   as one chat. Can say what the figure it gives back is based on: which model's prices, and
   which token counts.
+
+### `w-token`
+
+- **goal:** token
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the unit text is counted and billed in
+- **nearest confusable:** word
+
+### `w-input-tokens`
+
+- **goal:** input tokens
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the part of a turn's bill for what the model was sent
+- **nearest confusable:** output tokens
+- **synonyms:** prompt tokens
+
+### `w-output-tokens`
+
+- **goal:** output tokens
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the part of a turn's bill for what the model wrote
+- **nearest confusable:** input tokens
+- **synonyms:** completion tokens
+
+### `w-prompt-caching`
+
+- **goal:** prompt caching
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** why input sent again can cost less than new input
+- **nearest confusable:** memory
+- **synonyms:** context caching
+
+### `w-model`
+
+- **goal:** model
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** what the price table is priced by, as distinct from the program you talk to
+- **nearest confusable:** agent
+- **synonyms:** LLM
+
+### `w-reasoning-effort`
+
+- **goal:** reasoning effort
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the dial set separately from which model you picked
+- **nearest confusable:** model
+- **synonyms:** thinking level
+
+### `w-context`
+
+- **goal:** context
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** what the model has in front of it on a turn, which is more than what you
+  typed
+- **nearest confusable:** memory
+- **watch for:** thinks the model remembers earlier chats
+
+### `w-context-window`
+
+- **goal:** context window
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the ceiling on how much context fits
+- **nearest confusable:** context
+- **synonyms:** context length, context limit
+
+### `w-compaction`
+
+- **goal:** compaction
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** what happens to a chat that nears its ceiling
+- **nearest confusable:** starting a new chat
+- **synonyms:** auto-compact
+
+### `w-system-prompt`
+
+- **goal:** system prompt
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the instructions sent ahead of anything you type
+- **nearest confusable:** your first message, AGENTS.md
+- **synonyms:** system message, developer instructions
