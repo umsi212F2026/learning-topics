@@ -148,8 +148,14 @@ with the learner.
   long it has to last), and three or four success criteria that someone who never heard the idea
   could settle by using the finished app. Then come two messages from the agent, in the voice of a
   coding agent following the brainstorming skill: first two or three approaches with trade-offs,
-  one of them recommended; then the design section that restates what the app is for and its
-  success criteria. Plants two to four flaws, at least one in each message, drawn from this list
+  one of them recommended; then a design section of the tutor's own making that restates what the
+  app is for and its success criteria, presented for approval the way the skill presents each
+  section. The skill itself calls for no such section: its design sections cover architecture,
+  components, data flow, error handling and testing, which at this topic's depth are the agent's
+  business. The restated purpose and criteria stand in for the written spec the learner is asked to
+  review before any plan is written (steps 6 to 8), the nearest point in their own session where
+  the agent's version of what they asked for comes back to them for approval, and the tutor tells
+  the learner so when showing that message. Plants two to four flaws, at least one in each message, drawn from this list
   and varied across instances: the approaches are named and argued only as technologies ("a
   real-time database: live sync, flexible schema"), with nothing on what each would mean for the
   people using the app; two of the approaches differ only in technology and would give the same
