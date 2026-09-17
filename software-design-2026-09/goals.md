@@ -196,3 +196,118 @@ against what you agreed is a later topic.
   one, says what that choice gives up, and gives a reason that comes from something in the app's
   situation as described. A reason that would hold for any app, including that the agent
   recommended it, does not meet it.
+
+### `w-spec`
+
+- **goal:** spec
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the document about what gets built
+- **nearest confusable:** plan
+- **synonyms:** specification, design doc
+
+### `w-plan`
+
+- **goal:** plan
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the document about how it gets built, one piece at a time
+- **nearest confusable:** spec
+- **synonyms:** implementation plan
+
+### `w-task`
+
+- **goal:** task
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** one numbered piece of a plan, checked before the next one starts
+- **nearest confusable:** step
+
+### `w-success-criteria`
+
+- **goal:** success criteria
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** what the spec says will count as done
+- **nearest confusable:** tests
+- **synonyms:** acceptance criteria
+
+### `w-constraint`
+
+- **goal:** constraint
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a limit the app has to fit inside, set from outside the design
+- **nearest confusable:** requirement
+
+### `w-scope`
+
+- **goal:** scope
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** where the edge of a piece of work is drawn
+
+### `w-mvp`
+
+- **goal:** MVP
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the first version of an app worth putting in front of anyone
+- **nearest confusable:** prototype
+- **synonyms:** minimum viable product
+
+### `w-yagni`
+
+- **goal:** YAGNI
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** why a feature nobody needs yet gets left out
+- **nearest confusable:** keep it simple
+- **synonyms:** you aren't gonna need it
+
+### `w-spike`
+
+- **goal:** spike
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a quick try whose result is an answer, not code to keep
+- **nearest confusable:** prototype
+
+### `w-architecture`
+
+- **goal:** architecture
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** how the big parts of an app fit together
+- **nearest confusable:** tech stack
+
+### `w-tech-stack`
+
+- **goal:** tech stack
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the technologies an app is built from
+- **nearest confusable:** architecture
+- **synonyms:** stack
