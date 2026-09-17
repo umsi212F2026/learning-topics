@@ -92,10 +92,11 @@ with the learner.
   here doesn't match one there, this file is the one that's wrong.
 -->
 
-| id                      | Goal | Criterion — what gets examined, and what counts |
-| ----------------------- | ---- | ----------------------------------------------- |
-| `o-orientation`         |      | `orientation`                                   |
-| `c-read-unseen-diagram` |      |                                                 |
+| id | Goal | Criterion — what gets examined, and what counts |
+| -- | ---- | ----------------------------------------------- |
+| `o-orientation` | get the shape of this area before working on any particular part of it | `orientation` |
+| `c-describe-app-bug` | tell the agent what is going wrong in a running app | Given a problem in a running app, writes the request they would send the agent. It passes when someone who never saw the problem could make it happen again from that request alone, and could tell when it had been fixed. Any guess at the cause is labeled as a guess, separate from what they saw. |
+| `c-run-browser-check` | carry out a check in the browser that the agent asks for, and bring back what it showed | Given the agent's request to inspect the running app or run a snippet in the browser's developer tools, runs it only in their own app and reports back what it produced: copied text where it can be copied, a screenshot where it can't, complete and unedited, errors included. It passes when the agent could act on the result without asking again. |
 
 ## Coverage
 
@@ -135,10 +136,11 @@ with the learner.
   `n/a — already oriented` in `study` and leave it. That's a complete row too.
 -->
 
-| goal                    | study | checks | notes |
-| ----------------------- | ----- | ------ | ----- |
-| `o-orientation`         |       |        |       |
-| `c-read-unseen-diagram` |       |        |       |
+| goal | study | checks | notes |
+| ---- | ----- | ------ | ----- |
+| `o-orientation` | | | |
+| `c-describe-app-bug` | | | |
+| `c-run-browser-check` | | | |
 
 ---
 
@@ -267,13 +269,110 @@ with the learner.
                   curation/critique to test it.
 -->
 
-### `<activity-id>`
+### `a-w-component`
 
-- **serves:**
-- **supports:**
-- **artifact:**
-- **learner does:**
-- **tutor role:**
-- **tutor does:**
-- **done when:**
-- **offer as:**
+- **origin:** generated
+- **serves:** `w-component`
+- **checks:** `w-component`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-state`
+
+- **origin:** generated
+- **serves:** `w-state`
+- **checks:** `w-state`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-render`
+
+- **origin:** generated
+- **serves:** `w-render`
+- **checks:** `w-render`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-event-handler`
+
+- **origin:** generated
+- **serves:** `w-event-handler`
+- **checks:** `w-event-handler`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-dev-server`
+
+- **origin:** generated
+- **serves:** `w-dev-server`
+- **checks:** `w-dev-server`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-dependency`
+
+- **origin:** generated
+- **serves:** `w-dependency`
+- **checks:** `w-dependency`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-build`
+
+- **origin:** generated
+- **serves:** `w-build`
+- **checks:** `w-build`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-hot-reload`
+
+- **origin:** generated
+- **serves:** `w-hot-reload`
+- **checks:** `w-hot-reload`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-browser-console`
+
+- **origin:** generated
+- **serves:** `w-browser-console`
+- **checks:** `w-browser-console`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-hard-reload`
+
+- **origin:** generated
+- **serves:** `w-hard-reload`
+- **checks:** `w-hard-reload`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-routing`
+
+- **origin:** generated
+- **serves:** `w-routing`
+- **checks:** `w-routing`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-headless-browser`
+
+- **origin:** generated
+- **serves:** `w-headless-browser`
+- **checks:** `w-headless-browser`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
