@@ -177,11 +177,16 @@ an agent beyond choosing its model, and nothing about how a model works inside.
   placeholder capability entry; an empty section is the honest signal.
 -->
 
+<!--
+  No orientation goal, on purpose. The course removed it when seeding this topic: a general
+  reading about coding agents would distract more than orient.
+-->
+
 ### `c-choose-model`
 
-- **goal:** tell when a better model might be worth trying, and when it is overkill
+- **goal:** tell when a better model might be worth trying, and when it is not
 - **criterion:** given a few short situations from work with an agent, some where a better
-  model is worth trying and some where it would be overkill, says which is which and gives a
+  model is worth trying and some where it is not, says which is which and gives a
   reason for each that comes from the situation described. A general preference for cheaper,
   or for better, does not meet it.
 
@@ -190,7 +195,7 @@ an agent beyond choosing its model, and nothing about how a model works inside.
 - **goal:** tell when to split work off into a new chat or a subagent, and when to keep going
 - **criterion:** given a few short situations partway through work with an agent, some where
   splitting helps and some where it would lose something the next step needs, says which is
-  which. When arguing for a split, names the reason that applies (independence/fresh start vs. saving
+  which. When arguing for a split, names a reason that applies (independence/fresh start vs. saving
   tokens) and ties it to something in the situation. Naming a reason without that tie does not
   meet it.
 
