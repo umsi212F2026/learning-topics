@@ -1,4 +1,4 @@
-# Learning goals — coding agents
+# Learning goals: coding agents
 
 **What I want to be able to do, and what would count as having got there.**
 
