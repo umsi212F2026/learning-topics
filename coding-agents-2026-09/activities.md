@@ -70,6 +70,28 @@ with the learner.
   an observation.
 -->
 
+2026-09-17. For `c-choose-model` and `c-split-chats`, every check hands the learner a described
+situation with the deciding detail on the page, as those criteria ask. A met goal therefore shows
+they can judge a described situation, not that they would notice the moment in their own work,
+which is the use Depth names; each check says so in `doesn't show`, and it holds whichever check was
+passed.
+
+**On `c-choose-model`.** Both checks count "raise the reasoning effort first" on the worth-trying
+side, so a met goal does not show the learner would ever choose a stronger model over more effort on
+the current one.
+
+**On `c-split-chats`.** Neither check shows the learner can tell when saving tokens is a reason to
+split. Independence or a fresh start applies to every split in the generators' lists, and neither
+entry says how to rule a split answer naming both reasons where the record lists one; on the
+criterion's wording (names a reason that applies) it meets it. A learner who names independence on
+every split, or both reasons on every split, each tied to a detail, can pass either check.
+
+**On `c-ask-cost-estimate`.** Both checks rule an accurately reported wrong basis (running totals
+added up, reasoning tokens counted twice) as meeting the criterion, so a met goal does not show the
+learner would catch an estimate several times too high. Depth asks for an estimate they can trust
+and most of the study activities teach exactly that, but no check rules on it. In both checks the
+reasons a bill could differ can also come from the agent's replies; see each check's note.
+
 ## Goals
 
 <!--
@@ -138,9 +160,9 @@ with the learner.
 
 | goal | study | checks | notes |
 | ---- | ----- | ------ | ----- |
-| `c-choose-model` | `a-read-codex-model-guide`, `a-contrast-model-pairs` | `a-sort-model-situations`, `a-judge-model-switch-log` | |
-| `c-split-chats` | `a-read-codex-chat-habits`, `a-explain-superpowers-handoffs` | `a-sort-split-situations`, `a-critique-split-narrative` | |
-| `c-ask-cost-estimate` | `a-watch-estimate-narrated`, `a-critique-flawed-estimates` | `a-estimate-own-chat`, `a-estimate-scratch-log` | |
+| `c-choose-model` | `a-read-codex-model-guide`, `a-contrast-model-pairs` | `a-sort-model-situations`, `a-judge-model-switch-log` | see Check notes |
+| `c-split-chats` | `a-read-codex-chat-habits`, `a-explain-superpowers-handoffs` | `a-sort-split-situations`, `a-critique-split-narrative` | see Check notes |
+| `c-ask-cost-estimate` | `a-watch-estimate-narrated`, `a-critique-flawed-estimates` | `a-estimate-own-chat`, `a-estimate-scratch-log` | see Check notes |
 
 ---
 
@@ -673,6 +695,13 @@ with the learner.
 - **offer as:** the plain version of the real thing: a handful of moments, your call on each, with
   the reason for every split tied down. Quick, and fresh situations every time this comes back in
   review.
+- **check note:** This file uses "saving tokens" in two senses: fewer tokens sent again in the chat
+  that carries on (the unrelated question, the long chat, the "Everything you paste" paragraph in
+  `a-explain-superpowers-handoffs`), and fewer tokens overall (the reviewer, and the Codex page's
+  point that subagent workflows use more). The reviewer's record uses the second. A learner whose
+  only reason for the reviewer is that it keeps the review out of the chat that carries on is
+  reasoning as the rest of the file does, and still fails that situation under "however well
+  argued". If that is the only miss in a set, say so when going through the answers.
 
 ### `a-critique-split-narrative`
 
@@ -740,6 +769,12 @@ with the learner.
   looking back over your own evening of PS2. Harder than the plain set, since the decisions run into
   each other, a deciding detail may have been set paragraphs earlier, and some right choices come
   with wrong reasons.
+- **check note:** After a wrong split, the easiest way to write the next point shows what was lost:
+  the new chat asks what was decided, or gets it wrong. That is an outcome shown for the earlier
+  point. It uses up the one outcome the account may show and takes that point out of the ruling,
+  which can leave fewer ruled points than Hold fixed requires, and at Hard no outcome may be shown
+  at all. Describe where the classmate is at the next point, not how the split turned out, and
+  recount the ruled points once the account is written.
 
 ### `a-watch-estimate-narrated`
 
@@ -949,6 +984,16 @@ with the learner.
 - **offer as:** the real thing, on your own work, which is what you will be doing before you say what
   your app cost at the session 8 demo. Each later run picks a harder chat. It needs a finished chat
   worth estimating and an agent that can reach your session logs.
+- **check note:** The chat used in `a-watch-estimate-narrated` is not recorded in any label and is a
+  likely first item here, so ask the learner which chat that was and do not serve it. An attempt
+  stopped because the agent could not reach the log is still logged, with criterion unchecked; "not
+  counted as a miss" does not mean left out of the log. The entry never says who gives the agent
+  U-M's rows, and a request without them may be priced from the agent's memory of a vendor list;
+  that is a wrong basis, ruled as the entry already rules one. The entry gives the judge no standard
+  for why the figure may differ: hand over the one in `a-estimate-scratch-log` (specific reasons
+  that fit this chat and this key). Agents often add caveats of their own about the bill, and the
+  learner may ask for more. Tell the judge which of the learner's reasons first appeared in the
+  agent's replies, so it can weigh whether the learner could give them without the agent.
 
 ### `a-estimate-scratch-log`
 
@@ -1030,6 +1075,10 @@ with the learner.
   whether your agent can reach your logs, and the tutor can put a model switch or a subagent into the
   chat on purpose. Take it when you have no finished chat worth estimating, or when you want the
   harder cases before they have happened in your own work.
+- **check note:** Agents often add caveats of their own about why a bill could differ, and at Medium
+  and Hard the learner may give the agent the billed figure and ask why. Tell the judge which of the
+  learner's reasons first appeared in the agent's replies, so it can weigh whether the learner could
+  give them without the agent.
 
 ### `a-w-token`
 
