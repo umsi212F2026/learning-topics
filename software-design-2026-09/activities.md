@@ -42,6 +42,7 @@ with the learner.
   topic each have a step of their own in its Architectural checklist: step 3, clarifying questions
   asked one at a time to understand purpose, constraints and success criteria, and step 4, two or
   three approaches proposed with trade-offs and the agent's recommendation.
+- **verified:** 2026-09-17
 - **learner does:** reads the file top to bottom, stopping at any term they cannot restate in their
   own words (spec, plan, spike, YAGNI, architecture, success criteria, constraints, approval gate):
   says what they think it means, or that they have nothing, and hears it explained before reading
@@ -90,6 +91,7 @@ with the learner.
   Tasks, Implement. It names spec, plan, stack, architecture and constraints in place, and
   describes success criteria without using the phrase. It does not name MVP, YAGNI or spike. One
   install command appears in the middle and can be skipped.
+- **verified:** 2026-09-17
 - **learner does:** reads it once through, stopping at any term they cannot restate (spec, plan,
   stack, architecture, constraints) to say what they think it means and hear it explained. Then,
   without looking back, writes one line each for Specify and for Plan: what that document is
@@ -132,6 +134,7 @@ with the learner.
   (pinned to May 12, 2026), whose placeholders SC-001 to SC-004 each carry an example. Twelve
   example criteria in all, under 300 words; 25 to 30 minutes for the activity. Everything else in
   both files is agent machinery and is not part of this.
+- **verified:** 2026-09-17
 - **learner does:** takes the twelve examples one at a time and, before looking at Spec Kit's label
   for it, says whether a person who has never heard of the app could use the finished app and say
   whether the criterion was met, and if so, what that person would do to find out. Marks every
@@ -172,6 +175,7 @@ with the learner.
 - **artifact:** no external source. An app idea, either a pitch made by the generator in
   `a-criteria-for-pitch` at Easy or Medium, or an idea of the learner's own; the tutor plays a
   builder. 20 to 30 minutes.
+- **verified:** 2026-09-17
 - **learner does:** says in a sentence or two what the app is for, then writes the success
   criteria they would want in its spec. Hands both to the builder, reads the builder's description
   of the app it would ship, and revises: rewrites the purpose sentence, rewrites criteria, adds or
@@ -204,6 +208,7 @@ with the learner.
 - **checks:** `c-write-success-criteria`
 - **artifact:** no external source. A pitch the tutor generates per the generator below and shows
   in the session, so that it is in the transcript word for word. 15 to 20 minutes.
+- **verified:** 2026-09-17
 - **learner does:** reads the pitch, as many times as they like, and asks nothing about the idea.
   Writes, in order: a sentence or two saying what the app is for, in their own words; then the
   success criteria they would want in its spec, as a list. Submits both as written.
@@ -264,6 +269,7 @@ with the learner.
 - **artifact:** no external source. The learner's own app idea: the one they bring to the in-class
   lab where their agent designs an app with them, the Problem Set 2 app, or any other. 15 minutes,
   before the brainstorming session for that idea starts.
+- **verified:** 2026-09-17
 - **learner does:** before starting the brainstorming session, and before telling their agent
   anything about the idea, writes a note: first a sentence or two saying what the app is for, in
   their own words; then the success criteria they would want in its spec. Saves the note as it is
@@ -306,6 +312,7 @@ with the learner.
 - **supports:** deepen
 - **artifact:** no external source. A set the tutor builds fresh each time, as described in `tutor
   does`. 15 to 20 minutes.
+- **verified:** 2026-09-17
 - **learner does:** reads a situation description for a small app, the two or three approaches an
   agent offered for it, and which one a classmate picked. Then sorts eight reasons the classmate
   might give for that pick into groups of their own making, with no categories supplied, and names
@@ -336,6 +343,7 @@ with the learner.
 - **supports:** deepen
 - **artifact:** no external source. A pair of situations the tutor builds fresh each time, as
   described in `tutor does`. About 20 minutes.
+- **verified:** 2026-09-17
 - **learner does:** reads a situation description and the two or three approaches offered for it;
   picks one, says what the pick gives up, and gives the reason. Then reads a second situation for
   what looks like the same app, with the same approaches, and does the same without changing the
@@ -370,6 +378,7 @@ with the learner.
 - **artifact:** no external source. An instance the tutor generates per the generator below, laid
   out the way a brainstorming agent presents approaches, and shown in the session so that it is in
   the transcript word for word. 10 to 15 minutes.
+- **verified:** 2026-09-17
 - **learner does:** reads the situation and the approaches, and asks nothing about the app. Writes
   a reply they could send to the agent, a few sentences long: which approach they pick, what that
   pick gives up, and why.
@@ -437,6 +446,7 @@ with the learner.
   approaches (step 4 of the Architectural checklist, see `a-read-brainstorming-skill`), and the
   transcript of that session. About 10 minutes at that step, plus reading the transcript
   afterwards.
+- **verified:** 2026-09-17
 - **learner does:** at the start of the session, tells the agent: when you propose approaches, give
   me each one with its trade-offs, but do not tell me which you recommend until I have chosen. When
   the approaches arrive, writes their reply before asking the agent anything else: which approach,
