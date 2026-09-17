@@ -209,7 +209,7 @@ Planning the app is your agent's job too, with you approving what it proposes.
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the pieces a React screen is assembled from
-- **nearest confusable:** a file
+- **nearest confusable:** a page
 
 ### `w-state`
 
