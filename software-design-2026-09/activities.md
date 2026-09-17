@@ -5,6 +5,20 @@ with the learner.
 
 ## Check notes
 
+2026-09-17. Meeting both goals does not cover everything the Depth section of `goals.md` promises.
+It says the agent waits for the learner's approval more than once, and neither criterion examines
+an approval: noticing that a design section or the spec has reworded or dropped the learner's
+criteria, or that the approaches on offer differ only in technology or leave out the recommended
+one's costs. Only `a-critique-agent-excerpt` works on those moments, and it checks nothing. Neither
+check shows, either, that the learner knows which facts about their own app to tell the agent in
+the first place. A learner who has met both goals has been shown ready to answer and to choose, not
+to approve.
+
+`goals.md` carries no orientation entry, although its guidance ships one in every topic unless What
+I already have says the learner has seen the area laid out, and that section is blank. The two
+orienting reads, `a-read-brainstorming-skill` and `a-read-spec-kit-post`, still end on the
+orientation question, so the learner's answer to it is recorded against no goal.
+
 ## Goals
 
 | id | Goal | Criterion: what gets examined, and what counts |
@@ -16,8 +30,8 @@ with the learner.
 
 | goal | study | checks | notes |
 | ---- | ----- | ------ | ----- |
-| `c-write-success-criteria` | `a-read-brainstorming-skill`, `a-read-spec-kit-post`, `a-critique-agent-excerpt`, `a-judge-spec-kit-criteria`, `a-outwit-literal-builder` | `a-criteria-for-pitch`, `a-criteria-for-own-idea` | |
-| `c-choose-approach` | `a-read-brainstorming-skill`, `a-read-spec-kit-post`, `a-critique-agent-excerpt`, `a-sort-choice-reasons`, `a-same-options-two-situations` | `a-choose-from-proposals`, `a-choose-in-own-brainstorm` | |
+| `c-write-success-criteria` | `a-read-brainstorming-skill`, `a-read-spec-kit-post`, `a-critique-agent-excerpt`, `a-judge-spec-kit-criteria`, `a-outwit-literal-builder` | `a-criteria-for-pitch`, `a-criteria-for-own-idea` | Neither check shows the learner holding the agent to these criteria once it rewords them in the design or the spec. The two checks differ in difficulty: `a-criteria-for-pitch` refuses Easy instances, while `a-criteria-for-own-idea` counts on an idea of any size. |
+| `c-choose-approach` | `a-read-brainstorming-skill`, `a-read-spec-kit-post`, `a-critique-agent-excerpt`, `a-sort-choice-reasons`, `a-same-options-two-situations` | `a-choose-from-proposals`, `a-choose-in-own-brainstorm` | Neither check puts messy proposals in front of the learner (approaches that differ only in technology, a recommendation with its costs left out) or an agent that argues back. A pass on `a-choose-in-own-brainstorm` was made with no recommendation in view, the pressure the criterion names. |
 
 ---
 
@@ -124,6 +138,11 @@ with the learner.
   describes a different tool whose steps only roughly line up with the one you will use, and it
   hands you technology decisions this course leaves to the agent. Take it first if the skill file
   reads like rules without reasons.
+- **check note:** The post compares approaches at the Plan step, after the spec is written. In the
+  learner's own agent, the approaches are proposed and one is chosen before any design is presented
+  or spec written, and in this topic they differ in what the app does for people, not only in its
+  technology. Say so when tying "compare and contrast different approaches" to their session, or
+  the learner may file that choice under the plan rather than the spec.
 
 ### `a-critique-agent-excerpt`
 
@@ -184,6 +203,10 @@ with the learner.
   when the agent waits for your approval, and the only one where the agent answers back. Uses both
   halves of the topic at once, so it suits a learner who has already done something for each goal.
   Works on a pitch, so no idea of your own is needed.
+- **check note:** The entry does not say what approving the approaches message means. Treat it as
+  picking one, and write the design section so it stands whichever approach is picked, or adjust it
+  in role to the pick without disturbing the planted flaws. How hard an instance is rests only on
+  the number of flaws; how subtle to make them is your call.
 
 ### `a-judge-spec-kit-criteria`
 
@@ -238,6 +261,9 @@ with the learner.
   its own, so it exercises only the half of the goal about whether a stranger could check a
   criterion, never whether a set of them would catch an app that misses its point.
   `a-outwit-literal-builder` is the one that does.
+- **check note:** For the rewriting step, if the learner picks the idea they will bring to the lab
+  or Problem Set 2 and has not yet written a note for it under `a-criteria-for-own-idea`, steer them
+  to another idea: saying here what it is for spends it for that check.
 
 ### `a-outwit-literal-builder`
 
@@ -281,6 +307,9 @@ with the learner.
   while building the wrong thing, so every weakness comes back as a concrete bad app rather than a
   comment. The fastest way to feel why a list of features is not a set of success criteria.
   Needs a live session, and works better with a small idea than a big one.
+- **check note:** Run on the idea the learner will bring to the lab or Problem Set 2, this spends
+  that idea for `a-criteria-for-own-idea`: a tutor has heard it, and its criteria have been through
+  the builder. Unless that note is already written, use a pitch or a different idea.
 
 ### `a-criteria-for-pitch`
 
@@ -347,6 +376,11 @@ with the learner.
   is set, and every instance is new, so it can come back in review as often as needed. The only
   check here that controls how hard the idea is. It feels more artificial than your own idea, and
   a pitch is tidier than anything a real person says.
+- **check note:** The judge rules against the purpose the learner wrote, not the key's. A purpose
+  sentence that is not a feature list but stops short of what the pitch supports (keeping track of
+  who does which chore, when the point is that nobody feels they do more than their share) needs
+  only criteria that cover it, which makes a Hard instance little harder than an Easy one. When the
+  debrief goes through the key, name that gap even on a pass.
 
 ### `a-criteria-for-own-idea`
 
@@ -401,6 +435,13 @@ with the learner.
 - **offer as:** the real thing, on the idea you actually care about, at the moment the course will
   ask it of you, so what you write goes straight into your lab session. Nobody watches while you
   write it. The catch is one attempt per idea, and a small idea makes it easy.
+- **check note:** Asking whether any agent has heard the idea includes study sessions: if the
+  learner has run `a-outwit-literal-builder` or `a-judge-spec-kit-criteria` on this idea, there is
+  no instance. The rule to switch to `a-criteria-for-pitch` when the idea is too small cannot be
+  applied as written, because you may not hear the idea before the note. Ask one question that
+  gives nothing away, such as whether the app does at least three separate things for the people
+  using it, and switch if the answer is no. Otherwise a very small idea counts, which
+  `a-criteria-for-pitch` would not allow at Easy.
 
 ### `a-sort-choice-reasons`
 
@@ -436,6 +477,9 @@ with the learner.
   line between a reason about this app and a reason about any app before you have to write one.
   Quick and cheap to repeat. The rule you state at the end is the thing to take into a check.
   `a-same-options-two-situations` has you choose and justify from the start instead.
+- **check note:** The any-app reason "it's what the agent recommended" only fits if the classmate's
+  pick is the approach marked recommended, and the Medium generator this borrows from varies which
+  one that is. Mark the pick as recommended, or use a different any-app reason.
 
 ### `a-same-options-two-situations`
 
@@ -596,6 +640,10 @@ with the learner.
   app gets built with. Nothing to prepare except one sentence to your agent at the start. Less
   controlled than `a-choose-from-proposals`, and easier in one important way: you asked the agent
   not to lead with its own pick.
+- **check note:** The rule for `unaided: unclear` names links the agent drew in its recommendation
+  or its trade-offs. Treat a link drawn earlier the same way, as when the agent sums up an answer to
+  its clarifying questions ("so the list has to be shared, since all six officers need it"), if the
+  learner's reason repeats it.
 
 ### `a-w-spec`
 
