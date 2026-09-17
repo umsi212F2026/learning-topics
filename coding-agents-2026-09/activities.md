@@ -92,10 +92,11 @@ with the learner.
   here doesn't match one there, this file is the one that's wrong.
 -->
 
-| id                      | Goal | Criterion — what gets examined, and what counts |
-| ----------------------- | ---- | ----------------------------------------------- |
-| `o-orientation`         |      | `orientation`                                   |
-| `c-read-unseen-diagram` |      |                                                 |
+| id | Goal | Criterion: what gets examined, and what counts |
+| -- | ---- | ---------------------------------------------- |
+| `c-choose-model` | tell when a better model might be worth trying, and when it is overkill | given a few short situations from work with an agent, some where a better model is worth trying and some where it would be overkill, says which is which and gives a reason for each that comes from the situation described. A general preference for cheaper, or for better, does not meet it. |
+| `c-split-chats` | tell when to split work off into a new chat or a subagent, and when to keep going | given a few short situations partway through work with an agent, some where splitting helps and some where it would lose something the next step needs, says which is which. When arguing for a split, names the reason that applies (independence/fresh start vs. saving tokens) and ties it to something in the situation. Naming a reason without that tie does not meet it. |
+| `c-ask-cost-estimate` | ask an agent what a piece of agent work cost | Can ask the agent to estimate what a run that has already happened cost, such as one chat. Can say what the figure it gives back is based on: which model's prices, and which token counts. Can say why that figure may differ from what was actually billed. "It's only an estimate" does not meet it. |
 
 ## Coverage
 
@@ -135,10 +136,11 @@ with the learner.
   `n/a — already oriented` in `study` and leave it. That's a complete row too.
 -->
 
-| goal                    | study | checks | notes |
-| ----------------------- | ----- | ------ | ----- |
-| `o-orientation`         |       |        |       |
-| `c-read-unseen-diagram` |       |        |       |
+| goal | study | checks | notes |
+| ---- | ----- | ------ | ----- |
+| `c-choose-model` | | | |
+| `c-split-chats` | | | |
+| `c-ask-cost-estimate` | | | |
 
 ---
 
@@ -267,13 +269,92 @@ with the learner.
                   curation/critique to test it.
 -->
 
-### `<activity-id>`
+### `a-w-token`
 
-- **serves:**
-- **supports:**
-- **artifact:**
-- **learner does:**
-- **tutor role:**
-- **tutor does:**
-- **done when:**
-- **offer as:**
+- **origin:** generated
+- **serves:** `w-token`
+- **checks:** `w-token`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-input-tokens`
+
+- **origin:** generated
+- **serves:** `w-input-tokens`
+- **checks:** `w-input-tokens`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-output-tokens`
+
+- **origin:** generated
+- **serves:** `w-output-tokens`
+- **checks:** `w-output-tokens`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-prompt-caching`
+
+- **origin:** generated
+- **serves:** `w-prompt-caching`
+- **checks:** `w-prompt-caching`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-model`
+
+- **origin:** generated
+- **serves:** `w-model`
+- **checks:** `w-model`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-reasoning-effort`
+
+- **origin:** generated
+- **serves:** `w-reasoning-effort`
+- **checks:** `w-reasoning-effort`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-context`
+
+- **origin:** generated
+- **serves:** `w-context`
+- **checks:** `w-context`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-context-window`
+
+- **origin:** generated
+- **serves:** `w-context-window`
+- **checks:** `w-context-window`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-compaction`
+
+- **origin:** generated
+- **serves:** `w-compaction`
+- **checks:** `w-compaction`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-system-prompt`
+
+- **origin:** generated
+- **serves:** `w-system-prompt`
+- **checks:** `w-system-prompt`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
