@@ -240,15 +240,6 @@ against what you agreed is a later topic.
 - **what it names:** a limit the app has to fit inside, set from outside the design
 - **nearest confusable:** requirement
 
-### `w-scope`
-
-- **goal:** scope
-- **criterion:** vocabulary
-- **supply:** vocabulary
-- **bar:** one production pass
-- **group:** vocabulary
-- **what it names:** where the edge of a piece of work is drawn
-
 ### `w-mvp`
 
 - **goal:** MVP
