@@ -145,6 +145,7 @@ with the learner.
   "Another way to build UIs" (prose with a short Vue example, about how code gets written, which is
   past this topic's depth), the Tooling subsection (about testing and linting, none of this topic's
   tooling words), and everything after Routing, which is about choosing a framework.
+- **verified:** 2026-09-17
 - **learner does:** reads the three pieces with their own starter app running in a browser window
   beside the page. Stops at each of these as the page reaches it: state; updating the UI to match
   the state; components; the URL in the address bar; single page app; client-side routing. At each,
@@ -291,6 +292,7 @@ with the learner.
   through to but not when its address is pasted, a saved change that doesn't appear, a white page
   whose only explanation is in the console, and a problem visible on one screen. 20 to 25 minutes.
   No app or browser needed.
+- **verified:** 2026-09-17
 - **learner does:** reads the app description, then answers the file's two questions for each of
   the eight requests: could someone who never saw the problem make it happen and tell when it's
   fixed from this alone (and if not, the one thing that stops them), and is any guess kept apart and
@@ -559,6 +561,7 @@ with the learner.
   then three deliberately broken versions of them, to see what the console reports. The page sends
   the reader to MDN's own example site to try them; this activity uses the learner's own starter app
   instead.
+- **verified:** 2026-09-17
 - **learner does:** has their starter app open at its localhost address and does each part of the
   page on that tab, never on the MDN page or MDN's example site:
   1. Opens the developer tools the way the page says for their browser, switching on Safari's
@@ -604,6 +607,7 @@ with the learner.
   snippet retyped instead of its error being reported (with "same as before" in place of the
   second error), a warning left out on purpose, a description where a screenshot was needed, and a
   screenshot cropped too tightly. 15 to 20 minutes. No browser needed.
+- **verified:** 2026-09-17
 - **learner does:** for each of the ten replies, answers yes or no: could the agent act on this
   without asking again? For each no, writes the question the agent would have to send back. Then
   says what the two that worked have in common. Then picks one reply they marked no and rewrites it
