@@ -109,7 +109,7 @@ and the stated rule before saying anything about any of them.
 | r5 | yes | no | Everything a stranger needs is there, but "because the app only keeps tasks in state" is a cause, stated as though it had been seen. Nobody can see that from the browser. The near miss is r2, which differs from this almost only there. |
 | r6 | yes | no guess | The screen explains nothing, so the console text is what makes this useful, and it is copied rather than paraphrased. The two steps from a fresh page make it happen, and "fixed when" can be checked. |
 | r7 | yes | no guess | The one route that fails (a pasted address, or a reload on the task page) is spelled out, and so is the route that works. |
-| r8 | no | no guess | Which button, and starting from what? Clear done only fails when a task is ticked. The console error is paraphrased, which loses the part saying where it came from, and "doesn't go white" can't be checked without the missing steps. |
+| r8 | no | no guess | Which button, and starting from what? Clear done only fails when a task is ticked. The console error is paraphrased, which loses the part saying where it came from, and "doesn't go white" can't be checked without the missing steps. Unlike the other three that fail, this one is plainly bad; it is here to be set beside r6, the same bug described well. |
 
 The rule the learner should arrive at, in some words of their own: a request passes when it names
 where to start, gives the steps from there, says what happened and what should have happened, says
