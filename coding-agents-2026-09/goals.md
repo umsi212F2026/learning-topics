@@ -199,7 +199,8 @@ an agent beyond choosing its model, and nothing about how a model works inside.
 - **goal:** ask an agent what a piece of agent work cost
 - **criterion:** Can ask the agent to estimate what a run that has already happened cost, such
   as one chat. Can say what the figure it gives back is based on: which model's prices, and
-  which token counts.
+  which token counts. Can say why that figure may differ from what was actually billed. "It's
+  only an estimate" does not meet it.
 
 ### `w-token`
 
