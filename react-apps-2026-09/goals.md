@@ -318,3 +318,14 @@ Planning the app is your agent's job too, with you approving what it proposes.
 - **what it names:** where the page reports what went wrong, out of the user's sight
 - **nearest confusable:** the terminal
 - **synonyms:** JavaScript console, DevTools console
+
+### `w-hard-reload`
+
+- **goal:** hard reload
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a reload that doesn't trust what the browser kept from last time
+- **nearest confusable:** refreshing the page
+- **synonyms:** hard refresh, force reload
