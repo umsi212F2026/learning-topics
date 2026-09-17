@@ -5,7 +5,6 @@
 {"at":"2026-09-17T11:10:12.511Z","kind":"goal-added","goal":"w-render","needs":"curation"}
 {"at":"2026-09-17T11:10:12.547Z","kind":"goal-added","goal":"w-event-handler","needs":"curation"}
 {"at":"2026-09-17T11:10:12.586Z","kind":"goal-added","goal":"w-dev-server","needs":"curation"}
-{"at":"2026-09-17T11:10:12.625Z","kind":"goal-added","goal":"w-jsx","needs":"curation"}
 {"at":"2026-09-17T11:10:12.663Z","kind":"goal-added","goal":"w-dependency","needs":"curation"}
 {"at":"2026-09-17T11:10:12.701Z","kind":"goal-added","goal":"w-single-page-app","needs":"curation"}
 {"at":"2026-09-17T11:10:12.742Z","kind":"goal-added","goal":"w-build","needs":"curation"}

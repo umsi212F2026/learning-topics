@@ -253,17 +253,6 @@ Planning the app is your agent's job too, with you approving what it proposes.
 - **nearest confusable:** the backend
 - **synonyms:** development server
 
-### `w-jsx`
-
-- **goal:** JSX
-- **criterion:** vocabulary
-- **supply:** vocabulary
-- **bar:** one production pass
-- **group:** vocabulary
-- **what it names:** the HTML-looking parts of a component
-- **nearest confusable:** HTML
-- **synonyms:** TSX
-
 ### `w-dependency`
 
 - **goal:** dependency
