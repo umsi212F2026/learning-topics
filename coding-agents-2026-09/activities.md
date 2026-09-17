@@ -727,9 +727,9 @@ with the learner.
   performance". Those say that cached input and cache writes are counted inside input tokens and, at
   OpenAI's own prices, charged at 0.1 and 1.25 times the ordinary input rate. U-M's rates may differ.
 - **verified:** 2026-09-17 for OpenAI's "Prompt caching" guide, and for the Codex session log format
-  against the openai/codex source. NOT VERIFIED: U-M's pricing page, which returned HTTP 403 to every
-  automated fetch, so its current models and rates, whether it gives cached-input or cache-write
-  rates, and whether the gpt-5.6 models appear were not read.
+  against the openai/codex source. U-M's pricing page 2026-09-17, read in a browser by the
+  instructor: it lists gpt-5.6-sol, gpt-5.6-terra, gpt-5.6-luna and gpt-5-mini, with prompt and
+  completion rates per 1M tokens only and no cached-input or cache-write rate.
 - **learner does:** first, before seeing anything, writes the request they would send their own
   agent to find out what that chat cost. Then watches the tutor carry out the request as an agent
   would, saying before each step what they expect the agent to need next (where the record of the
@@ -779,9 +779,9 @@ with the learner.
   `a-watch-estimate-narrated`: U-M's pricing page, https://its.umich.edu/computing/ai/pricing, read
   through the rows the learner pastes from it at the start (see `tutor does`), and OpenAI's "Prompt
   caching" guide, https://developers.openai.com/api/docs/guides/prompt-caching.
-- **verified:** 2026-09-17 for OpenAI's "Prompt caching" guide. NOT VERIFIED: U-M's pricing page, which
-  returned HTTP 403 to every automated fetch, so its current models and rates, whether it gives
-  cached-input or cache-write rates, and whether the gpt-5.6 models appear were not read.
+- **verified:** 2026-09-17 for OpenAI's "Prompt caching" guide. U-M's pricing page 2026-09-17, read in
+  a browser by the instructor: it lists gpt-5.6-sol, gpt-5.6-terra, gpt-5.6-luna and gpt-5-mini, with
+  prompt and completion rates per 1M tokens only and no cached-input or cache-write rate.
 - **learner does:** reads three replies an agent might give when asked what a finished chat cost,
   each with a short description of the chat beside it. For each reply, writes: what the figure is
   based on, as far as the reply says (which model's prices, which counts); anything wrong with that
@@ -825,10 +825,10 @@ with the learner.
   bank below; the learner's own Codex agent; and U-M's pricing page,
   https://its.umich.edu/computing/ai/pricing (the page refuses automated fetches, so an agent asked to
   read it may be refused; the learner can open it in a browser). 15 to 20 minutes.
-- **verified:** 2026-09-17 for the Codex session log format, against the openai/codex source.
-  NOT VERIFIED: U-M's pricing page, which returned HTTP 403 to every automated fetch, so its current
-  models and rates, whether it gives cached-input or cache-write rates, and whether the gpt-5.6
-  models appear were not read.
+- **verified:** 2026-09-17 for the Codex session log format, against the openai/codex source. U-M's
+  pricing page 2026-09-17, read in a browser by the instructor: it lists gpt-5.6-sol, gpt-5.6-terra,
+  gpt-5.6-luna and gpt-5-mini, with prompt and completion rates per 1M tokens only and no
+  cached-input or cache-write rate.
 - **learner does:** opens a new chat in Codex, not the chat being estimated, and asks the agent in
   their own words to estimate what the chosen chat cost. Reads the reply, and if it does not say
   what the figure rests on, asks until it does. Then, without help, tells the tutor what the figure is
@@ -898,10 +898,10 @@ with the learner.
   below, in a scratch folder outside any repository; the learner's own Codex agent; and U-M's
   pricing page, https://its.umich.edu/computing/ai/pricing, which the learner opens in a browser
   (the tutor reads it through the rows the learner pastes; see `tutor does`). 20 minutes.
-- **verified:** 2026-09-17 for the Codex session log format, against the openai/codex source.
-  NOT VERIFIED: U-M's pricing page, which returned HTTP 403 to every automated fetch, so its current
-  models and rates, whether it gives cached-input or cache-write rates, and whether the gpt-5.6
-  models appear were not read.
+- **verified:** 2026-09-17 for the Codex session log format, against the openai/codex source. U-M's
+  pricing page 2026-09-17, read in a browser by the instructor: it lists gpt-5.6-sol, gpt-5.6-terra,
+  gpt-5.6-luna and gpt-5-mini, with prompt and completion rates per 1M tokens only and no
+  cached-input or cache-write rate.
 - **learner does:** opens Codex on the scratch folder, starts a new chat, and asks the agent in their
   own words to estimate what the chat recorded in that folder cost. Reads the reply and asks until it
   says what the figure rests on. Then, without help, tells the tutor which model's prices and which
