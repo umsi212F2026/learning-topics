@@ -195,6 +195,7 @@ a later one.
   fail at least one of them, counting only apps an honest builder, working from their sentence
   and their criteria alone, might plausibly ship. A list of the app's features does not count as
   saying what it is for.
+- **origin:** course
 
 ### `c-choose-approach`
 
@@ -204,6 +205,7 @@ a later one.
   one, says what that choice gives up, and gives a reason that comes from something in the app's
   situation, as described, that bears on the choice. A reason that would hold for any app,
   including that the agent recommended it, does not meet it.
+- **origin:** course
 
 ### `w-spec`
 
@@ -215,6 +217,7 @@ a later one.
 - **what it names:** the document about what gets built
 - **nearest confusable:** plan
 - **synonyms:** specification, design doc
+- **origin:** course
 
 ### `w-plan`
 
@@ -226,6 +229,7 @@ a later one.
 - **what it names:** the document about how it gets built, one piece at a time
 - **nearest confusable:** spec
 - **synonyms:** implementation plan
+- **origin:** course
 
 ### `w-success-criteria`
 
@@ -237,6 +241,7 @@ a later one.
 - **what it names:** what the spec says will count as done
 - **nearest confusable:** tests
 - **synonyms:** acceptance criteria
+- **origin:** course
 
 ### `w-constraint`
 
@@ -247,6 +252,7 @@ a later one.
 - **group:** vocabulary
 - **what it names:** a limit the app has to fit inside, set from outside the design
 - **nearest confusable:** requirement
+- **origin:** course
 
 ### `w-mvp`
 
@@ -258,6 +264,7 @@ a later one.
 - **what it names:** the first version of an app worth putting in front of anyone
 - **nearest confusable:** prototype
 - **synonyms:** minimum viable product
+- **origin:** course
 
 ### `w-yagni`
 
@@ -269,6 +276,7 @@ a later one.
 - **what it names:** why a feature nobody needs yet gets left out
 - **nearest confusable:** keep it simple
 - **synonyms:** you aren't gonna need it
+- **origin:** course
 
 ### `w-spike`
 
@@ -279,6 +287,7 @@ a later one.
 - **group:** vocabulary
 - **what it names:** a quick try whose result is an answer, not code to keep
 - **nearest confusable:** prototype
+- **origin:** course
 
 ### `w-architecture`
 
@@ -289,6 +298,7 @@ a later one.
 - **group:** vocabulary
 - **what it names:** how the big parts of an app fit together
 - **nearest confusable:** tech stack
+- **origin:** course
 
 ### `w-tech-stack`
 
@@ -300,3 +310,4 @@ a later one.
 - **what it names:** the technologies an app is built from
 - **nearest confusable:** architecture
 - **synonyms:** stack
+- **origin:** course
