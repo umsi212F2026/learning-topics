@@ -726,9 +726,10 @@ with the learner.
   subsection "GPT-5.6 and later" under "How caching works" and the bullets under "Monitor cache
   performance". Those say that cached input and cache writes are counted inside input tokens and, at
   OpenAI's own prices, charged at 0.1 and 1.25 times the ordinary input rate. U-M's rates may differ.
-- **verified:** 2026-09-17 for OpenAI's "Prompt caching" guide. NOT VERIFIED: U-M's pricing page, which
-  returned HTTP 403 to every automated fetch, so its current models and rates, whether it gives
-  cached-input or cache-write rates, and whether the gpt-5.6 models appear were not read.
+- **verified:** 2026-09-17 for OpenAI's "Prompt caching" guide, and for the Codex session log format
+  against the openai/codex source. NOT VERIFIED: U-M's pricing page, which returned HTTP 403 to every
+  automated fetch, so its current models and rates, whether it gives cached-input or cache-write
+  rates, and whether the gpt-5.6 models appear were not read.
 - **learner does:** first, before seeing anything, writes the request they would send their own
   agent to find out what that chat cost. Then watches the tutor carry out the request as an agent
   would, saying before each step what they expect the agent to need next (where the record of the
