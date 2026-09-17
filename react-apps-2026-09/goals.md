@@ -80,8 +80,8 @@ in this topic is judged from the running app in your browser and from what your 
 it.
 
 What that buys is enough to stay useful when the app your agent built does not behave:
-recognizing these words when the agent uses them, knowing where to look when something breaks,
-and describing the problem precisely enough that it can be fixed. Writing or reading React code,
+recognizing these words when the agent uses them, and describing the problem precisely enough
+that it can be fixed. Writing or reading React code,
 deciding how an app is split into components, and debugging it by hand are all past that line.
 Planning the app is your agent's job too, with you approving what it proposes.
 
