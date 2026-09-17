@@ -46,9 +46,13 @@
 
 ## Where this came from
 
+_Yours to fill in. Nobody can answer this one for you._
+
 <!-- Which of A / B / C / D, and the answer to the follow-up. -->
 
 ## What I already have
+
+_Yours to fill in. Say where your knowledge stops, not what you have heard of._
 
 <!--
   The nearest thing already known well, and where it stops.
@@ -58,6 +62,10 @@
 
 ## What I'll use it for
 
+_Yours to fill in. The course supplies two occasions: the in-class lab where your agent designs an
+app of your own idea with you before building it, and Problem Set 2, where it does the same for an
+app with a backend. Name any others you have._
+
 <!--
   The use, and a concrete occasion.
   If several uses apply, rank them: the top one sets the depth, the rest are cut first
@@ -66,10 +74,14 @@
 
 ## Depth
 
-<!--
-  Which of: recognize it / read it / modify something existing / author from scratch /
-  judge someone else's work. One line on why that's enough.
--->
+**Judge what your agent proposes, and answer what it asks.** Not writing a spec or a plan
+yourself, and not reading the code a plan is full of. Before an agent builds an app with you, it
+asks you questions, puts choices in front of you, and waits for your approval more than once. This
+topic is enough to do each of those on purpose, rather than saying yes to whatever comes next.
+
+What sits past that line: how the app is organized inside, which technologies it uses, and whether
+the plan's steps will actually work are all the agent's to decide. Checking the finished app
+against what you agreed is a later topic.
 
 ## Goals
 
@@ -168,6 +180,30 @@
   orientation entry are in their own groups and don't count towards it. So never write a
   placeholder capability entry; an empty section is the honest signal.
 -->
+
+### `c-split-big-idea`
+
+- **goal:** tell when an app idea is too big to design in one go, and choose a first piece of it
+- **criterion:** Given a few short app ideas, some small enough to design in one go and some not,
+  says which is which. For each one that is too big, names a first piece that someone could use
+  on its own, and says what waits for later. A first piece that is only useful once a later one
+  is built does not meet it.
+
+### `c-write-success-criteria`
+
+- **goal:** say what done looks like for an app, in a form anyone could check
+- **criterion:** For an app idea, their own or one they are given, writes the success criteria
+  they would want in its spec. It passes when someone who never heard the idea could use the
+  finished app and say of each criterion whether it was met, and when an app that runs but misses
+  the point of the idea would fail at least one of them.
+
+### `c-choose-approach`
+
+- **goal:** choose between approaches an agent proposes, for a reason that belongs to this app
+- **criterion:** Given two or three approaches to the same app, each with its tradeoffs, picks
+  one, says what that choice gives up, and gives a reason that comes from something in the app's
+  situation as described. A reason that would hold for any app, including that the agent
+  recommended it, does not meet it.
 
 ### `o-orientation`
 
