@@ -132,6 +132,7 @@ with the learner.
 - **artifact:** no external source. An excerpt from a brainstorming session that the tutor builds
   fresh each time, as described in `tutor does`, laid out the way the agent in
   `a-read-brainstorming-skill` presents its approaches and then its design. 25 to 30 minutes.
+- **verified:** 2026-09-17
 - **learner does:** reads the pitch and the person's answers to the agent's questions, then the
   agent's messages one at a time, as if they were that person in the session. Before approving
   each message, writes what they would ask the agent or push back on, as the message they would
