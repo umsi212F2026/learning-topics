@@ -58,6 +58,7 @@ with the learner.
   and `preview` scripts, with `react` and `react-dom` as its dependencies. A project made from an
   older template shows different headings and "count is 0" in lower case, but the same button and
   the same HMR line. 40 to 50 minutes.
+- **verified:** 2026-09-17
 - **learner does:** keeps a two-column list with one row per word in this topic (component, state,
   render, event handler, dev server, dependency, build, hot reload, browser console, hard reload,
   routing, headless browser). Whenever one of them turns up, fills in its row: what on their screen
@@ -233,6 +234,7 @@ with the learner.
   fail in the same way"), saying what you saw and what you expected (the Summary: "State what you
   saw, and also state what you expected to see"), and symptoms before diagnosis ("The diagnosis is
   an optional extra, and not an alternative to giving the symptoms").
+- **verified:** 2026-09-17
 - **learner does:** reads it in order. At the end of each section whose heading quotes a bad report
   ("It doesn't work.", "So then I tried . . .", "I think the tachyon modulation must be wrongly
   polarised.", "That's funny, it did it a moment ago."), writes one sentence someone might send an
@@ -272,6 +274,7 @@ with the learner.
   task gone after a reload, a task page that works when clicked through to but not when its address
   is pasted, a saved change that doesn't appear, a white page whose only explanation is in the
   console, and a problem visible on one screen. 20 to 25 minutes. No app or browser needed.
+- **verified:** 2026-09-17
 - **learner does:** reads the app description, then answers the file's two questions for each of
   the eight requests: could someone who never saw the problem make it happen and tell when it's
   fixed from this alone (and if not, the one thing that stops them), and is any guess kept apart and
@@ -490,6 +493,7 @@ with the learner.
   then three deliberately broken versions of them, to see what the console reports. The page sends
   the reader to MDN's own example site to try them; this activity uses the learner's own starter app
   instead.
+- **verified:** 2026-09-17
 - **learner does:** has their starter app open at its localhost address and does each part of the
   page on that tab, never on the MDN page or MDN's example site:
   1. Opens the developer tools the way the page says for their browser, switching on Safari's
@@ -534,6 +538,7 @@ with the learner.
   been copied, a snippet run in the wrong tab, "same as before", a warning left out on purpose, a
   description where a screenshot was needed, and a screenshot cropped too tightly. 15 to 20
   minutes. No browser needed.
+- **verified:** 2026-09-17
 - **learner does:** for each of the ten replies, answers yes or no: could the agent act on this
   without asking again? For each no, writes the question the agent would have to send back. Then
   says what the two that worked have in common. Then picks one reply they marked no and rewrites it
