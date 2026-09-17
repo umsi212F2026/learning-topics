@@ -77,13 +77,14 @@ have._
 **Recognize it, and tell your agent what you are seeing.** Not authoring, and not reading code
 either. You will not be asked to open a component file and find your way around it. Everything
 in this topic is judged from the running app in your browser and from what your agent says about
-it.
+it. When your agent asks, you will also run things in the browser's developer tools and bring
+back what they show.
 
 What that buys is enough to stay useful when the app your agent built does not behave:
 recognizing these words when the agent uses them, and describing the problem precisely enough
-that it can be fixed. Writing or reading React code,
-deciding how an app is split into components, and debugging it by hand are all past that line.
-Planning the app is your agent's job too, with you approving what it proposes.
+that it can be fixed. Writing or reading React code, deciding how an app is split into
+components, and debugging it by hand are all past that line. Planning the app is your agent's
+job too, with you approving what it proposes.
 
 ## Goals
 
@@ -190,6 +191,14 @@ Planning the app is your agent's job too, with you approving what it proposes.
   It passes when someone who never saw the problem could make it happen again from that request
   alone, and could tell when it had been fixed. Any guess at the cause is labeled as a guess,
   separate from what they saw.
+
+### `c-run-browser-check`
+
+- **goal:** carry out a check in the browser that the agent asks for, and bring back what it showed
+- **criterion:** Given the agent's request to inspect the running app or run a snippet in the
+  browser's developer tools, runs it only in their own app and reports back what it produced:
+  copied text where it can be copied, a screenshot where it can't, complete and unedited, errors
+  included. It passes when the agent could act on the result without asking again.
 
 ### `o-orientation`
 
@@ -318,3 +327,13 @@ Planning the app is your agent's job too, with you approving what it proposes.
 - **what it names:** the link between the URL in the browser's address bar and what is on screen
 - **nearest confusable:** loading a new page
 - **synonyms:** client-side routing
+
+### `w-headless-browser`
+
+- **goal:** headless browser
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** what Playwright or Puppeteer lets the agent use to look at the app itself
+- **nearest confusable:** the dev server; your own browser

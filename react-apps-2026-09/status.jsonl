@@ -12,3 +12,5 @@
 {"at":"2026-09-17T11:11:01.803Z","kind":"goal-added","goal":"c-describe-app-bug","needs":"curation"}
 {"at":"2026-09-17T11:23:14.222Z","kind":"goal-added","goal":"w-hard-reload","needs":"curation"}
 {"at":"2026-09-17T11:29:05.747Z","kind":"goal-added","goal":"w-routing","needs":"curation"}
+{"at":"2026-09-17T11:55:44.836Z","kind":"goal-added","goal":"c-run-browser-check","needs":"curation"}
+{"at":"2026-09-17T11:55:49.274Z","kind":"goal-added","goal":"w-headless-browser","needs":"curation"}
