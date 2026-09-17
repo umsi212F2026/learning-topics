@@ -188,7 +188,8 @@ Planning the app is your agent's job too, with you approving what it proposes.
 - **goal:** tell the agent what is going wrong in a running app
 - **criterion:** Given a problem in a running app, writes the request they would send the agent.
   It passes when someone who never saw the problem could make it happen again from that request
-  alone, and could tell when it had been fixed.
+  alone, and could tell when it had been fixed. Any guess at the cause is labeled as a guess,
+  separate from what they saw.
 
 ### `o-orientation`
 
