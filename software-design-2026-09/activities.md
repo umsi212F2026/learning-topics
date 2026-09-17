@@ -92,10 +92,10 @@ with the learner.
   here doesn't match one there, this file is the one that's wrong.
 -->
 
-| id                      | Goal | Criterion — what gets examined, and what counts |
-| ----------------------- | ---- | ----------------------------------------------- |
-| `o-orientation`         |      | `orientation`                                   |
-| `c-read-unseen-diagram` |      |                                                 |
+| id | Goal | Criterion: what gets examined, and what counts |
+| -- | ---- | ---------------------------------------------- |
+| `c-write-success-criteria` | say what done looks like for an app, in a form anyone could check | For an app idea, their own or one they are given, first says in a sentence or two what the app is for, in their own words, then writes the success criteria they would want in its spec. It passes when someone who never heard the idea could use the finished app and say of each criterion whether it was met, and when an app that runs but misses what they said it is for would fail at least one of them. A list of the app's features does not count as saying what it is for. |
+| `c-choose-approach` | choose between approaches an agent proposes, for a reason that belongs to this app | Given two or three approaches to the same app, each with its tradeoffs, and a description of the app's situation that includes facts with no bearing on the choice, picks one, says what that choice gives up, and gives a reason that comes from something in the app's situation as described. A reason that would hold for any app, including that the agent recommended it, does not meet it. |
 
 ## Coverage
 
@@ -135,10 +135,10 @@ with the learner.
   `n/a — already oriented` in `study` and leave it. That's a complete row too.
 -->
 
-| goal                    | study | checks | notes |
-| ----------------------- | ----- | ------ | ----- |
-| `o-orientation`         |       |        |       |
-| `c-read-unseen-diagram` |       |        |       |
+| goal | study | checks | notes |
+| ---- | ----- | ------ | ----- |
+| `c-write-success-criteria` | | | |
+| `c-choose-approach` | | | |
 
 ---
 
@@ -267,13 +267,83 @@ with the learner.
                   curation/critique to test it.
 -->
 
-### `<activity-id>`
+### `a-w-spec`
 
-- **serves:**
-- **supports:**
-- **artifact:**
-- **learner does:**
-- **tutor role:**
-- **tutor does:**
-- **done when:**
-- **offer as:**
+- **origin:** generated
+- **serves:** `w-spec`
+- **checks:** `w-spec`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-plan`
+
+- **origin:** generated
+- **serves:** `w-plan`
+- **checks:** `w-plan`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-success-criteria`
+
+- **origin:** generated
+- **serves:** `w-success-criteria`
+- **checks:** `w-success-criteria`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-constraint`
+
+- **origin:** generated
+- **serves:** `w-constraint`
+- **checks:** `w-constraint`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-mvp`
+
+- **origin:** generated
+- **serves:** `w-mvp`
+- **checks:** `w-mvp`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-yagni`
+
+- **origin:** generated
+- **serves:** `w-yagni`
+- **checks:** `w-yagni`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-spike`
+
+- **origin:** generated
+- **serves:** `w-spike`
+- **checks:** `w-spike`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-architecture`
+
+- **origin:** generated
+- **serves:** `w-architecture`
+- **checks:** `w-architecture`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-tech-stack`
+
+- **origin:** generated
+- **serves:** `w-tech-stack`
+- **checks:** `w-tech-stack`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
