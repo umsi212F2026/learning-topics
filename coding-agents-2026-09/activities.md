@@ -281,20 +281,26 @@ with the learner.
   everyday work, and Luna as for "clear, repeatable tasks" where "you know what a good result looks
   like". On reasoning effort it says to use the lowest effort that produces the result you need and
   to raise it for tasks that need more planning, analysis or checking. The page is written for
-  people who sign in with ChatGPT: the Power slider, Astra, Max and Ultra it mentions may not be
-  offered through U-M's gateway, where the models on offer include gpt-5.6-sol, gpt-5.6-terra,
-  gpt-5.6-luna and gpt-5-mini. It gives no prices.
+  people who sign in with ChatGPT: the Power slider, Max and Ultra it mentions may not be offered
+  through U-M's gateway, where the models on offer include gpt-5.6-sol, gpt-5.6-terra, gpt-5.6-luna
+  and gpt-5-mini. U-M's price list also includes gpt-6-astra, but whether Astra works from Codex
+  through the gateway has not been checked. The page gives no prices.
 - **verified:** 2026-09-17
 - **learner does:** reads the section once. Then, before the tutor says anything, writes three short
   lines, one each for Sol, Terra and Luna: a moment from their own work with Codex so far, or one
   they expect in the session 7 lab, where that model would be the right pick, and the detail of that
   moment that makes it right. Then writes one moment where switching up from the course default
-  (gpt-5.6-luna at medium) would not be worth trying, and why. Answers each near-miss the tutor
-  sends back. Ends by writing, in their own words, two or three rules of thumb for when a better
+  (gpt-5.6-luna at medium) would not be worth trying, and why. For any line where they have no such
+  moment, takes a situation from the tutor instead, makes the call on it (which model, or whether
+  switching up is worth trying) and names the detail that decides it. Answers each near-miss the
+  tutor sends back. Ends by writing, in their own words, two or three rules of thumb for when a better
   model is worth trying, each naming something you could see in a situation, not "when it matters"
   or "to be safe".
 - **tutor role:** socratic questioner
-- **tutor does:** waits for the lines. For each, replies with one near-miss that changes a single
+- **tutor does:** waits for the lines. Where the learner has no moment of their own for a line and
+  none they expect in the lab, supplies a situation of two or three sentences from work like the
+  session 7 app, without saying which model fits or whether switching up is worth trying, and waits
+  for the learner's call on it. For each line, replies with one near-miss that changes a single
   detail: "you said Sol for the database design; still Sol if the plan already spells out every
   table?", or "Luna for renaming a component; still Luna if the rename runs through the API route
   and the SQL query too?". Treats "Sol is smarter" or "Luna is cheaper" as a general preference, and
@@ -402,7 +408,8 @@ with the learner.
   Hard: add a situation where the agent keeps failing because information is missing (the pasted
   error came from a different file, the server is not running), whose answer is not worth trying
   because no model supplies what is missing, alongside a repeated failure where the information is
-  all there. Any level may count. Never reuse a situation across sets.
+  all there. Only a set at Medium or Hard can finish the goal; Easy is for practice and for the
+  worked example's situations. Never reuse a situation across sets.
 - **worked example:** work two situations aloud that are not in the set, one each way, saying the
   deciding detail and why it decides. At the first level of help, give only the question to ask of
   each situation: is what's missing more capability, some information, or nothing at all?
@@ -461,7 +468,8 @@ with the learner.
   it has to be carried forward. Hard: six entries, two or three wrong decisions, a stay on Luna that
   was right for the wrong reason, an entry whose deciding detail was set earlier, and an entry where
   the agent keeps failing for want of information the classmate never gave it (not worth trying,
-  since no model supplies it).
+  since no model supplies it). Only a log at Medium or Hard can finish the goal; Easy is for practice
+  and for the worked example's entry.
 - **worked example:** work one entry that is not in the log aloud: read the situation with the
   choice covered, say worth trying or not worth trying and the deciding detail, then uncover the
   choice and the classmate's reason and say whether that reason would have held up. At the first
@@ -497,10 +505,11 @@ with the learner.
   stay in the chat when that preserves the reasoning trail; do not run a whole project in one chat;
   move noisy work to a subagent), writes a moment from their own work with Codex so far where it
   applied or would have (or, where they have none yet, one they expect in the session 7 lab, or one
-  the tutor supplies), says whether they split or kept going, and names the reason that would
-  justify a split there: a fresh start or independence, or saving tokens. Writes first, then answers
-  the tutor's near-miss on each. Ends by writing one situation where splitting would lose something
-  the next step needs, and what that something is.
+  the tutor supplies), and says whether they split or kept going. For the three pieces about
+  splitting, names a reason that applies to a split there (a fresh start or independence, or saving
+  tokens); for staying in the chat to preserve the reasoning trail, says instead what splitting would
+  have lost there. Writes first, then answers the tutor's near-miss on each. Ends by writing one
+  situation where splitting would lose something the next step needs, and what that something is.
 - **tutor role:** socratic questioner
 - **tutor does:** before the learner starts, supplies what neither section says, in two or three
   sentences: every message in a chat sends the whole conversation so far to the model again, as
@@ -515,7 +524,8 @@ with the learner.
   with no tie to the moment ("new chats are cleaner") as not yet a reason and asks what in the
   moment makes it apply.
 - **done when:** each piece of advice has a moment attached, from the learner's own work where they
-  have one, with a reason tied to that moment, and the learner says they could sort new situations
+  have one, with a reason tied to that moment (for the reasoning trail, what splitting would have
+  lost), and the learner says they could sort new situations
   into split and keep going with the two sections beside them.
 - **offer as:** the vendor's own advice about chats and subagents, short, applied to chats you have
   already had. The quickest way in, and it covers new chats and subagents both, but it says almost
@@ -593,14 +603,18 @@ with the learner.
   it apply. Answers all of them before hearing any answer, and is not told how many of each there are.
 - **tutor role:** none
 - **tutor does:** builds the set before the session and records, out of the learner's sight, each
-  situation's intended answer and the detail that decides it, and for each split which reasons apply
-  (one or both), each with the detail it is tied to; keeps those and the learner's answers verbatim
-  for the judge. The judge rules this way, in both checks for this goal. A split reason meets the
-  criterion when the record lists it and the learner ties it to its detail; a reason the record does
-  not list does not meet it, however well argued. An answer that says to write something down first
-  and then split is ruled on splitting as things stand: on a keep-going situation it counts as keep
-  going if it names what the next step would lose, and as a split if it does not; on a split
-  situation it counts as a split and still needs its reason. Waits during the attempt. Afterwards,
+  situation's intended answer and the detail that decides it, and for each split which of the
+  criterion's two reasons apply (one or both), each with the detail it is tied to. The record uses
+  those two categories and no others: independence or a fresh start, which is one reason however it
+  is worded, and saving tokens. Keeps the record and the learner's answers verbatim for the judge,
+  and tells the judge the record is written in the criterion's two categories. The judge rules this
+  way, in both checks for this goal. A split reason meets the criterion when the record lists it and
+  the learner ties it to its detail; independence and a fresh start are the same reason, whichever
+  word the learner uses; a reason the record does not list does not meet it, however well argued. An
+  answer that says to write something down first and then split is ruled on splitting as things
+  stand: on a keep-going situation it counts as keep going if it names what the next step would
+  lose, and as a split if it does not; on a split situation it counts as a split and still needs its
+  reason. Waits during the attempt. Afterwards,
   for each keep-going situation, asks what the next step would have lost; that answer is not part of
   the ruling.
 - **done when:** criterion met with no help.
@@ -609,34 +623,40 @@ with the learner.
   session 7 app (built with Superpowers: brainstorm, spec, plan, then execution) or PS2 (a React
   front end with a SQL backend) in Codex. Include at least two where splitting helps and at least
   two where it would lose something the next step needs, shuffled. Use no deciding detail twice in a
-  set. For each split situation, record which reasons apply to it as written: both, whenever each
+  set. For each split situation, record which of the criterion's two reasons apply to it as written,
+  independence or a fresh start (one reason, however worded) and saving tokens: both, whenever each
   can be tied to a detail on the page, and one only where the other plainly does not apply. Split,
   with the reasons that apply as described here (change the record if the wording changes what a
   reader could tie a reason to): the spec and plan are saved as files, the chat that produced them
-  is full of abandoned ideas, and execution is next (a fresh start; saving tokens too if the chat is
-  described as long); the learner wants the code the agent just wrote reviewed by something that
-  does not share its assumptions (independence only, since a reviewer adds tokens rather than saving
-  them); a question unrelated to the current feature comes up mid-task, such as how to install the
-  database on their laptop (independence; saving tokens too, since the answer would otherwise be
-  sent again with every later message in the feature chat); since the chat was compacted, the agent
-  has started contradicting constraints that are written in the spec (a fresh start); a chat that
-  has run for hours through many file reads, where the next several requests are small independent
-  edits that need none of it (saving tokens, and a fresh start); coming back the next morning to a
-  very long chat for a one-line fix unrelated to anything in it (saving tokens, and independence).
+  is full of abandoned ideas, and execution is next (independence or a fresh start; saving tokens
+  too if the chat is described as long); the learner wants the code the agent just wrote reviewed by
+  something that does not share its assumptions (independence or a fresh start only, since a
+  reviewer adds tokens rather than saving them); a question unrelated to the current feature comes
+  up mid-task, such as how to install the database on their laptop (independence or a fresh start;
+  saving tokens too, since the answer would otherwise be sent again with every later message in the
+  feature chat); since the chat was compacted, the agent has started contradicting constraints that
+  are written in the spec (independence or a fresh start only); a chat that has run for hours
+  through many file reads, where the next several requests are small independent edits that need
+  none of it (both reasons); coming back the next morning to a very long chat for a one-line fix
+  unrelated to anything in it (both reasons).
   Keep going: mid-debugging, several causes have been ruled out in the chat, nothing is written
   down, and the next step builds on what was ruled out; a design change was just agreed in the chat,
   is not in the spec yet, and the next step implements it; two pieces being designed together (a
   form and the API route it calls) where each depends on choices in the other; the learner is about
   to open a new chat and ask it to "fix the bug we were talking about". Hold fixed: every situation
   has one defensible call, split or keep going; a split situation never asks the learner to choose
-  between a new chat and a subagent, and either counts; nothing turns on numbers. Easy: four
-  situations with unmistakable cues. Medium: five or six, including a long chat that still holds
-  something the next step needs, so the answer is keep going despite the length. Hard: add a split
-  where the tempting reason is the wrong one (a reviewer subagent a learner may justify as saving
-  tokens, when subagent workflows use more tokens overall and the reason that applies is
-  independence), and a keep-going situation whose surface cue points toward splitting: the chat has
-  run for hours and was compacted once, but what the next step needs was settled after that
-  compaction and is not written down anywhere.
+  between a new chat and a subagent, and either counts; nothing turns on numbers; at every level, at
+  least one split situation is one where only one reason applies (the reviewer, the agent
+  contradicting the spec since compaction, or the saved spec and plan in a chat not described as
+  long), so that saving tokens given on every split does not pass. Easy: four situations with
+  unmistakable cues. Medium: five or six, including a long chat that still holds something the next
+  step needs, so the answer is keep going despite the length. Hard: add a split where the tempting
+  reason is the wrong one (a reviewer subagent a learner may justify as saving tokens, when subagent
+  workflows use more tokens overall and the reason that applies is independence or a fresh start),
+  and a keep-going situation whose surface cue points toward splitting: the chat has run for hours
+  and was compacted once, but what the next step needs was settled after that compaction and is not
+  written down anywhere. Only a set at Medium or Hard can finish the goal; Easy is for practice and
+  for the worked example's situations.
 - **worked example:** work two situations aloud that are not in the set: one split, naming a reason
   that applies and the detail it is tied to; one keep going, naming what would be lost. At the first
   level of help, give only the question to ask of each situation: does the next step need anything
@@ -646,8 +666,10 @@ with the learner.
   before splitting, which is what makes a split safe. The criterion asks for no reason on a
   keep-going call, so those answers are only right or wrong. Where the record lists both reasons for
   a split, either passes, so a pass does not show the learner can tell which one matters more there.
-  Nothing is run, so it shows nothing about how many tokens a split actually saves. It never asks
-  them to choose between a new chat and a subagent.
+  Every split in these lists where only one reason applies is one for independence or a fresh start,
+  so a learner who gives that reason on every split is not caught the way one who gives saving tokens
+  on every split is. Nothing is run, so it shows nothing about how many tokens a split actually
+  saves. It never asks them to choose between a new chat and a subagent.
 - **offer as:** the plain version of the real thing: a handful of moments, your call on each, with
   the reason for every split tied down. Quick, and fresh situations every time this comes back in
   review.
@@ -669,13 +691,14 @@ with the learner.
 - **tutor role:** none
 - **tutor does:** builds the account before the session and records, out of the learner's sight,
   each point's intended answer and deciding detail, taken from the state the classmate's earlier
-  choices actually left, and for each split which reasons apply (one or both) with the detail each is
-  tied to, as in `a-sort-split-situations`; also records which points show an outcome. Keeps those
-  and the learner's answers verbatim for the judge. The judge rules only the points with no outcome
-  shown, and rules split reasons, and answers that say to write something down and then split,
-  exactly as `a-sort-split-situations` says. Waits during the attempt. Afterwards asks, of any point
-  the learner got wrong (outcome points included), whether they were reacting to what happened or to
-  the classmate's choice.
+  choices actually left, and for each split which of the criterion's two reasons apply (independence
+  or a fresh start, counted as one reason; saving tokens), one or both, with the detail each is tied
+  to, as in `a-sort-split-situations`; also records which point shows an outcome, if any. Keeps
+  those and the learner's answers verbatim for the judge. The judge rules only the points with no
+  outcome shown, and rules split reasons (independence and a fresh start being the same reason), and
+  answers that say to write something down and then split, exactly as `a-sort-split-situations`
+  says. Waits during the attempt. Afterwards asks, of any point the learner got wrong (outcome points
+  included), whether they were reacting to what happened or to the classmate's choice.
 - **done when:** criterion met with no help. The ruling is on the learner's own call and reason at
   each point with no outcome shown, not on whether they caught the classmate out.
 - **kind:** generator
@@ -687,18 +710,21 @@ with the learner.
   subagent), on right decisions as well as wrong ones, so no reason can be copied. Each point starts
   from what the classmate's earlier choices actually left: after a split that lost something, the
   next point is in the new chat or subagent without it, and its intended answer is recorded from
-  there. What happened after a decision is shown at no more than two points, and those points are
-  practice, left out of the ruling. Hold fixed: the points with no outcome shown include at least one
-  where splitting helps, at least one where it would lose something, and at least one wrong
-  decision; at least one decision is right; the account reads as one plausible session, in order;
-  the number of wrong decisions is not announced. Easy: five points, one wrong decision, outcomes
-  shown at two other points. Medium: five points, two wrong decisions with no outcome shown (one split
-  that lost something the next step needed, such as a new chat opened before an agreed change was
-  written down; and one keep-going that should have been a split), an outcome shown at one other
-  point, and one ruled point whose deciding detail is not restated there but was set earlier in the
-  account (a constraint agreed two paragraphs before and never written into the spec), so it has to
-  be carried forward. Hard: six points, two or three wrong decisions, no outcomes shown, a deciding
-  detail set earlier as at Medium, and one right split given a reason that does not apply.
+  there. What happened after a decision is shown at no more than one point, and that point is
+  practice, left out of the ruling. Hold fixed, at every level: the points with no outcome shown
+  include at least two where splitting helps, at least one of them a split where only one reason
+  applies (as listed in `a-sort-split-situations`), at least two where splitting would lose
+  something, and at least one wrong decision; at least one decision is right; the account reads as
+  one plausible session, in order; the number of wrong decisions is not announced. Easy: five
+  points, one wrong decision, an outcome shown at one other point. Medium: five points, two wrong
+  decisions with no outcome shown (one split that lost something the next step needed, such as a
+  new chat opened before an agreed change was written down; and one keep-going that should have been
+  a split), an outcome shown at one other point, and one ruled point whose deciding detail is not
+  restated there but was set earlier in the account (a constraint agreed two paragraphs before and
+  never written into the spec), so it has to be carried forward. Hard: six points, two or three
+  wrong decisions, no outcomes shown, a deciding detail set earlier as at Medium, and one right split
+  given a reason that does not apply. Only an account at Medium or Hard can finish the goal; Easy is
+  for practice and for the worked example's decision point.
 - **worked example:** work one decision point that is not in the account aloud: with the classmate's
   choice covered, say split or keep going and why, then uncover their choice and reason and say
   whether that reason would have held up. At the first level of help, say only: at each point, find
@@ -708,7 +734,8 @@ with the learner.
   which is why they are not ruled. The deciding details are still on the page, and carrying one
   forward from earlier in the account is the nearest this comes to finding one in a live chat. As
   with `a-sort-split-situations`, it does not show they would stop at the right moment in their own
-  work, examines no reason on a keep-going call, and runs nothing.
+  work, examines no reason on a keep-going call, does not catch a learner who gives independence or
+  a fresh start on every split, and runs nothing.
 - **offer as:** a whole session to pick apart instead of separate moments to sort, which is closer to
   looking back over your own evening of PS2. Harder than the plain set, since the decisions run into
   each other, a deciding detail may have been set paragraphs earlier, and some right choices come
@@ -721,11 +748,15 @@ with the learner.
 - **artifact:** no external source for the demonstration: one of the learner's own finished Codex
   chats, or, if the tutor cannot read the learner's session logs, an Easy scratch log built as in
   `a-estimate-scratch-log`. 20 to 25 minutes. Two references the tutor draws on. U-M's per-token
-  prices, "ITS AI Services Pricing", https://its.umich.edu/computing/ai/pricing, which the learner
-  opens in a browser, since the page refuses automated fetches. And OpenAI's "Prompt caching" guide, https://developers.openai.com/api/docs/guides/prompt-caching, the
-  subsection "GPT-5.6 and later" under "How caching works" and the bullets under "Monitor cache
-  performance". Those say that cached input and cache writes are counted inside input tokens and, at
-  OpenAI's own prices, charged at 0.1 and 1.25 times the ordinary input rate. U-M's rates may differ.
+  prices, "ITS AI Services Pricing", https://its.umich.edu/computing/ai/pricing: under "U-M GPT
+  Toolkit", one table giving each model's prompt and completion rates per 1M tokens, billed monthly
+  and "subject to change". An agent asked to read it is refused, so the learner opens it in a browser
+  and pastes the rows. And OpenAI's "Prompt caching" guide,
+  https://developers.openai.com/api/docs/guides/prompt-caching, the subsection "GPT-5.6 and later"
+  under "How caching works" and the bullets under "Monitor cache performance". Those say that cached
+  input and cache writes are counted inside input tokens and, at OpenAI's own prices, charged at 0.1
+  and 1.25 times the ordinary input rate. U-M's page gives no cached-input or cache-write rate, so
+  how the gateway bills them is not known.
 - **verified:** 2026-09-17 for OpenAI's "Prompt caching" guide, and for the Codex session log format
   against the openai/codex source. U-M's pricing page 2026-09-17, read in a browser by the
   instructor: it lists gpt-5.6-sol, gpt-5.6-terra, gpt-5.6-luna and gpt-5-mini, with prompt and
@@ -740,20 +771,26 @@ with the learner.
 - **tutor role:** explainer
 - **tutor does:** performs the estimate, narrating what it is weighing and pausing for the learner's
   prediction before each step. Finds the chat's log: on macOS, one file per chat under
-  ~/.codex/sessions/YYYY/MM/DD/, named rollout-*.jsonl (the location on Windows has not been
-  checked). Reads the model and reasoning effort the log records, and notes whether they changed
-  partway. Makes one false start on purpose: adds up the counts from every token_count event, then
-  shows that each event carries a running total for the chat so far beside the counts for that one
-  call, so adding the running totals counts the early calls over and over, and the last event's
-  running total is the chat's total. Says in a sentence each that one message from the learner can
+  ~/.codex/sessions/YYYY/MM/DD/, or ~/.codex/archived_sessions/ (no dated folders) if the chat was
+  archived, named rollout-*.jsonl (the location on Windows has not been checked). Reads the model
+  and reasoning effort the log records, and notes whether they changed partway. Makes one false
+  start on purpose: adds up the counts from every token_count event, then shows that each event
+  carries a running total for the chat so far beside the counts for that one call, so adding the
+  running totals counts the early calls over and over, and the last event's running total is the
+  chat's total, except in a chat that overran its context window, where Codex resets the running
+  total (the total set to the window size, the other counts zeroed) so later totals undercount what
+  came before, and in a forked chat, whose running total starts from its parent's and so includes
+  the parent's usage. Says in a sentence each that one message from the learner can
   produce several of these events, one per call to the model; that cached input and cache writes are
   parts of the input count, not additions to it; and that reasoning tokens are already inside the
   output count. Looks in the same day's folder for other log files carrying the same session id,
   which is where subagent work turned up on one Mac in September 2026: a reviewer subagent Codex
   started on its own, running a different model, with its own file and its own counts. Has the
-  learner open U-M's pricing page and read out the rows for the models found. Gives the estimate
-  with its basis stated, then says why the bill could differ: U-M's prices are not OpenAI's list
-  prices, and prices change; how the gateway bills cached input and cache writes, when cached input
+  learner open U-M's pricing page in a browser and paste the rows for the models found. Gives the
+  estimate with its basis stated, then says why the bill could differ: the prices that apply are
+  U-M's, which need not match a vendor's own list and which the page says are subject to change, so
+  a figure priced from anywhere else, or from rows that have since changed, can be off; how the
+  gateway bills cached input and cache writes, which U-M's page gives no rate for, when cached input
   has shown up on some turns and not others; subagent work in other files; the Toolkit page shows
   spend per key, covering every chat and anything else on that key, never one chat; the estimating
   itself costs tokens. Mentions the practical point that a log can be large, so a good request has
@@ -776,12 +813,13 @@ with the learner.
 - **supports:** deepen
 - **artifact:** no external source for the replies, which the tutor writes as described under
   `tutor does`. 20 minutes. The planted flaws rest on the two references named in
-  `a-watch-estimate-narrated`: U-M's pricing page, https://its.umich.edu/computing/ai/pricing, read
-  through the rows the learner pastes from it at the start (see `tutor does`), and OpenAI's "Prompt
-  caching" guide, https://developers.openai.com/api/docs/guides/prompt-caching.
-- **verified:** 2026-09-17 for OpenAI's "Prompt caching" guide. U-M's pricing page 2026-09-17, read in
-  a browser by the instructor: it lists gpt-5.6-sol, gpt-5.6-terra, gpt-5.6-luna and gpt-5-mini, with
-  prompt and completion rates per 1M tokens only and no cached-input or cache-write rate.
+  `a-watch-estimate-narrated` and on a third. U-M's pricing page,
+  https://its.umich.edu/computing/ai/pricing, one table of each model's prompt and completion rates
+  per 1M tokens, with no cached-input rate, read through the rows the learner pastes from it at the
+  start, since an agent asked to read it is refused (see `tutor does`). OpenAI's "Prompt caching"
+  guide, https://developers.openai.com/api/docs/guides/prompt-caching. And OpenAI's API pricing page,
+  https://developers.openai.com/api/docs/pricing, used only for the flaw that sets OpenAI's list
+  against U-M's page.
 - **learner does:** reads three replies an agent might give when asked what a finished chat cost,
   each with a short description of the chat beside it. For each reply, writes: what the figure is
   based on, as far as the reply says (which model's prices, which counts); anything wrong with that
@@ -797,16 +835,21 @@ with the learner.
   beside it (for example: two hours on the session 7 app, switched from gpt-5.6-luna to gpt-5.6-sol
   partway; or a PS2 session that sent work to two reviewer subagents). Plants zero, one or two flaws
   in each reply, at least three across the set, with at least one reply that has none, taken from
-  this list: prices from OpenAI's list rather than U-M's page; every call priced at the course
-  default model although the chat switched; the running totals from every token_count event added
-  together; reasoning tokens added on top of output tokens; subagent work in separate log files left
-  out; no basis given at all, only a figure; and, only if the pasted rows give a lower rate for
-  cached input, cached input charged at the full input rate. Keeps each flawed reply confident and
-  plausible, with no hedge that points at the flaw, and writes down beforehand which flaws are
-  where. Afterwards goes through each reply, confirming or correcting what the learner found, and
-  pushes on the "could still differ" answers until each names something specific to this chat or
-  this key; "it's only an estimate" gets the question "different how, and why?". Has the learner
-  compute nothing.
+  this list: every call priced at the course default model although the chat switched; the running
+  totals from every token_count event added together; cached input added on top of the input count,
+  though it is already inside it; reasoning tokens added on top of output tokens; subagent work in
+  separate log files left out; no basis given at all, only a figure; and prices from OpenAI's list
+  rather than U-M's page. Plants that last one only in a reply about a chat whose model the tutor
+  has just found at a different rate on OpenAI's pricing page than in the pasted rows, and leaves it
+  out if it cannot check. On 2026-09-17 that held for gpt-5.6-sol alone of the four (OpenAI's
+  standard short-context rates, $4.00 input and $20.00 output per 1M tokens, against U-M's $5.00 and
+  $30.00); gpt-5.6-terra, gpt-5.6-luna and gpt-5-mini were the same on both. Keeps each flawed reply
+  confident and plausible, with no hedge that points at the flaw, and writes down beforehand which
+  flaws are where. Afterwards goes through each reply, confirming or correcting what the learner
+  found, and pushes on the "could still differ" answers until each names something specific to this
+  chat or this key (how the gateway bills cached input, which U-M's page gives no rate for, is one
+  such reason for a chat that shows cached input); "it's only an estimate" gets the question
+  "different how, and why?". Has the learner compute nothing.
 - **done when:** the learner has found most of the planted flaws, has said the basis of each reply in
   words, and can name at least two specific reasons a figure with no mistakes could still differ from
   the bill, with the replies still in front of them. This activity carries no `checks`: nobody asks
@@ -823,8 +866,9 @@ with the learner.
 - **checks:** `c-ask-cost-estimate`
 - **artifact:** no external source. One of the learner's own finished Codex chats, chosen per the
   bank below; the learner's own Codex agent; and U-M's pricing page,
-  https://its.umich.edu/computing/ai/pricing (the page refuses automated fetches, so an agent asked to
-  read it may be refused; the learner can open it in a browser). 15 to 20 minutes.
+  https://its.umich.edu/computing/ai/pricing, one table of each model's prompt and completion rates
+  per 1M tokens (an agent asked to read it is refused, so the learner opens it in a browser and
+  pastes the rows). 15 to 20 minutes.
 - **verified:** 2026-09-17 for the Codex session log format, against the openai/codex source. U-M's
   pricing page 2026-09-17, read in a browser by the instructor: it lists gpt-5.6-sol, gpt-5.6-terra,
   gpt-5.6-luna and gpt-5-mini, with prompt and completion rates per 1M tokens only and no
@@ -836,28 +880,35 @@ with the learner.
   actually billed. Keeps the transcript of the estimating chat, their own requests and the agent's
   replies both.
 - **tutor role:** none
-- **tutor does:** picks the chat to be estimated before the learner starts (see the bank) and
-  names it to the learner by when it happened and what it was about. Waits while the learner works
-  with their own agent. Afterwards reads the transcript, checks that the basis the learner described
-  is the one the agent actually used, and keeps the transcript and the learner's explanation verbatim
-  for the judge. If that basis was itself wrong (the agent added up the running totals, or added
-  reasoning tokens on top of output), a learner who reports it accurately still meets that part of
-  the criterion, since catching a wrong basis is not part of it; the tutor tells the judge so, and
-  points out the error to the learner after the ruling. If the agent could not get at the log, the attempt stops there and is not counted as a miss: the
-  location on Windows has not been checked, nor whether Codex lets a chat opened in a project read
-  ~/.codex. The learner approves the access if Codex asks for it; otherwise the tutor moves to
-  `a-estimate-scratch-log`.
+- **tutor does:** settles the chat to be estimated with the learner before they start, as the bank
+  says, and names it back to the learner by when it happened and what it was about. Waits while the
+  learner works with their own agent. Afterwards reads the transcript, checks that the basis the
+  learner described is the one the agent actually used, and keeps the transcript and the learner's
+  explanation verbatim for the judge. If that basis was itself wrong (the agent added up the running
+  totals, or added reasoning tokens on top of output), a learner who reports it accurately still
+  meets that part of the criterion, since catching a wrong basis is not part of it; the tutor tells
+  the judge so, and points out the error to the learner after the ruling. If the agent could not get
+  at the log, the attempt stops there and is not counted as a miss: the location on Windows has not
+  been checked, nor whether Codex lets a chat opened in a project read ~/.codex. The learner
+  approves the access if Codex asks for it; otherwise the tutor moves to `a-estimate-scratch-log`.
 - **done when:** criterion met with no help.
 - **kind:** bank
 - **bank:** the learner's own finished Codex chats, as many as they have. Each item is one chat,
-  named by the filename of its main session log (rollout-<date>T<time>-<id>.jsonl); where the tutor
-  cannot see the learner's session folder, the learner asks their agent for the filename after the
-  attempt. Never serve a chat already used. Pick one new feature at a time. First run: a chat from
-  an earlier session that stayed on one model. Later runs, any unused chat of a kind not yet used: a
-  chat where the model or reasoning effort was changed partway; a chat long enough to have been
-  compacted; a chat that used subagents (from session 8 on); the session 7 lab chat (if the lab ran
-  across several chats, they are estimated together as one item, named by the earliest). Once every
-  kind has been used, any unused chat. When no unused chat of the kind wanted next exists, use
+  named by the filename of its main session log (rollout-<date>T<time>-<id>.jsonl, under
+  ~/.codex/sessions/YYYY/MM/DD/, or ~/.codex/archived_sessions/ if the chat was archived); where the
+  tutor cannot see the learner's session folder, the learner asks their agent for the filename after
+  the attempt. Never serve a chat already used. Pick one new feature at a time. First run: a chat
+  from an earlier session that stayed on one model. Later runs, any unused chat of a kind not yet
+  used: a chat where the model or reasoning effort was changed partway; a chat long enough to have
+  been compacted; a chat that used subagents (from session 8 on); the session 7 lab chat (if the lab
+  ran across several chats, they are estimated together as one item, named by the earliest). Once
+  every kind has been used, any unused chat. The tutor usually cannot see the learner's session folder, so
+  it picks by asking: the learner names a finished chat by its day and topic and says what they
+  remember changing in it (the model or reasoning effort partway, subagents they asked for). A
+  remembered change of model or effort is enough to aim at that kind. Compaction, and subagents
+  Codex started on its own, often go unnoticed, so treat them as unconfirmed until the transcript of
+  the estimating chat shows them, and record the item as the kind the transcript shows. When no
+  unused chat of the kind wanted next exists, or that kind has to be present for certain, use
   `a-estimate-scratch-log` for that kind instead. For the session 7 lab chat, the learner was asked
   to note their Toolkit spend before and after, so the estimate can be set beside a real change in
   spend for that stretch; whether the Toolkit page updates finely enough to show one lab session's
@@ -870,7 +921,8 @@ with the learner.
   question is what the chat would have cost on a Toolkit key, and why that differs from what they
   paid is part of the answer.
 - **worked example:** at the first level of help, show one request that works: "Find the Codex
-  session log for my chat on [day] about [topic]. Without reading the whole file into this chat,
+  session log for my chat on [day] about [topic] (under ~/.codex/sessions, or
+  ~/.codex/archived_sessions if I archived it). Without reading the whole file into this chat,
   pull out which model it used and its token counts, then estimate the cost with the prices I paste
   from U-M's pricing page. Tell me which counts and which prices you used." At the next level, say in
   one sentence what to check in the reply: whether it added up running totals, and whether the log
@@ -880,11 +932,15 @@ with the learner.
   lab run comes near, if spend was noted and the page shows the change, and any other use of the key
   in that stretch blurs it. The ruling is on reporting the agent's basis accurately, so a pass does
   not show the learner would catch a wrong basis (running totals added up, reasoning tokens counted
-  twice), which the study activities spend most of their effort on. A first run on a single-model
+  twice), which the study activities spend most of their effort on. Nor does it show they would
+  catch a basis that looks right and is not: the last token_count event's running total is not the
+  chat's total in a chat that overran its context window, where Codex resets the running total so
+  later ones undercount what came before (the bank's compacted chat may be one), or in a forked
+  chat, whose running total includes its parent's usage. A first run on a single-model
   chat with no subagents leaves most reasons for a difference unexercised; only later runs reach a
   model switch or subagents. It depends on the agent reaching the learner's session
   logs, which has not been checked on Windows or from inside every project. And since the tutor
-  names the chat, it does not show the learner would think to ask at all.
+  asks for a chat to estimate, it does not show the learner would think to ask at all.
 - **offer as:** the real thing, on your own work, which is what you will be doing before you say what
   your app cost at the session 8 demo. Each later run picks a harder chat. It needs a finished chat
   worth estimating and an agent that can reach your session logs.
@@ -896,8 +952,10 @@ with the learner.
 - **checks:** `c-ask-cost-estimate`
 - **artifact:** no external source. A small invented session log the tutor builds per the generator
   below, in a scratch folder outside any repository; the learner's own Codex agent; and U-M's
-  pricing page, https://its.umich.edu/computing/ai/pricing, which the learner opens in a browser
-  (the tutor reads it through the rows the learner pastes; see `tutor does`). 20 minutes.
+  pricing page, https://its.umich.edu/computing/ai/pricing, one table of each model's prompt and
+  completion rates per 1M tokens, which the learner opens in a browser, since an agent asked to read
+  it is refused (the tutor reads it through the rows the learner pastes; see `tutor does`). 20
+  minutes.
 - **verified:** 2026-09-17 for the Codex session log format, against the openai/codex source. U-M's
   pricing page 2026-09-17, read in a browser by the instructor: it lists gpt-5.6-sol, gpt-5.6-terra,
   gpt-5.6-luna and gpt-5-mini, with prompt and completion rates per 1M tokens only and no
@@ -947,7 +1005,8 @@ with the learner.
   session_id, a parent_thread_id, a source marking it as a subagent, and its own model and counts,
   with the billed figure including it. Hold fixed: the learner does no arithmetic; prices come from
   U-M's pricing page; the file is plausible enough that an agent treats it as a Codex log; nothing
-  in it hints at what to look for.
+  in it hints at what to look for. Only a log at Medium or Hard can finish the goal; Easy is for
+  practice and for the demonstration in `a-watch-estimate-narrated`.
 - **worked example:** show the request from `a-estimate-own-chat`'s worked example, pointed at the
   scratch folder instead of a day and topic. At the next level, ask only: did the agent say which
   model it priced, and did the log have more than one?
@@ -961,7 +1020,7 @@ with the learner.
   planted cause of the billed difference cannot be found from anything the learner has, so a pass
   does not show they would track down the actual cause, only name specific possible ones. The ruling
   is on reporting the agent's basis accurately, so a pass does not show the learner would catch a
-  wrong basis. An Easy instance leaves most reasons for a difference unexercised.
+  wrong basis.
 - **offer as:** the controlled version: none of your own chat history involved, no question of
   whether your agent can reach your logs, and the tutor can put a model switch or a subagent into the
   chat on purpose. Take it when you have no finished chat worth estimating, or when you want the
