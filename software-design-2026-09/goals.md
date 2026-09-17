@@ -219,16 +219,6 @@ against what you agreed is a later topic.
 - **nearest confusable:** spec
 - **synonyms:** implementation plan
 
-### `w-task`
-
-- **goal:** task
-- **criterion:** vocabulary
-- **supply:** vocabulary
-- **bar:** one production pass
-- **group:** vocabulary
-- **what it names:** one numbered piece of a plan, checked before the next one starts
-- **nearest confusable:** step
-
 ### `w-success-criteria`
 
 - **goal:** success criteria
