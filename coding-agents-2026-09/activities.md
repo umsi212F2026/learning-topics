@@ -284,6 +284,7 @@ with the learner.
   people who sign in with ChatGPT: the Power slider, Astra, Max and Ultra it mentions may not be
   offered through U-M's gateway, where the models on offer include gpt-5.6-sol, gpt-5.6-terra,
   gpt-5.6-luna and gpt-5-mini. It gives no prices.
+- **verified:** 2026-09-17
 - **learner does:** reads the section once. Then, before the tutor says anything, writes three short
   lines, one each for Sol, Terra and Luna: a moment from their own work with Codex so far, or one
   they expect in the session 7 lab, where that model would be the right pick, and the detail of that
@@ -325,6 +326,7 @@ with the learner.
   2-3× the turns on multi-step work", costing more overall. The BLOCKED list separates "a context
   problem" (more context, same model) from a task that "requires more reasoning" (a more capable
   model). The file is on the main branch and changes often; the copy installed in Codex may lag it.
+- **verified:** 2026-09-17
 - **learner does:** reads the two parts once. Then works through three or four pairs of short
   situations the tutor sets. The two situations in a pair are the same except for one detail. For
   each pair, says which one is worth trying a better model for and which would be overkill, and
@@ -470,6 +472,7 @@ with the learner.
   main chat and have subagents return summaries, and the same page says earlier that subagent
   workflows "consume more tokens than comparable single-agent runs". Neither section explains why a
   long chat costs more per message; the tutor supplies that.
+- **verified:** 2026-09-17
 - **learner does:** reads both sections. Then, for each piece of advice (one chat per unit of work;
   stay in the chat when that preserves the reasoning trail; do not run a whole project in one chat;
   move noisy work to a subagent), writes a moment from their own work with Codex so far where it
@@ -518,6 +521,7 @@ with the learner.
   written for an agent, not a tutorial, and they are dense; the rest of both files is detail this
   activity skips. Both files are on the main branch and change often; the copy installed in Codex
   may lag them.
+- **verified:** 2026-09-17
 - **learner does:** reads the passages with the tutor. Then takes the handoffs in the Superpowers
   flow one at a time: brainstorming ends in a written spec; the spec becomes a written plan; each
   task in the plan goes to a fresh implementer subagent; a separate reviewer checks each task; the
@@ -668,6 +672,9 @@ with the learner.
   subsection "GPT-5.6 and later" under "How caching works" and the bullets under "Monitor cache
   performance". Those say that cached input and cache writes are counted inside input tokens and, at
   OpenAI's own prices, charged at 0.1 and 1.25 times the ordinary input rate. U-M's rates may differ.
+- **verified:** 2026-09-17 for OpenAI's "Prompt caching" guide. NOT VERIFIED: U-M's pricing page, which
+  returned HTTP 403 to every automated fetch, so its current models and rates, whether it gives
+  cached-input or cache-write rates, and whether the gpt-5.6 models appear were not read.
 - **learner does:** first, before seeing anything, writes the request they would send their own
   agent to find out what that chat cost. Then watches the tutor carry out the request as an agent
   would, saying before each step what they expect the agent to need next (where the record of the
@@ -718,6 +725,9 @@ with the learner.
   VERIFIED, tutor should check before offering: it refused automated fetches on 2026-09-17, so its
   contents were not read), and OpenAI's "Prompt caching" guide,
   https://developers.openai.com/api/docs/guides/prompt-caching.
+- **verified:** 2026-09-17 for OpenAI's "Prompt caching" guide. NOT VERIFIED: U-M's pricing page, which
+  returned HTTP 403 to every automated fetch, so its current models and rates, whether it gives
+  cached-input or cache-write rates, and whether the gpt-5.6 models appear were not read.
 - **learner does:** reads three replies an agent might give when asked what a finished chat cost,
   each with a short description of the chat beside it. For each reply, writes: what the figure is
   based on, as far as the reply says (which model's prices, which counts); anything wrong with that
@@ -759,6 +769,10 @@ with the learner.
   refused automated fetches on 2026-09-17, so which models and rates it lists was not read, and an
   agent asked to read it may be refused the same way, while the learner can open it in a browser).
   15 to 20 minutes.
+- **verified:** 2026-09-17 for the Codex session log format, against the openai/codex source.
+  NOT VERIFIED: U-M's pricing page, which returned HTTP 403 to every automated fetch, so its current
+  models and rates, whether it gives cached-input or cache-write rates, and whether the gpt-5.6
+  models appear were not read.
 - **learner does:** opens a new chat in Codex, not the chat being estimated, and asks the agent in
   their own words to estimate what the chosen chat cost. Reads the reply, and if it does not say
   what the figure rests on, asks until it does. Then, without help, tells the tutor what the figure is
@@ -814,6 +828,10 @@ with the learner.
   below, in a scratch folder outside any repository; the learner's own Codex agent; and U-M's
   pricing page, https://its.umich.edu/computing/ai/pricing (NOT VERIFIED, tutor should check before
   offering: it refused automated fetches on 2026-09-17, so its contents were not read). 20 minutes.
+- **verified:** 2026-09-17 for the Codex session log format, against the openai/codex source.
+  NOT VERIFIED: U-M's pricing page, which returned HTTP 403 to every automated fetch, so its current
+  models and rates, whether it gives cached-input or cache-write rates, and whether the gpt-5.6
+  models appear were not read.
 - **learner does:** opens Codex on the scratch folder, starts a new chat, and asks the agent in their
   own words to estimate what the chat recorded in that folder cost. Reads the reply and asks until it
   says what the figure rests on. Then, without help, tells the tutor which model's prices and which
