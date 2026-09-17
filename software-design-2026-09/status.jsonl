@@ -10,3 +10,14 @@
 {"at":"2026-09-17T11:51:05.516Z","kind":"goal-added","goal":"w-spike","needs":"curation"}
 {"at":"2026-09-17T11:51:05.549Z","kind":"goal-added","goal":"w-architecture","needs":"curation"}
 {"at":"2026-09-17T11:51:05.583Z","kind":"goal-added","goal":"w-tech-stack","needs":"curation"}
+{"at":"2026-09-17T12:50:03.388Z","kind":"curated","goal":"c-write-success-criteria"}
+{"at":"2026-09-17T12:50:03.432Z","kind":"curated","goal":"c-choose-approach"}
+{"at":"2026-09-17T12:50:03.467Z","kind":"curated","goal":"w-spec"}
+{"at":"2026-09-17T12:50:03.502Z","kind":"curated","goal":"w-plan"}
+{"at":"2026-09-17T12:50:03.538Z","kind":"curated","goal":"w-success-criteria"}
+{"at":"2026-09-17T12:50:03.579Z","kind":"curated","goal":"w-constraint"}
+{"at":"2026-09-17T12:50:03.616Z","kind":"curated","goal":"w-mvp"}
+{"at":"2026-09-17T12:50:03.649Z","kind":"curated","goal":"w-yagni"}
+{"at":"2026-09-17T12:50:03.686Z","kind":"curated","goal":"w-spike"}
+{"at":"2026-09-17T12:50:03.725Z","kind":"curated","goal":"w-architecture"}
+{"at":"2026-09-17T12:50:03.880Z","kind":"curated","goal":"w-tech-stack"}
