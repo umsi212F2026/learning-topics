@@ -12,3 +12,16 @@
 {"at":"2026-09-17T11:23:34.156Z","kind":"goal-added","goal":"c-choose-model","needs":"curation"}
 {"at":"2026-09-17T11:23:37.296Z","kind":"goal-added","goal":"c-split-chats","needs":"curation"}
 {"at":"2026-09-17T11:23:41.135Z","kind":"goal-added","goal":"c-ask-cost-estimate","needs":"curation"}
+{"at":"2026-09-17T13:09:57.105Z","kind":"curated","goal":"w-token"}
+{"at":"2026-09-17T13:10:02.281Z","kind":"curated","goal":"w-input-tokens"}
+{"at":"2026-09-17T13:10:06.374Z","kind":"curated","goal":"w-output-tokens"}
+{"at":"2026-09-17T13:10:10.467Z","kind":"curated","goal":"w-prompt-caching"}
+{"at":"2026-09-17T13:10:14.625Z","kind":"curated","goal":"w-model"}
+{"at":"2026-09-17T13:10:18.529Z","kind":"curated","goal":"w-reasoning-effort"}
+{"at":"2026-09-17T13:10:22.511Z","kind":"curated","goal":"w-context"}
+{"at":"2026-09-17T13:10:26.350Z","kind":"curated","goal":"w-context-window"}
+{"at":"2026-09-17T13:10:30.433Z","kind":"curated","goal":"w-compaction"}
+{"at":"2026-09-17T13:10:34.338Z","kind":"curated","goal":"w-system-prompt"}
+{"at":"2026-09-17T13:10:37.980Z","kind":"curated","goal":"c-choose-model"}
+{"at":"2026-09-17T13:10:42.021Z","kind":"curated","goal":"c-split-chats"}
+{"at":"2026-09-17T13:10:45.954Z","kind":"curated","goal":"c-ask-cost-estimate"}
