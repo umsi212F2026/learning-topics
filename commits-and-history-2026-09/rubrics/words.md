@@ -59,7 +59,8 @@ Answers for `tasks/words.md`. **Do not read this before attempting the questions
   out a restore of the repository protecting or bringing back that file.
 - **credit:** full credit needs both halves: (a) the file is not inside the repository, so git has
   no record of it and cannot commit it; (b) one thing that not having it in the commit rules out, such as no earlier version of
-  it can come back from the history, or a restore will not touch or protect it. Half credit for
+  it can come back from the history, a restore will not touch or protect it, the changes cannot be
+  pushed to GitHub, or the file is not shared with collaborators. Half credit for
   either half alone. No credit for reading "outside the repo" as the agent lacking permission, the
   file being broken, or the file having been deleted.
 
