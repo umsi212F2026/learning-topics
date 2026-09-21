@@ -10,9 +10,9 @@ with the learner.
 | id | Goal | Criterion: what gets examined, and what counts |
 | -- | ---- | ---------------------------------------------- |
 | `o-orientation` | get the shape of this area before working on any particular part of it | `orientation` |
-| `c-check-persistence` | find out whether an app really keeps what its agent says it saves | Given an app whose agent says it now saves something, says what they would do to find out whether it is really kept. It passes when what they describe would catch an app that kept it only in the open page, one that kept it only in that browser, one that kept it only until the server restarted, and one that lost what was already saved when its tables changed. They may ask the agent to restart the server. Asking the agent whether it is saved does not meet it. |
-| `c-review-schema` | tell whether the tables an agent proposes can hold what the app has to remember | Given a short description of an app and the tables its agent proposes, each listed with its columns, names anything the app will need to remember that isn't saved in any of the tables, or says that nothing is missing. It passes when they find what is missing without naming anything that isn't, and say so when nothing is. Whether the tables are organized well is not part of it, only whether they can hold what the app needs. |
-| `c-trace-action` | follow one action in the app from the click to where it is kept, and back to the screen | Given something a user does in an app with a server and a database, such as adding an item to a list, says in order which part of the app handles it and what passes between the parts, from the click until the result is on screen. It passes when every part the action goes through is named, in order, on the way there and back, no part is named that it doesn't go through, and nothing is given to a part that could not do it. |
+| `c-check-persistence` | find out whether an app really keeps what its agent says it saves | Given an app whose agent says it now saves something, says what they would do to find out whether it is really kept. It passes when what they describe would catch an app that kept it only in the open page, one that kept it only in that browser, one that kept it only until the server restarted, and one that lost what was already saved when its tables changed. They may ask the agent to restart the server or to change the tables. Asking the agent whether it is saved does not meet it. |
+| `c-review-schema` | tell whether the tables an agent proposes can hold what the app has to remember | Given a short description of an app and the tables its agent proposes, each listed with its columns, names anything the app will need to remember that isn't saved in any of the tables, or says that nothing is missing. It passes when they find what is missing without naming anything that isn't, and when nothing is, say so and point to where each thing the app needs to remember is kept. Whether the tables are organized well is not part of it, only whether they can hold what the app needs. |
+| `c-trace-action` | follow one action in the app from the click to where it is kept, and back to the screen | Given something a user does in an app with a server and a database, such as adding an item to a list, and a list of the app's parts that doesn't say how they connect, says in order which part of the app handles it and what passes between the parts, from the click until the result is on screen. It passes when every part the action goes through is named, in order, on the way there and back, no part is named that it doesn't go through, and nothing is given to a part that could not do it. |
 
 ## Coverage
 
@@ -23,7 +23,7 @@ with the learner.
 
 | goal | study | checks | notes |
 | ---- | ----- | ------ | ----- |
-| `o-orientation` | `a-read-codecademy-backend`, `a-read-mdn-server-side`, `a-read-fullstack-for-builders` | `a-dry-run-backend-asks` | |
+| `o-orientation` | `a-read-codecademy-backend` | `a-dry-run-backend-asks` | |
 | `c-check-persistence` | `a-hunt-planted-forgetting`, `a-judge-persistence-plans`, `a-read-prisma-migrations` | `a-plan-persistence-check`, `a-check-own-app-saves` | |
 | `c-review-schema` | `a-sort-missing-claims`, `a-narrated-table-review`, `a-list-own-app-memory` | `a-review-proposed-tables`, `a-review-own-agent-tables` | |
 | `c-trace-action` | `a-watch-list-app-requests`, `a-judge-action-traces`, `a-read-mdn-dynamic-request` | `a-trace-described-action`, `a-trace-own-app-action` | |
@@ -107,130 +107,18 @@ with the learner.
 
 ### `a-read-mdn-server-side`
 
-- **serves:** `all`
-- **supports:** orient
 - **artifact:** MDN Web Docs, "Introduction to the server side",
-  https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Introduction
-  (free, no account; the first article of MDN's "Server-side website programming first steps"; its
-  footer says last modified Sep 12, 2026). Read: the opening, from "Welcome to the MDN beginner's
-  server-side programming course!" to "learning about server-side development is highly
-  recommended" (about 200 words, including its Prerequisites and Objective lines); the section What
-  is server-side website programming? (about 170 words) and its two subsections, Static sites
-  (about 100 words and a diagram) and Dynamic sites (about 230 words and a diagram numbered 1 to 6);
-  and, from What can you do on the server-side?, only the subsection Efficient storage and delivery
-  of information (about 290 words). About 1,000 words: 8 minutes of reading inside a 35-minute
-  session. The whole page has no code, no commands and no text in code type. Skipped: Are
-  server-side and client-side programming the same? (programming languages and frameworks), the
-  other subsections of What can you do on the server-side? (personalization, logins, sessions,
-  notifications, analytics; logins belong to Problem Set 3), and the Summary. Words in place:
-  server-side and client-side, "back-end scripting" (once, in Dynamic sites), server, client,
-  browser, request, response, HTTP, URL, database, JSON (in Efficient storage), and the status a
-  response carries ("200 OK", "an error status") without the words "status code". Not named:
-  endpoint, API, status code, localhost, server log, SQL, table, schema, migration, fixture. The page
-  describes the kind of site where the server builds each whole page from HTML templates and data
-  from the database; the Dynamic sites diagram has boxes for Browser, Web Server, Web Application,
-  Database and Files (HTML templates and static files). A React app like the learner's is the other
-  kind, which the page mentions in one sentence of Efficient storage: the server can "return data
-  (JSON, XML, etc.) for rendering by appropriate client-side web frameworks".
-- **verified:** 2026-09-21
-- **learner does:** reads with their own app open beside the page, and stops three times:
-  1. After Static sites: says whether their app as it is today is closer to the static diagram or
-     to the dynamic one, and why.
-  2. At the Dynamic sites diagram, before the section's last paragraph: says in their own words
-     what each of the six numbered steps does.
-  3. After Efficient storage: redraws the Dynamic sites diagram for their own app as it will be
-     after the lab (on paper held up to the camera, or as boxes and arrows typed in the chat): the
-     React page in the browser, the server, the database, and arrows labeled with what travels
-     along them. Says which of MDN's boxes they dropped and why, what comes back to the browser
-     now, and which part draws the screen.
-  Then takes the ten words the page doesn't name, one at a time, the way
-  `a-read-codecademy-backend` describes: the tutor names the word and a place to look, the learner
-  answers first, and each ends with a sentence of the learner's own.
-- **tutor role:** explainer
-- **tutor does:** stays quiet through the reading except at the three stops and when asked, and
-  takes the learner's answer first each time. At stop 1, a useful anchor: their app today is nearer
-  the static picture, since the dev server sends everyone the same files and everything that
-  changes happens in the page. On the redrawn diagram, asks near-miss questions wherever it would
-  not work for a React app with a server and a database: an arrow from the page straight to the
-  database; the server drawing the screen; the templates box kept; "Web Server" and "Web
-  Application" as two boxes (in the app their agent builds, both are usually one program, the
-  server; say so). For the ten words, uses the pointers in `a-read-codecademy-backend`'s `tutor
-  does`, plus: endpoint (the addresses on their redrawn server that the page's arrows point at, one
-  for "give me the list" and one for "save this"); API (what an agent means when it says "I added an
-  API for your habits"); status code (the "200 OK" in the reading, and the 404 on a page that
-  doesn't exist). Makes no change to the learner's app.
-- **done when:** the redrawn diagram has the page, the server and the database with requests and
-  responses between them, no templates box, data rather than a finished page coming back, and the
-  page drawing the screen; and each of the ten words has the learner's first answer and their own
-  closing sentence. No `checks`: the readiness indication is taken in `a-dry-run-backend-asks`,
-  which follows.
-- **offer as:** the authoritative one, from the reference most web developers use, and the only
-  reading with diagrams. About 1,000 words, 35 minutes with the redrawing. It explains the older
-  kind of site, where the server builds every page, so the most useful part of the session is
-  turning its diagram into one for your React app. Names the fewest of this topic's words (ten are
-  left for the tutor) and nothing about tables or SQL. Followed by `a-dry-run-backend-asks`.
+  https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Introduction,
+  read as an orientation, with its Dynamic sites diagram redrawn for the learner's own app.
+- **status:** dropped: the instructor chose `a-read-codecademy-backend` as this topic's
+  orientation reading, 2026-09-21
 
 ### `a-read-fullstack-for-builders`
 
-- **serves:** `all`
-- **supports:** orient
 - **artifact:** MindStudio blog, "What Is a Full-Stack App? Frontend, Backend, and Database
-  Explained", https://www.mindstudio.ai/blog/what-is-a-full-stack-app (free, no account; published
-  2026-04-15 under the company's name, with no named author). A vendor's blog: MindStudio sells an
-  AI app builder called Remy, promotional panels sit inside two of the assigned subsections, and
-  the later sections are about the product. Read, in order: The Three Layers Every Real App Needs
-  (about 150 words); What "Full-Stack" Actually Means (180); The Frontend: What Users See, with its
-  subsections What the Frontend Does, What the Frontend Doesn't Do, and Single-Page Apps vs.
-  Server-Rendered Apps (330); The Backend: Where the Logic Lives, with What the Backend Does and How
-  the Backend Exposes Itself (240); The Database: Where Data Lives, with Relational vs.
-  Non-Relational Databases and What a Schema Is (260); How the Three Layers Connect (180); and
-  What's Often Missing from "App" Builders (175). About 1,500 words: 11 or 12 minutes of reading
-  inside a 35 to 40 minute session. Skipped: the product panels (inside What the Backend Does, and
-  at the top of What a Schema Is), Backend Languages and Frameworks, Serverless vs. Traditional
-  Servers, Managed Database Services, Authentication: The Layer People Forget (logins belong to
-  Problem Set 3), and everything from How Remy Handles the Full Stack to the end. The assigned
-  sections contain no code and no commands; two endpoint addresses appear in code type
-  (`/api/users/login` in How the Backend Exposes Itself, `/api/auth/login` in How the Three Layers
-  Connect). Words in place: frontend, backend, server-side, server, request, response, HTTP, API,
-  endpoints, JSON, database, SQL, tables, rows, columns, schema, and what a database is for ("When
-  you restart the server, the data is still there"). Not named in the assigned sections: status
-  code, localhost, server log, migration (it appears only in a skipped product section), fixture.
-  The worked example in How the Three Layers Connect is a login, which belongs to Problem Set 3.
-  Some claims are sweeping and unsupported ("This is why most AI-generated apps fail in
-  production").
-- **learner does:** reads with their own app open beside the page, and stops four times:
-  1. After each of the three layer sections (frontend, backend, database): says whether their app
-     has that layer today, and what the lab will add.
-  2. At What a Schema Is: names two tables their own app would need and two columns for each.
-  3. At How the Three Layers Connect: rewrites the article's login steps for one action in their
-     own app (adding an item), from the click to the screen, then compares with the article's
-     version.
-  4. At What's Often Missing from "App" Builders: says one thing they would do to find out whether
-     their app really keeps what its agent says it keeps (a first answer; nothing is judged).
-  Then takes the five words the article doesn't name the way `a-read-codecademy-backend`
-  describes.
-- **tutor role:** explainer
-- **tutor does:** before the reading, says it is a company's blog selling an app builder, and
-  which panels and sections to skip. Stays quiet through the reading except at the stops and when
-  asked, taking the learner's answer first each time. At stop 2, asks where on screen each column's
-  values would show, and accepts rough tables: organizing them is the agent's job. At stop 3,
-  checks the rewrite has a way back from the database to the screen, and points out that the
-  article's own steps stop at the frontend storing a token and never reach the screen. At stop 4,
-  takes the answer without correcting it; that capability comes later. For the five words, uses the
-  pointers in `a-read-codecademy-backend`'s `tutor does` for localhost, server log, migration and
-  fixture, and for status code, the 404 on a page that doesn't exist. At the end, asks which
-  sentence sounded most like an advertisement, and whether anything the learner took from the
-  reading rested on it.
-- **done when:** each stop has an answer tied to the learner's own app, the rewrite at stop 3 runs
-  from the click to the database and back to the screen, and each of the five words has the
-  learner's first answer and their own closing sentence. No `checks`: the readiness indication is
-  taken in `a-dry-run-backend-asks`, which follows.
-- **offer as:** written for people who build apps with AI tools rather than write code, and the
-  only reading that goes inside the database (tables, rows, columns, SQL, schema), so it names the
-  most of this topic's words and leaves five. The longest, about 1,500 words and 35 to 40 minutes.
-  It ends on the problem this topic is built around: apps an AI builds that look finished but keep
-  nothing. A company's blog, with panels to skip and a sales pitch in its tone. Followed by
-  `a-dry-run-backend-asks`.
+  Explained", https://www.mindstudio.ai/blog/what-is-a-full-stack-app, read as an orientation.
+- **status:** dropped: the instructor chose `a-read-codecademy-backend` as this topic's
+  orientation reading, 2026-09-21
 
 ### `a-dry-run-backend-asks`
 

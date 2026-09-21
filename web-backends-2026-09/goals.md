@@ -190,8 +190,8 @@ internet, with logins and secrets, belongs to Problem Set 3, not to this topic.
   find out whether it is really kept. It passes when what they describe would catch an app that
   kept it only in the open page, one that kept it only in that browser, one that kept it only
   until the server restarted, and one that lost what was already saved when its tables changed.
-  They may ask the agent to restart the server. Asking the agent whether it is saved does not
-  meet it.
+  They may ask the agent to restart the server or to change the tables. Asking the agent whether
+  it is saved does not meet it.
 
 ### `c-review-schema`
 
@@ -199,16 +199,18 @@ internet, with logins and secrets, belongs to Problem Set 3, not to this topic.
 - **criterion:** Given a short description of an app and the tables its agent proposes, each
   listed with its columns, names anything the app will need to remember that isn't saved in any
   of the tables, or says that nothing is missing. It passes when they find what is missing
-  without naming anything that isn't, and say so when nothing is. Whether the tables are
-  organized well is not part of it, only whether they can hold what the app needs.
+  without naming anything that isn't, and when nothing is, say so and point to where each thing
+  the app needs to remember is kept. Whether the tables are organized well is not part of it,
+  only whether they can hold what the app needs.
 
 ### `c-trace-action`
 
 - **goal:** follow one action in the app from the click to where it is kept, and back to the
   screen
 - **criterion:** Given something a user does in an app with a server and a database, such as
-  adding an item to a list, says in order which part of the app handles it and what passes
-  between the parts, from the click until the result is on screen. It passes when every part the
+  adding an item to a list, and a list of the app's parts that doesn't say how they connect,
+  says in order which part of the app handles it and what passes between the parts, from the
+  click until the result is on screen. It passes when every part the
   action goes through is named, in order, on the way there and back, no part is named that it
   doesn't go through, and nothing is given to a part that could not do it.
 
