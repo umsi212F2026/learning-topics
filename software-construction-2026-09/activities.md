@@ -141,6 +141,7 @@ with the learner.
   scoped re-review" on the plane below, quoting the skill: "unreviewed fixes are how regressions
   land." The documentation of "Write the implementation plan" mentions "a self-review against the
   spec for coverage", which is coverage of the spec, not test coverage. 30 to 40 minutes.
+- **verified:** 2026-09-21
 - **learner does:**
   1. Opens the diagram and, before reading any note or clicking anything, looks at the lower
      pool's three lanes and writes down which lane they expect to be busiest and where they expect
@@ -277,6 +278,7 @@ with the learner.
   mock here?"); "The Mutation Check", a list of five kinds of break; and "Warning Signs". Of the six
   fenced blocks, read only the Overview one, which is two numbered lines of plain words and no
   code. Skip the other five: nothing here asks the learner to read one.
+- **verified:** 2026-09-21
 - **learner does:** reads the pieces in order, holding in mind one thing the tutor's app should do
   ("a saved note is still there after a reload"). At "Name the Break", writes the change to the
   app that should make a test of that thing fail, in words about the app ("the server says OK but
@@ -339,6 +341,7 @@ with the learner.
   tests, a check that the server accepted the note, a test against a mock, a coverage percentage,
   "I tried it in the browser", a real test of a different behavior, and a test that checks half of
   the thing. 20 to 25 minutes. No app, no code, nothing to install.
+- **verified:** 2026-09-21
 - **learner does:** reads the app description, then answers the file's three questions for each of
   the ten answers: does it name a test that would fail if that one thing broke (yes, no, or can't
   tell from this); what in the answer decided it; and, if not yes, the one question they would send
@@ -674,6 +677,7 @@ with the learner.
   key for the tutor. Four could be done by a program (one of them needs no browser at all), two
   need a person, and two are partly each, one of them because it names nothing in particular to
   check. 20 to 25 minutes. No app, no code.
+- **verified:** 2026-09-21
 - **learner does:** answers the file's three questions for each request: could a program do it
   (yes, no or partly); if so, what the test would do and what it would check, in plain words an
   agent could write it from; if not, what only a person can supply. Then states the rule they used.
