@@ -249,9 +249,9 @@ Answers for `tasks/words.md`. **Do not read this before attempting the questions
 - **credit:** full credit for saying nothing carries over by itself, so Tuesday's explanation is not
   in Thursday's context, which holds only what is sent in that chat. Full credit for adding that the
   way to carry it over is to write it down where the agent will read it. An answer that says the
-  agent "forgot" counts only if it also says nothing was kept between the chats in the first place.
-  Do not accept a different quibble as the error: that the tables may have changed since Tuesday,
-  that Codex may have been updated, or that they should have committed their work.
+  agent "forgot" counts only if it also says the model kept nothing between the chats in the first
+  place. Do not accept a different quibble as the error: that the tables may have changed since
+  Tuesday, that Codex may have been updated, or that they should have committed their work.
 
 ### q-context-vs-window
 
