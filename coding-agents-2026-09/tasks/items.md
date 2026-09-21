@@ -4,8 +4,6 @@
 `w-reasoning-effort`, `w-context`, `w-context-window`, `w-compaction` and `w-system-prompt`, with
 three questions on `c-choose-model`, `c-split-chats` and `c-ask-cost-estimate` at the end.
 
-A practice draw takes 2 of these.
-
 Answer each question in one to three sentences, in your own words, with nothing open. Where a
 question quotes a coding agent, imagine it is Codex working on one of your own course projects,
 running the course default (gpt-5.6-luna at medium reasoning effort) unless the question says
