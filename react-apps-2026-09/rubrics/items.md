@@ -526,8 +526,10 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
   sentence, that the links expire, is a guess about the cause written as though it had been seen.
   Nobody can see a link expire; what was seen is a blank page. An agent that takes it as fact may
   go looking for an expiry to remove and leave the real cause alone.
-- **credit:** full credit for any two of the three, half credit for one. No credit for calling
-  "blank" unclear, for answers about tone, length or politeness, or for treating the first
+- **credit:** full credit for any two of the three, half credit for one. Missing steps, such as
+  how the link was opened or how to get to the page, count as the missing address, not as a
+  separate problem, so naming both the address and the steps is still only one. No credit for
+  calling "blank" unclear, for answers about tone, length or politeness, or for treating the first
   sentence as the guess. A missing detail about the expiry itself, such as how long links last,
   earns nothing, since it takes the guess as fact.
 
