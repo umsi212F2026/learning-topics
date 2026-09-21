@@ -196,10 +196,10 @@ internet, with logins and secrets, belongs to Problem Set 3, not to this topic.
 
 - **goal:** tell whether the tables an agent proposes can hold what the app has to remember
 - **criterion:** Given a short description of an app and the tables its agent proposes, each
-  listed with its columns, names anything the app will need to remember that has nowhere to go,
-  or says that nothing is missing. It passes when they find what is missing without naming
-  anything that isn't, and say so when nothing is. Whether the tables are organized well is not
-  part of it, only whether they can hold what the app needs.
+  listed with its columns, names anything the app will need to remember that isn't saved in any
+  of the tables, or says that nothing is missing. It passes when they find what is missing
+  without naming anything that isn't, and say so when nothing is. Whether the tables are
+  organized well is not part of it, only whether they can hold what the app needs.
 
 ### `c-trace-action`
 
@@ -220,3 +220,144 @@ internet, with logins and secrets, belongs to Problem Set 3, not to this topic.
 - **recurrence:** never
 - **is_required:** no
 - **group:** orientation
+
+### `w-backend`
+
+- **goal:** backend
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the half of the app that doesn't run in the browser
+- **nearest confusable:** dev server
+- **synonyms:** server, server side
+
+### `w-request`
+
+- **goal:** request
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** one trip from the page to the server and back
+- **nearest confusable:** a page load
+- **synonyms:** HTTP request
+
+### `w-endpoint`
+
+- **goal:** endpoint
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** one of the addresses a server answers at
+- **nearest confusable:** a page's URL
+- **synonyms:** API route
+
+### `w-api`
+
+- **goal:** API
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the set of requests a server has promised to answer
+- **nearest confusable:** the backend
+
+### `w-status-code`
+
+- **goal:** status code
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the number that comes back with every response, such as 200 or 404
+- **nearest confusable:** an error message
+- **synonyms:** HTTP status, response code
+
+### `w-localhost`
+
+- **goal:** localhost
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the name in the address while the app runs only on your own machine
+- **nearest confusable:** a deployed site
+- **synonyms:** 127.0.0.1
+
+### `w-server-log`
+
+- **goal:** server log
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** what the server prints while it runs, out of the browser's sight
+- **nearest confusable:** the browser console
+- **synonyms:** server output, logs
+
+### `w-database`
+
+- **goal:** database
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** what is still there after everything has been switched off
+- **nearest confusable:** the backend
+- **synonyms:** DB
+
+### `w-sql`
+
+- **goal:** SQL
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the language the database is asked things in
+- **nearest confusable:** the database
+- **synonyms:** Structured Query Language
+
+### `w-table`
+
+- **goal:** table
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** one kind of thing the database keeps, with a row for each
+- **nearest confusable:** the database
+
+### `w-schema`
+
+- **goal:** schema
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the promised shape of the data, not the data
+- **nearest confusable:** a table
+- **synonyms:** data model
+
+### `w-migration`
+
+- **goal:** migration
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a change to the schema once data is already in the database
+- **nearest confusable:** the schema; moving to a different database
+- **synonyms:** schema migration, database migration
+
+### `w-fixture`
+
+- **goal:** fixture
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** what a test puts in place before it runs, the same way every time
+- **nearest confusable:** sample data
+- **synonyms:** test fixture
