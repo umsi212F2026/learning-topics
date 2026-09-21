@@ -1,4 +1,4 @@
-# Activities — web backends
+# Activities: web backends
 
 Candidate activities for the study phase. More than will be used; the tutor chooses among them
 with the learner.
@@ -92,10 +92,12 @@ with the learner.
   here doesn't match one there, this file is the one that's wrong.
 -->
 
-| id                      | Goal | Criterion — what gets examined, and what counts |
-| ----------------------- | ---- | ----------------------------------------------- |
-| `o-orientation`         |      | `orientation`                                   |
-| `c-read-unseen-diagram` |      |                                                 |
+| id | Goal | Criterion: what gets examined, and what counts |
+| -- | ---- | ---------------------------------------------- |
+| `o-orientation` | get the shape of this area before working on any particular part of it | `orientation` |
+| `c-check-persistence` | find out whether an app really keeps what its agent says it saves | Given an app whose agent says it now saves something, says what they would do to find out whether it is really kept. It passes when what they describe would catch an app that kept it only in the open page, one that kept it only in that browser, one that kept it only until the server restarted, and one that lost what was already saved when its tables changed. They may ask the agent to restart the server. Asking the agent whether it is saved does not meet it. |
+| `c-review-schema` | tell whether the tables an agent proposes can hold what the app has to remember | Given a short description of an app and the tables its agent proposes, each listed with its columns, names anything the app will need to remember that isn't saved in any of the tables, or says that nothing is missing. It passes when they find what is missing without naming anything that isn't, and say so when nothing is. Whether the tables are organized well is not part of it, only whether they can hold what the app needs. |
+| `c-trace-action` | follow one action in the app from the click to where it is kept, and back to the screen | Given something a user does in an app with a server and a database, such as adding an item to a list, says in order which part of the app handles it and what passes between the parts, from the click until the result is on screen. It passes when every part the action goes through is named, in order, on the way there and back, no part is named that it doesn't go through, and nothing is given to a part that could not do it. |
 
 ## Coverage
 
@@ -135,10 +137,12 @@ with the learner.
   `n/a — already oriented` in `study` and leave it. That's a complete row too.
 -->
 
-| goal                    | study | checks | notes |
-| ----------------------- | ----- | ------ | ----- |
-| `o-orientation`         |       |        |       |
-| `c-read-unseen-diagram` |       |        |       |
+| goal | study | checks | notes |
+| ---- | ----- | ------ | ----- |
+| `o-orientation` | | | |
+| `c-check-persistence` | | | |
+| `c-review-schema` | | | |
+| `c-trace-action` | | | |
 
 ---
 
@@ -267,13 +271,119 @@ with the learner.
                   curation/critique to test it.
 -->
 
-### `<activity-id>`
+### `a-w-backend`
 
-- **serves:**
-- **supports:**
-- **artifact:**
-- **learner does:**
-- **tutor role:**
-- **tutor does:**
-- **done when:**
-- **offer as:**
+- **origin:** generated
+- **serves:** `w-backend`
+- **checks:** `w-backend`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-request`
+
+- **origin:** generated
+- **serves:** `w-request`
+- **checks:** `w-request`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-endpoint`
+
+- **origin:** generated
+- **serves:** `w-endpoint`
+- **checks:** `w-endpoint`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-api`
+
+- **origin:** generated
+- **serves:** `w-api`
+- **checks:** `w-api`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-status-code`
+
+- **origin:** generated
+- **serves:** `w-status-code`
+- **checks:** `w-status-code`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-localhost`
+
+- **origin:** generated
+- **serves:** `w-localhost`
+- **checks:** `w-localhost`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-server-log`
+
+- **origin:** generated
+- **serves:** `w-server-log`
+- **checks:** `w-server-log`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-database`
+
+- **origin:** generated
+- **serves:** `w-database`
+- **checks:** `w-database`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-sql`
+
+- **origin:** generated
+- **serves:** `w-sql`
+- **checks:** `w-sql`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-table`
+
+- **origin:** generated
+- **serves:** `w-table`
+- **checks:** `w-table`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-schema`
+
+- **origin:** generated
+- **serves:** `w-schema`
+- **checks:** `w-schema`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-migration`
+
+- **origin:** generated
+- **serves:** `w-migration`
+- **checks:** `w-migration`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-fixture`
+
+- **origin:** generated
+- **serves:** `w-fixture`
+- **checks:** `w-fixture`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
