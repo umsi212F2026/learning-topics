@@ -60,6 +60,7 @@ with the learner.
   database keeps it on disk; memory is what is lost when things are switched off), and "Reading and
   writing from static memory is fairly slow". Mapping out a request follows a shopper clicking a
   product on a large shop's site, not an app on a laptop.
+- **verified:** 2026-09-21
 - **learner does:** reads with their own app open in a browser window beside the page (the app
   with state from the last lab, or hello-react if that one isn't running). Stops at five points
   and, before reading on, says what in their own app corresponds now and what will correspond after
@@ -129,6 +130,7 @@ with the learner.
 - **artifact:** no external source. The learner's answers at the stops of
   `a-read-codecademy-backend`, and their retelling from its last stop, still in front of them. 10 to
   15 minutes. Nothing needs to be running.
+- **verified:** 2026-09-21
 - **learner does:** three short rehearsals, none of them judged, each answered in a sentence or
   two. First, the tutor describes an action in a made-up app with a server and a database, and the
   learner says roughly which parts it goes through, there and back. Second, the tutor, speaking as
@@ -270,6 +272,7 @@ with the learner.
   own, a switch that never leaves the page sent to the server, a reload traced without the dev
   server, and a reload with the right steps in the wrong order. 20 to 25 minutes. No app or browser
   needed.
+- **verified:** 2026-09-21
 - **learner does:** reads the app description, then for each of the eleven traces answers: does it
   pass? If not, which one thing is wrong: a part missing, a part named that the action doesn't go
   through, the parts out of order, or something handed to a part that can't do it. Then states the
@@ -569,6 +572,7 @@ with the learner.
   (which is only a reload), one that changes the tables before saving anything, and one that
   restarts the server but looks again in the same browser. 15 to 20 minutes. No app or browser
   needed.
+- **verified:** 2026-09-21
 - **learner does:** for each of the ten plans, marks which of the four forgetful apps it would
   catch. Then says what the plans that catch all four have in common. Then writes their own plan for
   the same message, as short as they can make it while still catching all four.
@@ -938,6 +942,7 @@ with the learner.
   or, where there wasn't one (as in the lab, where the agent adds a database to an app the learner
   already has, working from the app itself), the running app. 10 to 15 minutes, plus the tutor's
   time afterwards.
+- **verified:** 2026-09-21
 - **learner does:** when their agent proposes the tables it will build, and before approving them or
   asking it anything about them, writes alone, in a note, a list of everything the app will need to
   remember, each with the table and column that holds it, or "missing"; then a one-line verdict:
