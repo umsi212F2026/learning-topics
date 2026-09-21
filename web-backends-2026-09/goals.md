@@ -188,9 +188,10 @@ internet, with logins and secrets, belongs to Problem Set 3, not to this topic.
 - **goal:** find out whether an app really keeps what its agent says it saves
 - **criterion:** Given an app whose agent says it now saves something, says what they would do to
   find out whether it is really kept. It passes when what they describe would catch an app that
-  kept it only in the open page, one that kept it only in that browser, and one that kept it only
-  until the server restarted. They may ask the agent to restart the server. Asking the agent
-  whether it is saved does not meet it.
+  kept it only in the open page, one that kept it only in that browser, one that kept it only
+  until the server restarted, and one that lost what was already saved when its tables changed.
+  They may ask the agent to restart the server. Asking the agent whether it is saved does not
+  meet it.
 
 ### `c-review-schema`
 
@@ -208,8 +209,8 @@ internet, with logins and secrets, belongs to Problem Set 3, not to this topic.
 - **criterion:** Given something a user does in an app with a server and a database, such as
   adding an item to a list, says in order which part of the app handles it and what passes
   between the parts, from the click until the result is on screen. It passes when every part the
-  action goes through is named, in order, on the way there and back, and nothing is given to a
-  part that could not do it.
+  action goes through is named, in order, on the way there and back, no part is named that it
+  doesn't go through, and nothing is given to a part that could not do it.
 
 ### `o-orientation`
 
