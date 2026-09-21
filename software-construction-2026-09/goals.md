@@ -84,9 +84,9 @@ You step in at a few moments: when the agent asks you to check something by hand
 ends and it lists the decisions it made on your behalf, when you try what it built and it is not
 what you wanted, and, rarely, when it hits a failure it could not resolve. What this topic buys is
 enough to act well at those moments: telling whether a check handed to you really needs a person,
-asking whether something was tested and recognizing a hollow answer, and describing what is wrong
-well enough that the agent can find where it went wrong and redo the right part. Diagnosing the
-problem yourself, and debugging by hand, are past that line.
+and asking whether something was tested and recognizing a hollow answer. When what it built is
+not what you wanted, you describe it the way the React apps topic practiced, and finding the cause
+is the agent's job. Diagnosing the problem yourself, and debugging by hand, are past that line.
 
 ## Goals
 
@@ -192,7 +192,9 @@ problem yourself, and debugging by hand, are past that line.
 - **criterion:** Given one thing the app should do and the agent's answer to "has this been
   tested?", says whether the answer names a test that would fail if that one thing broke. If it
   does not, says what to ask the agent next. An answer about the whole suite, such as "all 24 tests
-  pass", is not an answer about one thing.
+  pass", is not an answer about one thing. Nor is a named test that would still pass if that one
+  thing broke, such as one that checks a note was accepted without checking it was saved, or one
+  that runs against a mock instead of the real database.
 
 ### `c-judge-manual-test`
 
@@ -202,17 +204,6 @@ problem yourself, and debugging by hand, are past that line.
   could, says what the automated test would do in the app and what it would check, well enough
   that the agent could write it. If it could not, names what the check needs that only a person
   can supply. "Automate it", with no account of what the test would check, does not meet it.
-
-### `c-describe-missed-requirement`
-
-- **goal:** tell the agent what the finished app does not do that I wanted, so it can find where
-  that got lost
-- **criterion:** Given a finished feature that does not do what they wanted, writes the request
-  they would send the agent. It says what they did, what happened, and what they wanted instead,
-  stated so that a test could check it, and asks the agent to find where that got lost (the spec,
-  one of its rulings, or a test that never checked it) before changing anything. It passes when
-  the agent could act on it without asking what they meant. Saying which of the three it was is
-  not required.
 
 ### `o-orientation`
 
