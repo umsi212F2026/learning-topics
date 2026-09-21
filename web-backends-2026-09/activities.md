@@ -5,6 +5,8 @@ with the learner.
 
 ## Check notes
 
+2026-09-21. Nothing at file level.
+
 ## Goals
 
 | id | Goal | Criterion: what gets examined, and what counts |
@@ -26,7 +28,7 @@ with the learner.
 | `o-orientation` | `a-read-codecademy-backend` | `a-dry-run-backend-asks` | |
 | `c-check-persistence` | `a-hunt-planted-forgetting`, `a-judge-persistence-plans`, `a-read-prisma-migrations` | `a-plan-persistence-check`, `a-check-own-app-saves` | |
 | `c-review-schema` | `a-sort-missing-claims`, `a-narrated-table-review`, `a-list-own-app-memory` | `a-review-proposed-tables`, `a-review-own-agent-tables` | |
-| `c-trace-action` | `a-watch-list-app-requests`, `a-judge-action-traces`, `a-read-mdn-dynamic-request` | `a-trace-described-action`, `a-trace-own-app-action` | |
+| `c-trace-action` | `a-watch-list-app-requests`, `a-judge-action-traces`, `a-read-mdn-dynamic-request` | `a-trace-described-action`, `a-trace-own-app-action` | The clause about naming no part the action doesn't go through is ruled on only in `a-trace-described-action`, through the dev server. If the goal is met through `a-trace-own-app-action` alone, where the dev server is accepted either way and actions that stay in the page never count, that clause has been tested only against invented stops. |
 
 ---
 
@@ -295,6 +297,14 @@ with the learner.
   the only thing that varies is the mistake, and the three that pass show the right shape for
   three different actions. The fastest route, and the only one that sets the common wrong answers
   side by side. Pick `a-watch-list-app-requests` to see the requests happen instead.
+- **check note:** Most failing traces break a rule that Shelf's summary states outright: `a3` and
+  `a4`, that only the server talks to the database; `a5`, that the page's requests go straight to
+  the server; `b2`, that the page works out what it shows. A learner can therefore judge them by
+  quoting it. Ask why each rule holds (why can't the page reach a database kept in a file on the
+  laptop?), since `a-trace-described-action`'s parts list states none of them. Also, `a5` fails only
+  because this summary says so. With Vite's proxy, a common setup, the page's requests do go through
+  the dev server and `a5` would pass. Say so when `a5` comes up, as the key already does for `a3`
+  and `b2`.
 
 ### `a-read-mdn-dynamic-request`
 
@@ -343,6 +353,12 @@ with the learner.
 - **offer as:** a worked example to take apart, in prose with a numbered diagram, 30 minutes and
   nothing to run. The reading's trace is for the older kind of site where the server builds each
   page, so the work is converting it to your kind of app, which is where understanding shows.
+- **check note:** Step 7, which this entry leaves aside, is the one place the reading touches what
+  the dev server does in the learner's app: sending the page's own files. If this is the learner's
+  only study route for `c-trace-action`, take step 7, and in the React rewrite ask where the page's
+  files come from before it can ask for the lineup. Otherwise nothing on this route shows where the
+  dev server sits, which is where a reload's path starts and what `a-trace-described-action` rules
+  on in every kind.
 
 ### `a-trace-described-action`
 
@@ -506,6 +522,14 @@ with the learner.
   watch its requests and its server log to see how close you were. Only possible once the lab has
   added a server and a database, which makes it the natural candidate for review visits.
   `a-trace-described-action` is the one to take now.
+- **check note:** For a counting attempt, prefer a reload or, where the app has one, an action on
+  something already deleted in another tab. A save counts here although `a-trace-described-action`
+  would not count it, and with the dev server accepted either way it examines little beyond the way
+  back. If this app's dev server passes the page's requests on (Vite's proxy), the Network panel
+  will show them going to the dev server's address rather than the server's. That is the opposite of
+  what every study activity and `a-trace-described-action` call the usual way. In the comparison
+  afterwards, say that this app is built the other way and that either account passed, so the
+  learner doesn't conclude that what they studied was wrong.
 
 ### `a-hunt-planted-forgetting`
 
@@ -559,6 +583,13 @@ with the learner.
   only look as if they save. The only candidate where you see each kind of forgetting happen for
   yourself. The longest (35 to 45 minutes plus setup), and it needs a live session in which the
   tutor can build and run the app. `a-judge-persistence-plans` needs nothing running.
+- **check note:** A change to the tables here always restarts the server too, so in `server-memory`
+  the items vanish on a table change because of the restart, not the tables. When you make one, say
+  so as an agent would ("I've added the column and restarted the server"). At the end, don't accept
+  a shortest list that relies on the table change to do the restart. Such a list catches all four
+  versions here, but `tasks/judge-persistence-plans.md` counts a table change as not making sure of
+  a restart (`p7`, `p8`), and that is how the checks for this goal are ruled. Ask for a restart of
+  its own.
 
 ### `a-judge-persistence-plans`
 
@@ -703,6 +734,10 @@ with the learner.
   and an agent's message, 10 minutes, nothing to run. The tutor picks the trap, so the harder
   messages (an agent that says it already tested, sample items that hide a loss) actually come up.
   `a-check-own-app-saves` is the same capability on a real message from your own agent.
+- **check note:** Tell the adjudicator that asking the agent to change the tables is not taken to
+  restart the server as well unless the plan asks for a restart. That is how
+  `tasks/judge-persistence-plans.md` rules on `p7` and `p8`. Without it, two rulings on the same
+  plan can differ over whether it catches the app that keeps things only until the server restarts.
 
 ### `a-check-own-app-saves`
 
@@ -753,6 +788,10 @@ with the learner.
   before you believe it. Only possible once your agent is adding a database, which makes it the
   natural candidate for the lab and for review visits. `a-plan-persistence-check` is the one to take
   now.
+- **check note:** Tell the adjudicator that asking the agent to change the tables is not taken to
+  restart the server as well unless the plan asks for a restart. This holds even if the agent did
+  restart it when the plan was carried out: the plan is judged as first written. That is how
+  `tasks/judge-persistence-plans.md` rules on `p7` and `p8`.
 
 ### `a-sort-missing-claims`
 
@@ -853,6 +892,13 @@ with the learner.
 - **offer as:** on your own app, and the most useful one before the lab: you arrive with the list
   you'll check your agent's tables against. 20 minutes. Needs your app with state, or a clear idea
   of it.
+- **check note:** The last step, grouping the kept lines into a guess at the tables, is
+  organization, which `c-review-schema` leaves out. Tell the learner that in the lab the list is for
+  checking what the agent's tables can hold, not whether they are grouped like the guess. A
+  different arrangement is not something to raise (it is the mistake in `k6` of
+  `tasks/sort-missing-claims.md`). Tell them too that if they use this list while writing the note
+  for `a-review-own-agent-tables`, they should say so at the top of it, since this session's
+  questions helped shape it.
 
 ### `a-review-proposed-tables`
 
@@ -986,6 +1032,13 @@ with the learner.
 - **offer as:** the real thing, at the moment this topic's depth is about: your agent proposes
   tables and you check them before approving. Only possible once your agent is adding a database,
   in the lab or in Problem Set 2. `a-review-proposed-tables` is the one to take now.
+- **check note:** `a-list-own-app-memory` tells the learner to bring its list to the lab and check
+  the agent's tables against it, and this entry doesn't say whether that is help. The tutor's
+  questions about what can be worked out and what must be kept shaped that list, and that is part of
+  what this check rules on. So have the learner write at the top of the note whether they used it,
+  and send that to the adjudicator as help for it to rule on. In the lab case, also tell the
+  adjudicator that the learner worked from the app itself and never saw your account of its screens.
+  That asks more than the criterion's short description does.
 
 ### `a-w-backend`
 
