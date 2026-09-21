@@ -44,8 +44,9 @@ with the learner.
   order: What are the clients? (about 60 words), What is a back-end? (70), What is a server? (50),
   What kinds of responses can a server send? (75), What is a database, and why do we need to use
   them? (95), What is a Web API, really? (120), Other principles of the request-response cycle (55),
-  and Mapping out a request (490). About 1,170 words: 9 or 10 minutes of reading inside a 30 to 35
-  minute session. Skipped: the course cards after the opening; What are the core functions of the
+  and Mapping out a request (490). About 1,170 words: 9 or 10 minutes of reading inside a 40 to 50
+  minute session, of which the five stops take about 15 minutes and the seven words about 15 more.
+  Skipped: the course cards after the opening; What are the core functions of the
   app? (routes, handler functions and middleware, which is how the server's code is organized and
   past this topic's depth); Conclusion; Frequently asked questions. The page has no code blocks and
   no diagrams, and the assigned sections contain no code and no commands: the only text in code
@@ -59,7 +60,6 @@ with the learner.
   database keeps it on disk; memory is what is lost when things are switched off), and "Reading and
   writing from static memory is fairly slow". Mapping out a request follows a shopper clicking a
   product on a large shop's site, not an app on a laptop.
-- **verified:** 2026-09-21
 - **learner does:** reads with their own app open in a browser window beside the page (the app
   with state from the last lab, or hello-react if that one isn't running). Stops at five points
   and, before reading on, says what in their own app corresponds now and what will correspond after
@@ -93,17 +93,18 @@ with the learner.
   to add a reminder time to each one); fixture (a scenario: their agent writes a test that starts
   from the same three sample items every time). Replies to a guess with a near-miss question and to
   "no idea" with a short pointer, then asks for the word back in the learner's own sentence rather
-  than accepting agreement. Makes no change to the learner's app.
+  than accepting agreement. If the sitting runs long, takes the seven words at the start of the
+  next one instead, before `a-dry-run-backend-asks`. Makes no change to the learner's app.
 - **done when:** each of the five stops has an answer tied to the learner's own app, the retelling
   at stop 5 runs from the click to the database and back to the screen, and each of the seven words
   has the learner's first answer and their own closing sentence. No `checks`: the readiness
   indication `o-orientation` is ruled on is taken in `a-dry-run-backend-asks`, which follows.
-- **offer as:** the shortest and most direct of the three readings: about 1,200 words of plain
-  prose, free, 30 to 35 minutes with the talk. It ends by following one click through every part
-  and back, and names endpoint, API and status code where they occur. No diagrams, and nothing
-  about what is inside a database (tables, SQL, schema), which the tutor raises afterwards;
-  `a-read-fullstack-for-builders` covers that, and `a-read-mdn-server-side` has the diagrams. Any of
-  the three is followed by `a-dry-run-backend-asks`.
+- **offer as:** this topic's orientation reading: about 1,200 words of plain prose, free, 40 to 50
+  minutes with the stops and the words (the words can move to the next sitting). It ends by
+  following one click through every part and back, and names endpoint, API and status code where
+  they occur. No diagrams, and nothing about what is inside a database (tables, SQL, schema), which
+  the tutor raises through the words that follow the reading. Followed by
+  `a-dry-run-backend-asks`.
 
 ### `a-read-mdn-server-side`
 
@@ -125,10 +126,9 @@ with the learner.
 - **serves:** `all`
 - **supports:** orient
 - **checks:** `o-orientation`
-- **artifact:** no external source. Whichever orientation reading the learner did, with their
-  answers, retelling or redrawn diagram still in front of them. 10 to 15 minutes. Nothing needs to
-  be running.
-- **verified:** 2026-09-21
+- **artifact:** no external source. The learner's answers at the stops of
+  `a-read-codecademy-backend`, and their retelling from its last stop, still in front of them. 10 to
+  15 minutes. Nothing needs to be running.
 - **learner does:** three short rehearsals, none of them judged, each answered in a sentence or
   two. First, the tutor describes an action in a made-up app with a server and a database, and the
   learner says roughly which parts it goes through, there and back. Second, the tutor, speaking as
@@ -151,8 +151,8 @@ with the learner.
   hedge on any part, with no plain no, is `criterion: unclear`: explain the hedged part once more
   and put the question again; a second hedge stays `unclear`, and the tutor offers a study activity
   on that capability. A plain no to any part is `criterion: not met`: record it, ask what is
-  missing, and offer one of the other two readings or a study activity on the capability named;
-  don't put the question again in the same sitting. This goal isn't required, so a no never blocks
+  missing, and offer to go back over the reading's stops that bear on the capability named, or a
+  study activity on it; don't put the question again in the same sitting. This goal isn't required, so a no never blocks
   anything else the learner wants to try.
 - **kind:** generator
 - **generator:** vary the made-up app and the three items; hold the rest fixed. The app is small,
@@ -171,9 +171,9 @@ with the learner.
   shows nothing about any of the three capabilities: every rehearsal is helped, ungraded, imagined
   rather than seen, and of the easiest kind, and a one-sentence answer never has to be complete. It
   shows nothing about the thirteen words, which have their own supply.
-- **offer as:** the short step that closes orientation, after any of the three readings. Not an
-  alternative to them: they give you the shape, and this is where you say whether you have it. 10
-  to 15 minutes, nothing to run.
+- **offer as:** the short step that closes orientation, after `a-read-codecademy-backend`. Not an
+  alternative to it: the reading gives you the shape, and this is where you say whether you have
+  it. 10 to 15 minutes, nothing to run.
 
 ### `a-watch-list-app-requests`
 
@@ -181,8 +181,8 @@ with the learner.
 - **supports:** orient, deepen
 - **artifact:** no external source. A small list app that the tutor builds in a scratch folder on
   the learner's laptop, with a page, a server and a SQL database, each server in a terminal the
-  learner can see. 35 to 45 minutes, of which the tutor's setup is the first 5 to 10. Built to
-  this specification, which `a-hunt-planted-forgetting` reuses:
+  learner can see. 35 to 45 minutes; the tutor builds and starts the app before the session, which
+  takes it 5 to 10 minutes. Built to this specification, which `a-hunt-planted-forgetting` reuses:
   - The page: a copy of the learner's hello-react project (with its `node_modules`), or a fresh
     Vite + React project if that copy won't run, changed to show a heading, a text box with an Add
     button, the list of items each with a Done box and a Delete button, a line under the list
@@ -193,9 +193,11 @@ with the learner.
     requests: give me all the items; add this item (replies 201 with the saved item); mark this item
     done or not done; delete this item (replies 204). An Add with empty text gets a 400 and the
     message "An item needs some text", which the page shows in red; the page itself does not check
-    for empty text. The server prints one line per request in its terminal: the method, the path,
-    the status code and, in plain words, what it asked the database (for example
-    `POST /api/items 201 saved item 4`).
+    for empty text. When a request fails because the server can't be reached, the page leaves its
+    list exactly as it was and shows "Couldn't reach the server" in red; it never shows a new item
+    before the server has answered. The server prints one line per request in its terminal: the
+    method, the path, the status code and, in plain words, what it asked the database (for example
+    `POST /api/items 201 saved item 4`). The dev server prints nothing per file it sends.
   - The database: a SQLite file `list.db` in the scratch folder, with one table, `items`, whose
     columns are `id`, `text`, `done` and `created_at`. Uses Node's built-in SQLite module if this
     Node version has it without a flag, and otherwise installs `better-sqlite3` into the scratch
@@ -204,13 +206,14 @@ with the learner.
     the page's address), not through the dev server, so once the page has loaded the dev server
     takes no part in any action.
   - The scratch folder is outside every repository the learner commits to.
-- **verified:** 2026-09-21
 - **learner does:** arranges three things where they can see them together: the app's tab with the
-  developer tools' Network panel open and filtered to fetch/XHR requests, the server's terminal, and
-  the dev server's terminal. Before each of eight actions, says a prediction: will a request go to
-  the server, and asking for what? will the server's terminal print a line? will the database
-  change? what comes back, and what changes on screen? Then does the action and says what the panel
-  and the two terminals show. The actions, in order:
+  developer tools' Network panel open, the server's terminal, and the dev server's terminal. For
+  action 1 the panel shows every request (its All filter); from action 2 on, it is filtered to
+  fetch/XHR requests. Before each of eight actions, says a prediction: will a request go to the
+  server, and asking for what? will the server's terminal print a line? will the database change?
+  what comes back, and what changes on screen? For action 1, also predicts which server sends the
+  page's own files. Then does the action and says what the panel and the two terminals show. The
+  actions, in order:
   1. Reload the page.
   2. Type in the box without clicking Add.
   3. Click Add.
@@ -226,8 +229,12 @@ with the learner.
 - **tutor role:** explainer
 - **tutor does:** builds and starts the app before the session and, if it has a headless browser,
   runs each of the eight actions once to confirm they behave as specified. Shows the learner no
-  code. Shows how to open the Network panel and filter it to fetch/XHR requests (the filter's name
-  differs slightly between browsers), and which terminal is which. At each action, takes the
+  code. Shows how to open the Network panel and switch its filter between All and fetch/XHR
+  requests (the filter's name differs slightly between browsers), and which terminal is which, and
+  says before action 1 that the dev server's terminal stays silent while it sends files, so its part
+  in a reload shows only in the panel. After action 1, points to the many rows from localhost:5173
+  (the page's files, sent by the dev server) and the one row from the server's address (the list),
+  then switches the filter for the rest. At each action, takes the
   prediction first; after the result, replies with a near-miss question rather than an explanation
   ("the 'N of M done' line changed when you ticked Done; did that number come back from the
   server?"). Ties each action to words as it goes: request and endpoint to the path in each Network
@@ -241,8 +248,9 @@ with the learner.
   database, the server again and the page again, in that order, with what passes at each hop (the
   item's text in a request to save it; the server asking the database to store it; the database's
   answer with the new item's number; a response with a success code and the saved item; the page
-  adding the item and redrawing); and the learner can say which of the eight actions never reached
-  the server. No `checks`: the actions were chosen and ordered for them, and the Network panel and
+  adding the item and redrawing); the learner can say which server sent the page's files on the
+  reload; and they can say which of the eight actions never reached the server. No `checks`: the
+  actions were chosen and ordered for them, and the Network panel and
   the terminals showed each answer.
 - **offer as:** see it happen on a real, tiny app on your own laptop before you're asked to
   describe it. The only candidate where every request shows up as it happens, with its status code
@@ -255,24 +263,25 @@ with the learner.
 - **supports:** deepen
 - **artifact:** `tasks/judge-action-traces.md`, written for this topic: a description of Shelf, a
   small reading-list app on a laptop with a page, a server and a SQL database; three actions in it
-  (add a book, flip a "Hide finished" switch, reload the page); ten traces that students wrote for
-  them; and a key for the tutor. Three traces pass. The seven that fail each fail one way: no way
-  back from the database, the page handing the book straight to the database, the database
+  (add a book, flip a "Hide finished" switch, reload the page); eleven traces that students wrote
+  for them; and a key for the tutor. Three traces pass. The eight that fail each fail one way: no
+  way back from the database, the page handing the book straight to the database, the database
   answering the page, the dev server put on a path it isn't on, "the API" treated as a stop of its
-  own, a switch that never leaves the page sent to the server, and a reload traced without the dev
-  server. 20 to 25 minutes. No app or browser needed.
-- **verified:** 2026-09-21
-- **learner does:** reads the app description, then for each of the ten traces answers: does it
+  own, a switch that never leaves the page sent to the server, a reload traced without the dev
+  server, and a reload with the right steps in the wrong order. 20 to 25 minutes. No app or browser
+  needed.
+- **learner does:** reads the app description, then for each of the eleven traces answers: does it
   pass? If not, which one thing is wrong: a part missing, a part named that the action doesn't go
   through, the parts out of order, or something handed to a part that can't do it. Then states the
   rule they judged by, in one or two sentences. Then rewrites two of the failing traces so they
   pass.
 - **tutor role:** critic
-- **tutor does:** shows the learner everything above the key and nothing in it. Takes all ten
+- **tutor does:** shows the learner everything above the key and nothing in it. Takes all eleven
   answers and the rule before commenting on any. On each answer that disagrees with the key, asks
   what that part would actually do with what it was handed, rather than giving the verdict. Puts
-  three pairs side by side if either of a pair was misjudged: `a1` and `a2` (the way back), `a1` and
-  `a5` (the dev server on an Add), `c1` and `c2` (the dev server on a reload). Makes sure `a6` gets
+  four pairs side by side if either of a pair was misjudged: `a1` and `a2` (the way back), `a1` and
+  `a5` (the dev server on an Add), `c1` and `c2` (the dev server on a reload), `c1` and `c3` (the
+  order on a reload). Makes sure `a6` gets
   discussed whatever the learner answered, because it separates the API, which is the set of
   requests a server answers, from a part a request passes through. Reads each rewrite literally and
   says where it still skips or adds a part.
@@ -330,9 +339,7 @@ with the learner.
   a site whose parts the reading laid out.
 - **offer as:** a worked example to take apart, in prose with a numbered diagram, 30 minutes and
   nothing to run. The reading's trace is for the older kind of site where the server builds each
-  page, so the work is converting it to your kind of app, which is where understanding shows. If
-  you oriented with `a-read-mdn-server-side`, this repeats its diagram with a seventh step; pick
-  another.
+  page, so the work is converting it to your kind of app, which is where understanding shows.
 
 ### `a-trace-described-action`
 
@@ -342,35 +349,41 @@ with the learner.
 - **artifact:** no external source. A made-up app and one action in it, written by the tutor per
   the generator below. 10 minutes.
 - **verified:** 2026-09-21
-- **learner does:** reads the app's description and the action, then writes alone, as a numbered
-  list, every part the action goes through from the click until the result is on screen, in order,
-  and for each step what passes to the next part. If the action never leaves the page, says so and
-  says what the page does. Hands the list to the tutor.
+- **learner does:** reads the app's description, its list of parts and the action, then writes
+  alone, as a numbered list, every part the action goes through from the click until the result is
+  on screen, in order, and for each step what passes to the next part. If the action never leaves
+  the page, says so and says what the page does. Hands the list to the tutor.
 - **tutor role:** none
 - **tutor does:** builds the instance per the generator and writes the key into the record before
   showing the learner anything: the parts in order, what passes at each hop, and the parts the
-  action does not go through. Shows only the description and the action. Waits, helping only if
+  action does not go through. Shows only the description, the parts list and the action. Waits,
+  helping only if
   asked and writing down any help word for word. Sends the adjudicator the description, the
   action, the key, the learner's list verbatim and every piece of help. After the ruling, tells the
   learner which hop, if any, was missing, extra, out of order, or handed to a part that couldn't do
   it. Labels the attempt `a-trace-described-action/<kind>`.
 - **done when:** criterion met with no help, on a Medium or Hard instance.
 - **kind:** generator
-- **generator:** fixed for every instance: the description is five to eight sentences in the voice
-  of an agent summing up what it built. It always contains these three sentences, changed only in
-  names and numbers: "It has three parts: a page that runs in your browser, a server that runs on
-  your laptop, and a SQL database the server keeps its data in." "While you're developing it, the
-  page itself comes from the dev server at localhost:5173, and the server is at localhost:3001; the
-  page sends its requests straight to the server, and only the server talks to the database." "The
-  page gets the kept things from the server when it loads; after that it works out whatever it
-  shows from what it already has, and sends the server a request only when something that's kept
-  changes." It also says, in a user's words, what the app keeps ("close everything, come back
-  tomorrow, and your ... are still there") and names anything on screen that it doesn't keep. No
-  logins, no outside services, no second server, no cache. The key states what passes at each hop
-  in plain words (the new item's text in a request to save it; the server asking the database to
-  store it; the database's answer with the new row; a response with a success code and the saved
-  item; the page updating what it shows). Exact addresses, formats and code numbers are never
-  required.
+- **generator:** fixed for every instance: the description is four to seven sentences in a user's
+  words saying what people do and see, what the app keeps ("close everything, come back tomorrow,
+  and your ... are still there"), and anything on screen that it doesn't keep. A list of the app's
+  parts follows, always in this form and changed only in names and numbers. It says what each part
+  is and what it holds or serves, and never which part talks to which during an action:
+  - the page, which runs in your browser;
+  - the dev server at localhost:5173, which sends your browser the page's files while you're
+    developing;
+  - the server at localhost:3001;
+  - a SQL database, kept in a file on your laptop.
+  Behind the list, every instance is built the usual way, and the key follows it: the page sends
+  its requests straight to the server, only the server reaches the database, the dev server does
+  nothing but send the page's files, and there are no logins, outside services, second servers or
+  caches. None of that is told to the learner. The key states what passes at each hop in plain
+  words (the new item's text in a request to save it; the server asking the database to store it;
+  the database's answer with the new row; a response with a success code and the saved item; the
+  page updating what it shows). Exact addresses, formats and code numbers are never required. Where
+  the parts list leaves a choice open, the key accepts either way: after a save or a change, the
+  page may show the result from the server's response or by asking the server for the list again,
+  as long as every part is named in order there and back.
   What varies: the app (a different one each attempt: habit tracker, recipe box, workout log,
   plant-watering list, movie watchlist, club sign-up sheet, expense splitter, or another), the
   action, and its kind:
@@ -379,41 +392,50 @@ with the learner.
   - `change-kept` (Medium): the action changes or deletes one existing kept thing (ticks it,
     renames it, rates it, removes it). Same path, and what passes has to say which one: the page
     tells the server which item and what changed.
-  - `page-only` (Medium): the action touches only something the description says isn't kept, or
-    something the page can work out from what it already has: sorting or filtering what's on
-    screen, opening details already on screen, switching a view the description says resets on
-    reload. A pass says the action never leaves the page and names no other part.
+  - `page-only` (Easy, never counts): the action touches only something the description says isn't
+    kept, or something already on screen: sorting or filtering what's shown, opening details already
+    on screen, switching a view the description says resets on reload. The expected answer is that
+    it never leaves the page. It is one step long, with no way there and back, so it is kept for the
+    worked example, for a retry with help after a miss, and for a practice question after a counting
+    attempt, and never counts on its own. If the learner sends it to the server, the tutor asks what
+    the server would give the page that the page doesn't already have.
   - `reload` (Hard): reloading the page, or opening the app in a new tab. Path: the browser asks
     the dev server for the page's files and the dev server sends them; the page starts empty and
     asks the server for the kept things; the server asks the database; the database answers the
-    server; the server answers the page with the list; the page draws it.
+    server; the server answers the page with the list; the page draws it. The page runs in the
+    browser, so "the page asks the dev server for its files" is accepted for the first step, as is
+    "the browser asks"; the browser is not a separate part.
   - `refused` (Hard): an action on a kept thing that no longer exists, because the user deleted it
     a moment ago in another tab of the same app on the same laptop; the description says what the
     user then sees ("That item no longer exists"). Path: the page asks the server to change it; the
     server asks the database; the database finds nothing to change and says so; the server answers
     the page that it failed (not found, 404) with the message; the page shows the message and drops
     the item from its list.
-  Difficulty: Easy is `save-new`; Medium is `change-kept` or `page-only`; Hard is `reload` or
-  `refused`. An attempt meant to count runs at Medium or Hard; Easy is for the worked example and
-  for a retry with help after a miss. Across attempts and review visits, serve a Medium or Hard kind
-  the learner hasn't had, until `change-kept`, `page-only`, `reload` and `refused` have each come up
-  once, reading the labels `served.mjs` returns.
+  Difficulty: Easy is `save-new` or `page-only`; Medium is `change-kept`; Hard is `reload` or
+  `refused`. An attempt meant to count runs at Medium or Hard; Easy is for the worked example, for
+  a retry with help after a miss, and for practice. Across attempts and review visits, serve a
+  Medium or Hard kind the learner hasn't had, until `change-kept`, `reload` and `refused` have each
+  come up once, reading the labels `served.mjs` returns.
 - **worked example:** work one Easy instance aloud: name each part as the action reaches it, say
   what it is handed and what it hands on, and at each hop say why this part and not another ("the
   page can't keep anything past a reload, so it has to tell the server; the server's memory goes
   when it restarts, so it asks the database to store it"). At the first level of help on a real
   attempt, ask only "which part hears about the click first, and what does it do with it?"
-- **doesn't show:** the app is described, not running, and its parts and when the page talks to
-  the server are stated in the description, so a pass doesn't show the learner could work those out
-  for an app whose agent never said, or for one that asks the server on every change of screen.
-  No instance has a proxy, a cache, an outside service or a login, so apps with more parts than
-  these are never examined. What passes is judged in plain words, so a pass says nothing about
-  reading real requests or responses. And the learner knows a check is on, so the trace may be more
-  careful than one given in the middle of real work.
+- **doesn't show:** the app is described, not running, and its parts are listed for the learner,
+  so a pass doesn't show they could find out what an app's parts are. Every instance is built the
+  usual way (the page asks the server, only the server reaches the database, the dev server only
+  sends the page's files), so a pass doesn't show the learner could trace an app built otherwise,
+  such as one whose page talks to a hosted database directly or whose dev server passes requests on.
+  No instance has a cache, an outside service or a login. An action that never leaves the page
+  doesn't count, so the clause about naming no part the action doesn't go through is examined
+  through the dev server, which a save or a change doesn't go through, and not through an action
+  that stays in the page. What passes is judged in plain words, so a pass says nothing about reading
+  real requests or responses. And the learner knows a check is on, so the trace may be more careful
+  than one given in the middle of real work.
 - **offer as:** the check that's available now, before your own app has a server: a made-up app,
   one action, 10 minutes, nothing to run. The tutor picks the kind of action, so the hard ones (a
-  reload, an action the server turns down, an action that never leaves the page) actually come up.
-  `a-trace-own-app-action` is the same capability on your own app once the lab has added a server.
+  reload, an action the server turns down) actually come up. `a-trace-own-app-action` is the same
+  capability on your own app once the lab has added a server.
 
 ### `a-trace-own-app-action`
 
@@ -424,8 +446,9 @@ with the learner.
   a database (in the lab after this topic, or in Problem Set 2), running on their laptop. 15 to 20
   minutes.
 - **verified:** 2026-09-21
-- **learner does:** gets from the tutor one sentence naming their app's parts, and one action in
-  their app that the tutor picks. With the developer tools closed and the server's terminal out of
+- **learner does:** gets from the tutor a list of their app's parts, which says what each part is
+  but not which talks to which, and one action in their app that the tutor picks. With the
+  developer tools closed and the server's terminal out of
   sight, writes alone the path of that action from the click to the screen: each part in order,
   and what passes between them. Hands it to the tutor. Only then does the action in the browser,
   with the Network panel open and the server's terminal visible, and says where their path and
@@ -435,34 +458,47 @@ with the learner.
   has a headless browser, runs the action while watching the server's output, to write the key
   into the record: the parts the action goes through in order, the requests the page sends and to
   which endpoints, what the server asks the database, what comes back with which status code, and
-  what the page does with it. Writes the parts sentence from what it found, as an agent would put
-  it, including the dev server if the page's requests pass through it (Vite's proxy is a common
-  setup) and any other part the path really has. Picks an action whose path follows from what the
-  learner can know about their own app: a save, a change or deletion of a kept thing, a reload, or
-  an action on something the learner knows isn't kept. Avoids actions where whether the page asks
-  the server is a choice the agent made and never told the learner (a filter or a sort the app
-  might do on the server). If a login, an outside service or a cache lies on the path, picks
-  another action or tells the adjudicator. Waits during the attempt, writing down any help word for
-  word. Sends the adjudicator the parts sentence, the action, the key, the learner's path as written
-  before the Network panel was opened, and every piece of help; the learner's comparison afterwards
-  is not part of the ruling. Labels the attempt `a-trace-own-app-action/<kind>`, using the kinds in
-  `a-trace-described-action`'s generator.
+  what the page does with it. Writes the parts list from what it found: every part the app has (the
+  page, the dev server, the server, the database, and any other), each with its address or what it
+  holds, and never which part talks to which during an action. Picks an action whose path follows
+  from what the learner can know about their own app: a save, a change or deletion of a kept thing,
+  a reload, or an action on a kept thing already deleted in another tab. Avoids actions where
+  whether the page asks the server at all is a choice the agent made and never told the learner (a
+  filter or a sort the app might do on the server). If a login, an outside service or a cache lies
+  on the path, picks another action or tells the adjudicator. Tells the adjudicator which of two
+  choices the learner can't see this app makes, and that either account of them passes: whether
+  the dev server passes the page's requests on to the server (Vite's proxy, a common setup), so that
+  naming it on a save's path or leaving it out are both accepted; and whether the page shows the
+  result of a save or change from the server's response or by asking for the whole list again, so
+  that a path with every part in order but no second request for the list is not a miss. On a
+  reload the dev server's sending of the page's files is always required. Waits during the attempt,
+  writing down any help word for word. Sends the adjudicator the parts list, the action, the key,
+  the two choices, the learner's path as written before the Network panel was opened, and every
+  piece of help; the learner's comparison afterwards is not part of the ruling. Labels the attempt
+  `a-trace-own-app-action/<kind>`, using the kinds in `a-trace-described-action`'s generator.
 - **done when:** criterion met with no help.
 - **kind:** generator
 - **generator:** the material is the learner's own app, so instances differ as the app does. The
-  tutor varies the action and its kind across visits, aiming to cover `change-kept`, `reload`, and
-  one `page-only` or `refused` action where the app has them. A `save-new` action counts here, since
-  its path comes from the real app rather than from a stated rule about when the page talks to the
-  server. Hold fixed: the parts
-  sentence is given before the action; the path is written before any developer tools or server
-  output are looked at; the key comes from the code and the server's output, never from the
-  learner's account.
+  tutor varies the action and its kind across visits, aiming to cover `change-kept`, `reload` and,
+  where the app has one, `refused`. A `page-only` action may be asked as practice after a counting
+  attempt, but never counts, for the reason given in `a-trace-described-action`'s generator. A
+  `save-new` action does count here: in a real app the learner applies the path without a
+  description written around it, and the key comes from the app's own code. Hold fixed: the parts
+  list is given before the action; the path is written before any developer tools or server output
+  are looked at; the key comes from the code and the server's output, never from the learner's
+  account.
 - **worked example:** none during the attempt. If the learner stalls, the first level of help is
   "which part hears about the click first?", and the attempt is recorded `unaided: no`.
 - **doesn't show:** the key rests on the tutor's reading of code the learner never sees, so a
-  mistaken reading passes or fails the learner wrongly. The parts sentence tells the learner which
-  parts exist, so a pass doesn't show they could have found that out themselves. Which kinds of
-  action come up depends on what the app has, and a small app may offer no `refused` case at all.
+  mistaken reading passes or fails the learner wrongly. The parts list tells the learner which
+  parts exist, so a pass doesn't show they could have found that out themselves. Two things the
+  learner can't see (whether the dev server passes requests on, and whether the page asks for the
+  list again after a change) are never ruled on, so a pass shows nothing about either. Because of
+  that, and because an action that stays in the page never counts, the clause about naming no part
+  the action doesn't go through is examined here only weakly, through a stop the learner invents
+  (such as "the API" as a stop of its own). `a-trace-described-action` examines it through the dev
+  server. Which kinds of action come up
+  depends on what the app has, and a small app may offer no `refused` case at all.
 - **offer as:** the real thing: an action in the app your agent actually built, and afterwards you
   watch its requests and its server log to see how close you were. Only possible once the lab has
   added a server and a database, which makes it the natural candidate for review visits.
@@ -491,22 +527,23 @@ with the learner.
 - **learner does:** for each version, when the tutor, speaking as the agent, says "Your items are
   now saved", adds three items of their own, then tries whatever they think will show whether the
   items are really kept, one step at a time, saying beforehand what they expect to see if they are.
-  Anything is allowed except asking the agent where or whether the items are saved, and looking at
-  code or inside the database: everything has to be found from the running app. They may, for
-  instance, reload, close the browser, open the address in another browser or a private window,
-  ask the agent to restart the server, or ask the agent to change the tables (to add a due date to
-  each item, say). After each version, says whether it really keeps the items and which step showed
-  it. At the end, says where each of A to E was keeping the items, then writes the shortest list of
+  They may use the browser however they like and ask the agent to do anything except two things:
+  tell them where or whether the items are saved, and show them code or what's inside the
+  database. Everything has to be found from the running app, and which steps to try is theirs to
+  decide. After each version, says whether it really keeps the items and which step showed it. At the end, says where each of A to E was keeping the items, then writes the shortest list of
   steps that would have caught every version that forgets, in the order they would do them.
 - **tutor role:** socratic questioner
-- **tutor does:** builds the five versions before the session so that switching is quick (separate
-  scratch folders, or a setting the server reads when it starts), and never says which is which
-  until the learner has decided. Plays the agent literally: restarts the server when asked, and
+- **tutor does:** builds the five versions before the session so that switching is quick, and
+  makes each one start empty: every version has its own scratch folder, its own database file, and
+  its own page and server ports, so neither the database nor the browser's storage (which belongs
+  to one address) carries items from one version into the next. Never says which is which until
+  the learner has decided. Plays the agent literally: restarts the server when asked, and
   nothing more; when asked to change the tables, adds a column and restarts the server, which in
   `rebuilt-table` loses the rows and in `kept` doesn't. Answers any "is it saved?" with the same
-  line every time: "Your items are now saved." When the learner is stuck, asks a near-miss question
-  rather than naming a step ("you reloaded and they were still there; would they be there in a
-  browser that has never opened this app?"). After each version, says in one or two sentences where
+  line every time: "Your items are now saved." Gives no list of steps to try. When the learner is
+  stuck, asks a near-miss question rather than naming a step ("you reloaded and they were still
+  there; would they be there in a browser that has never opened this app?"); those questions, not a
+  list, are how a move the learner hasn't thought of comes in. After each version, says in one or two sentences where
   it kept the items. At the end, checks the learner's shortest list against the four versions that
   forget and asks about any it would miss, and points out that `rebuilt-table` survived every step
   except the change of tables, so a list without that step would have passed it. Stops everything
@@ -527,11 +564,11 @@ with the learner.
 - **artifact:** `tasks/judge-persistence-plans.md`, written for this topic: an agent's message
   saying a small habit-tracking app now saves habits and daily ticks; the four ways an app can look
   as if it saves when it doesn't; ten plans that students wrote for finding out; and a key. Two
-  plans catch all four. The others each miss something different, including one that only asks the
-  agent, one that uses a new tab (which is only a reload), one that changes the tables before
-  saving anything, and one that restarts the server but looks again in the same browser. 15 to 20
-  minutes. No app or browser needed.
-- **verified:** 2026-09-21
+  plans catch all four. The others fall short in different ways (three of them catch only the page,
+  each for a different reason), including one that only asks the agent, one that uses a new tab
+  (which is only a reload), one that changes the tables before saving anything, and one that
+  restarts the server but looks again in the same browser. 15 to 20 minutes. No app or browser
+  needed.
 - **learner does:** for each of the ten plans, marks which of the four forgetful apps it would
   catch. Then says what the plans that catch all four have in common. Then writes their own plan for
   the same message, as short as they can make it while still catching all four.
@@ -550,7 +587,8 @@ with the learner.
   were in front of them.
 - **offer as:** no app, 15 to 20 minutes, and about what makes a check thorough rather than how to
   carry out each step. Ten plans for the same app and the same message, so the only thing that
-  changes is which kind of forgetting each would miss. Pick `a-hunt-planted-forgetting` to watch the
+  changes is the steps, and what those steps would let through; three plans that each catch only
+  the page show three different ways to fall short. Pick `a-hunt-planted-forgetting` to watch the
   forgetting happen instead.
 
 ### `a-read-prisma-migrations`
@@ -673,8 +711,8 @@ with the learner.
 - **verified:** 2026-09-21
 - **learner does:** when their agent says something in their app is now saved, and before asking
   the agent anything more about it, writes alone, in a note, what they will do to find out whether
-  it is really kept. Then carries out the plan, asking the agent to restart the server if the plan
-  says so, and writes next to each step what they saw. Brings the tutor the agent's message, the
+  it is really kept. Then carries out the plan, asking the agent to restart the server or to change
+  the tables if the plan says so, and writes next to each step what they saw. Brings the tutor the agent's message, the
   note as first written, and what they saw. No tutor is there while this happens.
 - **tutor role:** none
 - **tutor does:** when first offering this activity, tells the learner to write the note before
@@ -693,12 +731,17 @@ with the learner.
   agent's message is kept word for word. No instance if the learner had already asked the agent how
   it saves before writing the note, since the answer shapes the plan, or if the note was written
   after any step was carried out. A note that says only "ask the agent" is an instance, and a miss.
+  A plain message about added items counts here, although `a-plan-persistence-check` keeps its Easy
+  instances out of counting: the plan has to catch all four whatever the message says, and the
+  difficulty here is the real situation (the learner's own app, in the middle of work, with nobody
+  prompting a check), not the wording of the message.
 - **worked example:** no tutor is present, so nobody offers one. If the learner stalls, they may
   open `tasks/judge-persistence-plans.md` themselves and look at `p9` or `p10`; they write at the
   top of the note that they did, and the attempt is recorded `unaided: no`.
-- **doesn't show:** that the note came before the steps rests on the learner's say-so. The
-  table-change step can only be carried out when the agent next changes the tables, so what the
-  learner saw may stop short of it; the plan is still judged as written. Whether the app really had
+- **doesn't show:** that the note came before the steps rests on the learner's say-so. A plan that
+  waits for the agent's next change to the tables, rather than asking for one, may be judged
+  before that step has been carried out, so what the learner saw may stop short of it; the plan is
+  still judged as written. Whether the app really had
   a fault is luck, and the plan is judged the same either way. And the messages that come up are
   whatever the agent happens to say, so traps like sample items or an agent that says it already
   tested may never appear.
@@ -766,9 +809,12 @@ with the learner.
   Third, checks what's left over: is it really something to keep, or can it be worked out from what
   is kept? Makes two false starts on purpose, visibly: in the first pass calls the count "missing",
   then withdraws it in the third; in the second pass matches everything and nearly declares nothing
-  missing, then asks "if two lists each had an item called milk, could the app tell which list each
-  was on?" and finds the missing link. States the verdict in one sentence, in the form the check
-  wants: what is missing, or that nothing is. Compares it with the learner's written guess. For the
+  missing, then asks the one question that exposes this instance's missing link in its own terms
+  (in an app with several lists, "if two lists each had an item called milk, could the app tell
+  which list each was on?"; in an app with comments on dinners, "could it tell which dinner's page
+  a comment goes on?") and finds it. Gives the answer in the form the checks want: the list, each
+  thing with its column or "missing", then a one-line verdict. Compares it with the learner's
+  written guess. For the
   last step, names one item (a computed value or a truly missing fact) and asks the learner which
   it is and why.
 - **done when:** the learner can state the three passes in their own words and gets the leftover
@@ -812,16 +858,21 @@ with the learner.
 - **artifact:** no external source. A made-up app and the tables its agent proposes, written by the
   tutor per the generator below. 10 minutes.
 - **verified:** 2026-09-21
-- **learner does:** reads the description and the proposed tables, then writes alone each thing
-  the app will need to remember that no table holds, or "nothing is missing". Hands it to the tutor.
+- **learner does:** reads the description and the proposed tables, then writes alone a list of
+  everything the description asks the app to keep, each with the table and column that holds it,
+  or "missing"; then a one-line verdict: what is missing, or that nothing is. Hands both to the
+  tutor.
 - **tutor role:** none
 - **tutor does:** builds the instance and writes the key into the record before showing anything:
   every thing the app must remember and the column that holds it, or "missing"; and every
   distractor, with why it isn't missing. Shows the description and the tables. Waits, writing down
-  any help word for word. Sends the adjudicator the description, the tables, the key, the answer
-  verbatim and the help. After the ruling, tells the learner what they missed or named wrongly.
-  Labels the attempt `a-review-proposed-tables/<kinds missing, or none>`.
-- **done when:** criterion met with no help, on a Medium or Hard instance.
+  any help word for word. Sends the adjudicator the description, the tables, the key, the list and
+  verdict verbatim, and the help. After the ruling, tells the learner what they missed, named
+  wrongly, or pointed to the wrong place. Labels the attempt
+  `a-review-proposed-tables/<kinds missing, or none>`.
+- **done when:** criterion met with no help, on a Medium or Hard instance. A "nothing is missing"
+  verdict meets it only when the list is there and points each thing the app must keep to the
+  column that really holds it; the verdict on its own does not.
 - **kind:** generator
 - **generator:** fixed: the description is five to eight sentences in a user's words saying what
   people do and see, and ends with a sentence that settles what must last ("When anyone opens the
@@ -845,7 +896,9 @@ with the learner.
   - `transient`: what's typed in a search box, which tab is open, a filter that resets.
   - `renamed`: held under a different name (`finished` for done, `who` for the person).
   - `elsewhere`: held in a different table from the obvious one.
-  - `unasked`: plausible, but the description never asks the app to keep it.
+  - `unasked`: plausible, but the description never asks the app to keep it. It sits next to
+    something the description does ask for and stops short of it (a date asked for without a time,
+    a name without a photo), so that someone reading quickly expects it.
   A `computed` distractor must really be computable from the proposed columns (a streak needs the
   dates of check-ins, not just a count), and a `many` omission must not fit in the given columns
   without changing what they mean.
@@ -865,8 +918,10 @@ with the learner.
   learner could settle that for an app whose purpose is vaguer, as a real one often is. The
   proposals are in plain words, so a pass says nothing about an agent's proposal given as code.
   Each missing thing is either clearly held or clearly not, so borderline cases (a column that could
-  hold it at a stretch) are never examined. And the learner knows a check is on and that none, one
-  or two things may be missing.
+  hold it at a stretch) are never examined. The list is judged at the level of the description's
+  sentences, so a pass shows the learner can match what an app must keep to where it is kept, not
+  that they would think of something the description never mentions. And the learner knows a check
+  is on and that none, one or two things may be missing.
 - **offer as:** available now, before your agent proposes anything: a made-up app and its tables,
   10 minutes, nothing to run. The tutor picks what's missing, so the hard kinds (a missing link
   between tables, several people's ratings with nowhere to go) and the case where nothing is missing
@@ -878,40 +933,51 @@ with the learner.
 - **supports:** attempt
 - **checks:** `c-review-schema`
 - **artifact:** no external source. The tables the learner's own agent proposes for their own app,
-  in the lab after this topic or in Problem Set 2, before it builds the database; and the
-  learner's description of the app, as given to the agent. 10 to 15 minutes, plus the tutor's time
-  afterwards.
-- **verified:** 2026-09-21
+  in the lab after this topic or in Problem Set 2, before it builds the database; and whatever
+  settles what the app has to remember: the learner's description of the app as given to the agent
+  or, where there wasn't one (as in the lab, where the agent adds a database to an app the learner
+  already has, working from the app itself), the running app. 10 to 15 minutes, plus the tutor's
+  time afterwards.
 - **learner does:** when their agent proposes the tables it will build, and before approving them or
-  asking it anything about them, writes alone, in a note, what the app will need to remember that no
-  table holds, or that nothing is missing. If the agent gave its proposal as code, first asks it to
-  list the tables and their columns in plain words, which doesn't count as help. Then brings the
-  tutor the description of the app they gave the agent, the proposal word for word, and the note as
-  first written. No tutor is there while this happens.
+  asking it anything about them, writes alone, in a note, a list of everything the app will need to
+  remember, each with the table and column that holds it, or "missing"; then a one-line verdict:
+  what is missing, or that nothing is. If the agent gave its proposal as code, first asks it to list
+  the tables and their columns in plain words, which doesn't count as help. Then brings the tutor the
+  proposal word for word, the note as first written, and either the description they gave the agent
+  or, if there wasn't one, the app itself, running. No tutor is there while this happens.
 - **tutor role:** none
-- **tutor does:** reads the description and the proposal first and writes the key into the record
-  (everything the described app must remember, where each is held, and what is missing) before
-  reading the learner's note, so the note can't shape the key. Where the description leaves open
-  whether something must be kept, the key says so and the adjudicator is told; a learner is not
-  failed for naming, or not naming, something the description leaves open. Sends the adjudicator the
-  description, the proposal, the key, the note as first written and any help the learner noted.
-  After the ruling, tells the learner what, if anything, to raise with their agent before it builds.
-  Labels the attempt `a-review-own-agent-tables/<app>`.
-- **done when:** criterion met with no help, on the note as first written.
+- **tutor does:** reads what settles the app's needs, and the proposal, first, and writes the key
+  into the record (everything the app must remember, where each is held, and what is missing)
+  before reading the learner's note, so the note can't shape the key. From a description, the key
+  follows its sentences. From a running app, the tutor reads its code (the learner doesn't see it)
+  and, if it has a headless browser, goes through its screens, as `a-trace-own-app-action` does;
+  the key lists what the app shows or lets people change that it would still need next week. Where neither settles whether
+  something must be kept, the key says so and the adjudicator is told; a learner is not failed for
+  listing, or not listing, something left open. Sends the adjudicator what settled the app's needs
+  (the description, or the tutor's account of the app's screens), the proposal, the key, the note
+  as first written and any help the learner noted. After the ruling, tells the learner what, if
+  anything, to raise with their agent before it builds. Labels the attempt
+  `a-review-own-agent-tables/<app>`.
+- **done when:** criterion met with no help, on the note as first written. A "nothing is missing"
+  verdict meets it only when the list is there and points each thing the app must keep to the
+  column that really holds it; the verdict on its own does not.
 - **kind:** generator
 - **generator:** the material is whatever the learner's agent proposes for whatever the learner is
   building, so nobody sets the difficulty. Hold fixed: the note is written before the learner
-  replies to the proposal; the proposal and the description are kept word for word; the key is
-  written before the note is read. No instance if the proposal came after the learner had already
-  told the agent what was missing, or if the learner can't produce the description the agent was
-  working from. A proposal with nothing missing is a fair instance.
+  replies to the proposal; the proposal, and the description if there was one, are kept word for
+  word; the key is written before the note is read. No instance if the proposal came after the
+  learner had already told the agent what was missing, or if neither a description nor the running
+  app settles what the app has to remember. A proposal with nothing missing is a fair instance,
+  since the list still has to point everything to where it is kept.
 - **worked example:** no tutor is present, so nobody offers one. If the learner stalls, they may
   reread `tasks/sort-missing-claims.md` above its key; they write at the top of the note that they
   did, and the attempt is recorded `unaided: no`.
-- **doesn't show:** the key rests on the tutor's reading of a description the learner wrote, which
-  may leave open what the app must keep. Real proposals often miss nothing, so a pass may show only
-  that the learner said so. Which kinds of omission come up is chance, and a learner may pass here
-  without ever meeting a missing link or a missing kind of thing.
+- **doesn't show:** the key rests on the tutor's reading of a description the learner wrote, or of
+  an app whose code the learner never saw, and either may leave open what the app must keep. Real
+  proposals often miss nothing and have no planted distractors, so a pass often rests on the list
+  alone, with no omission to find and nothing tempting to name wrongly. Which kinds of omission come
+  up is chance, and a learner may pass here without ever meeting a missing link or a missing kind of
+  thing.
 - **offer as:** the real thing, at the moment this topic's depth is about: your agent proposes
   tables and you check them before approving. Only possible once your agent is adding a database,
   in the lab or in Problem Set 2. `a-review-proposed-tables` is the one to take now.

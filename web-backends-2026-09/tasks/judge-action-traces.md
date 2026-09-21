@@ -1,4 +1,4 @@
-# Judge ten traces of actions in a reading-list app
+# Judge eleven traces of actions in a reading-list app
 
 **Used by:** `a-judge-action-traces`, which serves `c-trace-action`. A study activity: nothing
 here can meet the goal.
@@ -32,7 +32,7 @@ What you can do in Shelf:
 - **B.** You flip "Hide finished" on. The finished books disappear from the list.
 - **C.** You reload the page. Your books appear.
 
-Below are ten traces that students wrote, each for one of the three actions. A trace passes when
+Below are eleven traces that students wrote, each for one of the three actions. A trace passes when
 it names every part the action goes through, in order, on the way there and on the way back to
 the screen; names no part the action doesn't go through; and gives no part a job it couldn't do.
 
@@ -43,7 +43,7 @@ the screen; names no part the action doesn't go through; and gives no part a job
    named that the action doesn't go through; the parts are out of order; or a part is given
    something it couldn't do.
 
-When you've done all ten, say in one or two sentences the rule you judged by. Then rewrite two of
+When you've done all eleven, say in one or two sentences the rule you judged by. Then rewrite two of
 the traces that failed so that they pass.
 
 ---
@@ -112,11 +112,18 @@ the traces that failed so that they pass.
 > The page asks the server for the books. The server gets them from the database and sends them
 > back, and the page shows them.
 
+#### c3
+
+> The page asks the server for the books. The server asks the database for them, and the database
+> sends them to the server, which sends them to the page. Then the browser asks the dev server at
+> localhost:5173 for the page's files, the dev server sends them, and the page puts the books on
+> screen.
+
 ---
 
 ## Key, for the tutor
 
-Show the learner everything above this section, not this section. Take all ten answers and the
+Show the learner everything above this section, not this section. Take all eleven answers and the
 stated rule before saying anything about any of them.
 
 | trace | passes? | what decides it |
@@ -131,9 +138,11 @@ stated rule before saying anything about any of them.
 | b2 | no | Names parts the action doesn't go through. The description settles it: the page works out what it shows from what it already has, and the switch isn't kept. In some other app a filter might ask the server; not in this one. |
 | c1 | yes | A reload does go through the dev server, because the page's files come from it. Then the page, starting empty, asks the server, and the rest is the way there and back. |
 | c2 | no | Misses a part. Before the page can ask for anything, the browser has to get the page again, from the dev server. Set it beside a5: the dev server is on the path for a reload and not for an Add. |
+| c3 | no | Out of order. Every part is there, and each step is one that happens, but the page can't ask the server for anything until the browser has its files from the dev server, so that step comes first. Set it beside c1, which has the same steps in the right order. |
 
-Three pairs are built to be compared if either of a pair is misjudged: a1 and a2 (the way back),
-a1 and a5 (the dev server on an Add), c1 and c2 (the dev server on a reload).
+Four pairs are built to be compared if either of a pair is misjudged: a1 and a2 (the way back),
+a1 and a5 (the dev server on an Add), c1 and c2 (the dev server on a reload), and c1 and c3 (the
+order on a reload).
 
 The rule the learner should arrive at, in words of their own: a trace passes when it names each
 part the action reaches, in the order it reaches them, on the way there and on the way back to the
