@@ -198,7 +198,6 @@ with the learner.
   The worked example in How the Three Layers Connect is a login, which belongs to Problem Set 3.
   Some claims are sweeping and unsupported ("This is why most AI-generated apps fail in
   production").
-- **verified:** 2026-09-21
 - **learner does:** reads with their own app open beside the page, and stops four times:
   1. After each of the three layer sections (frontend, backend, database): says whether their app
      has that layer today, and what the lab will add.
@@ -241,6 +240,7 @@ with the learner.
 - **artifact:** no external source. Whichever orientation reading the learner did, with their
   answers, retelling or redrawn diagram still in front of them. 10 to 15 minutes. Nothing needs to
   be running.
+- **verified:** 2026-09-21
 - **learner does:** three short rehearsals, none of them judged, each answered in a sentence or
   two. First, the tutor describes an action in a made-up app with a server and a database, and the
   learner says roughly which parts it goes through, there and back. Second, the tutor, speaking as
@@ -316,6 +316,7 @@ with the learner.
     the page's address), not through the dev server, so once the page has loaded the dev server
     takes no part in any action.
   - The scratch folder is outside every repository the learner commits to.
+- **verified:** 2026-09-21
 - **learner does:** arranges three things where they can see them together: the app's tab with the
   developer tools' Network panel open and filtered to fetch/XHR requests, the server's terminal, and
   the dev server's terminal. Before each of eight actions, says a prediction: will a request go to
@@ -372,6 +373,7 @@ with the learner.
   answering the page, the dev server put on a path it isn't on, "the API" treated as a stop of its
   own, a switch that never leaves the page sent to the server, and a reload traced without the dev
   server. 20 to 25 minutes. No app or browser needed.
+- **verified:** 2026-09-21
 - **learner does:** reads the app description, then for each of the ten traces answers: does it
   pass? If not, which one thing is wrong: a part missing, a part named that the action doesn't go
   through, the parts out of order, or something handed to a part that can't do it. Then states the
@@ -451,6 +453,7 @@ with the learner.
 - **checks:** `c-trace-action`
 - **artifact:** no external source. A made-up app and one action in it, written by the tutor per
   the generator below. 10 minutes.
+- **verified:** 2026-09-21
 - **learner does:** reads the app's description and the action, then writes alone, as a numbered
   list, every part the action goes through from the click until the result is on screen, in order,
   and for each step what passes to the next part. If the action never leaves the page, says so and
@@ -532,6 +535,7 @@ with the learner.
 - **artifact:** no external source. The learner's own app once their agent has added a server and
   a database (in the lab after this topic, or in Problem Set 2), running on their laptop. 15 to 20
   minutes.
+- **verified:** 2026-09-21
 - **learner does:** gets from the tutor one sentence naming their app's parts, and one action in
   their app that the tutor picks. With the developer tools closed and the server's terminal out of
   sight, writes alone the path of that action from the click to the screen: each part in order,
@@ -595,6 +599,7 @@ with the learner.
     tables.
   - `kept`: in the database, and a change to the columns keeps the rows.
   35 to 45 minutes, plus the tutor's setup.
+- **verified:** 2026-09-21
 - **learner does:** for each version, when the tutor, speaking as the agent, says "Your items are
   now saved", adds three items of their own, then tries whatever they think will show whether the
   items are really kept, one step at a time, saying beforehand what they expect to see if they are.
@@ -638,6 +643,7 @@ with the learner.
   agent, one that uses a new tab (which is only a reload), one that changes the tables before
   saving anything, and one that restarts the server but looks again in the same browser. 15 to 20
   minutes. No app or browser needed.
+- **verified:** 2026-09-21
 - **learner does:** for each of the ten plans, marks which of the four forgetful apps it would
   catch. Then says what the plans that catch all four have in common. Then writes their own plan for
   the same message, as short as they can make it while still catching all four.
@@ -705,6 +711,7 @@ with the learner.
 - **checks:** `c-check-persistence`
 - **artifact:** no external source. A made-up app and an agent's message about it, written by the
   tutor per the generator below. 10 minutes.
+- **verified:** 2026-09-21
 - **learner does:** reads the app's description and the agent's message, then writes alone, as a
   list, what they would do to find out whether the thing the agent says is saved really is kept.
   The plan may include asking the agent to restart the server, or to change the tables; it may not
@@ -775,6 +782,7 @@ with the learner.
 - **artifact:** no external source. The learner's own app and a real message from their own agent,
   in the lab after this topic or in Problem Set 2, saying that something is now saved. 10 minutes
   to write the plan, plus however long carrying it out takes.
+- **verified:** 2026-09-21
 - **learner does:** when their agent says something in their app is now saved, and before asking
   the agent anything more about it, writes alone, in a note, what they will do to find out whether
   it is really kept. Then carries out the plan, asking the agent to restart the server if the plan
@@ -823,6 +831,7 @@ with the learner.
   already there, something the app was never asked to keep, and an average that can be worked out,
   but only from something that really is missing and that no claim names. 20 to 25 minutes. No app
   needed.
+- **verified:** 2026-09-21
 - **learner does:** reads the description and the tables. For each claim, says whether it's right
   (the app needs to remember this and no table holds it) or wrong, and if wrong, why. Then says
   whether anything the app has to remember is missing that none of the claims names. Then states the
@@ -855,6 +864,7 @@ with the learner.
 - **artifact:** no external source. A made-up app and an agent's proposed tables, built by the
   tutor per `a-review-proposed-tables`'s generator at Medium, with one missing thing of kind `link`
   and at least a `computed` and a `renamed` distractor. 15 minutes.
+- **verified:** 2026-09-21
 - **learner does:** watches the tutor review the proposal out loud, and interrupts whenever they
   disagree or can't follow. Before the tutor reaches its verdict, writes down their own guess at
   what's missing. At the end, states the tutor's procedure in their own words, then carries out its
@@ -887,6 +897,7 @@ with the learner.
 - **artifact:** no external source. The learner's own app with state from the lab before this topic
   (the one the next lab adds a server and a database to), running in their browser; or, if it isn't
   finished, the learner's own account of what it is meant to do. 20 minutes.
+- **verified:** 2026-09-21
 - **learner does:** uses their app, screen by screen (or talks it through, if it isn't finished),
   and writes a list of everything it would need to still know next week, after the laptop has been
   switched off, once it has a database. One line each: what it is, and which screen shows it. Then
@@ -912,6 +923,7 @@ with the learner.
 - **checks:** `c-review-schema`
 - **artifact:** no external source. A made-up app and the tables its agent proposes, written by the
   tutor per the generator below. 10 minutes.
+- **verified:** 2026-09-21
 - **learner does:** reads the description and the proposed tables, then writes alone each thing
   the app will need to remember that no table holds, or "nothing is missing". Hands it to the tutor.
 - **tutor role:** none
@@ -981,6 +993,7 @@ with the learner.
   in the lab after this topic or in Problem Set 2, before it builds the database; and the
   learner's description of the app, as given to the agent. 10 to 15 minutes, plus the tutor's time
   afterwards.
+- **verified:** 2026-09-21
 - **learner does:** when their agent proposes the tables it will build, and before approving them or
   asking it anything about them, writes alone, in a note, what the app will need to remember that no
   table holds, or that nothing is missing. If the agent gave its proposal as code, first asks it to
