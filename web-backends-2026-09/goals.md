@@ -1,4 +1,4 @@
-# Learning goals — web backends
+# Learning goals: web backends
 
 **What I want to be able to do, and what would count as having got there.**
 
@@ -46,9 +46,13 @@
 
 ## Where this came from
 
+_Yours to fill in. Nobody can answer this one for you._
+
 <!-- Which of A / B / C / D, and the answer to the follow-up. -->
 
 ## What I already have
+
+_Yours to fill in. Say where your knowledge stops, not what you have heard of._
 
 <!--
   The nearest thing already known well, and where it stops.
@@ -58,6 +62,10 @@
 
 ## What I'll use it for
 
+_Yours to fill in. The course supplies two occasions: the in-class lab where your agent adds a
+server and a database to the app with state you built in the lab before, and Problem Set 2, a
+React app with a server and a SQL database. Name any others you have._
+
 <!--
   The use, and a concrete occasion.
   If several uses apply, rank them: the top one sets the depth, the rest are cut first
@@ -66,10 +74,16 @@
 
 ## Depth
 
-<!--
-  Which of: recognize it / read it / modify something existing / author from scratch /
-  judge someone else's work. One line on why that's enough.
--->
+**Follow what your agent tells you about the server and the database, and check it from the
+running app.** Not writing server code or database queries, and not reading them either. When
+your agent adds a server and a database to an app, it tells you what it built, where the data now
+lives, and that it works. This topic is enough to follow that account, to approve the tables it
+proposes before it builds them, and to find out for yourself whether what it says is saved really
+is.
+
+What sits past that line: how the server's code is organized, which database it uses, and how its
+tables connect to one another are all the agent's to work out. Putting the app on the public
+internet, with logins and secrets, belongs to Problem Set 3, not to this topic.
 
 ## Goals
 
@@ -168,6 +182,34 @@
   orientation entry are in their own groups and don't count towards it. So never write a
   placeholder capability entry; an empty section is the honest signal.
 -->
+
+### `c-check-persistence`
+
+- **goal:** find out whether an app really keeps what its agent says it saves
+- **criterion:** Given an app whose agent says it now saves something, says what they would do to
+  find out whether it is really kept. It passes when what they describe would catch an app that
+  kept it only in the open page, one that kept it only in that browser, and one that kept it only
+  until the server restarted. They may ask the agent to restart the server. Asking the agent
+  whether it is saved does not meet it.
+
+### `c-review-schema`
+
+- **goal:** tell whether the tables an agent proposes can hold what the app has to remember
+- **criterion:** Given a short description of an app and the tables its agent proposes, each
+  listed with its columns, names anything the app will need to remember that has nowhere to go,
+  or says that nothing is missing. It passes when they find what is missing without naming
+  anything that isn't, and say so when nothing is. Whether the tables are organized well is not
+  part of it, only whether they can hold what the app needs.
+
+### `c-trace-action`
+
+- **goal:** follow one action in the app from the click to where it is kept, and back to the
+  screen
+- **criterion:** Given something a user does in an app with a server and a database, such as
+  adding an item to a list, says in order which part of the app handles it and what passes
+  between the parts, from the click until the result is on screen. It passes when every part the
+  action goes through is named, in order, on the way there and back, and nothing is given to a
+  part that could not do it.
 
 ### `o-orientation`
 
