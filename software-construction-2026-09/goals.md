@@ -190,11 +190,13 @@ is the agent's job. Diagnosing the problem yourself, and debugging by hand, are 
 
 - **goal:** ask whether something was tested, and tell a real answer from a hollow one
 - **criterion:** Given one thing the app should do and the agent's answer to "has this been
-  tested?", says whether the answer names a test that would fail if that one thing broke. If it
-  does not, says what to ask the agent next. An answer about the whole suite, such as "all 24 tests
-  pass", is not an answer about one thing. Nor is a named test that would still pass if that one
-  thing broke, such as one that checks a note was accepted without checking it was saved, or one
-  that runs against a mock instead of the real database.
+  tested?", says whether the answer shows a test that would fail if that one thing broke, or that
+  it can't tell from the answer. It is judged on what the answer says, not on the test code.
+  Unless the answer settles it, says what to ask the agent next: a question whose honest answer
+  has to name one test and what it checks, or say there is none. An answer about the whole suite,
+  such as "all 24 tests pass", is not an answer about one thing. Nor is a named test that would
+  still pass if that one thing broke, such as one that checks a note was accepted without checking
+  it was saved, or one that runs against a mock instead of the real database.
 
 ### `c-judge-manual-test`
 
