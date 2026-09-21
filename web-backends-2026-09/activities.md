@@ -192,7 +192,10 @@ with the learner.
     button, the list of items each with a Done box and a Delete button, a line under the list
     reading "N of M done" that the page works out itself, and two controls that act only on screen
     and are never sent to the server: a "Hide done" switch and a "Sort A to Z" button. Served by
-    the Vite dev server as usual (http://localhost:5173, or the next free port).
+    the Vite dev server as usual (http://localhost:5173, or the next free port). The page sends at
+    most one request for the list per load: the copy's `main.jsx` has the template's `<StrictMode>`
+    wrapper removed, since in development React runs every effect's setup twice under it, and a
+    list fetched in an effect would be asked for twice on every reload.
   - The server: a small Node server on its own port (3001, or the next free one) that answers four
     requests: give me all the items; add this item (replies 201 with the saved item); mark this item
     done or not done; delete this item (replies 204). An Add with empty text gets a 400 and the
@@ -201,7 +204,10 @@ with the learner.
     list exactly as it was and shows "Couldn't reach the server" in red; it never shows a new item
     before the server has answered. The server prints one line per request in its terminal: the
     method, the path, the status code and, in plain words, what it asked the database (for example
-    `POST /api/items 201 saved item 4`). The dev server prints nothing per file it sends.
+    `POST /api/items 201 saved item 4`). It answers but does not log the browser's preflight checks
+    (the OPTIONS requests a browser sends first before an Add, a Done change or a Delete, because
+    the page and the server are on different ports), so each action shows at most one line. The dev
+    server prints nothing per file it sends.
   - The database: a SQLite file `list.db` in the scratch folder, with one table, `items`, whose
     columns are `id`, `text`, `done` and `created_at`. Uses Node's built-in SQLite module if this
     Node version has it without a flag, and otherwise installs `better-sqlite3` into the scratch
@@ -232,7 +238,9 @@ with the learner.
   project file at any point.
 - **tutor role:** explainer
 - **tutor does:** builds and starts the app before the session and, if it has a headless browser,
-  runs each of the eight actions once to confirm they behave as specified. Shows the learner no
+  runs each of the eight actions once to confirm they behave as specified, including that a reload
+  sends exactly one request for the list and that the server's terminal shows at most one line per
+  action (no OPTIONS lines). Shows the learner no
   code. Shows how to open the Network panel and switch its filter between All and fetch/XHR
   requests (the filter's name differs slightly between browsers), and which terminal is which, and
   says before action 1 that the dev server's terminal stays silent while it sends files, so its part
@@ -490,7 +498,15 @@ with the learner.
   naming it on a save's path or leaving it out are both accepted; and whether the page shows the
   result of a save or change from the server's response or by asking for the whole list again, so
   that a path with every part in order but no second request for the list is not a miss. On a
-  reload the dev server's sending of the page's files is always required. Waits during the attempt,
+  reload the dev server's sending of the page's files is always required. Expects two kinds of
+  repeated or extra request that the learner is never asked to name: if the app kept the Vite
+  template's `<StrictMode>` wrapper, a page that loads its list in an effect asks for it twice on
+  every load while developing (React runs each effect's setup twice there), so a reload shows two
+  identical requests in the Network panel and two lines in the server's output; and where the page
+  and the server are on different ports, the browser sends a preflight check (an OPTIONS request)
+  before each save, change or deletion, which the server's output may show. The key counts the
+  doubled request as one and leaves the preflight checks out, and in the comparison afterwards the
+  tutor says why they appear. Waits during the attempt,
   writing down any help word for word. Sends the adjudicator the parts list, the action, the key,
   the two choices, the learner's path as written before the Network panel was opened, and every
   piece of help; the learner's comparison afterwards is not part of the ruling. Labels the attempt
