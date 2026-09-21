@@ -204,9 +204,11 @@ does that tell you?
 
 ### q-links-expire-request
 
-You send your agent this about your Tasks app: "Task pages are blank when someone opens a link I
-sent them. I think the links expire after a while." Name one thing someone who never saw this
-would still have to guess, and say which part of the message is a guess.
+Before sending it, you read over this message to your agent about your Tasks app: "Task pages are
+blank when someone opens a link I sent them. The links expire after a while." Your agent never saw
+the problem. Name one thing it would have to work out for itself before it could make the problem
+happen or tell when it's fixed. Then say which part of the message is a guess about the cause
+rather than something you saw.
 
 ### q-fixed-when-line
 

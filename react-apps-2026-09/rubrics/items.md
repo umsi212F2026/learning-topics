@@ -520,16 +520,17 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
 
 - **type:** free
 - **goal:** c-describe-app-bug
-- **answer:** someone who never saw it would have to guess most of the steps: which address to
+- **answer:** the agent would have to work out most of the steps for itself: which address to
   start from, how to get a link to a task in the first place, what to do with it (open it in a new
-  tab, or reload on it), and what "blank" means on screen, which is what would tell them it was
-  fixed. The second sentence, about links expiring, is a guess and is not marked as one, so it
-  reads as something you saw.
-- **credit:** full credit needs both halves: one concrete thing a stranger would still have to
-  guess (where to start, the steps, what appeared instead, or how to tell it is fixed) and the
-  expiry sentence identified as an unlabeled guess. Half credit for either half alone. No credit
-  for answers about tone, length or politeness, and no credit for treating the first sentence as
-  the guess.
+  tab, or reload on it), and what "blank" means on screen, which is what would tell it the problem
+  was fixed. The second sentence, that the links expire, is a guess about the cause written as
+  though it had been seen. Nobody can see a link expire; what was seen is a blank page.
+- **credit:** full credit needs both halves: one concrete thing the message leaves out (where to
+  start, the steps, what appeared instead, or how to tell it is fixed) and the expiry sentence
+  identified as a guess about the cause. Half credit for either half alone. No credit for answers
+  about tone, length or politeness, or for treating the first sentence as the guess. A missing
+  detail about the expiry itself, such as how long links last, earns nothing for the first half,
+  since it takes the guess as fact.
 
 ### q-fixed-when-line
 
