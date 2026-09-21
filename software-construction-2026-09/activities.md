@@ -94,8 +94,9 @@ with the learner.
 
 | id                      | Goal | Criterion — what gets examined, and what counts |
 | ----------------------- | ---- | ----------------------------------------------- |
-| `o-orientation`         |      | `orientation`                                   |
-| `c-read-unseen-diagram` |      |                                                 |
+| `o-orientation` | get the shape of this area before working on any particular part of it | `orientation` |
+| `c-ask-tested` | ask whether something was tested, and tell a real answer from a hollow one | Given one thing the app should do and the agent's answer to "has this been tested?", says whether the answer names a test that would fail if that one thing broke. If it does not, says what to ask the agent next. An answer about the whole suite, such as "all 24 tests pass", is not an answer about one thing. Nor is a named test that would still pass if that one thing broke, such as one that checks a note was accepted without checking it was saved, or one that runs against a mock instead of the real database. |
+| `c-judge-manual-test` | tell when a check really needs a person, and when the agent should automate it | Given an agent's request to test something in the app by hand, says whether a program could do the check instead, for example the agent driving a headless browser. If it could, says what the automated test would do in the app and what it would check, well enough that the agent could write it. If it could not, names what the check needs that only a person can supply. "Automate it", with no account of what the test would check, does not meet it. |
 
 ## Coverage
 
@@ -137,8 +138,9 @@ with the learner.
 
 | goal                    | study | checks | notes |
 | ----------------------- | ----- | ------ | ----- |
-| `o-orientation`         |       |        |       |
-| `c-read-unseen-diagram` |       |        |       |
+| `o-orientation` | | | |
+| `c-ask-tested` | | | |
+| `c-judge-manual-test` | | | |
 
 ---
 
@@ -267,13 +269,83 @@ with the learner.
                   curation/critique to test it.
 -->
 
-### `<activity-id>`
+### `a-w-tdd`
 
-- **serves:**
-- **supports:**
-- **artifact:**
-- **learner does:**
-- **tutor role:**
-- **tutor does:**
-- **done when:**
-- **offer as:**
+- **origin:** generated
+- **serves:** `w-tdd`
+- **checks:** `w-tdd`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-failing-test`
+
+- **origin:** generated
+- **serves:** `w-failing-test`
+- **checks:** `w-failing-test`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-regression`
+
+- **origin:** generated
+- **serves:** `w-regression`
+- **checks:** `w-regression`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-mock`
+
+- **origin:** generated
+- **serves:** `w-mock`
+- **checks:** `w-mock`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-code-review`
+
+- **origin:** generated
+- **serves:** `w-code-review`
+- **checks:** `w-code-review`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-spec-review`
+
+- **origin:** generated
+- **serves:** `w-spec-review`
+- **checks:** `w-spec-review`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-root-cause`
+
+- **origin:** generated
+- **serves:** `w-root-cause`
+- **checks:** `w-root-cause`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-test-suite`
+
+- **origin:** generated
+- **serves:** `w-test-suite`
+- **checks:** `w-test-suite`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+
+### `a-w-test-coverage`
+
+- **origin:** generated
+- **serves:** `w-test-coverage`
+- **checks:** `w-test-coverage`
+- **learner does:** whatever the goal's supply instantiates (see
+  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
+- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
