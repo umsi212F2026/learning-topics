@@ -216,6 +216,7 @@ with the learner.
     the page's address), not through the dev server, so once the page has loaded the dev server
     takes no part in any action.
   - The scratch folder is outside every repository the learner commits to.
+- **verified:** 2026-09-21
 - **learner does:** arranges three things where they can see them together: the app's tab with the
   developer tools' Network panel open, the server's terminal, and the dev server's terminal. For
   action 1 the panel shows every request (its All filter); from action 2 on, it is filtered to
