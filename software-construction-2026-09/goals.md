@@ -63,9 +63,9 @@ _Yours to fill in. Say where your knowledge stops, not what you have heard of._
 ## What I'll use it for
 
 _Yours to fill in. The course supplies two occasions: the in-class lab where your agent adds a
-server and a database to your app, and Problem Set 2. In both, your agent writes tests and has its
-work reviewed as it builds, and you decide whether to accept what it reports. Name any others you
-have._
+server and a database to your app, and Problem Set 2. In both, Superpowers tests and reviews the
+work between agents, and you step in when it asks you to check something, when it finishes, and
+when what it built is not what you wanted. Name any others you have._
 
 <!--
   The use, and a concrete occasion.
@@ -75,15 +75,18 @@ have._
 
 ## Depth
 
-**Judge what your agent tells you about its testing.** Not authoring. You will not write a test in
-this course, and you will not be asked to read test code on your own. Everything in this topic is
-judged from what your agent says: what it tested, how it tested it, and what it reports back.
+**Know when to step in, and what to ask.** Not authoring, and not auditing either. With
+Superpowers, writing tests, running them, reviewing the work and acting on the reviews all happen
+between agents, and it is built not to stop and ask you. You will not write a test, read test
+code, or read the reports its agents pass to each other.
 
-What that buys is enough to supervise the testing and review your agent does while it builds:
-telling whether a test it wrote would catch the mistake it is meant to catch, whether a check it
-hands to you really needs a person, and whether "done, all tests pass" is backed by anything you
-can see. Writing tests, setting up the tools that run them, and debugging by hand are all past
-that line.
+You step in at a few moments: when the agent asks you to check something by hand, when the run
+ends and it lists the decisions it made on your behalf, when you try what it built and it is not
+what you wanted, and, rarely, when it hits a failure it could not resolve. What this topic buys is
+enough to act well at those moments: telling whether a check handed to you really needs a person,
+asking whether something was tested and recognizing a hollow answer, and describing what is wrong
+well enough that the agent can find where it went wrong and redo the right part. Diagnosing the
+problem yourself, and debugging by hand, are past that line.
 
 ## Goals
 
@@ -183,20 +186,13 @@ that line.
   placeholder capability entry; an empty section is the honest signal.
 -->
 
-### `c-judge-done-claim`
+### `c-ask-tested`
 
-- **goal:** tell whether an agent's "done" is backed by evidence
-- **criterion:** Given an agent's report that a task is finished, names each claim it makes and
-  says, for each one, whether the report shows evidence for it (a test run and its result, a
-  reviewer's verdict) or only says it. Names at least one claim made without evidence, or says
-  there are none and why.
-
-### `c-test-would-catch`
-
-- **goal:** say whether a test would catch a given mistake
-- **criterion:** Given a test described in plain words (what it sets up, what it checks) and a
-  mistake in the code, says whether the test would fail with the mistake present, and what the
-  mistaken code would produce. "It tests that function" does not meet it.
+- **goal:** ask whether something was tested, and tell a real answer from a hollow one
+- **criterion:** Given one thing the app should do and the agent's answer to "has this been
+  tested?", says whether the answer names a test that would fail if that one thing broke. If it
+  does not, says what to ask the agent next. An answer about the whole suite, such as "all 24 tests
+  pass", is not an answer about one thing.
 
 ### `c-judge-manual-test`
 
@@ -206,6 +202,17 @@ that line.
   could, says what the automated test would do in the app and what it would check, well enough
   that the agent could write it. If it could not, names what the check needs that only a person
   can supply. "Automate it", with no account of what the test would check, does not meet it.
+
+### `c-describe-missed-requirement`
+
+- **goal:** tell the agent what the finished app does not do that I wanted, so it can find where
+  that got lost
+- **criterion:** Given a finished feature that does not do what they wanted, writes the request
+  they would send the agent. It says what they did, what happened, and what they wanted instead,
+  stated so that a test could check it, and asks the agent to find where that got lost (the spec,
+  one of its rulings, or a test that never checked it) before changing anything. It passes when
+  the agent could act on it without asking what they meant. Saying which of the three it was is
+  not required.
 
 ### `o-orientation`
 

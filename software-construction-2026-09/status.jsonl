@@ -9,6 +9,6 @@
 {"at":"2026-09-21T19:11:32.518Z","kind":"goal-added","goal":"w-root-cause","needs":"curation"}
 {"at":"2026-09-21T19:11:32.555Z","kind":"goal-added","goal":"w-test-suite","needs":"curation"}
 {"at":"2026-09-21T19:11:32.589Z","kind":"goal-added","goal":"w-test-coverage","needs":"curation"}
-{"at":"2026-09-21T19:12:12.424Z","kind":"goal-added","goal":"c-judge-done-claim","needs":"curation"}
-{"at":"2026-09-21T19:12:12.473Z","kind":"goal-added","goal":"c-test-would-catch","needs":"curation"}
 {"at":"2026-09-21T19:12:12.506Z","kind":"goal-added","goal":"c-judge-manual-test","needs":"curation"}
+{"at":"2026-09-21T19:39:58.443Z","kind":"goal-added","goal":"c-ask-tested","needs":"curation"}
+{"at":"2026-09-21T19:39:58.486Z","kind":"goal-added","goal":"c-describe-missed-requirement","needs":"curation"}
