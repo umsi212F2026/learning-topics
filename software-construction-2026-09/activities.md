@@ -63,6 +63,7 @@ with the learner.
   ("4-phase root cause process"). They say "tests" and "clean test baseline" but never test
   suite, and never mention mock, regression or test coverage. In three places the README differs
   from the skill files the course pins (see `tutor does`).
+- **verified:** 2026-09-21
 - **learner does:** reads the four sections in order, with the Depth section of this topic's
   `goals.md` open beside it. Marks each place the README says the person does something (answers
   questions, signs off on the design, says "go", chooses what happens to the branch at the end).
@@ -126,6 +127,7 @@ with the learner.
   cycle, happens inside each implementer"), spec compliance review (the reviewer's diamond) and
   code review (the two reviewers). It gives none to mock, regression, root cause or test coverage.
   30 to 40 minutes.
+- **verified:** 2026-09-21
 - **learner does:**
   1. Opens the diagram and, before reading any note or clicking anything, looks at the lower
      pool's three lanes and writes down which lane they expect to be busiest and where they expect
@@ -182,6 +184,7 @@ with the learner.
 - **artifact:** no external source. Whatever the learner oriented with, still open beside them:
   the README and their marks from `a-read-superpowers-readme`, or the diagram and their sketch from
   `a-trace-superpowers-diagram`. 10 minutes.
+- **verified:** 2026-09-21
 - **learner does:** two rehearsals, neither of them judged. First, the tutor, speaking as their
   coding agent at the end of a piece of work, asks them to check one thing by hand, and the learner
   says roughly whether a program could do it and what it would check. Second, the tutor, still as
@@ -239,6 +242,7 @@ with the learner.
   components over complex mocks", which ends with a second such line ("Do we need to be using a
   mock here?"); "The Mutation Check", a list of five kinds of break; and "Warning Signs". Skip every
   code block: nothing here asks the learner to read one.
+- **verified:** 2026-09-21
 - **learner does:** reads the pieces in order, holding in mind one thing the tutor's app should do
   ("a saved note is still there after a reload"). At "Name the Break", writes the change to the
   app that should make a test of that thing fail, in words about the app ("the server says OK but
@@ -286,6 +290,7 @@ with the learner.
   tests, a check that the server accepted the note, a test against a mock, a coverage percentage,
   "I tried it in the browser", a real test of a different behavior, and a test that checks half of
   the thing. 20 to 25 minutes. No app, no code, nothing to install.
+- **verified:** 2026-09-21
 - **learner does:** reads the app description, then answers the file's three questions for each of
   the ten answers: does it name a test that would fail if that one thing broke (yes, no, or can't
   tell from this); what in the answer decided it; and, if not yes, the one question they would send
@@ -328,6 +333,7 @@ with the learner.
   And two planted breaks, each one line the tutor can switch on and off. First break: save returns
   success without calling the store at all. Second break: save calls the store, but the store
   writes nothing to the file. 20 to 25 minutes in the session.
+- **verified:** 2026-09-21
 - **learner does:** never reads the code, and does not need to. Hears each test described in one
   plain sentence and writes the three sentences down. Then, writing a prediction before every run:
   1. The tutor runs the three tests with nothing broken. The learner predicts pass or fail for each,
@@ -373,6 +379,7 @@ with the learner.
 - **artifact:** no external source. An app described in a few sentences, a private inventory of
   its tests that the tutor writes before the attempt, and the tutor playing the learner's coding
   agent. 15 minutes.
+- **verified:** 2026-09-21
 - **learner does:** is given the app description and one thing the app should do. Asks the
   "agent", in their own words, whether that thing has been tested. When the answer comes, writes
   down, before sending anything else: whether the answer names a test that would fail if that one
@@ -459,6 +466,7 @@ with the learner.
 - **artifact:** no external source. The learner's own app in the in-class lab or in Problem Set 2,
   once their agent has written tests for it, and their own coding agent (Codex, with Superpowers).
   10 minutes on top of the work, and the tutor's reading afterwards.
+- **verified:** 2026-09-21
 - **learner does:** at a point where the agent says a task, or the whole run, is done, picks one
   thing the app should do that they care about, and writes it down in one sentence in a note
   before asking anything. Asks their agent, in their own words, whether that thing has been
@@ -526,6 +534,7 @@ with the learner.
   "Using Test Hooks" and every code block. About 10 minutes of reading inside a 30 to 35 minute
   session. The page never says "headless", and neither table includes a reload; the tutor
   supplies both.
+- **verified:** 2026-09-21
 - **learner does:** reads the three pieces. Then takes four requests the tutor gives them, worded
   the way a coding agent asks for a check by hand, and for each one writes either: the steps a
   headless browser would take, in plain words drawn from the page's actions (go to the address,
@@ -562,6 +571,7 @@ with the learner.
   key for the tutor. Four could be done by a program (one of them needs no browser at all), two
   need a person, and two are partly each, one of them because it names nothing in particular to
   check. 20 to 25 minutes. No app, no code.
+- **verified:** 2026-09-21
 - **learner does:** answers the file's three questions for each request: could a program do it
   (yes, no or partly); if so, what the test would do and what it would check, in plain words an
   agent could write it from; if not, what only a person can supply. Then states the rule they used.
@@ -593,6 +603,7 @@ with the learner.
   project from the react-apps topic (or of their lab app, once it exists), running on their laptop,
   and a headless browser the tutor can drive (Playwright, as react-apps named it). 20 to 25
   minutes.
+- **verified:** 2026-09-21
 - **learner does:** watches, and writes a prediction before each reveal. The tutor, speaking as
   their agent, asks for two checks by hand on the copy: "Could you click the count button three
   times and tell me it shows 3?" and "I changed the heading. Does it look good to you?" Before the
@@ -638,6 +649,7 @@ with the learner.
 - **checks:** `c-judge-manual-test`
 - **artifact:** no external source. An app described in a few sentences, and the tutor playing the
   learner's coding agent at the end of a piece of work, asking for checks by hand. 15 minutes.
+- **verified:** 2026-09-21
 - **learner does:** gets one message from the "agent" asking them to check one to three things by
   hand. Replies to it alone, item by item, before doing any check: for each item, either asks the
   agent to automate it and says what the automated test would do in the app and what it would
@@ -720,6 +732,7 @@ with the learner.
 - **artifact:** no external source. The learner's own coding agent session during the in-class lab
   or Problem Set 2, at a moment when the agent asks them to check something in the app by hand. 10
   minutes on top of the work.
+- **verified:** 2026-09-21
 - **learner does:** when the agent asks for a check by hand, does not do it yet. First writes alone,
   in a note, a reply to each item: automate it (with what the test would do in the app and what it
   would check, in words the agent could write it from), or keep it (naming what only they can
