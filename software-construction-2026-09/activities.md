@@ -71,18 +71,24 @@ with the learner.
   the agent asks you to check something by hand; the run ends and lists the decisions it made for
   you; you try what it built and it is not what you wanted; it hits a failure it could not
   resolve. Stops at each of the five words above as the README reaches it and says what they
-  think it names before reading on ("no idea yet" is a fine answer). After the read, asks about
-  the four words the README never uses (test suite, mock, regression, test coverage) one at a
-  time, and says each back in a sentence of their own after the tutor's reply.
+  think it names before reading on ("no idea yet" is a fine answer). After the read, takes the four
+  words the README never uses (test suite, mock, regression, test coverage) one at a time: hears a
+  fact from this course that the word fits, guesses what the word names before the tutor says
+  anything about it, and after the tutor's near-miss says it in a sentence of their own.
 - **tutor role:** explainer
 - **tutor does:** stays quiet through the reading except at the stops and when asked. At each
   word stop, takes the learner's guess first and replies with a near-miss question rather than a
   verdict ("you said a failing test means something is broken; what about a test the agent wrote
-  a minute ago, before the code it tests exists?"). Anchors the four missing words in this
-  course: the test suite is everything that runs when the agent says "all tests pass"; a mock is
-  what a test puts where the real database would be, which matters once the lab adds one; a
-  regression is something that used to work breaking after a change; test coverage is how much of
-  the code the tests reach, which is not the same as how well it is checked. Flags where the
+  a minute ago, before the code it tests exists?"). For each of the four missing words, puts a
+  course fact first, as a question, and takes the learner's guess before saying anything about
+  the word: test suite ("at the end of every task the agent says 'all 24 tests pass'; what might
+  the test suite be?"); mock ("the lab adds a database; what might a test put in its place?");
+  regression ("after every change the agent runs all the tests again, not just the new one; what
+  might a regression be, that this is there to catch?"); test coverage ("a tool can report that
+  the tests ran 96% of the code; what might test coverage measure, and what might it miss?").
+  Replies to each guess with a near-miss, as at the stops: is a list of sample notes a mock? is a
+  bug in a feature added today a regression? does 100% coverage mean every line was checked? is
+  running only the new test running the suite? Flags where the
   README differs from the pinned skills, because the course pins the skills: step 2 says the
   worktree is made after design approval, where the skills make it when execution starts; step 4's
   "executes in batches with human checkpoints" is the other executor, which the course's students
@@ -92,11 +98,12 @@ with the learner.
   stop and ask (the skill's own words: "Do not pause to check in with your human partner between
   tasks"), which is why the moments in Depth are so few. Says that nothing in the README, or in
   the pinned skills, asks the person to check anything by hand: when their agent does ask, that is
-  the agent's own habit, not a Superpowers step. Defines nothing unasked beyond the four missing
-  words.
+  the agent's own habit, not a Superpowers step. Defines nothing unasked, the four missing words
+  included: the sentence that stands for each is the learner's.
 - **done when:** each of the four Depth moments is marked as mentioned or not mentioned, each of
   the five words has the learner's first guess and the tutor's near-miss, and each of the four
-  missing words has the learner's own sentence. This entry carries no `checks`: the readiness
+  missing words has the learner's guess, the tutor's near-miss and the learner's own sentence
+  after it. This entry carries no `checks`: the readiness
   indication `o-orientation` is ruled on is taken in `a-dry-run-stepping-in`, which follows.
 - **offer as:** the prose route, in Superpowers' own words: the short account of the workflow your
   agent follows, read beside the course's account of where you step in. Quicker than
@@ -113,7 +120,11 @@ with the learner.
   `workflows/develop/superpowers.bpmn` in the course-materials repository every student has
   cloned, opened in Camunda Modeler (installed in Installation 2, where double-clicking a `.bpmn`
   file was set up to open it). It was drawn from the skill files at v6.3.0, commit `b36e082`, not
-  from the README. No code anywhere. At the top level, the lower pool (the one labelled
+  from the README. No code to read; a few labels name shell commands or scripts ("npm test /
+  pytest / cargo test / go test ./..." on the test-suite task, "rm -rf <workspace>" on the step
+  that deletes the workspace, and script names such as sdd-workspace, task-brief and
+  review-package under the script tasks), and nothing here asks the learner to read them. At the
+  top level, the lower pool (the one labelled
   "obra/superpowers v6.3.0") has three lanes: HUMAN operator, AI AGENT and PROGRAM. The HUMAN lane
   holds only the start, "Finish the branch" and the end. The PROGRAM lane holds "Run the project's
   full test suite", the diamond "suite green?", and the end "stopped, suite red". The box "Execute
@@ -125,9 +136,11 @@ with the learner.
   The diagram gives a place to five of the nine words: test suite, test-driven development and
   failing test (the note beside the empty PROGRAM lane on the plane below says "the TDD red/green
   cycle, happens inside each implementer"), spec compliance review (the reviewer's diamond) and
-  code review (the two reviewers). It gives none to mock, regression, root cause or test coverage.
-  30 to 40 minutes.
-- **verified:** 2026-09-21
+  code review (the reviewers). It draws nothing for mock, regression, root cause or test
+  coverage. In the element documentation, "regressions" appears once, in that of "Dispatch a
+  scoped re-review" on the plane below, quoting the skill: "unreviewed fixes are how regressions
+  land." The documentation of "Write the implementation plan" mentions "a self-review against the
+  spec for coverage", which is coverage of the spec, not test coverage. 30 to 40 minutes.
 - **learner does:**
   1. Opens the diagram and, before reading any note or clicking anything, looks at the lower
      pool's three lanes and writes down which lane they expect to be busiest and where they expect
@@ -147,7 +160,9 @@ with the learner.
      show it at all.
   6. Places the topic's nine words on that sketch (test-driven development, failing test,
      regression, mock, code review, spec compliance review, root cause, test suite, test
-     coverage), says which ones the diagram gave them nowhere to put, and asks about those.
+     coverage) and says which ones the diagram gave them nowhere to put. For each of those,
+     answers the tutor's prompt with a guess at what the word names and where it would sit, before
+     being told anything about it.
 - **tutor role:** explainer
 - **tutor does:** stays quiet until the prediction in step 1 is written, then says which part of it
   the diagram will bear out. Through steps 2 to 4, answers questions and shows where the properties
@@ -158,13 +173,21 @@ with the learner.
   otherwise appears only in the note beside the empty HUMAN lane, as four interrupts that can fire
   anywhere; finding it is not what they wanted comes after the diagram ends; a request to check
   something by hand appears nowhere, because nothing in the pinned skills tells the agent to make
-  one, so when their agent asks, that is its own habit. At step 6, supplies a place for each word
-  the diagram lacks: a mock sits inside a test, standing where the database would be; a regression
-  is what running the whole suite again after a change is there to catch; root cause belongs to a
-  Superpowers skill (systematic-debugging) the diagram does not draw, used when a test fails or a
-  bug turns up; test coverage measures how much code the tests reach, and no step in the diagram
-  looks at it. Corrects a misplaced word by asking what would have to be true for it to live
-  there, rather than by moving it.
+  one, so when their agent asks, that is its own habit. At step 6, for each word the diagram
+  lacks, puts a prompt from the course first and takes the learner's guess at what the word names
+  and where it sits before saying anything about it: mock ("the lab adds a database; what might a
+  test put in its place, and where on your sketch do tests run?"); regression ("the full suite
+  runs again at the end, after all the tasks are done and each has run its own tests; what might
+  that be there to catch?", adding, if the learner is stuck, the line in the re-review's
+  documentation, "unreviewed fixes are how regressions land"); root cause ("when a test fails and the agent can't see why,
+  Superpowers has a skill for finding out, systematic-debugging, which this diagram does not draw;
+  what might a root cause be, beside the failure the agent noticed?"); test coverage ("a tool can
+  report what share of the code the tests ran; does any step here look at a number like that?").
+  Replies to each guess with a near-miss question, and gives a place itself only if the learner is
+  still stuck after that: a mock inside a test, where the database would be; a regression is what
+  the full-suite run is there to catch; root cause in the debugging skill the diagram does not
+  draw; test coverage nowhere, since no step looks at it. Corrects a misplaced word by asking what
+  would have to be true for it to live there, rather than by moving it.
 - **done when:** the sketch shows the four moments, each marked drawn, noted or not shown, and all
   nine words placed where the learner can point at them, and the learner can say what each
   placement means with the diagram still open. This entry carries no `checks`: the readiness
@@ -195,16 +218,22 @@ with the learner.
 - **tutor does:** sets both rehearsals from the generator below. Grades neither. If an answer shows
   a misunderstanding (taking "all tests pass" as an answer about one thing, or saying "automate it"
   with nothing about what the test would check), explains it once and moves on. Then puts this
-  question, word for word, naming what they oriented with: "With [the README, or your sketch]
-  beside you, could you now attempt the two things this topic is for: when your agent asks you to
-  check something by hand, telling whether a program could do it instead; and when you ask whether
-  something was tested, telling a real answer from a hollow one?" Rules on the answer.
+  question, word for word, naming what they made while orienting: "With [your marks on the README,
+  or your sketch of where the moments fall] beside you, could you now attempt the two things this
+  topic is for: when your agent asks you to check something by hand, telling whether a program
+  could do it instead; and when you ask whether something was tested, telling a real answer from
+  a hollow one?" Rules on the answer. Neither orientation artifact says anything about hollow
+  answers or about what a program can check, so a learner who says no is usually saying they
+  have not met one of the two halves yet, which is what the study activities are for.
 - **done when:** criterion met. The bar for this goal is did it once, and help is expected
   throughout, so the ruling is on the learner's own indication: not on how either rehearsal went,
   and not on whether the tutor thinks they are ready. A yes to one half and a hedge on the other
   is `criterion: unclear`: explain the hedged half again and put the question again. A plain no
-  to either half is `criterion: not met`: record it, ask what is missing, and offer the orientation
-  route they did not take, or a study activity on the half they named. Do not put the question a
+  to either half is `criterion: not met`: record it, ask what is missing, and by default offer a
+  study activity for the half they named, from that goal's row in Coverage
+  (`a-sort-manual-requests` is the quickest for checks by hand, `a-sort-tested-answers` for
+  "has it been tested"). Offer the orientation route they did not take only if what is missing is
+  the shape of the run itself: where they come in, or who does what. Do not put the question a
   third time in the same sitting. This goal is not required, so a no blocks nothing else.
 - **kind:** generator
 - **generator:** vary the request and the answer; hold everything else fixed. The request is one
@@ -230,8 +259,13 @@ with the learner.
 - **supports:** deepen
 - **artifact:** "Writing Good Tests", a reference file inside Superpowers' test-driven-development
   skill: `../superpowers/skills/test-driven-development/writing-good-tests.md` from the root of the
-  learning-topics repository, at the pinned commit `b36e082`. About 1,300 words in all, with five
-  short blocks of code or pseudocode. The skill tells the agent to read it whenever it writes or
+  learning-topics repository, at the pinned commit `b36e082`. That clone is made in Installation 4,
+  at the start of session 7's lab, so anyone studying before then, or whose clone is missing,
+  reads the same file at
+  https://github.com/obra/superpowers/blob/b36e0829c6d0140e93cfef2ca599b1b07d4a7797/skills/test-driven-development/writing-good-tests.md.
+  About 1,300 words in all, with six fenced blocks: the first, in "Overview", holds the two
+  principles; the other five are three TypeScript examples and two "Gate Function" blocks of
+  pseudocode. The skill tells the agent to read it whenever it writes or
   changes a test, so it is the standard the agent's own tests are meant to meet. Read only these
   pieces, about 500 words and 5 minutes of reading inside a 30 to 35 minute session: "Overview"
   (the two principles, "Every test names the break it catches" and "Every test exercises the real
@@ -240,9 +274,9 @@ with the learner.
   earns no assertions", the line after its example quoting "your human partner" ("Are we testing
   the behavior of a mock?"), the first paragraph of "Mock at the right level", and "Prefer real
   components over complex mocks", which ends with a second such line ("Do we need to be using a
-  mock here?"); "The Mutation Check", a list of five kinds of break; and "Warning Signs". Skip every
-  code block: nothing here asks the learner to read one.
-- **verified:** 2026-09-21
+  mock here?"); "The Mutation Check", a list of five kinds of break; and "Warning Signs". Of the six
+  fenced blocks, read only the Overview one, which is two numbered lines of plain words and no
+  code. Skip the other five: nothing here asks the learner to read one.
 - **learner does:** reads the pieces in order, holding in mind one thing the tutor's app should do
   ("a saved note is still there after a reload"). At "Name the Break", writes the change to the
   app that should make a test of that thing fail, in words about the app ("the server says OK but
@@ -261,10 +295,25 @@ with the learner.
   by a server, still there after a reload. Stays out of the reading until something is written.
   Takes each written break and asks whether a test that looks only at the screen right after Save
   would catch it. Takes each question and asks what answer from the agent would satisfy the
-  learner, pressing until the answer they would accept names one test and what it checks. If asked
-  what a code block shows, says it in one sentence of words and does not show the code. At the
-  end, points at one line in a neighbouring skill,
-  `../superpowers/skills/verification-before-completion/SKILL.md`, under "Key Patterns", "Regression
+  learner, pressing until the answer they would accept names one test and what it checks, or says
+  there is none. If asked what a code block shows, says it in one sentence of words and does not
+  show the code. The Mutation Check names its five kinds in a programmer's terms; if asked what
+  one means, gives only its line below, which is about a different small app (a reading list), so
+  that the break in the Notes app is still the learner's to write:
+  - wrong constant or argument: the list comes back oldest first, or Remove takes off the book
+    next to the one clicked;
+  - wrong branch handler: when the server fails to store a book, the page treats the failure as
+    success and says "Added";
+  - missing state change or side effect: the page says "Added", but nothing is written to the
+    database, so the book is gone after a reload;
+  - empty or default return: asked for the list, the server answers with an empty one, so a reload
+    shows no books though they are all in the database;
+  - missing validation: a book with no title is added instead of being refused.
+
+  At the end, points at one line in a neighbouring skill,
+  `../superpowers/skills/verification-before-completion/SKILL.md` (or, without the clone,
+  https://github.com/obra/superpowers/blob/b36e0829c6d0140e93cfef2ca599b1b07d4a7797/skills/verification-before-completion/SKILL.md),
+  under "Key Patterns", "Regression
   tests (TDD Red-Green)": "Write → Run (pass) → Revert fix → Run (MUST FAIL) → Restore → Run
   (pass)". It is the request that settles any doubt about one test: undo the change, run the test,
   watch it fail.
@@ -290,7 +339,6 @@ with the learner.
   tests, a check that the server accepted the note, a test against a mock, a coverage percentage,
   "I tried it in the browser", a real test of a different behavior, and a test that checks half of
   the thing. 20 to 25 minutes. No app, no code, nothing to install.
-- **verified:** 2026-09-21
 - **learner does:** reads the app description, then answers the file's three questions for each of
   the ten answers: does it name a test that would fail if that one thing broke (yes, no, or can't
   tell from this); what in the answer decided it; and, if not yes, the one question they would send
@@ -307,7 +355,9 @@ with the learner.
 - **done when:** the learner's rule says, in some words of their own, that the answer has to name
   one test and what it checks, that the check has to be one that would come out differently if the
   thing broke, and that a count, a percentage, a stand-in database or "I tried it" does not count;
-  and every next question they wrote would get a test named or a failure shown. No `checks`: the
+  and every next question they wrote is one whose honest answer has to name one test and what it
+  checks, or say there is none, so that none of them could be answered with a count, a percentage
+  or a plain "yes". No `checks`: the
   pairs are built to be compared, so the contrast does part of the judging, and the set is fixed
   and can be remembered.
 - **offer as:** examples before reasons, and the quickest of the three: 20 to 25 minutes, one
@@ -345,8 +395,8 @@ with the learner.
      then watches the run.
   4. The tutor switches to the second break. Predictions again, then the run.
   5. With both runs in front of them, says which one test they would want the agent to name when
-     asked about saving, and rewrites their question from step 2 so that only that test, or one
-     like it, could satisfy it.
+     asked about saving, and rewrites their question from step 2 so that its honest answer has to
+     name that test, or one like it, and what it checks, or say there is none.
 - **tutor role:** explainer
 - **tutor does:** builds the project and confirms before the session that all three runs come out
   as intended: nothing broken, all three pass; first break, A passes and B and C fail; second break,
@@ -380,11 +430,12 @@ with the learner.
   its tests that the tutor writes before the attempt, and the tutor playing the learner's coding
   agent. 15 minutes.
 - **verified:** 2026-09-21
-- **learner does:** is given the app description and one thing the app should do. Asks the
-  "agent", in their own words, whether that thing has been tested. When the answer comes, writes
-  down, before sending anything else: whether the answer names a test that would fail if that one
-  thing broke (yes, no, or can't tell from this), the reason in one sentence, and, if not yes, the
-  question they will send next. Sends that question, and when the reply comes, writes the same
+- **learner does:** is given the app description and one thing the app should do. Sends the
+  "agent" this first question, word for word, with the thing in the words it was given: "Has
+  [the thing] been tested?" When the answer comes, writes down, before sending anything else:
+  whether the answer shows a test that would fail if that one thing broke (yes, no, or can't tell
+  from this), the reason in one sentence, saying what in the answer decided it, and, if not yes,
+  the question they will send next. Sends that question, and when the reply comes, writes the same
   judgment about the reply. Works alone. Never sees test code, and is not asked to.
 - **tutor role:** role-play partner
 - **tutor does:** before the attempt, builds the instance per the generator and writes the
@@ -392,14 +443,32 @@ with the learner.
   it checks at the end, and whether it uses the real test database or a stand-in), and, for the one
   thing asked about, which tests would fail if it broke, possibly none. Plays a coding agent that
   answers truthfully and literally from the inventory, answering what it was asked and
-  volunteering nothing. The first answer is the kind the generator sets, whatever the learner's
-  wording. Every later answer is the literal, truthful answer to the question actually asked: if
-  the learner's question can be answered with a count, a percentage or a plain "yes", answers it
-  that way. Helps only if asked, and writes any help down word for word. Sends the adjudicator the
-  app description, the thing asked about, the inventory, both answers, the learner's judgments and
-  questions verbatim, and every piece of help. Afterwards, shows the learner what the inventory
-  held. Labels the attempt `a-judge-tested-answer/<kind>`, naming the first answer's kind.
-- **done when:** criterion met with no help, on a Medium or Hard instance.
+  volunteering nothing. The first question is the plain one above, and the first answer is the
+  kind the generator sets, which is a literal, truthful answer to it. Every later answer is the
+  literal, truthful answer to the question actually asked: if the learner's question can be
+  answered with a count, a percentage or a plain "yes", answers it that way. Helps only if asked,
+  and writes any help down word for word. Before reading the learner's judgments, writes the right
+  verdict on each answer as that answer reads, from what it says and not from the inventory (the
+  generator gives the verdict for each kind). Sends the adjudicator the app description, the thing
+  asked about, the inventory, both answers with the right verdict on each, the learner's judgments
+  and questions verbatim, every piece of help, and the readings in `done when`. Afterwards, shows
+  the learner what the inventory held. Labels the attempt `a-judge-tested-answer/<kind>`, naming
+  the first answer's kind.
+- **done when:** criterion met with no help, on an instance whose first answer is hollow: Medium
+  or Hard, and not `real`. The tutor sends these readings of the criterion to the adjudicator with
+  the rest:
+  - each verdict is judged on what that answer says, not on the inventory or on any test code;
+  - a verdict counts only with a reason that names what in that answer decided it (a count of the
+    whole suite, a stand-in where the database would be, a check that stops at the server's
+    reply). A reason that would fit any answer, such as a reflexive "no, it doesn't say which test
+    would fail", is a verdict without a judgment, and that part of the criterion is `unclear`;
+  - a next question meets the criterion only if its honest answer has to name one test and what
+    it checks, or say there is none. One that could be answered with a count, a percentage or a
+    plain "yes" does not;
+  - the ruling is on the first answer and the question written about it. A weak first question
+    is a miss even if the learner reads the literal reply rightly and asks a better one after it,
+    because seeing the reply is what exposed the question. The judgment of the reply is held to
+    the same readings, and a wrong verdict on it counts against the attempt.
 - **kind:** generator
 - **generator:** fixed for every instance: the app is a small web app with a Vite React front end,
   a server and a database, described in three to five sentences a user could have written; the
@@ -423,7 +492,8 @@ with the learner.
     - `coverage` (Medium): a coverage percentage for the code involved.
     - `real` (Medium): names a test that does the thing through the app against the real test
       database and checks what would differ if it broke. The right verdict is yes; a next question
-      is optional, and if the learner sends one, the agent answers it.
+      is optional, and if the learner sends one, the agent answers it. Served on review visits
+      only (see Difficulty).
     - `mock` (Hard): names a test that replaces the database with a stand-in and checks the
       stand-in was called.
     - `half` (Hard): names a test that checks part of the thing (the message appears) and not the
@@ -434,15 +504,25 @@ with the learner.
     answer is not `real`, it does, so a good next question gets it named; in the rest, none would,
     so the truthful reply to a good next question is that no test checks it, and the learner has to
     recognize that reply as the answer.
+  Right verdicts, judged on what the answer says: yes for `real`; can't tell from this for
+  `name-only`; no for every other kind, where can't tell from this is equally right for the three
+  that name no test at all (`suite-count`, `by-hand`, `coverage`). The truthful reply to a good
+  next question either names a test and what it checks, which is judged the same way, or says no
+  test checks the thing, where the right verdict is no.
   Difficulty: Easy is `suite-count` or `by-hand`; Medium and Hard are as marked above. An attempt
-  meant to count runs at Medium or Hard. Easy is for the worked example and for a retry with help
-  after a miss. Across attempts and review visits, serve a first-answer kind the learner has not
-  had, until `accepted-not-saved`, `mock`, `half` and `real` have each come up once, reading the
-  labels `served.mjs` returns.
+  meant to count runs at Medium or Hard with a hollow first answer, which is every Medium and Hard
+  kind except `real`. A `real` first answer settles the question, so the next-question half of the
+  criterion never comes up, and a learner who says yes to everything would pass it: serve it only
+  on review visits, once the goal is met, where it catches a learner who has come to call every
+  answer hollow. Easy is for the worked example and for a retry with help after a miss. Across
+  attempts and review visits, serve a first-answer kind the learner has not had, until
+  `accepted-not-saved`, `mock`, `half` and `real` have each come up once, reading the labels
+  `served.mjs` returns.
 - **worked example:** work one Easy instance live, out loud: ask the question, read the answer, say
   why a count of passing tests is not about one thing, write the next question ("which test would
-  fail if a saved note weren't there after a reload?"), and say why it cannot be answered with
-  another count. At the first level of help on a real attempt, give only the question "if this
+  fail if a saved note weren't there after a reload, and what does it check?"), and say why it
+  cannot be answered with another count or a plain "yes": its honest answer has to name a test, or
+  say there is none. At the first level of help on a real attempt, give only the question "if this
   thing broke tomorrow, which test in that answer would go red?".
 - **doesn't show:** the tutor's answers are short and tidy. A real agent buries the test in a long
   report and may not say whether its "integration test" used the real database, so a pass here
@@ -450,9 +530,11 @@ with the learner.
   is told which thing to ask about and knows a check is under way, so a pass does not show they
   would think to ask in the middle of their own work. The truth is a written inventory in plain
   words, so the learner never has to weigh an agent's description against what its test really
-  does. A `real` first answer exercises only the verdict half of the criterion: the "what to ask
-  next" half is examined only when the first answer is hollow, which is why the rotation above
-  requires hollow kinds as well.
+  does. Counting attempts always open on a hollow answer, so a yes is called for only in the reply:
+  when the inventory holds a test that would fail, a good next question gets it named, and the
+  right verdict on that reply is yes. In the other half of instances no answer deserves a yes, and
+  only the rule that each reason must name what decided it separates judging from reflexively
+  saying no.
 - **offer as:** the check you can take now, before your own app has tests. The tutor plays your
   agent while holding a written list of what each of its tests really checks, so whatever you
   missed comes back specific. 15 minutes and a live session. `a-ask-own-agent-tested` is the same
@@ -471,15 +553,19 @@ with the learner.
   thing the app should do that they care about, and writes it down in one sentence in a note
   before asking anything. Asks their agent, in their own words, whether that thing has been
   tested, without adding "which test would fail" to that first question. Before sending anything
-  else, writes in the note whether the answer names a test that would fail if that thing broke
-  (yes, no, or can't tell from this), the reason, and, if not yes, the next question. Sends that
+  else, writes in the note whether the answer shows a test that would fail if that thing broke
+  (yes, no, or can't tell from this), the reason, saying what in the answer decided it, and, if
+  not yes, the next question. Sends that
   question word for word and writes the same judgment about the reply. Keeps the transcript from
   the first question through the agent's reply to the second, and brings it and the note to the
   tutor. No tutor is there while this happens.
 - **tutor role:** none
 - **tutor does:** when first offering this, tells the learner to keep the note and the transcript,
   and that anything they look at for help while writing gets noted at the top of the note.
-  Afterwards, before reading the learner's judgments, establishes the truth: reads each test the
+  Afterwards, before reading the learner's judgments, writes the right verdict on each of the
+  agent's two answers as that answer reads, and what in it decides the verdict, by the rule in
+  `a-judge-tested-answer`'s generator: the verdict is judged on what the agent said, not on its
+  test code. Then, separately, finds out whether each answer was accurate: reads each test the
   agent named, in the learner's repository, and writes in plain words what it does, what it checks,
   and whether it uses the real database or a stand-in, then says whether it would fail if the
   thing broke. Where it can, confirms that by copying the project to a scratch directory outside
@@ -487,33 +573,50 @@ with the learner.
   in the record whether it did. Never changes the learner's own project. Checks that the first
   question was asked plainly, and that the agent had not already said, earlier in the
   conversation, which test covered the thing. Sends the adjudicator the thing, the note, the
-  transcript, the plain-words account of each named test (marked as the tutor's reading), whether
-  the break was run, and any help noted. After the ruling, tells the learner what the named test
-  really checks. Labels the attempt `a-ask-own-agent-tested`.
-- **done when:** criterion met with no help.
+  transcript, the right verdict on each answer, the readings in `a-judge-tested-answer`'s
+  `done when`, any help noted, and, marked as context and not as the standard, the plain-words
+  account of each named test and whether the break was run. Where that account disagrees with
+  what the agent said, the verdict is still ruled on the answer: a "can't tell from this" that is
+  right about the answer is right whatever the code does, and a yes to an answer that described a
+  sound test is right even if the code turns out to use a stand-in. After the ruling, tells the
+  learner what the named test really checks, and, where it differs from what the agent said,
+  whether their next question would have brought the difference out. Labels the attempt
+  `a-ask-own-agent-tested`.
+- **done when:** criterion met with no help, ruled with the readings in `a-judge-tested-answer`'s
+  `done when`. A first answer that settles it (it names a test and says enough to show it would
+  fail, or it says plainly that no test checks the thing) is recorded, but the "what to ask next"
+  half never came up and a learner who answers by reflex would get it right, so the tutor says so
+  to the adjudicator and the criterion is ruled no higher than `unclear`.
 - **kind:** generator
 - **generator:** the material is the learner's own app and whatever their agent answers, so no two
   instances match and nobody sets the difficulty. Hold fixed: the thing is chosen and written down
   before asking; the first question is asked plainly; the judgment and the next question are
   written before anything else is sent; the transcript runs from the first question to the reply
-  to the second; the truth about each named test is written before the learner's judgments are
-  read. No instance if the agent had already named the test for that thing earlier in the
-  conversation, or if the app has no tests yet (serve `a-judge-tested-answer` instead). An answer
-  saying there is no test for the thing is an instance: the right verdict is no, and a good next
-  question asks for a test that is shown failing first.
+  to the second; the right verdict on each answer, and the tutor's reading of each named test, are
+  written before the learner's judgments are read. No instance if the agent had already named the
+  test for that thing earlier in the conversation, or if the app has no tests yet (serve
+  `a-judge-tested-answer` instead). An answer saying there is no test for the thing is an
+  instance, and one that settles it: the right verdict is no, and asking for a test that is shown
+  failing first is a good next step but not one the ruling needs, so it rules no higher than
+  `unclear` (see `done when`).
 - **worked example:** no tutor is present during the attempt, so nobody offers one. If the learner
   stalls, they may open `writing-good-tests.md` from `a-read-name-the-break`, or their own notes
   from any study activity, and write at the top of the note that they did; the attempt is then
   recorded `unaided: no`.
-- **doesn't show:** the truth rests on the tutor's reading of the named test, confirmed by running
-  a break only where the tutor could; without that run, whether the test would fail is a reading,
-  not an observation. The learner picks the thing and the moment, so a pass says nothing about
-  whether they ask at the moments that matter. Which kind of answer comes back is up to the agent:
-  a pass may never have met a stand-in database or a test that checks half the thing. And a real
-  agent's answer can be long: the transcript shows whether the learner found the sentence that
-  mattered, not what they skipped on the way.
-- **offer as:** the real thing: your agent, your app, a behavior you care about, judged against
-  what the named test really does. Adds ten minutes to real work, and is only possible once your
+- **doesn't show:** the ruling is on what the agent said, so a pass does not show the learner
+  would catch an agent that described its own test wrongly. The tutor's reading of the named test,
+  confirmed by running a break only where it could, says whether this answer was accurate, and
+  reaches the learner as feedback, not the ruling. When the agent's first answer settles it, a
+  right verdict on it shows only one half of the criterion, so the attempt rules no higher than
+  `unclear`; an agent that worked test-first will often name a sound test straight away, so many
+  real instances will not count toward the goal. The learner picks the thing and the moment, so a
+  pass says nothing about whether they ask at the moments that matter. Which kind of answer comes
+  back is up to the agent: a pass may never have met a stand-in database or a test that checks
+  half the thing. And a real agent's answer can be long: the transcript shows whether the learner
+  found the sentence that mattered, not what they skipped on the way.
+- **offer as:** the real thing: your agent, your app, a behavior you care about, judged on what
+  your agent actually told you, and afterwards you hear what its named test really does. Adds ten
+  minutes to real work, and is only possible once your
   lab app or Problem Set 2 has tests, which makes it the natural candidate for review visits later
   in the term. `a-judge-tested-answer` is the one to take now.
 
@@ -571,15 +674,15 @@ with the learner.
   key for the tutor. Four could be done by a program (one of them needs no browser at all), two
   need a person, and two are partly each, one of them because it names nothing in particular to
   check. 20 to 25 minutes. No app, no code.
-- **verified:** 2026-09-21
 - **learner does:** answers the file's three questions for each request: could a program do it
   (yes, no or partly); if so, what the test would do and what it would check, in plain words an
   agent could write it from; if not, what only a person can supply. Then states the rule they used.
 - **tutor role:** critic
 - **tutor does:** shows everything above the key and nothing in it. Takes all eight answers and the
   rule before commenting on any. Reads each "yes" description back as a literal agent would and
-  says where it would have to guess (what text to type, what counts as still there, whether to
-  reload). On each "no", asks whether some part of it is a checkable fact. Makes sure m4 is
+  says where it would have to guess, separating the guesses that decide whether the test would
+  fail if the thing broke (what counts as still there, whether to reload) from the ones the agent
+  fills in for itself (the address, button names, what text to type). On each "no", asks whether some part of it is a checkable fact. Makes sure m4 is
   discussed whatever the learner answered, because "automate it" is the answer it is built to
   catch, and m5, because the agent can do it itself with no browser and no test file. When either
   request of one of the key's pairs was misjudged (m3 and m8; m1 and m7; m4 and m6), puts the two
@@ -666,9 +769,17 @@ with the learner.
   any files. From this description alone, write out the test you would write: each step, and what
   it checks at the end. List every place you had to guess. Say whether your test would fail if
   [the thing, in the app description's words] broke." Sends the adjudicator the app description,
-  the message, the truth for each item, the learner's reply verbatim, every piece of help, and each
-  stranger report. Afterwards tells the learner where a stranger had to guess. Labels the attempt
-  `a-judge-manual-request/<categories>`, naming the categories of the items served.
+  the message, the truth for each item, the learner's reply verbatim, every piece of help, each
+  stranger report, and this rule for reading the reports. The standard is "well enough that the
+  agent could write it", and that agent is the learner's own, which knows things the stranger
+  does not. So a guess counts against the learner only when it decides whether the test would fail
+  if the thing broke: what to look at at the end, whether to reload, whether a count must stay the
+  same, what result means broken. Guesses about the address, the names of buttons or other
+  elements, how to start the app, and what text to type do not count: the learner's agent knows
+  the first three, and choosing the text, including text no other entry could have, is its job,
+  not the learner's. Afterwards tells the learner where a stranger had to guess, and which of those
+  guesses counted. Labels the attempt `a-judge-manual-request/<categories>`, naming the categories
+  of the items served.
 - **done when:** criterion met with no help, for every item, on a Medium or Hard instance.
 - **kind:** generator
 - **generator:** fixed for every instance: the app is a small web app with a Vite React front end,
@@ -699,16 +810,21 @@ with the learner.
     message is clear").
   Difficulty: Easy is one item from `persist`, `remove` or `refuse`, plainly phrased. Medium is two
   items, one a program could do (any of the first six categories) and one only a person could
-  (`taste`, `wording` or `own-access`), both plainly phrased. Hard is three items including a
-  `mixed` or `vague` one, or any item phrased the other way round from its category. An attempt
+  (`taste`, `wording` or `own-access`), both plainly phrased. Hard is three items that keep
+  Medium's floor (at least one item a program could do and one only a person could, where a
+  `mixed` item counts as both) and add to it: a `mixed` or `vague` item, or any item phrased the
+  other way round from its category. A `vague` item has no part only a person can supply, so it
+  never stands in for the person's item. An attempt
   meant to count runs at Medium or Hard, because only there do both halves of the criterion come
   up. Easy is for the worked example and for a retry with help after a miss. Across attempts and
   review visits, cover at least once each `refuse`, `own-run`, `mixed` and `vague`, reading the
   labels `served.mjs` returns.
 - **worked example:** work one Easy instance live: read the request, say out loud that a headless
-  browser could do it, then write the description, naming the address, the exact text typed (text
-  no other entry could have), each click, the reload, and what should be on the page afterwards.
-  Then say which of those details an agent would have guessed wrong without. At the first level of
+  browser could do it, then write the description: from a freshly opened page, each thing done in
+  the app, the reload, and what should be on the page afterwards. Then say which of those details
+  decide whether the test would fail if the thing broke (the reload, and what to look for at the
+  end), and which the agent fills in for itself (the address, the button's name, what text to
+  type). At the first level of
   help on a real attempt, give only the question "what would the test see if this were broken?".
 - **doesn't show:** the stranger only writes the test out. It is not run against a real app, so
   "well enough that the agent could write it" is shown by a fresh agent's account of what it would
@@ -744,32 +860,42 @@ with the learner.
 - **tutor role:** none
 - **tutor does:** when first offering this, gives the learner the fixed line to keep somewhere they
   can copy it from, and says that anything they look at for help gets noted at the top of the note.
-  Afterwards, reads the transcript and the note. Checks that the request came from the agent without
-  the learner asking to be set one, and that the note was written before anything was sent. Writes
-  its own truth for each item, as `a-judge-manual-request` does, before reading the learner's
-  answers. Runs that entry's stranger test on each item the learner said to automate (a fresh
-  subagent, no files, the app described in a sentence or two), because the working agent knows the
-  project, and its list of guesses understates what a stranger would need. Sends the adjudicator
-  the request, the note, the truth, the stranger reports, the working agent's reply, and any help
-  noted; says so to the adjudicator when every item was one a program could do, since the other
-  half of the criterion then went unexamined. After the ruling, tells the learner where a stranger
-  had to guess. Labels the attempt `a-answer-own-manual-request`.
-- **done when:** criterion met with no help, for every item in the request.
+  Afterwards, reads the agent's request in the transcript, checks that it came from the agent
+  without the learner asking to be set one, and writes its own truth for each item, as
+  `a-judge-manual-request` does. Only then reads the note and the rest of the transcript, and
+  checks that the note was written before anything was sent. Runs that entry's stranger test on
+  each item the learner said to automate (a fresh subagent, no files, the app described in a
+  sentence or two), because the working agent knows the project, and its list of guesses
+  understates what a stranger would need. Sends the adjudicator the request, the note, the truth,
+  the stranger reports, the working agent's reply, any help noted, and that entry's rule for
+  reading guesses, which applies to the working agent's list as well: a guess counts against the
+  learner only when it decides whether the test would fail if the thing broke, and guesses about
+  the address, element names, how to start the app or what text to type do not count. When every
+  item falls on one side, all a program's or all a person's with no `mixed` one, says so to the
+  adjudicator: the other half of the criterion went unexamined, and the criterion is ruled no
+  higher than `unclear`. After the ruling, tells the learner where a stranger had to guess, and
+  which of those guesses counted. Labels the attempt `a-answer-own-manual-request`.
+- **done when:** criterion met with no help, for every item in the request, on a request with at
+  least one item a program could do and one only a person could, or a `mixed` one. A request whose
+  items all fall on one side is recorded, and rules no higher than `unclear` on criterion.
 - **kind:** generator
 - **generator:** the material is whatever the learner's agent asks for, so no two instances match
   and nobody sets the difficulty. Hold fixed: the request comes from the agent without the learner
   having asked for one; the note is written before anything is sent; the fixed line follows the
   automate items unchanged; the transcript runs from the request to the agent's reply to it; the
   truth and the stranger reports are written before the learner's answers are read. No instance if
-  the learner prompted the request, or did the check before writing the note. A request with a
-  single, plainly automatable item is an instance, and a fair one here, because the learner also
-  had to stop and question a real request instead of just doing it.
+  the learner prompted the request, or did the check before writing the note. A request whose
+  items all fall on one side, such as a single plainly automatable item, is an instance and is
+  recorded, since the learner still had to stop and question a real request instead of just doing
+  it; but the other half of the criterion went unexamined, so it rules no higher than `unclear`
+  and cannot meet the goal on its own.
 - **worked example:** no tutor is present during the attempt, so nobody offers one. If the learner
   stalls, they may open the Playwright page from `a-read-playwright-actions` and write at the top of
   the note that they did; the attempt is then recorded `unaided: no`.
-- **doesn't show:** which requests come up is up to the agent, so a pass may never have involved an
-  item only a person could do, leaving the "names what only a person can supply" half of the
-  criterion unexamined. The learner chooses which requests to bring. The working agent's reply is
+- **doesn't show:** which requests come up is up to the agent, and a real request may well fall
+  all on one side, so it may take several before one can count. A pass covers both
+  halves of the criterion, but only on whatever mix of items the agent happened to ask about. The
+  learner chooses which requests to bring. The working agent's reply is
   weak evidence, because it already knows the project; the ruling rests on the stranger reports and
   the truth, with the reply as supporting evidence only.
 - **offer as:** the real thing: your agent asks you to check something, and you decide what to hand
