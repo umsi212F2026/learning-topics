@@ -1,2 +1,14 @@
 {"at":"2026-09-17T10:38:01.503Z","kind":"created"}
 {"at":"2026-09-17T10:38:01.503Z","kind":"goal-added","goal":"o-orientation","needs":"curation"}
+{"at":"2026-09-21T19:11:32.261Z","kind":"goal-added","goal":"w-tdd","needs":"curation"}
+{"at":"2026-09-21T19:11:32.316Z","kind":"goal-added","goal":"w-failing-test","needs":"curation"}
+{"at":"2026-09-21T19:11:32.360Z","kind":"goal-added","goal":"w-regression","needs":"curation"}
+{"at":"2026-09-21T19:11:32.400Z","kind":"goal-added","goal":"w-mock","needs":"curation"}
+{"at":"2026-09-21T19:11:32.440Z","kind":"goal-added","goal":"w-code-review","needs":"curation"}
+{"at":"2026-09-21T19:11:32.481Z","kind":"goal-added","goal":"w-spec-review","needs":"curation"}
+{"at":"2026-09-21T19:11:32.518Z","kind":"goal-added","goal":"w-root-cause","needs":"curation"}
+{"at":"2026-09-21T19:11:32.555Z","kind":"goal-added","goal":"w-test-suite","needs":"curation"}
+{"at":"2026-09-21T19:11:32.589Z","kind":"goal-added","goal":"w-test-coverage","needs":"curation"}
+{"at":"2026-09-21T19:12:12.424Z","kind":"goal-added","goal":"c-judge-done-claim","needs":"curation"}
+{"at":"2026-09-21T19:12:12.473Z","kind":"goal-added","goal":"c-test-would-catch","needs":"curation"}
+{"at":"2026-09-21T19:12:12.506Z","kind":"goal-added","goal":"c-judge-manual-test","needs":"curation"}

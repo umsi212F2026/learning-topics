@@ -1,4 +1,4 @@
-# Learning goals — software testing and review
+# Learning goals: software construction
 
 **What I want to be able to do, and what would count as having got there.**
 
@@ -46,9 +46,13 @@
 
 ## Where this came from
 
+_Yours to fill in. Nobody can answer this one for you._
+
 <!-- Which of A / B / C / D, and the answer to the follow-up. -->
 
 ## What I already have
+
+_Yours to fill in. Say where your knowledge stops, not what you have heard of._
 
 <!--
   The nearest thing already known well, and where it stops.
@@ -58,6 +62,11 @@
 
 ## What I'll use it for
 
+_Yours to fill in. The course supplies two occasions: the in-class lab where your agent adds a
+server and a database to your app, and Problem Set 2. In both, your agent writes tests and has its
+work reviewed as it builds, and you decide whether to accept what it reports. Name any others you
+have._
+
 <!--
   The use, and a concrete occasion.
   If several uses apply, rank them: the top one sets the depth, the rest are cut first
@@ -66,10 +75,15 @@
 
 ## Depth
 
-<!--
-  Which of: recognize it / read it / modify something existing / author from scratch /
-  judge someone else's work. One line on why that's enough.
--->
+**Judge what your agent tells you about its testing.** Not authoring. You will not write a test in
+this course, and you will not be asked to read test code on your own. Everything in this topic is
+judged from what your agent says: what it tested, how it tested it, and what it reports back.
+
+What that buys is enough to supervise the testing and review your agent does while it builds:
+telling whether a test it wrote would catch the mistake it is meant to catch, whether a check it
+hands to you really needs a person, and whether "done, all tests pass" is backed by anything you
+can see. Writing tests, setting up the tools that run them, and debugging by hand are all past
+that line.
 
 ## Goals
 
@@ -169,6 +183,30 @@
   placeholder capability entry; an empty section is the honest signal.
 -->
 
+### `c-judge-done-claim`
+
+- **goal:** tell whether an agent's "done" is backed by evidence
+- **criterion:** Given an agent's report that a task is finished, names each claim it makes and
+  says, for each one, whether the report shows evidence for it (a test run and its result, a
+  reviewer's verdict) or only says it. Names at least one claim made without evidence, or says
+  there are none and why.
+
+### `c-test-would-catch`
+
+- **goal:** say whether a test would catch a given mistake
+- **criterion:** Given a test described in plain words (what it sets up, what it checks) and a
+  mistake in the code, says whether the test would fail with the mistake present, and what the
+  mistaken code would produce. "It tests that function" does not meet it.
+
+### `c-judge-manual-test`
+
+- **goal:** tell when a check really needs a person, and when the agent should automate it
+- **criterion:** Given an agent's request to test something in the app by hand, says whether a
+  program could do the check instead, for example the agent driving a headless browser. If it
+  could, says what the automated test would do in the app and what it would check, well enough
+  that the agent could write it. If it could not, names what the check needs that only a person
+  can supply. "Automate it", with no account of what the test would check, does not meet it.
+
 ### `o-orientation`
 
 - **goal:** get the shape of this area before working on any particular part of it
@@ -178,3 +216,99 @@
 - **recurrence:** never
 - **is_required:** no
 - **group:** orientation
+
+### `w-tdd`
+
+- **goal:** test-driven development
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a rule about which gets written first, the test or the code
+- **nearest confusable:** writing tests
+- **synonyms:** TDD, test-first development, red-green-refactor
+
+### `w-failing-test`
+
+- **goal:** failing test
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a test's verdict that is not always bad news
+- **nearest confusable:** a broken test
+- **synonyms:** red test
+
+### `w-regression`
+
+- **goal:** regression
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a step backwards, caused by a change
+- **nearest confusable:** a new bug; regression in statistics
+
+### `w-mock`
+
+- **goal:** mock
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** what a test puts where the real database or service would be
+- **nearest confusable:** a test dataset
+- **synonyms:** stub, fake, test double
+
+### `w-code-review`
+
+- **goal:** code review
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a second reader's pass over a change before it is accepted
+- **nearest confusable:** testing
+- **synonyms:** review
+
+### `w-spec-review`
+
+- **goal:** spec compliance review
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the review that asks whether the change does what was asked
+- **nearest confusable:** code quality review
+- **synonyms:** spec review
+
+### `w-root-cause`
+
+- **goal:** root cause
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the reason underneath, not the thing you noticed first
+- **nearest confusable:** the symptom
+
+### `w-test-suite`
+
+- **goal:** test suite
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** everything that runs when the agent says it ran the tests
+- **synonyms:** the tests
+
+### `w-test-coverage`
+
+- **goal:** test coverage
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** how much of the code the tests reach
+- **nearest confusable:** how well tested the code is
+- **synonyms:** code coverage, coverage

@@ -1,4 +1,4 @@
-# Notes — software testing and review
+# Notes: software construction
 
 ## Glossary of terms, in my words
 

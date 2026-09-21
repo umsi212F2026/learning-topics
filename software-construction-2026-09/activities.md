@@ -1,4 +1,4 @@
-# Activities — software testing and review
+# Activities: software construction
 
 Candidate activities for the study phase. More than will be used; the tutor chooses among them
 with the learner.
