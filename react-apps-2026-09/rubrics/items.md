@@ -520,17 +520,16 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
 
 - **type:** free
 - **goal:** c-describe-app-bug
-- **answer:** the agent would have to work out most of the steps for itself: which address to
-  start from, how to get a link to a task in the first place, what to do with it (open it in a new
-  tab, or reload on it), and what "blank" means on screen, which is what would tell it the problem
-  was fixed. The second sentence, that the links expire, is a guess about the cause written as
-  though it had been seen. Nobody can see a link expire; what was seen is a blank page.
-- **credit:** full credit needs both halves: one concrete thing the message leaves out (where to
-  start, the steps, what appeared instead, or how to tell it is fixed) and the expiry sentence
-  identified as a guess about the cause. Half credit for either half alone. No credit for answers
-  about tone, length or politeness, or for treating the first sentence as the guess. A missing
-  detail about the expiry itself, such as how long links last, earns nothing for the first half,
-  since it takes the guess as fact.
+- **answer:** any two of these three. It gives no address, so the agent doesn't know which link
+  was opened and can't make the problem happen for itself. It never says what the page should have
+  shown instead (the task's text), so the agent has no way to tell when it's fixed. And the second
+  sentence, that the links expire, is a guess about the cause written as though it had been seen.
+  Nobody can see a link expire; what was seen is a blank page. An agent that takes it as fact may
+  go looking for an expiry to remove and leave the real cause alone.
+- **credit:** full credit for any two of the three, half credit for one. No credit for calling
+  "blank" unclear, for answers about tone, length or politeness, or for treating the first
+  sentence as the guess. A missing detail about the expiry itself, such as how long links last,
+  earns nothing, since it takes the guess as fact.
 
 ### q-fixed-when-line
 

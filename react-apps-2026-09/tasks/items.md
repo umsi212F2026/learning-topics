@@ -204,11 +204,8 @@ does that tell you?
 
 ### q-links-expire-request
 
-Before sending it, you read over this message to your agent about your Tasks app: "Task pages are
-blank when someone opens a link I sent them. The links expire after a while." Your agent never saw
-the problem. Name one thing it would have to work out for itself before it could make the problem
-happen or tell when it's fixed. Then say which part of the message is a guess about the cause
-rather than something you saw.
+You're about to send your agent a message about a problem with your Tasks app: "Task pages are
+blank when someone opens a link I sent them. The links expire after a while." Describe two problems with this message that might lead the agent to not fix it correctly.
 
 ### q-fixed-when-line
 
