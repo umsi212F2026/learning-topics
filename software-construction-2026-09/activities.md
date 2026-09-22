@@ -148,8 +148,10 @@ with the learner.
      to come in themselves.
   2. Finds everything in the HUMAN lane, selects "Finish the branch", and reads its documentation
      in the properties panel.
-  3. Drills into "Execute the plan, task by task" and reads the notes beside the empty HUMAN and
-     PROGRAM lanes. Finds the task reviewer, its diamond "spec met and quality approved?", and the
+  3. Drills into "Execute the plan, task by task" and reads the note in the empty HUMAN lane and,
+     of the two notes in the empty PROGRAM lane, the right-hand one, which begins "The PROGRAM lane
+     is empty too" (the left-hand one, "NO BUDGET MECHANISM", is about cost, not about why the lane
+     is empty). Finds the task reviewer, its diamond "spec met and quality approved?", and the
      whole-branch reviewer.
   4. Back at the top level, follows "Run the project's full test suite" to "suite green?" and both
      of its exits.
@@ -171,10 +173,12 @@ with the learner.
   only as far as a question needs. At step 5, steers by questions toward this reading rather than
   giving it: the rulings list is drawn (at the end of the plane below, and in the documentation of
   "Finish the branch"); a failure it cannot resolve is drawn once ("stopped, suite red") and
-  otherwise appears only in the note beside the empty HUMAN lane, as four interrupts that can fire
-  anywhere; finding it is not what they wanted comes after the diagram ends; a request to check
-  something by hand appears nowhere, because nothing in the pinned skills tells the agent to make
-  one, so when their agent asks, that is its own habit. At step 6, for each word the diagram
+  otherwise appears only in a note and in element documentation, as four interrupts that can fire
+  anywhere: the note in the empty HUMAN lane on the plane below, and the documentation of "Execute
+  the plan, task by task" ("Exactly four things stop it"), which the documentation of "Adjudicate
+  the residual findings" refers back to; finding it is not what they wanted comes after the
+  diagram ends; a request to check something by hand appears nowhere, because nothing in the
+  pinned skills tells the agent to make one, so when their agent asks, that is its own habit. At step 6, for each word the diagram
   lacks, puts a prompt from the course first and takes the learner's guess at what the word names
   and where it sits before saying anything about it: mock ("the lab adds a database; what might a
   test put in its place, and where on your sketch do tests run?"); regression ("the full suite
@@ -457,8 +461,9 @@ with the learner.
   and questions verbatim, every piece of help, and the readings in `done when`. Afterwards, shows
   the learner what the inventory held. Labels the attempt `a-judge-tested-answer/<kind>`, naming
   the first answer's kind.
-- **done when:** criterion met with no help, on an instance whose first answer is hollow: Medium
-  or Hard, and not `real`. The tutor sends these readings of the criterion to the adjudicator with
+- **done when:** criterion met with no help, on an instance whose first answer is hollow (Medium
+  or Hard, and not `real`) and in which at least one answer's right verdict is yes, which is the
+  fifth reading below. The tutor sends these readings of the criterion to the adjudicator with
   the rest:
   - each verdict is judged on what that answer says, not on the inventory or on any test code;
   - a verdict counts only with a reason that names what in that answer decided it (a count of the
@@ -467,11 +472,21 @@ with the learner.
     would fail", is a verdict without a judgment, and that part of the criterion is `unclear`;
   - a next question meets the criterion only if its honest answer has to name one test and what
     it checks, or say there is none. One that could be answered with a count, a percentage or a
-    plain "yes" does not;
-  - the ruling is on the first answer and the question written about it. A weak first question
-    is a miss even if the learner reads the literal reply rightly and asks a better one after it,
-    because seeing the reply is what exposed the question. The judgment of the reply is held to
-    the same readings, and a wrong verdict on it counts against the attempt.
+    plain "yes" does not. Asking the agent to break the thing on purpose and say which test fails
+    meets it too, as the study activities teach: its honest answer names the test that failed, or
+    says none did. Asking only that the thing be broken and the tests rerun does not, since "two
+    tests failed" answers it;
+  - the ruling is on the first answer and the question the learner writes about the first answer.
+    A weak question about the first answer is a miss even if the learner reads the literal reply
+    rightly and asks a better one after it, because seeing the reply is what exposed the question.
+    The opening question, "has [the thing] been tested?", is weak on purpose and is not the
+    question ruled on. The judgment of the reply is held to the same readings, and a wrong verdict
+    on it counts against the attempt;
+  - the criterion is met only by an attempt in which at least one answer's right verdict is yes.
+    Where every answer deserves no or can't tell, the half of the criterion where the answer is
+    real never came up, and a learner who calls every answer hollow would get it right, so the
+    attempt rules no higher than `unclear`; a wrong verdict or a weak question in it is still a
+    miss.
 - **kind:** generator
 - **generator:** fixed for every instance: the app is a small web app with a Vite React front end,
   a server and a database, described in three to five sentences a user could have written; the
@@ -479,8 +494,13 @@ with the learner.
   written before the attempt, lists four to seven tests, and describes each in plain words; nobody
   sees test code; the agent never lies.
   What varies:
-  - the app: a notes app, a reading list, a club sign-up sheet, a recipe box, a habit tracker, or
-    the learner's own lab app as they describe it.
+  - the app: a reading list, a club sign-up sheet, a recipe box, a habit tracker, or the learner's
+    own lab app as they describe it. On an attempt meant to count, never a notes app, which nearly
+    every study activity and both orientation rehearsals use, and never an app and thing the
+    learner has already met together in this topic's study activities (a reading list may have
+    come up in `a-read-name-the-break`'s hints, and their lab app in `a-read-playwright-actions`):
+    a case they have studied can be remembered rather than judged. A notes app is fine for Easy
+    instances: the worked example, a retry with help, and the orientation rehearsals.
   - the thing: something added is kept after a reload; something deleted stays deleted; an edit is
     kept; an empty or invalid entry is refused with a message and nothing is saved; a list is in
     the right order; a total or count on the page matches; one person's items are not shown to
@@ -502,16 +522,24 @@ with the learner.
     - `half` (Hard): names a test that checks part of the thing (the message appears) and not the
       rest (nothing was saved).
     - `name-only` (Hard): names a test by its file or title and says nothing about what it checks.
-      The right verdict is can't tell from this.
-  - whether the inventory holds a test that would fail: in about half of the instances whose first
-    answer is not `real`, it does, so a good next question gets it named; in the rest, none would,
-    so the truthful reply to a good next question is that no test checks it, and the learner has to
-    recognize that reply as the answer.
-  Right verdicts, judged on what the answer says: yes for `real`; can't tell from this for
-  `name-only`; no for every other kind, where can't tell from this is equally right for the three
-  that name no test at all (`suite-count`, `by-hand`, `coverage`). The truthful reply to a good
-  next question either names a test and what it checks, which is judged the same way, or says no
-  test checks the thing, where the right verdict is no.
+      No and can't tell from this are both right, with a reason that says the answer names a test
+      without saying what it checks: it does not show a test that would fail, and nothing in it
+      says whether the named one would.
+  - whether the inventory holds a test that would fail: in about two in three of the instances
+    whose first answer is not `real`, it does, so a good next question gets it named and the right
+    verdict on that reply is yes; in the rest, none would, so the truthful reply to a good next
+    question is that no test checks it, and the learner has to recognize that reply as the answer.
+    An instance whose inventory holds none can show a miss but cannot meet the goal, since no
+    answer in it deserves a yes (the fifth reading in `done when`); it stays in the mix so that
+    the learner cannot know which kind of reply is coming.
+  Right verdicts, judged on what the answer says: yes for `real`; no for every other kind, where
+  can't tell from this is equally right for the three that name no test at all (`suite-count`,
+  `by-hand`, `coverage`) and for `name-only`, which names one and says nothing about what it
+  checks. The truthful reply to a good next question either names a test and what it checks, which
+  is judged the same way, or says no test checks the thing, where the right verdict is no. To a
+  request to break the thing on purpose and say which test fails, the truthful reply names each
+  test in the inventory that would fail, where the right verdict is yes, or says none did, where
+  it is no.
   Difficulty: Easy is `suite-count` or `by-hand`; Medium and Hard are as marked above. An attempt
   meant to count runs at Medium or Hard with a hollow first answer, which is every Medium and Hard
   kind except `real`. A `real` first answer settles the question, so the next-question half of the
@@ -533,11 +561,13 @@ with the learner.
   is told which thing to ask about and knows a check is under way, so a pass does not show they
   would think to ask in the middle of their own work. The truth is a written inventory in plain
   words, so the learner never has to weigh an agent's description against what its test really
-  does. Counting attempts always open on a hollow answer, so a yes is called for only in the reply:
-  when the inventory holds a test that would fail, a good next question gets it named, and the
-  right verdict on that reply is yes. In the other half of instances no answer deserves a yes, and
-  only the rule that each reason must name what decided it separates judging from reflexively
-  saying no.
+  does. Counting attempts always open on a hollow answer, and one meets the goal only if a later
+  answer deserves a yes, so the yes a passing learner gives is always to a reply they asked for
+  with a good question of their own: a pass does not show they would say yes to a sound answer
+  offered first and unprompted, which only a `real` first answer on a review visit tests. An
+  instance whose inventory holds no test that would fail can show a miss (a yes to the truthful
+  "no test checks that") but cannot meet the goal, so on about one attempt in three the best
+  ruling available is `unclear`.
 - **offer as:** the check you can take now, before your own app has tests. The tutor plays your
   agent while holding a written list of what each of its tests really checks, so whatever you
   missed comes back specific. 15 minutes and a live session. `a-ask-own-agent-tested` is the same
@@ -566,30 +596,45 @@ with the learner.
 - **tutor does:** when first offering this, tells the learner to keep the note and the transcript,
   and that anything they look at for help while writing gets noted at the top of the note.
   Afterwards, before reading the learner's judgments, writes the right verdict on each of the
-  agent's two answers as that answer reads, and what in it decides the verdict, by the rule in
-  `a-judge-tested-answer`'s generator: the verdict is judged on what the agent said, not on its
-  test code. Then, separately, finds out whether each answer was accurate: reads each test the
-  agent named, in the learner's repository, and writes in plain words what it does, what it checks,
-  and whether it uses the real database or a stand-in, then says whether it would fail if the
-  thing broke. Where it can, confirms that by copying the project to a scratch directory outside
-  the repository, breaking that one thing in the copy, and running the named test there, and says
-  in the record whether it did. Never changes the learner's own project. Checks that the first
-  question was asked plainly, and that the agent had not already said, earlier in the
-  conversation, which test covered the thing. Sends the adjudicator the thing, the note, the
-  transcript, the right verdict on each answer, the readings in `a-judge-tested-answer`'s
-  `done when`, any help noted, and, marked as context and not as the standard, the plain-words
-  account of each named test and whether the break was run. Where that account disagrees with
-  what the agent said, the verdict is still ruled on the answer: a "can't tell from this" that is
-  right about the answer is right whatever the code does, and a yes to an answer that described a
+  agent's two answers as that answer reads, what in it decides the verdict, and which of the kinds
+  in `a-judge-tested-answer`'s generator the first answer is, with the difficulty it marks, by the
+  rules in that generator: the verdict is judged on what the agent said, not on its test code, and
+  an answer that gives a count beside a named test is rated by what it says about the test. Then,
+  separately, finds out whether each answer was accurate: reads each test the agent named, in the
+  learner's repository, and writes in plain words what it does, what it checks, and whether it
+  uses the real database or a stand-in, then says whether it would fail if the thing broke. Where
+  it can, confirms that by copying the project to a scratch directory outside the repository,
+  breaking that one thing in the copy, and running the named test there, and says in the record
+  whether it did. Never changes the learner's own project. Checks that the first question was
+  asked plainly, and that the agent had not already said, earlier in the
+  conversation, which test covered the thing. A first question sharper than the plain one (it
+  already asked which test would fail, or what a test checks) is treated as a first answer that
+  settles it, since the question the criterion is about was asked before any answer came, and the
+  tutor says so to the adjudicator (see `done when`). Sends the adjudicator the thing, the note,
+  the transcript, the right verdict on each answer, the first answer's kind and difficulty, the
+  readings in `a-judge-tested-answer`'s `done when`, any help noted, and, marked as context and not
+  as the standard, the plain-words account of each named test and whether the break was run.
+  Where that account disagrees with what the agent said, the verdict is still ruled on the answer:
+  a "can't tell from this" that is right about the answer is right whatever the code does, and a yes to an answer that described a
   sound test is right even if the code turns out to use a stand-in. After the ruling, tells the
   learner what the named test really checks, and, where it differs from what the agent said,
   whether their next question would have brought the difference out. Labels the attempt
   `a-ask-own-agent-tested`.
-- **done when:** criterion met with no help, ruled with the readings in `a-judge-tested-answer`'s
-  `done when`. A first answer that settles it (it names a test and says enough to show it would
-  fail, or it says plainly that no test checks the thing) is recorded, but the "what to ask next"
-  half never came up and a learner who answers by reflex would get it right, so the tutor says so
-  to the adjudicator and the criterion is ruled no higher than `unclear`.
+- **done when:** criterion met with no help, ruled with all five readings in
+  `a-judge-tested-answer`'s `done when`, the last of which needs at least one answer whose right
+  verdict is yes, and held to that entry's floor for an attempt that counts: a hollow first answer
+  of a kind its generator rates Medium or Hard. Each of the following is recorded, but the tutor
+  says so to the adjudicator and the criterion is ruled no higher than `unclear`:
+  - a first answer that settles it (it names a test and says enough to show it would fail, or it
+    says plainly that no test checks the thing): the "what to ask next" half never came up, and a
+    learner who answers by reflex would get it right;
+  - a first question sharper than the plain one: treated the same way, since the question the
+    criterion is about was asked before any answer came;
+  - a first answer that generator rates Easy (a count of passing tests, "the suite is green", or
+    that the agent tried it by hand), which `a-judge-tested-answer` does not count either, because
+    the criterion itself names the count as its example of an answer about the whole suite;
+  - no answer whose right verdict is yes, as when the reply to a good next question says no test
+    checks the thing: a learner who calls every answer hollow would get it right.
 - **kind:** generator
 - **generator:** the material is the learner's own app and whatever their agent answers, so no two
   instances match and nobody sets the difficulty. Hold fixed: the thing is chosen and written down
@@ -611,10 +656,15 @@ with the learner.
   confirmed by running a break only where it could, says whether this answer was accurate, and
   reaches the learner as feedback, not the ruling. When the agent's first answer settles it, a
   right verdict on it shows only one half of the criterion, so the attempt rules no higher than
-  `unclear`; an agent that worked test-first will often name a sound test straight away, so many
-  real instances will not count toward the goal. The learner picks the thing and the moment, so a
-  pass says nothing about whether they ask at the moments that matter. Which kind of answer comes
-  back is up to the agent: a pass may never have met a stand-in database or a test that checks
+  `unclear`; an agent that worked test-first will often name a sound test straight away. The
+  attempt also needs a first answer that is more than a count or "I tried it", and an answer that
+  deserves a yes, because without one a learner who calls every answer hollow would pass. So the
+  only instance that can meet the goal is a hollow first answer of a Medium or Hard kind (a named
+  test that, as described, would still pass if the thing broke, a coverage figure, or a test named
+  without what it checks), then a good question, then a reply that deserves a yes, and many real
+  instances, perhaps most, will not count toward the goal. The learner picks the thing and the
+  moment, so a pass says nothing about whether they ask at the moments that matter. Which kind of
+  answer comes back is up to the agent: a pass may never have met a stand-in database or a test that checks
   half the thing. And a real agent's answer can be long: the transcript shows whether the learner
   found the sentence that mattered, not what they skipped on the way.
 - **offer as:** the real thing: your agent, your app, a behavior you care about, judged on what
@@ -792,7 +842,11 @@ with the learner.
   words, and never says which could be automated; the truth for each item is written before the
   message is sent; nobody writes code.
   What varies:
-  - the app: as in `a-judge-tested-answer`'s generator.
+  - the app: as in `a-judge-tested-answer`'s generator, with the same exclusions, so never a notes
+    app on an attempt meant to count. Nor, on such an attempt, an item whose app and category the
+    learner has already met together in this topic's study activities: the four requests
+    `a-read-playwright-actions` set, or the two in `a-narrated-automate-request` (`count` and
+    `taste`) if it used a copy of their lab app.
   - each item's category:
     - `persist`: something added is still there after a reload.
     - `remove`: something deleted is gone, and still gone after a reload.
