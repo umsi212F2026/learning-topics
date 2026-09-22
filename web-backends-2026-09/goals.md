@@ -192,6 +192,7 @@ internet, with logins and secrets, belongs to Problem Set 3, not to this topic.
   until the server restarted, and one that lost what was already saved when its tables changed.
   They may ask the agent to restart the server or to change the tables. Asking the agent whether
   it is saved does not meet it.
+- **origin:** course
 
 ### `c-review-schema`
 
@@ -202,6 +203,7 @@ internet, with logins and secrets, belongs to Problem Set 3, not to this topic.
   without naming anything that isn't, and when nothing is, say so and point to where each thing
   the app needs to remember is kept. Whether the tables are organized well is not part of it,
   only whether they can hold what the app needs.
+- **origin:** course
 
 ### `c-trace-action`
 
@@ -213,6 +215,7 @@ internet, with logins and secrets, belongs to Problem Set 3, not to this topic.
   click until the result is on screen. It passes when every part the
   action goes through is named, in order, on the way there and back, no part is named that it
   doesn't go through, and nothing is given to a part that could not do it.
+- **origin:** course
 
 ### `o-orientation`
 
@@ -223,6 +226,7 @@ internet, with logins and secrets, belongs to Problem Set 3, not to this topic.
 - **recurrence:** never
 - **is_required:** no
 - **group:** orientation
+- **origin:** course
 
 ### `w-backend`
 
@@ -234,6 +238,7 @@ internet, with logins and secrets, belongs to Problem Set 3, not to this topic.
 - **what it names:** the half of the app that doesn't run in the browser
 - **nearest confusable:** dev server
 - **synonyms:** server, server side
+- **origin:** course
 
 ### `w-request`
 
@@ -245,6 +250,7 @@ internet, with logins and secrets, belongs to Problem Set 3, not to this topic.
 - **what it names:** one trip from the page to the server and back
 - **nearest confusable:** a page load
 - **synonyms:** HTTP request
+- **origin:** course
 
 ### `w-endpoint`
 
@@ -256,6 +262,7 @@ internet, with logins and secrets, belongs to Problem Set 3, not to this topic.
 - **what it names:** one of the addresses a server answers at
 - **nearest confusable:** a page's URL
 - **synonyms:** API route
+- **origin:** course
 
 ### `w-api`
 
@@ -266,6 +273,7 @@ internet, with logins and secrets, belongs to Problem Set 3, not to this topic.
 - **group:** vocabulary
 - **what it names:** the set of requests a server has promised to answer
 - **nearest confusable:** the backend
+- **origin:** course
 
 ### `w-status-code`
 
@@ -277,6 +285,7 @@ internet, with logins and secrets, belongs to Problem Set 3, not to this topic.
 - **what it names:** the number that comes back with every response, such as 200 or 404
 - **nearest confusable:** an error message
 - **synonyms:** HTTP status, response code
+- **origin:** course
 
 ### `w-localhost`
 
@@ -288,6 +297,7 @@ internet, with logins and secrets, belongs to Problem Set 3, not to this topic.
 - **what it names:** the name in the address while the app runs only on your own machine
 - **nearest confusable:** a deployed site
 - **synonyms:** 127.0.0.1
+- **origin:** course
 
 ### `w-server-log`
 
@@ -299,6 +309,7 @@ internet, with logins and secrets, belongs to Problem Set 3, not to this topic.
 - **what it names:** what the server prints while it runs, out of the browser's sight
 - **nearest confusable:** the browser console
 - **synonyms:** server output, logs
+- **origin:** course
 
 ### `w-database`
 
@@ -310,6 +321,7 @@ internet, with logins and secrets, belongs to Problem Set 3, not to this topic.
 - **what it names:** what is still there after everything has been switched off
 - **nearest confusable:** the backend
 - **synonyms:** DB
+- **origin:** course
 
 ### `w-sql`
 
@@ -321,6 +333,7 @@ internet, with logins and secrets, belongs to Problem Set 3, not to this topic.
 - **what it names:** the language the database is asked things in
 - **nearest confusable:** the database
 - **synonyms:** Structured Query Language
+- **origin:** course
 
 ### `w-table`
 
@@ -331,6 +344,7 @@ internet, with logins and secrets, belongs to Problem Set 3, not to this topic.
 - **group:** vocabulary
 - **what it names:** one kind of thing the database keeps, with a row for each
 - **nearest confusable:** the database
+- **origin:** course
 
 ### `w-schema`
 
@@ -342,6 +356,7 @@ internet, with logins and secrets, belongs to Problem Set 3, not to this topic.
 - **what it names:** the promised shape of the data, not the data
 - **nearest confusable:** a table
 - **synonyms:** data model
+- **origin:** course
 
 ### `w-migration`
 
@@ -353,6 +368,7 @@ internet, with logins and secrets, belongs to Problem Set 3, not to this topic.
 - **what it names:** a change to the schema once data is already in the database
 - **nearest confusable:** the schema; moving to a different database
 - **synonyms:** schema migration, database migration
+- **origin:** course
 
 ### `w-fixture`
 
@@ -364,3 +380,4 @@ internet, with logins and secrets, belongs to Problem Set 3, not to this topic.
 - **what it names:** what a test puts in place before it runs, the same way every time
 - **nearest confusable:** sample data
 - **synonyms:** test fixture
+- **origin:** course
