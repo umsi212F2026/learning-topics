@@ -5,18 +5,32 @@ with the learner.
 
 ## Check notes
 
-<!--
-  Authored by curation/critique and placed by the orchestrator. Rewritten wholesale each pass,
-  so don't edit it — it will be replaced.
+2026-09-21. Each capability lists two checks, but only the role-play one (`a-judge-tested-answer`,
+`a-judge-manual-request`) can be set up whenever it is wanted. The real-work ones
+(`a-ask-own-agent-tested`, `a-answer-own-manual-request`) count only when the learner's own agent
+happens to produce a qualifying instance, which may be rare; each goal's Coverage note says why.
+Plan on meeting both capabilities through the role-play checks, and use the real-work ones as
+practice on real work and for review visits.
 
-  Dated, and short. What the tutor should know about this file as a whole before using it:
-  the menu skews toward reading, two capabilities are thinner than they look, the depth
-  runs heavier than goals.md asks for. Only things that survived the revision round —
-  anything that got fixed doesn't belong here.
+**On `c-ask-tested`.** Two things no pass on either check shows. First, a pass whose first answer
+was `coverage` or `name-only`, which both checks allow, never had the learner see through a test
+described as checking the thing that would still pass if it broke. Only `accepted-not-saved`,
+`other-behavior`, `mock` and `half` put that in front of them, and those are the cases the
+criterion's own examples describe. Second, neither check can be passed on a sound first answer, so
+no pass shows the learner accepting a good answer offered unprompted instead of pushing on it; only
+a `real` first answer on a review visit tests that. Record which first-answer kind a pass came on,
+and aim the early review visits of `a-judge-tested-answer` at whichever of `accepted-not-saved`,
+`mock` and `real` the learner has not yet had. `a-ask-own-agent-tested` counts only on a narrow run
+of events (a hollow first answer that is more than a count or "I tried it", then a good question,
+then a reply that deserves a yes). An agent working test-first will often name a sound test at
+once or answer with a count, so few real instances will count.
 
-  Empty is a legitimate and good outcome. Say "nothing at file level" rather than inventing
-  an observation.
--->
+**On `c-judge-manual-test`.** `a-answer-own-manual-request` depends on the learner's own agent
+asking for a check by hand. Both orientation entries note that nothing in the pinned Superpowers
+skills tells it to, so requests come only from the agent's own habit and may not come at all. To
+count, a request also has to put an item a program could do beside one only a person could, or
+hold a `mixed` one, and real requests often will not. Treat a real request, when one comes, as
+practice or a review visit rather than something to wait for.
 
 ## Goals
 
@@ -38,8 +52,8 @@ with the learner.
 | goal                    | study | checks | notes |
 | ----------------------- | ----- | ------ | ----- |
 | `o-orientation` | `a-read-superpowers-readme`, `a-trace-superpowers-diagram` | `a-dry-run-stepping-in` | |
-| `c-ask-tested` | `a-read-name-the-break`, `a-sort-tested-answers`, `a-narrated-hollow-test` | `a-judge-tested-answer`, `a-ask-own-agent-tested` | |
-| `c-judge-manual-test` | `a-read-playwright-actions`, `a-sort-manual-requests`, `a-narrated-automate-request` | `a-judge-manual-request`, `a-answer-own-manual-request` | |
+| `c-ask-tested` | `a-read-name-the-break`, `a-sort-tested-answers`, `a-narrated-hollow-test` | `a-judge-tested-answer`, `a-ask-own-agent-tested` | see Check notes |
+| `c-judge-manual-test` | `a-read-playwright-actions`, `a-sort-manual-requests`, `a-narrated-automate-request` | `a-judge-manual-request`, `a-answer-own-manual-request` | see Check notes |
 
 ---
 
@@ -111,6 +125,10 @@ with the learner.
   words where they belong, but it lists steps without saying who does each, so it never shows you
   how few of them are yours. Take it if you would rather read than look at a diagram. Either
   route is followed by `a-dry-run-stepping-in`.
+- **check note:** The Superpowers clone at ../superpowers is made in Installation 4, the first
+  thing session 7's lab does, so a learner orienting before that lab has no such folder, whatever
+  the artifact line says. Use the GitHub link, which is the same file at the pinned commit.
+  `a-read-name-the-break` states this correctly.
 
 ### `a-trace-superpowers-diagram`
 
@@ -333,6 +351,12 @@ with the learner.
   excuse not to answer. It is written for the agent rather than for you, in a developer's
   shorthand, with code you skip. `a-sort-tested-answers` gives you examples before reasons;
   `a-narrated-hollow-test` shows you a green suite with the saving broken.
+- **check note:** When you point at the verification-before-completion line at the end, have the
+  learner put it as a request that names which test has to fail: "break it on purpose and tell me
+  which test fails", or "undo the change and show me that test failing". The checks rule a request
+  to break the thing and rerun the tests, with nothing asking which test failed, as a weak
+  question, because "two tests failed" answers it. Pressing on the wording here keeps the learner
+  from carrying the loose version into `a-judge-tested-answer`.
 
 ### `a-sort-tested-answers`
 
@@ -572,6 +596,15 @@ with the learner.
   agent while holding a written list of what each of its tests really checks, so whatever you
   missed comes back specific. 15 minutes and a live session. `a-ask-own-agent-tested` is the same
   thing with your real agent, about your real app.
+- **check note:** For the attempt meant to count, choose a first-answer kind that describes a test
+  that would still pass: `accepted-not-saved`, `other-behavior`, `mock` or `half`. The generator
+  also counts `coverage` and `name-only`, but neither says what any test checks, so a pass on one
+  never has the learner see through a named test on the strength of what it checks, the half of
+  the criterion its two examples are about. When the learner's next question fits more than one
+  test in the inventory (a question such as "which test checks that a note is saved?" can fit both
+  a stand-in test and a real one), answer by naming every test it fits, each with what it checks.
+  That stays literal and volunteers nothing, and it keeps your choice of which test to name from
+  deciding whether the attempt can meet the goal.
 
 ### `a-ask-own-agent-tested`
 
@@ -717,6 +750,18 @@ with the learner.
   do. About 30 minutes. It is a developer's page with code you skip, and it says nothing about when
   a person is needed; that half comes from the tutor's four requests. `a-sort-manual-requests` gives
   you worked cases with no page to read.
+- **check note:** The four requests need three things the page's tables and this entry's wording
+  do not give.
+  - A `refuse` request needs two checks, the message and an unchanged list after a reload. Read
+    "the one check from the Assertions table" as at least one, and press for both halves; naming
+    only the message is the error `a-sort-manual-requests` is built to catch.
+  - If the `mixed` request is the phone-screen layout from the generator's example, a program has
+    to open the page at a phone's width, which neither table lists. Tell the learner a program can
+    set the window size, as you tell them about the reload, or pick a `mixed` item that needs no
+    window size.
+  - For the `mixed` request, expect both halves: the steps and check for the part a program can
+    do, and what only a person supplies for the rest. `learner does` and `done when` read as either
+    one or the other, but this request needs both.
 
 ### `a-sort-manual-requests`
 
@@ -751,6 +796,13 @@ with the learner.
   minutes with nothing to open but the file. Take `a-read-playwright-actions` for the list of what
   a program can check, or `a-narrated-automate-request` to watch a description become a test that
   goes red.
+- **check note:** The key marks m4 "partly", but its reason is that the request names nothing to
+  check, not that part of it needs a person, which is what "partly" means in the file's first
+  question. `a-judge-manual-request` treats the same kind of item (`vague`) as having no part only
+  a person can supply. So judge m4 by the description, not the label: "yes, once particular things
+  are named", with at least one named, is as right as "partly". Press on an answer that says the
+  learner will click around for the rest themselves, since the checks do not treat that as a
+  person's part.
 
 ### `a-narrated-automate-request`
 
@@ -798,6 +850,16 @@ with the learner.
   description is tried for real. Needs a live session, your starter project, and a tutor that can
   drive a headless browser; without one it shrinks to a description with nothing run. Take
   `a-sort-manual-requests` for a faster route with no app.
+- **check note:** The two requests and the planted break are written for the counter button in the
+  unmodified Vite starter. If the copy is of the lab app, or of a starter the learner has already
+  changed so the counter is gone, substitute a `count` request on a number the app does show (for
+  example, how many items are listed after adding three) and a break that makes that number
+  visibly wrong. Keep the second request as a `taste` one about something on the page. Change the
+  heading, or whatever the second request names, in the copy beforehand, so there are new words for
+  a program to find. Set up Playwright before the session: the fresh subagent needs somewhere to
+  write and run its test with Playwright and its browser already installed, and the browser
+  download takes minutes and a network connection. If that setup fails, use the fallback the entry
+  gives.
 
 ### `a-judge-manual-request`
 
@@ -897,6 +959,21 @@ with the learner.
   description cold to show where it would have to guess. Every item is either a program's job or
   yours, and some are both. 15 minutes and a live session. `a-answer-own-manual-request` is the
   same thing when your real agent asks.
+- **check note:** Two cautions.
+
+  The stranger test can hide an omission. Its instruction's last sentence names the thing, and the
+  app description may say it too (that entries are still there next time, say), so the stranger
+  can put in the reload or the final check the learner left out without listing it as a guess. If
+  you can, send that last sentence as a second message, after the stranger has written its test
+  and its guesses. Either way, before relying on a clean report, compare the learner's own words
+  for each automated item against the essential steps in your truth. Tell the adjudicator about
+  any step that decides the outcome and appears in the stranger's test but not in the learner's
+  words: it is a counted guess whether or not the stranger listed it.
+
+  On the attempt meant to count, draw the Medium item a program could do from any program category
+  except `own-run`. The right answer to an `own-run` item ("run it yourself and read what it
+  prints") has no steps in the app to describe, so a pass on it leaves most of the criterion's
+  first half unexamined. `own-run` fits better as the extra item in a Hard instance.
 
 ### `a-answer-own-manual-request`
 
@@ -960,6 +1037,12 @@ with the learner.
   back before touching the app. Adds ten minutes to real work, and is only possible once your agent
   is building the lab app or Problem Set 2 and asks you for a check. `a-judge-manual-request` is
   the one to take now.
+- **check note:** The stranger-test caution on `a-judge-manual-request` applies here too: the
+  stranger gets the app in a sentence or two and may fill in a reload or a final check the learner
+  never wrote, so compare the learner's note against your truth's essential steps directly. If the
+  only item a program could do is one the agent can run itself with no browser (starting the server
+  and reading what it prints), tell the adjudicator that little of the criterion's first half was
+  examined.
 
 ### `a-w-tdd`
 
