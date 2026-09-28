@@ -244,12 +244,12 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
   for today, and do not add a feature because it might be wanted later: the guess about later is
   usually wrong, and every extra feature costs work now and has to be carried, understood and kept
   working afterwards whether anyone uses it or not.
-- **credit:** full credit for the instruction plus a reason: leave out what is not needed yet,
-  because the guess about what will be wanted is usually wrong, or because the extra costs more
-  than the writing of it. Do not accept the five words spelled out, which names it again. Do not
-  accept "keep it simple", which is the other thing. Half credit for "leave things out" with no
-  reason at all. No credit for "never add features", "write as little code as possible", or "do
-  the easy parts first".
+- **credit:** full credit for the instruction: leave out what is not needed yet. A reason, that
+  the guess about what will be wanted is usually wrong or that the extra costs more than the
+  writing of it, is a good addition and not required. Do not accept the five words spelled out,
+  which names it again. Do not accept "keep it simple", which is the other thing. Half credit for
+  "leave things out" with nothing about their not being needed yet. No credit for "never add
+  features", "write as little code as possible", or "do the easy parts first".
 
 ### q-yagni-cheaper-now
 
@@ -298,8 +298,9 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
   or try.
 - **credit:** full credit for the difference in what each produces and who it is for: a spike
   answers a question about whether or how something can be built, a prototype shows what the app
-  would be like so someone can respond. Half credit for "a spike is shorter" or "a spike is
-  rougher" alone, since both are throwaway. Do not accept "a spike is code you keep and a
+  would be like so someone can respond. Half credit for one side stated correctly and the other
+  missing, such as a spike answering a question with nothing about what a prototype is for. Half
+  credit for "a spike is shorter" or "a spike is rougher" alone, since both are throwaway. Do not accept "a spike is code you keep and a
   prototype is not", or that a prototype is simply a bigger spike.
 
 ### q-spike-twenty-minutes
