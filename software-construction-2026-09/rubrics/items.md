@@ -414,15 +414,15 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
 
 - **type:** free
 - **goal:** c-judge-manual-test
-- **answer:** the request names nothing in particular, so as asked there is nothing for you or for
-  a program to check. Send back the particular things the app is supposed to do, each with what
-  would be seen if it broke, and ask for a test for each: a saved note is still in the list after a
-  reload; a deleted note is still gone after a reload; clicking Save with the box empty adds no
-  note and shows the message. A headless browser can do every one of those, so none of them needs
-  you.
-- **credit:** full credit needs both: naming the problem, that the request says nothing particular
-  to check, and turning at least one behavior into something a program could check, with what it
-  would look at afterwards. Half credit for naming the problem and supplying no particular
-  behavior. No credit for "automate it" with nothing more, which is what this item is built to
-  catch, and no credit for agreeing to click around and report back. Do not require all three
-  behaviors, and do not require them to be the same three.
+- **answer:** first, the agent does not need you to click around: it can drive a headless browser,
+  a real browser with no window that a program controls, and do the clicking itself. Second,
+  "working properly" names nothing in particular, so the agent should say what it will click on
+  and what it expects to happen, for instance: save a note, reload, and the note is still in the
+  list; delete a note, reload, and it is still gone; click Save with the box empty, and no note is
+  added and a message shows.
+- **credit:** full credit needs both pushbacks: that the agent can do the checks itself in a
+  headless browser or a browser a program controls, and that it should spell out what gets clicked
+  and what effect it expects. The second needs both parts, the action and the expected effect; an
+  example is welcome and is not required. Half credit for either pushback alone. No credit for
+  "automate it" with no browser, for "be more specific" with nothing about the action and the
+  expected effect, or for agreeing to click around and report back.
