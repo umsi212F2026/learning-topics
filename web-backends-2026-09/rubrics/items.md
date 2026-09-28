@@ -14,8 +14,9 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
 - **credit:** full credit for saying it is the part of the app that runs outside the browser, as its
   own program, and answers what the page asks it. Full credit for "the part that runs on a server
   rather than in the browser, and handles the page's requests". Half credit for "the part the user
-  doesn't see", which is also true of plenty of code that runs in the browser. Do not accept "the
-  server" or "the server side", which name the thing again rather than saying what it is, and do not
+  doesn't see", which is also true of plenty of code that runs in the browser. Do not accept a bare
+  "the server" or "the server side" with nothing more: naming where it runs is fine, but the answer
+  also has to say what it does (answers the page's requests, does the work the page can't). Do not
   accept "the database", which is one of the things a backend talks to.
 
 ### q-backend-vs-dev-server
@@ -23,17 +24,17 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
 - **type:** free
 - **goal:** w-backend
 - **move:** DISTINGUISH
-- **answer:** the dev server's job is to hand your browser the page's own files while you are
-  developing, and it is a development tool rather than part of the app: it knows nothing about your
-  books or your habits, and it is gone once the app is built and deployed. The backend is part of
-  the app itself. It answers the requests the running page sends, does the work the page can't, and
-  is the only one of the two that reaches the database.
-- **credit:** full credit for the difference that matters: the dev server serves the page's files
-  while you develop, and the backend answers the running page's requests as part of the app. Full
-  credit for "the dev server is a tool for development that disappears when the app is deployed; the
-  backend is the app's own half". Half credit for "they are on different ports" or "one is Vite and
-  one is my agent's code", which are true and incidental. Do not accept "they are the same thing
-  under two names", and do not accept an answer in which the dev server's job is to pass the page's
+- **answer:** they answer different requests. The dev server hands your browser the page's own
+  code (its HTML, JavaScript and CSS), the same files for everyone, and knows nothing about your
+  books or your habits. The backend answers the requests the page sends once it is running: it does
+  the work the page can't, and it is the only one of the two that reaches the database. The dev
+  server is also a development convenience; when the app is deployed, something else takes over
+  handing out the page's files, but the backend's job is still there.
+- **credit:** full credit for the difference that matters: the dev server delivers the page's code
+  to the browser, and the backend answers the running page's requests for data. Half credit for
+  "they are on different ports", "one is Vite and one is my agent's code", or "the dev server goes
+  away when you deploy", which are true and incidental. Do not accept "they are the same thing under
+  two names", and do not accept an answer in which the dev server's job is to pass the page's
   requests on to the backend.
 
 ### q-backend-in-the-browser
@@ -79,10 +80,10 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
   the screen tells you.
 - **credit:** full credit for saying a change on screen is no evidence that anything went to the
   server, because a request is a trip out to the server and back and the page can reorder what it
-  already holds. Half credit for "the page can sort by itself" with nothing about what a request is.
-  Do not accept a different quibble as the error: that sorting is slow, that the sort ought to be
-  done on the server, or that they should have looked at the Network panel, unless the answer also
-  says why the screen alone does not settle it.
+  already holds. Full credit for "the page can sort by itself". Do not accept a different quibble
+  as the error: that sorting is slow, that the sort ought to be done on the server, or that they
+  should have looked at the Network panel, unless the answer also says why the screen alone does
+  not settle it.
 
 ### q-request-nothing-else-reaches
 
@@ -147,12 +148,15 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
 - **move:** DEFINE
 - **answer:** the set of requests the server has promised to answer, each with what you send it and
   what comes back: give me all the books, save this new book, change whether this one is finished,
-  delete this one. It is the agreement the page is written against rather than a piece of the app you
-  could point at.
+  delete this one. Each of those is one of the server's endpoints, so the API is its endpoints
+  together with the promise about what each one takes and returns. It is the agreement the page is
+  written against rather than a piece of the app you could point at.
 - **credit:** full credit for saying it is the set of requests the server promises to answer, or what
   the page is allowed to ask for and what comes back. Full credit for "the list of things the page
-  can ask the server to do". Half credit for "how the page and the server talk to each other", with
-  nothing about a set of requests settled in advance. Do not accept "the backend" or "the server",
+  can ask the server to do". Full credit for "the server's endpoints and what each one takes and
+  returns". Half credit for "the list of endpoints" with nothing about what goes in or comes back.
+  Half credit for "how the page and the server talk to each other", with nothing about a set of
+  requests settled in advance. Do not accept "the backend" or "the server",
   which is the thing that answers rather than what has been promised, and do not accept "the code
   that handles the requests".
 
@@ -215,15 +219,15 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
   different quibble as the error: that the page might not look at the code, that the agent should log
   it, or that 404 means something else.
 
-### q-status-404-on-delete
+### q-status-404-on-fetch
 
 - **type:** mcq
 - **goal:** w-status-code
 - **move:** INTERPRET
 - **answer:** 4
-- **credit:** 1 confuses a code that came back with never getting an answer at all, when a 404 is
-  itself an answer. 2 reads the number as being about permission rather than about the thing not
-  being there. 3 leaves the server out, when the number is the server's own answer.
+- **credit:** 1 and 2 both say the server never received the request, when a status code is itself
+  the server's answer, so getting one means the request got there. 2 also takes the number for the
+  browser's. 3 gives the number to the page, when the page only receives it.
 
 ### q-define-localhost
 
@@ -236,23 +240,23 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
   you are the only one who can open it.
 - **credit:** full credit for saying localhost means this computer, the one you are on, so the
   address reaches only your own machine. Full credit for "it means the app is running on my laptop
-  and is not on the internet". Do not accept "127.0.0.1", which is another name for it rather than a
-  definition, do not accept "the port the app is running on", which is the number after the colon,
-  and do not accept "the address of a local server" with nothing about whose machine it is.
+  and is not on the internet". Full credit for "127.0.0.1", the address every machine uses for
+  itself. Do not accept "the port the app is running on", which is the number after the colon, and do
+  not accept "the address of a local server" with nothing about whose machine it is.
 
-### q-localhost-sent-to-friend
+### q-localhost-sent-to-sister
 
 - **type:** free
 - **goal:** w-localhost
 - **move:** CATCH
-- **answer:** localhost means the machine the address is opened on, so her browser asked her own
-  laptop, which is not running their server. The request never reached their machine at all, and what
-  she saw says nothing about whether their server is running.
+- **answer:** localhost means the machine the address is opened on, so their sister's browser asked
+  her own laptop, which is probably not running a server. The request never reached the classmate's
+  machine at all.
 - **credit:** full credit for saying the address points at whoever opens it, so she reached her own
-  machine rather than theirs, and it therefore tells them nothing about their own server. Do not
-  accept a different quibble as the error: that they sent the wrong port, that she needs to be on the
-  same wifi, or that her firewall blocked it. "You would have to deploy it first" names a fix rather
-  than the error, and earns credit only with the reason her browser never reached their laptop.
+  machine rather than theirs, and it therefore tells them nothing about their own server. Full
+  credit for "you would have to deploy it first", which only makes sense if the address reaches no
+  one else's machine. Do not accept a different quibble as the error: that they sent the wrong port,
+  that she needs to be on the same wifi, or that her firewall blocked it.
 
 ### q-localhost-tests-passed
 
@@ -269,12 +273,14 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
 - **type:** free
 - **goal:** w-server-log
 - **move:** DEFINE
-- **answer:** what the server prints as it runs, in the terminal it was started in: a line or so for
-  each request that arrives, saying what was asked and how it was answered, along with whatever else
-  it reports while working. It is the server's own account of what it did, and it is out of the
-  browser's sight.
-- **credit:** full credit for saying it is what the server prints while it runs, in its own terminal,
-  as a record of the requests it handled and what happened. Half credit for "a record of errors",
+- **answer:** what the server prints as it runs: a line or so for each request that arrives, saying
+  what was asked and how it was answered, along with whatever else it reports while working. While
+  you are developing it usually appears in the terminal the server was started in; a deployed server
+  more often writes it to a file. Either way it is the server's own account of what it did, and it is
+  out of the browser's sight.
+- **credit:** full credit for saying it is what the server prints while it runs, as a record of the
+  requests it handled and what happened, whether the answer places it in a terminal, a file or
+  neither. Half credit for "a record of errors",
   which is only part of what it prints. Do not accept "server output" or "the logs", which name it
   again, and do not accept "what my app prints in the browser", which is the console.
 
@@ -288,8 +294,8 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
   printed in its own terminal, away from the browser: which requests arrived, how they were answered,
   what it asked the database. Each one sees a half of the app that the other cannot.
 - **credit:** full credit for placing both: the console is the browser's side, what the page printed
-  in that tab, and the server log is the server's own terminal, the requests it received and what it
-  did with them. Half credit for one placed clearly and the other left vague. Do not accept "one is
+  in that tab, and the server log is the server's side, in its terminal or a log file, the requests it
+  received and what it did with them. Half credit for one placed clearly and the other left vague. Do not accept "one is
   for errors and one is for everything", and do not accept an answer in which the console also shows
   what the server printed.
 
@@ -346,7 +352,7 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
 - **answer:** a server can hold things in its own memory without writing them down anywhere. Then
   they survive a reload, and another browser sees them, and they go the moment the server restarts.
   Reaching the server is not the same as being in a database, and only the database keeps them past a
-  restart.
+  restart of the server.
 - **credit:** full credit for saying the server may be holding them in memory, so reaching the server
   does not mean they are in a database, and they would go when it restarts. Full credit for naming
   the restart as the check that tells the two apart. Do not accept a different quibble as the error:
@@ -374,7 +380,7 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
 - **goal:** w-sql
 - **move:** CATCH
 - **answer:** whether they typed it is beside the point. If the app keeps its data in a SQL database,
-  then something in the server is asking that database in SQL every time a book is saved or read
+  then something in the server is asking that database in SQL every time data is saved or read
   back, whether the agent wrote those queries out or a library wrote them. Their app uses SQL; they
   have just never seen it.
 - **credit:** full credit for saying the SQL is being sent by the server, written by the agent or by
@@ -399,12 +405,12 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
 - **type:** free
 - **goal:** w-table
 - **move:** DEFINE
-- **answer:** one kind of thing the database keeps, with a row for each one of them and the same
-  named columns on every row: a dinners table with a row per dinner, a dishes table with a row per
-  dish. Adding another dinner adds a row, not a table.
+- **answer:** one kind of thing the database keeps, with a row for each one of that kind of thing
+  and the same named columns on every row: a dinners table with a row per dinner, a dishes table
+  with a row per dish. Adding another dinner adds a row, not a table.
 - **credit:** full credit for saying a table holds one kind of thing, with one row per thing of that
-  kind and the same columns across the rows. Half credit for "like a spreadsheet, with rows and
-  columns" and nothing about its holding one kind of thing. Do not accept "the database", and do not
+  kind and the same columns across the rows. Full credit for "like a spreadsheet, with rows and
+  columns". Do not accept "the database", and do not
   accept "where the data is kept" with no mention of rows or of one kind of thing.
 
 ### q-table-vs-database
@@ -525,26 +531,27 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
   time: three books, say, one of them finished, and nothing else. Each run sets it up afresh, so what
   the test reports depends on the thing being tested rather than on whatever happened to be in the
   database.
-- **credit:** full credit for saying it is the known starting state a test sets up before it runs,
-  the same every time. Half credit for "data the tests use" with nothing about its being put in place
-  beforehand or being identical on each run. Do not accept "test fixture", which names it again, and
-  do not accept "the test itself" or "the sample data the app ships with".
+- **credit:** full credit for saying it is a known starting state, put in place the same way every
+  time. Mentioning tests is natural here but not required: "what gets loaded to start a fresh
+  database, the same every time" also earns full credit. Half credit for "sample data" or "data the
+  tests use" with nothing about its being put in place the same way every time. Do not accept "test
+  fixture", which names it again, and do not accept "the test itself".
 
 ### q-fixture-vs-sample-data
 
 - **type:** free
 - **goal:** w-fixture
 - **move:** DISTINGUISH
-- **answer:** the sample books are there for you, in the app you are using, and you can change or
-  delete them like any other book; they are ordinary data that happens to have been put there. The
-  fixture belongs to the tests: it is set up fresh before a test runs, exactly the same every time,
-  so that each run starts from a state nobody has touched. It is not what you see when you open the
-  app.
-- **credit:** full credit for the difference that matters: sample data sits in the running app for a
-  person to see and change, while a fixture is the known state a test sets up for itself, identical
-  on every run. Half credit for "one is for the tests and one is for the app" with nothing about the
-  fixture being set up fresh and the same each time. Do not accept "they are the same data used in
-  two places", and do not accept a difference of amount.
+- **answer:** the fixture is put in place identically before every test run, so each run starts
+  from exactly that state, however many times it runs. The books in your Shelf started from the
+  samples but have changed with a week of use, and nothing puts them back. One is a known state that
+  gets restored; the other is wherever use has taken the data.
+- **credit:** full credit for the difference that matters: the fixture is reset to the same state
+  every time, while the books in the app have drifted from where they started. Full credit whether or
+  not the answer says the samples might themselves have been loaded from a fixture. Half credit for
+  "one is for the tests and one is for the app" with nothing about the fixture being reset the same
+  each time. Do not accept "the fixture is fake data and yours is real", and do not accept a
+  difference of amount.
 
 ### q-fixture-test-failed
 
@@ -552,9 +559,9 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
 - **goal:** w-fixture
 - **move:** INTERPRET
 - **answer:** 2
-- **credit:** 1 and 4 both read the fixture as the app's own data, when it is the state the test sets
-  up for itself before it runs. 3 has the agent changing the test, when it said it would change the
-  fixture.
+- **credit:** 1 reads the fixture as your own books in the app. 3 has the agent changing the test,
+  when it said it would change the fixture. 4 reads the failure as a bug in the app, when the agent
+  has said the fault is in the fixture.
 
 ### q-persistence-reload-not-enough
 
@@ -574,24 +581,6 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
   credit for two steps with no account of what each one catches, or for one step with its account. No
   credit for asking the agent whether it is really saved, and no credit for two forms of the same
   check, such as a reload and a new tab in the same browser, which is a reload with extra steps.
-
-### q-persistence-agent-already-tested
-
-- **type:** free
-- **goal:** c-check-persistence
-- **answer:** on its own it settles nothing, because the report that they came back is the agent's
-  word, which is the thing being checked. Even taking it at face value, a restart says nothing about
-  two of the ways an app can look as if it saves: if the agent looked from a page or a browser that
-  already had the notes, a copy kept in that browser would have looked exactly like a success, and
-  nothing here touches what happens when the tables change. So look for the notes yourself, from a
-  browser or a private window that has never seen them, after a restart you asked for; and keep one
-  note saved now and look for that same note again after the agent's next change to the tables.
-- **credit:** full credit for both halves: that the agent's own report is not evidence, or that a
-  restart alone leaves the browser's own storage and the table change untested; and a concrete step
-  of their own, looking from a page that has never held the notes. Half credit for either half alone.
-  Full credit also for an answer that grants the restart happened but names the browser case and the
-  table case as still untouched. No credit for asking the agent to check again, and no credit for
-  taking the named file path as proof.
 
 ### q-review-run-club-tables
 
@@ -626,7 +615,7 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
 
 - **type:** free
 - **goal:** c-trace-action
-- **answer:** the page hears the click and sends the server a request to save a book with that
+- **answer:** the page notices the click and sends the server a request to save a book with that
   title. The server asks the database to store it. The database stores it and answers the server,
   with the new book's id. The server answers the page that it worked, with the saved book. The page
   adds that book to the list it is holding and redraws, so it appears at the bottom. Five steps

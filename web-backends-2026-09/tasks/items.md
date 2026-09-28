@@ -2,7 +2,7 @@
 
 **Intended goals:** `w-backend`, `w-request`, `w-endpoint`, `w-api`, `w-status-code`,
 `w-localhost`, `w-server-log`, `w-database`, `w-sql`, `w-table`, `w-schema`, `w-migration` and
-`w-fixture`, with six questions on `c-check-persistence`, `c-review-schema` and `c-trace-action`
+`w-fixture`, with five questions on `c-check-persistence`, `c-review-schema` and `c-trace-action`
 at the end.
 
 Answer each question in one to three sentences, in your own words, with nothing open. Where a
@@ -87,25 +87,26 @@ some text". What is the difference between the status code and the message?
 A classmate says: "My Add worked and the book was saved, so that response had no status code.
 Status codes only turn up when something goes wrong." What is wrong with what they said?
 
-### q-status-404-on-delete
+### q-status-404-on-fetch
 
-Your agent says: "When you delete a book that another tab deleted a moment ago, the server answers
-404 and the page shows 'That book no longer exists'." Which of these is true?
+You open a book in Shelf that another tab deleted a moment ago. The page asks the server for that
+book, and the response comes back with 404, the code for "nothing found at that address". Which of
+these is true?
 
-1. The server could not be reached, so nothing happened at all.
-2. The delete failed because you are not allowed to delete that book.
-3. The page worked out on its own that the book was gone, without asking the server.
-4. The server was reached and it answered, and its answer was that there was nothing there to delete.
+1. The request got lost on the way, so the server never received it.
+2. The request never got to the server, and the browser reported a 404.
+3. The page decided the book was gone, and 404 is how it reports that.
+4. The server got the request and answered that the book wasn't there.
 
 ### q-define-localhost
 
 Your agent tells you that Shelf's page is at http://localhost:5173 and its server is at
 http://localhost:3001. Say what the localhost part of those addresses means, in your own words.
 
-### q-localhost-sent-to-friend
+### q-localhost-sent-to-sister
 
-A classmate says: "I sent my roommate http://localhost:3001 so she could look at my books, and she
-says she can't connect. My server must have crashed." What is wrong with what they said?
+A classmate says: "I sent my sister http://localhost:5173 so she could look at my books in Shelf,
+and she says she can't connect. My server must have crashed." What is wrong with what they said?
 
 ### q-localhost-tests-passed
 
@@ -163,7 +164,7 @@ server asks it in SQL." Which of these is true?
 
 1. SQLite is the language, and SQL is the file it writes to.
 2. Your books are kept on SQLite's own servers, and your laptop holds a copy.
-3. Your books are kept in a file on your laptop, and the server is what reads and writes them, in SQL.
+3. Your books are in a file on your laptop, and the server works with it using SQL.
 4. The page reads the file itself, which is why your books appear so quickly.
 
 ### q-define-table
@@ -215,8 +216,9 @@ own words.
 
 ### q-fixture-vs-sample-data
 
-Your agent put three sample books into Shelf so the app wouldn't look empty when you opened it, and
-Shelf also has a fixture its tests run from. What is the difference between the two?
+When your agent set up Shelf, it put three sample books in the database so the app wouldn't look
+empty. You've been adding and deleting books for a week since. Shelf's tests also start from a
+fixture of three books. What is the difference between the books in your Shelf now and the fixture?
 
 ### q-fixture-test-failed
 
@@ -224,22 +226,16 @@ Your agent says: "That test failed because the fixture has two books and the tes
 I'll fix the fixture." Which of these is true?
 
 1. Two of the books you added to Shelf have gone missing from the database.
-2. The starting state the test sets up doesn't match what the test was written to expect, and the app itself may be perfectly fine.
+2. The test's starting state doesn't match what it expected; the app may be fine.
 3. The test is wrong, which is why the agent is about to change the test.
-4. The app is showing two books when it should be showing three.
+4. The app has a bug that loses a book, and the agent is about to fix it.
 
 ### q-persistence-reload-not-enough
 
-Your agent says: "I've added a server and a SQLite database to your habit tracker. Your habits are
+Your agent says: "I've added a server and a SQLite database to your habit tracker. Your habits will be
 saved now." You add a habit, reload the page, and it is still there. Name two further things you
 would do to find out whether it really is kept, and say what each one would catch that the reload
 did not.
-
-### q-persistence-agent-already-tested
-
-Your agent says: "Your notes are saved in the database at data/app.db. I checked it myself: I
-restarted the server and they came back." What has that not settled, and what would you do about
-it?
 
 ### q-review-run-club-tables
 
@@ -266,12 +262,11 @@ the click until the book is on screen, and what passes between them.
 
 ### q-trace-reload-order
 
-The same reading-list app, with one more thing said about it: while you are developing it, the
-page's own files come from a dev server at http://localhost:5173, the app's server is at
-http://localhost:3001, and the SQL database is a file on your laptop. You reload the page and your
-books appear. Which of these is what happens, in order?
+While developing a reading-list app, a page's own files come from a dev server at
+http://localhost:5173, the app's server is at http://localhost:3001, and the SQL database is a file
+on your laptop. You reload the page and your books appear. Which of these is what happens, in order?
 
-1. The page asks the server for the books, the server asks the database, the answer comes back to the page, and then the browser gets the page's files from the dev server and draws them.
+1. The page asks the server for the books and gets them back, then the browser gets the page's files from the dev server and draws them.
 2. The browser asks the dev server for the page's files, the dev server asks the server for the books, and the server answers with the page and the books together.
-3. The browser asks the dev server for the page's files; the page starts with no books and asks the server for them; the server asks the database, the database answers the server, the server answers the page, and the page draws them.
+3. The browser gets the page's files from the dev server, then the page asks the server for the books, and the server asks the database and answers the page.
 4. The browser asks the database for the books directly, since on a reload there is no page yet to send a request.
