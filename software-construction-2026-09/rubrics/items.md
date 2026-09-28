@@ -422,7 +422,7 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
   added and a message shows.
 - **credit:** full credit needs both pushbacks: that the agent can do the checks itself in a
   headless browser or a browser a program controls, and that it should spell out what gets clicked
-  and what effect it expects. The second needs both parts, the action and the expected effect; an
-  example is welcome and is not required. Half credit for either pushback alone. No credit for
-  "automate it" with no browser, for "be more specific" with nothing about the action and the
-  expected effect, or for agreeing to click around and report back.
+  and what effect it expects. A plain "be more specific" counts as the second pushback; naming the
+  action and the expected effect, or giving an example, is welcome and is not required. Half credit
+  for either pushback alone, so "be more specific" by itself gets half credit. No credit for
+  "automate it" with no browser, or for agreeing to click around and report back.

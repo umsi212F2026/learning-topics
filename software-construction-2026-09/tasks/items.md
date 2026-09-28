@@ -185,4 +185,4 @@ you? If it could, say how. If it could not, say what the check needs that only y
 ### q-manual-make-sure-notes-work
 
 Your agent finishes a piece of work on the Notes app and asks: "Could you have a click around and
-make sure the notes feature is still working properly?" What are two ways you push back against the agent's request?
+make sure the notes feature is still working properly?" What are two ways you should push back against the agent's request?
