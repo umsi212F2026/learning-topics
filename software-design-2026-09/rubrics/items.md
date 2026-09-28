@@ -73,7 +73,8 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
 - **move:** INTERPRET
 - **answer:** 4
 - **credit:** the plan cuts the work into pieces that can each be finished and checked, and the
-  agent is reporting on one of them. 1 and 2 read a part-built app as a finished one. 3 reads the
+  agent is reporting where the work stands: the first three pieces are done and checked, and the
+  last four have not been started. 1 and 2 read a part-built app as a finished one. 3 reads the
   steps as features: a step is a piece of the building, and one feature can take several steps
   while one step may touch no feature you would name.
 
@@ -447,9 +448,8 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
 - **answer:** the shared list, approach B. It gives up the simplicity of approach A: there is a
   server to set up and somebody has to keep it running, and it will not work without internet. The
   reason is in this situation: six officers, each on a different phone, all have to see the same
-  sign-ups, and a list that lives in one person's browser cannot be seen from the other five. That
-  it has to keep working for next year's committee points the other way, since administration of the server will have to be passed on to someone new, but it won't work any other way. The founding year and the club colors have no bearing
-  on this choice.
+  sign-ups, and a list that lives in one person's browser cannot be seen from the other five. The
+  founding year and the club colors have no bearing on this choice.
 - **credit:** full credit needs all three: the pick, what it gives up, and a reason drawn from a
   fact in this situation that bears on the choice. The six officers on separate phones needing the
   same list favors B; the app outliving this committee, with no server to hand over, favors A. For
