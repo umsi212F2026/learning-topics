@@ -76,7 +76,7 @@ mock and those three notes?
 
 You asked your agent whether saving a note works. It answers: "The save test never touches the
 real database. It stands a test double in for it, and checks that the double was asked to store
-the note." What does that tell you, and what does it leave open?
+the note." What does that confirm is working if the test passes, and what still not be working?
 
 ### q-code-review-vs-testing
 
@@ -94,9 +94,9 @@ Your agent says: "I sent the Delete change for code review. The reviewer came ba
 findings, so I merged it." Which of these does that tell you?
 
 1. The Delete button has been tested, since a code review runs the tests over the change.
-2. Delete works, because someone read the change and found nothing wrong with it.
+2. Delete works, because someone read the code change and found nothing wrong with it.
 3. Nothing was looked at: "no findings" means the review never ran.
-4. A second reader went over the change before it was accepted and raised nothing, which is not the same as the change being known to work.
+4. Someone read the code change and found nothing wrong with it. Delete may or may not work.
 
 ### q-define-spec-review
 
@@ -142,8 +142,8 @@ answer tell you?
 
 1. A saved note does survive a reload, because a test would have caught it if it did not.
 2. There are 24 things the app does, and all 24 of them work.
-3. Every test that exists for this app came out as expected, which does not say whether any of them checks that a saved note survives a reload.
-4. The tests reach all of the app's code, since nothing failed.
+3. Every test that exists for this app came out as expected.
+4. More tests are needed.
 
 ### q-catch-suite-everything
 
@@ -155,28 +155,13 @@ What is wrong with what they said?
 What is the difference between how much test coverage the Notes app's code has and how well tested
 it is?
 
-### q-catch-coverage-96
-
-A classmate says: "Coverage on my notes code is 96%, so 96% of the things my app does have been
-checked." What is wrong with what they said?
-
-### q-coverage-empty-note-100
-
-You asked your agent whether "an empty note cannot be saved" has been tested. It answers: "The
-function that refuses empty notes has 100% line coverage." Which of these does that answer tell
-you?
-
-1. Every way of saving an empty note has been tried, and every one of them was refused.
-2. Every line of that function ran at some point while the tests were running, which does not say that any test checked what it did.
-3. That function has no bugs in it, since code that is fully covered has been verified.
-4. There is a test about empty notes, and it passes.
 
 ### q-tested-reply-no-reload
 
-Your Notes app keeps its notes in a database, so a note you save is still there after you reload
-the page. You asked your agent whether that has been tested. It answers: "Yes. 'Note appears after
+Your Notes app keeps its notes in a database, so a note you save should still be there after you reload
+the page. You asked your agent whether that has been tested. It answers: "Yes. The test named 'Note appears after
 saving' opens the app in a headless browser, types 'Buy bread', clicks Save, and checks that 'Buy
-bread' is in the list." Does that answer show a test that would fail if a saved note did not
+bread' is in the list." Would that test fail if a saved note did not
 survive a reload? Say why, and what you would ask the agent next.
 
 ### q-next-question-after-count
@@ -185,22 +170,20 @@ In your Notes app, a deleted note is meant to be gone for good, reload or not. Y
 agent whether that has been tested, and it replied: "Yes, all 31 tests are passing." Which of
 these is the best question to send next?
 
-1. Which test would fail if a deleted note came back after a reload, and what does that test check?
+1. Which test would fail if a deleted note came back after a reload?
 2. Are you confident that deleting notes is working properly?
 3. How many of the 31 tests are about deleting notes?
 4. Could you run the test suite again and paste the output for me?
 
 ### q-manual-newest-first
 
-Your Notes app shows the newest note at the top of the list. Your agent can drive a headless
-browser: open the app's address, type, click, reload, and read what is on the page. It asks: "Could
+Your Notes app shows the newest note at the top of the list. The agent asks: "Could
 you add a few notes and tell me whether the newest one is showing at the top?" Could a program do
 this check instead of you? If it could, say what the automated test would do in the app and what it
-would check at the end, well enough that the agent could write it from your words. If it could not,
+would check at the end. If it could not,
 say what the check needs that only you can supply.
 
 ### q-manual-make-sure-notes-work
 
 Your agent finishes a piece of work on the Notes app and asks: "Could you have a click around and
-make sure the notes feature is still working properly?" It can drive a headless browser: open the
-app's address, type, click, reload, and read what is on the page. What do you send back, and why?
+make sure the notes feature is still working properly?" Could you push back and ask the agent to do that clicking around itself, or does it really need you?

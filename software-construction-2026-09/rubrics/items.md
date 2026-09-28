@@ -60,11 +60,11 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
   app does not do that thing, at least not yet. It does not mean the test itself is faulty, and
   when the work is done test-first it is the expected state before the code is written.
 - **credit:** full credit for "the test ran and the thing it checked did not come out the way the
-  test required", or the plainer "the code did not pass the check that test makes". Half credit for
-  "a test that didn't pass" with nothing about what that says. No credit for "a red test", which is
-  another name for the same thing. No credit for defining it as a test that is itself wrong or
-  broken, and no credit for "it means the app is broken", which is only sometimes true and is not
-  what the word names.
+  test required", or the plainer "the code did not pass the check that test makes". "It means the
+  app is broken" is also full credit, since it puts the verdict on the app rather than the test.
+  Half credit for "a test that didn't pass" with nothing about what that says. No credit for "a red
+  test", which is another name for the same thing. No credit for defining it as a test that is
+  itself wrong or broken.
 
 ### q-failing-vs-broken-test
 
@@ -81,8 +81,8 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
   app is wrong, the other means the test is wrong" is full credit, as is the fix-the-app versus
   fix-the-test version. Half credit for "a broken test is worse" or "a broken test won't run", with
   nothing about where the fault lies. No credit for treating them as the same thing, and no credit
-  for an answer in which a failing test always means something is broken, since in test-first work
-  the failure is expected.
+  for an answer in which a failing test means something has gone wrong in the process, since in
+  test-first work the failure is expected.
 
 ### q-red-before-code
 
@@ -96,8 +96,7 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
 - **credit:** full credit for both halves: the test is failing right now, and the failure is wanted
   because the code it tests has not been written. The evidence it buys, that the test is known to
   be able to fail, is a strong addition and is not required. Half credit for "the test is failing"
-  with nothing about why that is where the agent wants it. No credit for reading "red" as the app
-  being broken, the test being faulty, the agent being stuck, or the agent asking for help.
+  with nothing about why that is where the agent wants it. No credit for reading "red" as the test being faulty, the agent being stuck, or the agent asking for help.
 
 ### q-define-regression
 
@@ -150,9 +149,8 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
   instead of the real thing, and the test can then check what the code asked the stand-in to do.
   Nothing is really stored, sent or deleted.
 - **credit:** full credit for "a stand-in for something real, usually the database or a service,
-  that a test puts in its place". Half credit for "a fake" or "something that pretends" with no
-  sense of what it stands in for. No credit for "a stub", "a fake" or "a test double" alone, which
-  are other names for it. No credit for "sample data put into the database for the test", which is
+  that a test puts in its place". No credit for "a stub", "a fake", "a test double" or "something
+  that pretends" alone, with no sense of what it stands in for. No credit for "sample data put into the database for the test", which is
   a test dataset, or for a mock-up of what the app will look like.
 
 ### q-mock-vs-test-data
@@ -198,11 +196,11 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
   the change does what was asked, whether it will trip up the next change, whether it breaks
   something nearby, whether the tests themselves check anything worth checking.
 - **credit:** full credit for the two distinct things: tests execute the code and check stated
-  behaviors, while a review is a second reader looking at the change itself and judging what no
+  behaviors, while a review is a second reader looking at the code itself and judging what no
   test asks. "A review can find what nobody wrote a test for" is full credit. Half credit for
   "review is done by a person or another agent, tests run automatically", with nothing about what
-  each can find. No credit for "review is about style and tests are about correctness" as the whole
-  difference, and no credit for treating a passing test suite as a review.
+  each can find, and half credit for "review is about style and tests are about correctness" as
+  the whole difference. No credit for treating a passing test suite as a review.
 
 ### q-catch-own-tests-are-review
 
@@ -335,10 +333,9 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
 - **goal:** w-test-suite
 - **move:** INTERPRET
 - **answer:** 3
-- **credit:** 1 and 4 both turn a result about the whole suite into a statement about one behavior,
-  or about the whole app. The suite is only the tests somebody wrote, and nothing in the answer
+- **credit:** 1 turns a result about the  suite into a statement about the app. The suite is only the tests somebody wrote, and nothing in the answer
   says one of them reloads the page. 2 confuses the number of tests with the number of things the
-  app does.
+  app does. 4 would only be true if the note actually disappears after a reload. 
 
 ### q-catch-suite-everything
 
@@ -347,10 +344,12 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
 - **move:** CATCH
 - **answer:** the suite holds only the tests that were written. Anything nobody wrote a test for is
   not in it, so a fully passing suite says nothing about that behavior at all: "everything the app
-  does" and "everything somebody tested" are not the same set.
+  does" and "everything somebody tested" are not the same set. Even for the behaviors that do have
+  tests, a pass is only as good as the tests: a weak test, or one that checks the wrong thing, can
+  pass while the behavior is still wrong.
 - **credit:** full credit for saying the suite is only the tests that exist, so a behavior nobody
-  tested passes by being absent. An answer that says only that the tests might be weak or might
-  check the wrong thing has not found the leap and gets half credit. Do not accept a different
+  tested passes by being absent. An answer that says the tests might be weak or might check the
+  wrong thing is also full credit. Do not accept a different
   quibble as the error: that tests can be flaky, that the agent might not have run them, or that
   they should also check the app by hand.
 
@@ -371,30 +370,6 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
   about what the number counts. No credit for treating them as the same thing, and no credit for
   saying coverage measures how many tests there are.
 
-### q-catch-coverage-96
-
-- **type:** free
-- **goal:** w-test-coverage
-- **move:** CATCH
-- **answer:** coverage counts code the tests reached, not behaviors that were checked. A test can
-  run a line and make no check at all about what it did, so 96% is not 96% of the things the app
-  does, and the two are not measuring the same kind of thing.
-- **credit:** full credit for saying coverage counts code the tests ran rather than things checked,
-  so the percentage is not a percentage of behaviors verified. Do not accept a different quibble as
-  the error: that 96% is not 100%, that the missing 4% might be the important part, or that
-  percentages are unreliable. Those may be worth saying, but none of them is the mistake in the
-  sentence.
-
-### q-coverage-empty-note-100
-
-- **type:** mcq
-- **goal:** w-test-coverage
-- **move:** INTERPRET
-- **answer:** 2
-- **credit:** 1 and 3 read a coverage figure as a verdict on behavior, when coverage records only
-  that the code ran, not that anything was checked afterwards. 4 invents a test the answer never
-  names, and a named test that checks both the message and that nothing was saved is exactly what
-  to ask for next.
 
 ### q-tested-reply-no-reload
 
