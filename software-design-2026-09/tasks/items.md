@@ -43,7 +43,7 @@ step 4." Which of these does that tell you?
 1. The app is finished, and three of the seven things you asked for work.
 2. The app has been built, and the last four steps are yours to test.
 3. The plan's seven steps are seven separate features you asked for.
-4. One piece of the work is finished and has been checked, four pieces have not been started, and the app as a whole is not done.
+4. Three of the plan's pieces are built and checked; the rest have not been started.
 
 ### q-plan-first-then-decide
 
@@ -82,12 +82,12 @@ What is the difference between a constraint on an app and a requirement of it?
 
 Your agent says: "Two of the three approaches I was going to show you are out. You told me the six
 officers have to be able to open this on their phones without installing anything, and both of
-those need an app installed." Which of these does that tell you?
+those approaches need an app installed." Which of these does that tell you?
 
 1. The agent prefers the one approach that is left and is arguing for it.
-2. Something you told it about the situation is a limit the app has to fit inside, and it takes those two approaches off the table rather than counting against them.
+2. If you relax the no-installation constraint, more options will be available.
 3. Those two approaches would not work, for any app.
-4. You should change what you told it, so that all three approaches stay available to you.
+4. The agent has made a mistake: the no-installation constraint should have been weighed against the benefits of the two approaches, not used to rule them out.
 
 ### q-define-mvp
 
@@ -102,19 +102,14 @@ difference?
 
 ### q-mvp-is-whatever-fits
 
-A classmate says: "The MVP is however far the agent gets before the lab ends. I'll just let it
+A classmate says: "The MVP is however far the agent gets before our release deadline. I'll just let it
 build until the clock runs out, and whatever exists then is the MVP." What is wrong with what they
 said?
 
 ### q-define-yagni
 
-The app you built in lab tests whether someone can say what YAGNI stands for. Leave the four words
+The app you built in lab tests whether someone can say what YAGNI stands for. Leave the five words
 aside: say what the idea called YAGNI tells you to do when an app is being designed, and why.
-
-### q-yagni-vs-keep-it-simple
-
-"Keep it simple" and YAGNI are both advice about not overdoing an app. What is the difference
-between them?
 
 ### q-yagni-cheaper-now
 
@@ -156,7 +151,7 @@ nowhere else. For all six officers to see the same list, there has to be somethi
 browser holding it, and the page has to ask that for the list and tell it about every change.
 That's an architecture change, not a setting." Which of these does that tell you?
 
-1. The app would gain a new part outside the browser that holds the list, and the page would have to talk to it, so the app's parts and how they fit together change rather than one of its settings.
+1. The sign-up list would be accessed via a server that each officer's browser would connect to.
 2. The app would have to be rewritten in a different programming language.
 3. The six officers' browsers would send the list to each other directly, with nothing in between.
 4. It is a matter of finding the right option and switching it on, which the agent can do quickly.
@@ -206,13 +201,4 @@ list: the list is kept on a server that every browser asks, so everyone with the
 same list, and it needs a server somebody keeps running. Say which you pick, what that pick gives
 up, and why.
 
-### q-which-reason-fits
 
-For that same club sign-up app, where six officers each on their own phone need to see the same
-list and it has to keep working for next year's committee, four classmates all picked the shared
-list. Whose reason is a reason about this app?
-
-1. "It's the one the agent recommended, and it explained itself well."
-2. "A shared list scales better, and scaling is always worth paying for."
-3. "All six officers have to see the same sign-ups on their own phones, and a list kept in one person's browser can't be seen from the other five."
-4. "Our club has been going since 1974, so we should build it on something solid."

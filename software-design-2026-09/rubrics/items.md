@@ -60,10 +60,11 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
   settled and works out the route to it.
 - **credit:** full credit for saying it sets out how the work gets done, as pieces or steps in an
   order. Full credit also for an answer that adds that each piece can be checked on its own. Do
-  not accept another name for it, such as "the implementation plan". Do not accept what the app
-  will do, its features, or what counts as done, which is the spec. Half credit for "the agent's
-  to-do list" with nothing about it being the how or about the pieces being checkable. No credit
-  for a schedule of dates or an estimate of how long it will take.
+  not accept another name for it on its own; "the implementation plan" with no more gets half
+  credit. Do not accept what the app will do, its features, or what counts as done, which is the
+  spec. Half credit for "the agent's to-do list" with nothing about it being the how or about the
+  pieces being checkable. No credit for a schedule of dates or an estimate of how long it will
+  take.
 
 ### q-plan-step-three-done
 
@@ -98,11 +99,11 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
 - **move:** DEFINE
 - **answer:** the statements in the spec that settle what will count as the app being done and
   doing its job, written so that someone who never heard the idea could use the finished app and
-  say of each one whether it was met. They are what "finished" gets judged against, rather than a
+  say of each criterion whether it was met. They are what "finished" gets judged against, rather than a
   list of the parts the app will have.
 - **credit:** full credit for saying they are what counts as the app being done, or what has to be
   true of the finished app, settled in advance. Full credit also for an answer that leads with
-  their being checkable by someone using the app. Do not accept another name for them, such as
+  their being checkable by someone using the app. Do not accept just another name for them, such as
   "acceptance criteria". Do not accept the tests, or a list of the app's features. Half credit for
   "what the app has to do" with nothing about settling when it is done or about anyone being able
   to check.
@@ -153,7 +154,7 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
   how long, and with whom looking after it. It rules some designs out before any of them are
   compared, and no amount of cleverness in the design makes it go away.
 - **credit:** full credit for a limit set from outside the design that the app has to fit inside
-  and cannot be designed around. Full credit also for an answer that gives the sense with an
+  and that no design choice can remove. Full credit also for an answer that gives the sense with an
   example, such as "it has to work on their phones, and that's not up to me". Half credit for "a
   limit" with nothing about where it comes from or that it is not yours to drop. Do not accept "a
   requirement" or "something the app has to do", which is the other thing. No credit for "a
@@ -181,11 +182,13 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
 - **goal:** w-constraint
 - **move:** INTERPRET
 - **answer:** 2
-- **credit:** the fact about the officers' phones is a limit from the situation, not a preference
-  and not a feature request, and an approach that cannot fit inside it is not an option at all. 1
-  reads it as the agent arguing rather than as a limit that removes options. 3 overreaches: those
-  approaches are fine for an app that may install something, just not for this one. 4 treats a
-  fact about the situation as something you could take back to widen the menu.
+- **credit:** the no-installation constraint is what removes the two approaches, so it has a price
+  you can now see, and relaxing it would bring them back. Whether to relax it is a separate
+  decision that the agent's report does not make for you. 1 reads it as the agent arguing rather
+  than as a limit that removes options. 3 overreaches: those approaches are fine for an app that
+  may install something, just not for this one. 4 treats the constraint as a requirement, one
+  more thing to trade against the benefits; a constraint rules out whatever does not fit inside
+  it, and the agent is right to apply it that way.
 
 ### q-define-mvp
 
@@ -242,25 +245,10 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
   working afterwards whether anyone uses it or not.
 - **credit:** full credit for the instruction plus a reason: leave out what is not needed yet,
   because the guess about what will be wanted is usually wrong, or because the extra costs more
-  than the writing of it. Do not accept the four words spelled out, which names it again. Do not
+  than the writing of it. Do not accept the five words spelled out, which names it again. Do not
   accept "keep it simple", which is the other thing. Half credit for "leave things out" with no
   reason at all. No credit for "never add features", "write as little code as possible", or "do
   the easy parts first".
-
-### q-yagni-vs-keep-it-simple
-
-- **type:** free
-- **goal:** w-yagni
-- **move:** DISTINGUISH
-- **answer:** keeping it simple is about how the work you have decided to do gets done: prefer the
-  plainest way that works. YAGNI is about whether to do the work at all: leave the feature out
-  while nobody needs it, however simply it could be built. You can build something nobody asked
-  for in the simplest possible way, and YAGNI still says not to build it.
-- **credit:** full credit for the split: simple is about how what you are building is built, YAGNI
-  is about whether to build it in the first place, or what to leave out. Half credit for "YAGNI is
-  about features and simple is about code" with nothing about the whether against the how. Do not
-  accept "they are the same thing", "YAGNI is the stricter version" with nothing else, or "simple
-  means fewer lines of code".
 
 ### q-yagni-cheaper-now
 
@@ -271,10 +259,12 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
   Nobody needs the scoreboard now, and that it will be wanted later is a guess. The cost is not
   only the extra lines: a feature nobody asked for still has to be agreed, kept working and
   understood by whoever comes next, and it can break the parts that do matter. Here the brief says
-  the app need not remember anything, so the feature serves nothing the app is for.
+  the app need not remember anything; if that is right, the feature serves nothing the app is for.
 - **credit:** full credit for naming it as building a feature nobody needs yet on a guess about
   later, which is what YAGNI says to leave out. Full credit also for an answer resting on the cost
-  being more than the few lines, or on the brief saying the app need not remember anything. Half
+  being more than the few lines, or on the brief saying the app need not remember anything. Full
+  credit also for arguing that saying yes was right but the reason was wrong: the app is not
+  really useful without the scoreboard, so it is needed now, not on a guess about later. Half
   credit for "it wasn't asked for" with nothing about the cheaper-now reasoning being the mistake.
   Do not accept a different quibble as the error: that the agent should not make suggestions, that
   there was no time in the lab, that it would cost too many tokens, or that a scoreboard is a bad
@@ -458,26 +448,16 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
   server to set up and somebody has to keep it running, and it will not work without internet. The
   reason is in this situation: six officers, each on a different phone, all have to see the same
   sign-ups, and a list that lives in one person's browser cannot be seen from the other five. That
-  it has to keep working for next year's committee points the same way, since a list on one
-  officer's phone leaves with that officer. The founding year and the club colors have no bearing
+  it has to keep working for next year's committee points the other way, since administration of the server will have to be passed on to someone new, but it won't work any other way. The founding year and the club colors have no bearing
   on this choice.
-- **credit:** full credit needs all three: the pick, what it gives up (the server to set up and
-  keep running, or working without internet), and a reason drawn from a fact in this situation
-  that bears on the choice, which is the six officers on separate phones needing the same list, or
-  the app outliving this committee. The reason is what is being judged rather than the pick: give
-  full credit for picking approach A if it comes with what it gives up and a reason from this
-  situation that genuinely bears on it. Half credit for a pick with a good reason but nothing given
+- **credit:** full credit needs all three: the pick, what it gives up, and a reason drawn from a
+  fact in this situation that bears on the choice. The six officers on separate phones needing the
+  same list favors B; the app outliving this committee, with no server to hand over, favors A. For
+  B, what it gives up is the server to set up, keep running and pass on, or working without
+  internet; for A, it is the officers seeing the same list. The reason is what is being judged
+  rather than the pick: give full credit for picking approach A if it comes with what it gives up
+  and a reason from this situation that genuinely bears on it. Half credit for a pick with a good reason but nothing given
   up, or for a pick with what it gives up and a reason that would hold for any app, such as "it
   scales better", "it's simpler", or "the agent recommended it". No credit for a reason resting on
   the founding year or the colors, or for "whichever one the agent recommends".
 
-### q-which-reason-fits
-
-- **type:** mcq
-- **goal:** c-choose-approach
-- **answer:** 3
-- **credit:** 3 names something about this app that would change the pick if it were different:
-  one phone instead of six and the shared list stops earning its cost. 1 is the agent's
-  recommendation, which is a reason for any app and not a fact about this one. 2 is a general
-  claim about scaling that never touches this club. 4 leans on a fact in the description that has
-  no bearing on where the list is kept.
