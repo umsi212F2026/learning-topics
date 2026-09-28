@@ -177,11 +177,10 @@ these is the best question to send next?
 
 ### q-manual-newest-first
 
-Your Notes app shows the newest note at the top of the list. The agent asks: "Could
-you add a few notes and tell me whether the newest one is showing at the top?" Could a program do
-this check instead of you? If it could, say what the automated test would do in the app and what it
-would check at the end. If it could not,
-say what the check needs that only you can supply.
+Your Notes app shows the newest note at the top of the list. Your agent has just changed how notes
+are saved, and asks: "Could you add a few notes in the browser, reload the page, and tell me whether
+they are all still there with the newest one at the top?" Could a program do this check instead of
+you? If it could, say how. If it could not, say what the check needs that only you can supply.
 
 ### q-manual-make-sure-notes-work
 

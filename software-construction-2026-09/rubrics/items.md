@@ -402,16 +402,13 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
 
 - **type:** free
 - **goal:** c-judge-manual-test
-- **answer:** yes, a program can do all of it. The test opens the app in a headless browser, adds
-  three notes one after another with text nothing else could have, say "check A", then "check B",
-  then "check C", and checks that the note at the top of the list is the last one added, "check C".
-  A stronger version reloads the page and checks the order again.
-- **credit:** full credit needs "yes" plus both halves of a description: something done in the app
-  (adding more than one note, in a known order) and what would be looked at afterwards (the
-  most recently added note is the one at the top). Half credit for "yes, automate it" with no
-  account of what the test would do or check, and half credit for a description that adds notes but
-  never says what to look at. No credit for "no, someone has to look at the list", and no credit for
-  a test that adds only one note, since one note cannot show an order.
+- **answer:** yes. The agent can run the check in a headless browser, a real browser with no window
+  that a program controls. The test adds the notes through the page, reloads, and reads the order
+  off the list.
+- **credit:** full credit for "yes" plus a headless browser or a browser a program controls. A
+  description of the test is welcome and is not required. No credit for "no, someone has to look at
+  the list", no credit for "yes, automate it" with no browser, and no credit for a test that calls
+  the server or the database directly, since that skips the page the request is about.
 
 ### q-manual-make-sure-notes-work
 
