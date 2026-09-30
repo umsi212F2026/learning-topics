@@ -10,7 +10,7 @@ designing an app with you before it builds anything: it asks you about the app o
 time, offers you two or three approaches with their trade-offs and usually recommends one, shows
 you its design a section at a time for approval, writes a spec you are asked to review, and only
 then writes a plan and starts building. Two apps turn up more than once. One is the app from lab,
-which shows the four letters of YAGNI on screen, asks the user to type the word for each letter,
+which shows the five letters of YAGNI on screen, asks the user to type the word for each letter,
 and keeps nothing after a reload. The other is a club sign-up app, where six officers, each on
 their own phone, need to see who has signed up for an event.
 
@@ -63,7 +63,7 @@ What is the difference between them?
 
 ### q-criteria-are-features
 
-A classmate says, about the YAGNI app from lab: "My success criteria are that it shows the four
+A classmate says, about the YAGNI app from lab: "My success criteria are that it shows the five
 letters, that there's a text box next to each letter, and that there's a Check button." What is
 wrong with what they said?
 

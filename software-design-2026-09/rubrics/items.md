@@ -136,7 +136,7 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
   finished app has to be true of. All three could be built and the app could still fail to tell
   anybody whether they know what YAGNI stands for: the Check button could accept anything typed,
   or nothing at all. A criterion says what someone using the app would find: that a person who
-  types the right four words is told they are right, and a person who types something else is told
+  types the right five words is told they are right, and a person who types something else is told
   they are wrong.
 - **credit:** full credit for naming them as features or parts rather than statements of what the
   finished app must do, or for showing that an app with all three could still miss what the app is

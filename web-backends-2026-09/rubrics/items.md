@@ -170,10 +170,11 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
   answer: the set of requests, each with what it takes and what it gives back. One is the machinery
   and the other is the agreement it keeps, so everything inside the backend can be rewritten with the
   API left exactly as it was.
-- **credit:** full credit for the difference that matters: the backend is the running thing, the API
-  is the set of requests it promises to answer, and the inside can change without the API changing.
-  Half credit for "the API is part of the backend" with nothing about what is promised. Do not accept
-  "the API is the front end", "the API is a second server", or a difference of size.
+- **credit:** full credit for the difference that matters: the backend is the running thing, and the
+  API is the set of requests it promises to answer. Saying that the inside can change without the
+  API changing shows it well but is not required. Half credit for "the API is part of the backend"
+  with nothing about what is promised. Do not accept "the API is the front end", "the API is a
+  second server", or a difference of size.
 
 ### q-api-as-a-stop
 
