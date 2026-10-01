@@ -5,6 +5,12 @@ with the learner.
 
 ## Check notes
 
+2026-10-01. In both checks for placing parts and both checks for weighing plans, the tutor writes
+the vendors' offers and terms, already distilled, for the learner. In the checks for vendor claims,
+the learner only plans. So nowhere in this topic is the learner examined on reading a real vendor's
+pricing, docs and billing pages unaided. Each entry's `doesn't show` admits its own part of this.
+Taken together, it is the topic's one shared blind spot.
+
 ## Goals
 
 | id | Goal | Criterion: what gets examined, and what counts |
@@ -24,8 +30,8 @@ with the learner.
 | goal | study | checks | notes |
 | ---- | ----- | ------ | ----- |
 | `o-orientation` | `a-read-odin-deployment` | `a-dry-run-hosting-asks` | |
-| `c-place-app-parts` | `a-read-fso-serve-dist`, `a-judge-plan-coverage` | `a-place-described-plan`, `a-place-lab-plan` | |
-| `c-check-vendor-claims` | `a-watch-claims-checked`, `a-check-2025-guide-claims`, `a-sort-claim-sources` | `a-plan-claim-checks`, `a-check-lab-answer` | |
+| `c-place-app-parts` | `a-read-fso-serve-dist`, `a-judge-plan-coverage` | `a-place-described-plan`, `a-place-lab-plan` | The criterion names two hard cases: a vendor hosting more than one part, and the backend serving the built frontend. One counting pass exercises at most one of them. If the learner's pass came on one case, give the other in study or on a review visit. |
+| `c-check-vendor-claims` | `a-watch-claims-checked`, `a-check-2025-guide-claims`, `a-sort-claim-sources` | `a-plan-claim-checks`, `a-check-lab-answer` | Both checks rule on a written plan for checking claims, not on checks actually carried out. `a-check-lab-answer` has the learner carry the plan out, but the ruling is on the plan as first written. No check here establishes that the learner can find the settling sentence on a real vendor's site unaided, although the topic's Depth says they should be able to check a claim against the vendor's own pages. If that matters for this learner, look at what they found in `a-check-lab-answer`, or watch them do it in `a-check-2025-guide-claims`, and treat it as evidence beside the ruling, not as part of it. |
 | `c-weigh-hosting-plans` | `a-study-hatchable-traps`, `a-predict-overage-outcomes`, `a-judge-plan-weighings` | `a-weigh-described-plans`, `a-weigh-lab-plans` | |
 
 ---
@@ -249,6 +255,7 @@ with the learner.
   frontend with nothing to send it, a database left on a laptop, and a plan with two mismatches
   (an Express server on the functions host and a SQLite database on a Postgres host). 20 minutes.
   Nothing to run.
+- **verified:** 2026-10-01
 - **learner does:** reads the app and the vendors, then for each of the ten plans says which part
   each vendor hosts and names every gap and mismatch, or says every part is covered. Then states the
   rule they judged by.
@@ -340,6 +347,11 @@ with the learner.
   run, and the tutor picks the shape so the two cases the criterion names (a vendor hosting more
   than one part, the backend serving the frontend) actually come up. `a-place-lab-plan` is the
   same capability on the plan your own lab prompt produced.
+- **check note:** A `decoy` instance is always fully covered, and a `backend-serves` or
+  `shared-vendor` instance may be. A pass on one of those shows the learner did not name a false
+  gap, not that they can find a real one. For the counting attempt, prefer an instance that contains
+  at least one gap or mismatch. If a learner's only pass came on a fully covered plan, tell them so
+  and offer a faulted instance on a later visit.
 
 ### `a-place-lab-plan`
 
@@ -352,6 +364,7 @@ with the learner.
   that it names at least one vendor the learner has not signed up for or used in the lab; the
   learner's own lab answer is used only if it meets that too. 15 minutes, plus the tutor's
   preparation.
+- **verified:** 2026-10-01
 - **learner does:** gets from the tutor a list of their app's parts, and the plan with each
   vendor's offer stated in a line or two. Writes alone which part each vendor would host, and
   names every gap and mismatch, or says every part is covered. Hands it to the tutor.
@@ -394,6 +407,11 @@ with the learner.
   checked against your own app. Any time after the lab; a fresh run of the prompt or a
   tablemate's answer keeps it new even after you've signed up. `a-place-described-plan` is the one
   to take before the lab.
+- **check note:** This entry counts a plain one-vendor-per-part plan if it has a gap or mismatch,
+  but `a-place-described-plan` treats that shape as practice only, because it contains neither of
+  the two cases the criterion names. If the lab plan has no shared vendor and no backend-served
+  frontend, treat it as practice and offer `a-place-described-plan` for the counting attempt. A
+  fully covered lab plan shows only that the learner did not over-flag.
 
 ### `a-watch-claims-checked`
 
@@ -430,6 +448,7 @@ with the learner.
   links, gives Railway's "$1 of credit a month, no rollover" correctly; the tutor may point out
   afterwards that a careful dated table got it right and still isn't the page that settles it.)
   25 to 30 minutes.
+- **verified:** 2026-10-01
 - **learner does:** watches the tutor check the first three claims out loud in a browser, and
   interrupts whenever they disagree or can't follow. Before each check, says where they would look.
   Then checks the fourth claim themselves while the tutor watches, saying aloud where they are
@@ -480,6 +499,7 @@ with the learner.
   pausing, or the card. None is a limit that has changed since 2025; that case is in
   `a-watch-claims-checked` (Railway's trial) and in `a-plan-claim-checks`'s generator. The guide itself is in the instructor's files and is not available to students, which is
   why its sentences are quoted. 30 to 40 minutes with a browser.
+- **verified:** 2026-10-01
 - **learner does:** for each claim, says first which page on the vendor's own site they expect to
   settle it and why; then finds it, copies the sentence that settles it with its address and any
   date; says whether the claim holds, has changed, or is gone; and says what the claim leaves out
@@ -527,6 +547,7 @@ with the learner.
   8. A classmate who signed up for Render last week.
   9. Render's MCP server docs, https://render.com/docs/mcp-server.
   20 minutes, with a browser for the last step only.
+- **verified:** 2026-10-01
 - **learner does:** sorts the nine, without opening any, into: settles the claim today; useful
   for knowing what to look for, but doesn't settle it; doesn't help with this claim. Says the rule
   they sorted by. Then opens whichever source they put first and checks both halves of the claim
@@ -639,6 +660,13 @@ with the learner.
   nothing to open. The tutor picks the disguise, so the harder answers (one that cites a blog, one
   that hedges) actually come up. `a-check-lab-answer` is the same capability on the answer your own
   table's prompt got.
+- **check note:** Every planted-claim example in the generator also appears in a study entry or the
+  orientation reading: PlanetScale, Heroku, Railway's $5, Render's Postgres, Neon's compute,
+  Fly.io's card rule. A learner who has done those routes may recognize the planted claims from
+  memory. For a counting instance, plant claims about vendors or limits the learner has not met in
+  this topic. If you can't, note in the record which planted claims the learner had already seen.
+  When you set rehearsal two of `a-dry-run-hosting-asks`, don't use a claim you mean to plant here
+  later.
 
 ### `a-check-lab-answer`
 
@@ -652,6 +680,7 @@ with the learner.
   or signed up for; the learner's own lab answer serves only if they had not opened any vendor it
   names before writing the note. 15 minutes to write the plan, plus however long carrying it out
   takes.
+- **verified:** 2026-10-01
 - **learner does:** with the answer in hand and before opening any vendor page it names or asking
   the agent anything more about it, writes alone in a note how they will find out which of its
   claims about free tiers, limits and credit cards still hold, claim by claim, and what they will
@@ -693,6 +722,11 @@ with the learner.
   looked at yet, and you find out what's still true before you'd act on it. Any time after the
   session 11 lab, with a fresh run of the prompt or a tablemate's answer. `a-plan-claim-checks`
   is the one to take before it.
+- **check note:** When you write the key, record the kind of page that settles each claim (pricing
+  page, free-plan docs, trial page, billing docs). Send the adjudicator the "would catch" rule from
+  `a-plan-claim-checks`'s generator along with the key, so that this check and that one are judged
+  to the same standard. A plan that says only "check the pricing page" does not catch a claim
+  settled only in trial or billing docs.
 
 ### `a-study-hatchable-traps`
 
@@ -732,6 +766,7 @@ with the learner.
   deploy, and code written for one vendor's SDK, which is deep lock-in. Its dated claims (Render's Postgres expiry, Neon and Supabase signing up without a card,
   Fly.io trial-only) were right on 2026-10-01 as far as each vendor's own page settles them, but
   are claims to check, not facts to carry (`a-watch-claims-checked` uses them that way).
+- **verified:** 2026-10-01
 - **learner does:** before reading, writes the five things the goal asks them to compare (sleep;
   what happens past a limit; card required, and what a card on file risks; whether their agent can
   reach the host; how hard it is to move). Reads the assigned sections, and for each trap writes
@@ -792,6 +827,7 @@ with the learner.
      method Render disables new builds instead. Free Postgres: "Free Render Postgres databases
      expire 30 days after creation", with a 14-day grace period before Render deletes it.
   25 to 30 minutes.
+- **verified:** 2026-10-01
 - **learner does:** reads the story. Before opening Render's page, writes predictions for their
   own app on Render's free plan in four cases: nobody visits for an hour, then a grader does; the
   app is shared on a busy forum and its traffic goes far past the free bandwidth; the same, with a
@@ -815,6 +851,9 @@ with the learner.
   plan) and then a real vendor's terms, where you predict before you read. About one vendor and
   about what happens past a limit and with a card, more than about choosing. 25 to 30 minutes.
   Pick `a-judge-plan-weighings` for a whole comparison.
+- **check note:** The fourth prediction (the database 35 days old) assumes Render's free Postgres.
+  If the learner's app still uses SQLite, put that case to them as "if your database were Render's
+  free Postgres".
 
 ### `a-judge-plan-weighings`
 
@@ -831,6 +870,7 @@ with the learner.
   other six miss in different ways: claims the terms don't support, no case for the other plan,
   nothing on the extra vendors, a card treated as a requirement rather than a risk, workarounds
   the terms say nothing about. 25 minutes. Nothing to run.
+- **verified:** 2026-10-01
 - **learner does:** reads the app, the plans and the terms. For each of the eight choices, says
   which of the criterion's parts it misses: a difference that matters, the cost of the extra
   vendors, a claim the terms don't support, the case for the other plan. Then writes the list of
@@ -921,6 +961,13 @@ with the learner.
   nothing to run, and the tutor picks the twist so the hard cases (a card that can be billed once
   added, an agent that can't see one part's logs) actually come up. `a-weigh-lab-plans` is the same
   capability on two plans from your own lab.
+- **check note:** On an `irrelevant-difference` instance, the generator calls leaning on the large
+  irrelevant difference "unsupported", but the criterion's clause is about what the terms support,
+  and a true difference is supported. The study key for `a-judge-plan-weighings` accepts leaning on
+  an accurate non-deciding item. When you send the instance to the adjudicator, say what the twist
+  was. Ask it to rule against the criterion as written: a true but irrelevant reason is not by
+  itself a miss, while a claim the terms contradict (that twenty users would reach the limit, for
+  instance) is.
 
 ### `a-weigh-lab-plans`
 
