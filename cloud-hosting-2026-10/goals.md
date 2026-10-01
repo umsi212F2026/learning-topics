@@ -221,8 +221,9 @@ of their own. Sign-in belongs to Part B of Problem Set 3, not to this topic.
   vendor and one using a different vendor for each part, along with each vendor's free-tier
   terms, chooses one and says why. It passes when they name each difference in the terms that
   would matter for a class project with few users (whether the app sleeps, what happens when it
-  passes a limit, whether a credit card is required and what having one on file risks, and how
-  hard it would be to move); say what the extra vendors add in accounts, secrets and places to
+  passes a limit, whether a credit card is required and what having one on file risks, whether
+  their agent can reach the host to change its settings and read its logs, and how hard it would
+  be to move); say what the extra vendors add in accounts, secrets and places to
   look when something breaks; name nothing the terms don't support; and state the strongest case
   for the plan they didn't choose. Which plan they choose is not part of it.
 - **origin:** course
