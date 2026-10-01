@@ -78,8 +78,7 @@ real secrets. Name any others you have._
 the code that reads settings, not deciding where each one goes, and not setting up the hosts. When
 your agent gets your app ready to deploy, it adds settings your app never needed on localhost and
 asks you for values only you have, such as the addresses your hosts gave you. This topic is enough
-to know what each of those settings is for, which of them are secrets, and what value each one
-needs.
+to know what each of those settings is for and what value each one needs.
 
 What sits past that line: choosing hosts belongs to cloud-hosting, and where the database lives
 belongs to database-hosting. Deploying automatically and debugging a deployed app come in session
@@ -189,11 +188,10 @@ defending the app in session 14.
 - **goal:** tell what each setting an agent asks for is for, and what value it needs
 - **criterion:** Given the settings an agent asks for while deploying an app with its frontend
   and backend on different hosts, each under the agent's own name for it (such as
-  `VITE_API_URL`, `ALLOWED_ORIGIN`, `PORT`, `DATABASE_URL`, `SESSION_SECRET`), says what each one
-  is for and what value it needs. If the host supplies a value, they say so instead. It passes
-  when every setting is matched to what it's for, the frontend's and backend's addresses are not
-  swapped, a value the host sets is recognized as one, and every secret is recognized as one.
-  Deciding where each setting goes is not part of it.
+  `VITE_API_URL`, `ALLOWED_ORIGIN`, `PORT`, `DATABASE_URL`), says what each one is for and what
+  value it needs. If the host supplies a value, they say so instead. It passes when every setting
+  is matched to what it's for, the frontend's and backend's addresses are not swapped, and a
+  value the host sets is recognized as one. Deciding where each setting goes is not part of it.
 
 ### `c-explain-localhost-gap`
 
@@ -258,38 +256,6 @@ defending the app in session 14.
 - **what it names:** the committed list of the settings an app needs, without their real values
 - **nearest confusable:** .env file
 - **synonyms:** .env.sample, .env.template
-
-### `w-gitignore`
-
-- **goal:** .gitignore
-- **criterion:** vocabulary
-- **supply:** vocabulary
-- **bar:** one production pass
-- **group:** vocabulary
-- **what it names:** the list of files git leaves out of the repository
-- **nearest confusable:** removing a file from the repository
-
-### `w-secret`
-
-- **goal:** secret
-- **criterion:** vocabulary
-- **supply:** vocabulary
-- **bar:** one production pass
-- **group:** vocabulary
-- **what it names:** a value that lets whoever holds it act as your app
-- **nearest confusable:** a setting
-- **synonyms:** credential
-
-### `w-rotate`
-
-- **goal:** rotate
-- **criterion:** vocabulary
-- **supply:** vocabulary
-- **bar:** one production pass
-- **group:** vocabulary
-- **what it names:** replacing a secret so the old one stops working
-- **nearest confusable:** deleting it from the repository
-- **synonyms:** key rotation, regenerate
 
 ### `w-port`
 
