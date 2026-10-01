@@ -74,12 +74,12 @@ real secrets. Name any others you have._
 
 ## Depth
 
-**Say where each of your app's settings belongs once it is deployed, and catch a secret in the
-wrong place.** Not writing the code that reads settings, and not setting up the hosts. When your
-agent gets your app ready to deploy, it adds settings your app never needed on localhost and tells
-you which values to type into each host. This topic is enough to follow that account, to say which
-settings belong to the frontend and which to the backend, to know which ones only take effect when
-the frontend is built again, and to spot a secret your agent has put somewhere anyone can read it.
+**Know what each setting your agent asks for is for, and catch a secret in the wrong place.** Not
+writing the code that reads settings, not deciding where each one goes, and not setting up the
+hosts. When your agent gets your app ready to deploy, it adds settings your app never needed on
+localhost and asks you for values only you have, such as the addresses your hosts gave you. This
+topic is enough to know what each of those settings is for, to give each one the right value, and
+to spot a secret your agent has put somewhere anyone can read it.
 
 What sits past that line: choosing hosts belongs to cloud-hosting, and where the database lives
 belongs to database-hosting. Deploying automatically and debugging a deployed app come in session
@@ -186,17 +186,14 @@ where sign-in's secrets are kept.
 
 ### `c-place-settings`
 
-- **goal:** say where each of an app's settings comes from once it is deployed, and what changing
-  one takes
-- **criterion:** Given an app with a React frontend on a static host, an Express backend on a
-  server host and a database on a database host, and the list of values its agent says must be
-  set, such as the port, where the database is, the API's address, the allowed origin and the
-  secrets sign-in needs, says for each where its value comes from (the frontend's build, the
-  backend's environment on the server host, or the host itself), whether it is a secret, and what
-  has to happen after it changes before the app uses the new value. It passes when every value is
-  placed where the part that uses it can read it, every secret is marked and none is placed with
-  the frontend, and every value fixed when the frontend is built is said to need a new build.
-  Writing the code that reads the values is not part of it.
+- **goal:** tell what each setting an agent asks for is for, and what value it needs
+- **criterion:** Given the settings an agent asks for while deploying an app with its frontend
+  and backend on different hosts, each under the agent's own name for it (such as
+  `VITE_API_URL`, `ALLOWED_ORIGIN`, `PORT`, `DATABASE_URL`, `SESSION_SECRET`), says what each one
+  is for and what value it needs. If the host supplies a value, they say so instead. It passes
+  when every setting is matched to what it's for, the frontend's and backend's addresses are not
+  swapped, a value the host sets is recognized as one, and every secret is recognized as one.
+  Deciding where each setting goes is not part of it.
 
 ### `c-explain-localhost-gap`
 
