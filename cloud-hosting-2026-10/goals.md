@@ -394,3 +394,15 @@ of their own. Sign-in belongs to Part B of Problem Set 3, not to this topic.
 - **nearest confusable:** HTTP
 - **synonyms:** TLS, SSL
 - **origin:** course
+
+### `w-cdn`
+
+- **goal:** CDN
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** copies of your files kept close to wherever the visitor is
+- **nearest confusable:** static host
+- **synonyms:** content delivery network, edge network
+- **origin:** course
