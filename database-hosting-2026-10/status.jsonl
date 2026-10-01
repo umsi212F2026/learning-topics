@@ -9,6 +9,5 @@
 {"at":"2026-10-01T12:10:46.790Z","kind":"goal-added","goal":"w-production","needs":"curation"}
 {"at":"2026-10-01T12:10:57.793Z","kind":"goal-added","goal":"w-backup","needs":"curation"}
 {"at":"2026-10-01T12:11:00.216Z","kind":"goal-added","goal":"w-restore","needs":"curation"}
-{"at":"2026-10-01T12:11:38.322Z","kind":"goal-added","goal":"c-choose-data-home","needs":"curation"}
 {"at":"2026-10-01T12:11:41.817Z","kind":"goal-added","goal":"c-review-data-plan","needs":"curation"}
 {"at":"2026-10-01T12:11:41.960Z","kind":"goal-added","goal":"c-check-deployed-data","needs":"curation"}

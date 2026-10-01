@@ -73,13 +73,12 @@ app, and the data in its SQLite database, on the public internet. Name any other
 
 ## Depth
 
-**Decide where your app's data should live once it is deployed, follow your agent's plan for
-moving it there, and check that it survives.** Not writing SQL or migrations, and not setting up
-the database yourself. When your agent deploys your app, it decides where the data goes, tells you
-what it changed to get it there, and says the data is safe. This topic is enough to say whether
-the data will outlast the next redeploy where your agent has put it, to catch what its plan for
-moving the data and changing the tables leaves out, and to find out for yourself, from the
-deployed app, whether what you put in is still there.
+**Know why your app's data moves off SQLite when the app is deployed, follow your agent's plan
+for moving it, and check that it survives.** Not writing SQL or migrations, and not setting up the
+database yourself. When your agent deploys your app, it decides where the data goes, tells you
+what it changed to get it there, and says the data is safe. This topic is enough to catch what its
+plan for moving the data and changing the tables leaves out, and to find out for yourself, from
+the deployed app, whether what you put in is still there after a redeploy.
 
 What sits past that line: choosing hosts and comparing free tiers in general belong to
 cloud-hosting, and keeping the connection string and the database's password out of your code
@@ -184,21 +183,6 @@ session 14.
   orientation entry are in their own groups and don't count towards it. So never write a
   placeholder capability entry; an empty section is the honest signal.
 -->
-
-### `c-choose-data-home`
-
-- **goal:** say where an app's data should live once it is deployed, and what could lose it there
-- **criterion:** Given an app that keeps its data in a SQLite file, the terms of a server host
-  (what happens to its disk when the app is redeployed and when it restarts, and whether it offers
-  a persistent volume) and the free-tier terms of a database service (its storage limit, and what
-  it does with a database nobody has used for a while), says where the data should live and what
-  could lose it in each place they considered. It passes when they say that a SQLite file on a
-  disk the host wipes is gone after the next redeploy or restart, with no error to say so; keep
-  the data off any disk the host wipes; name every way the terms they were given could lose the
-  data or stop the app saving it, such as reaching the storage limit, or the database being paused
-  or deleted after sitting unused; and name none the terms don't support. Which of the safe places
-  they choose is not part of it.
-- **origin:** course
 
 ### `c-review-data-plan`
 
