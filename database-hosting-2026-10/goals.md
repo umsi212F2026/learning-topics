@@ -1,4 +1,4 @@
-# Learning goals — database hosting
+# Learning goals: database hosting
 
 **What I want to be able to do, and what would count as having got there.**
 
@@ -46,9 +46,13 @@
 
 ## Where this came from
 
+_Yours to fill in. Nobody can answer this one for you._
+
 <!-- Which of A / B / C / D, and the answer to the follow-up. -->
 
 ## What I already have
+
+_Yours to fill in. Say where your knowledge stops, not what you have heard of._
 
 <!--
   The nearest thing already known well, and where it stops.
@@ -58,6 +62,9 @@
 
 ## What I'll use it for
 
+_Yours to fill in. The course supplies one occasion: Problem Set 3, which puts your Problem Set 2
+app, and the data in its SQLite database, on the public internet. Name any others you have._
+
 <!--
   The use, and a concrete occasion.
   If several uses apply, rank them: the top one sets the depth, the rest are cut first
@@ -66,10 +73,19 @@
 
 ## Depth
 
-<!--
-  Which of: recognize it / read it / modify something existing / author from scratch /
-  judge someone else's work. One line on why that's enough.
--->
+**Decide where your app's data should live once it is deployed, follow your agent's plan for
+moving it there, and check that it survives.** Not writing SQL or migrations, and not setting up
+the database yourself. When your agent deploys your app, it decides where the data goes, tells you
+what it changed to get it there, and says the data is safe. This topic is enough to say whether
+the data will outlast the next redeploy where your agent has put it, to catch what its plan for
+moving the data and changing the tables leaves out, and to find out for yourself, from the
+deployed app, whether what you put in is still there.
+
+What sits past that line: choosing hosts and comparing free tiers in general belong to
+cloud-hosting, and keeping the connection string and the database's password out of your code
+belongs to config-and-secrets. Deploying automatically and debugging a deployed app come in
+session 12, sign-in and any table of users it needs in session 13, and defending the app in
+session 14.
 
 ## Goals
 
@@ -169,6 +185,49 @@
   placeholder capability entry; an empty section is the honest signal.
 -->
 
+### `c-choose-data-home`
+
+- **goal:** say where an app's data should live once it is deployed, and what could lose it there
+- **criterion:** Given an app that keeps its data in a SQLite file, the terms of a server host
+  (what happens to its disk when the app is redeployed and when it restarts, and whether it offers
+  a persistent volume) and the free-tier terms of a database service (its storage limit, and what
+  it does with a database nobody has used for a while), says where the data should live and what
+  could lose it in each place they considered. It passes when they say that a SQLite file on a
+  disk the host wipes is gone after the next redeploy or restart, with no error to say so; keep
+  the data off any disk the host wipes; name every way the terms they were given could lose the
+  data or stop the app saving it, such as reaching the storage limit, or the database being paused
+  or deleted after sitting unused; and name none the terms don't support. Which of the safe places
+  they choose is not part of it.
+- **origin:** course
+
+### `c-review-data-plan`
+
+- **goal:** catch what an agent's plan for moving or changing an app's data leaves out
+- **criterion:** Given an agent's plan for moving a deployed app from a SQLite file to a database
+  service such as Postgres, or for changing the tables of a deployed app that already holds users'
+  data, names every step the plan is missing or gets wrong, or says that none is. It passes when
+  they catch a plan that leaves the app opening a file rather than connecting to the database
+  service; one that creates the tables in the new database but does not bring across the rows
+  already saved; one that changes the tables without a migration, or with a migration that does
+  not run when the app deploys; one where development and the deployed app share a database, or
+  that tries changes out on the deployed app's real data; and one that relies on a backup nobody
+  has tried restoring. They must name nothing that isn't a problem. Writing the migration, or
+  saying what SQL it runs, is not part of it.
+- **origin:** course
+
+### `c-check-deployed-data`
+
+- **goal:** find out whether a deployed app really keeps its data
+- **criterion:** Given an app its agent has just deployed and says keeps its data, says what they
+  would do to find out whether it really does. It passes when what they describe goes through the
+  deployed app's own address, not through the agent or the database host's dashboard; uses data
+  made up for the test, and changes nothing a real user put there; and would catch an app that
+  loses its data when the server restarts, one that loses it when the app is redeployed, and one
+  whose tables were changed on the laptop but never in the deployed database. They may ask the
+  agent to restart or redeploy the app. Asking the agent whether the data is kept does not meet
+  it.
+- **origin:** course
+
 ### `o-orientation`
 
 - **goal:** get the shape of this area before working on any particular part of it
@@ -178,3 +237,109 @@
 - **recurrence:** never
 - **is_required:** no
 - **group:** orientation
+- **origin:** course
+
+### `w-sqlite`
+
+- **goal:** SQLite
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a database that is a single file the backend opens itself
+- **nearest confusable:** Postgres
+- **origin:** course
+
+### `w-postgres`
+
+- **goal:** Postgres
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a database that runs as a program of its own, which the backend connects to
+- **nearest confusable:** SQL
+- **synonyms:** PostgreSQL
+- **origin:** course
+
+### `w-ephemeral-disk`
+
+- **goal:** ephemeral disk
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a server's disk that starts empty again whenever the host replaces the server
+- **nearest confusable:** persistent volume
+- **synonyms:** ephemeral filesystem, ephemeral storage
+- **origin:** course
+
+### `w-persistent-volume`
+
+- **goal:** persistent volume
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** disk space attached to a server that outlasts the server being replaced
+- **nearest confusable:** database host
+- **synonyms:** volume, persistent disk
+- **origin:** course
+
+### `w-redeploy`
+
+- **goal:** redeploy
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** putting a new version of the app on its hosts in place of the running one
+- **nearest confusable:** restart
+- **origin:** course
+
+### `w-seed-data`
+
+- **goal:** seed data
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the rows your code puts in when a database is first set up
+- **nearest confusable:** fixture
+- **synonyms:** initial data
+- **origin:** course
+
+### `w-production`
+
+- **goal:** production
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the copy of the app that real users use, along with its data
+- **nearest confusable:** development
+- **synonyms:** prod, live
+- **origin:** course
+
+### `w-backup`
+
+- **goal:** backup
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a copy of the data as it stood at one moment, kept apart from the database
+- **nearest confusable:** a commit of the code
+- **synonyms:** snapshot, database dump
+- **origin:** course
+
+### `w-restore`
+
+- **goal:** restore
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** putting a backup's data back into a working database
+- **nearest confusable:** backup
+- **origin:** course
