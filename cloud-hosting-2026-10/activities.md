@@ -40,8 +40,8 @@ with the learner.
   2026-10-01.
   1. **Read first:** MDN Web Docs, "What is a web server?",
      https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_web_server
-     (last modified Apr 29, 2025). Read Summary (about 370 words), the short Deeper dive opening
-     (about 50), Hosting files (about 190) and Static vs. dynamic content (about 260): about 870
+     (last modified Apr 29, 2025). Read Summary (about 320 words), the short Deeper dive opening
+     (about 50), Hosting files (about 280) and Static vs. dynamic content (about 350): about 1,000
      words. Skip Communicating through HTTP (the web backends topic covered requests and
      responses) and Next steps. No code anywhere. What it gives that Odin doesn't: the static web
      server, which "sends its hosted files as-is to your browser", as against the dynamic one with
@@ -55,7 +55,7 @@ with the learner.
      PaaS services (Railway.app, Render, Neon, Aiven) and Keep your secrets safe!. About 1,450
      words, no code blocks. Skip Debugging and troubleshooting deployments (debugging a deploy is a
      later topic), the Assignment and Additional resources.
-  About 2,300 words in all: 18 to 20 minutes of reading inside a 50 to 60 minute session with the
+  About 2,450 words in all: 20 minutes of reading inside a 50 to 60 minute session with the
   stops below.
   Words in place: across the two, deploy, static, server, database, free tier (Heroku's, ended
   2022), sleep ("put to sleep automatically after 15 minutes of inactivity", in Render's
@@ -81,6 +81,7 @@ with the learner.
     (https://neon.com/pricing) now lists 100 projects, 100 compute-hours per project, and compute
     that scales to zero after 5 minutes idle, which "cannot be turned off".
   - Aiven: not checked; say so if the learner asks.
+- **verified:** 2026-10-01, except Aiven: NOT VERIFIED, its free tier was not checked against its own pages
 - **learner does:** reads MDN first, with their Problem Set 2 app's folder open beside the page,
   then Odin. Stops at six points and answers before reading on; "I don't know yet" is an honest
   answer:
@@ -123,7 +124,7 @@ with the learner.
 - **offer as:** this topic's orientation, deliberately one entry holding a sequence: a short MDN
   page that supplies the static web server, then Odin's lesson, which supplies hosting providers,
   PaaS, instances, domains and four real vendors, with the debugging half left for a later topic.
-  About 2,300 words, free, 50 to 60 minutes with the stops. Odin's vendor details are a year or so
+  About 2,450 words, free, 50 to 60 minutes with the stops. Odin's vendor details are a year or so
   behind in places, and the tutor flags them as they come up; that is part of the lesson, not a
   defect in the choice. Followed by `a-dry-run-hosting-asks`.
 
@@ -134,11 +135,13 @@ with the learner.
 - **checks:** `o-orientation`
 - **artifact:** no external source. The learner's three-box sketch and their answers from
   `a-read-odin-deployment`, still in front of them. 10 to 15 minutes. Nothing needs to be running.
+- **verified:** 2026-10-01
 - **learner does:** three short rehearsals, none of them judged, each answered in a sentence or
   two. First, the tutor describes a made-up app's three parts and one vendor's offer in a line, and
   the learner says which part that vendor could host, or none. Second, the tutor, speaking as a
   coding agent, makes one claim about a vendor's free tier, and the learner says where they would
-  look to find out whether it is true today. Third, the tutor gives one line of terms from each of
+  look to find out whether it is true today (or, for a recommendation, what it leaves out and
+  where they would find that). Third, the tutor gives one line of terms from each of
   two plans, and the learner says one difference between them that would matter for a class
   project. Then answers the question the tutor puts: with your sketch and the reading beside you,
   could you now attempt these three things for real: saying which kind of host each part of an
@@ -165,7 +168,11 @@ with the learner.
   with a React frontend, an Express server and a database, used by a class (a study-group finder,
   a club sign-up sheet, a recipe box, a used-textbook board). Rehearsal one is one plan line from
   `a-place-described-plan`'s generator at Easy: one vendor, one offer, one part. Rehearsal two is
-  one claim from `a-plan-claim-checks`'s generator, of any of its three kinds. Rehearsal three is
+  one claim from `a-plan-claim-checks`'s generator of kind `withdrawn` or `changed`, and the
+  question is where they would look to find out whether it is true today. If the tutor uses a
+  `card-omitted` claim instead, it is given as a recommendation ("I'd go with Fly.io's trial") and
+  the question becomes what the recommendation hasn't said that they would want to know, and where
+  they would find it. Rehearsal three is
   one dimension from `a-weigh-described-plans`'s generator (sleep, past a limit, card, agent
   access, or moving), one line per plan, at Easy. Fixed: three rehearsals in that order, none
   graded, then the readiness question word for word. Difficulty doesn't vary: this settles an
@@ -193,6 +200,7 @@ with the learner.
   address. Skip everything about Fly.io and Render setup (that is how to deploy, past this topic's
   depth, and its vendor details may lag like Odin's), Same origin policy and CORS, and Proxy. 20
   to 25 minutes.
+- **verified:** 2026-10-01
 - **learner does:** reads the three sections without running anything. Then, on paper or in a
   note, draws two arrangements of their own Problem Set 2 app: (a) the built frontend on a static
   host and the Express server on a server host; (b) the Express server sending the built frontend
@@ -225,7 +233,8 @@ with the learner.
   SQLite app shaped like the learner's Problem Set 2 app; five made-up vendors, each saying in a
   line what it offers (a files-only host, a host that runs a program with a disk, a Postgres-only
   database host, a host that runs short functions and keeps nothing running, and an all-in-one);
-  ten plans; and a key. Six plans cover every part: the usual split, one where the backend serves
+  ten plans. The key is in its own file, `tasks/judge-plan-coverage-key.md`, for the tutor only.
+  Six plans cover every part: the usual split, one where the backend serves
   the built frontend, one where a vendor hosts two parts, one that hosts the frontend twice, one
   that uses the functions host only for files, and one where the app has been switched to
   Postgres. Four fail: an Express server on a files-only host with the database left unhosted, a
@@ -236,7 +245,7 @@ with the learner.
   each vendor hosts and names every gap and mismatch, or says every part is covered. Then states the
   rule they judged by.
 - **tutor role:** critic
-- **tutor does:** shows everything above the key and nothing in it. Takes all ten answers and the
+- **tutor does:** shows the task file and never the key file. Takes all ten answers and the
   rule before commenting on any. On each answer that disagrees with the key, asks what that vendor
   would actually do with the part it was given ("Brightpage gets the Express server; what does it
   do when a request for recipes arrives?") rather than giving the verdict. Makes sure `q3` against
@@ -246,8 +255,12 @@ with the learner.
 - **done when:** the learner's rule covers listing what each part needs, checking each vendor's
   offer against the part it was given, counting a part served by another part as hosted, and naming
   nothing that isn't a gap or mismatch; and they found both mismatches in `q4`. No `checks`: the
-  vendors and plans were written to bring out the cases, and the learner is judging them, not
-  meeting a plan cold.
+  ten plans are a contrast set read together, and the pairs answer each other. `q9` sits beside
+  `q4` and says outright that the app was switched to Postgres, which points at what is wrong in
+  `q4`; `q3` beside `q6` does the same for a frontend with no host of its own. A learner judging
+  `q4` or `q6` with its partner in view is getting help no single cold plan gives, so a pass here
+  doesn't show they would find the fault in a plan met alone. `a-place-described-plan` is that
+  single cold plan. The set is also fixed and used up after one sitting.
 - **offer as:** ten plans for one app, so the only thing that varies is the plan; the six that
   pass show six ways to cover an app, and the near-misses are the cases careful students most
   often get wrong (calling a backend-served frontend unhosted, flagging a vendor for a job it
@@ -260,6 +273,7 @@ with the learner.
 - **checks:** `c-place-app-parts`
 - **artifact:** no external source. A made-up app and hosting plan, written by the tutor per the
   generator below. 10 minutes.
+- **verified:** 2026-10-01
 - **learner does:** reads the app's parts and the plan, then writes alone, for each vendor, which
   part it would host, and then names every part left without a host or put on a host that cannot
   run it, or says every part is covered. Hands it to the tutor.
@@ -270,14 +284,17 @@ with the learner.
   the adjudicator the parts, the plan, the key, the learner's answer verbatim and every piece of
   help. After the ruling, tells the learner what was missed or named wrongly. Labels the attempt
   `a-place-described-plan/<shape>`.
-- **done when:** criterion met with no help, on a Medium or Hard instance.
+- **done when:** criterion met with no help, on a `backend-serves`, `shared-vendor`, `decoy` or
+  `two-faults` instance.
 - **kind:** generator
 - **generator:** fixed: the app has a frontend, a backend and a database, described in a short
   list in the form of `tasks/judge-plan-coverage.md` (what each part is, what it needs to run, and
   for SQLite that it is a file the server opens). The plan names two to four vendors, each with a
   one- or two-line offer written as that file writes them: what it hosts and runs, and what it does
-  not. Vendors are made up (Brightpage, Kettle, Ledger, Spark and Harbor may be reused, or new
-  ones invented on the same pattern), so the key depends only on the stated offers. Whether a
+  not. Vendors are made up, so the key depends only on the stated offers. Brightpage, Kettle,
+  Ledger, Spark and Harbor may be used for the worked example and for practice; a counting
+  instance invents new vendor names on the same pattern and never reproduces any of `q1` to `q10`
+  in `tasks/judge-plan-coverage.md`, which the learner may have judged with its key discussed. Whether a
   host's disk keeps data is never part of an offer and never part of the key. What varies: the app
   (a different one each attempt; its frontend is React or another framework built to static files,
   its backend Express or another long-running server, its database SQLite or Postgres), the
@@ -291,15 +308,17 @@ with the learner.
     named; every part covered, or with one unrelated gap or mismatch.
   - `shared-vendor` (Medium): one vendor hosts two or three parts as separate services; every part
     covered, or with one mismatch inside that vendor.
-  - `decoy` (Hard): every part covered, but one vendor has a limitation that doesn't bear on the
-    part it was given (a functions host used only for files; a frontend hosted twice), inviting a
-    false mismatch.
+  - `decoy` (Hard): every part covered, but the backend sends the built frontend itself and the
+    frontend is also put on a static host, or a vendor hosting two parts has a limitation that
+    doesn't bear on either part it was given; either way it invites a false gap or mismatch.
   - `two-faults` (Hard): two gaps or mismatches of different kinds, at least one inside a vendor
     hosting more than one part.
-  Difficulty as marked. An attempt meant to count runs at Medium or Hard; Easy is for the worked
-  example and for a retry with help after a miss. Across attempts and review visits, serve
-  `backend-serves`, `shared-vendor` and a Hard shape at least once each, reading the labels
-  `served.mjs` returns, since the criterion names the first two outright.
+  Difficulty as marked. **Only `backend-serves`, `shared-vendor`, `decoy` and `two-faults` count**,
+  because each contains a case the criterion names (a vendor hosting more than one part, or the
+  backend serving the built frontend) and the bar is one unaided pass. `split-clean` and `one-gap`
+  (Easy) are for the worked example and for a retry with help after a miss; `wrong-host` (Medium)
+  is practice only, since its plan contains neither named case. For review visits, serve a
+  counting shape the learner hasn't had, reading the labels `served.mjs` returns.
 - **worked example:** work one Easy instance aloud: list what each part needs, then go vendor by
   vendor saying what it was given and whether its offer can do that job, and finish by checking
   each part has somewhere to live. At the first level of help on a real attempt, ask only "what
@@ -319,42 +338,54 @@ with the learner.
 - **serves:** `c-place-app-parts`
 - **supports:** attempt
 - **checks:** `c-place-app-parts`
-- **artifact:** no external source. The hosting plan the learner's agent proposed when they ran
-  their table's prompt in the session 11 lab (or a plan their agent proposes for Problem Set 3),
-  and the parts of their own Problem Set 2 app. 15 minutes, plus the tutor's preparation.
+- **artifact:** no external source. A hosting plan for the learner's own Problem Set 2 app, from
+  an agent's answer to their table's session 11 lab prompt, and the parts of that app. By
+  default the answer is a fresh rerun of the table's prompt or a tablemate's answer, chosen so
+  that it names at least one vendor the learner has not signed up for or used in the lab; the
+  learner's own lab answer is used only if it meets that too. 15 minutes, plus the tutor's
+  preparation.
 - **learner does:** gets from the tutor a list of their app's parts, and the plan with each
   vendor's offer stated in a line or two. Writes alone which part each vendor would host, and
   names every gap and mismatch, or says every part is covered. Hands it to the tutor.
 - **tutor role:** none
 - **tutor does:** before the attempt, reads the learner's app (the learner need not see this) to
   list its parts as they are now: what the frontend builds to, whether the backend already sends
-  the built frontend, and whether the database is a SQLite file or something else. For each
-  vendor in the plan, reads that vendor's own current pages and writes its offer in a line or two,
-  as `tasks/judge-plan-coverage.md` writes them, with the address and date of each page used; the
-  offer must not be the agent's description of it. Writes the key into the record from those
-  offers. If the plan covers every part with no ambiguity at all and is the usual split, tells the
-  learner this one is a practice run and offers `a-place-described-plan` for the counting attempt.
-  If a vendor's pages don't settle whether it can run a part, leaves that vendor out and says so
-  to the adjudicator. Waits during the attempt, writing down any help word for word. Sends the
+  the built frontend, and whether the database is a SQLite file or something else. Turns the
+  answer into a plan: if it already says which vendor hosts which part, uses that; if it is a
+  comparison, takes the vendors it recommends and assigns each to the part the answer suggests it
+  for; if the answer suggests nothing for some part, assigns one of the vendors it names to that
+  part the way a student reading the answer plausibly would, and records that the tutor did this.
+  For each vendor in the plan, reads that vendor's own current pages and writes its offer in a
+  line or two, as `tasks/judge-plan-coverage.md` writes them, with the address and date of each
+  page used; the offer must not be the agent's description of it. If a vendor's pages don't settle
+  whether it can run the part it was given, replaces it with another vendor the answer names whose
+  pages do; if there is none, shows that part's line as "not judged: the vendor's own pages don't
+  settle this", tells the learner to leave that part out, and leaves it out of the key, so the
+  missing offer is never mistaken for a planted gap. Writes the key into the record from the
+  offers. **Counts the instance only if the plan contains a vendor hosting more than one part, a
+  backend serving the built frontend, or a gap or mismatch.** A plan that is the usual one vendor
+  per part with every part covered is practice only; the tutor says so and offers
+  `a-place-described-plan` for the counting attempt. Waits during the attempt, writing down any help word for word. Sends the
   adjudicator the parts, the plan with its offers, the key, the learner's answer and every piece
   of help. Labels the attempt `a-place-lab-plan/<vendors, joined with +>`.
 - **done when:** criterion met with no help.
 - **kind:** generator
 - **generator:** the material is whatever the learner's agent proposed, so no two instances match
   and nobody sets the difficulty. Hold fixed: offers come from the vendor's own pages on the day,
-  never from the agent's answer; the key comes from those offers and the app's code. An instance
-  with every part covered by the usual one-vendor-per-part split is practice only, for the reason
-  above. Across visits, prefer a plan from a different agent answer each time (a tablemate's, or a
-  fresh run of the lab prompt).
+  never from the agent's answer; the key comes from those offers and the app's code. Only a plan
+  with a shared vendor, a backend-served frontend, or a gap or mismatch counts, for the reason
+  above. Across visits, use a different agent answer each time (a tablemate's, or a fresh run of
+  the lab prompt), preferring one that names a vendor the learner hasn't used.
 - **worked example:** none during the attempt. If the learner stalls, the first level of help is
   "what does each part need from a host?", and the attempt is recorded `unaided: no`.
 - **doesn't show:** the tutor writes the offers, so a pass doesn't show the learner could pull
   them out of a vendor's pages. Whether the plan exercises the hard cases (a shared vendor, a
   backend-served frontend) depends on what the agent proposed. The key rests on the tutor's
   reading of current vendor pages and of the app.
-- **offer as:** the real thing: the plan your own agent gave you in the lab, checked against your
-  own app. Best right after the lab, before you sign up for anything. `a-place-described-plan` is
-  the one to take before the lab.
+- **offer as:** the real thing: a plan from your table's own lab prompt, on vendors' real offers,
+  checked against your own app. Any time after the lab; a fresh run of the prompt or a
+  tablemate's answer keeps it new even after you've signed up. `a-place-described-plan` is the one
+  to take before the lab.
 
 ### `a-watch-claims-checked`
 
@@ -372,13 +403,25 @@ with the learner.
     https://neon.com/pricing, says "no credit card required"; Supabase's pricing page,
     https://supabase.com/pricing, did not say either way on 2026-10-01.)
   - "Fly.io no longer has a general free tier for new accounts, only a short trial before
-    pay-as-you-go." (Fly's own page, https://docs.fly.io/about/pricing/, says "All organizations
-    (except for Linked Organizations) require a credit card on file", which the article doesn't
-    mention.)
-  And a fourth for the learner, from Flavio Copes, "Every hosting provider's free tier, side by
-  side", https://flaviocopes.com/hosting-free-tiers/ (data checked 2026-09-16; has disclosed
-  affiliate links): Railway gives "$1 of credit a month, no rollover". (Railway's docs,
-  https://docs.railway.com/reference/pricing/free-trial, agree on 2026-10-01.) 25 to 30 minutes.
+    pay-as-you-go." This sentence says nothing about a card or about how short the trial is;
+    the article's FAQ says elsewhere that "Fly.io wants one once its short trial ends". Fly's own
+    pages split the answer across two places. Its free-trial page,
+    https://docs.fly.io/about/free-trial/, says the trial "includes 2 hours of machine runtime or 7
+    days of access, whichever comes first", needs no card to start, and that "adding a card ends
+    the free trial"; when it expires without one, "your apps will stop running". Its pricing page,
+    https://docs.fly.io/about/pricing/, says "All organizations (except for Linked Organizations)
+    require a credit card on file".
+  And a fourth for the learner, also from the article's The traps to watch for: "Railway's
+  $5/month credit is a trial, not a free tier. When you exceed it, you pay." Railway's own docs,
+  https://docs.railway.com/reference/pricing/free-trial, on 2026-10-01: the trial is "a one-time
+  grant of $5" for "up to 30 days", after which the account "reverts to the Free plan", which
+  "provides $1 of free credit per month" that "does not roll over". So the article's sentence is
+  stale twice over: the $5 is one-time, not monthly, and there is a standing free plan after it.
+  (Flavio Copes, "Every hosting provider's free tier, side by side",
+  https://flaviocopes.com/hosting-free-tiers/, data checked 2026-09-16, with disclosed affiliate
+  links, gives Railway's "$1 of credit a month, no rollover" correctly; the tutor may point out
+  afterwards that a careful dated table got it right and still isn't the page that settles it.)
+  25 to 30 minutes.
 - **learner does:** watches the tutor check the first three claims out loud in a browser, and
   interrupts whenever they disagree or can't follow. Before each check, says where they would look.
   Then checks the fourth claim themselves while the tutor watches, saying aloud where they are
@@ -393,20 +436,25 @@ with the learner.
   post, then says why that doesn't settle it and goes to Render's own docs; for the second, finds
   Neon's sentence and then fails to find Supabase's on its pricing page, and says that an answer
   the vendor's pages don't give is "I'd find out at sign-up", not the article's word; for the
-  third, confirms the trial and then finds the card requirement the article left out, in the
-  vendor's docs rather than its pricing table. Says each time what kind of page settled it (a
+  third, opens Fly's pricing page first, reads "require a credit card on file" and nearly
+  concludes a card is needed to sign up, then opens the free-trial page and finds the fuller
+  answer: no card to start, a trial of 2 hours of machine time or 7 days, and a card needed to
+  keep going, since adding one ends the trial. Points out that the article's sentence left out
+  both the length and the card, though its FAQ mentions the card, so reading one sentence of a
+  source is not reading the source. Says each time what kind of page settled it (a
   free-plan docs page, a pricing page, billing docs) and whether it carried a date. For the
   learner's claim, asks only "where would Railway say that?" if they stall. On the prompt
   sentence, asks whether an agent could follow it (a link to the vendor's own page for each
   claim, and the date the agent's information is from, are both things it can give).
-- **done when:** the learner has checked the fourth claim on Railway's own docs, can say why the
+- **done when:** the learner has checked the fourth claim on Railway's own docs and found both
+  ways it is stale (one-time, not monthly; a free plan after it), can say why the
   article and the blog post don't settle a claim and the vendor's page does, and has written a
   prompt sentence asking for the vendor's own page for each claim. No `checks`: the tutor worked
   three of the four.
 - **offer as:** watch it done first: the tutor checks three claims from a vendor-written article
   live, with the false starts left in, then hands you the fourth. The only candidate where you see
-  where a check goes wrong (a blog in place of the vendor, a card requirement in the billing docs
-  rather than the pricing page). Needs a browser and a live session, 25 to 30 minutes.
+  where a check goes wrong (a blog in place of the vendor, a card rule split across a vendor's
+  pricing and trial pages), and the claim you check yourself turns out to be stale. Needs a browser and a live session, 25 to 30 minutes.
   `a-check-2025-guide-claims` is all yours from the start.
 
 ### `a-check-2025-guide-claims`
@@ -415,11 +463,14 @@ with the learner.
 - **supports:** deepen
 - **artifact:** `tasks/check-2025-guide-claims.md`, written for this topic: six sentences quoted
   exactly from the deployment guide given to students in this course's 2025 predecessor (SI 211),
-  about PlanetScale, Neon, Supabase and Render; and a key checked against those vendors' own pages
-  on 2026-10-01. One names a free tier since withdrawn (PlanetScale's free MySQL, whose plan ended
-  in 2024), one a limit that has changed in kind (Render's Postgres, now deleted after 30 days and
-  a grace period rather than charged), and the rest hold with things left out (sleep, pausing, the
-  card). The guide itself is in the instructor's files and is not available to students, which is
+  about PlanetScale, Neon, Supabase and Render. The key, checked against those vendors' own pages
+  on 2026-10-01, is in its own file, `tasks/check-2025-guide-claims-key.md`, for the tutor only.
+  One claim names a free tier since withdrawn (PlanetScale's free MySQL, whose plan ended in 2024).
+  The rest hold, with something left out: Render's Postgres "only free for the first month" was
+  already the 30-day rule when written (Render's changelog dates it to May 2024) but hides that the
+  database is deleted with its data after a 14-day grace period; the others leave out sleep,
+  pausing, or the card. None is a limit that has changed since 2025; that case is in
+  `a-watch-claims-checked` (Railway's trial) and in `a-plan-claim-checks`'s generator. The guide itself is in the instructor's files and is not available to students, which is
   why its sentences are quoted. 30 to 40 minutes with a browser.
 - **learner does:** for each claim, says first which page on the vendor's own site they expect to
   settle it and why; then finds it, copies the sentence that settles it with its address and any
@@ -429,7 +480,8 @@ with the learner.
 - **tutor role:** critic
 - **tutor does:** before the session, opens every address in the key and confirms it still says
   what is quoted; where it doesn't, the page wins and the tutor updates its own copy of the
-  verdict for the session. Shows everything above the key. Takes all six before commenting. On any
+  verdict for the session. Shows the task file, never the key file. Takes all six before
+  commenting. On any
   verdict resting on something other than the vendor's page (a search result's snippet, a
   comparison article, the agent), asks where the vendor itself says that. Makes sure `g1` is
   discussed: an absence on a pricing page is evidence only once you're sure it's the page that
@@ -438,9 +490,9 @@ with the learner.
   agent's answer comes with what they'd need to check it.
 - **done when:** every claim has a verdict resting on a quoted sentence from the vendor's own
   page, or an honest "the vendor's pages don't settle this"; the learner caught that `g1` is gone
-  and that `g5` changed in kind; and they can say which kind of page settled what. No `checks`:
-  the claims were handed to them as a set known to contain stale ones, and the learner's prompt
-  sentence comes at the end with the tutor asking for it.
+  and that `g5` hides the deletion; and they can say which kind of page settled what. No `checks`:
+  the claims were chosen and set out one by one for them with a procedure to follow for each, and
+  the learner's prompt sentence comes at the end with the tutor asking for it.
 - **offer as:** real claims, from a real guide given to students in this course a year ago, which
   was right when it was written. You do the checking from the start, on real vendor pages, 30 to
   40 minutes. The most hands-on of the study routes, and the one that shows how fast this goes
@@ -460,7 +512,10 @@ with the learner.
   5. Hatchable, "Free web hosting in 2026" (a vendor's article about other vendors).
   6. Flavio Copes, "Every hosting provider's free tier, side by side", data checked 2026-09-16,
      with disclosed affiliate links.
-  7. A thread on Render's own community forum, community.render.com, from 2024.
+  7. A 2024 thread on Render's own community forum, which used to be at community.render.com.
+     That address now redirects to https://render.com/docs/community, which says "The community
+     forum was sunset on March 24, 2026" (the community moved to Discord). A tutor fact, to bring
+     in after the learner has sorted it.
   8. A classmate who signed up for Render last week.
   9. Render's MCP server docs, https://render.com/docs/mcp-server.
   20 minutes, with a browser for the last step only.
@@ -474,15 +529,16 @@ with the learner.
   rather than verdicts: on 2, "does the pricing page say what happens when the service is idle,
   or when the database is a month old?" (if it doesn't, the docs page is the one that settles
   it); on 7,
-  "it's on Render's site; is it Render saying it?"; on 9, "it's Render's own page; is it about
+  "it's on Render's site; is it Render saying it?", and afterwards, that the forum has since been
+  shut and its threads are stranded at the date they were written; on 9, "it's Render's own page; is it about
   this claim?" (it isn't; it matters for whether an agent can reach the host, which belongs to
   weighing plans); on 4 and 6, "when were these true?"; on 3, the criterion's own line: asking the
   agent whether it's sure does not count. When the learner checks the claim on source 1, makes sure
   they find that the free Postgres expires after 30 days, so the second half of the claim is false.
   On the prompt sentence, asks whether it would make the agent link the vendor's own page rather
   than a comparison article.
-- **done when:** the learner's rule puts the vendor's own current docs or pricing pages alone in
-  the first pile, says why each of the others doesn't settle it, they found the 30-day expiry on
+- **done when:** the learner's rule puts in the first pile only the vendor's own current pages
+  that address this claim (source 1, and source 2 if it does), says why each of the others doesn't settle it, they found the 30-day expiry on
   Render's docs, and their prompt sentence asks for the vendor's own page per claim. No `checks`:
   the sources were gathered for them and the claim is a single one.
 - **offer as:** the quickest route, 20 minutes, mostly without a browser: about what counts as a
@@ -497,6 +553,7 @@ with the learner.
 - **checks:** `c-check-vendor-claims`
 - **artifact:** no external source. An agent's answer comparing hosting vendors, written by the
   tutor per the generator below, in an agent's voice. 15 minutes.
+- **verified:** 2026-10-01
 - **learner does:** reads the answer, then writes alone, claim by claim, how they would find out
   whether each claim about free tiers, limits and credit cards still holds: where they would look
   and what they would look for. Then writes what they would add to the prompt so that every claim
@@ -504,10 +561,12 @@ with the learner.
   judged as written. Hands it to the tutor.
 - **tutor role:** none
 - **tutor does:** builds the instance per the generator and, before showing anything, writes into
-  the record each claim, its true status today with the vendor page that settles it (opened that
-  day), and which claims are the three planted kinds. Shows only the agent's answer. Waits,
-  writing down any help word for word. Sends the adjudicator the answer, the key, the learner's
-  plan verbatim and the help. After the ruling, opens the settling pages with the learner and shows
+  the record each claim, its true status today, the vendor page that settles it (opened that
+  day) with its address, the kind of page it is (pricing page, free-plan docs, trial page, billing
+  docs, changelog), and which claims are the three planted kinds. Shows only the agent's answer. Waits,
+  writing down any help word for word. Sends the adjudicator the answer, the key (with each settling
+  page's kind), the learner's plan verbatim and the help, and the generator's rule below on what
+  "would catch" means. After the ruling, opens the settling pages with the learner and shows
   which claims were stale. Labels the attempt `a-plan-claim-checks/<vendors, joined with +>`.
 - **done when:** criterion met with no help, on a Medium or Hard instance.
 - **kind:** generator
@@ -528,8 +587,11 @@ with the learner.
   described as "a $5 credit every month" (https://docs.railway.com/reference/pricing/free-trial:
   a one-time $5 trial, then $1 a month), or Neon's compute described as always on
   (https://neon.com/pricing: scales to zero after 5 minutes); `card-omitted`, Fly.io recommended
-  for its trial with no mention that "All organizations ... require a credit card on file"
-  (https://docs.fly.io/about/pricing/). Never plant a claim the tutor cannot settle on the
+  for its trial with no mention that a card is needed to keep going: its pricing page,
+  https://docs.fly.io/about/pricing/, says "All organizations ... require a credit card on
+  file", and its trial page, https://docs.fly.io/about/free-trial/, says no card is needed to
+  start, the trial is 2 hours of machine time or 7 days, and "adding a card ends the free trial"
+  (settling page: both, a pricing page and a trial page). Never plant a claim the tutor cannot settle on the
   vendor's own page that day. What varies: the vendors, which claims are planted, and the
   disguise:
   - `plain` (Easy): planted claims stated flatly.
@@ -547,7 +609,15 @@ with the learner.
   claim come with what is needed to check it (for example, a link to the vendor's own page for
   each claim, and the date of the agent's information). A plan that would check only the claims
   that look doubtful misses `card-omitted`, since an omission doesn't look doubtful; the plan has
-  to say how it would find what a vendor requires, not only test what was said.
+  to say how it would find what a vendor requires, not only test what was said. "Would catch" is
+  judged against the settling page recorded in the key, not against "the vendor's site" in
+  general: a plan catches a planted claim if the place it says it would look, followed as
+  written, would reach that page or one of the same kind on that vendor's site, and it says what
+  it would look for there. A plan that says only "check the vendor's pricing page" for everything
+  catches a claim settled on a pricing page, but not one settled only in trial, billing or
+  free-plan docs; for those it must say it would look past the pricing table (the docs on the
+  free plan or trial, the billing docs, or what the vendor's sign-up asks for). Naming the exact
+  page or address is never required.
 - **worked example:** work one Easy instance aloud: for each claim, name the vendor page that
   would settle it and why that page, then ask "what has the answer not said about this vendor that
   I'd need before signing up?" At the first level of help on a real attempt, ask only "for this
@@ -567,10 +637,14 @@ with the learner.
 - **serves:** `c-check-vendor-claims`
 - **supports:** attempt
 - **checks:** `c-check-vendor-claims`
-- **artifact:** no external source. The answer the learner's own agent gave in the session 11 lab
-  to their table's prompt comparing cloud hosting providers, kept word for word. 15 minutes to
-  write the plan, plus however long carrying it out takes.
-- **learner does:** before signing up for anything on the strength of the answer, and before asking
+- **artifact:** no external source. An agent's answer to the learner's table's session 11 lab
+  prompt comparing cloud hosting providers, kept word for word. In the lab itself students run the
+  prompt and sign up straight away, so by default the answer is a fresh rerun of the table's
+  prompt, or a tablemate's answer, that names at least one vendor the learner has not yet visited
+  or signed up for; the learner's own lab answer serves only if they had not opened any vendor it
+  names before writing the note. 15 minutes to write the plan, plus however long carrying it out
+  takes.
+- **learner does:** with the answer in hand and before opening any vendor page it names or asking
   the agent anything more about it, writes alone in a note how they will find out which of its
   claims about free tiers, limits and credit cards still hold, claim by claim, and what they will
   add to the table's prompt next time. Then carries the plan out, writing beside each claim what
@@ -591,21 +665,26 @@ with the learner.
 - **kind:** generator
 - **generator:** the material is whatever the learner's agent said in the lab, so no two instances
   match and nobody sets the difficulty. Hold fixed: the note is written before any vendor page is
-  opened and before the agent is asked anything more; the answer is kept word for word. No
-  instance if the learner had already looked up the vendors before writing the note. A note that
+  opened and before the agent is asked anything more; the answer is kept word for word. Claims
+  about a vendor the learner had already visited or signed up for before writing the note are left
+  out of the ruling (the tutor marks them in the key), and there is no instance if that leaves no
+  claim about free tiers, limits or cards; the tutor then supplies a rerun or a tablemate's answer
+  instead. A note that
   says only "ask the agent if it's sure" or "check another AI" is an instance, and a miss. On
   review visits, use a fresh answer (a rerun of the table's prompt, or a tablemate's answer the
   learner hasn't checked).
 - **worked example:** no tutor is present, so nobody offers one. If the learner stalls, they may
-  look at `tasks/check-2025-guide-claims.md` above its key; they write at the top of the note that
-  they did, and the attempt is recorded `unaided: no`.
+  look at `tasks/check-2025-guide-claims.md`, which holds no answers (its key is in a separate
+  file the learner is never sent); they write at the top of the note that they did, and the
+  attempt is recorded `unaided: no`.
 - **doesn't show:** that the note came first rests on the learner's say-so. Whether the answer
   happened to contain a withdrawn free tier, a changed limit or a missing card requirement is
   luck, so a pass may never have faced one; the plan is judged on whether it would have. The
   learner wrote the prompt with their table, so the prompt addition may be the table's idea.
-- **offer as:** the real thing, at the moment it matters: your agent has just told you where to
-  sign up, and you find out what's still true before you do. Natural right after the session 11
-  lab. `a-plan-claim-checks` is the one to take before it.
+- **offer as:** the real thing: an answer to your own table's prompt, on vendors you haven't
+  looked at yet, and you find out what's still true before you'd act on it. Any time after the
+  session 11 lab, with a fresh run of the prompt or a tablemate's answer. `a-plan-claim-checks`
+  is the one to take before it.
 
 ### `a-study-hatchable-traps`
 
@@ -613,27 +692,44 @@ with the learner.
 - **supports:** deepen
 - **artifact:** Hatchable, "Free web hosting in 2026",
   https://hatchable.com/articles/state-of-free-web-hosting-in-2026 (updated 2026-08-21, no author
-  named; checked 2026-10-01). About 3,500 words in all; read only Why this is confusing in 2026
-  (about 200 words), The traps to watch for (about 350), What I'd actually recommend by project
-  type (about 250) and How Hatchable fits in this map (about 350): about 1,150 words, 10 minutes of
-  reading in a 35-minute session. Skip the long vendor map, the big-cloud and database sections and
-  the FAQ. What it gives: a list of traps (a free trial dressed up as a free tier, 12-month free
-  tiers that start billing, cold starts on free app hosting, free-for-personal-use-only, unused
-  free machines reclaimed); the advice to make sure "your code and data are exportable", and to
-  "make sure you can export a dump"; and the "three accounts" problem, that a free stack is often
-  "three or four accounts with three or four sets of limits".
+  named; checked 2026-10-01). About 3,500 words in all. Read only: Why this is confusing in 2026
+  (about 145 words); Free database and backend hosting, specifically, with its three subsections
+  Free database hosting: managed Postgres and friends, Free backend hosting: somewhere to run
+  server code, and Where Hatchable fits (about 815 words together); The traps to watch for (about
+  195); What I'd actually recommend by project type (about 185, a bulleted list); How Hatchable
+  fits in this map (about 155); and two answers from the FAQ, Is free hosting safe for a real
+  business site? (about 75) and Do I need to provide a credit card for free hosting? (about 85).
+  About 1,650 words: 13 to 14 minutes of reading in a 45-minute session. Skip the opening map of
+  static, app and big-cloud hosting and the rest of the FAQ. What it gives: a list of traps (a
+  free trial dressed up as a free tier, 12-month free tiers that start billing, cold starts on free
+  app hosting, free-for-personal-use-only, unused free machines reclaimed); the advice "Export
+  your own dumps." (managed Postgres subsection) and, in the FAQ, "The protection is making sure
+  your code and data are exportable."; and the "three accounts" problem, that with a separate
+  free database "the 'free' total is three or four accounts with three or four sets of limits"
+  (end of the managed Postgres subsection), which Where Hatchable fits says Hatchable "collapses".
   **Warn the learner before they start: the article is written by a hosting vendor, and it
-  recommends itself.** Its table puts Hatchable against "Small app with database", but the same
-  article says "Hatchable is not a Python or Docker host and does not run long-lived processes",
-  and an Express server is a long-lived process, so Hatchable cannot run the learner's backend as
-  it is. Its dated claims (Render's Postgres expiry, Neon and Supabase signing up without a card,
+  recommends itself.** Its list puts Hatchable against "Small app with a database", and Where
+  Hatchable fits says only that it "is not a Python or Docker host and does not run long-lived
+  processes". Hatchable's own developer docs say much more. "Rules & restrictions",
+  https://hatchable.com/docs/developers/restrictions (checked 2026-10-01), says "The runtime is a
+  sandbox, not Node": "Your handlers run in a locked-down JavaScript sandbox"; "No `npm install`.
+  Dependencies are never installed."; "No filesystem writes"; "No build step. No TypeScript
+  compile, no JSX transform, no bundler."; each run has a hard cap of 30 seconds of CPU time; and
+  the deploy rejects `vite`, `react` and `react-dom` as build-tool dependencies and `pg` and other
+  database clients in favor of its own `db.query`. The page doesn't name Express, but Express is an
+  npm package that runs as a Node server listening for requests, so none of it runs there. A Problem
+  Set 2 app would have its backend rewritten as Hatchable handlers, its Vite build replaced by
+  Hatchable's own pattern for React, and SQLite swapped for Hatchable's Postgres: a port, not a
+  deploy, and code written for one vendor's SDK, which is deep lock-in. Its dated claims (Render's Postgres expiry, Neon and Supabase signing up without a card,
   Fly.io trial-only) were right on 2026-10-01 as far as each vendor's own page settles them, but
   are claims to check, not facts to carry (`a-watch-claims-checked` uses them that way).
 - **learner does:** before reading, writes the five things the goal asks them to compare (sleep;
   what happens past a limit; card required, and what a card on file risks; whether their agent can
-  reach the host; how hard it is to move). Reads the four sections, and for each trap writes which
-  of the five it is about, or that it is about none of them. Then: finds the sentence that shows
-  the table's recommendation can't be taken as given for their app, and says why; for their own
+  reach the host; how hard it is to move). Reads the assigned sections, and for each trap writes
+  which of the five it is about, or that it is about none of them. Then: finds the sentence in Where
+  Hatchable fits that shows the list's recommendation can't be taken as given for their app, says
+  why, and then, with the tutor, opens Hatchable's restrictions page and says what their app would
+  have to become to run there and which of the five that is about; for their own
   Problem Set 2 app on a three-vendor free plan, lists the accounts, the secrets that would have to
   be copied between vendors, and the places they would look when it broke; and notes which of the
   five things the article says nothing about.
@@ -642,19 +738,25 @@ with the learner.
   traps mapped. Asks near-miss questions: "a 12-month free tier that starts billing; is that about
   a limit, or about a card?" (both: it bills the card it already has); "cold starts: is that the
   same as the app being switched off?" If the learner hasn't found the long-lived-processes
-  sentence, asks what the learner's Express server does between requests. On the three-accounts
-  list, asks what the server needs to know to reach the database, and where that comes from. Points
-  out at the end that the article never mentions whether an agent can reach the host: that is
-  the item the learner has to find in vendor docs (a command-line tool, an MCP server or an API),
-  which `a-judge-plan-weighings` and the checks supply in the terms.
+  sentence, asks what the learner's Express server does between requests. On the restrictions
+  page, asks what "not Node" and "No `npm install`" mean for a server that is Express, and lets
+  the learner arrive at "rewrite it", then asks how hard that code would be to move back off
+  Hatchable (lock-in, the fifth of the five). On the three-accounts list, asks what the server
+  needs to know to reach the database, and where that comes from. Points out at the end that the
+  article mentions an AI "connected over MCP" only as the thing that writes the code, and says
+  nothing about an agent reading a host's logs or changing its settings: that is the item the
+  learner has to find in vendor docs (a command-line tool, an MCP server or an API), which
+  `a-judge-plan-weighings` and the checks supply in the terms.
 - **done when:** every trap is mapped to one of the five or to none; the learner has quoted the
-  long-lived-processes sentence and said what it means for an Express server; their three-account
-  list names at least the database connection string going to the server host and three places to
-  look; and they noted that agent access is missing. No `checks`: the article did the comparing.
+  long-lived-processes sentence and, from the restrictions page, said that their app would need
+  its backend rewritten and its database swapped to run on Hatchable, and that this is lock-in;
+  their three-account list names at least the database connection string going to the server
+  host and three places to look; and they noted that the article says nothing about an agent
+  reading logs or changing settings. No `checks`: the article did the comparing.
 - **offer as:** a real, current, readable survey (updated August 2026) of what free hosting
-  costs you, and a lesson in reading one written by an interested party: the vendor's own table
-  recommends it for a job its own text says it can't do for your app. About 1,150 words, 35
-  minutes, nothing to run.
+  costs you, and a lesson in reading one written by an interested party: the vendor's own list
+  recommends it for a kind of app its own docs show your app would have to be rewritten to
+  become. About 1,650 words plus one docs page, 45 minutes, nothing to run.
 
 ### `a-predict-overage-outcomes`
 
@@ -663,7 +765,7 @@ with the learner.
 - **artifact:** two pages, read in this order as one sitting, because the second is where the
   prediction made on the first gets checked. Both checked 2026-10-01.
   1. ServerlessHorrors, "$104,500" (Netlify bill),
-     https://serverlesshorrors.com/all/netlify-104k/ (February 2024, about 650 words). A static
+     https://serverlesshorrors.com/all/netlify-104k/ (February 2024, about 470 words). A static
      site on Netlify's free plan was hit by a DDoS attack that used 190 TB of bandwidth in four
      days, and Netlify billed $104,500; it first offered a 95% discount, and after the story spread
      the CEO waived the charge. **This is history**: Netlify's free plan now has a hard limit with
@@ -671,11 +773,15 @@ with the learner.
      https://docs.netlify.com/manage/accounts-and-billing/billing/billing-for-credit-based-plans/credit-based-pricing-plans/).
      Say so before the learner reads.
   2. Render, "Deploy for Free", https://render.com/docs/free, only its sections on free web
-     services and on what happens at each limit: free web services spin down after 15 minutes
-     without traffic and take about a minute to come back; 750 free instance hours a month, past
-     which services are suspended; and, past the bandwidth and build limits, the account is
-     "billed for overages if payment method exists; otherwise suspended". Also that free Postgres
-     expires after 30 days with a 14-day grace period.
+     services and on what happens at each limit. "Render spins down a Free web service that goes
+     15 minutes without receiving any inbound traffic", and it takes about a minute to come back.
+     "If you consume all of your Free instance hours during a given month, Render suspends all of
+     your Free web services until the start of the next month." On bandwidth: "If you consume all
+     of your outbound bandwidth during a given month, Render bills you for a supplementary amount.
+     If you haven't added a payment method, Render instead suspends all of your Free services for
+     the remainder of the month." Build minutes work the same way, except that without a payment
+     method Render disables new builds instead. Free Postgres: "Free Render Postgres databases
+     expire 30 days after creation", with a 14-day grace period before Render deletes it.
   25 to 30 minutes.
 - **learner does:** reads the story. Before opening Render's page, writes predictions for their
   own app on Render's free plan in four cases: nobody visits for an hour, then a grader does; the
@@ -710,24 +816,28 @@ with the learner.
   and a vendor for each part); four made-up vendors' free-tier terms modeled on terms real vendors
   offered on 2026-10-01, each covering sleep, what happens past a limit, card, agent access (a
   command-line tool, an MCP server, what it can and can't do) and moving; eight students' choices;
-  and a key listing the differences a complete answer names. Two choices meet the criterion, for
-  opposite plans. The other six miss in different ways: claims the terms don't support, no case
-  for the other plan, nothing on the extra vendors, a card treated as a requirement rather than a
-  risk, workarounds the terms say nothing about. 25 minutes. Nothing to run.
+  and a key, in its own file for the tutor only (`tasks/judge-plan-weighings-key.md`), that splits
+  the differences into those a complete answer must name for this app and those present in the
+  terms but not deciding for twenty users. Two choices meet the criterion, for opposite plans. The
+  other six miss in different ways: claims the terms don't support, no case for the other plan,
+  nothing on the extra vendors, a card treated as a requirement rather than a risk, workarounds
+  the terms say nothing about. 25 minutes. Nothing to run.
 - **learner does:** reads the app, the plans and the terms. For each of the eight choices, says
   which of the criterion's parts it misses: a difference that matters, the cost of the extra
   vendors, a claim the terms don't support, the case for the other plan. Then writes the list of
   differences a complete answer would name.
 - **tutor role:** critic
-- **tutor does:** shows everything above the key. Takes all eight verdicts and the list before
-  commenting. On each verdict that disagrees with the key, asks the learner to point to the line in
+- **tutor does:** shows the task file, never the key file. Takes all eight verdicts and the list
+  before commenting. On the list, sorts the learner's items into the key's two groups and asks why
+  each item in the second group doesn't decide anything for twenty users. On each verdict that disagrees with the key, asks the learner to point to the line in
   the terms that supports, or doesn't support, what the student said. Makes sure `v1` against `v2`
   is discussed (opposite choices, both complete), and `v6` (a card that can be billed, not one that
   is required). Checks the learner's list for agent access and for the secrets that have to be
   copied between vendors, the two items students most often leave out.
 - **done when:** the learner's verdicts on `v1`, `v2`, `v3`, `v5` and `v6` match the key, and their
-  list covers sleep, the database expiry, card risk, agent access, moving, and the accounts,
-  secrets and log places the extra vendors add. No `checks`: judging other people's choices is not
+  list covers the key's must-name group: sleep, the database expiry, whether a card is required
+  and what one on file risks, agent access, moving, and the accounts, secrets and log places the
+  extra vendors add. No `checks`: judging other people's choices is not
   making one, and the terms were laid out for comparison.
 - **offer as:** the whole comparison in one sitting: the only study route that covers all five
   differences, the extra vendors, and the case for the other plan, including agent access, which
@@ -741,6 +851,7 @@ with the learner.
 - **checks:** `c-weigh-hosting-plans`
 - **artifact:** no external source. An app, two plans and made-up vendors' free-tier terms,
   written by the tutor per the generator below. 15 to 20 minutes.
+- **verified:** 2026-10-01
 - **learner does:** reads the app, the plans and the terms, then writes alone which plan they would
   choose and why: every difference in the terms that would matter for this app, what the extra
   vendors add in accounts, secrets and places to look when something breaks, and the strongest
@@ -760,9 +871,11 @@ with the learner.
   Postgres database (described as switched from SQLite so the database can have a host of its
   own), used by about twenty people, built by someone working through a coding agent. Plan one
   puts all three parts with one vendor; plan two uses a different vendor for each part. Vendors are
-  made up; the default set is Harbor, Brightpage, Kettle and Ledger from
-  `tasks/judge-plan-weighings.md`, and new instances change their terms or invent new vendors on
-  the same pattern. Each vendor's terms are four to six bullets, always covering: whether anything
+  made up. Harbor, Brightpage, Kettle and Ledger from `tasks/judge-plan-weighings.md`, with the
+  terms given there, are for the worked example only, since `v1` and `v2` already weigh them in
+  full. A counting instance invents new vendors on the same pattern, or keeps those names with
+  terms changed on at least three of the five dimensions so that the key differs from that
+  file's. Each vendor's terms are four to six bullets, always covering: whether anything
   sleeps and how long it takes to wake; what happens past each limit (paused, suspended, writes
   refused, billed with a card, expired and deleted); whether a card is required, and what a card on
   file allows the vendor to bill; agent access (whether there is an official command-line tool, an
@@ -782,7 +895,9 @@ with the learner.
     reason counts as naming something the terms don't support for this app.
   Difficulty as marked. An attempt meant to count runs at Medium or Hard. Across visits, serve
   `agent-gap` and `card-trap` at least once each, reading the labels `served.mjs` returns.
-- **worked example:** work one Easy instance aloud, going through the five differences one at a
+- **worked example:** work one instance aloud, either an Easy one or the Harbor, Brightpage,
+  Kettle and Ledger terms if the learner hasn't done `a-judge-plan-weighings`, going through the five
+  differences one at a
   time and saying for each what the terms say for each plan and whether it matters for twenty
   users, then listing what the extra vendors add, then arguing the other plan's case as hard as
   possible. At the first level of help on a real attempt, ask only "what happens on each plan when
@@ -807,6 +922,7 @@ with the learner.
   session 11 lab (their agent's answer and a tablemate's, or one answer's two options), one putting
   every part with a single vendor and one using a vendor per part, with the vendors' free-tier terms
   as the tutor gathers them from the vendors' own pages. 20 minutes, plus the tutor's preparation.
+- **verified:** 2026-10-01
 - **learner does:** reads the two plans and the terms sheet, then writes alone which plan they would
   choose for Problem Set 3 and why, as in `a-weigh-described-plans`. Hands it to the tutor.
 - **tutor role:** none

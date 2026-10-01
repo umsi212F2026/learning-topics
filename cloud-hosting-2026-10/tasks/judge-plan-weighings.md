@@ -1,8 +1,8 @@
 # Judge eight choices between two hosting plans
 
 **Used by:** `a-judge-plan-weighings`, which serves `c-weigh-hosting-plans`. A study activity:
-nothing here can meet the goal. `a-weigh-described-plans` reuses the vendors below as its default
-set.
+nothing here can meet the goal. `a-weigh-described-plans` uses the vendors below for its worked
+example only. The key is in `judge-plan-weighings-key.md`, for the tutor.
 
 ## The app
 
@@ -84,7 +84,7 @@ Then write the list of differences you would expect a complete answer to name.
 > $7 a month, and the project runs longer than that. Ledger's never expires. Harbor's server sleeps
 > after 15 minutes and the first visitor waits a minute; Kettle's doesn't sleep, though if the $1
 > runs out it stops. Ledger's database also stops when idle but wakes in under a second, so nobody
-> will notice. I wouldn't put a card on Harbor or Kettle, because then a spike gets billed instead of
+> will notice. None of the four needs a card, and I wouldn't put one on Harbor or Kettle, because then a spike gets billed instead of
 > paused; Brightpage and Ledger can't bill at all. Harbor gives my agent one tool for everything;
 > with S it needs three, and Brightpage has no request logs, though there's nothing running there to
 > log. S means three accounts, three sets of tokens for my agent, Ledger's connection string has to
@@ -98,7 +98,7 @@ Then write the list of differences you would expect a complete answer to name.
 > Plan H. One account is simpler, and my agent can reach everything through one MCP server and read
 > every log in one place. The sleep is the real cost: a grader opening the app after a quiet spell
 > waits a minute. The database expires after 30 days, so I'd either finish and present within six
-> weeks or pay $7. I'd keep no card on Harbor, so going past 100 GB suspends it instead of billing
+> weeks or pay $7. Harbor doesn't need a card and I'd keep none on it, so going past 100 GB suspends it instead of billing
 > me; at twenty users that won't happen. Moving off is ordinary npm and `pg_dump`. The best case for
 > S: nothing in it expires, the server never sleeps, and Brightpage and Ledger can never bill me.
 > But it is three accounts, three sets of credentials for my agent, two connection settings to wire
@@ -148,44 +148,3 @@ Then write the list of differences you would expect a complete answer to name.
 > expires in 30 days, so I'll make a new free one each month. One account, one tool for my agent,
 > one place for logs. S is three accounts, three sets of secrets and three dashboards. The best case
 > for S is that nothing in it expires or sleeps, and two of its vendors can never bill.
-
----
-
-## Key, for the tutor
-
-Show the learner everything above this section, not this section. Take all eight verdicts and the
-learner's list before commenting on any.
-
-The differences a complete answer names, for these terms and this app:
-
-- **Sleep:** Harbor's server sleeps after 15 minutes idle and the next visitor waits about a minute;
-  Kettle's never sleeps; Ledger's database stops when idle but wakes in under a second; static
-  sites never sleep on either plan.
-- **Past a limit:** Harbor's free database expires after 30 days and is deleted after 14 more unless
-  paid for, which for a project running more than six weeks is the largest difference in the
-  terms; Harbor's hours limit suspends services; Kettle stops when its credit runs out (or bills,
-  with a card); Brightpage pauses at 100 GB; Ledger refuses writes past 0.5 GB and deletes nothing.
-- **Card:** none of the four requires one. Having one on file turns a pause into a bill on Harbor
-  (bandwidth) and on Kettle (credit); Brightpage and Ledger can't bill on their free plans.
-- **Agent access:** Harbor gives one tool reaching all three parts; Plan S needs three, so three
-  sets of credentials; Brightpage has no request logs (it runs no code, so there is little to log);
-  Ledger's tool can change or delete data.
-- **Moving:** easy from both: ordinary Node, plain files, `pg_dump`. Kettle's config file is a small
-  extra. Harbor's database expiry can force a move or a payment.
-- **What the extra vendors add:** three accounts; secrets and settings to copy between them
-  (Ledger's connection string into Kettle, Kettle's address into the frontend's build) and three
-  sets of credentials for the agent; three dashboards and log places when something breaks.
-
-| choice | verdict | what decides it |
-| ------ | ------- | --------------- |
-| v1 | complete | Names every difference, the cost of the extra vendors, nothing unsupported, and a real case for H. |
-| v2 | complete | Chooses the other plan with equal care. Its case for S is strong and specific. Put v1 and v2 side by side: opposite choices, both meeting the criterion, which is why the choice itself is not part of it. |
-| v3 | fails on three counts | "Free forever" and "never charges" are not supported: the database expires, and a card would allow billing. Names almost no differences. No case for S. |
-| v4 | misses the cost of the extra vendors, and agent access | Its differences are right, but it never says what three vendors add beyond "one account" in the case for H, and says nothing about what the agent can reach. A thin case for the other plan. |
-| v5 | names things the terms don't support | Faster, more reliable and more secure appear nowhere in the terms. The rest is thin: no card, no moving, no limits past sleep and expiry, and a one-word case for H. |
-| v6 | names something the terms don't support, and misses the card risk | Kettle does not need a card; the terms say the opposite. Treats a card as a requirement rather than a risk, so never says what having one would cost on Harbor. Misses moving. |
-| v7 | no case for the other plan | Close to complete on the differences and the extra vendors, then dismisses H instead of stating its strongest case. |
-| v8 | names things the terms don't support | Keeping the server awake by pinging it and making a new database each month are plans the terms say nothing about (and the second loses the data each time). Look at whether it names the differences before the workarounds: it does name sleep, expiry, agent access and the extra vendors, but not the card, the other limits or moving. |
-
-Make sure v1 against v2, and v6, are discussed whatever the learner answered: v6 because "needs a
-card" against "a card on file lets them bill you" is the distinction this goal most often blurs.
