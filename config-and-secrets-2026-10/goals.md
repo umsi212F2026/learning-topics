@@ -1,4 +1,4 @@
-# Learning goals — config and secrets
+# Learning goals: config and secrets
 
 **What I want to be able to do, and what would count as having got there.**
 
@@ -46,9 +46,13 @@
 
 ## Where this came from
 
+_Yours to fill in. Nobody can answer this one for you._
+
 <!-- Which of A / B / C / D, and the answer to the follow-up. -->
 
 ## What I already have
+
+_Yours to fill in. Say where your knowledge stops, not what you have heard of._
 
 <!--
   The nearest thing already known well, and where it stops.
@@ -58,6 +62,10 @@
 
 ## What I'll use it for
 
+_Yours to fill in. The course supplies one occasion: Problem Set 3, which puts your Problem Set 2
+app on the public internet, first for anyone to use and then with sign-in, which brings your first
+real secrets. Name any others you have._
+
 <!--
   The use, and a concrete occasion.
   If several uses apply, rank them: the top one sets the depth, the rest are cut first
@@ -66,10 +74,17 @@
 
 ## Depth
 
-<!--
-  Which of: recognize it / read it / modify something existing / author from scratch /
-  judge someone else's work. One line on why that's enough.
--->
+**Say where each of your app's settings belongs once it is deployed, and catch a secret in the
+wrong place.** Not writing the code that reads settings, and not setting up the hosts. When your
+agent gets your app ready to deploy, it adds settings your app never needed on localhost and tells
+you which values to type into each host. This topic is enough to follow that account, to say which
+settings belong to the frontend and which to the backend, to know which ones only take effect when
+the frontend is built again, and to spot a secret your agent has put somewhere anyone can read it.
+
+What sits past that line: choosing hosts belongs to cloud-hosting, and where the database lives
+belongs to database-hosting. Deploying automatically and debugging a deployed app come in session
+12, how sign-in works in session 13, and defending the app in session 14. This topic covers only
+where sign-in's secrets are kept.
 
 ## Goals
 
@@ -169,6 +184,43 @@
   placeholder capability entry; an empty section is the honest signal.
 -->
 
+### `c-place-settings`
+
+- **goal:** say where each of an app's settings comes from once it is deployed, and what changing
+  one takes
+- **criterion:** Given an app with a React frontend on a static host, an Express backend on a
+  server host and a database on a database host, and the list of values its agent says must be
+  set, such as the port, where the database is, the API's address, the allowed origin and the
+  secrets sign-in needs, says for each where its value comes from (the frontend's build, the
+  backend's environment on the server host, or the host itself), whether it is a secret, and what
+  has to happen after it changes before the app uses the new value. It passes when every value is
+  placed where the part that uses it can read it, every secret is marked and none is placed with
+  the frontend, and every value fixed when the frontend is built is said to need a new build.
+  Writing the code that reads the values is not part of it.
+
+### `c-explain-localhost-gap`
+
+- **goal:** say why a deployed app needs settings it never had on localhost
+- **criterion:** Given an app that ran on localhost with its settings written into its code and
+  its frontend's dev server passing API requests on to the backend, and the settings its agent
+  added to deploy it without sign-in, says for each one what stood in for it on localhost. It
+  passes when they say that the port and the database's location were written into the code, and
+  that the API's address and the allowed origin were not needed because the browser reached the
+  frontend and the backend at one address, through the dev server; and when nothing they say
+  stood in for a setting is wrong.
+
+### `c-catch-misplaced-secret`
+
+- **goal:** catch a secret an agent has put where it doesn't belong
+- **criterion:** Given what an agent changed to add sign-in to an app (the files it touched, what
+  is in each, and the repository's .gitignore), names every secret that is somewhere it should
+  not be and says where it belongs instead, or says that none is. It passes when they catch a
+  secret written into the code, a .env file that git will commit, a real value in .env.example,
+  and a secret in a variable built into the frontend; name nothing that isn't misplaced, such as
+  the API's address in the frontend or placeholders in .env.example; and, for a secret already
+  pushed to a public repository, say that it has to be rotated and that deleting it from the
+  repository does not fix it. Asking the agent whether its secrets are safe does not meet it.
+
 ### `o-orientation`
 
 - **goal:** get the shape of this area before working on any particular part of it
@@ -178,3 +230,141 @@
 - **recurrence:** never
 - **is_required:** no
 - **group:** orientation
+
+### `w-config`
+
+- **goal:** config
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the values that differ depending on where the app runs
+- **nearest confusable:** code
+- **synonyms:** configuration, settings
+
+### `w-env-var`
+
+- **goal:** environment variable
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a named value handed to the running program from outside its code
+- **nearest confusable:** a variable in the code
+- **synonyms:** env var
+
+### `w-env-file`
+
+- **goal:** .env file
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the file on your own machine that holds your app's environment variables
+- **nearest confusable:** .env.example
+
+### `w-env-example`
+
+- **goal:** .env.example
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the committed list of the settings an app needs, without their real values
+- **nearest confusable:** .env file
+- **synonyms:** .env.sample, .env.template
+
+### `w-gitignore`
+
+- **goal:** .gitignore
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the list of files git leaves out of the repository
+- **nearest confusable:** removing a file from the repository
+
+### `w-secret`
+
+- **goal:** secret
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a value that lets whoever holds it act as your app
+- **nearest confusable:** a setting
+- **synonyms:** credential
+
+### `w-rotate`
+
+- **goal:** rotate
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** replacing a secret so the old one stops working
+- **nearest confusable:** deleting it from the repository
+- **synonyms:** key rotation, regenerate
+
+### `w-port`
+
+- **goal:** port
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the number after the colon that says which program on a machine a request is for
+- **nearest confusable:** the address
+
+### `w-connection-string`
+
+- **goal:** connection string
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** one line telling the backend where the database is and how to get in
+- **nearest confusable:** a database file path
+- **synonyms:** database URL, DATABASE_URL
+
+### `w-build-time`
+
+- **goal:** build time
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** when a value is fixed into the frontend's files
+- **nearest confusable:** runtime
+
+### `w-origin`
+
+- **goal:** origin
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** where a page was loaded from, down to the port
+- **nearest confusable:** domain
+
+### `w-cors`
+
+- **goal:** CORS
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the browser's check on which other origins a page may call
+- **nearest confusable:** a server error
+- **synonyms:** cross-origin resource sharing
+
+### `w-dev-proxy`
+
+- **goal:** proxy
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the dev server passing the page's API requests on to the backend
+- **nearest confusable:** the backend
+- **synonyms:** dev server proxy
