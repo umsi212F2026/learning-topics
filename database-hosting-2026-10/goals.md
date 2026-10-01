@@ -73,12 +73,12 @@ app, and the data in its SQLite database, on the public internet. Name any other
 
 ## Depth
 
-**Know why your app's data moves off SQLite when the app is deployed, follow your agent's plan
-for moving it, and check that it survives.** Not writing SQL or migrations, and not setting up the
-database yourself. When your agent deploys your app, it decides where the data goes, tells you
-what it changed to get it there, and says the data is safe. This topic is enough to catch what its
-plan for moving the data and changing the tables leaves out, and to find out for yourself, from
-the deployed app, whether what you put in is still there after a redeploy.
+**Get your app's database deployed, and then change its tables without losing what is
+there.** Not writing SQL or migrations, and not setting up the database yourself. When your agent
+deploys your app, and again whenever a new feature needs new tables, it hands you a plan and says
+the data is safe. This topic is enough to catch what that plan leaves out: where the data will
+live, what goes into the production database and what stays in development, and what has to
+happen, in what order, before a change to the tables reaches real users' data.
 
 What sits past that line: choosing hosts and comparing free tiers in general belong to
 cloud-hosting, and keeping the connection string and the database's password out of your code
@@ -184,32 +184,32 @@ session 14.
   placeholder capability entry; an empty section is the honest signal.
 -->
 
-### `c-review-data-plan`
+### `c-plan-first-deploy`
 
-- **goal:** catch what an agent's plan for moving or changing an app's data leaves out
-- **criterion:** Given an agent's plan for moving a deployed app from a SQLite file to a database
-  service such as Postgres, or for changing the tables of a deployed app that already holds users'
-  data, names every step the plan is missing or gets wrong, or says that none is. It passes when
-  they catch a plan that leaves the app opening a file rather than connecting to the database
-  service; one that creates the tables in the new database but does not bring across the rows
-  already saved; one that changes the tables without a migration, or with a migration that does
-  not run when the app deploys; one where development and the deployed app share a database, or
-  that tries changes out on the deployed app's real data; and one that relies on a backup nobody
-  has tried restoring. They must name nothing that isn't a problem. Writing the migration, or
-  saying what SQL it runs, is not part of it.
+- **goal:** say what has to be in place for an app's database the first time it is deployed
+- **criterion:** Given an app that ran on localhost with a SQLite file, and an agent's plan for
+  deploying it for the first time, names every step the plan is missing or gets wrong, or says
+  that none is. It passes when they catch a plan that keeps the data in a file on a disk the host
+  wipes; one that uses the development database as production, or copies its test rows across;
+  one that has the tables made by hand instead of by the code's migrations running on deploy; one
+  that puts the test fixtures into production instead of only the seed data the app needs to
+  start; and one with no check, from the deployed app after a redeploy, that what was put in is
+  still there. They must name nothing that isn't a problem. Setting the connection string, and
+  keeping the database's password out of the repository, are not part of it.
 - **origin:** course
 
-### `c-check-deployed-data`
+### `c-plan-migration`
 
-- **goal:** find out whether a deployed app really keeps its data
-- **criterion:** Given an app its agent has just deployed and says keeps its data, says what they
-  would do to find out whether it really does. It passes when what they describe goes through the
-  deployed app's own address, not through the agent or the database host's dashboard; uses data
-  made up for the test, and changes nothing a real user put there; and would catch an app that
-  loses its data when the server restarts, one that loses it when the app is redeployed, and one
-  whose tables were changed on the laptop but never in the deployed database. They may ask the
-  agent to restart or redeploy the app. Asking the agent whether the data is kept does not meet
-  it.
+- **goal:** say what has to happen to change the tables of a deployed app that holds data
+- **criterion:** Given a change to the tables of a deployed app that already holds users' data,
+  and an agent's plan for making it, names every step the plan is missing or has in the wrong
+  order, or says that none is. It passes when they require the migration to be tried first on a
+  development database holding a copy of production; a backup of production taken just before,
+  and a way back by restoring it; the migration run as part of the deploy, before the new code
+  answers requests; and a check afterwards, from the deployed app, that the data already there
+  survived. They must also ask whether the app has to be stopped while the migration runs;
+  answering that is not part of it. They must name nothing that isn't a problem. Writing the
+  migration is not part of it.
 - **origin:** course
 
 ### `o-orientation`
@@ -326,4 +326,28 @@ session 14.
 - **group:** vocabulary
 - **what it names:** putting a backup's data back into a working database
 - **nearest confusable:** backup
+- **origin:** course
+
+### `w-downtime`
+
+- **goal:** downtime
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a stretch when the app is deliberately stopped, so nobody can use it
+- **nearest confusable:** sleep
+- **synonyms:** maintenance window
+- **origin:** course
+
+### `w-rollback`
+
+- **goal:** rollback
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** going back to the version that worked after a change goes wrong
+- **nearest confusable:** restore
+- **synonyms:** revert, roll back
 - **origin:** course
