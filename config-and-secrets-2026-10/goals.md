@@ -74,17 +74,17 @@ real secrets. Name any others you have._
 
 ## Depth
 
-**Know what each setting your agent asks for is for, and catch a secret in the wrong place.** Not
-writing the code that reads settings, not deciding where each one goes, and not setting up the
-hosts. When your agent gets your app ready to deploy, it adds settings your app never needed on
-localhost and asks you for values only you have, such as the addresses your hosts gave you. This
-topic is enough to know what each of those settings is for, to give each one the right value, and
-to spot a secret your agent has put somewhere anyone can read it.
+**Know what each setting your agent asks for is for, and give it the right value.** Not writing
+the code that reads settings, not deciding where each one goes, and not setting up the hosts. When
+your agent gets your app ready to deploy, it adds settings your app never needed on localhost and
+asks you for values only you have, such as the addresses your hosts gave you. This topic is enough
+to know what each of those settings is for, which of them are secrets, and what value each one
+needs.
 
 What sits past that line: choosing hosts belongs to cloud-hosting, and where the database lives
 belongs to database-hosting. Deploying automatically and debugging a deployed app come in session
-12, how sign-in works in session 13, and defending the app in session 14. This topic covers only
-where sign-in's secrets are kept.
+12, sign-in and catching a secret your agent has put in the wrong place in session 13, and
+defending the app in session 14.
 
 ## Goals
 
@@ -205,18 +205,6 @@ where sign-in's secrets are kept.
   that the API's address and the allowed origin were not needed because the browser reached the
   frontend and the backend at one address, through the dev server; and when nothing they say
   stood in for a setting is wrong.
-
-### `c-catch-misplaced-secret`
-
-- **goal:** catch a secret an agent has put where it doesn't belong
-- **criterion:** Given what an agent changed to add sign-in to an app (the files it touched, what
-  is in each, and the repository's .gitignore), names every secret that is somewhere it should
-  not be and says where it belongs instead, or says that none is. It passes when they catch a
-  secret written into the code, a .env file that git will commit, a real value in .env.example,
-  and a secret in a variable built into the frontend; name nothing that isn't misplaced, such as
-  the API's address in the frontend or placeholders in .env.example; and, for a secret already
-  pushed to a public repository, say that it has to be rotated and that deleting it from the
-  repository does not fix it. Asking the agent whether its secrets are safe does not meet it.
 
 ### `o-orientation`
 
