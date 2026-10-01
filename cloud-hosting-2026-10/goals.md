@@ -207,7 +207,7 @@ of their own. Sign-in belongs to Part B of Problem Set 3, not to this topic.
 - **goal:** find out whether what an agent says about a hosting vendor is true today
 - **criterion:** Given an agent's answer comparing hosting vendors, says how they would find out
   which of its claims about free tiers, limits and credit cards still hold. It passes when what
-  they describe checks each claim against the vendor's own current pricing page, not against the
+  they describe checks each claim against the vendor's own current pages, not against the
   agent, a blog post or a forum; would catch a free tier the vendor has since withdrawn, a limit
   that has changed, and a credit card requirement the answer left out; and says what they would
   add to the prompt so that every claim in the next answer comes with what they need to check it.
