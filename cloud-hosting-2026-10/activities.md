@@ -80,8 +80,16 @@ with the learner.
   - Neon: Odin lists "10 projects" and "24/7 for your main compute". Neon's pricing page
     (https://neon.com/pricing) now lists 100 projects, 100 compute-hours per project, and compute
     that scales to zero after 5 minutes idle, which "cannot be turned off".
-  - Aiven: not checked; say so if the learner asks.
-- **verified:** 2026-10-01, except Aiven: NOT VERIFIED, its free tier was not checked against its own pages
+  - Aiven: Odin says "5 GiB of storage"; Aiven's page
+    (https://aiven.io/free-postgresql-database) says "1 GB storage, 1 GB RAM, 1 CPU per VM". Odin
+    says "24/7 for all database services"; Aiven says the free service "powers off after a period
+    of inactivity (you'll be notified by email and in-platform beforehand)", and its docs
+    (https://aiven.io/docs/platform/concepts/free-plan, updated 2026-09-08) say it may "Power off
+    free services with no initial usage within the first few hours" and "Power off free services
+    with no continuative activity"; "You can power them back on at any time." Odin's "No credit
+    card required" still holds: "You don't need a credit card to create a free service and you can
+    use them indefinitely free of charge." Odin names Redis; Aiven's free list now says Valkey.
+- **verified:** 2026-10-01
 - **learner does:** reads MDN first, with their Problem Set 2 app's folder open beside the page,
   then Odin. Stops at six points and answers before reading on; "I don't know yet" is an honest
   answer:
@@ -538,7 +546,7 @@ with the learner.
   On the prompt sentence, asks whether it would make the agent link the vendor's own page rather
   than a comparison article.
 - **done when:** the learner's rule puts in the first pile only the vendor's own current pages
-  that address this claim (source 1, and source 2 if it does), says why each of the others doesn't settle it, they found the 30-day expiry on
+  that address this claim (source 1 alone; Render's pricing page has no spin-down or Postgres-expiry wording), says why each of the others doesn't settle it, they found the 30-day expiry on
   Render's docs, and their prompt sentence asks for the vendor's own page per claim. No `checks`:
   the sources were gathered for them and the claim is a single one.
 - **offer as:** the quickest route, 20 minutes, mostly without a browser: about what counts as a
@@ -692,7 +700,7 @@ with the learner.
 - **supports:** deepen
 - **artifact:** Hatchable, "Free web hosting in 2026",
   https://hatchable.com/articles/state-of-free-web-hosting-in-2026 (updated 2026-08-21, no author
-  named; checked 2026-10-01). About 3,500 words in all. Read only: Why this is confusing in 2026
+  named; checked 2026-10-01). About 2,800 words in all (the page says "13 min read"). Read only: Why this is confusing in 2026
   (about 145 words); Free database and backend hosting, specifically, with its three subsections
   Free database hosting: managed Postgres and friends, Free backend hosting: somewhere to run
   server code, and Where Hatchable fits (about 815 words together); The traps to watch for (about
@@ -702,7 +710,8 @@ with the learner.
   About 1,650 words: 13 to 14 minutes of reading in a 45-minute session. Skip the opening map of
   static, app and big-cloud hosting and the rest of the FAQ. What it gives: a list of traps (a
   free trial dressed up as a free tier, 12-month free tiers that start billing, cold starts on free
-  app hosting, free-for-personal-use-only, unused free machines reclaimed); the advice "Export
+  app hosting, free-with-ads subdomains, free-for-personal-use-only, unused free machines
+  reclaimed: six in all); the advice "Export
   your own dumps." (managed Postgres subsection) and, in the FAQ, "The protection is making sure
   your code and data are exportable."; and the "three accounts" problem, that with a separate
   free database "the 'free' total is three or four accounts with three or four sets of limits"
