@@ -1,4 +1,4 @@
-# Activities — config and secrets
+# Activities: deploy config
 
 Candidate activities for the study phase. More than will be used; the tutor chooses among them
 with the learner.
