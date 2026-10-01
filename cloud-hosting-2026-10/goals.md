@@ -406,3 +406,15 @@ of their own. Sign-in belongs to Part B of Problem Set 3, not to this topic.
 - **nearest confusable:** static host
 - **synonyms:** content delivery network, edge network
 - **origin:** course
+
+### `w-instance`
+
+- **goal:** instance
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** one running copy of your app on a host's machine
+- **nearest confusable:** server host
+- **synonyms:** dyno
+- **origin:** course
