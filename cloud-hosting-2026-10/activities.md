@@ -46,8 +46,8 @@ Taken together, it is the topic's one shared blind spot.
   2026-10-01.
   1. **Read first:** MDN Web Docs, "What is a web server?",
      https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_web_server
-     (last modified Apr 29, 2025). Read only Summary (about 320 words) and Static vs. dynamic
-     content (about 350): about 670 words, no code. Skip Deeper dive's opening, Hosting files,
+     (last modified Apr 29, 2025). Read only Summary (about 365 words) and Static vs. dynamic
+     content (about 260): about 625 words, no code. Skip Deeper dive's opening, Hosting files,
      Communicating through HTTP and Next steps. What it gives that Odin doesn't: the static web
      server, which "sends its hosted files as-is to your browser", as against the dynamic one with
      an application server and a database.
@@ -60,14 +60,15 @@ Taken together, it is the topic's one shared blind spot.
      for the shape, not the numbers: the first line of each vendor ("Can deploy both servers and
      databases", "Can deploy databases only"). Skip Keep your secrets safe!, Debugging and
      troubleshooting deployments, the Assignment and Additional resources.
-  About 1,400 words read and a skim: 10 to 11 minutes of reading, 15 minutes with the two stops.
+  About 1,300 words read and a skim: 10 to 11 minutes of reading, 15 minutes with the two stops.
   Words in place: deploy, static, server, database, free tier (Heroku's, ended 2022), instance,
   domain, and, in the skimmed vendor lists, sleep and credit card. The rest of the fifteen have
   their own supply; glossing them as they come up is optional. Odin is written for its own Node
   course, whose apps are rendered on the server, so its picture is two boxes (a server and a
-  database) and it says Netlify and Vercel "are not the right tools for our back ends" without
+  database) and it says Netlify and Vercel "not the right tools for our back ends" without
   saying where a React frontend would go. MDN's static web server is the third box, which is why it
   comes first.
+- **verified:** 2026-10-02
 - **learner does:** reads MDN first, with their Problem Set 2 app's folder open beside the page,
   then Odin. Stops twice and answers before reading on; "I don't know yet" is an honest answer:
   1. Odin, after Server instance and database instance: **sketches their own app as three boxes,
@@ -85,7 +86,7 @@ Taken together, it is the topic's one shared blind spot.
   host that sends files, the Express server on one that keeps it running, and the SQLite file next
   to the server. **Flags Odin's lagging vendor details if the learner stops on one, without
   dropping the page:** as checked 2026-10-01, Railway's trial is a one-time $5 for up to 30 days,
-  then a Free plan of $1 a month; Render's free Postgres (Odin says both "$7" and "expires 30
+  then a Free plan with $1 of free credit a month; Render's free Postgres (Odin says both "$7" and "expires 30
   days") expires after 30 days and is deleted 14 days later; Neon's compute now scales to zero
   after 5 minutes idle; Aiven's free service is 1 GB and powers off when idle, still with no card.
   Says secrets, backups and debugging are later topics. Makes no change to the learner's app.
@@ -615,13 +616,17 @@ Taken together, it is the topic's one shared blind spot.
   candidate whose bank is near-misses (a forum on the vendor's own site, a careful dated
   comparison with affiliate links, the vendor's docs about something else). Pick
   `a-check-2025-guide-claims` to do the finding yourself.
-- **check note:** Orientation's stop 5 flags Render's free Postgres expiring after 30 days. So for
-  most learners the rule to skip `s1` will apply from the first sitting, and this route will then
-  judge only sources that don't settle the claim. That is acceptable here: the route teaches what a
-  source can and can't settle, and the learner meets settling pages in `a-watch-claims-checked` and
-  `a-check-2025-guide-claims`. Don't present a non-settling verdict on every sitting as a sign that
-  nothing could settle the claim. Say once that the vendor's free-plan docs would, and name the
-  page.
+- **check note:** Whether `s1` gets skipped depends on the route the learner took. Orientation skims
+  the vendor paragraphs and raises Render's 30-day Postgres expiry only if the learner stopped on
+  it, so a learner fresh from orientation usually still gets `s1`. A learner who has met the expiry
+  in `a-watch-claims-checked` (`c1`), `a-check-2025-guide-claims` (`g5`) or
+  `a-predict-overage-outcomes` has `s1` skipped, and this route then judges only sources that don't
+  settle the claim. That is fine, because the route teaches what a source can and can't settle. But
+  don't let a run of non-settling verdicts suggest that nothing could settle the claim: say once
+  that Render's free-plan docs, https://render.com/docs/free, would. On `s4`, orientation had the
+  learner skim only the first line of each vendor in Odin's lesson, so they probably haven't seen
+  that its Render paragraph says both "$7" and "expires 30 days". If they judge it without opening
+  it, tell them the paragraph says both, then ask "when was this true?"
 
 ### `a-plan-claim-checks`
 
