@@ -1,7 +1,8 @@
-# Judge ten hosting plans for one app
+# Judge a hosting plan for one app
 
 **Used by:** `a-judge-plan-coverage`, which serves `c-place-app-parts`. A study activity: nothing
-here can meet the goal. The key is in `judge-plan-coverage-key.md`, for the tutor.
+here can meet the goal. A bank of ten plans, `q1` to `q10`: each sitting shows the sections
+above the line and one plan below it. The key is in `judge-plan-coverage-key.md`, for the tutor.
 
 ## The app
 
@@ -33,13 +34,13 @@ that is all you know about it.
 - **Harbor:** offers three things under one account: static sites (like Brightpage), web services
   (like Kettle, with a disk), and hosted Postgres databases (like Ledger).
 
-## For each plan, answer
+## For the plan you are given, answer
 
 Which part does each vendor in the plan host? Then: is any part left without a host, or put on a
 host that cannot run it as the app is now? Or is every part covered? Name every gap and mismatch,
 and nothing that isn't one.
 
-When you have done all ten, state the rule you judged by, in one or two sentences.
+Then say, in a sentence, the rule you judged by.
 
 ---
 

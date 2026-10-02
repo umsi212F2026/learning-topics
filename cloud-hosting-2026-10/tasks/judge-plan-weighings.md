@@ -1,80 +1,44 @@
-# Judge eight choices between two hosting plans
+# Judge one choice between two hosting plans
 
 **Used by:** `a-judge-plan-weighings`, which serves `c-weigh-hosting-plans`. A study activity:
-nothing here can meet the goal. `a-weigh-described-plans` uses the vendors below for its worked
-example only. The key is in `judge-plan-weighings-key.md`, for the tutor.
+nothing here can meet the goal. A bank of eight students' choices, `v1` to `v8`: each sitting
+shows the header above the line and one choice below it. `a-weigh-described-plans` uses these
+vendors for its worked example only. The key is in `judge-plan-weighings-key.md`, for the tutor.
 
-## The app
+**The app.** Crumbs, a recipe-sharing class project: a React frontend built with Vite, an Express
+server, and a Postgres database (its agent switched it from SQLite). About twenty users, mostly in
+the week it is graded. Its owner works through a coding agent.
 
-Crumbs is a recipe-sharing app for a class project: a React frontend built with Vite, an Express
-server, and a Postgres database (its agent switched it from SQLite so the database could have its
-own host). About twenty people will use it, mostly classmates, mostly in the week it is graded. Its
-owner works through a coding agent.
+**Plan H, one vendor:** Harbor hosts the frontend, the server and the database.
+**Plan S, a vendor per part:** Brightpage the frontend, Kettle the server, Ledger the database.
 
-## Two plans
+**Free-tier terms** (made-up vendors, modeled on real terms of 2026-10-01). No vendor needs a card
+to sign up.
 
-- **Plan H, one vendor.** Harbor hosts the frontend as a static site, the server as a web service,
-  and the database.
-- **Plan S, a vendor for each part.** Brightpage hosts the frontend, Kettle runs the server, Ledger
-  hosts the database.
+- **Harbor.** Static sites never sleep. The web service sleeps after 15 minutes without a request,
+  and the next request waits about a minute; 750 free hours a month, then suspended. Postgres, 1
+  GB: expires 30 days after creation, deleted after 14 more days unless upgraded ($7 a month).
+  With a card on file, bandwidth past 100 GB a month is billed ($0.15 per GB); without one,
+  services are suspended. One official CLI and MCP server for all three parts: deploy, read logs,
+  set environment variables; can't delete services or change plans. Builds with ordinary `npm`;
+  database exports with `pg_dump`.
+- **Brightpage.** Never sleeps. 100 GB a month, a hard cap: past it, paused until next month. The
+  free plan takes no card, so it can't bill. A CLI that deploys and sets build settings; deploy
+  logs only, since it runs no code. Any static host can take the files.
+- **Kettle.** $1 of credit a month, enough to keep a small server running all month; never
+  sleeps. If the credit runs out the server stops until next month, or, with a card on file, keeps
+  running and bills. Official CLI and MCP server: deploy, read logs, set environment variables.
+  Reads a small `kettle.toml`; the server is ordinary Node.
+- **Ledger.** 0.5 GB, never expires. Stops after 5 minutes without queries, wakes in under a
+  second. Past 0.5 GB, writes are refused; nothing deleted. Can't be billed. Official MCP server
+  and CLI that can run SQL, including SQL that changes or deletes data; its docs advise using it
+  only on development databases. Standard Postgres, `pg_dump`.
 
-## The vendors' free-tier terms
-
-These vendors are made up, so these terms don't go out of date; each is modeled on terms real
-vendors offered on 2026-10-01.
-
-**Harbor**
-
-- Static sites: free, never sleep.
-- Web services: free; a service that gets no request for 15 minutes is put to sleep, and the next
-  request waits about a minute while it wakes. 750 free hours a month across the account; past
-  that, every web service is suspended until the month ends.
-- Postgres: free, 1 GB. A free database expires 30 days after it is created; after a 14-day grace
-  period it is deleted unless upgraded to a paid plan ($7 a month).
-- Card: not needed to sign up. With a card on file, bandwidth past 100 GB a month is billed at
-  $0.15 per GB. Without one, services are suspended instead.
-- Agent access: an official command-line tool and MCP server that can deploy, read logs, and set
-  environment variables for any of the three. They cannot delete services or change plans.
-- Moving: services build from your GitHub repository with ordinary `npm` commands; the database
-  can be exported with the standard Postgres tool (`pg_dump`).
-
-**Brightpage**
-
-- Free; never sleeps. 100 GB of bandwidth a month, a hard cap: past it, the site is paused until
-  the next month. The free plan takes no card, so nothing can be billed.
-- Agent access: a command-line tool that can deploy and set build settings. Brightpage runs no code
-  of yours, so it has deploy logs but no logs of requests.
-- Moving: it hosts a folder of files; any static host can take them.
-
-**Kettle**
-
-- $1 of free credit a month, which keeps a small server running all month; it never sleeps. If the
-  credit runs out, the server stops until next month. With a card on file, it keeps running and the
-  extra is billed.
-- Card: not needed to sign up.
-- Agent access: an official command-line tool and MCP server; can deploy, read logs, and set
-  environment variables.
-- Moving: Kettle reads a small `kettle.toml` file the agent writes; the server itself is ordinary
-  Node.
-
-**Ledger**
-
-- Free, 0.5 GB, never expires. The database stops after 5 minutes without queries and wakes in
-  under a second. Past 0.5 GB, writes are refused; nothing is deleted.
-- Card: not needed, and the free plan can't be billed.
-- Agent access: an official MCP server and command-line tool that can run SQL, including SQL that
-  changes or deletes data. Ledger's docs advise using it only on development databases.
-- Moving: standard Postgres; export with `pg_dump`.
-
-## For each choice, answer
-
-Eight students each chose a plan and said why. For each one: does it name every difference in
-these terms that would matter for this app; does it say what Plan S's extra vendors add in
-accounts, secrets and places to look when something breaks; does it claim anything the terms don't
-support; and does it state the strongest case for the plan it didn't choose? Say which of these it
-misses, if any. Which plan it chose doesn't count either way.
-
-Then write the list of differences you would expect a complete answer to name.
+**For the choice you are given:** does it name every difference in these terms that would matter
+for this app; say what Plan S's extra vendors add in accounts, secrets and places to look when
+something breaks; claim anything the terms don't support; and state the strongest case for the
+plan it didn't choose? Say which it misses, if any, and one thing it should have said. Which plan
+it chose doesn't count either way.
 
 ---
 

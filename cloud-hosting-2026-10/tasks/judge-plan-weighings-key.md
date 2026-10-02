@@ -2,13 +2,16 @@
 
 **For the tutor only.** Used by `a-judge-plan-weighings`. Never show this file to the learner; the learner's copy is `judge-plan-weighings.md`.
 
-Show the learner the whole of the task file and none of this one. Take all eight verdicts and the
-learner's list before commenting on any.
+Show the learner the task file's header and the one choice being served, and none of this file.
+Take the learner's verdict before commenting. Each table row is one bank item; cases: complete
+`v1` (chooses S), `v2` (chooses H); unsupported claims `v3`, `v5`, `v8`; misses the extra
+vendors and agent access `v4`; a card treated as a requirement `v6`; no case for the other plan
+`v7`. The two lists below are what every item is judged against.
 
 ### Must name: differences that matter for this app (about twenty users, a class project)
 
-A complete answer names every item in this group. This is the list `v1` and `v2` are checked
-against, and both name all of it.
+A complete answer names every item in this group. This is the list each choice is checked
+against; `v1` and `v2` name all of it.
 
 - **Sleep:** Harbor's server sleeps after 15 minutes idle and the next visitor waits about a
   minute; Kettle's never sleeps.
@@ -54,5 +57,8 @@ main reason is fine only if what it says matches the terms.
 | v7 | no case for the other plan | Close to complete on the differences and the extra vendors, then dismisses H instead of stating its strongest case. |
 | v8 | names things the terms don't support | Keeping the server awake by pinging it and making a new database each month are plans the terms say nothing about (and the second loses the data each time). Look at whether it names the differences before the workarounds: it does name sleep, expiry, agent access and the extra vendors, but not the card or moving. |
 
-Make sure v1 against v2, and v6, are discussed whatever the learner answered: v6 because "needs a
-card" against "a card on file lets them bill you" is the distinction this goal most often blurs.
+Pairs for the tutor's question "how does this one differ from the one you did before?": v1 and
+v2 (opposite choices, both complete, which is why the choice itself is not judged); v6 and v2
+("needs a card" against "a card on file lets them bill you", the distinction this goal most often
+blurs); v7 and v1 (nearly the same differences, but no case for the other plan). Ask it only when
+the partner has already been served.

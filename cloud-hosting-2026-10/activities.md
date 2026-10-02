@@ -237,49 +237,52 @@ Taken together, it is the topic's one shared blind spot.
 - **offer as:** the one candidate about the arrangement the criterion singles out, the backend
   serving the built frontend itself, shown in the course material many full-stack courses use.
   Some code on the page, though the learner runs none. 20 to 25 minutes. Pick
-  `a-judge-plan-coverage` for ten plans to judge instead.
+  `a-judge-plan-coverage` to judge one plan at a time instead.
 
 ### `a-judge-plan-coverage`
 
 - **serves:** `c-place-app-parts`
 - **supports:** deepen
-- **artifact:** `tasks/judge-plan-coverage.md`, written for this topic: Crumbs, a React, Express and
-  SQLite app shaped like the learner's Problem Set 2 app; five made-up vendors, each saying in a
-  line what it offers (a files-only host, a host that runs a program with a disk, a Postgres-only
-  database host, a host that runs short functions and keeps nothing running, and an all-in-one);
-  ten plans. The key is in its own file, `tasks/judge-plan-coverage-key.md`, for the tutor only.
-  Six plans cover every part: the usual split, one where the backend serves
-  the built frontend, one where a vendor hosts two parts, one that hosts the frontend twice, one
-  that uses the functions host only for files, and one where the app has been switched to
-  Postgres. Four fail: an Express server on a files-only host with the database left unhosted, a
-  frontend with nothing to send it, a database left on a laptop, and a plan with two mismatches
-  (an Express server on the functions host and a SQLite database on a Postgres host). 20 minutes.
-  Nothing to run.
-- **verified:** 2026-10-01
-- **learner does:** reads the app and the vendors, then for each of the ten plans says which part
-  each vendor hosts and names every gap and mismatch, or says every part is covered. Then states the
-  rule they judged by.
+- **artifact:** `tasks/judge-plan-coverage.md`, written for this topic, used as a bank of ten
+  plans, one per sitting. Its header (about 350 words) describes Crumbs, a React, Express and
+  SQLite app shaped like the learner's Problem Set 2 app, and five made-up vendors, each saying in
+  a line what it offers (a files-only host, a host that runs a program with a disk, a
+  Postgres-only database host, a host that runs short functions and keeps nothing running, and an
+  all-in-one). Each plan `q1` to `q10` is two or three lines and reads alone. The key, one row per
+  plan with its case, is in `tasks/judge-plan-coverage-key.md`, for the tutor only. Cases: clean
+  split `q1`; shared vendor `q5`; backend serves the frontend `q3`, `q10` (also hosted twice);
+  decoy `q8` (functions host used only for files); clean after a switch to Postgres `q9`; gap
+  `q6` (frontend), `q7` (database); mismatch and gap `q2`; two mismatches `q4`. 10 to 15 minutes a
+  sitting. Nothing to run.
+- **kind:** bank
+- **bank:** the ten plans in `tasks/judge-plan-coverage.md`, named `q1` to `q10`. To pick the next,
+  run `served.mjs cloud-hosting-2026-10 c-place-app-parts`, take a plan not yet served, and prefer a case the
+  learner hasn't met, from the list above; a good first three are `q3`, `q4` and `q6`, which
+  carry the cases students most often miss. Label the attempt `a-judge-plan-coverage/<plan>`, for
+  example `a-judge-plan-coverage/q4`. When all ten are used, move to `a-place-described-plan`.
+- **learner does:** reads the header and the one plan served, then says which part each vendor in
+  it hosts and names every gap and mismatch, or says every part is covered. Then says in a
+  sentence the rule they judged by.
 - **tutor role:** critic
-- **tutor does:** shows the task file and never the key file. Takes all ten answers and the
-  rule before commenting on any. On each answer that disagrees with the key, asks what that vendor
-  would actually do with the part it was given ("Brightpage gets the Express server; what does it
-  do when a request for recipes arrives?") rather than giving the verdict. Makes sure `q3` against
-  `q6`, `q4` against `q9`, and `q8` are discussed whatever the learner answered. If the learner
-  raises whether a free host's disk keeps the SQLite file, says that is a good question for the
-  topic on keeping hosted data safe, and counts the file as hosted here.
-- **done when:** the learner's rule covers listing what each part needs, checking each vendor's
-  offer against the part it was given, counting a part served by another part as hosted, and naming
-  nothing that isn't a gap or mismatch; and they found both mismatches in `q4`. No `checks`: the
-  ten plans are a contrast set read together, and the pairs answer each other. `q9` sits beside
-  `q4` and says outright that the app was switched to Postgres, which points at what is wrong in
-  `q4`; `q3` beside `q6` does the same for a frontend with no host of its own. A learner judging
-  `q4` or `q6` with its partner in view is getting help no single cold plan gives, so a pass here
-  doesn't show they would find the fault in a plan met alone. `a-place-described-plan` is that
-  single cold plan. The set is also fixed and used up after one sitting.
-- **offer as:** ten plans for one app, so the only thing that varies is the plan; the six that
-  pass show six ways to cover an app, and the near-misses are the cases careful students most
-  often get wrong (calling a backend-served frontend unhosted, flagging a vendor for a job it
-  wasn't given). Made-up vendors, so nothing here goes stale. 20 minutes, nothing to run.
+- **tutor does:** shows the header and the one plan, never the key file. Takes the learner's answer
+  and rule before commenting. Where the answer disagrees with the key, asks what that vendor would
+  actually do with the part it was given ("Brightpage gets the Express server; what does it do
+  when a request for recipes arrives?") rather than giving the verdict. If this plan's partner in
+  the key has been served before, asks how this plan differs from that one and whether the answer
+  should differ too (for `q4`, "last time Ledger was fine; what is different about the app
+  here?"). If the learner raises whether a free host's disk keeps the SQLite file, says that is a
+  good question for the topic on keeping hosted data safe, and counts the file as hosted here.
+- **done when:** the learner's answer on this plan matches the key, every gap and mismatch and
+  nothing else, after at most one near-miss question; and their stated rule covers what each part
+  needs and checking each vendor's offer against the part it was given. No `checks`: every plan in
+  the bank uses the same five vendors, and each sitting ends with the key's verdict discussed, so
+  from the second sitting on the learner is judging vendors whose fit they have already been
+  told. A pass shows nothing about meeting new offers cold, which is what
+  `a-place-described-plan` sets.
+- **offer as:** one plan for one familiar-shaped app, 10 to 15 minutes, nothing to run, with the
+  near-misses careful students most often get wrong (calling a backend-served frontend unhosted,
+  flagging a vendor for a job it wasn't given) spread across the bank. Made-up vendors, so nothing
+  here goes stale. Take a few across visits.
 
 ### `a-place-described-plan`
 
@@ -420,15 +423,24 @@ Taken together, it is the topic's one shared blind spot.
 - **artifact:** Hatchable, "Free web hosting in 2026",
   https://hatchable.com/articles/state-of-free-web-hosting-in-2026 (updated 2026-08-21, no author
   named; written by a hosting vendor; checked 2026-10-01), used as a source of dated claims, plus
-  the vendors' own pages the tutor opens live. Three claims from the article, quoted:
-  - "Render's free Postgres, for instance, expires 30 days after creation per its changelog, with
+  the vendors' own pages opened live. A bank of four claims from the article, one per sitting:
+  in each, the tutor makes the first lookup aloud, false start included, and the learner finishes
+  the check. 10 to 15 minutes a sitting. Cases: `c1` holds, with a consequence to find; `c2`
+  holds for one vendor and the vendor's pages don't settle it for the other; `c3` an omission
+  whose answer is split across two of the vendor's pages; `c4` stale.
+  - `c1`: "Render's free Postgres, for instance, expires 30 days after creation per its changelog, with
     a grace period to upgrade before deletion." (Render's own page on 2026-10-01:
-    https://render.com/docs/free, 30 days and a 14-day grace period.)
-  - On Neon and Supabase: "both have free tiers with a small database (hundreds of megabytes),
+    https://render.com/docs/free, 30 days and a 14-day grace period, after which Render "deletes
+    the database (along with all of its data)".) Tutor's half: searches the claim, lands on a
+    blog post, says why that doesn't settle it. Learner's half: finds Render's own sentence, and
+    what happens after the grace period.
+  - `c2`: on Neon and Supabase: "both have free tiers with a small database (hundreds of megabytes),
     compute that sleeps or pauses when idle, and no card". (Neon's pricing page,
     https://neon.com/pricing, says "no credit card required"; Supabase's pricing page,
-    https://supabase.com/pricing, did not say either way on 2026-10-01.)
-  - "Fly.io no longer has a general free tier for new accounts, only a short trial before
+    https://supabase.com/pricing, did not say either way on 2026-10-01.) Tutor's half: Neon,
+    found on its pricing page. Learner's half: Supabase, where the honest finding is that its
+    pricing page doesn't say, and "I'd find out at sign-up" is the answer, not the article's word.
+  - `c3`: "Fly.io no longer has a general free tier for new accounts, only a short trial before
     pay-as-you-go." This sentence says nothing about a card or about how short the trial is;
     the article's FAQ says elsewhere that "Fly.io wants one once its short trial ends". Fly's own
     pages split the answer across two places. Its free-trial page,
@@ -436,8 +448,10 @@ Taken together, it is the topic's one shared blind spot.
     days of access, whichever comes first", needs no card to start, and that "adding a card ends
     the free trial"; when it expires without one, "your apps will stop running". Its pricing page,
     https://docs.fly.io/about/pricing/, says "All organizations (except for Linked Organizations)
-    require a credit card on file".
-  And a fourth for the learner, also from the article's The traps to watch for: "Railway's
+    require a credit card on file". Tutor's half: opens the pricing page, reads the card
+    sentence and nearly concludes a card is needed to sign up. Learner's half: the trial page,
+    and the fuller answer (no card to start, 2 hours or 7 days, a card needed to keep going).
+  - `c4`, from the article's The traps to watch for: "Railway's
   $5/month credit is a trial, not a free tier. When you exceed it, you pay." Railway's own docs,
   https://docs.railway.com/reference/pricing/free-trial, on 2026-10-01: the trial is "a one-time
   grant of $5" for "up to 30 days", after which the account "reverts to the Free plan", which
@@ -445,52 +459,53 @@ Taken together, it is the topic's one shared blind spot.
   stale twice over: the $5 is one-time, not monthly, and there is a standing free plan after it.
   (Flavio Copes, "Every hosting provider's free tier, side by side",
   https://flaviocopes.com/hosting-free-tiers/, data checked 2026-09-16, with disclosed affiliate
-  links, gives Railway's "$1 of credit a month, no rollover" correctly; the tutor may point out
-  afterwards that a careful dated table got it right and still isn't the page that settles it.)
-  25 to 30 minutes.
-- **verified:** 2026-10-01
-- **learner does:** watches the tutor check the first three claims out loud in a browser, and
-  interrupts whenever they disagree or can't follow. Before each check, says where they would look.
-  Then checks the fourth claim themselves while the tutor watches, saying aloud where they are
-  looking and why. At the end, says in their own words what made a page good enough to settle a
-  claim, and writes one sentence they would add to a prompt so that an agent's answer comes with
-  what they need to check each claim.
+  links, gives Railway's "$1 of credit a month, no rollover" correctly.) Tutor's half: opens
+  Copes's table, finds that it contradicts the article, and says why a careful dated table still
+  isn't the page that settles which one is right. Learner's half: Railway's own docs, and both
+  ways the article's sentence is stale (one-time, not monthly; a free plan after it).
+- **kind:** bank
+- **bank:** the four claims above, named `c1` to `c4`. To pick the next, run
+  `served.mjs cloud-hosting-2026-10 c-check-vendor-claims`, take a claim not yet served, and prefer
+  a case the learner hasn't met; `c3` or `c4` makes a good first sitting. Label the attempt
+  `a-watch-claims-checked/<claim>`, for example `a-watch-claims-checked/c3`. When all four are
+  used, move to `a-check-2025-guide-claims`.
+- **learner does:** hears the claim and says where they would look before the tutor starts. Watches
+  the tutor's half aloud in a browser and interrupts whenever they disagree or can't follow. Then
+  does the learner's half themselves while the tutor watches, saying aloud where they are looking
+  and why, and ends by saying whether the claim holds, is stale, or can't be settled from the
+  vendor's pages, with the sentence that shows it. Last, one sentence they would add to a prompt
+  so an agent's claim like this one comes with what they need to check it.
 - **tutor role:** explainer
-- **tutor does:** before the session, opens each vendor page above and confirms it still says what
-  is quoted; if it doesn't, uses what it says now and tells the learner that the claim changed
-  between the curation and today, which is the point. Checks each claim aloud, including false
-  starts made on purpose and named as such: for the first, searches the claim and lands on a blog
-  post, then says why that doesn't settle it and goes to Render's own docs; for the second, finds
-  Neon's sentence and then fails to find Supabase's on its pricing page, and says that an answer
-  the vendor's pages don't give is "I'd find out at sign-up", not the article's word; for the
-  third, opens Fly's pricing page first, reads "require a credit card on file" and nearly
-  concludes a card is needed to sign up, then opens the free-trial page and finds the fuller
-  answer: no card to start, a trial of 2 hours of machine time or 7 days, and a card needed to
-  keep going, since adding one ends the trial. Points out that the article's sentence left out
-  both the length and the card, though its FAQ mentions the card, so reading one sentence of a
-  source is not reading the source. Says each time what kind of page settled it (a
-  free-plan docs page, a pricing page, billing docs) and whether it carried a date. For the
-  learner's claim, asks only "where would Railway say that?" if they stall. On the prompt
-  sentence, asks whether an agent could follow it (a link to the vendor's own page for each
-  claim, and the date the agent's information is from, are both things it can give).
-- **done when:** the learner has checked the fourth claim on Railway's own docs and found both
-  ways it is stale (one-time, not monthly; a free plan after it), can say why the
-  article and the blog post don't settle a claim and the vendor's page does, and has written a
-  prompt sentence asking for the vendor's own page for each claim. No `checks`: the tutor worked
-  three of the four.
-- **offer as:** watch it done first: the tutor checks three claims from a vendor-written article
-  live, with the false starts left in, then hands you the fourth. The only candidate where you see
-  where a check goes wrong (a blog in place of the vendor, a card rule split across a vendor's
-  pricing and trial pages), and the claim you check yourself turns out to be stale. Needs a browser and a live session, 25 to 30 minutes.
-  `a-check-2025-guide-claims` is all yours from the start.
+- **tutor does:** before the sitting, opens the vendor pages for this claim and confirms they still
+  say what is quoted; if they don't, uses what they say now and tells the learner the claim
+  changed between curation and today, which is the point. Does the tutor's half for this claim,
+  making the false start on purpose and naming it as one. Then hands over, saying nothing more
+  than "where would the vendor itself say that?" if the learner stalls. Says what kind of page
+  settled it (a free-plan docs page, a pricing page, a trial page) and whether it carried a date.
+  For `c3`, points out that the article's sentence left out both the trial's length and the card,
+  though its FAQ mentions the card, so reading one sentence of a source is not reading the source.
+  If another claim has been served before, asks how the place that settled this one differs from
+  the place that settled that one. On the prompt sentence, asks whether an agent could follow it
+  (a link to the vendor's own page per claim, and the date of its information, are both things it
+  can give).
+- **done when:** the learner has finished this claim on the vendor's own page and given the right
+  status (the key is the parenthesis and halves above), can say why the tutor's false start
+  didn't settle it, and has written a prompt sentence asking for the vendor's own page. No
+  `checks`: the tutor did half the check, and chose where to start.
+- **offer as:** watch it done first, one claim at a time: the tutor starts the check on a claim
+  from a vendor-written article, with the false start left in, and hands you the rest. The only
+  candidate where you see where a check goes wrong (a blog in place of the vendor, a card rule
+  split across a vendor's pricing and trial pages). Needs a browser and a live session, 10 to 15
+  minutes. `a-check-2025-guide-claims` is all yours from the start.
 
 ### `a-check-2025-guide-claims`
 
 - **serves:** `c-check-vendor-claims`
 - **supports:** deepen
-- **artifact:** `tasks/check-2025-guide-claims.md`, written for this topic: six sentences quoted
-  exactly from the deployment guide given to students in this course's 2025 predecessor (SI 211),
-  about PlanetScale, Neon, Supabase and Render. The key, checked against those vendors' own pages
+- **artifact:** `tasks/check-2025-guide-claims.md`, written for this topic, used as a bank of six
+  sentences quoted exactly from the deployment guide given to students in this course's 2025
+  predecessor (SI 211), about PlanetScale, Neon, Supabase and Render, one per sitting, under a
+  short header and a five-step procedure. The key, checked against those vendors' own pages
   on 2026-10-01, is in its own file, `tasks/check-2025-guide-claims-key.md`, for the tutor only.
   One claim names a free tier since withdrawn (PlanetScale's free MySQL, whose plan ended in 2024).
   The rest hold, with something left out: Render's Postgres "only free for the first month" was
@@ -498,82 +513,112 @@ Taken together, it is the topic's one shared blind spot.
   database is deleted with its data after a 14-day grace period; the others leave out sleep,
   pausing, or the card. None is a limit that has changed since 2025; that case is in
   `a-watch-claims-checked` (Railway's trial) and in `a-plan-claim-checks`'s generator. The guide itself is in the instructor's files and is not available to students, which is
-  why its sentences are quoted. 30 to 40 minutes with a browser.
-- **verified:** 2026-10-01
-- **learner does:** for each claim, says first which page on the vendor's own site they expect to
-  settle it and why; then finds it, copies the sentence that settles it with its address and any
-  date; says whether the claim holds, has changed, or is gone; and says what the claim leaves out
-  that they would want before signing up. Then says which kind of page settled the most, and which
-  claims the vendor's pages couldn't settle.
+  why its sentences are quoted. 10 to 15 minutes a sitting, with a browser.
+- **kind:** bank
+- **bank:** the six claims in `tasks/check-2025-guide-claims.md`, named `g1` to `g6`. Cases:
+  withdrawn `g1`; holds but hides the consequence `g5`; holds with sleep or limits left out `g3`,
+  `g4` (and `g3`'s card question isn't settled on the pricing page); holds `g2`; too vague to
+  check as it stands `g6`. To pick the next, run
+  `served.mjs cloud-hosting-2026-10 c-check-vendor-claims`, take a claim not yet served, and prefer
+  a case the learner hasn't met; `g1` and `g5` make the best first two. Label the attempt
+  `a-check-2025-guide-claims/<claim>`, for example `a-check-2025-guide-claims/g1`. When all six
+  are used, move to `a-plan-claim-checks`.
+- **learner does:** reads the header and the one claim served, then follows the five steps on it:
+  says which page on the vendor's own site they expect to settle it and why; finds it and copies
+  the sentence that settles it with its address and any date; says whether the claim holds, has
+  changed, or is gone; says what it leaves out that they would want before signing up; and says
+  what kind of page settled it, or that the vendor's pages couldn't. Ends with one sentence they
+  would add to a prompt so an agent's claim like this comes with what they'd need to check it.
 - **tutor role:** critic
-- **tutor does:** before the session, opens every address in the key and confirms it still says
-  what is quoted; where it doesn't, the page wins and the tutor updates its own copy of the
-  verdict for the session. Shows the task file, never the key file. Takes all six before
-  commenting. On any
-  verdict resting on something other than the vendor's page (a search result's snippet, a
-  comparison article, the agent), asks where the vendor itself says that. Makes sure `g1` is
-  discussed: an absence on a pricing page is evidence only once you're sure it's the page that
-  would list the plan. Makes sure `g5` is discussed: "free for a month" and "deleted after a month
-  unless you pay" are different risks. Ends by asking what the learner would add to a prompt so an
-  agent's answer comes with what they'd need to check it.
-- **done when:** every claim has a verdict resting on a quoted sentence from the vendor's own
-  page, or an honest "the vendor's pages don't settle this"; the learner caught that `g1` is gone
-  and that `g5` hides the deletion; and they can say which kind of page settled what. No `checks`:
-  the claims were chosen and set out one by one for them with a procedure to follow for each, and
-  the learner's prompt sentence comes at the end with the tutor asking for it.
+- **tutor does:** before the sitting, opens the address in the key for this claim and confirms it
+  still says what is quoted; where it doesn't, the page wins and the tutor updates its own copy of
+  the verdict. Shows the header and the one claim, never the key file. Takes the learner's five
+  answers before commenting. If the verdict rests on something other than the vendor's page (a
+  search result's snippet, a comparison article, the agent), asks where the vendor itself says
+  that. On `g1`: an absence on a pricing page is evidence only once you're sure it's the page that
+  would list the plan. On `g5`: "free for a month" and "deleted after a month unless you pay" are
+  different risks. If another claim has been served before, asks how the page that settled this
+  one differs in kind from the one that settled that.
+- **done when:** the learner's verdict on this claim rests on a quoted sentence from the vendor's
+  own page, or an honest "the vendor's pages don't settle this", and matches the key (for `g1`,
+  gone; for `g5`, the deletion found); and they have named the kind of page and written a prompt
+  sentence. No `checks`: the claim was chosen for them and set out with a procedure to follow, and
+  the prompt sentence is asked for.
 - **offer as:** real claims, from a real guide given to students in this course a year ago, which
-  was right when it was written. You do the checking from the start, on real vendor pages, 30 to
-  40 minutes. The most hands-on of the study routes, and the one that shows how fast this goes
-  stale. Pick `a-watch-claims-checked` to see it done first.
+  was right when it was written, one at a time. You do the checking from the start, on real
+  vendor pages, 10 to 15 minutes. The most hands-on of the study routes, and the one that shows
+  how fast this goes stale. Pick `a-watch-claims-checked` to see it done first.
 
 ### `a-sort-claim-sources`
 
 - **serves:** `c-check-vendor-claims`
 - **supports:** deepen
 - **artifact:** no external source beyond the pages named here, all checked as resolving on
-  2026-10-01. One claim, which the tutor states: "Render's free web services sleep after 15
-  minutes and its free Postgres is free for good." Nine sources to sort:
-  1. Render's docs, "Deploy for Free", https://render.com/docs/free.
-  2. Render's pricing page, https://render.com/pricing.
-  3. The coding agent's own answer, asked "are you sure?".
-  4. The Odin Project's Deployment lesson (read in orientation), Render paragraph.
-  5. Hatchable, "Free web hosting in 2026" (a vendor's article about other vendors).
-  6. Flavio Copes, "Every hosting provider's free tier, side by side", data checked 2026-09-16,
-     with disclosed affiliate links.
-  7. A 2024 thread on Render's own community forum, which used to be at community.render.com.
-     That address now redirects to https://render.com/docs/community, which says "The community
-     forum was sunset on March 24, 2026" (the community moved to Discord). A tutor fact, to bring
-     in after the learner has sorted it.
-  8. A classmate who signed up for Render last week.
-  9. Render's MCP server docs, https://render.com/docs/mcp-server.
-  20 minutes, with a browser for the last step only.
-- **verified:** 2026-10-01
-- **learner does:** sorts the nine, without opening any, into: settles the claim today; useful
-  for knowing what to look for, but doesn't settle it; doesn't help with this claim. Says the rule
-  they sorted by. Then opens whichever source they put first and checks both halves of the claim
-  on it. Then writes what they would add to a prompt so that every claim in an agent's next answer
-  comes with the source they put in the first pile.
+  2026-10-01. One claim, which the tutor states every sitting: "Render's free web services sleep
+  after 15 minutes and its free Postgres is free for good." A bank of nine sources, one judged per
+  sitting, each with its verdict and the tutor's near-miss question:
+  - `s1` Render's docs, "Deploy for Free", https://render.com/docs/free. **Settles it**: the sleep
+    half holds; the Postgres half is false (expires 30 days after creation, deleted after a
+    14-day grace period). Question: none; the learner opens it and checks both halves.
+  - `s2` Render's pricing page, https://render.com/pricing. Vendor's own page that doesn't address
+    the claim: no spin-down or Postgres-expiry wording. Question: "does the pricing page say what
+    happens when the service is idle, or when the database is a month old?"
+  - `s3` The coding agent's own answer, asked "are you sure?". The agent again. Question: the
+    criterion's own line, that asking the agent whether it's sure does not count; "where would its
+    answer have come from?"
+  - `s4` The Odin Project's Deployment lesson (read in orientation), Render paragraph. Dated
+    secondary source, and it contradicts itself on Render's databases. Question: "when was this
+    true?"
+  - `s5` Hatchable, "Free web hosting in 2026". A vendor's article about other vendors, dated
+    August 2026. Question: "whose page is it, and what does it want you to choose?"
+  - `s6` Flavio Copes, "Every hosting provider's free tier, side by side", data checked
+    2026-09-16, with disclosed affiliate links. Careful, dated, secondary. Question: "when was
+    this true, and who would know if it changed yesterday?"
+  - `s7` A 2024 thread on Render's own community forum, which used to be at community.render.com.
+    That address now redirects to https://render.com/docs/community, which says "The community
+    forum was sunset on March 24, 2026" (the community moved to Discord). On the vendor's site but
+    not the vendor speaking. Question: "it's on Render's site; is it Render saying it?"; afterwards,
+    the tutor adds that the forum has since been shut and its threads are stranded at the date
+    they were written.
+  - `s8` A classmate who signed up for Render last week. Recent, first-hand, but about one account
+    on one day, and not about a database's 30th day. Question: "what could they have seen in a
+    week?"
+  - `s9` Render's MCP server docs, https://render.com/docs/mcp-server. Vendor's own page about
+    something else. Question: "it's Render's own page; is it about this claim?" (it isn't; it
+    matters for whether an agent can reach the host, which belongs to weighing plans).
+  10 minutes a sitting; 15 for `s1`, which needs a browser.
+- **kind:** bank
+- **bank:** the nine sources above, named `s1` to `s9`. Cases: settles it `s1`; vendor's own page
+  not about this claim `s2`, `s9`; on the vendor's site but not the vendor `s7`; dated secondary
+  `s4`, `s5`, `s6`; the agent `s3`; an anecdote `s8`. To pick the next, run
+  `served.mjs cloud-hosting-2026-10 c-check-vendor-claims`, take a source not yet served, and prefer
+  a case the learner hasn't met. Serve a near-miss (`s2`, `s7` or `s9`) before `s1`, so the learner
+  meets a vendor page that doesn't settle it before one that does. Label the attempt
+  `a-sort-claim-sources/<source>`, for example `a-sort-claim-sources/s7`. When all nine are used,
+  move to `a-check-2025-guide-claims`.
+- **learner does:** hears the claim and the one source, and without opening it says: does this
+  source settle the claim today, help only with knowing what to look for, or not help with this
+  claim, and why. If it doesn't settle it, says where they would go instead. For `s1`, opens it
+  and checks both halves of the claim on it. Ends with one sentence they would add to a prompt so
+  an agent's claim like this one comes with a source that would settle it.
 - **tutor role:** socratic questioner
-- **tutor does:** takes the whole sort and the rule before commenting. Asks near-miss questions
-  rather than verdicts: on 2, "does the pricing page say what happens when the service is idle,
-  or when the database is a month old?" (if it doesn't, the docs page is the one that settles
-  it); on 7,
-  "it's on Render's site; is it Render saying it?", and afterwards, that the forum has since been
-  shut and its threads are stranded at the date they were written; on 9, "it's Render's own page; is it about
-  this claim?" (it isn't; it matters for whether an agent can reach the host, which belongs to
-  weighing plans); on 4 and 6, "when were these true?"; on 3, the criterion's own line: asking the
-  agent whether it's sure does not count. When the learner checks the claim on source 1, makes sure
-  they find that the free Postgres expires after 30 days, so the second half of the claim is false.
-  On the prompt sentence, asks whether it would make the agent link the vendor's own page rather
-  than a comparison article.
-- **done when:** the learner's rule puts in the first pile only the vendor's own current pages
-  that address this claim (source 1 alone; Render's pricing page has no spin-down or Postgres-expiry wording), says why each of the others doesn't settle it, they found the 30-day expiry on
-  Render's docs, and their prompt sentence asks for the vendor's own page per claim. No `checks`:
-  the sources were gathered for them and the claim is a single one.
-- **offer as:** the quickest route, 20 minutes, mostly without a browser: about what counts as a
-  source rather than how to find one. The only candidate that puts the near-misses side by side (a
-  forum on the vendor's own site, a careful dated comparison with affiliate links, the vendor's
-  docs about something else). Pick `a-check-2025-guide-claims` to do the finding yourself.
+- **tutor does:** takes the learner's verdict and reason before commenting. Asks this source's
+  near-miss question from the bank rather than giving a verdict. For `s1`, makes sure the learner
+  finds that the free Postgres expires after 30 days, so the second half of the claim is false. If
+  another source has been served before, asks how this one differs from that one, and whether the
+  verdict should differ too (for `s2` after `s9`, "both are Render's own pages; why might one of
+  them settle it and the other not?"). On the prompt sentence, asks whether it would make the
+  agent link the vendor's own page rather than a comparison article.
+- **done when:** the learner's verdict on this source matches the bank's, with a reason that names
+  what makes it settle the claim or not (whose page it is, whether it is current, whether it is
+  about this claim); where it doesn't settle it, they named the vendor's own current docs as
+  where to go instead; for `s1`, they found the 30-day expiry. No `checks`: the source and the
+  claim were handed to them, and the criterion asks them to say where they would look on their own.
+- **offer as:** the quickest route, about 10 minutes, mostly without a browser: one source at a
+  time, judged on whether it could settle a claim at all, rather than how to find one. The only
+  candidate whose bank is near-misses (a forum on the vendor's own site, a careful dated
+  comparison with affiliate links, the vendor's docs about something else). Pick
+  `a-check-2025-guide-claims` to do the finding yourself.
 
 ### `a-plan-claim-checks`
 
@@ -859,39 +904,49 @@ Taken together, it is the topic's one shared blind spot.
 
 - **serves:** `c-weigh-hosting-plans`
 - **supports:** deepen
-- **artifact:** `tasks/judge-plan-weighings.md`, written for this topic: a class-project app with a
-  React frontend, an Express server and a Postgres database; two plans (one vendor for all three,
-  and a vendor for each part); four made-up vendors' free-tier terms modeled on terms real vendors
-  offered on 2026-10-01, each covering sleep, what happens past a limit, card, agent access (a
-  command-line tool, an MCP server, what it can and can't do) and moving; eight students' choices;
-  and a key, in its own file for the tutor only (`tasks/judge-plan-weighings-key.md`), that splits
-  the differences into those a complete answer must name for this app and those present in the
-  terms but not deciding for twenty users. Two choices meet the criterion, for opposite plans. The
-  other six miss in different ways: claims the terms don't support, no case for the other plan,
-  nothing on the extra vendors, a card treated as a requirement rather than a risk, workarounds
-  the terms say nothing about. 25 minutes. Nothing to run.
-- **verified:** 2026-10-01
-- **learner does:** reads the app, the plans and the terms. For each of the eight choices, says
-  which of the criterion's parts it misses: a difference that matters, the cost of the extra
-  vendors, a claim the terms don't support, the case for the other plan. Then writes the list of
-  differences a complete answer would name.
+- **artifact:** `tasks/judge-plan-weighings.md`, written for this topic, used as a bank of eight
+  students' choices, one per sitting. Its header (about 470 words) gives a class-project app with
+  a React frontend, an Express server and a Postgres database; two plans (one vendor for all
+  three, and a vendor for each part); and four made-up vendors' free-tier terms modeled on terms
+  real vendors offered on 2026-10-01, each covering sleep, what happens past a limit, card, agent
+  access (a command-line tool, an MCP server, what it can and can't do) and moving. Each choice
+  `v1` to `v8` is 30 to 200 words and reads alone. The key, in its own file for the tutor only
+  (`tasks/judge-plan-weighings-key.md`), has a verdict per choice and splits the differences into
+  those a complete answer must name for this app and those present in the terms but not deciding
+  for twenty users. 10 to 15 minutes a sitting. Nothing to run.
+- **kind:** bank
+- **bank:** the eight choices in `tasks/judge-plan-weighings.md`, named `v1` to `v8`. Cases:
+  complete, choosing S `v1`; complete, choosing H `v2`; claims the terms don't support `v3`, `v5`,
+  `v8`; misses the extra vendors and agent access `v4`; a card treated as a requirement rather
+  than a risk `v6`; no case for the other plan `v7`. To pick the next, run
+  `served.mjs cloud-hosting-2026-10 c-weigh-hosting-plans`, take a choice not yet served, and
+  prefer a case the learner hasn't met; `v1` or `v2` first gives the learner a complete answer to
+  measure the others by, and `v6` should come early. Label the attempt
+  `a-judge-plan-weighings/<choice>`, for example `a-judge-plan-weighings/v6`. When all eight are
+  used, move to `a-weigh-described-plans`.
+- **learner does:** reads the header and the one choice served, then says which of the
+  criterion's parts it misses, if any: a difference that matters, the cost of the extra vendors,
+  a claim the terms don't support, the case for the other plan. Points to the line in the terms
+  for each, and says one thing the choice should have said (or, if it misses nothing, why it is
+  complete).
 - **tutor role:** critic
-- **tutor does:** shows the task file, never the key file. Takes all eight verdicts and the list
-  before commenting. On the list, sorts the learner's items into the key's two groups and asks why
-  each item in the second group doesn't decide anything for twenty users. On each verdict that disagrees with the key, asks the learner to point to the line in
-  the terms that supports, or doesn't support, what the student said. Makes sure `v1` against `v2`
-  is discussed (opposite choices, both complete), and `v6` (a card that can be billed, not one that
-  is required). Checks the learner's list for agent access and for the secrets that have to be
-  copied between vendors, the two items students most often leave out.
-- **done when:** the learner's verdicts on `v1`, `v2`, `v3`, `v5` and `v6` match the key, and their
-  list covers the key's must-name group: sleep, the database expiry, whether a card is required
-  and what one on file risks, agent access, moving, and the accounts, secrets and log places the
-  extra vendors add. No `checks`: judging other people's choices is not
-  making one, and the terms were laid out for comparison.
-- **offer as:** the whole comparison in one sitting: the only study route that covers all five
-  differences, the extra vendors, and the case for the other plan, including agent access, which
-  no reading in this topic covers. Made-up vendors, so nothing here goes stale. 25 minutes, nothing
-  to run.
+- **tutor does:** shows the header and the one choice, never the key file. Takes the learner's
+  verdict before commenting. Where it disagrees with the key, asks the learner to point to the
+  line in the terms that supports, or doesn't support, what the student said. If the learner
+  counts a missing item from the key's second group as a miss, asks why it would decide anything
+  for twenty users. If this choice's partner in the key has been served before, asks how the two
+  differ (for `v6` after `v2`, "both chose H; what does each say about a card?"). For `v6`, makes
+  sure the difference between a card that is required and a card that lets a vendor bill comes
+  out. Checks, on any item, whether agent access and the secrets copied between vendors came up,
+  the two things students most often leave out.
+- **done when:** the learner's verdict on this choice matches the key, each miss tied to a line in
+  the terms, and the one thing they say it should have said is in the key's must-name group (or,
+  for `v1` and `v2`, they say why it is complete). No `checks`: judging someone else's choice is
+  not making one, and the terms were laid out for comparison.
+- **offer as:** one student's choice at a time, judged against terms laid out for you: the only
+  study route that touches all five differences, the extra vendors, and the case for the other
+  plan, including agent access, which no reading in this topic covers. Made-up vendors, so nothing
+  here goes stale. 10 to 15 minutes, nothing to run.
 
 ### `a-weigh-described-plans`
 
