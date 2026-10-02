@@ -46,101 +46,59 @@ Taken together, it is the topic's one shared blind spot.
   2026-10-01.
   1. **Read first:** MDN Web Docs, "What is a web server?",
      https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_web_server
-     (last modified Apr 29, 2025). Read Summary (about 320 words), the short Deeper dive opening
-     (about 50), Hosting files (about 280) and Static vs. dynamic content (about 350): about 1,000
-     words. Skip Communicating through HTTP (the web backends topic covered requests and
-     responses) and Next steps. No code anywhere. What it gives that Odin doesn't: the static web
+     (last modified Apr 29, 2025). Read only Summary (about 320 words) and Static vs. dynamic
+     content (about 350): about 670 words, no code. Skip Deeper dive's opening, Hosting files,
+     Communicating through HTTP and Next steps. What it gives that Odin doesn't: the static web
      server, which "sends its hosted files as-is to your browser", as against the dynamic one with
-     an application server and a database; and that hosting a site means putting its files on a
-     machine that is always on and always connected, because a laptop isn't.
+     an application server and a database.
   2. **Then:** The Odin Project, "Deployment" (Node path),
-     https://www.theodinproject.com/lessons/node-path-nodejs-deployment. Read from Introduction
-     down to, and not including, the heading "Debugging and troubleshooting deployments": What are
-     hosting providers?, Static vs dynamic sites, What is a PaaS?, How do PaaS services work?
-     (Instances; Server instance and database instance; Databases; Domain names), Our recommended
-     PaaS services (Railway.app, Render, Neon, Aiven) and Keep your secrets safe!. About 1,450
-     words, no code blocks. Skip Debugging and troubleshooting deployments (debugging a deploy is a
-     later topic), the Assignment and Additional resources.
-  About 2,450 words in all: 20 minutes of reading inside a 50 to 60 minute session with the
-  stops below.
-  Words in place: across the two, deploy, static, server, database, free tier (Heroku's, ended
-  2022), sleep ("put to sleep automatically after 15 minutes of inactivity", in Render's
-  paragraph), instance (Odin's Instances section), domain (Odin's Domain names; MDN's Summary),
-  credit card ("No credit card required", Neon and Aiven). Not named, and supplied by the
-  vocabulary words: build, cold start, overage, lock-in, DNS, HTTPS, CDN. Odin is written for its
-  own Node course, whose apps are rendered on the server, so its picture is two boxes (a server and
-  a database) and it says Netlify and Vercel "are not the right tools for our back ends" without
+     https://www.theodinproject.com/lessons/node-path-nodejs-deployment, down to, and not
+     including, the heading "Debugging and troubleshooting deployments". Read in full: What are
+     hosting providers?, Static vs dynamic sites, What is a PaaS?, and under How do PaaS services
+     work? the Instances and Server instance and database instance parts (about 700 words). Skim:
+     Databases and Domain names (first paragraph of each), and Our recommended PaaS services, read
+     for the shape, not the numbers: the first line of each vendor ("Can deploy both servers and
+     databases", "Can deploy databases only"). Skip Keep your secrets safe!, Debugging and
+     troubleshooting deployments, the Assignment and Additional resources.
+  About 1,400 words read and a skim: 10 to 11 minutes of reading, 15 minutes with the two stops.
+  Words in place: deploy, static, server, database, free tier (Heroku's, ended 2022), instance,
+  domain, and, in the skimmed vendor lists, sleep and credit card. The rest of the fifteen have
+  their own supply; glossing them as they come up is optional. Odin is written for its own Node
+  course, whose apps are rendered on the server, so its picture is two boxes (a server and a
+  database) and it says Netlify and Vercel "are not the right tools for our back ends" without
   saying where a React frontend would go. MDN's static web server is the third box, which is why it
-  comes first. The Databases paragraph on backups and the Keep your secrets safe! box touch on
-  keeping data safe and on secrets, which are later topics; let them pass.
-  **Vendor details in Odin that lag, as checked against the vendors' own pages on 2026-10-01:**
-  - Railway: Odin says the trial is "a free one-time grant of $5 ... and the applications are never
-    put to sleep", after which Railway "rolls you back to their limited trial, which you can only
-    deploy database". Railway's docs (https://docs.railway.com/reference/pricing/free-trial) now
-    say the one-time $5 trial lasts up to 30 days and then "reverts to the Free plan", which gives
-    "$1 of free credit per month" that "does not roll over".
-  - Render: Odin says "the lowest spec databases cost $7 each" and, a few lines later, that "You can
-    only have one active free database at a time, which expires 30 days after creation". The page
-    contradicts itself. Render's docs (https://render.com/docs/free) have a free Postgres that
-    expires 30 days after creation, with a 14-day grace period before it is deleted.
-  - Neon: Odin lists "10 projects" and "24/7 for your main compute". Neon's pricing page
-    (https://neon.com/pricing) now lists 100 projects, 100 compute-hours per project, and compute
-    that scales to zero after 5 minutes idle, which "cannot be turned off".
-  - Aiven: Odin says "5 GiB of storage"; Aiven's page
-    (https://aiven.io/free-postgresql-database) says "1 GB storage, 1 GB RAM, 1 CPU per VM". Odin
-    says "24/7 for all database services"; Aiven says the free service "powers off after a period
-    of inactivity (you'll be notified by email and in-platform beforehand)", and its docs
-    (https://aiven.io/docs/platform/concepts/free-plan, updated 2026-09-08) say it may "Power off
-    free services with no initial usage within the first few hours" and "Power off free services
-    with no continuative activity"; "You can power them back on at any time." Odin's "No credit
-    card required" still holds: "You don't need a credit card to create a free service and you can
-    use them indefinitely free of charge." Odin names Redis; Aiven's free list now says Valkey.
-- **verified:** 2026-10-01
+  comes first.
 - **learner does:** reads MDN first, with their Problem Set 2 app's folder open beside the page,
-  then Odin. Stops at six points and answers before reading on; "I don't know yet" is an honest
-  answer:
-  1. MDN, after Summary: which of their app's parts could a static web server send as it is, and
-     which needs something running?
-  2. Odin, after Static vs dynamic sites: their app is dynamic, but which of its parts is made of
-     files that are the same for everyone?
-  3. Odin, after Server instance and database instance: **sketches their own app as three boxes,
+  then Odin. Stops twice and answers before reading on; "I don't know yet" is an honest answer:
+  1. Odin, after Server instance and database instance: **sketches their own app as three boxes,
      frontend, backend and database, and labels each with the kind of host it needs** (one that
      sends files as they are; one that keeps a program running; somewhere the data lives once it
-     leaves the laptop). Then says where the SQLite file sits in that sketch, and whether one vendor
-     could hold more than one box.
-  4. Odin, after Domain names: what address a visitor would type to reach their app on the first
-     day, before they buy any name.
-  5. Odin, after each vendor in Our recommended PaaS services: which of their three boxes that
-     vendor could hold, and one detail in the paragraph they would want to check before relying
+     leaves the laptop), and says where the SQLite file sits in the sketch.
+  2. Odin, after skimming the vendors: picks one, says which of their three boxes it could hold,
+     and names one thing in its paragraph they would check on the vendor's own site before relying
      on it.
-  6. At the end, looking away from both pages: says in three or four sentences what they would
-     need to decide in Problem Set 3, before any deploy, and what they would ask their agent for in
-     the session 11 lab.
 - **tutor role:** explainer
 - **tutor does:** stays quiet through the reading except at the stops and when asked. At each
-  stop, takes the learner's answer first and replies with a near-miss question rather than a
+  stop, takes the learner's answer first and replies with one near-miss question rather than a
   verdict ("you said the frontend needs a server host because it's React; once it's built, what
-  is left in `dist/` that has to run on the host?"). At stop 3, checks that the sketch puts the
-  built frontend on a host that sends files, the Express server on one that keeps it running, and
-  the SQLite file next to the server, since it is a file the server opens and not a service of its
-  own; if the learner asks whether the backend could send the frontend's files itself, says yes
-  and that `a-read-fso-serve-dist` shows how. At stop 5, **flags each lagging vendor detail listed
-  under artifact as the learner reaches it, rather than dropping the page or correcting it
-  silently**: names the detail, says what the vendor's own page said on 2026-10-01 and where, and
-  asks the learner which they would trust and why. That is the habit `c-check-vendor-claims` builds,
-  met here on a page that was right when it was written. Points out that Odin's own Render
-  paragraph says two different things about databases. Does not explain secrets, backups or
-  debugging; says each is a later topic. Makes no change to the learner's app.
-- **done when:** each of the six stops has an answer tied to the learner's own app, the sketch has
-  three labeled boxes with the SQLite file placed, and at stop 5 the learner has named, for at
-  least one vendor, a detail they would check and where. No `checks`: the readiness indication
-  `o-orientation` is ruled on is taken in `a-dry-run-hosting-asks`, which follows.
-- **offer as:** this topic's orientation, deliberately one entry holding a sequence: a short MDN
-  page that supplies the static web server, then Odin's lesson, which supplies hosting providers,
-  PaaS, instances, domains and four real vendors, with the debugging half left for a later topic.
-  About 2,450 words, free, 50 to 60 minutes with the stops. Odin's vendor details are a year or so
-  behind in places, and the tutor flags them as they come up; that is part of the lesson, not a
-  defect in the choice. Followed by `a-dry-run-hosting-asks`.
+  is left in `dist/` that has to run on the host?"). At stop 1, checks the built frontend is on a
+  host that sends files, the Express server on one that keeps it running, and the SQLite file next
+  to the server. **Flags Odin's lagging vendor details if the learner stops on one, without
+  dropping the page:** as checked 2026-10-01, Railway's trial is a one-time $5 for up to 30 days,
+  then a Free plan of $1 a month; Render's free Postgres (Odin says both "$7" and "expires 30
+  days") expires after 30 days and is deleted 14 days later; Neon's compute now scales to zero
+  after 5 minutes idle; Aiven's free service is 1 GB and powers off when idle, still with no card.
+  Says secrets, backups and debugging are later topics. Makes no change to the learner's app.
+- **done when:** both stops have an answer tied to the learner's own app: a sketch of three labeled
+  boxes with the SQLite file placed, and one vendor placed against a box with one thing to check.
+  No `checks`: the readiness indication `o-orientation` is ruled on is taken in
+  `a-dry-run-hosting-asks`, which follows.
+- **offer as:** this topic's orientation, deliberately one entry holding a sequence: two sections
+  of a short MDN page that supply the static web server, then the first half of Odin's lesson,
+  which supplies hosting providers, PaaS, instances and four real vendors, skimmed. About 15
+  minutes with the stops; with `a-dry-run-hosting-asks`, about 20. Odin's vendor numbers are a year
+  or so behind in places, and the tutor flags them if they come up; that is part of the lesson,
+  not a defect in the choice. Followed by `a-dry-run-hosting-asks`.
 
 ### `a-dry-run-hosting-asks`
 
@@ -148,24 +106,22 @@ Taken together, it is the topic's one shared blind spot.
 - **supports:** orient
 - **checks:** `o-orientation`
 - **artifact:** no external source. The learner's three-box sketch and their answers from
-  `a-read-odin-deployment`, still in front of them. 10 to 15 minutes. Nothing needs to be running.
+  `a-read-odin-deployment`, still in front of them. About 5 minutes. Nothing needs to be running.
 - **verified:** 2026-10-01
-- **learner does:** three short rehearsals, none of them judged, each answered in a sentence or
-  two. First, the tutor describes a made-up app's three parts and one vendor's offer in a line, and
-  the learner says which part that vendor could host, or none. Second, the tutor, speaking as a
-  coding agent, makes one claim about a vendor's free tier, and the learner says where they would
-  look to find out whether it is true today (or, for a recommendation, what it leaves out and
-  where they would find that). Third, the tutor gives one line of terms from each of
-  two plans, and the learner says one difference between them that would matter for a class
-  project. Then answers the question the tutor puts: with your sketch and the reading beside you,
+- **learner does:** two quick rehearsals, neither judged, each answered in a sentence. First, the
+  tutor describes a made-up app's three parts and one vendor's offer in a line, and the learner
+  says which part that vendor could host, or none. Second, the tutor gives one line of terms from
+  each of two plans, and the learner says one difference between them that would matter for a
+  class project. (Finding out whether a vendor claim is true was rehearsed at the reading's second
+  stop.) Then answers the question the tutor puts: with your sketch and the reading beside you,
   could you now attempt these three things for real: saying which kind of host each part of an
   app needs and whether a plan covers them all; finding out whether what an agent says about a
   hosting vendor is true today; and choosing between two hosting plans knowing what each would
   cost you?
 - **tutor role:** explainer
-- **tutor does:** sets the three rehearsals from the generator below and grades none of them. If
-  an answer shows a misunderstanding (the frontend needing a server host because it is React; the
-  agent's word, or a blog's, as the place to look; "free" as the only difference worth naming),
+- **tutor does:** sets the two rehearsals from the generator below and grades neither. If an
+  answer shows a misunderstanding (the frontend needing a server host because it is React; "free"
+  as the only difference worth naming),
   explains it once and moves on. Then puts the readiness question as written above and rules on
   the answer.
 - **done when:** criterion met. The bar for this goal is did it once and help is expected
@@ -178,28 +134,24 @@ Taken together, it is the topic's one shared blind spot.
   study activity on it; don't put the question again in the same sitting. This goal isn't
   required, so a no never blocks anything else the learner wants to try.
 - **kind:** generator
-- **generator:** vary the made-up app and the three items; hold the rest fixed. The app is small,
+- **generator:** vary the made-up app and the two items; hold the rest fixed. The app is small,
   with a React frontend, an Express server and a database, used by a class (a study-group finder,
   a club sign-up sheet, a recipe box, a used-textbook board). Rehearsal one is one plan line from
   `a-place-described-plan`'s generator at Easy: one vendor, one offer, one part. Rehearsal two is
-  one claim from `a-plan-claim-checks`'s generator of kind `withdrawn` or `changed`, and the
-  question is where they would look to find out whether it is true today. If the tutor uses a
-  `card-omitted` claim instead, it is given as a recommendation ("I'd go with Fly.io's trial") and
-  the question becomes what the recommendation hasn't said that they would want to know, and where
-  they would find it. Rehearsal three is
   one dimension from `a-weigh-described-plans`'s generator (sleep, past a limit, card, agent
-  access, or moving), one line per plan, at Easy. Fixed: three rehearsals in that order, none
+  access, or moving), one line per plan, at Easy. Fixed: two rehearsals in that order, neither
   graded, then the readiness question word for word. Difficulty doesn't vary: this settles an
   indication, not a capability.
 - **worked example:** if the learner freezes on a rehearsal, the tutor answers a different made-up
   one aloud in two or three sentences, then hands the original back.
 - **doesn't show:** an indication of readiness is all this goal asks for and all this shows. It
   shows nothing about any of the three capabilities: every rehearsal is helped, ungraded and of the
-  easiest kind, and a one-sentence answer never has to be complete. It shows nothing about the
+  easiest kind, a one-sentence answer never has to be complete, and claim checking is rehearsed
+  only at the reading's second stop. It shows nothing about the
   fifteen words, which have their own supply.
 - **offer as:** the short step that closes orientation, after `a-read-odin-deployment`. Not an
   alternative to it: the reading gives you the shape, and this is where you say whether you have
-  it. 10 to 15 minutes, nothing to run.
+  it. About 5 minutes, nothing to run; about 20 with the reading.
 
 ### `a-read-fso-serve-dist`
 
@@ -761,8 +713,6 @@ Taken together, it is the topic's one shared blind spot.
   Fly.io's card rule. A learner who has done those routes may recognize the planted claims from
   memory. For a counting instance, plant claims about vendors or limits the learner has not met in
   this topic. If you can't, note in the record which planted claims the learner had already seen.
-  When you set rehearsal two of `a-dry-run-hosting-asks`, don't use a claim you mean to plant here
-  later.
 
 ### `a-check-lab-answer`
 
