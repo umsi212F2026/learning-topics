@@ -261,6 +261,7 @@ Taken together, it is the topic's one shared blind spot.
   carry the cases students most often miss. Label the attempt `a-judge-plan-coverage/<plan>`, for
   example `a-judge-plan-coverage/q4`. Stop when done when has been met on two or three sittings
   with different cases, and offer `a-place-described-plan`; using up the bank is not the target.
+- **verified:** 2026-10-02
 - **learner does:** reads the header and the one plan served, then says which part each vendor in
   it hosts and names every gap and mismatch, or says every part is covered. Then says in a
   sentence the rule they judged by.
@@ -286,6 +287,11 @@ Taken together, it is the topic's one shared blind spot.
   near-misses careful students most often get wrong (calling a backend-served frontend unhosted,
   flagging a vendor for a job it wasn't given) spread across the bank. Made-up vendors, so nothing
   here goes stale. Take a few across visits.
+- **check note:** Harbor here is a made-up vendor offering static sites, a web service with a disk,
+  and Postgres, and nothing is said about sleep or billing. The Harbor in
+  `tasks/judge-plan-weighings.md` has different terms. If the learner has done both, tell them these
+  are separate made-up vendors that share a name, and that each sitting judges only the offers in
+  front of them.
 
 ### `a-place-described-plan`
 
@@ -479,6 +485,7 @@ Taken together, it is the topic's one shared blind spot.
   met Render's 30-day expiry anywhere in this topic, prefer claims about other vendors. Stop when
   done when has been met on two or three sittings with different cases, and offer
   `a-plan-claim-checks`; using up the bank is not the target.
+- **verified:** 2026-10-02
 - **learner does:** hears the claim and says where they would look before the tutor starts. Watches
   the tutor's half aloud in a browser and interrupts whenever they disagree or can't follow. Then
   does the learner's half themselves while the tutor watches, saying aloud where they are looking
@@ -509,6 +516,12 @@ Taken together, it is the topic's one shared blind spot.
   candidate where you see where a check goes wrong (a blog in place of the vendor, a card rule
   split across a vendor's pricing and trial pages). Needs a browser and a live session, 10 to 15
   minutes. `a-check-2025-guide-claims` is all yours from the start.
+- **check note:** On `c2`, treat Supabase's card the way `g3` in `a-check-2025-guide-claims` does.
+  If the learner finds a sentence elsewhere on Supabase's own site that settles it, that answer is
+  better than "I'd find out at sign-up". Accept "I'd find out at sign-up" only if they looked beyond
+  the pricing page first. Your half of each check is narrated, so the learner isn't watching over
+  your shoulder. Give each address and the sentence you read as you go, so the learner can open the
+  page and object between steps.
 
 ### `a-check-2025-guide-claims`
 
@@ -537,6 +550,7 @@ Taken together, it is the topic's one shared blind spot.
   learner has met Render's 30-day expiry anywhere in this topic, prefer claims about other vendors
   over `g5`. Stop when done when has been met on two or three sittings with different cases, and
   offer `a-plan-claim-checks`; using up the bank is not the target.
+- **verified:** 2026-10-02
 - **learner does:** reads the header and the one claim served, then follows the five steps on it:
   says which page on the vendor's own site they expect to settle it and why; finds it and copies
   the sentence that settles it with its address and any date; says whether the claim holds, has
@@ -567,6 +581,11 @@ Taken together, it is the topic's one shared blind spot.
   was right when it was written, one at a time. You do the checking from the start, on real
   vendor pages, 10 to 15 minutes. The most hands-on of the study routes, and the one that shows
   how fast this goes stale. Pick `a-watch-claims-checked` to see it done first.
+- **check note:** `g2` and `g6` are both settled on Neon's pricing page. If `g2` has been served,
+  `g6` is mostly about deciding what a vague claim would have to mean before it can be checked, so
+  put the weight there. The key notes that Neon's storage went from 0.5 GB to 1 GB per project
+  overnight on 2026-10-02. Neither claim states a figure, so neither is stale. The change is still
+  worth mentioning as an example of how fast these limits move.
 
 ### `a-sort-claim-sources`
 
@@ -617,6 +636,7 @@ Taken together, it is the topic's one shared blind spot.
   Render, so if the learner has already met Render's 30-day expiry elsewhere in this topic, skip
   `s1`. Stop when done when has been met on two or three sittings with different cases, and offer
   `a-plan-claim-checks`; using up the bank is not the target.
+- **verified:** 2026-10-02
 - **learner does:** hears the claim and the one source, and without opening it says: does this
   source settle the claim today, help only with knowing what to look for, or not help with this
   claim, and why. If it doesn't settle it, says where they would go instead. For `s1`, opens it
@@ -643,6 +663,13 @@ Taken together, it is the topic's one shared blind spot.
   candidate whose bank is near-misses (a forum on the vendor's own site, a careful dated
   comparison with affiliate links, the vendor's docs about something else). Pick
   `a-check-2025-guide-claims` to do the finding yourself.
+- **check note:** Orientation's stop 5 flags Render's free Postgres expiring after 30 days. So for
+  most learners the rule to skip `s1` will apply from the first sitting, and this route will then
+  judge only sources that don't settle the claim. That is acceptable here: the route teaches what a
+  source can and can't settle, and the learner meets settling pages in `a-watch-claims-checked` and
+  `a-check-2025-guide-claims`. Don't present a non-settling verdict on every sitting as a sign that
+  nothing could settle the claim. Say once that the vendor's free-plan docs would, and name the
+  page.
 
 ### `a-plan-claim-checks`
 
@@ -949,6 +976,7 @@ Taken together, it is the topic's one shared blind spot.
   `a-judge-plan-weighings/<choice>`, for example `a-judge-plan-weighings/v6`. Stop when done when
   has been met on two or three sittings with different cases, and offer `a-weigh-described-plans`;
   using up the bank is not the target.
+- **verified:** 2026-10-02
 - **learner does:** reads the header and the one choice served, then says which of the
   criterion's parts it misses, if any: a difference that matters, the cost of the extra vendors,
   a claim the terms don't support, the case for the other plan. Points to the line in the terms
