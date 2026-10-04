@@ -16,9 +16,9 @@ Taken together, it is the topic's one shared blind spot.
 | id | Goal | Criterion: what gets examined, and what counts |
 | -- | ---- | ---------------------------------------------- |
 | `o-orientation` | get the shape of this area before working on any particular part of it | `orientation` |
-| `c-place-app-parts` | say which kind of host each part of an app needs, and whether a hosting plan covers them all | Given an app's parts, such as a React frontend, an Express backend and a SQLite database, and a hosting plan listing each vendor and what it offers, says which part each vendor would host, and names any part the plan leaves without a host or puts on a host that cannot run it, or says that every part is covered. It passes when every gap and mismatch is found and nothing is named that isn't one, including for a plan where one vendor hosts more than one part, or where the backend serves the built frontend itself. |
+| `c-place-app-parts` | say which kind of host the frontend and the backend each need, and whether a hosting plan covers them | Given an app with a React frontend and an Express backend, and a hosting plan listing each vendor and what it offers, says which part each vendor would host, and names any part the plan leaves without a host or puts on a host that cannot run it, or says both are covered. It passes when every gap and mismatch is found and nothing is named that isn't one, including for a plan where one vendor hosts both, or where the backend serves the built frontend itself. Where the database is kept is not part of it. |
 | `c-check-vendor-claims` | find out whether what an agent says about a hosting vendor is true today | Given an agent's answer comparing hosting vendors, says how they would find out which of its claims about free tiers, limits and credit cards still hold. It passes when what they describe checks each claim against the vendor's own current pages, not against the agent, a blog post or a forum; would catch a free tier the vendor has since withdrawn, a limit that has changed, and a credit card requirement the answer left out; and says what they would add to the prompt so that every claim in the next answer comes with what they need to check it. Asking the agent whether it is sure does not meet it. |
-| `c-weigh-hosting-plans` | choose between hosting plans for an app, knowing what each would cost | Given two hosting plans for the same app, one putting every part with a single vendor and one using a different vendor for each part, along with each vendor's free-tier terms, chooses one and says why. It passes when they name each difference in the terms that would matter for a class project with few users (whether the app sleeps, what happens when it passes a limit, whether a credit card is required and what having one on file risks, whether their agent can reach the host to change its settings and read its logs, and how hard it would be to move); say what the extra vendors add in accounts, secrets and places to look when something breaks; name nothing the terms don't support; and state the strongest case for the plan they didn't choose. Which plan they choose is not part of it. |
+| `c-weigh-hosting-plans` | choose between hosting plans for an app, knowing what each would cost | Given two hosting plans for the same app, one putting the frontend and backend with a single vendor and one using a separate vendor for each, along with each vendor's free-tier terms, chooses one and says why. It passes when they name each difference in the terms that would matter for a class project with few users (whether the app sleeps, what happens when it passes a limit, whether a credit card is required and what having one on file risks, whether their agent can reach the host to change its settings and read its logs, and how hard it would be to move); say what the extra vendors add in accounts, secrets and places to look when something breaks; name nothing the terms don't support; and state the strongest case for the plan they didn't choose. Which plan they choose is not part of it, and neither is where the database is kept. |
 
 ## Coverage
 
@@ -65,17 +65,17 @@ Taken together, it is the topic's one shared blind spot.
   domain, and, in the skimmed vendor lists, sleep and credit card. The rest of the fifteen have
   their own supply; glossing them as they come up is optional. Odin is written for its own Node
   course, whose apps are rendered on the server, so its picture is two boxes (a server and a
-  database) and it says Netlify and Vercel "not the right tools for our back ends" without
+  database) and it says Netlify and Vercel are "not the right tools for our back ends" without
   saying where a React frontend would go. MDN's static web server is the third box, which is why it
   comes first.
 - **verified:** 2026-10-02
 - **learner does:** reads MDN first, with their Problem Set 2 app's folder open beside the page,
   then Odin. Stops twice and answers before reading on; "I don't know yet" is an honest answer:
   1. Odin, after Server instance and database instance: **sketches their own app as three boxes,
-     frontend, backend and database, and labels each with the kind of host it needs** (one that
-     sends files as they are; one that keeps a program running; somewhere the data lives once it
-     leaves the laptop), and says where the SQLite file sits in the sketch.
-  2. Odin, after skimming the vendors: picks one, says which of their three boxes it could hold,
+     frontend, backend and database, and labels the frontend and backend boxes with the kind of
+     host each needs** (one that sends files as they are; one that keeps a program running). The
+     database box is marked "see database-hosting" rather than placed.
+  2. Odin, after skimming the vendors: picks one, says which of their boxes it could hold,
      and names one thing in its paragraph they would check on the vendor's own site before relying
      on it.
 - **tutor role:** explainer
@@ -83,15 +83,16 @@ Taken together, it is the topic's one shared blind spot.
   stop, takes the learner's answer first and replies with one near-miss question rather than a
   verdict ("you said the frontend needs a server host because it's React; once it's built, what
   is left in `dist/` that has to run on the host?"). At stop 1, checks the built frontend is on a
-  host that sends files, the Express server on one that keeps it running, and the SQLite file next
-  to the server. **Flags Odin's lagging vendor details if the learner stops on one, without
+  host that sends files and the Express server on one that keeps it running; if the learner tries
+  to place the database, says that belongs to the database-hosting topic. **Flags Odin's lagging vendor details if the learner stops on one, without
   dropping the page:** as checked 2026-10-01, Railway's trial is a one-time $5 for up to 30 days,
   then a Free plan with $1 of free credit a month; Render's free Postgres (Odin says both "$7" and "expires 30
   days") expires after 30 days and is deleted 14 days later; Neon's compute now scales to zero
   after 5 minutes idle; Aiven's free service is 1 GB and powers off when idle, still with no card.
   Says secrets, backups and debugging are later topics. Makes no change to the learner's app.
-- **done when:** both stops have an answer tied to the learner's own app: a sketch of three labeled
-  boxes with the SQLite file placed, and one vendor placed against a box with one thing to check.
+- **done when:** both stops have an answer tied to the learner's own app: a sketch with the
+  frontend and backend boxes labeled and the database box marked "see database-hosting", and one
+  vendor placed against a box with one thing to check.
   No `checks`: the readiness indication `o-orientation` is ruled on is taken in
   `a-dry-run-hosting-asks`, which follows.
 - **offer as:** this topic's orientation, deliberately one entry holding a sequence: two sections
@@ -110,13 +111,13 @@ Taken together, it is the topic's one shared blind spot.
   `a-read-odin-deployment`, still in front of them. About 5 minutes. Nothing needs to be running.
 - **verified:** 2026-10-01
 - **learner does:** two quick rehearsals, neither judged, each answered in a sentence. First, the
-  tutor describes a made-up app's three parts and one vendor's offer in a line, and the learner
+  tutor describes a made-up app's frontend and backend and one vendor's offer in a line, and the learner
   says which part that vendor could host, or none. Second, the tutor gives one line of terms from
   each of two plans, and the learner says one difference between them that would matter for a
   class project. (Finding out whether a vendor claim is true was rehearsed at the reading's second
   stop.) Then answers the question the tutor puts: with your sketch and the reading beside you,
-  could you now attempt these three things for real: saying which kind of host each part of an
-  app needs and whether a plan covers them all; finding out whether what an agent says about a
+  could you now attempt these three things for real: saying which kind of host an app's frontend
+  and backend each need and whether a plan covers them; finding out whether what an agent says about a
   hosting vendor is true today; and choosing between two hosting plans knowing what each would
   cost you?
 - **tutor role:** explainer
@@ -136,7 +137,7 @@ Taken together, it is the topic's one shared blind spot.
   required, so a no never blocks anything else the learner wants to try.
 - **kind:** generator
 - **generator:** vary the made-up app and the two items; hold the rest fixed. The app is small,
-  with a React frontend, an Express server and a database, used by a class (a study-group finder,
+  with a React frontend and an Express server, used by a class (a study-group finder,
   a club sign-up sheet, a recipe box, a used-textbook board). Rehearsal one is one plan line from
   `a-place-described-plan`'s generator at Easy: one vendor, one offer, one part. Rehearsal two is
   one dimension from `a-weigh-described-plans`'s generator (sleep, past a limit, card, agent
@@ -171,8 +172,8 @@ Taken together, it is the topic's one shared blind spot.
 - **learner does:** reads the three sections without running anything. Then, on paper or in a
   note, draws two arrangements of their own Problem Set 2 app: (a) the built frontend on a static
   host and the Express server on a server host; (b) the Express server sending the built frontend
-  itself. For each, labels every box with the kind of host it needs and draws where the SQLite
-  file is. Then answers: in (b), what does the plan no longer need? If a classmate's plan used
+  itself. For each, labels the frontend and backend boxes with the kind of host each needs (the
+  database is left out; it belongs to the database-hosting topic). Then answers: in (b), what does the plan no longer need? If a classmate's plan used
   arrangement (b) and named no static host, would that be a gap? If a plan used arrangement (a) and
   put the Express server on a host that only sends files, what would happen when the page asked
   for data?
@@ -183,8 +184,8 @@ Taken together, it is the topic's one shared blind spot.
   of its own; is it unhosted?"; "in (a), could the static host also run the server if it's the
   same company?"). Does not get into how the page finds the server's address in (a); that is
   config, a later topic.
-- **done when:** both drawings label each part with the kind of host it needs and place the SQLite
-  file with the server, and the learner says that a missing static host in (b) is not a gap and an
+- **done when:** both drawings label the frontend and backend with the kind of host each needs,
+  and the learner says that a missing static host in (b) is not a gap and an
   Express server on a files-only host is a mismatch. No `checks`: the arrangement was shown to
   them, and their own app is one they already know.
 - **offer as:** the one candidate about the arrangement the criterion singles out, the backend
@@ -197,26 +198,28 @@ Taken together, it is the topic's one shared blind spot.
 - **serves:** `c-place-app-parts`
 - **supports:** deepen
 - **artifact:** `tasks/judge-plan-coverage.md`, written for this topic, used as a bank of ten
-  plans, one per sitting. Its header (about 350 words) describes Crumbs, a React, Express and
-  SQLite app shaped like the learner's Problem Set 2 app, and five made-up vendors, each saying in
-  a line what it offers (a files-only host, a host that runs a program with a disk, a
-  Postgres-only database host, a host that runs short functions and keeps nothing running, and an
-  all-in-one). Each plan `q1` to `q10` is one to three lines and reads alone. The key, one row per
-  plan with its case, is in `tasks/judge-plan-coverage-key.md`, for the tutor only. Cases: clean
-  split `q1`; shared vendor `q5`; backend serves the frontend `q3`, `q10` (also hosted twice);
-  decoy `q8` (functions host used only for files); clean after a switch to Postgres `q9`; gap
-  `q6` (frontend), `q7` (database); mismatch and gap `q2`; two mismatches `q4`. 10 to 15 minutes a
-  sitting. Nothing to run.
+  plans, one per sitting. Its header (about 380 words) describes Crumbs, a React and Express app
+  shaped like the learner's Problem Set 2 app, whose plans place only the frontend and the backend
+  (its database belongs to the database-hosting topic), and four made-up vendors, each saying in
+  a line what it offers (a files-only host, a host that runs a program, a host that runs short
+  functions and keeps nothing running, and one offering both static sites and web services).
+  Each plan is one to three lines and reads alone. The key, one row per plan with its case, is in
+  `tasks/judge-plan-coverage-key.md`, for the tutor only. Cases: clean split `q1`; one vendor
+  hosts both `q5`; backend serves the frontend `q3`, `q10` (also hosted twice); decoy `q8`
+  (functions host used only for files); gap `q6` (frontend), `q11` (backend left on a laptop);
+  mismatch `q2` (Express on a files-only host), `q4` (Express on a functions host), `q12` (inside
+  one vendor hosting both). `q7` and `q9` were about the database and are dropped. 10 to 15
+  minutes a sitting. Nothing to run.
 - **kind:** bank
-- **bank:** the ten plans in `tasks/judge-plan-coverage.md`, named `q1` to `q10`. To pick the next,
+- **bank:** the ten plans in `tasks/judge-plan-coverage.md`, named `q1` to `q6`, `q8` and `q10` to
+  `q12`. To pick the next,
   run `served.mjs cloud-hosting-2026-10 c-place-app-parts`, take a plan not yet served, and prefer a case the
   learner hasn't met, from the list above; a good first three are `q3`, `q4` and `q6`, which
   carry the cases students most often miss. Label the attempt `a-judge-plan-coverage/<plan>`, for
   example `a-judge-plan-coverage/q4`. Stop when done when has been met on two or three sittings
   with different cases, and offer `a-place-described-plan`; using up the bank is not the target.
-- **verified:** 2026-10-02
 - **learner does:** reads the header and the one plan served, then says which part each vendor in
-  it hosts and names every gap and mismatch, or says every part is covered. Then says in a
+  it hosts and names every gap and mismatch, or says both are covered. Then says in a
   sentence the rule they judged by.
 - **tutor role:** critic
 - **tutor does:** shows the header and the one plan, never the key file. Takes the learner's answer
@@ -225,14 +228,14 @@ Taken together, it is the topic's one shared blind spot.
   when a request for recipes arrives?") rather than giving the verdict. If this plan's partner in
   the key has been served before, asks how this plan differs from that one and whether the answer
   should differ too (for `q6` after `q3`, "last time the frontend had no host of its own and was
-  fine; what is different here?"; for `q9` after `q4`, "last time Ledger couldn't take the
-  database; what changed?"). If the answer still differs from the key after that one question,
-  gives the key's verdict and its what-decides-it line, and moves on. If the learner raises whether a free host's disk keeps the SQLite file, says that is a
-  good question for the topic on keeping hosted data safe, and counts the file as hosted here.
+  fine; what is different here?"; for `q12` after `q5`, "last time Harbor hosted both and that
+  was fine; what is different here?"). If the answer still differs from the key after that one
+  question, gives the key's verdict and its what-decides-it line, and moves on. If the learner
+  raises where the database goes, says that belongs to the database-hosting topic.
 - **done when:** the learner's answer on this plan matches the key, every gap and mismatch and
   nothing else, after at most one near-miss question; and their stated rule covers what each part
   needs and checking each vendor's offer against the part it was given. No `checks`: every plan in
-  the bank uses the same five vendors, and each sitting ends with the key's verdict discussed, so
+  the bank uses the same four vendors, and each sitting ends with the key's verdict discussed, so
   from the second sitting on the learner is judging vendors whose fit they have already been
   told. A pass shows nothing about meeting new offers cold, which is what
   `a-place-described-plan` sets.
@@ -240,11 +243,6 @@ Taken together, it is the topic's one shared blind spot.
   near-misses careful students most often get wrong (calling a backend-served frontend unhosted,
   flagging a vendor for a job it wasn't given) spread across the bank. Made-up vendors, so nothing
   here goes stale. Take a few across visits.
-- **check note:** Harbor here is a made-up vendor offering static sites, a web service with a disk,
-  and Postgres, and nothing is said about sleep or billing. The Harbor in
-  `tasks/judge-plan-weighings.md` has different terms. If the learner has done both, tell them these
-  are separate made-up vendors that share a name, and that each sitting judges only the offers in
-  front of them.
 
 ### `a-place-described-plan`
 
@@ -256,10 +254,10 @@ Taken together, it is the topic's one shared blind spot.
 - **verified:** 2026-10-01
 - **learner does:** reads the app's parts and the plan, then writes alone, for each vendor, which
   part it would host, and then names every part left without a host or put on a host that cannot
-  run it, or says every part is covered. Hands it to the tutor.
+  run it, or says both are covered. Hands it to the tutor.
 - **tutor role:** none
 - **tutor does:** builds the instance per the generator and writes the key into the record before
-  showing anything: which part each vendor hosts, and every gap and mismatch, or "every part
+  showing anything: which part each vendor hosts, and every gap and mismatch, or "both
   covered". Shows the app's parts and the plan. Waits, writing down any help word for word. Sends
   the adjudicator the parts, the plan, the key, the learner's answer verbatim and every piece of
   help. After the ruling, tells the learner what was missed or named wrongly. Labels the attempt
@@ -267,35 +265,33 @@ Taken together, it is the topic's one shared blind spot.
 - **done when:** criterion met with no help, on a `backend-serves`, `shared-vendor`, `decoy` or
   `two-faults` instance.
 - **kind:** generator
-- **generator:** fixed: the app has a frontend, a backend and a database, described in a short
-  list in the form of `tasks/judge-plan-coverage.md` (what each part is, what it needs to run, and
-  for SQLite that it is a file the server opens). The plan names two to four vendors, each with a
+- **generator:** fixed: the app has a frontend and a backend, described in a short list in the
+  form of `tasks/judge-plan-coverage.md` (what each part is and what it needs to run); the app's
+  database is never part of the plan or the key. The plan names one to three vendors, each with a
   one- or two-line offer written as that file writes them: what it hosts and runs, and what it does
   not. Vendors are made up, so the key depends only on the stated offers. Brightpage, Kettle,
-  Ledger, Spark and Harbor may be used for the worked example and for practice; a counting
-  instance invents new vendor names on the same pattern and never reproduces any of `q1` to `q10`
-  in `tasks/judge-plan-coverage.md`, which the learner may have judged with its key discussed. Whether a
-  host's disk keeps data is never part of an offer and never part of the key. What varies: the app
-  (a different one each attempt; its frontend is React or another framework built to static files,
-  its backend Express or another long-running server, its database SQLite or Postgres), the
-  vendors and their offers, and the plan's shape:
-  - `split-clean` (Easy): one vendor per part, every part covered.
+  Spark and Harbor may be used for the worked example and for practice; a counting
+  instance invents new vendor names on the same pattern and never reproduces any plan in
+  `tasks/judge-plan-coverage.md`, which the learner may have judged with its key discussed. What
+  varies: the app (a different one each attempt; its frontend is React or another framework built
+  to static files, its backend Express or another long-running server), the vendors and their
+  offers, and the plan's shape:
+  - `split-clean` (Easy): one vendor per part, both covered.
   - `one-gap` (Easy): one part left without a host.
   - `wrong-host` (Medium): one part on a host that cannot run it as the app is now (a long-running
-    server on a files-only or functions-only host; a SQLite file on a database-only host; a
-    Postgres database expected on a host that offers only a disk).
+    server on a files-only or functions-only host).
   - `backend-serves` (Medium): the backend sends the built frontend itself and no static host is
-    named; every part covered, or with one unrelated gap or mismatch.
-  - `shared-vendor` (Medium): one vendor hosts two or three parts as separate services; every part
-    covered, or with one mismatch inside that vendor.
-  - `decoy` (Hard): every part covered, but the backend sends the built frontend itself and the
-    frontend is also put on a static host, or a vendor hosting two parts has a limitation that
-    doesn't bear on either part it was given; either way it invites a false gap or mismatch.
-  - `two-faults` (Hard): two gaps or mismatches of different kinds, at least one inside a vendor
-    hosting more than one part.
+    named; both covered, or the backend on a host that cannot run it.
+  - `shared-vendor` (Medium): one vendor hosts both parts as separate services; both covered, or
+    with one mismatch inside that vendor.
+  - `decoy` (Hard): both covered, but the backend sends the built frontend itself and the frontend
+    is also put on a static host, or a vendor hosting both has a limitation that doesn't bear on
+    either part it was given; either way it invites a false gap or mismatch.
+  - `two-faults` (Hard): both parts faulted, in different ways (one a gap, one a mismatch), at
+    least one inside a vendor hosting both.
   Difficulty as marked. **Only `backend-serves`, `shared-vendor`, `decoy` and `two-faults` count**,
-  because each contains a case the criterion names (a vendor hosting more than one part, or the
-  backend serving the built frontend) and the bar is one unaided pass. `split-clean` and `one-gap`
+  because each contains a case the criterion names (one vendor hosting both, or the backend
+  serving the built frontend) and the bar is one unaided pass. `split-clean` and `one-gap`
   (Easy) are for the worked example and for a retry with help after a miss; `wrong-host` (Medium)
   is practice only, since its plan contains neither named case. For review visits, serve a
   counting shape the learner hasn't had, reading the labels `served.mjs` returns.
@@ -306,11 +302,11 @@ Taken together, it is the topic's one shared blind spot.
 - **doesn't show:** the offers are stated plainly in a line each, so a pass doesn't show the
   learner could work out what a real vendor offers from its own pages, where the answer is spread
   over pricing and docs. Vendors are made up, so a pass says nothing about knowing which real
-  vendor does what. Whether a host's disk keeps a SQLite file is left out on purpose and is not
-  examined. The learner knows a check is on.
+  vendor does what. Where the database is kept is left out, as the criterion says. The learner
+  knows a check is on.
 - **offer as:** the check that's available now: a made-up app and plan, 10 minutes, nothing to
-  run, and the tutor picks the shape so the two cases the criterion names (a vendor hosting more
-  than one part, the backend serving the frontend) actually come up. `a-place-lab-plan` is the
+  run, and the tutor picks the shape so the two cases the criterion names (one vendor hosting
+  both, the backend serving the frontend) actually come up. `a-place-lab-plan` is the
   same capability on the plan your own lab prompt produced.
 - **check note:** A `decoy` instance is always fully covered, and a `backend-serves` or
   `shared-vendor` instance may be. A pass on one of those shows the learner did not name a false
@@ -332,12 +328,12 @@ Taken together, it is the topic's one shared blind spot.
 - **verified:** 2026-10-01
 - **learner does:** gets from the tutor a list of their app's parts, and the plan with each
   vendor's offer stated in a line or two. Writes alone which part each vendor would host, and
-  names every gap and mismatch, or says every part is covered. Hands it to the tutor.
+  names every gap and mismatch, or says both are covered. Hands it to the tutor.
 - **tutor role:** none
 - **tutor does:** before the attempt, reads the learner's app (the learner need not see this) to
   list its parts as they are now: what the frontend builds to, whether the backend already sends
-  the built frontend, and whether the database is a SQLite file or something else. Turns the
-  answer into a plan: if it already says which vendor hosts which part, uses that; if it is a
+  the built frontend. The database is left out of the plan, the offers and the key; it belongs to
+  the database-hosting topic. Turns the answer into a plan for the frontend and backend: if it already says which vendor hosts which part, uses that; if it is a
   comparison, takes the vendors it recommends and assigns each to the part the answer suggests it
   for; if the answer suggests nothing for some part, assigns one of the vendors it names to that
   part the way a student reading the answer plausibly would, and records that the tutor did this.
@@ -348,9 +344,9 @@ Taken together, it is the topic's one shared blind spot.
   pages do; if there is none, shows that part's line as "not judged: the vendor's own pages don't
   settle this", tells the learner to leave that part out, and leaves it out of the key, so the
   missing offer is never mistaken for a planted gap. Writes the key into the record from the
-  offers. **Counts the instance only if the plan contains a vendor hosting more than one part, a
-  backend serving the built frontend, or a gap or mismatch.** A plan that is the usual one vendor
-  per part with every part covered is practice only; the tutor says so and offers
+  offers. **Counts the instance only if the plan contains one vendor hosting both, a backend
+  serving the built frontend, or a gap or mismatch.** A plan that is the usual one vendor per part
+  with both covered is practice only; the tutor says so and offers
   `a-place-described-plan` for the counting attempt. Waits during the attempt, writing down any help word for word. Sends the
   adjudicator the parts, the plan with its offers, the key, the learner's answer and every piece
   of help. Labels the attempt `a-place-lab-plan/<vendors, joined with +>`.
@@ -816,8 +812,10 @@ Taken together, it is the topic's one shared blind spot.
   Hatchable's own pattern for React, and SQLite swapped for Hatchable's Postgres: a port, not a
   deploy, and code written for one vendor's SDK, which is deep lock-in. Its dated claims (Render's Postgres expiry, Neon and Supabase signing up without a card,
   Fly.io trial-only) were right on 2026-10-01 as far as each vendor's own page settles them, but
-  are claims to check, not facts to carry (`a-watch-claims-checked` uses them that way).
-- **verified:** 2026-10-01
+  are claims to check, not facts to carry (`a-watch-claims-checked` uses them that way). The
+  database subsections and the "three accounts" and all-in-one points are read as context: where
+  the database lives belongs to the database-hosting topic, and this topic weighs only where the
+  frontend and backend go.
 - **learner does:** before reading, writes the five things the goal asks them to compare (sleep;
   what happens past a limit; card required, and what a card on file risks; whether their agent can
   reach the host; how hard it is to move). Reads the assigned sections, and for each trap writes
@@ -825,7 +823,7 @@ Taken together, it is the topic's one shared blind spot.
   Hatchable fits that shows the list's recommendation can't be taken as given for their app, says
   why, and then, with the tutor, opens Hatchable's restrictions page and says what their app would
   have to become to run there and which of the five that is about; for their own
-  Problem Set 2 app on a three-vendor free plan, lists the accounts, the secrets that would have to
+  Problem Set 2 app with its frontend and backend on two vendors, lists the accounts, the secrets that would have to
   be copied between vendors, and the places they would look when it broke; and notes which of the
   five things the article says nothing about.
 - **tutor role:** socratic questioner
@@ -836,17 +834,17 @@ Taken together, it is the topic's one shared blind spot.
   sentence, asks what the learner's Express server does between requests. On the restrictions
   page, asks what "not Node" and "No `npm install`" mean for a server that is Express, and lets
   the learner arrive at "rewrite it", then asks how hard that code would be to move back off
-  Hatchable (lock-in, the fifth of the five). On the three-accounts list, asks what the server
-  needs to know to reach the database, and where that comes from. Points out at the end that the
+  Hatchable (lock-in, the fifth of the five). On the accounts list, asks what the frontend needs
+  to know to reach the server, and where that comes from. If the learner starts weighing where
+  the database goes, says that belongs to the database-hosting topic. Points out at the end that the
   article mentions an AI "connected over MCP" only as the thing that writes the code, and says
   nothing about an agent reading a host's logs or changing its settings: that is the item the
   learner has to find in vendor docs (a command-line tool, an MCP server or an API), which
   `a-judge-plan-weighings` and the checks supply in the terms.
 - **done when:** every trap is mapped to one of the five or to none; the learner has quoted the
   long-lived-processes sentence and, from the restrictions page, said that their app would need
-  its backend rewritten and its database swapped to run on Hatchable, and that this is lock-in;
-  their three-account list names at least the database connection string going to the server
-  host and three places to look; and they noted that the article says nothing about an agent
+  its backend rewritten to run on Hatchable, and that this is lock-in; their accounts list names
+  at least the server's address going into the frontend's build and two places to look; and they noted that the article says nothing about an agent
   reading logs or changing settings. No `checks`: the article did the comparing.
 - **offer as:** a real, current, readable survey (updated August 2026) of what free hosting
   costs you, and a lesson in reading one written by an interested party: the vendor's own list
@@ -875,63 +873,59 @@ Taken together, it is the topic's one shared blind spot.
      of your outbound bandwidth during a given month, Render bills you for a supplementary amount.
      If you haven't added a payment method, Render instead suspends all of your Free services for
      the remainder of the month." Build minutes work the same way, except that without a payment
-     method Render disables new builds instead. Free Postgres: "Free Render Postgres databases
-     expire 30 days after creation", with a 14-day grace period before Render deletes it.
-  25 to 30 minutes.
-- **verified:** 2026-10-01
+     method Render disables new builds instead. (The page's free Postgres section belongs to the
+     database-hosting topic; skip it.)
+  20 to 25 minutes.
 - **learner does:** reads the story. Before opening Render's page, writes predictions for their
-  own app on Render's free plan in four cases: nobody visits for an hour, then a grader does; the
-  app is shared on a busy forum and its traffic goes far past the free bandwidth; the same, with a
-  card on the account; the database is 35 days old. For each, says whether the app sleeps, stops,
+  own app's frontend and backend on Render's free plan in three cases: nobody visits for an hour,
+  then a grader does; the app is shared on a busy forum and its traffic goes far past the free
+  bandwidth; the same, with a card on the account. For each, says whether the app sleeps, stops,
   keeps running, or costs money, and how sure they are. Then reads Render's page and marks each
   prediction right or wrong, quoting the sentence that settles it. Ends by writing, in two
   sentences, what having a card on file risks, and how they would find out the same thing for any
   other vendor.
 - **tutor role:** socratic questioner
-- **tutor does:** gives the "this is history" framing first. Insists the four predictions are
+- **tutor does:** gives the "this is history" framing first. Insists the three predictions are
   written before Render's page is opened. On each wrong prediction, asks what the learner had
   assumed rather than correcting it. On the card case, asks what the difference between the two
   forum cases came down to (only whether a card was on file). Asks whether the story would happen
-  on Netlify's free plan today, and where Netlify says so. Does not get into keeping the data in
-  the database safe; the expiry case is about the plan's terms, not about backups.
-- **done when:** four predictions were recorded before the reveal and each is marked with a quoted
+  on Netlify's free plan today, and where Netlify says so. Leaves the database to the
+  database-hosting topic.
+- **done when:** three predictions were recorded before the reveal and each is marked with a quoted
   sentence; the learner can say that a card on file turns a stop into a bill on Render's terms;
   and their last sentence says the answer is in each vendor's own docs on its limits. No `checks`:
   one vendor's terms were laid out for them.
 - **offer as:** the vivid one: a real $104,500 bill (since waived, and no longer possible on that
   plan) and then a real vendor's terms, where you predict before you read. About one vendor and
-  about what happens past a limit and with a card, more than about choosing. 25 to 30 minutes.
+  about what happens past a limit and with a card, more than about choosing. 20 to 25 minutes.
   Pick `a-judge-plan-weighings` for a whole comparison.
-- **check note:** The fourth prediction (the database 35 days old) assumes Render's free Postgres.
-  If the learner's app still uses SQLite, put that case to them as "if your database were Render's
-  free Postgres".
 
 ### `a-judge-plan-weighings`
 
 - **serves:** `c-weigh-hosting-plans`
 - **supports:** deepen
 - **artifact:** `tasks/judge-plan-weighings.md`, written for this topic, used as a bank of eight
-  students' choices, one per sitting. Its header (about 470 words) gives a class-project app with
-  a React frontend, an Express server and a Postgres database; two plans (one vendor for all
-  three, and a vendor for each part); and four made-up vendors' free-tier terms modeled on terms
+  students' choices, one per sitting. Its header (about 450 words) gives a class-project app with
+  a React frontend and an Express server (its database is left to the database-hosting topic);
+  two plans (one vendor for both, and a separate vendor for each); and three made-up vendors'
+  free-tier terms modeled on terms
   real vendors offered on 2026-10-01, each covering sleep, what happens past a limit, card, agent
   access (a command-line tool, an MCP server, what it can and can't do) and moving. Each choice
-  `v1` to `v8` is about 20 to 210 words and reads alone. The key, in its own file for the tutor only
+  `v1` to `v8` is about 20 to 180 words and reads alone. The key, in its own file for the tutor only
   (`tasks/judge-plan-weighings-key.md`), has a verdict per choice and splits the differences into
   those a complete answer must name for this app and those present in the terms but not deciding
   for twenty users. 10 to 15 minutes a sitting. Nothing to run.
 - **kind:** bank
 - **bank:** the eight choices in `tasks/judge-plan-weighings.md`, named `v1` to `v8`. Cases:
-  complete, choosing S `v1`; complete, choosing H `v2`; claims the terms don't support `v3`, `v5`,
+  complete, choosing H `v1`; complete, choosing S `v2`; claims the terms don't support `v3`, `v5`,
   `v8`; misses the extra vendors and agent access `v4`; a card treated as a requirement rather
   than a risk `v6`; no case for the other plan `v7`. To pick the next, run
   `served.mjs cloud-hosting-2026-10 c-weigh-hosting-plans`, take a choice not yet served, and
   prefer a case the learner hasn't met; `v1` or `v2` first gives the learner a complete answer to
-  measure the others by, and `v6` should come early, after `v2`. Label the attempt
+  measure the others by, and `v6` should come early, after `v1`. Label the attempt
   `a-judge-plan-weighings/<choice>`, for example `a-judge-plan-weighings/v6`. Stop when done when
   has been met on two or three sittings with different cases, and offer `a-weigh-described-plans`;
   using up the bank is not the target.
-- **verified:** 2026-10-02
 - **learner does:** reads the header and the one choice served, then says which of the
   criterion's parts it misses, if any: a difference that matters, the cost of the extra vendors,
   a claim the terms don't support, the case for the other plan. Points to the line in the terms
@@ -943,7 +937,7 @@ Taken together, it is the topic's one shared blind spot.
   line in the terms that supports, or doesn't support, what the student said. If the learner
   counts a missing item from the key's second group as a miss, asks why it would decide anything
   for twenty users. If this choice's partner in the key has been served before, asks how the two
-  differ (for `v6` after `v2`, "both chose H; what does each say about a card?"). For `v6`, makes
+  differ (for `v6` after `v1`, "both chose H; what does each say about a card?"). For `v6`, makes
   sure the difference between a card that is required and a card that lets a vendor bill comes
   out. Checks, on any item, whether agent access and the secrets copied between vendors came up,
   the two things students most often leave out. If the verdict still differs from the key after
@@ -982,20 +976,20 @@ Taken together, it is the topic's one shared blind spot.
   `a-weigh-described-plans/<twist>`.
 - **done when:** criterion met with no help, on a Medium or Hard instance.
 - **kind:** generator
-- **generator:** fixed: the app is a class project with a React frontend, an Express server and a
-  Postgres database (described as switched from SQLite so the database can have a host of its
-  own), used by about twenty people, built by someone working through a coding agent. Plan one
-  puts all three parts with one vendor; plan two uses a different vendor for each part. Vendors are
-  made up. Harbor, Brightpage, Kettle and Ledger from `tasks/judge-plan-weighings.md`, with the
+- **generator:** fixed: the app is a class project with a React frontend and an Express server,
+  used by about twenty people, built by someone working through a coding agent; its database is
+  never part of the plans, the terms or the key. Plan one puts the frontend and backend with one
+  vendor; plan two uses a separate vendor for each. Vendors are made up. Harbor, Brightpage and
+  Kettle from `tasks/judge-plan-weighings.md`, with the
   terms given there, are for the worked example only, since `v1` and `v2` already weigh them in
   full. A counting instance invents new vendors on the same pattern, or keeps those names with
   terms changed on at least three of the five dimensions so that the key differs from that
   file's. Each vendor's terms are four to six bullets, always covering: whether anything
-  sleeps and how long it takes to wake; what happens past each limit (paused, suspended, writes
-  refused, billed with a card, expired and deleted); whether a card is required, and what a card on
+  sleeps and how long it takes to wake; what happens past each limit (paused, suspended, stopped
+  when credit runs out, billed with a card); whether a card is required, and what a card on
   file allows the vendor to bill; agent access (whether there is an official command-line tool, an
   MCP server or an API, and what it can and can't do: deploy, set environment variables, read
-  logs, run SQL); and moving (standard tools and exports, or something vendor-specific). What
+  logs); and moving (standard tools and exports, or something vendor-specific). What
   varies: the terms, and the twist:
   - `lopsided` (Easy): one plan is better on four of the five, and the strongest case for the
     other is still real.
@@ -1010,8 +1004,8 @@ Taken together, it is the topic's one shared blind spot.
     reason counts as naming something the terms don't support for this app.
   Difficulty as marked. An attempt meant to count runs at Medium or Hard. Across visits, serve
   `agent-gap` and `card-trap` at least once each, reading the labels `served.mjs` returns.
-- **worked example:** work one instance aloud, either an Easy one or the Harbor, Brightpage,
-  Kettle and Ledger terms if the learner hasn't done `a-judge-plan-weighings`, going through the five
+- **worked example:** work one instance aloud, either an Easy one or the Harbor, Brightpage and
+  Kettle terms if the learner hasn't done `a-judge-plan-weighings`, going through the five
   differences one at a
   time and saying for each what the terms say for each plan and whether it matters for twenty
   users, then listing what the extra vendors add, then arguing the other plan's case as hard as
@@ -1020,9 +1014,8 @@ Taken together, it is the topic's one shared blind spot.
 - **doesn't show:** the terms are stated plainly in a few bullets each, so a pass doesn't show the
   learner could find them on real vendors' pages, where they are spread over pricing, docs and
   billing pages and agent access is on a page of its own. Vendors are made up, so a pass says
-  nothing about real ones. The two plans are always one-vendor against one-per-part, as the
-  criterion says, so mixed plans (one vendor for two parts) are not examined. The learner knows a
-  check is on.
+  nothing about real ones. The two plans are always one vendor against a vendor for each part, as
+  the criterion says, and the database is left out. The learner knows a check is on.
 - **offer as:** the check that's available now: two plans the tutor wrote, 15 to 20 minutes,
   nothing to run, and the tutor picks the twist so the hard cases (a card that can be billed once
   added, an agent that can't see one part's logs) actually come up. `a-weigh-lab-plans` is the same
@@ -1042,33 +1035,30 @@ Taken together, it is the topic's one shared blind spot.
 - **checks:** `c-weigh-hosting-plans`
 - **artifact:** no external source. Two plans for the learner's own Problem Set 2 app taken from the
   session 11 lab (their agent's answer and a tablemate's, or one answer's two options), one putting
-  every part with a single vendor and one using a vendor per part, with the vendors' free-tier terms
-  as the tutor gathers them from the vendors' own pages. 20 minutes, plus the tutor's preparation.
-- **verified:** 2026-10-01
+  the frontend and backend with a single vendor and one using a separate vendor for each, with the
+  vendors' free-tier terms as the tutor gathers them from the vendors' own pages. The database is
+  left out. 20 minutes, plus the tutor's preparation.
 - **learner does:** reads the two plans and the terms sheet, then writes alone which plan they would
   choose for Problem Set 3 and why, as in `a-weigh-described-plans`. Hands it to the tutor.
 - **tutor role:** none
 - **tutor does:** before the attempt, picks two plans from the lab that fit the criterion's shape;
-  if none does, builds the second from the first (the single vendor's own three services, or one
-  vendor per part from the vendors the lab answers named). For each vendor, reads its own current
+  if none does, builds the second from the first (the single vendor's own two services, or a
+  separate vendor for each part from the vendors the lab answers named). For each vendor, reads its own current
   pages and writes a terms sheet in the bullets of `a-weigh-described-plans`'s generator, with the
   address and date of each page; the sheet must include agent access, from the vendor's own docs
   on its command-line tool, MCP server or API (for example, on 2026-10-01: Render's MCP server,
   https://render.com/docs/mcp-server, which can create services, set environment variables, read
-  logs and run read-only SQL, but cannot delete resources or change most settings; Neon's MCP
-  server and CLI, https://neon.com/docs/ai/neon-mcp-server, which Neon advises using for
-  development only; Netlify's MCP server and CLI,
+  logs, but cannot delete resources or change most settings; Netlify's MCP server and CLI,
   https://docs.netlify.com/build/build-with-ai/netlify-mcp-server/). Where a vendor's pages don't
-  settle a term, writes "not stated by the vendor" rather than guessing. If the app still uses SQLite
-  and a plan puts the database with its own vendor, says in the sheet that the agent would have to
-  switch it to that vendor's database. Writes the key as in `a-weigh-described-plans`. Waits during
+  settle a term, writes "not stated by the vendor" rather than guessing. Leaves database terms out
+  of the sheet and the key. Writes the key as in `a-weigh-described-plans`. Waits during
   the attempt, writing down help word for word. Sends the adjudicator the plans, the sheet, the
   key, the answer and the help. Labels the attempt `a-weigh-lab-plans/<single vendor>-vs-<split
   vendors, joined with +>`.
 - **done when:** criterion met with no help.
 - **kind:** generator
 - **generator:** the material is whatever the lab produced, so nobody sets the difficulty. Hold
-  fixed: one single-vendor plan and one plan with a vendor per part; terms from the vendors' own
+  fixed: one single-vendor plan and one plan with a separate vendor for the frontend and the backend; terms from the vendors' own
   pages on the day, never from an agent's answer; every sheet covers all five differences,
   including agent access, or says the vendor doesn't state it. On review visits, use different
   vendors, or the same vendors with terms re-read that day, since they may have changed.

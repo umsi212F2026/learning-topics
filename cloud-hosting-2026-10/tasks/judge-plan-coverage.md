@@ -1,21 +1,23 @@
 # Judge a hosting plan for one app
 
 **Used by:** `a-judge-plan-coverage`, which serves `c-place-app-parts`. A study activity: nothing
-here can meet the goal. A bank of ten plans, `q1` to `q10`: each sitting shows the sections
-above the line and one plan below it. The key is in `judge-plan-coverage-key.md`, for the tutor.
+here can meet the goal. A bank of ten plans (`q1` to `q6`, `q8`, `q10` to `q12`; `q7` and `q9`
+were about the database and are gone): each sitting shows the sections above the line and one plan
+below it. The key is in `judge-plan-coverage-key.md`, for the tutor.
 
 ## The app
 
-Crumbs is a recipe-sharing app with three parts, the same shape as your Problem Set 2 app:
+Crumbs is a recipe-sharing app shaped like your Problem Set 2 app. Here you place only its
+frontend and its backend:
 
 - **The frontend:** a React app made with Vite. Before it goes anywhere it is built (`npm run
   build`), which turns it into a folder of plain files, `dist/`: one HTML page, some JavaScript and
   some CSS. Those files run in the visitor's browser, not on any host.
 - **The backend:** an Express server. It has to be running all the time, listening for requests,
   so that it can answer the frontend's requests for recipes and save new ones.
-- **The database:** SQLite. The whole database is one file, `crumbs.db`, which the Express server
-  opens and writes to directly. Nothing else can open it: there is no database server to connect
-  to, only a file on the same machine as the backend.
+
+Crumbs also has a database. Where it is kept belongs to the database-hosting topic, so the plans
+below leave it out and so do you.
 
 ## The vendors
 
@@ -24,21 +26,18 @@ that is all you know about it.
 
 - **Brightpage:** hosts a folder of files and sends them, as they are, to anyone who asks. Runs no
   code of yours.
-- **Kettle:** runs one program of yours (such as a Node server) all the time, with a disk the
-  program can read and write.
-- **Ledger:** a hosted Postgres database. Your server connects to it over the internet with a
-  connection string. Ledger runs only Postgres.
+- **Kettle:** runs one program of yours (such as a Node server) all the time.
 - **Spark:** hosts a folder of files the way Brightpage does, and also runs short functions: each
   request starts a fresh copy of a function, which answers and stops. It never keeps a program
-  running between requests, and it has no disk that lasts from one request to the next.
-- **Harbor:** offers three things under one account: static sites (like Brightpage), web services
-  (like Kettle, with a disk), and hosted Postgres databases (like Ledger).
+  running between requests.
+- **Harbor:** offers two things under one account: static sites (like Brightpage) and web
+  services (like Kettle).
 
 ## For the plan you are given, answer
 
-Which part does each vendor in the plan host? Then: is any part left without a host, or put on a
-host that cannot run it as the app is now? Or is every part covered? Name every gap and mismatch,
-and nothing that isn't one.
+Which part does each vendor in the plan host? Then: is the frontend or the backend left without a
+host, or put on a host that cannot run it as the app is now? Or are both covered? Name every gap
+and mismatch, and nothing that isn't one.
 
 Then say, in a sentence, the rule you judged by.
 
@@ -46,8 +45,7 @@ Then say, in a sentence, the rule you judged by.
 
 ### q1
 
-> Brightpage for the frontend's built files. Kettle for the Express server, with `crumbs.db` on
-> Kettle's disk.
+> Brightpage for the frontend's built files. Kettle for the Express server.
 
 ### q2
 
@@ -56,38 +54,36 @@ Then say, in a sentence, the rule you judged by.
 ### q3
 
 > Kettle runs the Express server, and the server also sends the frontend's built files itself
-> (`express.static('dist')`). `crumbs.db` sits on Kettle's disk.
+> (`express.static('dist')`).
 
 ### q4
 
-> Brightpage for the frontend, Spark for the Express server, Ledger for the database.
+> Brightpage for the frontend, Spark for the Express server.
 
 ### q5
 
-> Harbor for everything: a static site for the frontend and a web service for the Express server,
-> with `crumbs.db` on the web service's disk.
+> Harbor for both: a static site for the frontend and a web service for the Express server.
 
 ### q6
 
-> Kettle for the Express server, with `crumbs.db` on its disk. The frontend doesn't need a host,
-> because it runs in the browser.
-
-### q7
-
-> Brightpage for the frontend and Kettle for the Express server. The database stays on my laptop,
-> where it already is.
+> Kettle for the Express server. The frontend doesn't need a host, because it runs in the
+> browser.
 
 ### q8
 
-> Spark for the frontend's built files, Kettle for the Express server, with `crumbs.db` on Kettle's
-> disk.
-
-### q9
-
-> My agent has switched Crumbs from SQLite to Postgres. Brightpage for the frontend, Kettle for the
-> Express server, Ledger for the Postgres database.
+> Spark for the frontend's built files, Kettle for the Express server.
 
 ### q10
 
-> Kettle runs the Express server and sends the built frontend with `express.static('dist')`, with
-> `crumbs.db` on Kettle's disk. I'll also put the built frontend on Brightpage.
+> Kettle runs the Express server and sends the built frontend with `express.static('dist')`. I'll
+> also put the built frontend on Brightpage.
+
+### q11
+
+> Brightpage for the frontend's built files. The Express server keeps running on my laptop, where
+> it runs now.
+
+### q12
+
+> Harbor for both: one static site holding the frontend's built files and the Express server's
+> code.
