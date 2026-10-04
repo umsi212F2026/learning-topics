@@ -79,13 +79,13 @@ Problem Set 2 app on the public internet. Name any others you have._
 setting a deploy up, and not comparing every vendor on the market. Your agent can research hosting
 providers and walk you through signing up, but what it knows about prices and free tiers can be
 out of date, and it will not tell you when it is. This topic is enough to say which kind of host
-each part of your app needs, to check a claim about a free tier against the vendor's own pages, and
+your frontend and backend need, to check a claim about a free tier against the vendor's own pages, and
 to choose between plans knowing what each one costs you if the app sleeps, outgrows its limits or
 has to move.
 
 What sits past that line: connecting your app to GitHub so it deploys itself, keeping config and
-secrets out of your code, and keeping the database's data safe once it is hosted are each a topic
-of their own. Sign-in belongs to Part B of Problem Set 3, not to this topic.
+secrets out of your code, and where the database lives and keeping its data safe once it is hosted
+are each a topic of their own. Sign-in belongs to Part B of Problem Set 3, not to this topic.
 
 <!--
   Which of: recognize it / read it / modify something existing / author from scratch /
@@ -192,14 +192,14 @@ of their own. Sign-in belongs to Part B of Problem Set 3, not to this topic.
 
 ### `c-place-app-parts`
 
-- **goal:** say which kind of host each part of an app needs, and whether a hosting plan covers
-  them all
-- **criterion:** Given an app's parts, such as a React frontend, an Express backend and a SQLite
-  database, and a hosting plan listing each vendor and what it offers, says which part each
-  vendor would host, and names any part the plan leaves without a host or puts on a host that
-  cannot run it, or says that every part is covered. It passes when every gap and mismatch is
-  found and nothing is named that isn't one, including for a plan where one vendor hosts more
-  than one part, or where the backend serves the built frontend itself.
+- **goal:** say which kind of host the frontend and the backend each need, and whether a hosting
+  plan covers them
+- **criterion:** Given an app with a React frontend and an Express backend, and a hosting plan
+  listing each vendor and what it offers, says which part each vendor would host, and names any
+  part the plan leaves without a host or puts on a host that cannot run it, or says both are
+  covered. It passes when every gap and mismatch is found and nothing is named that isn't one,
+  including for a plan where one vendor hosts both, or where the backend serves the built
+  frontend itself. Where the database is kept is not part of it.
 - **origin:** course
 
 ### `c-check-vendor-claims`
@@ -217,15 +217,16 @@ of their own. Sign-in belongs to Part B of Problem Set 3, not to this topic.
 ### `c-weigh-hosting-plans`
 
 - **goal:** choose between hosting plans for an app, knowing what each would cost
-- **criterion:** Given two hosting plans for the same app, one putting every part with a single
-  vendor and one using a different vendor for each part, along with each vendor's free-tier
-  terms, chooses one and says why. It passes when they name each difference in the terms that
+- **criterion:** Given two hosting plans for the same app, one putting the frontend and backend
+  with a single vendor and one using a separate vendor for each, along with each vendor's
+  free-tier terms, chooses one and says why. It passes when they name each difference in the terms that
   would matter for a class project with few users (whether the app sleeps, what happens when it
   passes a limit, whether a credit card is required and what having one on file risks, whether
   their agent can reach the host to change its settings and read its logs, and how hard it would
   be to move); say what the extra vendors add in accounts, secrets and places to
   look when something breaks; name nothing the terms don't support; and state the strongest case
-  for the plan they didn't choose. Which plan they choose is not part of it.
+  for the plan they didn't choose. Which plan they choose is not part of it, and neither is where
+  the database is kept.
 - **origin:** course
 
 ### `o-orientation`

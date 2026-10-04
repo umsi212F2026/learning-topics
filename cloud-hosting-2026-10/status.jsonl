@@ -37,3 +37,5 @@
 {"at":"2026-10-01T13:32:20.191Z","kind":"curated","goal":"w-https"}
 {"at":"2026-10-01T13:32:20.220Z","kind":"curated","goal":"w-cdn"}
 {"at":"2026-10-01T13:32:20.249Z","kind":"curated","goal":"w-instance"}
+{"at":"2026-10-04T14:08:56.739Z","kind":"goal-added","goal":"c-place-app-parts","needs":"curation"}
+{"at":"2026-10-04T14:08:56.785Z","kind":"goal-added","goal":"c-weigh-hosting-plans","needs":"curation"}
