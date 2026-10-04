@@ -3,7 +3,6 @@
 {"at":"2026-10-01T12:07:34.420Z","kind":"goal-added","goal":"w-env-var","needs":"curation"}
 {"at":"2026-10-01T12:07:34.608Z","kind":"goal-added","goal":"w-port","needs":"curation"}
 {"at":"2026-10-01T12:07:34.640Z","kind":"goal-added","goal":"w-connection-string","needs":"curation"}
-{"at":"2026-10-01T12:07:34.670Z","kind":"goal-added","goal":"w-build-time","needs":"curation"}
 {"at":"2026-10-01T12:07:34.701Z","kind":"goal-added","goal":"w-origin","needs":"curation"}
 {"at":"2026-10-01T12:07:34.733Z","kind":"goal-added","goal":"w-cors","needs":"curation"}
 {"at":"2026-10-01T12:08:46.159Z","kind":"goal-added","goal":"c-place-settings","needs":"curation"}

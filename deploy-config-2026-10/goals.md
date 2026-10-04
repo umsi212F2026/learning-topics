@@ -241,16 +241,6 @@ defending the app in session 14.
 - **nearest confusable:** a database file path
 - **synonyms:** database URL, DATABASE_URL
 
-### `w-build-time`
-
-- **goal:** build time
-- **criterion:** vocabulary
-- **supply:** vocabulary
-- **bar:** one production pass
-- **group:** vocabulary
-- **what it names:** when a value is fixed into the frontend's files
-- **nearest confusable:** runtime
-
 ### `w-origin`
 
 - **goal:** origin
