@@ -14,3 +14,11 @@ A student adds this line to their project's README, which anyone can read on Git
 the database is."
 
 What is wrong with that sentence?
+
+### q3
+
+A student deploying their app writes in their notes:
+
+"I copied our connection string from Larder's dashboard: it's `db.larder.cloud`."
+
+What is wrong with that?
