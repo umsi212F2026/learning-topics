@@ -183,11 +183,9 @@ attempting them unaided. The two study activities were dropped for that reason.
 
 ### `a-judge-described-plan`
 
-- **serves:** `c-catch-data-loss`, `c-clear-data-survives`, `c-catch-copied-database`,
-  `c-clear-own-database`
+- **serves:** `c-plan-first-deploy`
 - **supports:** attempt
-- **checks:** `c-catch-data-loss`, `c-clear-data-survives`, `c-catch-copied-database`,
-  `c-clear-own-database`
+- **checks:** `c-plan-first-deploy`
 - **artifact:** no external source. One made-up app and host, one short deploy plan for its
   database, and one of two questions about that plan. Written per the generator below. About 5
   minutes a question, plus about 4 for the worked example before a learner's first attempt at this
@@ -198,7 +196,7 @@ attempting them unaided. The two study activities were dropped for that reason.
   from the laptop or shared with development?" Writes yes or no and names the plan step that
   decides it, whichever way the answer goes. Hands it to the tutor.
 - **tutor role:** examiner
-- **tutor does:** before the learner's first attempt at this activity, whichever goal it is for,
+- **tutor does:** before the learner's first attempt at this activity, whichever case it carries,
   works the worked example below aloud. Then serves one question as written, with its scenario's
   setup. Waits, writing down any help word for word. Sends the adjudicator the setup, the plan, the
   question, the rubric, the learner's answer verbatim and every piece of help. A remark off the
@@ -208,9 +206,10 @@ attempting them unaided. The two study activities were dropped for that reason.
   migrating data (a later topic), or cost and free tiers (cloud-hosting). The tutor tells the
   adjudicator to disregard it, and the learner where it belongs. A remark that gives a different
   verdict on the asked question is not off it.
-- **done when:** criterion met with no help on one question, for the one goal its rubric `goal:`
-  line names: the right yes or no on the asked question, tied to the step that decides it. Each of
-  the four goals is met by its own question.
+- **done when:** `c-plan-first-deploy` is met when every one of its four cases has an unaided pass.
+  A single question passes only the one case its rubric `cases:` line names, with the right yes or
+  no on the asked question tied to the step that decides it; the tutor records that case
+  (record-attempt `--cases <case>`).
 - **generator:** each question is one plan for one scenario's app and host, and one of the two
   questions about it. Everything below is fixed unless listed under what varies.
   - **Scenario setup (shared by its questions).** A made-up app in three lines, shaped like Problem
@@ -221,9 +220,10 @@ attempting them unaided. The two study activities were dropped for that reason.
     redeploy or restart; a volume can be attached to a service, mounted at `/data`, and only files
     under `/data` are kept; it also offers managed Postgres as a separate service. A scenario may
     hold several questions on the same app and host, each in its own `###` section with its own
-    plan and its one question. No question in a scenario may reveal another's answer: no plan is
-    written as a correction or variant of another ("this time the file goes on the volume"), and
-    nothing in one question's text says or hints how another question's plan fares.
+    plan and its one question. Scenarios are written in study order, and no question may give
+    away the answer to a later one in its scenario: no plan is written as a correction or variant
+    of an earlier one ("this time the file goes on the volume"), and nothing in one question's
+    text says or hints how a later question's plan fares.
   - **Each question.** The plan, then exactly one of the two questions, word for word: "Will this
     plan's data survive a redeploy?" (the survival question) or "Does production get a database of
     its own, built by the code rather than copied from the laptop or shared with development?"
@@ -237,66 +237,67 @@ attempting them unaided. The two study activities were dropped for that reason.
     contains connection strings,
     passwords, backups, migrations of existing data, prices or free tiers.
   - **What varies:** the app, the host's name, the wording, the plan's shape, and which question is
-    asked. Each shape below has a truth on each question, and that truth decides the goal: on the
-    survival question, a plan whose data won't survive bears on `c-catch-data-loss` and one whose
-    data will bears on `c-clear-data-survives`; on the own-database question, a plan copied or
-    shared bears on `c-catch-copied-database` and one built by the code bears on
-    `c-clear-own-database`. A shape faulted on one question is sound on the other: `laptop-copy`
-    and `shared-dev` survive, and `no-volume`, `silent-location` and `outside-mount` are built by
-    the code. That is what makes the clear goals more than a yes to a tidy plan: the learner must
+    asked. Every question is on `c-plan-first-deploy` and carries exactly one of its cases, and
+    each shape below has a truth on each question that decides the case: on the survival
+    question, a plan whose data won't survive carries `catch-data-loss` and one whose data will
+    carries `clear-survives`; on the own-database question, a plan copied or shared carries
+    `catch-copied` and one built by the code carries `clear-own-database`. A shape faulted on one
+    question is sound on the other: `laptop-copy` and `shared-dev` survive, and `no-volume`,
+    `silent-location` and `outside-mount` are built by the code. That is what makes the clear
+    cases more than a yes to a tidy plan: the learner must
     say yes to a plan with a real fault elsewhere. `committed-file` fails both. For each shape,
     the deciding step on each question is given; it is the step the key names.
     - `no-volume`: no volume is attached, and a step says plainly that the backend keeps its
       SQLite file at its default path in the app's folder (`server/data/app.sqlite`) on the
       server. The backend creates the tables at startup. Survival: no, decided by the step keeping
-      the file in the app's folder on the server (`c-catch-data-loss`, Medium). Own database: yes,
-      decided by the step where the backend creates its tables (`c-clear-own-database`, Medium).
+      the file in the app's folder on the server (case `catch-data-loss`, Medium). Own database: yes,
+      decided by the step where the backend creates its tables (case `clear-own-database`, Medium).
     - `silent-location`: no step says where the database file or the database goes: no volume, no
       path, no managed Postgres, only steps such as "deploy the backend" and "the backend creates
       its tables on startup". The backend creates the tables at startup and nothing comes from the
       laptop. Survival: no, keyed as not shown to survive; decided by the omission, which is named
-      as the plan's never saying where the database lives (`c-catch-data-loss`, Medium). Own
+      as the plan's never saying where the database lives (case `catch-data-loss`, Medium). Own
       database: yes, decided by the step where the backend creates its tables
-      (`c-clear-own-database`, Medium).
+      (case `clear-own-database`, Medium).
     - `outside-mount`: a volume is attached at `/data`, but the database path, in a step or an
       environment setting, is still inside the app's folder (`server/data/app.sqlite`, or
       `/app/server/data/app.sqlite`). The backend creates the tables at startup. Survival: no,
-      decided by the step or setting that puts the path outside `/data` (`c-catch-data-loss`,
+      decided by the step or setting that puts the path outside `/data` (case `catch-data-loss`,
       Hard). Own database: yes, decided by the step where the backend creates its tables
-      (`c-clear-own-database`, Medium).
+      (case `clear-own-database`, Medium).
     - `laptop-copy`: volume at `/data`, path `/data/app.sqlite`, but a step uploads the laptop's
       `app.sqlite` to `/data` "so production starts with the entries you already have". No step
       creates tables: the uploaded laptop file is the only source of production's tables and
       rows. Survival: yes, decided by the step putting the file at `/data/app.sqlite` on the
-      volume (`c-clear-data-survives`, Medium). Own database: no, decided by the upload step
-      (`c-catch-copied-database`, Medium).
+      volume (case `clear-survives`, Medium). Own database: no, decided by the upload step
+      (case `catch-copied`, Medium).
     - `shared-dev`: managed Postgres; the backend creates the tables at startup; a step also points
       the laptop's development server at that same production database "so you can test against
       real data". Survival: yes, decided by the step putting the database in managed Postgres
-      (`c-clear-data-survives`, Medium). Own database: no, decided by the step pointing the
-      development server at production's database (`c-catch-copied-database`, Medium).
+      (case `clear-survives`, Medium). Own database: no, decided by the step pointing the
+      development server at production's database (case `catch-copied`, Medium).
     - `committed-file`: no volume; the database file stays at its path in the app's folder, and a
       step takes it out of `.gitignore` and commits it "so the database ships with the app".
       Survival: no, since the disk is ephemeral and each redeploy starts again from the committed
       copy, losing what users added; decided by the step that keeps the file in the app's folder
-      and ships it in the commit (`c-catch-data-loss`, Hard). Own database: no, since production
-      starts as the laptop's copy; decided by the commit step (`c-catch-copied-database`, Hard).
+      and ships it in the commit (case `catch-data-loss`, Hard). Own database: no, since production
+      starts as the laptop's copy; decided by the commit step (case `catch-copied`, Hard).
     - `sound-volume`: volume at `/data`, path `/data/app.sqlite`, the backend creates the tables at
       startup if they are missing; either no rows, or a seed script kept in the repository inserts,
       once, in a step after the first deploy, two or three rows of real starting content the app is
       meant to open with (a pantry's staple items, the listings a front desk is already giving
       away), never described as "sample", "demo" or "so it doesn't look empty". Survival: yes, decided by the
-      step putting the file at `/data/app.sqlite` (`c-clear-data-survives`, Medium). Own database:
+      step putting the file at `/data/app.sqlite` (case `clear-survives`, Medium). Own database:
       yes, decided by the step where the backend creates its tables; when the plan has a seed step,
       naming only that step earns full credit too, and either step or both is fine
-      (`c-clear-own-database`, Medium).
+      (case `clear-own-database`, Medium).
     - `sound-postgres`: managed Postgres; the backend creates the tables at startup; either no
       rows, or a seed script kept in the repository is run once against production, in a step after
       the first deploy, inserting real starting content as in `sound-volume`, never "sample",
       "demo" or "so it doesn't look empty". The laptop keeps using its own SQLite file. Survival: yes, decided by the
-      managed Postgres step (`c-clear-data-survives`, Medium). Own database: yes, decided by the
+      managed Postgres step (case `clear-survives`, Medium). Own database: yes, decided by the
       step where the backend creates its tables; when the plan has a seed step, naming only that
-      step earns full credit too, and either step or both is fine (`c-clear-own-database`,
+      step earns full credit too, and either step or both is fine (case `clear-own-database`,
       Medium).
     - `decoy`: `sound-volume` or `sound-postgres` plus one detail that sounds alarming and doesn't
       bear on the asked question. For the survival question: a few seconds of downtime on each
@@ -304,7 +305,7 @@ attempting them unaided. The two study activities were dropped for that reason.
       a note that the server restarts after each deploy. For the own-database question: the seed
       script kept in the repository is run once from the laptop against production, as in Odin's
       lesson, inserting real starting content as in `sound-volume`; the laptop keeps its own SQLite file with the same tables, made by the same code.
-      Survival: yes (`c-clear-data-survives`, Hard). Own database: yes (`c-clear-own-database`,
+      Survival: yes (case `clear-survives`, Hard). Own database: yes (case `clear-own-database`,
       Hard). The deciding step is the sound shape's, so on the own-database question a seed step,
       including one run from the laptop, earns full credit on its own, as the table-creating step
       does.
@@ -316,37 +317,39 @@ attempting them unaided. The two study activities were dropped for that reason.
     laptop as in Odin's lesson; it is never the copied-or-shared fault, and on the own-database
     question faulting it fails. The shared fault is only the laptop's development server working
     against the production database.
-  - **Difficulty:** each shape's difficulty on each question is given above with its goal. In
+  - **Difficulty:** each shape's difficulty on each question is given above with its case. In
     short: Hard is `outside-mount` or `committed-file` on a question they fault, or a `decoy` on a
-    clear goal; everything else is Medium. A learner's first counting question on a goal is
-    Medium, and on a clear goal is not a decoy. On review visits for a goal, prefer a shape the
-    learner hasn't had for that goal, Hard once Medium is passed; for a clear goal, prefer a plan
+    clear case; everything else is Medium. A learner's first counting question on a case is
+    Medium, and on a clear case is not a decoy. On later visits for a case, prefer a shape the
+    learner hasn't had for that case, Hard once Medium is passed; for a clear case, prefer a plan
     faulted on the other question once a tidy sound plan is passed.
-  - **Coverage of a bank:** about three questions per goal, about twelve in all, with at least one
-    Medium question per goal for first attempts. `c-catch-data-loss` across more than one faulted
-    shape, `silent-location` among them; `c-catch-copied-database` across more than one faulted
-    shape. Each faulted shape appears in at least one question across the two catch goals.
-    `c-clear-data-survives` includes at least one plan faulted on the own-database question
-    (`laptop-copy` or `shared-dev`) and at least one `decoy`; `c-clear-own-database` includes at
+  - **Coverage of a bank:** about three questions per case, about twelve in all, with at least one
+    Medium question per case for first attempts. `catch-data-loss` across more than one faulted
+    shape, `silent-location` among them; `catch-copied` across more than one faulted shape. Each
+    faulted shape appears in at least one question across the two catch cases.
+    `clear-survives` includes at least one plan faulted on the own-database question
+    (`laptop-copy` or `shared-dev`) and at least one `decoy`; `clear-own-database` includes at
     least one plan faulted on the survival question (`no-volume`, `silent-location` or
     `outside-mount`) and at least one `decoy`. The same shape may be used under both questions,
     in different questions.
   - **The rubric key names the shape.** Each scenario's rubric file says in its top part, for every
     question, which shape its plan is and which question it asks, so the tutor reads the shape of
     a served question from its key (bank labels don't carry it).
-  - **Which goal:** each question bears on exactly one goal, the one its plan's truth on the asked
-    question gives, as above; no question names two. Rubric: `goal:` that one id. `answer` is the
+  - **Which goal and case:** every question bears on `c-plan-first-deploy` and carries exactly one
+    case, the one its plan's truth on the asked question gives, as above; no question carries two.
+    Rubric: `goal: c-plan-first-deploy` and `cases:` that one case. `answer` is the
     verdict, yes or no, and the step that decides it. `credit`: full credit is the right verdict
     tied to that step. On the own-database question, for a plan built by the code that has a seed
     step (a seed script kept in the repository and run once against production), the seed step
     and the step where the backend creates its tables each decide it: naming either one, or both,
-    earns full credit for `c-clear-own-database`, and `answer` lists both. For `silent-location` on the survival question, as the criterion for
-    `c-catch-data-loss` says, no or "can't tell", with the omission named (the plan never says
+    earns full credit on case `clear-own-database`, and `answer` lists both. For
+    `silent-location` on the survival question (case `catch-data-loss`), as the criterion says,
+    no or "can't tell", with the omission named (the plan never says
     where the database lives; an answer that the plan names no volume and no managed Postgres, so
     the file stays on the ephemeral disk, names it too), and yes fails. No half credit: a right
     verdict with no step, or tied to a step that doesn't decide it, is not met, since the
     criterion asks for both. Naming a fault the key doesn't have on the asked question fails,
-    whether as the reason for a wrong verdict or alongside a right one; on a clear goal this
+    whether as the reason for a wrong verdict or alongside a right one; on a clear case this
     includes faulting a one-time seed script or a decoy detail. Remarks off the asked question
     (the other question, connection strings, passwords, backups, cost) are neither credited nor
     counted.
@@ -360,33 +363,31 @@ attempting them unaided. The two study activities were dropped for that reason.
   ask only, on the survival question, "where does the data live, and what does this host do to
   that place on a redeploy?", or, on the own-database question, "which step makes production's
   tables and rows, and where do they come from?"
-- **doesn't show:** a pass meets one goal: one side of one question. The other three goals each
-  need their own question, so a learner who answers no to every plan can meet both catch goals
-  and is found out only on the clear goals. Each question names the question to ask, while in
+- **doesn't show:** a pass passes one case: one side of one question. The goal needs all four
+  cases, so a learner who answers no to every plan passes both catch cases and is held back by
+  the clear cases. Each question names the question to ask, while in
   Problem Set 3 the learner must think to ask both of their own agent's plan unprompted. The
   host's storage is given in a line, while in Problem Set 3 the learner has only the agent's
   plan, which may assert how the host stores files, rightly or wrongly; so a pass doesn't show
   they would doubt the plan's own claim or find the rule on a real host's pages. The host is made
   up, so nothing about which real hosts offer volumes. The learner knows a check is on.
-- **offer as:** the four plan goals are also taught at the session 11 table activity, so on first
-  reaching one the tutor offers: do it here, with this; already done elsewhere (recorded as
-  `elsewhere`, which counts as met and comes back for review); learn it there later (deferred,
-  then recorded as done elsewhere after the table activity); or remove it. This is the one to take
-  in the learn tool before session 11: one short made-up plan and one question at a time, about 5
-  minutes each, nothing to run, with a 4-minute worked example the first time, about 25 minutes
-  for all four. With `a-read-database-survives` and `a-dry-run-database-plan` (20 minutes) and
+- **offer as:** `c-plan-first-deploy` is also taught at the session 11 table activity, so on first
+  reaching it the tutor offers: do it here, with this; already done elsewhere (recorded as
+  `elsewhere`, which counts as met, all cases included, and comes back for review); learn it
+  there later (deferred, then recorded as done elsewhere after the table activity); or remove it.
+  This is the one to take in the learn tool before session 11: one short made-up plan and one
+  question at a time, about 5 minutes each, nothing to run, with a 4-minute worked example the
+  first time, about 25 minutes for one passing question per case. With `a-read-database-survives` and `a-dry-run-database-plan` (20 minutes) and
   the seven words in `a-words` (about 20), the route is about 65 minutes for a student who takes
   all four plan questions here, a little past the topic's 60-minute budget, and well under an
   hour for one who defers them to the table activity. Questions from it also serve review.
-  `a-judge-own-deploy-plan` is the same capability on your own agent's plan, for Problem Set 3.
+  `a-judge-own-deploy-plan` is the same goal on your own agent's plan, for Problem Set 3.
 
 ### `a-judge-own-deploy-plan`
 
-- **serves:** `c-catch-data-loss`, `c-clear-data-survives`, `c-catch-copied-database`,
-  `c-clear-own-database`
+- **serves:** `c-plan-first-deploy`
 - **supports:** attempt
-- **checks:** `c-catch-data-loss`, `c-clear-data-survives`, `c-catch-copied-database`,
-  `c-clear-own-database`
+- **checks:** `c-plan-first-deploy`
 - **artifact:** no external source. The plan the learner's own agent writes in Problem Set 3 for
   deploying their Problem Set 2 app's database, taken before it is carried out; on a review visit, a
   tablemate's plan or a fresh run of the same request. It is asked the two questions of
@@ -406,10 +407,10 @@ attempting them unaided. The two study activities were dropped for that reason.
   current pages on its storage and writes the host's storage rule in one line, as
   `a-judge-described-plan` gives it, with the page address and date, never from the agent's
   description. Writes a key for each of the two questions from the plan, the code and that rule:
-  the verdict, the step that decides it, and so the one goal that question bears on, by
-  `a-judge-described-plan`'s mapping (survival: no is `c-catch-data-loss`, yes is
-  `c-clear-data-survives`; own database: copied or shared is `c-catch-copied-database`, built by
-  the code is `c-clear-own-database`), with its one-time-script rule; on the own-database question
+  the verdict, the step that decides it, and so the one case of `c-plan-first-deploy` that
+  question carries, by `a-judge-described-plan`'s mapping (survival: no is `catch-data-loss`,
+  yes is `clear-survives`; own database: copied or shared is `catch-copied`, built by the code is
+  `clear-own-database`), with its one-time-script rule; on the own-database question
   a seed step run once against production and the step that creates the tables each decide it, so
   the key lists both and naming either earns full credit. A plan that never says where
   the database will live is keyed no on survival: an answer of no, or "can't tell, the plan doesn't
@@ -417,30 +418,36 @@ attempting them unaided. The two study activities were dropped for that reason.
   real plan and the storage line, and puts the survival question; takes the answer in before
   putting the own-database question, and gives no verdict on either until both are in. Waits,
   writing down any help word for word. Sends the adjudicator each question as its own attempt: the
-  plan, the storage line with its source, that question, its key and goal, the learner's answer to
-  it and any help given during it. Records each to the goal its key gives, labelled
+  plan, the storage line with its source, that question, its key, the goal and its case, the
+  learner's answer to it and any help given during it. Records each on `c-plan-first-deploy`
+  with the case its key gives (record-attempt `--cases <case>`), labelled
   `a-judge-own-deploy-plan/<host>/survival` and `a-judge-own-deploy-plan/<host>/own-database`.
   Disregards remarks off the asked question (the other question, connection strings, passwords,
   backups, migrations and cost), as `a-judge-described-plan` does, and tells the adjudicator that
   the learner's "what the plan would have to say instead" is neither credited nor faulted unless
   it gives a different verdict on the asked question. Afterwards, if the real plan
   got a no on either question, the learner takes their corrected line back to their agent.
-- **done when:** for each of the two questions, criterion met with no help, for the goal its key
-  gives. The two are recorded separately, so one can pass and the other not. If the tutor can't
+- **done when:** `c-plan-first-deploy` is met when every one of its four cases has an unaided
+  pass. Each of the two questions, passed with no help, passes only the case its key gives: one
+  survival case and one own-database case. The two are recorded separately, so one can pass and
+  the other not. If the tutor can't
   settle a key for the real plan (the host's pages don't say how it stores files), that question
   is practice, and the tutor says so and offers `a-judge-described-plan`.
 - **generator:** the real plan is whatever the agent proposed, so nobody sets its shape, its
-  difficulty or which goals it bears on; its truth on each question decides that. Fixed: the two
+  difficulty or which cases its questions carry; its truth on each question decides that. The
+  survival question carries `catch-data-loss` or `clear-survives`, and the own-database question
+  carries `catch-copied` or `clear-own-database`, as the key gives. Fixed: the two
   questions, worded as in `a-judge-described-plan`, put one at a time, survival first; the storage
   line comes from the host's own pages on the day; each key comes from that line, the plan and the
   app's code. Across visits use a different real plan each time, a tablemate's or a fresh run,
-  preferring one whose verdicts would bear on goals the learner has not yet met.
+  preferring one whose verdicts would carry cases the learner has not yet passed.
 - **worked example:** none during the attempt. If the learner stalls, the first level of help is,
   on the survival question, "where does the data live, and what does this host do to that place on
   a redeploy?", or, on the own-database question, "which step makes production's tables and rows,
   and where do they come from?", and that question's attempt is recorded `unaided: no`.
-- **doesn't show:** one real plan bears on two of the four goals at most, one per question, and
-  which two is up to the agent; the others come from `a-judge-described-plan` or another plan. The
+- **doesn't show:** one real plan's two questions can pass at most two of the goal's four cases,
+  one per question, and which two is up to the agent; the other two come from
+  `a-judge-described-plan` or another plan, so this alone never meets the goal. The
   learner is handed the two questions, while in Problem Set 3 itself they must think to ask them.
   The tutor writes the storage line, while in Problem Set 3 itself the learner has only the
   agent's plan, which may assert how the host stores files; so a pass doesn't show they would
@@ -448,7 +455,7 @@ attempting them unaided. The two study activities were dropped for that reason.
   the app and of the host's pages.
 - **offer as:** the real thing: your own agent's plan for your own Problem Set 3 deploy, judged on
   the two questions before you let it run. For Problem Set 3: about 10 minutes, any time Oct 8 to
-  14. Before session 11, the four goals are taken in the learn tool with `a-judge-described-plan`,
+  14. Before session 11, the goal is taken in the learn tool with `a-judge-described-plan`,
   or deferred to the session 11 table activity and recorded as done elsewhere after it.
 - **check note:** If you can't read the code the plan is for (a tablemate's repository you don't
   have), you can't settle the key: treat the sitting as practice, as when the host's pages are
