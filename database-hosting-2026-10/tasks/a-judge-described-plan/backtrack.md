@@ -9,8 +9,8 @@ to a service, mounted at `/data`, and only files under `/data` are kept. Pebbles
 managed Postgres as a separate service.
 
 Two coding agents have each written a plan for deploying Backtrack's database for the first
-time. For each plan, answer two questions with a yes or no, and for every no, name the plan step
-that decides it:
+time. The steps of each plan are in the order they run. For each plan, answer two questions with
+a yes or no, and for every no, name the plan step that decides it:
 
 - Will the data survive a redeploy?
 - Does production get a database of its own, built by the code rather than copied from the
@@ -23,19 +23,18 @@ that decides it:
 1. Create a Pebblestack web service for the Backtrack backend.
 2. SQLite needs no separate database server, so the backend keeps its file where it already is,
    at `server/data/backtrack.sqlite` inside the app's folder on the server.
-3. On startup, the backend runs `CREATE TABLE IF NOT EXISTS` for `items` and `claims`, so the
-   tables are there the first time it runs.
-4. Deploy the backend and the frontend.
+3. Deploy the backend and the frontend. On startup, the backend runs `CREATE TABLE IF NOT EXISTS`
+   for `items` and `claims`, so the tables are there the first time it runs.
 
 Your data will be safe.
 
 **Plan B**
 
 1. Create a managed Postgres database on Pebblestack and connect the Backtrack backend to it.
-2. On startup, the backend creates the `items` and `claims` tables if they don't exist yet.
-   Production starts with no items; staff add them as they come in.
+2. Deploy the backend and the frontend. On startup, the backend creates the `items` and `claims`
+   tables if they don't exist yet. Production starts with no items; staff add them as they come
+   in.
 3. Your laptop's development server keeps using its own `server/data/backtrack.sqlite`.
-4. Deploy the backend and the frontend.
 
 Your data will be safe.
 
@@ -46,9 +45,10 @@ Your data will be safe.
 1. Attach a volume to the Backtrack backend service on Pebblestack, mounted at `/data`.
 2. Set `DB_PATH=/data/backtrack.sqlite` in the service's environment, so the backend opens its
    database file there.
-3. On startup, the backend creates the `items` and `claims` tables if they are missing.
-4. Deploy the backend and the frontend. Because a volume is attached, Pebblestack stops the old
-   server before starting the new one, so expect a few seconds of downtime on each redeploy.
+3. Deploy the backend and the frontend. On startup, the backend creates the `items` and `claims`
+   tables if they are missing.
+4. Because a volume is attached, Pebblestack stops the old server before starting the new one, so
+   expect a few seconds of downtime on each redeploy.
 
 Your data will be safe.
 
@@ -57,7 +57,7 @@ Your data will be safe.
 1. Attach a volume to the Backtrack backend service on Pebblestack, mounted at `/data`.
 2. Set `DB_PATH=/app/server/data/backtrack.sqlite` in the service's environment, so the backend
    opens the same file path it uses on your laptop.
-3. On startup, the backend creates the `items` and `claims` tables if they are missing.
-4. Deploy the backend and the frontend.
+3. Deploy the backend and the frontend. On startup, the backend creates the `items` and `claims`
+   tables if they are missing.
 
 Your data will be safe.

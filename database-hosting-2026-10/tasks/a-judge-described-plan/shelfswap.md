@@ -9,8 +9,8 @@ attached to a service, mounted at `/data`, and only files under `/data` are kept
 also offers managed Postgres as a separate service.
 
 Two coding agents have each written a plan for deploying Shelfswap's database for the first
-time. For each plan, answer two questions with a yes or no, and for every no, name the plan step
-that decides it:
+time. The steps of each plan are in the order they run. For each plan, answer two questions with
+a yes or no, and for every no, name the plan step that decides it:
 
 - Will the data survive a redeploy?
 - Does production get a database of its own, built by the code rather than copied from the
@@ -23,9 +23,9 @@ that decides it:
 1. Attach a volume to the Shelfswap backend service on Driftwood, mounted at `/data`.
 2. Set `DB_PATH=/data/shelfswap.sqlite` in the service's environment, so the backend opens its
    database file there.
-3. On startup, the backend runs `CREATE TABLE IF NOT EXISTS` for `books` and `requests`, so the
-   tables are created the first time it runs against the empty volume.
-4. Deploy the backend and the frontend.
+3. Deploy the backend and the frontend. On startup, the backend runs `CREATE TABLE IF NOT EXISTS`
+   for `books` and `requests`, so the tables are created the first time it runs against the empty
+   volume.
 
 Your data will be safe.
 
