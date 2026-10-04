@@ -7,12 +7,6 @@ with the learner.
 
 2026-10-04. The minimum route (orientation reading and dry run, then a-judge-described-plan with its worked example, then the seven words) comes to about 55 minutes. It fits the topic's 60-minute budget only if the first counting attempt passes; a retry, or a helped practice attempt after a hedged readiness answer, takes it past 60. a-judge-own-deploy-plan belongs with Problem Set 3 (Oct 8 to 14), not before session 11.
 
-2026-10-04, from the curator, not the checker. The `study` cells for the four plan-first-deploy
-goals are empty on purpose, against the generate skill's rule that every goal has an activity that isn't a check.
-The course's rule is that outside orientation every activity is a question activity with a rubric:
-practice is attempting a check's questions with help, which doesn't count, and checking is
-attempting them unaided. The two study activities were dropped for that reason.
-
 ## Goals
 
 | id | Goal | Criterion: what gets examined, and what counts |
