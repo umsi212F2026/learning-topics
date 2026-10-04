@@ -152,7 +152,7 @@ part of this.
 - **verified:** 2026-10-01
 - **learner does:** reads the app's parts and the plan, then writes alone, for each vendor, which
   part it would host, and then names every part left without a host or put on a host that cannot
-  run it, or says both are covered. Hands it to the tutor.
+  run it, or says there are none. Hands it to the tutor.
 - **tutor role:** none
 - **tutor does:** builds the instance per the generator and writes the key into the record before
   showing anything: which part each vendor hosts, and every gap and mismatch, or "both
@@ -165,7 +165,10 @@ part of this.
 - **done when:** criterion met with no help.
 - **generator:** fixed: the app has a frontend and a backend, described in a short list in the
   form of `tasks/a-place-described-plan/crumbs.md` (what each part is and what it needs to run); the app's
-  database is never part of the plan or the key. The plan names one to three vendors, each with a
+  database is never part of the plan or the key. In what the learner sees, state the task, never the scoring: no criterion guard such as "and
+  nothing that isn't one" or "name nothing the terms don't support". The setup never tells the
+  learner what to ignore: the database is simply absent, and a remark about it is the tutor's and
+  the rubric's matter. The plan names one to three vendors, each with a
   one- or two-line offer written as that file writes them: what it hosts and runs, and what it does
   not. Vendors are made up, so the key depends only on the stated offers. The `crumbs` scenario
   uses Brightpage, Kettle, Spark and Harbor; a new scenario invents new vendor names on the same pattern and never reproduces a
@@ -222,7 +225,7 @@ part of this.
 - **verified:** 2026-10-01
 - **learner does:** gets from the tutor a list of their app's parts, and the plan with each
   vendor's offer stated in a line or two. Writes alone which part each vendor would host, and
-  names every gap and mismatch, or says both are covered. Hands it to the tutor.
+  names every gap and mismatch, or says there are none. Hands it to the tutor.
 - **tutor role:** none
 - **tutor does:** before the attempt, reads the learner's app (the learner need not see this) to
   list its parts as they are now: what the frontend builds to, whether the backend already sends
@@ -248,7 +251,10 @@ part of this.
 - **done when:** criterion met with no help.
 - **generator:** the material is whatever the learner's agent proposed, so no two instances match
   and nobody sets the difficulty. Hold fixed: offers come from the vendor's own pages on the day,
-  never from the agent's answer; the key comes from those offers and the app's code. The tutor
+  never from the agent's answer; the key comes from those offers and the app's code. In what the learner sees, state the task, never the scoring: no criterion guard such as "and
+  nothing that isn't one" or "name nothing the terms don't support". The setup never tells the
+  learner what to ignore: the database is simply absent, and a remark about it is the tutor's and
+  the rubric's matter. The tutor
   records the cases the plan carries: `gap`, `mismatch` or `all-covered` by its verdict, plus
   `one-vendor-both` or `backend-serves` where the plan has them. A plan with both a gap and a
   mismatch is set as two questions, one on each part. Across visits, use a different agent answer each time (a tablemate's, or a fresh run of
@@ -441,7 +447,10 @@ part of this.
   case is recorded with `--cases`.
 - **generator:** fixed: the app is a class project with a React frontend and an Express server,
   used by about twenty people, built by someone working through a coding agent; its database is
-  never part of the plans, the terms or the key. Plan one puts the frontend and backend with one
+  never part of the plans, the terms or the key. In what the learner sees, state the task, never the scoring: no criterion guard such as "and
+  nothing that isn't one" or "name nothing the terms don't support". The setup never tells the
+  learner what to ignore: the database is simply absent, and a remark about it is the tutor's and
+  the rubric's matter. Plan one puts the frontend and backend with one
   vendor; plan two uses a separate vendor for each. Vendors are made up. Each vendor's terms are
   four to six bullets, always covering: whether anything sleeps and how long it takes to wake; what
   happens past each limit (paused, suspended, stopped when credit runs out, billed with a card);
