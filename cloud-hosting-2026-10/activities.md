@@ -25,16 +25,16 @@ examined only one handed claim at a time, never across a whole agent's answer. E
 ## Coverage
 
 <!--
-  Derivation convention: an activity carrying `checks` sits only in the `checks` cell, never in
-  `study`. Activities whose `serves` is `all` sit on the `o-orientation` row only.
+  Derivation convention: an activity whose `serves` is `all` sits on the `o-orientation` row
+  only.
 -->
 
-| goal | study | checks | notes |
-| ---- | ----- | ------ | ----- |
-| `o-orientation` | | `a-read-odin-deployment` | |
-| `c-place-app-parts` | | `a-place-described-plan`, `a-place-lab-plan` | |
-| `c-check-vendor-claims` | | `a-check-2025-guide-claims`, `a-sort-claim-sources`, `a-plan-claim-checks`, `a-check-lab-answer` | `a-plan-claim-checks` and `a-check-lab-answer` rule on a written plan for checking claims, not on checks carried out; `a-check-lab-answer` has the learner carry the plan out, but the ruling is on the plan as first written. `a-check-2025-guide-claims` rules on a lookup the learner does on the vendor's own pages, and `a-sort-claim-sources` on one source judged, each for one handed claim, so neither shows the whole plan the criterion asks for across an agent's answer. |
-| `c-weigh-hosting-plans` | | `a-weigh-described-plans`, `a-weigh-lab-plans` | |
+| goal | checks | notes |
+| ---- | ------ | ----- |
+| `o-orientation` | `a-read-odin-deployment` | |
+| `c-place-app-parts` | `a-place-described-plan`, `a-place-lab-plan` | |
+| `c-check-vendor-claims` | `a-check-2025-guide-claims`, `a-sort-claim-sources`, `a-plan-claim-checks`, `a-check-lab-answer` | `a-plan-claim-checks` and `a-check-lab-answer` rule on a written plan for checking claims, not on checks carried out; `a-check-lab-answer` has the learner carry the plan out, but the ruling is on the plan as first written. `a-check-2025-guide-claims` rules on a lookup the learner does on the vendor's own pages, and `a-sort-claim-sources` on one source judged, each for one handed claim, so neither shows the whole plan the criterion asks for across an agent's answer. |
+| `c-weigh-hosting-plans` | `a-weigh-described-plans`, `a-weigh-lab-plans` | |
 
 ---
 
