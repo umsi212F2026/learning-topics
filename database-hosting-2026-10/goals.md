@@ -257,7 +257,7 @@ session 14.
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the rows your code puts in when a database is first set up
-- **nearest confusable:** fixture
+- **nearest confusable:** test data
 - **synonyms:** initial data
 
 ### `w-production`
