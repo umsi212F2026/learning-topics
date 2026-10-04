@@ -139,16 +139,17 @@ attempting them unaided. The two study activities were dropped for that reason.
   record it, ask what is missing, and offer to go back over the stop that bears on it; don't ask
   again in the same sitting. This goal isn't required, so a no blocks nothing.
 - **generator:** vary the made-up app (small, React frontend, Express backend, SQLite: a club
-  sign-up sheet, a recipe box, a study-group finder) and the host's one-line storage rule. Neither rehearsal uses a fault that check serves, so the learner doesn't meet a
-  counting plan's deciding detail minutes before it. Rehearsal one is a host whose disk is kept
-  across a restart but starts empty on every redeploy, and one plan line that is either "we
-  restarted the server and the entries were still there, so the data is safe" (a fault that
-  check never serves: a restart is not a redeploy) or the SQLite file placed on a volume that is
-  kept across redeploys (sound). Rehearsal two is one plan line on how production gets its rows,
-  either the backend creating empty tables at startup (sound) or the agent exporting the rows from
-  the laptop's database and importing them into production (a fault that check never serves).
-  Never use the wording of a `no-volume`, `laptop-copy`, `shared-dev`, `outside-mount` or
-  `committed-file` step. Fixed: two rehearsals in that order, neither graded, then the readiness
+  sign-up sheet, a recipe box, a study-group finder) and the host's one-line storage rule. Neither rehearsal uses a fault that `a-judge-described-plan`
+  serves, so the learner doesn't meet a counting plan's deciding detail minutes before it.
+  Rehearsal one is a host whose disk is kept across a restart but starts empty on every redeploy,
+  and one plan line that is either "we restarted the server and the entries were still there, so
+  the data is safe" (a fault `a-judge-described-plan` never serves: a restart is not a redeploy)
+  or the SQLite file placed on a volume that is kept across redeploys (sound). Rehearsal two is one
+  plan line on how production gets its rows, either the backend creating empty tables at startup
+  (sound) or the agent exporting the rows from the laptop's database and importing them into
+  production (a fault `a-judge-described-plan` never serves). Never use the wording of a
+  `no-volume`, `silent-location`, `laptop-copy`, `shared-dev`, `outside-mount` or
+  `committed-file` step, and never give a line that leaves out where the database lives. Fixed: two rehearsals in that order, neither graded, then the readiness
   question word for word. Difficulty doesn't vary: this settles an indication, not a capability.
 - **worked example:** if the learner freezes, the tutor answers a different made-up line aloud in two
   sentences, then hands the original back.
@@ -208,8 +209,11 @@ attempting them unaided. The two study activities were dropped for that reason.
     redeploy or restart; a volume can be attached to a service, mounted at `/data`, and only files
     under `/data` are kept; it also offers managed Postgres as a separate service.
   - **Each plan.** Three to five numbered steps written as a coding agent writes, ending with an
-    assurance such as "Your data will be safe." It says where the database lives and how
-    production's tables, and any rows, come to exist. It never contains connection strings,
+    assurance such as "Your data will be safe." The steps are in the order they run. It says where
+    the database lives (except in `silent-location`) and how production's tables, and any rows,
+    come to exist. Any seed step comes after the first deploy, once the backend has started and
+    made its tables ("once after deployment", as in Odin's lesson), never before it. It never
+    contains connection strings,
     passwords, backups, migrations of existing data, prices or free tiers. Label the two plans A
     and B; which one is faulted varies.
   - **What varies:** the app, the host's name, the wording, which plan is A, and the shapes. One
@@ -219,6 +223,13 @@ attempting them unaided. The two study activities were dropped for that reason.
       the backend keeps its SQLite file at its default path in the app's folder
       (`server/data/app.sqlite`) on the server. The backend creates the tables at startup.
       Survives: no. Its own, built by code: yes.
+    - `silent-location` (faulted, survival, Medium): no step says where the database file or the
+      database goes: no volume, no path, no managed Postgres, only steps such as "deploy the
+      backend" and "the backend creates its tables on startup". The backend creates the tables at
+      startup and nothing comes from the laptop. Survives: no, keyed as not shown to survive; an
+      answer of no, or "can't tell, the plan doesn't say", passes, and yes fails. The deciding
+      "step" is the absence: a no must say the plan never says where the database lives. Its own,
+      built by code: yes.
     - `outside-mount` (faulted, survival, Hard): a volume is attached at `/data`, but the database path, in a
       step or an environment setting, is still inside the app's folder (`server/data/app.sqlite`,
       or `/app/server/data/app.sqlite`). The backend creates the tables at startup. Survives: no.
@@ -237,11 +248,12 @@ attempting them unaided. The two study activities were dropped for that reason.
       as the laptop's copy.
     - `sound-volume` (sound, Medium): volume at `/data`, path `/data/app.sqlite`, the backend
       creates the tables at startup if they are missing; either no rows, or a seed script kept in
-      the repository inserts two or three demo rows once. Survives: yes. Its own, built by code:
+      the repository inserts two or three demo rows once, in a step after the first deploy.
+      Survives: yes. Its own, built by code:
       yes.
     - `sound-postgres` (sound, Medium): managed Postgres; the backend creates the tables at
       startup; either no rows, or a seed script kept in the repository is run once against
-      production. The laptop keeps using its own SQLite file. Survives: yes. Its own, built by
+      production, in a step after the first deploy. The laptop keeps using its own SQLite file. Survives: yes. Its own, built by
       code: yes.
     - `decoy` (sound, Hard): `sound-volume` or `sound-postgres` plus one detail that sounds
       alarming and doesn't bear: a few seconds of downtime on each redeploy because a volume is
@@ -257,19 +269,22 @@ attempting them unaided. The two study activities were dropped for that reason.
   - **Difficulty:** a question is as hard as its faulted plan, and Hard if the sound plan is a
     `decoy`. A learner's first counting question is Medium with no decoy, and its fault may be of
     either kind. On review visits, prefer a question whose faulted plan is of the other kind from
-    the one the learner has already passed (survival: `no-volume`, `outside-mount`; own-database:
+    the one the learner has already passed (survival: `no-volume`, `silent-location`,
+    `outside-mount`; own-database:
     `laptop-copy`, `shared-dev`; `committed-file` is both), then one whose faulted shape they
     haven't had, Hard once Medium is passed.
   - **Coverage of a bank:** each faulted shape appears in at least one question and each sound shape
     in at least one, with at least two Medium questions with no decoy for first attempts, at least
-    one of them a survival fault and one an own-database fault.
+    one of them a survival fault and one an own-database fault. `silent-location` is required like
+    every other faulted shape.
   - **The rubric key names the shapes.** Each scenario's rubric file says in its top part, for every
     question, which shape the faulted plan is and which the sound plan is, so the tutor reads the
     shape of a served question from its key (bank labels don't carry it).
   - **Which goal:** every question bears on `c-plan-first-deploy` alone. Rubric: `answer` gives, for
     each plan, yes or no on each question and the deciding step for every no (a yes may cite its
     step too, but the learner need not); full credit is all four yes-or-no answers right, each no
-    tied to the step that decides it, and no fault named that the key doesn't have; a yes given
+    tied to the step that decides it (for `silent-location`, to the plan's never saying where the
+    database lives, and "can't tell" counts as no), and no fault named that the key doesn't have; a yes given
     without a step loses nothing; half credit is one plan judged fully right and the other not.
 - **worked example:** before a learner's first attempt, take a `laptop-export` plan and a
   `sound-volume` plan for a made-up app (its fault is one the bank never serves), and work them
