@@ -88,12 +88,13 @@ either way. Remarks about where the database goes are neither credited nor count
 
 - **goal:** `c-weigh-hosting-plans`
 - **cases:** free-limits
-- **answer:** "free forever" and "never charges anything" are not supported: with a card on file,
-  Quayline bills bandwidth past 100 GB a month. The terms say no card is needed, and without one
-  Quayline suspends rather than bills. The two accounts point is right.
-- **credit:** full for both claims named as unsupported and what the terms say instead (no card
-  needed; a card on file lets Quayline bill; without one it suspends). Half for one claim, or both
-  named with nothing the terms say instead.
+- **answer:** Two claims aren't supported. "Never charges anything": the terms say a card on
+  file lets Quayline bill bandwidth past 100 GB a month; without a card it suspends instead.
+  "Free forever": nothing in the terms says how long the free tier lasts. The two-accounts
+  point is right.
+- **credit:** full for both claims named as unsupported, each with what the terms say instead
+  (a card on file lets Quayline bill, and without one it suspends; nothing in the terms
+  promises the free tier lasts). Half for one of the two.
 
 ### v5
 
