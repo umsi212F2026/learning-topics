@@ -17,19 +17,6 @@ Nearest confusable: SQL. Synonym: PostgreSQL.
   "Postgres is a newer version of SQL", which are the confusion itself, and do not accept a
   difference of size or speed.
 
-### q-define-postgres
-
-- **goal:** `w-postgres`
-- **move:** DEFINE
-- **answer:** a database that runs as a program of its own, apart from the backend, often as its own
-  service on another machine. The backend connects to it and sends it queries, rather than opening a
-  database file itself.
-- **credit:** full for a database that runs as its own program, which the backend connects to.
-  No credit for "a database" described only by size, power or popularity ("a bigger database than
-  SQLite"), which says nothing about what Postgres names. Do not accept "PostgreSQL",
-  which names it again, or "a SQL database" or "a kind of SQL" alone, which say what kind of thing
-  it is without saying what it is.
-
 ### q-catch-postgres-file
 
 - **goal:** `w-postgres`

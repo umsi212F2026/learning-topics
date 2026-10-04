@@ -30,18 +30,3 @@ server. Nearest confusable: persistent volume. Synonyms: ephemeral filesystem, e
   files and one doesn't" with nothing about when the ephemeral one loses them. Do not accept a
   difference of size, speed or price, which may be true of a particular host and is not what
   separates them.
-
-### q-interpret-ephemeral-filesystem
-
-- **goal:** `w-ephemeral-disk`
-- **move:** INTERPRET
-- **answer:** that files the backend writes to the server's own storage last only as long as that
-  server: when the host replaces the server, as it does on a redeploy, the storage starts empty
-  again. That is fine for files that can simply be made again, such as scratch files and caches. It
-  rules out keeping anything there that has to last, such as what users have added, because it would
-  be gone after the next redeploy.
-- **credit:** full for recovering the claim (files written there are lost when the host replaces the
-  server, on a redeploy for instance) and what it rules out (keeping anything there that has to
-  last). Half for "the files there are temporary" with nothing about when they go or what that rules
-  out. Do not accept a reading that the files are lost only when the app crashes, or that the host
-  clears them on a timer.

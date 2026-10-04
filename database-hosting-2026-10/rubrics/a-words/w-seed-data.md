@@ -18,22 +18,6 @@ test data. Synonym: initial data.
   vague. Do not accept "seed data is real and test data is fake", since seed rows may be demo rows,
   or a difference in how many rows there are.
 
-### q-interpret-initial-data
-
-- **goal:** `w-seed-data`
-- **move:** INTERPRET
-- **answer:** that the code itself puts the four rooms, and nothing else, into the database when it
-  is first set up, and that every booking comes later from users. It rules out the database starting
-  with any bookings in it, and it rules out the rooms being put in again each time the server starts,
-  since this happens on the first run only. Nobody has to add the rooms by hand, either.
-- **credit:** full for recovering the claim (the code puts in the rooms, and only the rooms, when
-  the database is first set up) and at least one thing it rules out (bookings at the start, the
-  rooms being added again on later starts, or someone having to add the rooms by hand). Half for the
-  claim with nothing it rules out. Do not accept a reading that "initial data" means bookings made
-  while the app was being tried out.
-- **tutor note:** this question uses "initial data", a name the readings don't. If the learner
-  doesn't recognise it as seed data, record the answer as given; don't tell them.
-
 ### q-catch-seed-schema
 
 - **goal:** `w-seed-data`
