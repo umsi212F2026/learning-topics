@@ -329,8 +329,8 @@ part of this.
 - **supports:** attempt
 - **checks:** `c-check-vendor-claims`
 - **artifact:** no external source beyond the pages the sources name, all checked as resolving on
-  2026-10-01. One fixed claim about Render's free tier and nine sources, one judged per sitting.
-  10 minutes a sitting; 15 for `s1`, which needs a browser.
+  2026-10-01. One fixed claim about Render's free tier and ten sources, one judged per sitting.
+  10 minutes a sitting; 15 for `s1` and `s10`, which need a browser.
 - **learner does:** hears the claim and the one source, and without opening it says: does this
   source settle the claim today, help only with knowing what to look for, or not help with this
   claim, and why. If it doesn't settle it, says where they would go instead. For `s1`, opens it

@@ -13,7 +13,7 @@ Render's docs page "Deploy for Free", https://render.com/docs/free.
 ### s2
 
 Render's pricing page, https://render.com/pricing: a table of plans and prices with a list of
-what each includes, and an FAQ whose answers link to Render's free-plan docs for the details.
+what each includes, and an FAQ.
 
 ### s3
 

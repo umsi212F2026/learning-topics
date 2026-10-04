@@ -45,9 +45,12 @@ is a limit changed since 2025.
   the Free plan is "permanent (not a trial); no credit card required", storage "1 GB/project, 20 GB
   account total" (0.5 GB on 2026-10-01), 100 CU-hours per project, compute that scales to zero
   after 5 minutes idle and "cannot be turned off". Running out of compute suspends it until the
-  next period; passing storage blocks writes; "None of these limits delete your data."
-- **credit:** full for "holds", with the settling sentence found on Neon's pricing page. Half for
-  Neon's page found but the verdict hedged or wrong. None for "holds" resting on another source.
+  next period; passing storage blocks writes; "None of these limits delete your data." Branching
+  holds too: the pricing page says "All plans include: ... database branching", and the Free plan
+  allows 10 branches per project.
+- **credit:** full for "holds", with the settling sentence found on Neon's pricing page and the
+  verdict covering every part of the claim a page can settle (Postgres, free tier, branching).
+  Half for Neon's page found but the verdict hedged or wrong, or leaving a part out. None for "holds" resting on another source.
 - **tutor note:** the storage figure changed overnight on 2026-10-02; worth saying as an example of
   how fast these move.
 
