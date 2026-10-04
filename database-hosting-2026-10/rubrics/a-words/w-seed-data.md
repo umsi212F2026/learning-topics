@@ -1,7 +1,7 @@
 # Rubric: seed data
 
 What it names: the rows your code puts in when a database is first set up. Nearest confusable:
-test data. Synonym: initial data.
+test data; schema. Synonym: initial data.
 
 ### q-seed-vs-test-data
 
@@ -30,3 +30,18 @@ test data. Synonym: initial data.
   into. Half for "that isn't seed data" or "that's the tables' definition" with nothing about seed
   data being rows. Do not accept a different quibble: "they should have more seed data", or "they
   should copy their laptop's database instead", neither of which is what the sentence gets wrong.
+
+### q-seed-vs-schema
+
+- **goal:** `w-seed-data`
+- **move:** DISTINGUISH
+- **answer:** a schema is the shape of the database: which tables there are, which columns each
+  has, and what kind of value goes in each. It holds no rows. Seed data is rows: the starting rows
+  the code puts into those tables when a database is first set up, such as a list of categories.
+  A database can have its schema and no seed rows at all, but seed rows need the schema's tables
+  to go into.
+- **credit:** full for the difference that matters: the schema is the structure (tables and their
+  columns) and seed data is the starting rows the code puts into it when a database is first set
+  up. Half for one side right with the other missing or vague. Do not accept "the schema is
+  written in SQL and seed data isn't" (both may be), "seed data is test data", or a difference of
+  size.

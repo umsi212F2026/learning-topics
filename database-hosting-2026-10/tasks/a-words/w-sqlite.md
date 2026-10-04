@@ -12,3 +12,8 @@ between SQLite and Postgres?
 
 Your agent writes: "Before the backend starts, I'll start the SQLite server, so the backend has a
 database to connect to." What is wrong with what the agent said?
+
+### q-sqlite-vs-sql
+
+Your backend's code is full of lines such as `SELECT * FROM recipes WHERE id = ?`, and your agent
+says your app uses SQLite. What is the difference between SQLite and SQL?
