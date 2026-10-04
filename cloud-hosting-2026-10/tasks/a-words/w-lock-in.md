@@ -8,9 +8,9 @@ What separates being locked in to a hosting vendor from being under contract wit
 
 ### q2
 
-A student's backend is set up with Kettle's own build configuration, and its uploaded files are
-kept in Kettle's own storage, which exports only in a Kettle format. The student writes:
+A student's backend is set up with Copperstack's own build configuration, and its uploaded files are
+kept in Copperstack's own storage, which exports only in a Copperstack format. The student writes:
 
-"Lock-in isn't a problem for us: we're on Kettle's free plan, so moving would cost us nothing."
+"Lock-in isn't a problem for us: we're on Copperstack's free plan, so moving would cost us nothing."
 
 What is wrong with that?

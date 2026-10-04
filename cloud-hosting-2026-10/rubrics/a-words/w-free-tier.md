@@ -5,7 +5,7 @@ If the learner misses a question here, set a DEFINE or INTERPRET move for free t
 
 A free tier is what a vendor lets you use without paying, up to a limit. The confusable is a free
 trial, which is free only for a while, or until a one-time credit runs out. "Free plan" and "hobby
-plan" mean the same as free tier and are not confusables. Kettle is made up.
+plan" mean the same as free tier and are not confusables. Driftwell is made up.
 
 ### q1
 
@@ -28,6 +28,6 @@ plan" mean the same as free tier and are not confusables. Kettle is made up.
 - **credit:** full for naming that a free tier covers use only up to a limit, so many visitors can
   pass it. Half for "there will be limits" without saying that the number of visitors is what
   would pass them. None for a different quibble alone, such as that the app might sleep or that
-  Kettle might end its free tier.
-- **tutor note:** if the learner says Kettle might withdraw the free tier, agree that it could, and
+  Driftwell might end its free tier.
+- **tutor note:** if the learner says Driftwell might withdraw the free tier, agree that it could, and
   ask what the tier's own terms would say about a great many visitors.

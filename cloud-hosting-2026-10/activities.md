@@ -171,8 +171,9 @@ part of this.
   the rubric's matter. The plan names one to three vendors, each with a
   one- or two-line offer written as that file writes them: what it hosts and runs, and what it does
   not. Vendors are made up, so the key depends only on the stated offers. The `crumbs` scenario
-  uses Brightpage, Kettle, Spark and Harbor; a new scenario invents new vendor names on the same pattern and never reproduces a
-  `crumbs` plan. What
+  uses Brightpage, Kettle, Spark and Harbor; a new scenario invents new vendor names on the same
+  pattern, never reusing a vendor name from any scenario in this topic (a made-up name stands for
+  one vendor everywhere, with one offer), and never reproduces a `crumbs` plan. What
   varies: the app (a different one each attempt; its frontend is React or another framework built
   to static files, its backend Express or another long-running server), the vendors and their
   offers, and the plan's shape, each with the cases it carries:
@@ -480,8 +481,9 @@ part of this.
   - `irrelevant-difference` (Hard, `other-case`): one large difference that doesn't matter
     for twenty users (a bandwidth allowance of 100 GB against 1 TB, a region list, team seats); a
     case resting on it doesn't rest on a difference that matters.
-  The `harbor-kettle` scenario uses Harbor, Brightpage and Kettle; a new scenario invents new
-  vendors on the same pattern, or keeps those names with terms changed so that its key differs.
+  The `quayline-emberbox` scenario uses Quayline, Lanternhost and Emberbox. A made-up vendor name
+  stands for one vendor everywhere in this topic, with one offer and one set of terms, so a new
+  scenario always invents new names, never reusing one from any scenario here.
   Difficulty as marked. Across visits, serve each case, and `agent-gap` and `card-trap` at least
   once each, reading the labels `served.mjs` returns.
 - **worked example:** work one Easy question aloud on the same case as the one being asked: for

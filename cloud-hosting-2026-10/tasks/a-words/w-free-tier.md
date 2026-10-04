@@ -9,9 +9,9 @@ difference between the two?
 
 ### q2
 
-A student is putting their app on Kettle, a hosting vendor, and writes:
+A student is putting their app on Driftwell, a hosting vendor, and writes:
 
-"Kettle gives us a free tier, so however many visitors the app gets, it will keep running without
+"Driftwell gives us a free tier, so however many visitors the app gets, it will keep running without
 anyone paying."
 
 What is wrong with that?
