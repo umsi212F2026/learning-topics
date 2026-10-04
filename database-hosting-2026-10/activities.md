@@ -93,8 +93,10 @@ attempting them unaided. The two study activities were dropped for that reason.
   storage, so the file is gone, the app may well start and make empty tables, and the item is
   missing. Near-miss at stop 1: "the app still starts and answers after the redeploy; would your
   restart test pass?" At stop 2, if the learner says copying the laptop's file is fine, asks what is
-  in that file now (their Problem Set 2 test data), since test data in production and copying it up
-  are what this topic watches for.
+  in that file now (their Problem Set 2 test data): copying the file up brings that test data along,
+  and copying is what this topic watches for. Production starting with rows is not the concern: a
+  few rows put in by a seed script kept in the code are seed data, the app's real starting content,
+  and count as built by the code.
   Says that Odin's way (a script the developer runs once against the production database) and
   tables made by the app's own startup code are both "built by the code"; copying the laptop's file
   is not. **Vendor facts, as checked on the vendors' own pages 2026-10-04,** if the learner asks
@@ -283,15 +285,18 @@ attempting them unaided. The two study activities were dropped for that reason.
       and ships it in the commit (`c-catch-data-loss`, Hard). Own database: no, since production
       starts as the laptop's copy; decided by the commit step (`c-catch-copied-database`, Hard).
     - `sound-volume`: volume at `/data`, path `/data/app.sqlite`, the backend creates the tables at
-      startup if they are missing; either no rows, or a seed script kept in the repository inserts
-      two or three demo rows once, in a step after the first deploy. Survival: yes, decided by the
+      startup if they are missing; either no rows, or a seed script kept in the repository inserts,
+      once, in a step after the first deploy, two or three rows of real starting content the app is
+      meant to open with (a pantry's staple items, the listings a front desk is already giving
+      away), never described as "sample", "demo" or "so it doesn't look empty". Survival: yes, decided by the
       step putting the file at `/data/app.sqlite` (`c-clear-data-survives`, Medium). Own database:
       yes, decided by the step where the backend creates its tables; when the plan has a seed step,
       naming only that step earns full credit too, and either step or both is fine
       (`c-clear-own-database`, Medium).
     - `sound-postgres`: managed Postgres; the backend creates the tables at startup; either no
       rows, or a seed script kept in the repository is run once against production, in a step after
-      the first deploy. The laptop keeps using its own SQLite file. Survival: yes, decided by the
+      the first deploy, inserting real starting content as in `sound-volume`, never "sample",
+      "demo" or "so it doesn't look empty". The laptop keeps using its own SQLite file. Survival: yes, decided by the
       managed Postgres step (`c-clear-data-survives`, Medium). Own database: yes, decided by the
       step where the backend creates its tables; when the plan has a seed step, naming only that
       step earns full credit too, and either step or both is fine (`c-clear-own-database`,
@@ -301,7 +306,7 @@ attempting them unaided. The two study activities were dropped for that reason.
       redeploy because a volume is attached; the database at a different vendor from the backend;
       a note that the server restarts after each deploy. For the own-database question: the seed
       script kept in the repository is run once from the laptop against production, as in Odin's
-      lesson; the laptop keeps its own SQLite file with the same tables, made by the same code.
+      lesson, inserting real starting content as in `sound-volume`; the laptop keeps its own SQLite file with the same tables, made by the same code.
       Survival: yes (`c-clear-data-survives`, Hard). Own database: yes (`c-clear-own-database`,
       Hard). The deciding step is the sound shape's, so on the own-database question a seed step,
       including one run from the laptop, earns full credit on its own, as the table-creating step
@@ -366,14 +371,17 @@ attempting them unaided. The two study activities were dropped for that reason.
   plan, which may assert how the host stores files, rightly or wrongly; so a pass doesn't show
   they would doubt the plan's own claim or find the rule on a real host's pages. The host is made
   up, so nothing about which real hosts offer volumes. The learner knows a check is on.
-- **offer as:** for a student who missed the session 11 table activity, where this capability is
-  taught, or who wants more than it gave: the check that's available before Problem Set 3, one
-  short made-up plan and one question at a time, about 5 minutes each, nothing to run, with a
-  4-minute worked example the first time. All four goals come to about 25 minutes. A student who
-  did the table activity can skip this. For one who missed it, the route is
-  `a-read-database-survives` and `a-dry-run-database-plan` (20 minutes), then this (about 25),
-  and the seven words in `a-words` (about 20), about 65 in all, a little past the topic's
-  60-minute budget. `a-judge-own-deploy-plan` is the same capability on your own agent's plan.
+- **offer as:** the four plan goals are also taught at the session 11 table activity, so on first
+  reaching one the tutor offers: do it here, with this; already done elsewhere (recorded as
+  `elsewhere`, which counts as met and comes back for review); learn it there later (deferred,
+  then recorded as done elsewhere after the table activity); or remove it. This is the one to take
+  in the learn tool before session 11: one short made-up plan and one question at a time, about 5
+  minutes each, nothing to run, with a 4-minute worked example the first time, about 25 minutes
+  for all four. With `a-read-database-survives` and `a-dry-run-database-plan` (20 minutes) and
+  the seven words in `a-words` (about 20), the route is about 65 minutes for a student who takes
+  all four plan questions here, a little past the topic's 60-minute budget, and well under an
+  hour for one who defers them to the table activity. Questions from it also serve review.
+  `a-judge-own-deploy-plan` is the same capability on your own agent's plan, for Problem Set 3.
 
 ### `a-judge-own-deploy-plan`
 
@@ -391,8 +399,10 @@ attempting them unaided. The two study activities were dropped for that reason.
   tutor puts on the real plan, "Will this plan's data survive a redeploy?", with yes or no and the
   plan step that decides it, and for a no, what the plan would have to say instead; hands it in;
   then does the same for the second, "Does production get a database of its own, built by the code
-  rather than copied from the laptop or shared with development?"
-- **tutor role:** none
+  rather than copied from the laptop or shared with development?" What the plan would have to say
+  instead is for the learner's agent, and is neither credited nor faulted unless it gives a
+  different verdict on the asked question.
+- **tutor role:** examiner
 - **tutor does:** before the sitting, reads the app the plan is for (the learner's own, or the
   tablemate's when it is a tablemate's plan): where the SQLite file's path is set, whether the code
   creates tables and inserts rows, whether the file is tracked by git. Reads the chosen host's own
@@ -414,7 +424,9 @@ attempting them unaided. The two study activities were dropped for that reason.
   it and any help given during it. Records each to the goal its key gives, labelled
   `a-judge-own-deploy-plan/<host>/survival` and `a-judge-own-deploy-plan/<host>/own-database`.
   Disregards remarks off the asked question (the other question, connection strings, passwords,
-  backups, migrations and cost), as `a-judge-described-plan` does. Afterwards, if the real plan
+  backups, migrations and cost), as `a-judge-described-plan` does, and tells the adjudicator that
+  the learner's "what the plan would have to say instead" is neither credited nor faulted unless
+  it gives a different verdict on the asked question. Afterwards, if the real plan
   got a no on either question, the learner takes their corrected line back to their agent.
 - **done when:** for each of the two questions, criterion met with no help, for the goal its key
   gives. The two are recorded separately, so one can pass and the other not. If the tutor can't
@@ -438,9 +450,9 @@ attempting them unaided. The two study activities were dropped for that reason.
   doubt that claim or read the rule off the host's pages. The key rests on the tutor's reading of
   the app and of the host's pages.
 - **offer as:** the real thing: your own agent's plan for your own Problem Set 3 deploy, judged on
-  the two questions before you let it run. About 10 minutes, any time Oct 8 to 14.
-  `a-judge-described-plan` is the one to take before session 11, if you missed the table activity
-  there or want more.
+  the two questions before you let it run. For Problem Set 3: about 10 minutes, any time Oct 8 to
+  14. Before session 11, the four goals are taken in the learn tool with `a-judge-described-plan`,
+  or deferred to the session 11 table activity and recorded as done elsewhere after it.
 - **check note:** If you can't read the code the plan is for (a tablemate's repository you don't
   have), you can't settle the key: treat the sitting as practice, as when the host's pages are
   silent, and offer `a-judge-described-plan`.
