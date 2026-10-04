@@ -188,12 +188,14 @@ defending the app in session 14.
 
 - **goal:** follow an agent's explanation of a setting it wants: what it is for and where its
   value comes from
-- **criterion:** Given an exchange in which an agent deploying an app asks for a setting under a
-  name they haven't met, a student asks what it is for and where its value comes from, and the
-  agent answers, says what the setting is for and where they would get its value. It passes when
-  both are right, including when one vendor hosts more than one part of the app and the answer
-  names only the vendor, and when the answer says a hosting service supplies the value itself.
-  Finding the value on the vendor's site is not part of it.
+- **criterion:** Given an app whose frontend, backend and database are each on a named vendor,
+  and an exchange in which an agent deploying it asks for a setting under a name they haven't
+  met, a student asks what it is for and where its value comes from, and the agent answers: says
+  what the setting is for, which part's value it needs (the frontend's address, the backend's
+  address or the database's connection details), and which vendor they would copy it from. If a
+  vendor fills the value in itself, they say which one. It passes when all of these are right,
+  including when one vendor hosts two parts and the answer names only the vendor. Finding the
+  value on the vendor's site is not part of it.
 
 ### `c-explain-localhost-gap`
 
