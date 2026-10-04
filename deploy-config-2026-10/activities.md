@@ -60,6 +60,7 @@ still ask for and credit the reason.
 - **artifact:** no external source. Made-up apps being deployed by an agent, and the agent's side
   of the conversation, from this activity's bank or written live per the generator below. About 2
   to 5 minutes a question.
+- **verified:** 2026-10-04
 - **learner does:** reads the scenario's setup (the app, and which vendor hosts each part) and the
   one question served, and answers it. An exchange question asks what a setting is for, whose
   value it needs, and whether its value is a secret, and why. A message question asks whether
