@@ -74,15 +74,16 @@ real secrets. Name any others you have._
 
 ## Depth
 
-**Know what each setting your agent asks for is for, and give it the right value.** Not writing
-the code that reads settings, not deciding where each one goes, and not setting up the hosts. When
-your agent gets your app ready to deploy, it adds settings your app never needed on localhost and
-asks you for values only you have, such as the addresses your hosts gave you. This topic is enough
-to know what each of those settings is for and what value each one needs.
+**Know what each setting your agent asks for is for and where its value comes from, and ask when
+you don't.** Not writing the code that reads settings, not deciding where each one goes, and not
+setting up the hosts. When your agent gets your app ready to deploy, it adds settings your app
+never needed on localhost and asks you for values only you have, such as the addresses your hosts
+gave you. This topic is enough to follow its explanation of each setting and to know which of your
+hosts the value comes from.
 
-This topic assumes you have studied database-hosting first, so you know where your database
-will live. What sits past that line: choosing hosts belongs to cloud-hosting. Deploying automatically and debugging a deployed app come in session
-12, sign-in and catching a secret your agent has put in the wrong place in session 13, and
+This topic assumes you have studied database-hosting first, so you know where your database will
+live. What sits past that line: choosing hosts belongs to cloud-hosting. Deploying automatically
+and debugging a deployed app come in session 12, sign-in and catching a secret your agent has put in the wrong place in session 13, and
 defending the app in session 14.
 
 ## Goals
@@ -185,16 +186,14 @@ defending the app in session 14.
 
 ### `c-place-settings`
 
-- **goal:** tell what each setting an agent asks for is for, and what value it needs
-- **criterion:** Given the settings an agent asks for while deploying an app whose frontend,
-  backend and database are on different hosting services, each under the agent's own name for it
-  (such as `VITE_API_URL`, `ALLOWED_ORIGIN`, `PORT`, `DATABASE_URL`), says what each one is for
-  and which part's address or value it needs. If a hosting service supplies the value itself,
-  they say which one. It passes when every setting is matched to what it's for, no setting is
-  given another part's value (the frontend's address where the backend's belongs, or the
-  backend's where the database's belongs), and every value a hosting service supplies is
-  recognized as one and credited to the right service. Knowing which service's settings or which
-  file each one is entered in is not part of it; the agent says that.
+- **goal:** follow an agent's explanation of a setting it wants: what it is for and where its
+  value comes from
+- **criterion:** Given an exchange in which an agent deploying an app asks for a setting under a
+  name they haven't met, a student asks what it is for and where its value comes from, and the
+  agent answers, says what the setting is for and where they would get its value. It passes when
+  both are right, including when one vendor hosts more than one part of the app and the answer
+  names only the vendor, and when the answer says a hosting service supplies the value itself.
+  Finding the value on the vendor's site is not part of it.
 
 ### `c-explain-localhost-gap`
 
