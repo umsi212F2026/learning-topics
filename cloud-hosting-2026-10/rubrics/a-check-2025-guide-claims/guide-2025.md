@@ -3,7 +3,9 @@ Checked against the vendors' own pages on 2026-10-01 (Neon's storage figure re-r
 and confirm it still says what is quoted. If it doesn't, the page wins and this key is wrong for
 that question.**
 
-What holds for every question: the verdict must rest on a sentence from the vendor's own current
+What holds for every question: full credit always includes naming the kind of page that settled
+it (pricing page, free-plan docs, billing docs, changelog, trial page), or saying the vendor's
+pages couldn't. The verdict must rest on a sentence from the vendor's own current
 page, not a search snippet, a comparison article, a forum or the agent; or on an honest "the
 vendor's pages don't settle this" after looking. The pricing page settles whether a free tier
 exists and its headline limits; the docs page on the free plan settles sleep and what happens past
@@ -20,13 +22,17 @@ one. None of the six is a limit changed since 2025.
 ### g1
 
 - **goal:** `c-check-vendor-claims`
-- **answer:** gone. PlanetScale's pricing page, https://planetscale.com/pricing, lists no free plan;
-  the cheapest listed option was a $5/month Postgres single node, and it now sells Postgres as well
-  as MySQL (Vitess). The free Hobby plan ended in 2024. The page doesn't say a free plan existed or
-  ended; it simply has none, which is how a withdrawn free tier usually looks.
-- **credit:** full for "gone", resting on PlanetScale's own pricing page, with the kind of page
-  named and a prompt sentence asking for the vendor's page per claim. Half for "gone" resting on
-  something other than PlanetScale's pages, or with no prompt sentence.
+- **answer:** gone, and already gone when the guide was written. PlanetScale's pricing page,
+  https://planetscale.com/pricing, lists no free plan; the cheapest listed option was a $5/month
+  Postgres single node, and it now sells Postgres as well as MySQL (Vitess). Its changelog,
+  https://planetscale.com/changelog/hobby-deprecated, and its FAQ,
+  https://planetscale.com/docs/plans/hobby-plan-deprecation-faq, say the free Hobby plan ended
+  April 8, 2024, with no new Hobby databases after March 6, 2024. The pricing page doesn't say a
+  free plan existed or ended; it simply has none, which is how a withdrawn free tier usually looks.
+- **credit:** full for "gone", resting on any PlanetScale page that settles it (pricing page,
+  changelog or FAQ), with the kind of page named and a prompt sentence asking for the vendor's page
+  per claim. Half for "gone" resting on something other than PlanetScale's pages, or with no prompt
+  sentence.
 - **tutor note:** ask how sure they are that the pricing page is the page that would list a free
   plan if there were one.
 
@@ -50,24 +56,27 @@ one. None of the six is a limit changed since 2025.
 - **goal:** `c-check-vendor-claims`
 - **answer:** holds, with limits left out: Supabase's pricing page, https://supabase.com/pricing,
   gives 500 MB per project, 2 active projects, and "Free projects are paused after 1 week of
-  inactivity." The pricing page did not say whether a card is required.
+  inactivity." The pricing page did not say whether a card is required. Supabase's billing docs say
+  "Paid plans require a credit card to be on file" and nothing about the free plan; a 2021 Supabase
+  blog post says you can sign up without a card. The blog is the vendor's own page but dated, so it
+  supports "no card then", not "no card today".
 - **credit:** full for "holds", resting on Supabase's pricing page, with the pause or a limit named
-  as left out, the card question either settled on another Supabase page or honestly left as "the
-  pricing page doesn't settle it; I'd find out at sign-up" after looking, and a prompt sentence.
-  Half for "holds" with the card taken from a blog or the agent, or with nothing left out named.
-- **tutor note:** a card answer found elsewhere on Supabase's own site beats "I'd find out at
-  sign-up", which passes only if they looked.
+  as left out, a prompt sentence, and the card handled either way: "the vendor's pages don't settle
+  it today; I'd find out at sign-up", after looking beyond the pricing page, earns full credit, as
+  does the 2021 blog read as "no card then". Half for the card taken from a third-party blog or the
+  agent, or the 2021 blog read as "no card today", or nothing left out named.
+- **tutor note:** if they cite Supabase's 2021 blog, ask what it shows about today. If they say
+  "I'd find out at sign-up", ask where on Supabase's site they looked first.
 
 ### g4
 
 - **goal:** `c-check-vendor-claims`
-- **answer:** holds in part. Render's free docs, https://render.com/docs/free: static sites are
-  free; a free web service gets 750 instance hours a month per workspace, spins down after 15
-  minutes without traffic and takes about a minute to come back; past the hours, services are
-  suspended until the month ends. "Ample" is a judgment the page can't settle; the sleep is what
-  the claim leaves out.
-- **credit:** full for "holds in part", resting on Render's docs, with the sleep named as left out
-  and a prompt sentence. Half for "holds" with the sleep missed, or for a verdict resting on
+- **answer:** holds, with the sleep left out ("ample" can't be checked). Render's free docs,
+  https://render.com/docs/free: static sites are free; a free web service gets 750 instance hours a
+  month per workspace, spins down after 15 minutes without traffic and takes about a minute to come
+  back; past the hours, services are suspended until the month ends.
+- **credit:** full for "holds", resting on Render's docs, with the spin-down named as left out and
+  a prompt sentence. Half for "holds" with the spin-down missed, or for a verdict resting on
   another source.
 
 ### g5

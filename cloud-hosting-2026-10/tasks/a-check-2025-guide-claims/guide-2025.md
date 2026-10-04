@@ -1,7 +1,7 @@
 In fall 2025, the instructor of this course's predecessor (SI 211) wrote a deployment guide for
-students putting a React, Express and SQLite app online. It was careful and accurate when it was
-written. Below is one sentence from it, quoted exactly. A year on, it may still hold or it may
-not, and a sentence that still holds can leave out what matters most. A coding agent trained on
+students putting a React, Express and SQLite app online. Below is one sentence from it, quoted
+exactly. Some of its sentences may already have been stale when it was written; a year on, this one
+may hold or may not, and a sentence that still holds can leave out what matters most. A coding agent trained on
 pages like this one may still repeat it.
 
 For the claim you are given, with a browser:

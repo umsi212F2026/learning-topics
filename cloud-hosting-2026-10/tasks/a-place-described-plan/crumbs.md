@@ -3,7 +3,7 @@ frontend and its backend:
 
 - **The frontend:** a React app made with Vite. Before it goes anywhere it is built (`npm run
   build`), which turns it into a folder of plain files, `dist/`: one HTML page, some JavaScript and
-  some CSS. Those files run in the visitor's browser, not on any host.
+  some CSS. The visitor's browser fetches those files and runs them.
 - **The backend:** an Express server. It has to be running all the time, listening for requests,
   so that it can answer the frontend's requests for recipes and save new ones.
 

@@ -276,7 +276,9 @@ examined only one handed claim at a time, never across a whole agent's answer. E
 - **artifact:** six sentences quoted exactly from the deployment guide given to students in this
   course's 2025 predecessor (SI 211), about PlanetScale, Neon, Supabase and Render, one per
   sitting, under a five-step procedure, checked against those vendors' own pages on 2026-10-01.
-  One claim names a free tier since withdrawn (PlanetScale's free MySQL, whose plan ended in 2024).
+  One claim names a free tier that was already gone when the guide was written in fall 2025
+  (PlanetScale's free Hobby plan ended April 8, 2024, with no new Hobby databases after March 6,
+  2024).
   The rest hold, with something left out: Render's Postgres "only free for the first month" was
   already the 30-day rule when written (Render's changelog dates it to May 2024) but hides that the
   database is deleted with its data after a 14-day grace period; the others leave out sleep,
@@ -333,8 +335,8 @@ examined only one handed claim at a time, never across a whole agent's answer. E
   The claims are handed over one at a time rather than met inside an agent's answer, and the
   learner looks up rather than describes how they would, which is more than the criterion asks
   but less like the lab. The six are fixed, so a later visit repeats a claim they have seen.
-- **offer as:** real claims, from a real guide given to students in this course a year ago, which
-  was right when it was written, one at a time. You do the checking from the start, on real
+- **offer as:** real claims, from a real guide given to students in this course a year ago, some
+  of them already stale when it was written, one at a time. You do the checking from the start, on real
   vendor pages, 10 to 15 minutes. The most hands-on of the checks, and the one that shows how fast
   this goes stale.
 - **check note:** `g2` and `g6` are both settled on Neon's pricing page. If `g2` has been served,

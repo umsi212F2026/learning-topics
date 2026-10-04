@@ -48,9 +48,9 @@ than a comparison article; from the second question on, it is a revision of the 
 - **goal:** `c-check-vendor-claims`
 - **answer:** doesn't settle it: dated and secondary, and its Render paragraph contradicts itself
   on databases (both "$7" and "expires 30 days"). Go to Render's free-plan docs.
-- **credit:** full for a non-settling verdict with the reason that it is not Render and not
-  current, and the vendor's docs named instead. Half for the verdict with only one of those
-  reasons.
+- **credit:** full for a non-settling verdict with either disqualifying reason (it is not
+  Render's page, or it is not current), and the vendor's docs named instead. The paragraph's
+  self-contradiction may be credited, never required. Half for the verdict with no reason.
 - **tutor note:** "when was this true?" The learner probably skimmed only the first line of each
   vendor; if they judge it without opening it, tell them the paragraph says both, then ask.
 
