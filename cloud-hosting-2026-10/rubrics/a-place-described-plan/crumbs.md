@@ -4,10 +4,9 @@ hosted wherever it is served from, even if by another part: an Express server th
 itself hosts the frontend. The rule the learner should arrive at: list what each part needs (files
 sent as they are; a program kept running), then check each vendor's offer against the part it was
 given. Remarks about where the database goes are neither credited nor counted as a false gap; say
-it belongs to the database-hosting topic. Shapes, in the entry's generator's terms: `q3` and `q13`
-(`backend-serves`), `q5` and `q12` (`shared-vendor`) and `q10` (`decoy`) are counting shapes; `q1`
-(`split-clean`), `q6` and `q11` (`one-gap`), `q2` and `q4` (`wrong-host`), and `q8` (a decoy on two
-vendors, so neither named case) are practice only. Question ids `q7` and `q9` were about the database and are not reused.
+it belongs to the database-hosting topic. Shapes, in the entry's generator's terms: `q3` and `q13` `backend-serves`, `q5` and `q12`
+`shared-vendor`, `q10` `decoy`, `q1` `split-clean`, `q6` and `q11` `one-gap`, `q2` and `q4`
+`wrong-host`, `q8` a decoy across two vendors. Question ids `q7` and `q9` were about the database and are not reused.
 
 ### q1
 
@@ -22,9 +21,9 @@ vendors, so neither named case) are practice only. Question ids `q7` and `q9` we
 - **goal:** `c-place-app-parts`
 - **answer:** mismatch: Brightpage runs no code, so it cannot run the Express server. The frontend
   on Brightpage is fine.
-- **credit:** full for the backend mismatch, tied to Brightpage running no code, and nothing else
-  named. Half for the mismatch named without the reason, or with a false fault also named against
-  the frontend.
+- **credit:** full for the backend mismatch named and nothing false named; a reason (Brightpage
+  runs no code) may be credited but is not required. Half for the mismatch named alongside a false
+  fault against the frontend.
 
 ### q3
 
@@ -42,8 +41,9 @@ vendors, so neither named case) are practice only. Question ids `q7` and `q9` we
 - **answer:** mismatch: Spark keeps no program running between requests, so the Express server as
   written, a program that listens all the time, cannot run there without being rewritten as
   functions. The frontend on Brightpage is fine.
-- **credit:** full for the backend mismatch tied to Spark keeping nothing running, and nothing
-  else named. Half for the mismatch named without that reason.
+- **credit:** full for the backend mismatch named and nothing false named; a reason (Spark keeps
+  nothing running) may be credited but is not required. Half for the mismatch named alongside a
+  false fault against the frontend.
 - **tutor note:** partner of `q8`. If `q8` was served before, ask why Spark was fine there.
 
 ### q5
@@ -51,8 +51,7 @@ vendors, so neither named case) are practice only. Question ids `q7` and `q9` we
 - **goal:** `c-place-app-parts`
 - **answer:** both covered: one vendor, two services, Harbor's static site for the frontend and its
   web service for the Express server.
-- **credit:** full for both covered, with the two services matched to the two parts. Half for
-  "covered" without saying which service holds which part.
+- **credit:** full for "Harbor hosts both, both covered" and nothing false named.
 - **tutor note:** partner of `q12`.
 
 ### q6
@@ -61,8 +60,9 @@ vendors, so neither named case) are practice only. Question ids `q7` and `q9` we
 - **answer:** gap: the frontend's code runs in the browser, but the browser has to get the files
   from somewhere, and nothing sends them: no static host, and the server doesn't send `dist/`.
   The backend on Kettle is fine.
-- **credit:** full for the frontend gap with the reason that its files must be sent from
-  somewhere. Half for the gap named without the reason.
+- **credit:** full for the frontend gap named and nothing false named; a reason (its files must be
+  sent from somewhere) may be credited but is not required. Half for the gap named alongside a false
+  fault against the backend.
 - **tutor note:** partner of `q3`. If `q3` was served before, ask how this plan differs: "last
   time the frontend had no host of its own and was fine; what is different here?"
 
@@ -89,8 +89,9 @@ vendors, so neither named case) are practice only. Question ids `q7` and `q9` we
 - **goal:** `c-place-app-parts`
 - **answer:** gap: a server on the learner's laptop is not reachable from visitors' browsers and is
   off whenever the laptop is, so the backend has no host. The frontend on Brightpage is fine.
-- **credit:** full for the backend gap with a reason (not reachable, or not always on). Half for
-  the gap named without a reason.
+- **credit:** full for the backend gap named and nothing false named; a reason (not reachable, or
+  not always on) may be credited but is not required. Half for the gap named alongside a false
+  fault against the frontend.
 
 ### q12
 

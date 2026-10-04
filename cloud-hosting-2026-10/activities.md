@@ -32,7 +32,7 @@ examined only one handed claim at a time, never across a whole agent's answer. E
 | goal | study | checks | notes |
 | ---- | ----- | ------ | ----- |
 | `o-orientation` | | `a-read-odin-deployment` | |
-| `c-place-app-parts` | | `a-place-described-plan`, `a-place-lab-plan` | The criterion's two named cases overlap: a backend that sends the built frontend is also one vendor hosting both, through a single service. Read the Coverage note's two cases as two instance shapes, one vendor with two services and one service sending both parts. A counting pass usually exercises one shape; if the learner's pass came on one, give the other on a review visit. |
+| `c-place-app-parts` | | `a-place-described-plan`, `a-place-lab-plan` | The criterion's two named cases overlap: a backend that sends the built frontend is also one vendor hosting both, through a single service. Read the Coverage note's two cases as two instance shapes, one vendor with two services and one service sending both parts. A pass usually exercises one shape; if the learner's pass came on one, give the other on a review visit. |
 | `c-check-vendor-claims` | | `a-check-2025-guide-claims`, `a-sort-claim-sources`, `a-plan-claim-checks`, `a-check-lab-answer` | `a-plan-claim-checks` and `a-check-lab-answer` rule on a written plan for checking claims, not on checks carried out; `a-check-lab-answer` has the learner carry the plan out, but the ruling is on the plan as first written. `a-check-2025-guide-claims` rules on a lookup the learner does on the vendor's own pages, and `a-sort-claim-sources` on one source judged, each for one handed claim, so neither shows the whole plan the criterion asks for across an agent's answer. |
 | `c-weigh-hosting-plans` | | `a-weigh-described-plans`, `a-weigh-lab-plans` | |
 
@@ -163,15 +163,13 @@ examined only one handed claim at a time, never across a whole agent's answer. E
   with the question's path, or `a-place-described-plan/<shape>` when the generator is run live. A remark about where the database goes is neither credited nor counted as a false gap or an
   unsupported claim: the tutor tells the adjudicator to disregard it, and the learner that it
   belongs to database-hosting.
-- **done when:** criterion met with no help, on a `backend-serves`, `shared-vendor`, `decoy` or
-  `two-faults` instance.
+- **done when:** criterion met with no help.
 - **generator:** fixed: the app has a frontend and a backend, described in a short list in the
   form of `tasks/a-place-described-plan/crumbs.md` (what each part is and what it needs to run); the app's
   database is never part of the plan or the key. The plan names one to three vendors, each with a
   one- or two-line offer written as that file writes them: what it hosts and runs, and what it does
   not. Vendors are made up, so the key depends only on the stated offers. The `crumbs` scenario
-  uses Brightpage, Kettle, Spark and Harbor, and its key says which of its questions are counting
-  shapes; a new scenario invents new vendor names on the same pattern and never reproduces a
+  uses Brightpage, Kettle, Spark and Harbor; a new scenario invents new vendor names on the same pattern and never reproduces a
   `crumbs` plan. What
   varies: the app (a different one each attempt; its frontend is React or another framework built
   to static files, its backend Express or another long-running server), the vendors and their
@@ -193,12 +191,9 @@ examined only one handed claim at a time, never across a whole agent's answer. E
   - `two-faults` (Hard): both parts faulted, one a gap and one a mismatch, with the mismatch on a
     vendor that offers both kinds of hosting (for example, the Express server put in that vendor's
     static-site service, and nothing named for the frontend).
-  Difficulty as marked. **Only `backend-serves`, `shared-vendor`, `decoy` and `two-faults` count**,
-  because each contains a case the criterion names (one vendor hosting both, or the backend
-  serving the built frontend) and the bar is one unaided pass. `split-clean` and `one-gap`
-  (Easy) are for the worked example and for a retry with help after a miss; `wrong-host` (Medium)
-  is practice only, since its plan contains neither named case. For review visits, serve a
-  counting shape the learner hasn't had, reading the labels `served.mjs` returns.
+  Difficulty as marked. A scenario mixes shapes, and includes the two the criterion names (one
+  vendor hosting both, and the backend serving the built frontend). For review visits, serve a
+  shape the learner hasn't had, reading the labels `served.mjs` returns.
 - **worked example:** work one Easy instance aloud: list what each part needs, then go vendor by
   vendor saying what it was given and whether its offer can do that job, and finish by checking
   each part has somewhere to live. For the backend sending the frontend itself, point to Full
@@ -217,9 +212,8 @@ examined only one handed claim at a time, never across a whole agent's answer. E
   same capability on the plan your own lab prompt produced.
 - **check note:** A `decoy` instance is always fully covered, and a `backend-serves` or
   `shared-vendor` instance may be. A pass on one of those shows the learner did not name a false
-  gap, not that they can find a real one. For the counting attempt, prefer an instance that contains
-  at least one gap or mismatch. If a learner's only pass came on a fully covered plan, tell them so
-  and offer a faulted instance on a later visit.
+  gap, not that they can find a real one. If a learner's only pass came on a fully covered plan,
+  offer a faulted one on a later visit.
 
 ### `a-place-lab-plan`
 
@@ -253,9 +247,7 @@ examined only one handed claim at a time, never across a whole agent's answer. E
   pages do; if there is none, shows that part's line as "not judged: the vendor's own pages don't
   settle this", tells the learner to leave that part out, and leaves it out of the key, so the
   missing offer is never mistaken for a planted gap. Writes the key into the record from the
-  offers. **Counts the instance only if the plan has one vendor hosting both or a backend serving
-  the built frontend.** Any other plan, faulted or not, is practice only; the tutor says so and offers
-  `a-place-described-plan` for the counting attempt. Waits during the attempt, writing down any help word for word. Sends the
+  offers. Any plan, faulted or not, can be ruled on. Waits during the attempt, writing down any help word for word. Sends the
   adjudicator the parts, the plan with its offers, the key, the learner's answer and every piece
   of help. Labels the attempt `a-place-lab-plan/<vendors, joined with +>`. A remark about where the database goes is neither credited nor counted as a false gap or an
   unsupported claim: the tutor tells the adjudicator to disregard it, and the learner that it
@@ -263,8 +255,7 @@ examined only one handed claim at a time, never across a whole agent's answer. E
 - **done when:** criterion met with no help.
 - **generator:** the material is whatever the learner's agent proposed, so no two instances match
   and nobody sets the difficulty. Hold fixed: offers come from the vendor's own pages on the day,
-  never from the agent's answer; the key comes from those offers and the app's code. Only a plan
-  with one vendor hosting both or a backend-served frontend counts, for the reason above. Across visits, use a different agent answer each time (a tablemate's, or a fresh run of
+  never from the agent's answer; the key comes from those offers and the app's code. Across visits, use a different agent answer each time (a tablemate's, or a fresh run of
   the lab prompt), preferring one that names a vendor the learner hasn't used.
 - **worked example:** none during the attempt. If the learner stalls, the first level of help is
   "what does each part need from a host?", and the attempt is recorded `unaided: no`.
@@ -476,7 +467,7 @@ examined only one handed claim at a time, never across a whole agent's answer. E
   page's kind), the learner's plan verbatim and the help, and the generator's rule below on what
   "would catch" means. After the ruling, opens the settling pages with the learner and shows
   which claims were stale. Labels the attempt `a-plan-claim-checks/<vendors, joined with +>`.
-- **done when:** criterion met with no help, on a Medium or Hard instance.
+- **done when:** criterion met with no help.
 - **generator:** fixed: the answer is 150 to 300 words in a coding agent's voice, confident, with
   no sources and no dates, answering a lab-style prompt ("compare free hosting for a React,
   Express and SQLite class project"). It names three to five real vendors and makes six to nine
@@ -509,8 +500,7 @@ examined only one handed claim at a time, never across a whole agent's answer. E
   - `mixed-true` (Hard): one true claim sits next to each planted one about the same vendor (a
     true sleep time beside a wrong database limit), so a plan that checks "Render" as a whole
     rather than each claim can miss one.
-  Difficulty as marked. An attempt meant to count runs at Medium or Hard. Across visits, serve
-  `sourced-wrong` and `mixed-true` at least once each, reading the labels `served.mjs` returns.
+  Difficulty as marked. Across visits, serve `sourced-wrong` and `mixed-true` at least once each, reading the labels `served.mjs` returns.
   The plan passes when, followed as written, it checks every claim on the vendor's own current
   pages, would catch all three planted claims, and includes a prompt addition that would make each
   claim come with what is needed to check it (for example, a link to the vendor's own page for
@@ -542,7 +532,7 @@ examined only one handed claim at a time, never across a whole agent's answer. E
   topic, in the orientation reading, `a-check-2025-guide-claims` (its claims and its worked example)
   or `a-sort-claim-sources`: PlanetScale, Heroku, Railway's $5, Render's Postgres, Neon's compute,
   Fly.io's card rule. A learner who has done those routes may recognize the planted claims from
-  memory. For a counting instance, plant claims about vendors or limits the learner has not met in
+  memory. For a check question, plant claims about vendors or limits the learner has not met in
   this topic. If you can't, note in the record which planted claims the learner had already seen.
 
 ### `a-check-lab-answer`
@@ -627,7 +617,7 @@ examined only one handed claim at a time, never across a whole agent's answer. E
   with the question's path, or `a-weigh-described-plans/<twist>` when the generator is run live. A remark about where the database goes is neither credited nor counted as a false gap or an
   unsupported claim: the tutor tells the adjudicator to disregard it, and the learner that it
   belongs to database-hosting.
-- **done when:** criterion met with no help, on a Medium or Hard instance.
+- **done when:** criterion met with no help.
 - **generator:** fixed: the app is a class project with a React frontend and an Express server,
   used by about twenty people, built by someone working through a coding agent; its database is
   never part of the plans, the terms or the key. Plan one puts the frontend and backend with one
@@ -652,8 +642,7 @@ examined only one handed claim at a time, never across a whole agent's answer. E
   - `irrelevant-difference` (Hard): one large difference that doesn't matter for twenty users (a
     bandwidth allowance of 100 GB against 1 TB, a region list, team seats); leaning on it as a
     reason counts as naming something the terms don't support for this app.
-  Difficulty as marked. An attempt meant to count runs at Medium or Hard. Across visits, serve
-  `agent-gap` and `card-trap` at least once each, reading the labels `served.mjs` returns.
+  Difficulty as marked. Across visits, serve `agent-gap` and `card-trap` at least once each, reading the labels `served.mjs` returns.
 - **worked example:** work one Easy instance aloud, going through the five differences one at a
   time and saying for each what the terms say for each plan and whether it matters for twenty
   users, then listing what the extra vendors add, then arguing the other plan's case as hard as
