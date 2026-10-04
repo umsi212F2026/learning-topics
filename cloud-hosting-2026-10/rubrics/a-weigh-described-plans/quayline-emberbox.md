@@ -9,30 +9,22 @@ Each question carries one case of `c-weigh-hosting-plans`. What the terms give, 
   Emberbox's $1 credit lasts about three weeks, so its server stops in grading week, or with a card
   on file keeps running and bills. Card: none of the three requires one; one on file lets Quayline
   bill bandwidth and Emberbox bill past its credit; Lanternhost can't bill.
-- **Agent reach** (case `agent-reach`). Quayline: one official CLI and MCP server for both parts,
-  which can deploy and set environment variables, but can't read the web service's logs (only the
-  dashboard shows them), and can't delete services or change plans. Lanternhost: a CLI that deploys and sets build settings, with deploy logs only (it runs no
-  code, so there are no request logs). Emberbox: an official CLI and MCP server that can deploy, read
-  logs and set environment variables; the terms state nothing it can't do.
-- **Vendor count** (case `vendor-count`). Plan S's extra vendor adds a second account, a second
-  set of agent credentials (its secrets), and a second dashboard and place to look when something
-  breaks.
+- **Vendor count** (case `vendor-count`). Plan S's extra vendor adds a second account, with a
+  second login to keep secret, and a second dashboard and place to look when something breaks.
   Moving is easy from both: ordinary `npm` builds on Quayline, plain files on Lanternhost, ordinary
   Node on Emberbox plus a small `emberbox.toml`.
 - **Other case** (case `other-case`). The difference that matters most: Quayline's server sleeps
   (a grader may wait a minute) but never stops; Emberbox's never sleeps but stops in grading week
-  unless a card is on file. So the strongest case for S is that nothing in it sleeps, or that
-  Emberbox's tool reads the server's logs and Quayline's can't; either alone is enough. For Q it is that
-  its server never stops in grading week, or that it is one account and one agent tool for both
-  parts; either is enough on its own. "No card means no
+  unless a card is on file. So the strongest case for S is that nothing in it sleeps. For Q it is
+  that its server never stops in grading week, or that it is one account and one place to look for
+  both parts; either is enough on its own. "No card means no
   bill" holds for both plans and doesn't count as a case for either. "It's simpler" alone is not a
   difference in the terms.
 
 In the other-case questions only (`v1`, `v7`, `v2`), these are not deciding for twenty users and
-never a miss when left out: the 100 GB bandwidth lines, Quayline's 750-hour limit, Lanternhost
-having no request logs, Emberbox's `emberbox.toml`. Naming one is fine if what is said matches the
-terms. The free-limits, agent-reach and vendor-count questions ask for those facts where they
-apply. A claim the terms contradict is a miss; "nothing in the terms says
+never a miss when left out: the 100 GB bandwidth lines, Quayline's 750-hour limit, Emberbox's
+`emberbox.toml`. Naming one is fine if what is said matches the terms. The free-limits and
+vendor-count questions ask for those facts where they apply. A claim the terms contradict is a miss; "nothing in the terms says
 this" is enough to name one that is merely unsupported. Which plan anyone chooses earns nothing
 either way. Remarks about where the database goes are neither credited nor counted.
 
@@ -50,29 +42,15 @@ either way. Remarks about where the database goes are neither credited nor count
   stated as the terms give them for both plans, with nothing unsupported. Half for all three on one
   plan only, or two of the three on both.
 
-### v10
-
-- **goal:** `c-weigh-hosting-plans`
-- **cases:** agent-reach
-- **answer:** Plan Q: one official CLI and MCP server reaches both parts to deploy and set
-  environment variables, but it can't read the web service's logs (only the dashboard shows them),
-  and it can't delete services or change plans. Plan S: Emberbox's CLI and
-  MCP server can deploy, read logs and set environment variables; Lanternhost's CLI can deploy and
-  set build settings, with deploy logs only, since it runs no code.
-- **credit:** full for each host's reach stated as the terms give it, including that Quayline's tool
-  can't read the web service's logs and that Lanternhost has only deploy logs, with nothing unsupported (such as a limit on
-  Emberbox's tool the terms don't state). Half for one plan right and the other missing or wrong, or
-  for both plans' reach with what the tools can't do left out.
-
 ### v11
 
 - **goal:** `c-weigh-hosting-plans`
 - **cases:** vendor-count
-- **answer:** the extra vendor adds a second account, a second set of agent credentials, and a
+- **answer:** the extra vendor adds a second account, with a second login to keep secret, and a
   second dashboard and place to look when something breaks. Moving is easy from both: ordinary `npm` builds on Quayline;
   plain files on Lanternhost, which any static host can take; ordinary Node on Emberbox, plus its small
   `emberbox.toml`.
-- **credit:** full for accounts, secrets (the agent's second credentials) and places to look, and how hard each plan is to move, each as the terms give it, with nothing
+- **credit:** full for accounts, secrets (the second login) and places to look, and how hard each plan is to move, each as the terms give it, with nothing
   unsupported. Half for the extra vendor's cost without moving, or moving without the cost.
 
 ### v1
@@ -80,14 +58,13 @@ either way. Remarks about where the database goes are neither credited nor count
 - **goal:** `c-weigh-hosting-plans`
 - **cases:** other-case
 - **answer:** either plan, then the strongest case for the other. For S: nothing in it ever
-  sleeps, so a grader never waits a minute; or the agent can read the server's logs on Emberbox,
-  which it can't on Quayline. For Q: its server never stops, while Emberbox's stops in grading week
-  unless a card is on file; and one account and one agent tool for both parts.
+  sleeps, so a grader never waits a minute. For Q: its server never stops, while Emberbox's stops
+  in grading week unless a card is on file; and one account and one place to look for both parts.
 - **credit:** full for a choice and a case for the other plan that rests on a difference in the
-  terms that matters for this app, with nothing unsupported. For S, never sleeping, or the agent
-  reading the server's logs on Emberbox but not on Quayline, is each enough; for Q, never stopping in grading week, or one account and one agent tool for both parts, is each
+  terms that matters for this app, with nothing unsupported. For S, never sleeping is enough;
+  for Q, never stopping in grading week, or one account and one place to look for both parts, is each
   enough on its own, as in `v2`. Half for a true case that rests only on a difference that doesn't decide anything
-  here (bandwidth, Lanternhost's deploy-only logs, `emberbox.toml`), or on "it's simpler" alone.
+  here (bandwidth, `emberbox.toml`), or on "it's simpler" alone.
 
 ### v3
 
@@ -126,12 +103,10 @@ either way. Remarks about where the database goes are neither credited nor count
 
 - **goal:** `c-weigh-hosting-plans`
 - **cases:** other-case
-- **answer:** the strongest case for Plan S: nothing in it ever sleeps, so no grader waits a minute;
-  or the agent can read the server's logs on Emberbox, which it can't on Quayline.
-- **credit:** full for a case for S that rests on its never sleeping, or on the agent reading the
-  server's logs on Emberbox but not on Quayline (or another difference in the terms that matters
-  for this app), with nothing unsupported. Half for a case that rests on "simpler", or on a
-  difference that doesn't decide anything here (bandwidth, Lanternhost's deploy-only logs).
+- **answer:** the strongest case for Plan S: nothing in it ever sleeps, so no grader waits a minute.
+- **credit:** full for a case for S that rests on its never sleeping (or another difference in the
+  terms that matters for this app), with nothing unsupported. Half for a case that rests on
+  "simpler", or on a difference that doesn't decide anything here (bandwidth).
 - **tutor note:** if `v1` was served before, ask how this case compares with the one given there.
 
 ### v8
@@ -150,10 +125,10 @@ either way. Remarks about where the database goes are neither credited nor count
 - **goal:** `c-weigh-hosting-plans`
 - **cases:** other-case
 - **answer:** Quayline's server never stops, while Emberbox's stops in grading week unless a card is on
-  file; and one account and one agent tool for both parts.
+  file; and one account and one place to look for both parts.
   The cost the student named, a minute's wait after 15 idle minutes, is the one Q carries.
 - **credit:** full for a case that rests on Quayline's server not stopping in grading week, or on one
-  account and one agent tool, stated as the terms give it, with nothing unsupported. "No card means
+  account and one place to look, stated as the terms give it, with nothing unsupported. "No card means
   no bill" holds for S too and doesn't count. Half for a case that rests on "simpler" alone, or on
   a difference that doesn't decide anything here.
 - **tutor note:** if `v1` was served before, ask how this case compares with the one they gave
@@ -163,10 +138,9 @@ either way. Remarks about where the database goes are neither credited nor count
 
 - **goal:** `c-weigh-hosting-plans`
 - **cases:** vendor-count
-- **answer:** a second set of agent credentials, and a second dashboard and place to look when
-  something breaks. A second tool may also be named. Their "moving is easy from either" is right.
-- **credit:** full for the agent's second set of credentials and the second place to look, with
-  nothing unsupported; a second tool counts as an extra, not in place of the credentials. Half for
-  one of the two.
+- **answer:** a second login to keep secret, and a second dashboard and place to look when
+  something breaks. Their "moving is easy from either" is right.
+- **credit:** full for the second login (a secret) and the second place to look, with nothing
+  unsupported. Half for one of the two.
 - **tutor note:** if `v11` was served before, ask which of what they named there this student
   left out.

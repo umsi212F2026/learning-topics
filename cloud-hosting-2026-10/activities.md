@@ -27,7 +27,7 @@ part of this.
 | `o-orientation` | get the shape of this area before working on any particular part of it | `orientation` |
 | `c-place-app-parts` | say which kind of host the frontend and the backend each need, and whether a hosting plan covers them | Given an app with a React frontend and an Express backend, and a hosting plan listing each vendor and what it offers, says which part each vendor would host, and names any part the plan leaves without a host or puts on a host that cannot run it, or says both are covered. It passes when every gap and mismatch is found and nothing is named that isn't one, including for a plan where one vendor hosts both, or where the backend serves the built frontend itself. Where the database is kept is not part of it. |
 | `c-check-vendor-claims` | find out whether what an agent says about a hosting vendor is true today | Given a claim an agent made about a hosting vendor's free tier, finds on the vendor's own current pages the sentence that settles it, and says whether the claim still holds. Opening a deep link the agent gave to the vendor's page, and reading the sentence there, counts. Taking the agent's word for it, or a blog post's or a forum's, does not meet it, and neither does asking the agent whether it is sure. |
-| `c-weigh-hosting-plans` | choose between hosting plans for an app, knowing what each would cost | Given two hosting plans for an app's frontend and backend, one putting both with a single vendor and one using a separate vendor for each, and each vendor's free-tier terms, says for each plan whether the app sleeps when idle, what happens when it passes a limit, and whether a credit card is required and what having one on file risks; says whether their agent can reach every host to change its settings and read its logs, and what it can't do there; says what the extra vendor adds in accounts, secrets and places to look when something breaks, and how hard each plan would be to move to another vendor; and chooses one and states the strongest case the terms give for the plan they didn't choose. It passes when each of these is stated as the terms give it, the case for the other plan rests on a difference that matters for a class project with few users, and nothing is named that the terms don't support. Which plan they choose is not part of it, and neither is where the database is kept. |
+| `c-weigh-hosting-plans` | choose between hosting plans for an app, knowing what each would cost | Given two hosting plans for an app's frontend and backend, one putting both with a single vendor and one using a separate vendor for each, and each vendor's free-tier terms, says for each plan whether the app sleeps when idle, what happens when it passes a limit, and whether a credit card is required and what having one on file risks; says what the extra vendor adds in accounts, secrets and places to look when something breaks, and how hard each plan would be to move to another vendor; and chooses one and states the strongest case the terms give for the plan they didn't choose. It passes when each of these is stated as the terms give it, the case for the other plan rests on a difference that matters for a class project with few users, and nothing is named that the terms don't support. Which plan they choose is not part of it, and neither is where the database is kept. |
 
 ## Coverage
 
@@ -447,8 +447,8 @@ part of this.
 - **artifact:** no external source. An app, two plans and made-up vendors' free-tier terms, with
   one question at a time on one case of weighing them. 5 to 10 minutes a question.
 - **learner does:** reads the app, the plans and the terms, then answers the one question alone.
-  Each question carries one case: what each plan's free terms mean (sleep, limits, card); whether
-  their agent can reach each host; what the extra vendor adds and how hard each plan is to move; or
+  Each question carries one case: what each plan's free terms mean (sleep, limits, card); what the
+  extra vendor adds and how hard each plan is to move; or
   choosing a plan and making the strongest case for the other. Hands it to the tutor.
 - **tutor role:** none
 - **tutor does:** serves the question and its key; when the generator is run live, writes the key
@@ -471,23 +471,18 @@ part of this.
   vendor; plan two uses a separate vendor for each. Vendors are made up. Each vendor's terms are
   four to six bullets, always covering: whether anything sleeps and how long it takes to wake; what
   happens past each limit (paused, suspended, stopped when credit runs out, billed with a card);
-  whether a card is required, and what a card on file allows the vendor to bill; agent access
-  (whether there is an official command-line tool, an MCP server or an API, and what it can and
-  can't do: deploy, set environment variables, read logs); and moving (standard tools and exports,
-  or something vendor-specific). Every question bears on `c-weigh-hosting-plans` and **carries
+  whether a card is required, and what a card on file allows the vendor to bill; and moving
+  (standard tools and exports, or something vendor-specific). Terms say nothing about agent
+  access. Every question bears on `c-weigh-hosting-plans` and **carries
   exactly one case**, named on its rubric `cases:` line: `free-limits` (sleep, limits and card, for
-  both plans), `agent-reach` (each host's reach and what the agent can't do there),
-  `vendor-count` (what the extra vendor adds, and how hard each plan is to move) or `other-case`
+  both plans), `vendor-count` (what the extra vendor adds, and how hard each plan is to move) or `other-case`
   (choose, and the strongest case for the other plan). A question may ask the case directly or through a student's
-  answer to judge. A scenario covers all four cases across its questions, and no question's text
+  answer to judge. A scenario covers all three cases across its questions, and no question's text
   gives away a later question's answer. What varies: the terms, and the twist, each tied to the
   case it carries:
   - `lopsided` (Easy, `other-case`): one plan is better on most of the terms, and the
     strongest case for the other is still real.
   - `balanced` (Medium, `other-case`): each plan wins on at least two kinds of term.
-  - `agent-gap` (Medium, `agent-reach`): the single vendor's agent tool can't read the
-    backend's logs, or one split vendor has no command-line tool or MCP server at all, only a
-    dashboard.
   - `card-trap` (Hard, `free-limits`): every vendor signs up without a card, but one bills
     overages once a card is added (for example, after the learner adds one to unlock a feature);
     or one asks for a card only to verify identity and can't bill it. A pass has to tell these
@@ -499,11 +494,9 @@ part of this.
     case resting on it doesn't rest on a difference that matters.
   A new scenario always invents new vendor names, never one on the topic's list of names in use
   (at the head of this file).
-  Difficulty as marked. Across visits, serve each case, and `agent-gap` and `card-trap` at least
-  once each, reading the labels `served.mjs` returns.
+  Difficulty as marked. Across visits, serve each case, and `card-trap` at least once, reading the labels `served.mjs` returns.
 - **worked example:** work one Easy question aloud on the same case as the one being asked: for
-  free limits, go through sleep, limits and card for each plan in turn; for agent reach, host by
-  host, what the tool can and can't do; for vendor count, what each extra account brings and what
+  free limits, go through sleep, limits and card for each plan in turn; for vendor count, what each extra account brings and what
   moving off each vendor takes; for the other case, pick a plan, then argue the other one from the
   difference that matters most for twenty users. For what a card on file can risk, tell, as
   history, the ServerlessHorrors story "$104,500", https://serverlesshorrors.com/all/netlify-104k/
@@ -512,14 +505,14 @@ part of this.
   real attempt, ask only the case's first question (for free limits, "what happens on each plan
   when nobody has visited for an hour?").
 - **doesn't show:** one question carries one case, so a pass shows that case only; the goal is met
-  only when all four cases have passed. The terms are stated plainly in a few
+  only when all three cases have passed. The terms are stated plainly in a few
   bullets each, so a pass doesn't show the learner could find them on real vendors' pages, where
-  they are spread over pricing, docs and billing pages and agent access is on a page of its own.
+  they are spread over pricing, docs and billing pages.
   Vendors are made up, so a pass says nothing about real ones. The two plans are always one vendor
   against a vendor for each part, and the database is left out. The learner knows a check is on.
 - **offer as:** the check that's available now: two plans the tutor wrote, one case at a time, 5
   to 10 minutes a question, nothing to run, and the tutor picks the twist so the hard cases (a card that can be billed once
-  added, an agent that can't see the backend's logs) actually come up. `a-weigh-lab-plans` is the same
+  added, a vendor that is hard to move off) actually come up. `a-weigh-lab-plans` is the same
   capability on two plans from your own lab.
 
 ### `a-weigh-lab-plans`
@@ -534,7 +527,7 @@ part of this.
   left out. One case per sitting, 10 minutes, plus the tutor's preparation.
 - **learner does:** reads the two plans and the terms sheet, then answers alone the one question
   the tutor sets, on one case, as in `a-weigh-described-plans`: what each plan's free terms mean;
-  whether their agent can reach each host; what the extra vendor adds and how hard each plan is to
+  what the extra vendor adds and how hard each plan is to
   move; or which plan they would choose for Problem Set 3 and the strongest case for the other.
   Hands it to the tutor.
 - **tutor role:** none
@@ -542,11 +535,7 @@ part of this.
   if none does, builds the second from the first (the single vendor's own two services, or a
   separate vendor for each part from the vendors the lab answers named). For each vendor, reads its own current
   pages and writes a terms sheet in the bullets of `a-weigh-described-plans`'s generator, with the
-  address and date of each page; the sheet must include agent access, from the vendor's own docs
-  on its command-line tool, MCP server or API (for example, on 2026-10-01: Render's MCP server,
-  https://render.com/docs/mcp-server, which can create services, set environment variables, read
-  logs, but cannot delete resources or change most settings; Netlify's MCP server and CLI,
-  https://docs.netlify.com/build/build-with-ai/netlify-mcp-server/). If a lab answer proposes
+  address and date of each page. If a lab answer proposes
   Hatchable, notes that its runtime "is a sandbox, not Node" with "No `npm install`"
   (https://hatchable.com/docs/developers/restrictions, checked 2026-10-01), so an Express backend
   would have to be rewritten: a port, not a deploy, and deep lock-in. Where a vendor's pages don't
@@ -562,10 +551,10 @@ part of this.
   is recorded with `--cases`.
 - **generator:** the material is whatever the lab produced, so nobody sets the difficulty. Hold
   fixed: one single-vendor plan and one plan with a separate vendor for the frontend and the backend; terms from the vendors' own
-  pages on the day, never from an agent's answer; every sheet covers sleep, limits, card, agent
-  access and moving, or says the vendor doesn't state it. Each sitting asks one question on one
-  case (`free-limits`, `agent-reach`, `vendor-count` or `other-case`), recorded with `--cases`, and
-  the same sheet serves all four across sittings. On review visits, use
+  pages on the day, never from an agent's answer; every sheet covers sleep, limits, card and
+  moving, or says the vendor doesn't state it. Each sitting asks one question on one
+  case (`free-limits`, `vendor-count` or `other-case`), recorded with `--cases`, and the same
+  sheet serves all three across sittings. On review visits, use
   different vendors, or the same vendors with terms re-read that day, since they may have changed.
 - **worked example:** none during the attempt. If the learner stalls, the first level of help is
   the case's first question (for free limits, "what happens on each plan when nobody has visited
@@ -573,7 +562,7 @@ part of this.
 - **doesn't show:** the tutor gathers the terms, so a pass doesn't show the learner could pull them
   from vendor pages themselves; `c-check-vendor-claims` covers finding out, and this covers
   weighing. One sitting shows one case. Which twists come up is luck: real terms may have no card
-  trap or agent gap. The key
+  trap or hard move. The key
   rests on the tutor's reading of vendor pages on one day.
 - **offer as:** the real decision you face in Problem Set 3, on the vendors your own lab turned up,
   with their real terms gathered that day. Best after the lab and before you sign up for the

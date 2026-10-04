@@ -12,16 +12,12 @@ to sign up.
 - **Quayline.** Static sites never sleep. The web service sleeps after 15 minutes without a request,
   and the next request waits about a minute; 750 free hours a month (web services only), then suspended. With a card
   on file, bandwidth past 100 GB a month is billed ($0.15 per GB); without one, services are
-  suspended. One official CLI and MCP server for both parts: deploy and set environment variables;
-  it can't read the web service's logs (those are only in the dashboard), and it can't delete
-  services or change plans. Builds with ordinary `npm`.
+  suspended. Builds with ordinary `npm`.
 - **Lanternhost.** Never sleeps. 100 GB a month, a hard cap: past it, paused until next month. The
-  free plan takes no card, so it can't bill. A CLI that deploys and sets build settings; deploy
-  logs only, since it runs no code. Any static host can take the files.
+  free plan takes no card, so it can't bill. Any static host can take the files.
 - **Emberbox.** $1 of credit a month, enough to keep a small server running for about three weeks;
   never sleeps. When the credit runs out the server stops until next month, or, with a card on
-  file, keeps running and bills. Official CLI and MCP server: deploy, read logs, set environment
-  variables. Reads a small `emberbox.toml`; the server is ordinary Node.
+  file, keeps running and bills. Reads a small `emberbox.toml`; the server is ordinary Node.
 
 Answer from these terms only.
 
@@ -29,11 +25,6 @@ Answer from these terms only.
 
 For each plan, say whether the app sleeps when nobody has used it for a while, what happens when it
 passes a limit, and whether a credit card is required and what having one on file would risk.
-
-### v10
-
-For each plan, say whether your agent could reach every host to change its settings and read its
-logs, and what it couldn't do there.
 
 ### v11
 
@@ -66,7 +57,7 @@ risk on each vendor?
 ### v7
 
 A student wrote: "Plan Q. Quayline's server sleeps after 15 minutes, but that's fine for a class
-project. My agent can reach both hosts through their tools. Plan S is just worse for this project."
+project. Plan S is just worse for this project."
 They give no case for the plan they didn't choose. Write the strongest case the terms give for
 Plan S.
 
