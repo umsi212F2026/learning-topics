@@ -1,0 +1,40 @@
+# Rubric: connection string
+
+A connection string is one line telling the backend where the database is and how to get in. For
+a database on a host of its own it looks like `postgres://crumbs_app:pa55word@db.larder.cloud:5432/crumbs`:
+the kind of database, a username and password, the machine and port it runs on, and the
+database's name. Its other names are database URL and `DATABASE_URL`, and neither of those, given
+as an answer, says what it is. The confusable is a database file path, such as
+`./data/recipes.sqlite`, which names a file on the same machine that the backend opens itself.
+
+### q1
+
+- **goal:** `w-connection-string`
+- **move:** DISTINGUISH
+- **answer:** A connection string tells the backend how to reach a database running somewhere
+  else, as its own server (often on another host), and carries what it needs to get in, such as
+  a username and password. A database file path only names a file on the same machine, which the
+  backend opens directly, with nothing to log in with and no other machine involved.
+- **credit:** full for naming both halves of the difference that matters: the connection string
+  reaches a database server elsewhere and carries the login, while the file path points at a file
+  on the backend's own machine that needs no login. Half for only one of those halves (for
+  example, "one includes a password, the other doesn't" with nothing on where the database is).
+  None for an incidental difference alone, such as how they look (one starts with `postgres://`),
+  their length, or that one is a URL.
+- **tutor note:** if they answer "a connection string is a secret and a file path isn't", ask what
+  in the connection string makes it one, and what a file path would need to have for the same to
+  be true.
+
+### q2
+
+- **goal:** `w-connection-string`
+- **move:** CATCH
+- **answer:** A connection string doesn't only say where the database is; it also says how to get
+  in, because it carries the database's username and password. So it is a secret, and anyone who
+  reads it in the README could get into the database.
+- **credit:** full for naming that the connection string also carries how to get in (the password,
+  or the login), so it is not safe to share. Half for saying it is a secret or shouldn't be in the
+  README without saying what in it makes it one. None for a different quibble, such as that the
+  README is the wrong place for setup details, or that the database's address is also private.
+- **tutor note:** a learner who says "it's a secret because it's a setting" has the call right for
+  the wrong reason; ask what someone could do with the line if they copied it.
