@@ -33,3 +33,16 @@ test data. Synonym: initial data.
   while the app was being tried out.
 - **tutor note:** this question uses "initial data", a name the readings don't. If the learner
   doesn't recognise it as seed data, record the answer as given; don't tell them.
+
+### q-catch-seed-schema
+
+- **goal:** `w-seed-data`
+- **move:** CATCH
+- **answer:** seed data is rows, not tables. It is the starting rows the code puts into the tables
+  when a database is first set up, such as the list of categories. Making the tables and their
+  columns is a different job, and the tables have to exist before any seed rows can go into them.
+- **credit:** full for naming the actual error: seed data is the rows the code puts in when a
+  database is first set up, while what the teammate describes is making the tables those rows go
+  into. Half for "that isn't seed data" or "that's the tables' definition" with nothing about seed
+  data being rows. Do not accept a different quibble: "they should have more seed data", or "they
+  should copy their laptop's database instead", neither of which is what the sentence gets wrong.

@@ -29,3 +29,18 @@ Nearest confusable: SQL. Synonym: PostgreSQL.
   SQLite"), with nothing about its running apart from the backend. Do not accept "PostgreSQL",
   which names it again, or "a SQL database" or "a kind of SQL" alone, which say what kind of thing
   it is without saying what it is.
+
+### q-catch-postgres-file
+
+- **goal:** `w-postgres`
+- **move:** CATCH
+- **answer:** Postgres is not a file the backend opens. It is a database that runs as a program of
+  its own, often as a separate service, and the backend connects to it and sends it queries. The
+  package they install only lets the backend connect; a Postgres database has to be running
+  somewhere for it to connect to.
+- **credit:** full for naming the actual error: there is no Postgres file for the backend to open,
+  since Postgres runs as its own program and the backend connects to it. Half for "Postgres needs
+  more setting up than a library" with nothing about its running apart from the backend, which
+  connects to it. Do not accept a different quibble: "some queries will need changing", "SQLite is
+  fine for this app", or a remark about connection strings or passwords alone, none of which is what
+  the sentence gets wrong.

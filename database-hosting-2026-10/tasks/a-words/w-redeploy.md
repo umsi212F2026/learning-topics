@@ -13,3 +13,8 @@ redeploy?
 Your app is already running on a host. Your agent says: "I've fixed the typo on the sign-up page
 and pushed it. The host will redeploy in about a minute." What is the agent claiming, and what does
 it rule out?
+
+### q-catch-nightly-restart
+
+A classmate says: "My host restarts my app every night at 3 a.m., so my app gets redeployed every
+night." What is wrong with what they said?

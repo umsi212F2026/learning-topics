@@ -10,3 +10,9 @@ they will mostly work as they are." What is the difference between Postgres and 
 ### q-define-postgres
 
 Your agent suggests using Postgres for your deployed app. Say what Postgres is, in your own words.
+
+### q-catch-postgres-file
+
+A classmate says: "Switching my app from SQLite to Postgres just means changing a library. I'll
+install the Postgres package in place of the SQLite one, and my backend will open its Postgres file
+the same way it opened the SQLite file." What is wrong with what they said?
