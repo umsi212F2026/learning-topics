@@ -110,6 +110,7 @@ with the learner.
 - **checks:** `o-orientation`
 - **artifact:** no external source. The learner's answers from `a-read-database-survives`, still in
   front of them. About 5 minutes. Nothing needs to be running.
+- **verified:** 2026-10-04
 - **learner does:** two quick rehearsals, neither judged, each answered in a sentence. First, the
   tutor gives one line saying where a made-up app's database will live on a made-up host, and the
   learner says whether its data would survive a redeploy. Second, the tutor gives one line saying how
@@ -179,6 +180,7 @@ with the learner.
   database, and one of two questions about that plan. Written per the generator below. About 5
   minutes a question, plus about 4 for the worked example before a learner's first attempt at this
   activity.
+- **verified:** 2026-10-04
 - **learner does:** reads the app's description, the host's storage line and the plan, then
   answers alone the one question asked, which is either "Will this plan's data survive a
   redeploy?" or "Does production get a database of its own, built by the code rather than copied
@@ -382,6 +384,7 @@ with the learner.
   tablemate's plan or a fresh run of the same request. It is asked the two questions of
   `a-judge-described-plan` as two separate questions. About 10 minutes for the two, plus the
   tutor's preparation, done before the sitting.
+- **verified:** 2026-10-04
 - **learner does:** before telling the agent to go ahead, answers alone the first question the
   tutor puts on the real plan, "Will this plan's data survive a redeploy?", with yes or no and the
   plan step that decides it, and for a no, what the plan would have to say instead; hands it in;
