@@ -21,7 +21,8 @@ Each question carries one case of `c-weigh-hosting-plans`. What the terms give, 
   Node on Emberbox plus a small `emberbox.toml`.
 - **Other case** (case `other-case`). The difference that matters most: Quayline's server sleeps
   (a grader may wait a minute) but never stops; Emberbox's never sleeps but stops in grading week
-  unless a card is on file. So the strongest case for S is that nothing in it sleeps, and for Q that
+  unless a card is on file. So the strongest case for S is that nothing in it sleeps, or that
+  Emberbox's tool reads the server's logs and Quayline's can't; either alone is enough. For Q it is that
   its server never stops in grading week, or that it is one account and one agent tool for both
   parts; either is enough on its own. "No card means no
   bill" holds for both plans and doesn't count as a case for either. "It's simpler" alone is not a
@@ -79,13 +80,14 @@ either way. Remarks about where the database goes are neither credited nor count
 - **goal:** `c-weigh-hosting-plans`
 - **cases:** other-case
 - **answer:** either plan, then the strongest case for the other. For S: nothing in it ever
-  sleeps, so a grader never waits a minute. For Q: its server never stops, while Emberbox's stops in
-  grading week unless a card is on file; and one account and one agent tool for both parts.
+  sleeps, so a grader never waits a minute; or the agent can read the server's logs on Emberbox,
+  which it can't on Quayline. For Q: its server never stops, while Emberbox's stops in grading week
+  unless a card is on file; and one account and one agent tool for both parts.
 - **credit:** full for a choice and a case for the other plan that rests on a difference in the
-  terms that matters for this app, with nothing unsupported. For S, never sleeping is enough; for
-  Q, never stopping in grading week, or one account and one agent tool for both parts, is each
+  terms that matters for this app, with nothing unsupported. For S, never sleeping, or the agent
+  reading the server's logs on Emberbox but not on Quayline, is each enough; for Q, never stopping in grading week, or one account and one agent tool for both parts, is each
   enough on its own, as in `v2`. Half for a true case that rests only on a difference that doesn't decide anything
-  here (bandwidth, logs, `emberbox.toml`), or on "it's simpler" alone.
+  here (bandwidth, Lanternhost's deploy-only logs, `emberbox.toml`), or on "it's simpler" alone.
 
 ### v3
 
@@ -124,10 +126,12 @@ either way. Remarks about where the database goes are neither credited nor count
 
 - **goal:** `c-weigh-hosting-plans`
 - **cases:** other-case
-- **answer:** the strongest case for Plan S: nothing in it ever sleeps, so no grader waits a minute.
-- **credit:** full for a case for S that rests on its never sleeping (or another difference in the
-  terms that matters for this app), with nothing unsupported. Half for a case that rests on
-  "simpler", or on a difference that doesn't decide anything here (bandwidth, logs).
+- **answer:** the strongest case for Plan S: nothing in it ever sleeps, so no grader waits a minute;
+  or the agent can read the server's logs on Emberbox, which it can't on Quayline.
+- **credit:** full for a case for S that rests on its never sleeping, or on the agent reading the
+  server's logs on Emberbox but not on Quayline (or another difference in the terms that matters
+  for this app), with nothing unsupported. Half for a case that rests on "simpler", or on a
+  difference that doesn't decide anything here (bandwidth, Lanternhost's deploy-only logs).
 - **tutor note:** if `v1` was served before, ask how this case compares with the one given there.
 
 ### v8

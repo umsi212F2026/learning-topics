@@ -37,8 +37,7 @@ logs, and what it couldn't do there.
 
 ### v11
 
-Say what Plan S's extra vendor adds in accounts, secrets and places to look when something breaks,
-and how hard each plan would be to move to another vendor.
+Say what Plan S's extra vendor adds, and how hard each plan would be to move to another vendor.
 
 ### v1
 
@@ -55,8 +54,8 @@ and what do the terms say instead?
 
 A student wrote: "Plan S, because two specialized vendors will be faster under load and more
 reliable than one that does everything, and Emberbox is more secure since it runs only one program. Quayline
-sleeps." Which of their reasons do the terms not support, and what in the two plans' free terms
-that matters for this app did they miss?
+sleeps." Which of their reasons do the terms not support, and what in the plans' sleep, limit and
+card terms did they miss?
 
 ### v6
 
