@@ -108,8 +108,10 @@ with the learner.
   learner's own indication at the readiness question, not on the stops or the rehearsals. A plain
   yes to both parts is `criterion: met`. A hedge on either part, with no plain no, is
   `criterion: unclear`: explain the hedged part once more and ask again; a second hedge stays
-  `unclear`, and the tutor offers a helped attempt at an `a-judge-described-plan` question as
-  practice. A plain no is `criterion: not met`: record it, ask what is missing, and offer to go
+  `unclear`, and the tutor offers as practice `a-judge-described-plan`'s worked example (the
+  `laptop-export` plan, never banked, asked both questions in turn), never a helped attempt at a
+  banked question, which would spend it before any counting attempt and preview a counting plan.
+  A plain no is `criterion: not met`: record it, ask what is missing, and offer to go
   back over the stop that bears on it; don't ask again in the same sitting. This goal isn't
   required, so a no blocks nothing.
 - **generator:** for the two rehearsals only. Vary the made-up app (small, React frontend, Express
