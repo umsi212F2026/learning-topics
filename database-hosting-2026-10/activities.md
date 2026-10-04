@@ -18,7 +18,7 @@ with the learner.
 
 | goal | checks | notes |
 | ---- | ------ | ----- |
-| `o-orientation` | `a-dry-run-database-plan` | |
+| `o-orientation` | `a-read-database-survives`, `a-dry-run-database-plan` | |
 | `c-plan-first-deploy` | `a-judge-described-plan`, `a-judge-own-deploy-plan` | |
 
 ---
@@ -29,6 +29,7 @@ with the learner.
 
 - **serves:** `all`
 - **supports:** orient
+- **checks:** o-orientation
 - **artifact:** three short passages from three free pages, no account, read in this order as one
   sitting. All three opened 2026-10-04.
   1. MDN Web Docs, "Django Tutorial Part 11: Deploying Django to production" (last modified
