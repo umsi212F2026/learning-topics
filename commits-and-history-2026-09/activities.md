@@ -212,60 +212,6 @@ which cannot check anything, and is otherwise reachable only through `w-uncommit
   unwritten prediction quietly becomes "yes, that is what I thought."
   No `kind` is given; treat it as a single instance.
 
-### `a-w-repository`
-
-- **origin:** generated
-- **serves:** `w-repository`
-- **checks:** `w-repository`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-commit`
-
-- **origin:** generated
-- **serves:** `w-commit`
-- **checks:** `w-commit`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-uncommitted`
-
-- **origin:** generated
-- **serves:** `w-uncommitted`
-- **checks:** `w-uncommitted`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-staging-area`
-
-- **origin:** generated
-- **serves:** `w-staging-area`
-- **checks:** `w-staging-area`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-diff`
-
-- **origin:** generated
-- **serves:** `w-diff`
-- **checks:** `w-diff`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-history`
-
-- **origin:** generated
-- **serves:** `w-history`
-- **checks:** `w-history`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
 ### `a-narrated-commit-restore`
 
 - **serves:** `c-commit-recovery-point`
@@ -465,21 +411,11 @@ which cannot check anything, and is otherwise reachable only through `w-uncommit
   read the rest. Expect the transcript you read afterwards to contain commands and diffs their own
   agent printed, which is not the same thing as the learner having been asked to interpret them.
 
+### `a-words`
 
-### `a-w-merge`
-
-- **origin:** generated
-- **serves:** `w-merge`
-- **checks:** `w-merge`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-merge-conflict`
-
-- **origin:** generated
-- **serves:** `w-merge-conflict`
-- **checks:** `w-merge-conflict`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+- **serves:** group vocabulary
+- **generator:** the five moves in `workflows/learn/skills/goal-setting/references/vocabulary-moves.md`, set for one word at a time from its `what it names`, `nearest confusable` and `synonyms`. Each question names that word's goal and carries its move.
+- **learner does:** answers one short question about one word
+- **tutor role:** examiner
+- **tutor does:** sets the question as served, without rewording it or hinting; when the bank has nothing for the word, sets one move live, as vocabulary-moves.md describes
+- **offer as:** not offered as a choice; a word's question is set when that word is studied or due
