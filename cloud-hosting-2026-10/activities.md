@@ -348,41 +348,9 @@ examined only one handed claim at a time, never across a whole agent's answer. E
 - **serves:** `c-check-vendor-claims`
 - **supports:** attempt
 - **checks:** `c-check-vendor-claims`
-- **artifact:** no external source beyond the pages named here, all checked as resolving on
-  2026-10-01. One claim, which the tutor states every sitting: "Render's free web services sleep
-  after 15 minutes and its free Postgres is free for good." A bank of nine sources, one judged per
-  sitting, each with its verdict and the tutor's near-miss question:
-  - `s1` Render's docs, "Deploy for Free", https://render.com/docs/free. **Settles it**: the sleep
-    half holds; the Postgres half is false (expires 30 days after creation, deleted after a
-    14-day grace period). Question: none; the learner opens it and checks both halves.
-  - `s2` Render's pricing page, https://render.com/pricing. Vendor's own page that doesn't address
-    the claim: no spin-down or Postgres-expiry wording. Question: "does the pricing page say what
-    happens when the service is idle, or when the database is a month old?"
-  - `s3` The coding agent's own answer, asked "are you sure?". The agent again. Question: the
-    criterion's own line, that asking the agent whether it's sure does not count; "where would its
-    answer have come from?"
-  - `s4` The Odin Project's Deployment lesson (read in orientation), Render paragraph. Dated
-    secondary source, and it contradicts itself on Render's databases. Question: "when was this
-    true?"
-  - `s5` Hatchable, "Free web hosting in 2026". A vendor's article about other vendors, dated
-    August 2026. Question: "whose page is it, and what does it want you to choose?"
-  - `s6` Flavio Copes, "Every hosting provider's free tier, side by side", data checked
-    2026-09-16, with disclosed affiliate links. Careful, dated, secondary. Question: "when was
-    this true, and who would know if it changed yesterday?"
-  - `s7` A 2024 thread on Render's own community forum, which used to be at community.render.com.
-    That address now redirects to https://render.com/docs/community, which says "The community
-    forum was sunset on March 24, 2026" (the community moved to Discord). On the vendor's site but
-    not the vendor speaking. Question: "it's on Render's site; is it Render saying it?"; afterwards,
-    the tutor adds that the forum has since been shut and its threads are stranded at the date
-    they were written.
-  - `s8` A classmate who signed up for Render last week. Recent, first-hand, but about one account
-    on one day, and not about a database's 30th day. Question: "what could they have seen in a
-    week?"
-  - `s9` Render's MCP server docs, https://render.com/docs/mcp-server. Vendor's own page about
-    something else. Question: "it's Render's own page; is it about this claim?" (it isn't; it
-    matters for whether an agent can reach the host, which belongs to weighing plans).
+- **artifact:** no external source beyond the pages the sources name, all checked as resolving on
+  2026-10-01. One fixed claim about Render's free tier and nine sources, one judged per sitting.
   10 minutes a sitting; 15 for `s1`, which needs a browser.
-- **verified:** 2026-10-02
 - **learner does:** hears the claim and the one source, and without opening it says: does this
   source settle the claim today, help only with knowing what to look for, or not help with this
   claim, and why. If it doesn't settle it, says where they would go instead. For `s1`, opens it
@@ -390,7 +358,7 @@ examined only one handed claim at a time, never across a whole agent's answer. E
   an agent's claim like this one comes with a source that would settle it.
 - **tutor role:** socratic questioner
 - **tutor does:** takes the learner's verdict and reason before commenting. Asks this source's
-  near-miss question from the bank rather than giving a verdict. For `s1`, makes sure the learner
+  near-miss question from its tutor note rather than giving a verdict. For `s1`, makes sure the learner
   finds that the free Postgres expires after 30 days, so the second half of the claim is false. If
   another source has been served before, asks how this one differs from that one, and whether the
   verdict should differ too (for `s2` after `s9`, "both are Render's own pages; why might one of
@@ -405,14 +373,13 @@ examined only one handed claim at a time, never across a whole agent's answer. E
   since asking the agent whether it is sure does not count; where it doesn't settle it, they named
   the vendor's own current docs as where to go instead; for `s1`, they found the 30-day expiry.
 - **generator:** the claim is fixed: "Render's free web services sleep after 15 minutes and its
-  free Postgres is free for good." The sources are the nine above, named `s1` to `s9`; nothing is
-  invented. Cases: settles it `s1`; vendor's own page not about this claim `s2`, `s9`; on the
+  free Postgres is free for good." The sources are scenario `render-claim`, questions `s1` to `s9`,
+  each with its verdict and near-miss question in the key; nothing is invented. Cases: settles it `s1`; vendor's own page not about this claim `s2`, `s9`; on the
   vendor's site but not the vendor `s7`; dated secondary `s4`, `s5`, `s6`; the agent `s3`; an
   anecdote `s8`. To pick the next, run `served.mjs cloud-hosting-2026-10 c-check-vendor-claims`,
   take a source not yet served, and prefer a case the learner hasn't met. Serve a near-miss (`s2`,
   `s7` or `s9`) before `s1`, so the learner meets a vendor page that doesn't settle it before one
-  that does. Label the attempt `a-sort-claim-sources/<source>`, for example
-  `a-sort-claim-sources/s7`. If the learner has already met Render's 30-day expiry elsewhere in
+  that does. If the learner has already met Render's 30-day expiry elsewhere in
   this topic, skip `s1`. Stop when done when has been met on two or three sittings with different
   cases, and offer `a-plan-claim-checks`; using up the nine is not the target.
 - **worked example:** judge a source not in the nine aloud: a blog post found by searching the
