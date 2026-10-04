@@ -2,6 +2,7 @@
 
 What it names: putting a new version of the app on its hosts in place of the running one. Nearest
 confusable: restart; deploy.
+
 ### q-redeploy-vs-restart
 
 - **goal:** `w-redeploy`

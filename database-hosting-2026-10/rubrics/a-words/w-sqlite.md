@@ -3,6 +3,21 @@
 What it names: a database that is a single file the backend opens itself. Nearest confusable:
 Postgres; SQL.
 
+### q-sqlite-vs-sql
+
+- **goal:** `w-sqlite`
+- **move:** DISTINGUISH
+- **answer:** SQL is a language: the one those lines are written in, for asking a database for
+  rows and changing them. SQLite is a database: a single file holding the app's tables and rows,
+  which the backend opens and works on itself, through a library, and asks things in SQL. Postgres
+  is asked in SQL too, so SQL is not what makes the app a SQLite app; the file is.
+- **credit:** full for the difference that matters: SQL is the language queries are written in,
+  and SQLite is a database, the file holding the data that the backend opens itself and asks in
+  that language. Half for "SQL is a language" with nothing said about what SQLite is, or for
+  "SQLite is a database" with nothing about SQL being the language it is asked in. Do not accept
+  "SQLite is a small or lite version of SQL" or "SQLite is a kind of SQL", which are the confusion
+  itself, and do not accept a difference of size or speed.
+
 ### q-sqlite-vs-postgres
 
 - **goal:** `w-sqlite`
@@ -34,18 +49,3 @@ Postgres; SQL.
   "SQLite doesn't need starting" with nothing about the backend opening the file itself. Do not
   accept a different quibble: "SQLite isn't meant for production", "use Postgres instead", or a
   remark about the order of the startup steps.
-
-### q-sqlite-vs-sql
-
-- **goal:** `w-sqlite`
-- **move:** DISTINGUISH
-- **answer:** SQL is a language: the one those lines are written in, for asking a database for
-  rows and changing them. SQLite is a database: a single file holding the app's tables and rows,
-  which the backend opens and works on itself, through a library, and asks things in SQL. Postgres
-  is asked in SQL too, so SQL is not what makes the app a SQLite app; the file is.
-- **credit:** full for the difference that matters: SQL is the language queries are written in,
-  and SQLite is a database, the file holding the data that the backend opens itself and asks in
-  that language. Half for "SQL is a language" with nothing said about what SQLite is, or for
-  "SQLite is a database" with nothing about SQL being the language it is asked in. Do not accept
-  "SQLite is a small or lite version of SQL" or "SQLite is a kind of SQL", which are the confusion
-  itself, and do not accept a difference of size or speed.
