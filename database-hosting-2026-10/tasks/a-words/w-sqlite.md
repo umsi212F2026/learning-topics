@@ -1,0 +1,19 @@
+# SQLite
+
+Answer in two or three sentences, with nothing open in front of you.
+
+### q-sqlite-vs-sql
+
+Your backend's code is full of lines such as `SELECT * FROM recipes WHERE id = ?`, and your agent
+says your app uses SQLite. What is the difference between SQLite and SQL?
+
+### q-sqlite-vs-postgres
+
+Your agent is getting your app ready to deploy and offers you two ways to keep its data: stay with
+SQLite, as your app does now, or switch to Postgres. Both are asked in SQL. What is the difference
+between SQLite and Postgres?
+
+### q-catch-sqlite-server
+
+Your agent writes: "Before the backend starts, I'll start the SQLite server, so the backend has a
+database to connect to." What is wrong with what the agent said?
