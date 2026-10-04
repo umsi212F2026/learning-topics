@@ -11,6 +11,12 @@ questions with rubrics, and there are no study-only activities: practice is an a
 which is recorded but doesn't count, and a check is an attempt without. The `study` cells in
 Coverage are empty for that reason, not because something is missing.
 
+2026-10-04. A second deliberate deviation, from `curation/bank-check`, which asks that no question
+give away another's answer in the same scenario. By the instructor's decision, a scenario here is
+one story served in file order in study, and a later question may reveal an earlier one's answer.
+A quiz or a review draws few questions from any one scenario. Every question names at least one
+goal; there are no warm-ups.
+
 ## Goals
 
 | id | Goal | Criterion: what gets examined, and what counts |
@@ -31,44 +37,54 @@ Coverage are empty for that reason, not because something is missing.
 
 | goal | study | checks | notes |
 | ---- | ----- | ------ | ----- |
-| `c-trace-setting-value` | | `a-read-described-exchange` | |
-| `c-spot-secret` | | `a-read-described-exchange` | |
-| `c-judge-secret-request` | | `a-judge-requests` | |
-| `c-secret-instead` | | `a-repair-request` | |
+| `c-trace-setting-value` | | `a-deploy-chat` | |
+| `c-spot-secret` | | `a-deploy-chat` | |
+| `c-judge-secret-request` | | `a-deploy-chat` | |
+| `c-secret-instead` | | `a-deploy-chat` | |
 
 ---
 
 ## Activities
 
-### `a-read-described-exchange`
+### `a-deploy-chat`
 
-- **serves:** `c-trace-setting-value`, `c-spot-secret`
+- **serves:** `c-trace-setting-value`, `c-spot-secret`, `c-judge-secret-request`, `c-secret-instead`
 - **supports:** attempt
-- **checks:** `c-trace-setting-value`, `c-spot-secret`
-- **artifact:** no external source. Made-up apps and the exchanges their agent has about settings,
-  from this activity's bank or written live per the generator below. About 5 minutes a question.
+- **checks:** `c-trace-setting-value`, `c-spot-secret`, `c-judge-secret-request`, `c-secret-instead`
+- **artifact:** no external source. Made-up apps being deployed by an agent, and the agent's side
+  of the conversation, from this activity's bank or written live per the generator below. About 2
+  to 5 minutes a question.
 - **learner does:** reads the scenario's setup (the app, and which vendor hosts each part) and the
-  one exchange served, then says what the setting is for, whose value it needs (the frontend's
-  address, the backend's address, the database's connection details, or nobody's, because a host
-  sets it), and whether its value is a secret, and why.
+  one question served, and answers it. An exchange question asks what a setting is for, whose
+  value it needs, and whether its value is a secret, and why. A message question asks whether
+  they would go along with what the agent asks, and why or why not. A repair question asks for the
+  reply they would send the agent, and one sentence on why.
 - **tutor role:** examiner
 - **tutor does:** sets the question as served, without rewording it or hinting, and never shows
-  the rubric. Gives help whenever it is asked for, and records the attempt as helped. A remark
-  about finding the value on a vendor's site, or about what to do with a secret, is neither
+  the rubric or says how many of a scenario's messages are safe. Gives help whenever it is asked
+  for, and records the attempt as helped. A remark beyond what the question asks (where to find a
+  value on a vendor's site, or what to do instead in answer to a message question) is neither
   credited nor counted against them.
 - **done when:** each goal the question names has its criterion met with no help.
 - **generator:** a scenario is one app shaped like Problem Set 2 (a React frontend, an Express
-  backend and a database), with a setup naming the made-up vendor each part is on and that
-  vendor's offer in a line. Brightpage, Kettle, Harbor and Larder may be reused, or new vendors
-  invented on the same pattern. The setup never says which values are secrets. Each question is
-  one exchange: the agent's request, naming one setting; the student's question, asking what it
-  is for and where its value comes from, worded as a student might; and the agent's answer, one
-  to three sentences, true to the setup, saying what the value is used for and where to copy it
-  from by naming a vendor or a dashboard, never in the words "the frontend's address" or "the
-  backend's address". Then the question itself: what is it for, whose value does it need, and is
-  it a secret, and why. Setting names are invented, never `PORT`, `VITE_API_URL`,
-  `ALLOWED_ORIGIN` or `DATABASE_URL`, and never repeated across the bank. Each exchange takes one
-  shape:
+  backend and a database) being deployed by an agent. Its setup names the made-up vendor each
+  part is on, with that vendor's offer in a line; Brightpage, Kettle, Harbor and Larder may be
+  reused, or new vendors invented on the same pattern. The setup never says which values are
+  secrets. **A scenario is a story, served in study in file order:** exchange questions first,
+  then message questions, then repair questions, so a later question may reveal an earlier one's
+  answer but never the reverse. Give a scenario as many questions as its app supports, across all
+  three kinds. Setting names are invented, never `PORT`, `VITE_API_URL`, `ALLOWED_ORIGIN` or
+  `DATABASE_URL`, and never repeated across scenarios; within a scenario, message and repair
+  questions reuse its setting names so the story holds together. Every question names at least
+  one goal.
+
+  **Exchange questions.** The agent's request, naming one setting; a student's question, asking
+  what it is for and where its value comes from, worded as a student might; and the agent's
+  answer, one to three sentences, true to the setup, saying what the value is used for and where
+  to copy it from by naming a vendor or a dashboard, never in the words "the frontend's address"
+  or "the backend's address". Then: what is it for, whose value does it need (the frontend's
+  address, the backend's address, the database's connection details, or nobody's, because a host
+  sets it), and is it a secret, and why. Shapes:
   - `plain` (Easy): the name says plainly whose value it holds; not a secret.
   - `host-sets` (Easy): a value the host provides itself, which the agent says not to add.
   - `secret-db` (Medium): the database's connection details, as a connection string or as a
@@ -81,42 +97,12 @@ Coverage are empty for that reason, not because something is missing.
     own address, and the agent's answer names only the vendor. The setup's example addresses
     must not say which part each is for (no `api` in one of them). The hardest form is also
     `cross-part`.
-  **Every question names `c-spot-secret`**, since each asks whether a value is a secret, public
-  addresses included. **Only a `shared-vendor` question also names `c-trace-setting-value`.**
-  When each part is on its own vendor, the vendor named in the agent's answer gives the part away,
-  so a pass on any other shape, `cross-part` included, doesn't show the cases the criterion names.
-  A scenario has four to six questions, with at least one `secret-db`. A scenario meant to bear
-  on `c-trace-setting-value` needs a setup with one vendor hosting two parts, and at least two
-  `shared-vendor` questions, one of them also `cross-part`.
-- **worked example:** work one Easy exchange aloud: say what the agent's answer says the value is
-  used for, then ask whose address that is or what it unlocks, then whether someone holding it
-  could get into something.
-- **doesn't show:** the exchange already holds a good question and a clear, correct answer, so a
-  pass doesn't show the learner would ask the question themselves, or could make sense of a
-  vague or wrong answer. Vendors are made up, so a pass says nothing about real dashboards.
-- **offer as:** one agent exchange at a time, about 5 minutes, nothing to run: a setting your agent
-  asks for while you deploy, and whose value it needs.
+  Every exchange question names `c-spot-secret`. Only a `shared-vendor` one also names
+  `c-trace-setting-value`: when each part is on its own vendor, the vendor named in the answer
+  gives the part away.
 
-### `a-judge-requests`
-
-- **serves:** `c-judge-secret-request`
-- **supports:** attempt
-- **checks:** `c-judge-secret-request`
-- **artifact:** no external source. Made-up apps and messages from the agent deploying them, from
-  this activity's bank or written live per the generator below. About 2 minutes a question.
-- **learner does:** reads the scenario's setup and the one agent message served, then says whether
-  they would go along with it.
-- **tutor role:** examiner
-- **tutor does:** sets the question as served, without rewording it or hinting, and never shows
-  the rubric. Never says how many of a scenario's messages are safe. Gives help whenever it is
-  asked for, and records the attempt as helped. If the learner goes on to say what they would do
-  instead, that is welcome but not judged here; it is `a-repair-request`'s.
-- **done when:** the question's criterion met with no help.
-- **generator:** a scenario is one app shaped like Problem Set 2, with its frontend, backend and
-  database on made-up vendors, and a setup that says where the database's connection details are
-  shown and that they include its password. Each question is one message from the agent
-  deploying the app, which asks for a value or proposes a step, and the question "Would you go
-  along with this?". Each message takes one shape:
+  **Message questions.** One message from the agent, which asks for a value or proposes a step,
+  then "Would you go along with this? Say why or why not." Shapes:
   - `paste-in-chat` (Easy; routes a secret): asks for a secret to be pasted so the agent can set
     it up.
   - `write-into-code` (Medium; routes a secret): proposes putting a secret in a source file, with
@@ -126,53 +112,40 @@ Coverage are empty for that reason, not because something is missing.
   - `debug-lure` (Hard; routes a secret): asks for the secret indirectly, as a copy or screenshot
     of the page that shows it, or the output of a command that prints it, to "check" something.
   - `public-address` (Easy; routes none): asks for the frontend's or the backend's address.
-  - `other-step` (Medium; routes none): a deploy step with no secret in it, worded so it sounds
+  - `other-step` (Medium; routes none): a deploy step with no value in it, worded so it sounds
     risky (it mentions the database, the settings page or a redeploy).
   - `dashboard-instruction` (Hard; routes none): tells the learner to add a setting on the host
     and paste the secret there themselves, naming the secret but never asking for it.
-  **Medium and Hard questions name `c-judge-secret-request`; Easy ones name no goal** and are
-  warm-ups, because a pass on the plainest request shows little. A scenario has five to seven
-  questions, mixing messages that route a secret with ones that don't in no fixed proportion.
-- **worked example:** work an Easy message aloud: say what value would pass through the chat or
-  into a file, and whether holding that value lets someone into something.
-- **doesn't show:** the learner judges one message at a time, knowing they are being asked to, so a
-  pass doesn't show they would notice such a request in the middle of a deploy. The bar is one
-  unaided pass, so a pass on one shape doesn't show the others: declining a `debug-lure` doesn't
-  show they would go along with a `dashboard-instruction`.
-- **offer as:** one message at a time, about 2 minutes, nothing to run: would you go along with what
-  your agent just asked?
+  Every message question names `c-judge-secret-request`, credited from the decision. One whose
+  message involves a value (every shape but `other-step`) also names `c-spot-secret`, credited
+  from the reason: whether it treats the value as a secret, and why. Mix messages that route a
+  secret with ones that don't, in no fixed proportion.
 
-### `a-repair-request`
+  **Repair questions.** One message in the shape `paste-in-chat`, `write-into-code` or
+  `debug-lure`, then "This message would put a secret where it shouldn't go. Write the reply you
+  would send the agent, then one sentence on why." Every repair question names
+  `c-secret-instead`. A full-credit reply says the learner will put (or has put) the secret into
+  the named host's settings themselves, under the setting's name, and tells the agent it is there;
+  the sentence gives both reasons: the chat is kept and can be shared, and an agent holding the
+  secret can write it into a file that gets committed.
 
-- **serves:** `c-secret-instead`
-- **supports:** attempt
-- **checks:** `c-secret-instead`
-- **artifact:** no external source. Made-up apps and unsafe messages from the agent deploying them,
-  from this activity's bank or written live per the generator below. About 5 minutes a question.
-- **learner does:** reads the scenario's setup and the one agent message served, which would route
-  a secret through the chat or into a file. Writes the reply they would send the agent, then one
-  sentence on why.
-- **tutor role:** examiner
-- **tutor does:** sets the question as served, without rewording it or hinting, and never shows
-  the rubric. Gives help whenever it is asked for, and records the attempt as helped.
-- **done when:** the question's criterion met with no help.
-- **generator:** the same kind of scenario as `a-judge-requests`, but never reusing a message from
-  that activity's bank, so that neither gives the other away. Each question is one message in the
-  shape `paste-in-chat`, `write-into-code` or `debug-lure`, as `a-judge-requests` defines them,
-  and the instruction "This message would put a secret where it shouldn't go. Write the reply you
-  would send the agent, then one sentence on why." **Every question names `c-secret-instead`.**
-  A full-credit reply says the learner will put (or has put) the secret into the named host's
-  settings themselves, under the setting's name, and tells the agent it is there; the sentence
-  gives both reasons: the chat is kept and can be shared, and an agent holding the secret can
-  write it into a file that gets committed. A scenario has three or four questions.
-- **worked example:** write a reply aloud for a `paste-in-chat` message, in the pattern "I've added
-  it in Kettle's settings as `DATABASE_URL`; use that, and don't put it in any file", then say
-  why.
-- **doesn't show:** the question says the message is unsafe, so a pass doesn't show the learner
-  would notice; that is `c-judge-secret-request`'s. A reply written on paper doesn't show they
-  would send it in the middle of a deploy.
-- **offer as:** the one where you write: the actual reply you would send your agent when it asks for
-  a secret, about 5 minutes.
+  Each scenario has at least one `secret-db` exchange. A scenario meant to bear on
+  `c-trace-setting-value` needs a setup with one vendor hosting two parts, and at least two
+  `shared-vendor` exchanges, one of them also `cross-part`.
+- **worked example:** for an exchange, say what the agent's answer says the value is used for,
+  then ask whose address that is or what it unlocks, then whether someone holding it could get
+  into something. For a message, say what value would pass through the chat or into a file, and
+  whether holding it lets someone into something. For a repair, write a reply aloud in the
+  pattern "I've added it in Kettle's settings as `PG_CONNECTION`; use that, and don't put it in
+  any file", then say why.
+- **doesn't show:** every exchange already holds a good question and a clear, correct answer, so a
+  pass doesn't show the learner would ask the question themselves, or could make sense of a vague
+  or wrong answer. The learner answers one question at a time, knowing they are being asked to,
+  so a pass doesn't show they would notice a risky request in the middle of a deploy; and a
+  repair question says the message is unsafe, so it doesn't show they would notice. Vendors are
+  made up, so a pass says nothing about real dashboards.
+- **offer as:** the agent's side of a deploy, one question at a time, about 2 to 5 minutes each,
+  nothing to run: the settings it asks for, the requests it makes, and what you say back.
 
 ### `a-words`
 
