@@ -1044,83 +1044,11 @@ practice or a review visit rather than something to wait for.
   and reading what it prints), tell the adjudicator that little of the criterion's first half was
   examined.
 
-### `a-w-tdd`
+### `a-words`
 
-- **origin:** generated
-- **serves:** `w-tdd`
-- **checks:** `w-tdd`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-failing-test`
-
-- **origin:** generated
-- **serves:** `w-failing-test`
-- **checks:** `w-failing-test`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-regression`
-
-- **origin:** generated
-- **serves:** `w-regression`
-- **checks:** `w-regression`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-mock`
-
-- **origin:** generated
-- **serves:** `w-mock`
-- **checks:** `w-mock`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-code-review`
-
-- **origin:** generated
-- **serves:** `w-code-review`
-- **checks:** `w-code-review`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-spec-review`
-
-- **origin:** generated
-- **serves:** `w-spec-review`
-- **checks:** `w-spec-review`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-root-cause`
-
-- **origin:** generated
-- **serves:** `w-root-cause`
-- **checks:** `w-root-cause`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-test-suite`
-
-- **origin:** generated
-- **serves:** `w-test-suite`
-- **checks:** `w-test-suite`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-test-coverage`
-
-- **origin:** generated
-- **serves:** `w-test-coverage`
-- **checks:** `w-test-coverage`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+- **serves:** group vocabulary
+- **generator:** the five moves in `workflows/learn/skills/goal-setting/references/vocabulary-moves.md`, set for one word at a time from its `what it names`, `nearest confusable` and `synonyms`. Each question names that word's goal and carries its move.
+- **learner does:** answers one short question about one word
+- **tutor role:** examiner
+- **tutor does:** sets the question as served, without rewording it or hinting; when the bank has nothing for the word, sets one move live, as vocabulary-moves.md describes
+- **offer as:** not offered as a choice; a word's question is set when that word is studied or due
