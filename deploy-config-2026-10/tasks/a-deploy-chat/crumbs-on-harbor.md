@@ -102,8 +102,9 @@ then say why that is safer. There may be more than one reason.
 ### q10
 
 **Agent:** The web service's logs say the database refused it. Open the settings page for your web
-service on Harbor's dashboard and send me a screenshot, so I can check `LARDER_LINK` was saved
-without a stray space.
+service on Harbor's dashboard and send me a screenshot. That page shows each setting's value in
+full, including `LARDER_LINK`'s connection string, so I can check it was saved without a stray
+space.
 
 This message would put a secret where it shouldn't go. Write the reply you would send the agent,
 then say why that is safer. There may be more than one reason.

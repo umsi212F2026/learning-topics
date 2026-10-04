@@ -33,15 +33,12 @@ and the database's password, which is only the part of the string that gets the 
 - **move:** DISTINGUISH
 - **answer:** The password is only the part that lets you in. The connection string is one line
   that carries the password together with where the database is (its machine and port), the
-  username, and which database to use, so it is everything the backend needs to connect. Both are
-  secrets, since both let someone in.
+  username, and which database to use, so it is everything the backend needs to connect.
 - **credit:** full for naming that the connection string also says where the database is (and as
   whom, and which database), with the password inside it, while the password alone says nothing
   about where to go. Half for saying the connection string "has more in it" or "contains the
   password" without saying what else it carries. None for an incidental difference alone, such
-  as length or that one starts with `postgres://`, or for "only one is a secret", which is wrong.
-- **tutor note:** if they say the password is the secret and the connection string isn't, ask
-  what is inside the connection string.
+  as length or that one starts with `postgres://`.
 
 ### q2
 

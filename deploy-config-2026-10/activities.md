@@ -144,7 +144,8 @@ credit the reason.
   Across the bank, every case of every goal above is carried by some question; `host-sets` and
   `allows-dashboard` are the easiest to leave out. `c-secret-instead` has no cases. Each scenario
   has at least one `secret-db` exchange. A scenario meant to bear on
-  `c-trace-setting-value` needs a setup with one vendor hosting two parts, and at least two
+  `c-trace-setting-value`'s `shared-vendor` and `cross-part` cases needs a setup with one vendor
+  hosting two parts, and at least two
   `shared-vendor` exchanges, one of them also `cross-part`. **A scenario has either a
   `dashboard-instruction` message or repair questions, never both:** the message shows the
   learner the repair's answer, and the repairs show them the message's, so whichever comes first
@@ -168,7 +169,9 @@ credit the reason.
   repair question says the message is unsafe, so it doesn't show they would notice. Vendors are
   made up, so a pass says nothing about real dashboards. A `cross-part` exchange where each part
   has its own vendor is not credited to `c-trace-setting-value`, since the vendor gives the part
-  away, so that goal's `cross-part` case is shown only on a shared vendor.
+  away, so that goal's `cross-part` case is shown only on a shared vendor. Its `db-details` and
+  `host-sets` cases are the criterion's easy answers: the agent's answer names the part, so a pass
+  on them shows the learner read a clear explanation correctly, and little more.
 - **offer as:** the agent's side of a deploy, one question at a time, about 2 to 5 minutes each,
   nothing to run: the settings it asks for, the requests it makes, and what you say back.
 - **check note:** On message questions the learner is asked only whether they would go along and
