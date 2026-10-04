@@ -16,15 +16,10 @@ with the learner.
 
 ## Coverage
 
-<!--
-  Derivation convention: an activity carrying `checks` sits only in the `checks` cell, never in
-  `study`. Activities whose `serves` is `all` sit on the `o-orientation` row only.
--->
-
-| goal | study | checks | notes |
-| ---- | ----- | ------ | ----- |
-| `o-orientation` | `a-read-database-survives` | `a-dry-run-database-plan` | |
-| `c-plan-first-deploy` | | `a-judge-described-plan`, `a-judge-own-deploy-plan` | |
+| goal | checks | notes |
+| ---- | ------ | ----- |
+| `o-orientation` | `a-dry-run-database-plan` | |
+| `c-plan-first-deploy` | `a-judge-described-plan`, `a-judge-own-deploy-plan` | |
 
 ---
 
