@@ -118,6 +118,7 @@ are each a topic of their own. Sign-in belongs to Part B of Problem Set 3, not t
   - `all-covered`: a plan where both parts are covered and nothing should be named
   - `one-vendor-both`: a plan where one vendor hosts both parts
   - `backend-serves`: a plan where the backend sends the built frontend itself
+- **taught elsewhere:** session 11
 
 ### `c-check-vendor-claims`
 
@@ -127,6 +128,7 @@ are each a topic of their own. Sign-in belongs to Part B of Problem Set 3, not t
   holds. Opening a deep link the agent gave to the vendor's page, and reading the sentence there,
   counts. Taking the agent's word for it, or a blog post's or a forum's, does not meet it, and
   neither does asking the agent whether it is sure.
+- **taught elsewhere:** session 11
 
 ### `c-weigh-hosting-plans`
 
@@ -149,6 +151,7 @@ are each a topic of their own. Sign-in belongs to Part B of Problem Set 3, not t
     logs
   - `vendor-count`: what the extra vendor adds, and how hard each plan is to move
   - `other-case`: choosing a plan and making the strongest case for the other
+- **taught elsewhere:** session 11
 
 ### `o-orientation`
 
