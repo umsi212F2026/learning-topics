@@ -24,11 +24,25 @@ to sign up.
 
 Answer from these terms only. Which plan anyone chooses is never what is judged.
 
+### v9
+
+For each plan, say whether the app sleeps when nobody has used it for a while, what happens when it
+passes a limit, and whether a credit card is required and what having one on file would risk.
+
+### v10
+
+For each plan, say whether your agent could reach every host to change its settings and read its
+logs, and what it couldn't do there.
+
+### v11
+
+Say what Plan S's extra vendor adds in accounts, secrets and places to look when something breaks,
+and how hard each plan would be to move to another vendor.
+
 ### v1
 
-Make the call yourself. Choose Plan H or Plan S and say why: name each difference in the terms
-that would matter for this app, say what Plan S's extra vendor adds in accounts, secrets and places
-to look when something breaks, and state the strongest case for the plan you didn't choose.
+Make the call yourself. Choose Plan H or Plan S, then state the strongest case the terms give for
+the plan you didn't choose.
 
 ### v2
 
@@ -43,19 +57,12 @@ A student wrote: "Plan H, because it's free forever and Harbor never charges any
 plan has two accounts, which is more to manage." Which of their claims do the terms not support,
 and what do the terms say instead?
 
-### v4
-
-A student wrote: "Plan S. Nothing sleeps, and Brightpage can't bill me. Harbor's server sleeps
-after 15 minutes. Kettle's credit runs out after about three weeks; if I keep a card off it, the
-worst case is the server stopping until next month. Moving is easy from either. The strongest case
-for H is that it's one account." What does Plan S's extra vendor cost that this student left out?
-
 ### v5
 
 A student wrote: "Plan S, because two specialized vendors will be faster under load and more
 reliable than one that does everything, and Kettle is more secure since it runs only one program. Harbor
-sleeps." Which of their reasons do the terms not support, and what difference that matters for
-this app did they miss?
+sleeps." Which of their reasons do the terms not support, and what in the two plans' free terms
+that matters for this app did they miss?
 
 ### v6
 
@@ -63,16 +70,24 @@ A student wrote: "Plan H. Plan S needs a credit card on Kettle just to sign up, 
 give one." What have they got wrong about cards, and what would having a card on file actually
 risk on each vendor?
 
+### v8
+
+A student wrote: "Plan H. The sleep matters most: a grader shouldn't wait a minute. I'll ask the
+agent to ping it every ten minutes so it never sleeps." Do the terms support that workaround? Say
+why, and say what it would cost them if they did it.
+
+### v4
+
+A student wrote: "Plan S. Nothing sleeps, and Brightpage can't bill me. Harbor's server sleeps
+after 15 minutes. Kettle's credit runs out after about three weeks; if I keep a card off it, the
+worst case is the server stopping until next month. Moving is easy from either. The strongest case
+for H is that it's one account." What does Plan S's extra vendor cost that this student left out?
+
 ### v7
 
 A student wrote: "Plan H. Harbor's server sleeps after 15 minutes; Kettle's doesn't, but its credit
 runs out after about three weeks, in grading week. My agent can reach both hosts through their
 tools, though S needs two sets of credentials. S means two accounts, copying Kettle's address into
 the build, and two places to look when something breaks. Plan S is just worse for this project."
-What is missing from their answer? Write it.
-
-### v8
-
-A student wrote: "Plan H. The sleep matters most: a grader shouldn't wait a minute. I'll ask the
-agent to ping it every ten minutes so it never sleeps." Do the terms support that workaround? Say
-why, and say what it would cost them if they did it.
+They give no case for the plan they didn't choose. Write the strongest case the terms give for
+Plan S.

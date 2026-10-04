@@ -20,7 +20,10 @@ examined only one handed claim at a time, never across a whole agent's answer. E
 | `o-orientation` | get the shape of this area before working on any particular part of it | `orientation` |
 | `c-place-app-parts` | say which kind of host the frontend and the backend each need, and whether a hosting plan covers them | Given an app with a React frontend and an Express backend, and a hosting plan listing each vendor and what it offers, says which part each vendor would host, and names any part the plan leaves without a host or puts on a host that cannot run it, or says both are covered. It passes when every gap and mismatch is found and nothing is named that isn't one, including for a plan where one vendor hosts both, or where the backend serves the built frontend itself. Where the database is kept is not part of it. |
 | `c-check-vendor-claims` | find out whether what an agent says about a hosting vendor is true today | Given an agent's answer comparing hosting vendors, says how they would find out which of its claims about free tiers, limits and credit cards still hold. It passes when what they describe checks each claim against the vendor's own current pages, not against the agent, a blog post or a forum; would catch a free tier the vendor has since withdrawn, a limit that has changed, and a credit card requirement the answer left out; and says what they would add to the prompt so that every claim in the next answer comes with what they need to check it. Asking the agent whether it is sure does not meet it. |
-| `c-weigh-hosting-plans` | choose between hosting plans for an app, knowing what each would cost | Given two hosting plans for the same app, one putting the frontend and backend with a single vendor and one using a separate vendor for each, along with each vendor's free-tier terms, chooses one and says why. It passes when they name each difference in the terms that would matter for a class project with few users (whether the app sleeps, what happens when it passes a limit, whether a credit card is required and what having one on file risks, whether their agent can reach the host to change its settings and read its logs, and how hard it would be to move); say what the extra vendors add in accounts, secrets and places to look when something breaks; name nothing the terms don't support; and state the strongest case for the plan they didn't choose. Which plan they choose is not part of it, and neither is where the database is kept. |
+| `c-weigh-free-limits` | say what each hosting plan's free terms would mean for a class project | Given two hosting plans for an app's frontend and backend, and each vendor's free-tier terms, says for each plan whether the app sleeps when idle, what happens when it passes a limit, and whether a credit card is required and what having one on file risks. It passes when each of those is stated as the terms give it, for both plans, and nothing is named that the terms don't support. Where the database is kept is not part of it. |
+| `c-weigh-agent-reach` | say whether their agent could work on each plan's hosts | Given two hosting plans for an app's frontend and backend, and each vendor's terms, says for each plan whether their agent can reach every host to change its settings and read its logs, and what it can't do there. It passes when each host's reach is stated as the terms give it and nothing is named that the terms don't support. Where the database is kept is not part of it. |
+| `c-weigh-vendor-count` | say what an extra vendor, or a hard move, would cost | Given one hosting plan that puts the frontend and backend with a single vendor and one that uses a separate vendor for each, with each vendor's terms, says what the extra vendor adds in accounts, secrets and places to look when something breaks, and how hard each plan would be to move to another vendor. It passes when both are stated as the terms give them and nothing is named that the terms don't support. Where the database is kept is not part of it. |
+| `c-weigh-other-case` | choose between two hosting plans, and make the best case for the other one | Given two hosting plans for an app's frontend and backend, and each vendor's free-tier terms, chooses one and states the strongest case the terms give for the plan they didn't choose. It passes when that case rests on a difference in the terms that matters for a class project with few users, and nothing is named that the terms don't support. Which plan they choose is not part of it, and neither is where the database is kept. |
 
 ## Coverage
 
@@ -34,7 +37,10 @@ examined only one handed claim at a time, never across a whole agent's answer. E
 | `o-orientation` | | `a-read-odin-deployment` | |
 | `c-place-app-parts` | | `a-place-described-plan`, `a-place-lab-plan` | The criterion's two named cases overlap: a backend that sends the built frontend is also one vendor hosting both, through a single service. Read the Coverage note's two cases as two instance shapes, one vendor with two services and one service sending both parts. A pass usually exercises one shape; if the learner's pass came on one, give the other on a review visit. |
 | `c-check-vendor-claims` | | `a-check-2025-guide-claims`, `a-sort-claim-sources`, `a-plan-claim-checks`, `a-check-lab-answer` | `a-plan-claim-checks` and `a-check-lab-answer` rule on a written plan for checking claims, not on checks carried out; `a-check-lab-answer` has the learner carry the plan out, but the ruling is on the plan as first written. `a-check-2025-guide-claims` rules on a lookup the learner does on the vendor's own pages, and `a-sort-claim-sources` on one source judged, each for one handed claim, so neither shows the whole plan the criterion asks for across an agent's answer. |
-| `c-weigh-hosting-plans` | | `a-weigh-described-plans`, `a-weigh-lab-plans` | |
+| `c-weigh-free-limits` | | `a-weigh-described-plans`, `a-weigh-lab-plans` | |
+| `c-weigh-agent-reach` | | `a-weigh-described-plans`, `a-weigh-lab-plans` | |
+| `c-weigh-vendor-count` | | `a-weigh-described-plans`, `a-weigh-lab-plans` | |
+| `c-weigh-other-case` | | `a-weigh-described-plans`, `a-weigh-lab-plans` | |
 
 ---
 
@@ -562,68 +568,80 @@ examined only one handed claim at a time, never across a whole agent's answer. E
 
 ### `a-weigh-described-plans`
 
-- **serves:** `c-weigh-hosting-plans`
+- **serves:** `c-weigh-free-limits`, `c-weigh-agent-reach`, `c-weigh-vendor-count`, `c-weigh-other-case`
 - **supports:** attempt
-- **checks:** `c-weigh-hosting-plans`
-- **artifact:** no external source. An app, two plans and made-up vendors' free-tier terms,
-  written by the tutor per the generator below. 15 to 20 minutes.
-- **verified:** 2026-10-01
-- **learner does:** reads the app, the plans and the terms, then writes alone which plan they would
-  choose and why: every difference in the terms that would matter for this app, what the extra
-  vendors add in accounts, secrets and places to look when something breaks, and the strongest
-  case for the plan they didn't choose. Hands it to the tutor.
+- **checks:** `c-weigh-free-limits`, `c-weigh-agent-reach`, `c-weigh-vendor-count`, `c-weigh-other-case`
+- **artifact:** no external source. An app, two plans and made-up vendors' free-tier terms, with
+  one question at a time on one part of weighing them. 5 to 10 minutes a question.
+- **learner does:** reads the app, the plans and the terms, then answers the one question alone.
+  Each question is on one part: what each plan's free terms mean (sleep, limits, card); whether
+  their agent can reach each host; what the extra vendor adds and how hard each plan is to move; or
+  choosing a plan and making the strongest case for the other. Hands it to the tutor.
 - **tutor role:** none
-- **tutor does:** builds the instance per the generator and writes the key into the record before
-  showing anything: each difference that matters and what it is, what the extra vendors add, any
-  difference in the terms that doesn't matter for this app (and so may be named but not leaned on),
-  and the strongest case for each plan. Shows the app, the plans and the terms. Waits, writing down
-  any help word for word. Sends the adjudicator the instance, the key, the learner's answer
-  verbatim and every piece of help, with the reminder that which plan they chose is not part of the
-  criterion. After the ruling, tells the learner what was missed or unsupported. Labels the attempt
-  with the question's path, or `a-weigh-described-plans/<twist>` when the generator is run live. A remark about where the database goes is neither credited nor counted as a false gap or an
-  unsupported claim: the tutor tells the adjudicator to disregard it, and the learner that it
-  belongs to database-hosting.
-- **done when:** criterion met with no help.
+- **tutor does:** serves the question and its key; when the generator is run live, writes the key
+  into the record before showing anything. Shows the app, the plans, the terms and the one
+  question. Waits, writing down any help word for word. Sends the adjudicator the question, the key,
+  the learner's answer verbatim and every piece of help, naming the one part the question bears
+  on, with the reminder that which plan anyone chose is never judged. After the ruling, tells the
+  learner what was missed or unsupported. Labels the attempt with the question's path, or
+  `a-weigh-described-plans/<part>-<twist>` when the generator is run live. A remark about where the
+  database goes is neither credited nor counted as a false gap or an unsupported claim: the tutor
+  tells the adjudicator to disregard it, and the learner that it belongs to database-hosting.
+- **done when:** the criterion of the question's one part met with no help.
 - **generator:** fixed: the app is a class project with a React frontend and an Express server,
   used by about twenty people, built by someone working through a coding agent; its database is
   never part of the plans, the terms or the key. Plan one puts the frontend and backend with one
-  vendor; plan two uses a separate vendor for each. Vendors are made up. The `harbor-kettle`
-  scenario uses Harbor, Brightpage and Kettle and asks for parts of a weighing, and its `v1` for a
-  whole one; a new scenario invents new vendors on the same pattern, or keeps those names with
-  terms changed on at least three of the five dimensions so that its key differs. Each vendor's terms are four to six bullets, always covering: whether anything
-  sleeps and how long it takes to wake; what happens past each limit (paused, suspended, stopped
-  when credit runs out, billed with a card); whether a card is required, and what a card on
-  file allows the vendor to bill; agent access (whether there is an official command-line tool, an
-  MCP server or an API, and what it can and can't do: deploy, set environment variables, read
-  logs); and moving (standard tools and exports, or something vendor-specific). What
-  varies: the terms, and the twist:
-  - `lopsided` (Easy): one plan is better on four of the five, and the strongest case for the
-    other is still real.
-  - `balanced` (Medium): each plan wins on at least two of the five.
-  - `agent-gap` (Medium): the single vendor's agent tool can't read the backend's logs, or one
-    split vendor has no command-line tool or MCP server at all, only a dashboard.
-  - `card-trap` (Hard): every vendor signs up without a card, but one bills overages once a card is
-    added (for example, after the learner adds one to unlock a feature); or one asks for a card
-    only to verify identity and can't bill it. A pass has to tell these apart.
-  - `irrelevant-difference` (Hard): one large difference that doesn't matter for twenty users (a
-    bandwidth allowance of 100 GB against 1 TB, a region list, team seats); leaning on it as a
-    reason counts as naming something the terms don't support for this app.
-  Difficulty as marked. Across visits, serve `agent-gap` and `card-trap` at least once each, reading the labels `served.mjs` returns.
-- **worked example:** work one Easy instance aloud, going through the five differences one at a
-  time and saying for each what the terms say for each plan and whether it matters for twenty
-  users, then listing what the extra vendors add, then arguing the other plan's case as hard as
-  possible. For what a card on file can risk, tell, as history, the ServerlessHorrors story
-  "$104,500", https://serverlesshorrors.com/all/netlify-104k/ (February 2024): a DDoS on a static
-  site on Netlify's free plan ran up a $104,500 bill, later waived; Netlify's free plan now has a
-  hard limit with no overage. At the first level of help on a real attempt, ask only "what
-  happens on each plan when nobody has visited for an hour?"
-- **doesn't show:** the terms are stated plainly in a few bullets each, so a pass doesn't show the
-  learner could find them on real vendors' pages, where they are spread over pricing, docs and
-  billing pages and agent access is on a page of its own. Vendors are made up, so a pass says
-  nothing about real ones. The two plans are always one vendor against a vendor for each part, as
-  the criterion says, and the database is left out. The learner knows a check is on.
-- **offer as:** the check that's available now: two plans the tutor wrote, 15 to 20 minutes,
-  nothing to run, and the tutor picks the twist so the hard cases (a card that can be billed once
+  vendor; plan two uses a separate vendor for each. Vendors are made up. Each vendor's terms are
+  four to six bullets, always covering: whether anything sleeps and how long it takes to wake; what
+  happens past each limit (paused, suspended, stopped when credit runs out, billed with a card);
+  whether a card is required, and what a card on file allows the vendor to bill; agent access
+  (whether there is an official command-line tool, an MCP server or an API, and what it can and
+  can't do: deploy, set environment variables, read logs); and moving (standard tools and exports,
+  or something vendor-specific). **Each question bears on exactly one part**, named on its rubric
+  `goal:` line: `c-weigh-free-limits` (sleep, limits and card, for both plans), `c-weigh-agent-reach`
+  (each host's reach and what the agent can't do there), `c-weigh-vendor-count` (what the extra
+  vendor adds, and how hard each plan is to move) or `c-weigh-other-case` (choose, and the
+  strongest case for the other plan). A question may ask the part directly or through a student's
+  answer to judge. A scenario covers all four parts across its questions, and no question's text
+  gives away a later question's answer. What varies: the terms, and the twist, each tied to the
+  part it tests:
+  - `lopsided` (Easy, `c-weigh-other-case`): one plan is better on most of the terms, and the
+    strongest case for the other is still real.
+  - `balanced` (Medium, `c-weigh-other-case`): each plan wins on at least two kinds of term.
+  - `agent-gap` (Medium, `c-weigh-agent-reach`): the single vendor's agent tool can't read the
+    backend's logs, or one split vendor has no command-line tool or MCP server at all, only a
+    dashboard.
+  - `card-trap` (Hard, `c-weigh-free-limits`): every vendor signs up without a card, but one bills
+    overages once a card is added (for example, after the learner adds one to unlock a feature);
+    or one asks for a card only to verify identity and can't bill it. A pass has to tell these
+    apart.
+  - `hard-move` (Medium, `c-weigh-vendor-count`): one vendor builds with its own config or
+    exports only in its own format, so moving off it is real work.
+  - `irrelevant-difference` (Hard, `c-weigh-other-case`): one large difference that doesn't matter
+    for twenty users (a bandwidth allowance of 100 GB against 1 TB, a region list, team seats); a
+    case resting on it doesn't rest on a difference that matters.
+  The `harbor-kettle` scenario uses Harbor, Brightpage and Kettle; a new scenario invents new
+  vendors on the same pattern, or keeps those names with terms changed so that its key differs.
+  Difficulty as marked. Across visits, serve each part, and `agent-gap` and `card-trap` at least
+  once each, reading the labels `served.mjs` returns.
+- **worked example:** work one Easy question aloud on the same part as the one being asked: for
+  free limits, go through sleep, limits and card for each plan in turn; for agent reach, host by
+  host, what the tool can and can't do; for vendor count, what each extra account brings and what
+  moving off each vendor takes; for the other case, pick a plan, then argue the other one from the
+  difference that matters most for twenty users. For what a card on file can risk, tell, as
+  history, the ServerlessHorrors story "$104,500", https://serverlesshorrors.com/all/netlify-104k/
+  (February 2024): a DDoS on a static site on Netlify's free plan ran up a $104,500 bill, later
+  waived; Netlify's free plan now has a hard limit with no overage. At the first level of help on a
+  real attempt, ask only the part's first question (for free limits, "what happens on each plan
+  when nobody has visited for an hour?").
+- **doesn't show:** one question bears on one part, so a pass shows that part only; the whole
+  weighing is shown only when all four parts have been met. The terms are stated plainly in a few
+  bullets each, so a pass doesn't show the learner could find them on real vendors' pages, where
+  they are spread over pricing, docs and billing pages and agent access is on a page of its own.
+  Vendors are made up, so a pass says nothing about real ones. The two plans are always one vendor
+  against a vendor for each part, and the database is left out. The learner knows a check is on.
+- **offer as:** the check that's available now: two plans the tutor wrote, one part at a time, 5
+  to 10 minutes a question, nothing to run, and the tutor picks the twist so the hard cases (a card that can be billed once
   added, an agent that can't see the backend's logs) actually come up. `a-weigh-lab-plans` is the same
   capability on two plans from your own lab.
 - **check note:** On an `irrelevant-difference` instance, the generator calls leaning on the large
@@ -636,17 +654,19 @@ examined only one handed claim at a time, never across a whole agent's answer. E
 
 ### `a-weigh-lab-plans`
 
-- **serves:** `c-weigh-hosting-plans`
+- **serves:** `c-weigh-free-limits`, `c-weigh-agent-reach`, `c-weigh-vendor-count`, `c-weigh-other-case`
 - **supports:** attempt
-- **checks:** `c-weigh-hosting-plans`
+- **checks:** `c-weigh-free-limits`, `c-weigh-agent-reach`, `c-weigh-vendor-count`, `c-weigh-other-case`
 - **artifact:** no external source. Two plans for the learner's own Problem Set 2 app taken from the
   session 11 lab (their agent's answer and a tablemate's, or one answer's two options), one putting
   the frontend and backend with a single vendor and one using a separate vendor for each, with the
   vendors' free-tier terms as the tutor gathers them from the vendors' own pages. The database is
-  left out. 20 minutes, plus the tutor's preparation.
-- **verified:** 2026-10-04
-- **learner does:** reads the two plans and the terms sheet, then writes alone which plan they would
-  choose for Problem Set 3 and why, as in `a-weigh-described-plans`. Hands it to the tutor.
+  left out. One part per sitting, 10 minutes, plus the tutor's preparation.
+- **learner does:** reads the two plans and the terms sheet, then answers alone the one question
+  the tutor sets, on one part, as in `a-weigh-described-plans`: what each plan's free terms mean;
+  whether their agent can reach each host; what the extra vendor adds and how hard each plan is to
+  move; or which plan they would choose for Problem Set 3 and the strongest case for the other.
+  Hands it to the tutor.
 - **tutor role:** none
 - **tutor does:** before the attempt, picks two plans from the lab that fit the criterion's shape;
   if none does, builds the second from the first (the single vendor's own two services, or a
@@ -661,24 +681,28 @@ examined only one handed claim at a time, never across a whole agent's answer. E
   (https://hatchable.com/docs/developers/restrictions, checked 2026-10-01), so an Express backend
   would have to be rewritten: a port, not a deploy, and deep lock-in. Where a vendor's pages don't
   settle a term, writes "not stated by the vendor" rather than guessing. Leaves database terms out
-  of the sheet and the key. Writes the key as in `a-weigh-described-plans`. Waits during
+  of the sheet and the key. Picks the one part for this sitting, preferring one not yet met, and
+  writes that part's key as in `a-weigh-described-plans`. Waits during
   the attempt, writing down help word for word. Sends the adjudicator the plans, the sheet, the
-  key, the answer and the help. Labels the attempt `a-weigh-lab-plans/<single vendor>-vs-<split
-  vendors, joined with +>`. A remark about where the database goes is neither credited nor counted as a false gap or an
+  key, the answer and the help, naming the one part. Labels the attempt
+  `a-weigh-lab-plans/<part>-<single vendor>-vs-<split vendors, joined with +>`. A remark about where the database goes is neither credited nor counted as a false gap or an
   unsupported claim: the tutor tells the adjudicator to disregard it, and the learner that it
   belongs to database-hosting.
-- **done when:** criterion met with no help.
+- **done when:** the criterion of the sitting's one part met with no help.
 - **generator:** the material is whatever the lab produced, so nobody sets the difficulty. Hold
   fixed: one single-vendor plan and one plan with a separate vendor for the frontend and the backend; terms from the vendors' own
-  pages on the day, never from an agent's answer; every sheet covers all five differences,
-  including agent access, or says the vendor doesn't state it. On review visits, use different
-  vendors, or the same vendors with terms re-read that day, since they may have changed.
+  pages on the day, never from an agent's answer; every sheet covers sleep, limits, card, agent
+  access and moving, or says the vendor doesn't state it. Each sitting asks one question on one
+  part (`c-weigh-free-limits`, `c-weigh-agent-reach`, `c-weigh-vendor-count` or
+  `c-weigh-other-case`), and the same sheet serves all four across sittings. On review visits, use
+  different vendors, or the same vendors with terms re-read that day, since they may have changed.
 - **worked example:** none during the attempt. If the learner stalls, the first level of help is
-  "what happens on each plan when nobody has visited for an hour?", and the attempt is recorded
-  `unaided: no`.
+  the part's first question (for free limits, "what happens on each plan when nobody has visited
+  for an hour?"), and the attempt is recorded `unaided: no`.
 - **doesn't show:** the tutor gathers the terms, so a pass doesn't show the learner could pull them
   from vendor pages themselves; `c-check-vendor-claims` covers finding out, and this covers
-  weighing. Which twists come up is luck: real terms may have no card trap or agent gap. The key
+  weighing. One sitting shows one part. Which twists come up is luck: real terms may have no card
+  trap or agent gap. The key
   rests on the tutor's reading of vendor pages on one day.
 - **offer as:** the real decision you face in Problem Set 3, on the vendors your own lab turned up,
   with their real terms gathered that day. Best after the lab and before you sign up for the

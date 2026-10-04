@@ -1,102 +1,155 @@
-Must name, for this app (about twenty users, a class project): **sleep** (Harbor's server sleeps
-after 15 minutes idle and the next visitor waits about a minute; Kettle's never sleeps); **past a
-limit** (Kettle's credit lasts about three weeks, so its server stops in the last week of the
-month, grading week, unless a card is on file, and then it bills; Harbor's server doesn't stop);
-**card** (none of the three requires one; one on file turns a stop or pause into a bill on Harbor,
-for bandwidth, and on Kettle, for credit; Brightpage can't bill); **agent access** (Harbor gives one
-tool for both parts; Plan S needs two, so two sets of credentials); **moving** (easy from both:
-ordinary npm and Node, plain files); **what the extra vendor adds** (a second account, agent
-credentials on each, two dashboards and log places; Kettle's address copied into the frontend's
-build is credited if named, never required).
+Each question bears on one part of weighing two plans. What the terms give, by part, for this app
+(about twenty users, a class project, graded in the last week of the month):
 
-Present but not deciding for twenty users, and never a miss when left out: Harbor's 750-hour limit
-(one web service all month is up to 744 hours, a 31-day month); the 100 GB bandwidth lines; Brightpage having no
-request logs (it runs no code); Kettle's `kettle.toml`. Leaning on one is fine if what is said
-matches the terms. A claim the terms contradict is a miss; "nothing in the terms says this" is
-enough to name one that is merely unsupported. Remarks about where the database goes are neither
-credited nor counted.
+- **Free limits** (`c-weigh-free-limits`). Sleep: Harbor's web service sleeps after 15 minutes
+  idle and the next visitor waits about a minute; its static site never sleeps; Brightpage and
+  Kettle never sleep. Past a limit: Harbor suspends web services after 750 free hours a month (one
+  service all month is up to 744 hours, a 31-day month, so it isn't reached) and, past 100 GB of
+  bandwidth, bills with a card on file or suspends without one; Brightpage pauses at 100 GB;
+  Kettle's $1 credit lasts about three weeks, so its server stops in grading week, or with a card
+  on file keeps running and bills. Card: none of the three requires one; one on file lets Harbor
+  bill bandwidth and Kettle bill past its credit; Brightpage can't bill.
+- **Agent reach** (`c-weigh-agent-reach`). Harbor: one official CLI and MCP server for both parts,
+  which can deploy, read logs and set environment variables, and can't delete services or change
+  plans. Brightpage: a CLI that deploys and sets build settings, with deploy logs only (it runs no
+  code, so there are no request logs). Kettle: an official CLI and MCP server that can deploy, read
+  logs and set environment variables; the terms state nothing it can't do.
+- **Vendor count** (`c-weigh-vendor-count`). Plan S's extra vendor adds a second account, a second
+  set of agent credentials (its secrets), and a second dashboard and place to look when something
+  breaks; Kettle's address copied into the frontend's build is credited if named, never required.
+  Moving is easy from both: ordinary `npm` builds on Harbor, plain files on Brightpage, ordinary
+  Node on Kettle plus a small `kettle.toml`.
+- **Other case** (`c-weigh-other-case`). The difference that matters most: Harbor's server sleeps
+  (a grader may wait a minute) but never stops; Kettle's never sleeps but stops in grading week
+  unless a card is on file. So the strongest case for S is that nothing in it sleeps, and for H that
+  its server never stops in grading week, with one account and one agent tool. "No card means no
+  bill" holds for both plans and doesn't count as a case for either. "It's simpler" alone is not a
+  difference in the terms.
+
+Not deciding for twenty users, and never a miss when left out: the 100 GB bandwidth lines, Harbor's
+750-hour limit, Brightpage having no request logs, Kettle's `kettle.toml`. Naming one is fine if
+what is said matches the terms. A claim the terms contradict is a miss; "nothing in the terms says
+this" is enough to name one that is merely unsupported. Which plan anyone chooses earns nothing
+either way. Remarks about where the database goes are neither credited nor counted.
+
+### v9
+
+- **goal:** `c-weigh-free-limits`
+- **answer:** Plan H: the web service sleeps after 15 minutes and wakes in about a minute (the
+  static site never sleeps); past 750 hours services are suspended, and past 100 GB bandwidth is
+  billed with a card on file or suspended without one. Plan S: nothing sleeps; Kettle's credit lasts
+  about three weeks, then the server stops until next month, or with a card on file keeps running
+  and bills; Brightpage pauses at 100 GB. Neither plan requires a card; one on file lets Harbor or
+  Kettle bill, and Brightpage can't.
+- **credit:** full for sleep, past a limit, and card (required, and the risk of one on file) each
+  stated as the terms give them for both plans, with nothing unsupported. Half for all three on one
+  plan only, or two of the three on both.
+
+### v10
+
+- **goal:** `c-weigh-agent-reach`
+- **answer:** Plan H: yes, one official CLI and MCP server reaches both parts to deploy, read logs
+  and set environment variables; it can't delete services or change plans. Plan S: Kettle's CLI and
+  MCP server can deploy, read logs and set environment variables; Brightpage's CLI can deploy and
+  set build settings, with deploy logs only, since it runs no code.
+- **credit:** full for each host's reach stated as the terms give it, including what Harbor's tool
+  can't do and that Brightpage has only deploy logs, with nothing unsupported (such as a limit on
+  Kettle's tool the terms don't state). Half for one plan right and the other missing or wrong, or
+  for both plans' reach with what the tools can't do left out.
+
+### v11
+
+- **goal:** `c-weigh-vendor-count`
+- **answer:** the extra vendor adds a second account, a second set of agent credentials, and a
+  second dashboard and place to look when something breaks (Kettle's address copied into the
+  frontend's build may also be named). Moving is easy from both: ordinary `npm` builds on Harbor;
+  plain files on Brightpage, which any static host can take; ordinary Node on Kettle, plus its small
+  `kettle.toml`.
+- **credit:** full for accounts, secrets (the agent's second credentials, or the copied address)
+  and places to look, and how hard each plan is to move, each as the terms give it, with nothing
+  unsupported. Half for the extra vendor's cost without moving, or moving without the cost.
 
 ### v1
 
-- **goal:** `c-weigh-hosting-plans`
-- **answer:** either plan, with every must-name difference, what the extra vendor adds, nothing the
-  terms don't support, and a real case for the other plan. For H, for instance: Kettle stops in
-  grading week unless a card is on file, and then bills; Harbor sleeps but doesn't stop; no card
-  needed anywhere, and one on Harbor or Kettle turns a stop into a bill, while Brightpage can't
-  bill; one agent tool against two; moving easy either way; S adds a second account, two sets of
-  credentials and two places to look. Case for S: nothing in it ever sleeps, so a grader never
-  waits a minute.
-- **credit:** full for every must-name difference, the extra vendor's cost (accounts, credentials
-  and places to look), nothing unsupported, and a strongest case for the other plan that comes from
-  the terms; for S, "it never sleeps, so a grader never waits" is enough. Half for all but one
-  must-name item, or a case for the other plan that is only "it's simpler". The choice itself earns nothing either way.
+- **goal:** `c-weigh-other-case`
+- **answer:** either plan, then the strongest case for the other. For S: nothing in it ever
+  sleeps, so a grader never waits a minute. For H: its server never stops, while Kettle's stops in
+  grading week unless a card is on file; and one account and one agent tool for both parts.
+- **credit:** full for a choice and a case for the other plan that rests on a difference in the
+  terms that matters for this app (S never sleeps; H never stops in grading week), with nothing
+  unsupported. Half for a true case that rests only on a difference that doesn't decide anything
+  here (bandwidth, logs, `kettle.toml`), or on "it's simpler" alone.
 
 ### v2
 
-- **goal:** `c-weigh-hosting-plans`
+- **goal:** `c-weigh-other-case`
 - **answer:** Harbor's server never stops, while Kettle's stops in grading week unless a card is on
-  file; one account and one agent tool for both parts; nothing to copy between vendors. Its cost, a minute's wait after 15 idle minutes, is
-  the one the student already named.
-- **credit:** full for a case built from at least three terms (no stop, one account, one tool,
-  nothing copied between vendors), with nothing unsupported. "No card means no bill" holds equally
-  for S and doesn't count toward it. Half for one or two of those, or for a case that rests on "simpler" alone.
-- **tutor note:** partner of `v1`. If `v1` was served before, ask how this case compares with the
-  one they gave there for the plan they didn't choose.
+  file; and one account and one agent tool for both parts, with nothing to copy between vendors.
+  The cost the student named, a minute's wait after 15 idle minutes, is the one H carries.
+- **credit:** full for a case that rests on Harbor's server not stopping in grading week, or on one
+  account and one agent tool, stated as the terms give it, with nothing unsupported. "No card means
+  no bill" holds for S too and doesn't count. Half for a case that rests on "simpler" alone, or on
+  a difference that doesn't decide anything here.
+- **tutor note:** if `v1` was served before, ask how this case compares with the one they gave
+  there for the plan they didn't choose.
 
 ### v3
 
-- **goal:** `c-weigh-hosting-plans`
+- **goal:** `c-weigh-free-limits`
 - **answer:** "free forever" and "never charges anything" are not supported: with a card on file,
   Harbor bills bandwidth past 100 GB a month. The terms say no card is needed, and without one
   Harbor suspends rather than bills. The two accounts point is right.
-- **credit:** full for both claims named as unsupported and the card on file named as what lets
-  Harbor bill. Half for the claims named with no line from the terms, or for one of the two.
-
-### v4
-
-- **goal:** `c-weigh-hosting-plans`
-- **answer:** two sets of agent credentials and two tools instead of Harbor's one; two dashboards
-  and places to look when something breaks. Kettle's address copied into the frontend's build may
-  also be named.
-- **credit:** full for the agent's second set of credentials (or second tool) and the second place
-  to look; Kettle's address is credited if named, never required. Half for one of the two.
+- **credit:** full for both claims named as unsupported and what the terms say instead (no card
+  needed; a card on file lets Harbor bill; without one it suspends). Half for one claim, or both
+  named with nothing the terms say instead.
 
 ### v5
 
-- **goal:** `c-weigh-hosting-plans`
-- **answer:** faster under load, more reliable and more secure appear nowhere in the terms. Missed: Kettle's
-  server stops in grading week unless a card is on file, which is the difference that matters
-  most against Harbor's sleep.
-- **credit:** full for all three reasons named as unsupported and Kettle's stop named as the
-  missed difference. Half for the unsupported reasons alone, or for Kettle's stop alone. Another
-  must-name item (the card, moving) also counts as a miss named, in place of Kettle's stop.
+- **goal:** `c-weigh-free-limits`
+- **answer:** faster under load, more reliable and more secure appear nowhere in the terms. Missed:
+  Kettle's credit lasts about three weeks, so its server stops in grading week unless a card is on
+  file, and then it bills.
+- **credit:** full for the three reasons named as unsupported and Kettle's stop (or the card risk
+  that comes with avoiding it) named as missed. Half for one of the two.
 
 ### v6
 
-- **goal:** `c-weigh-hosting-plans`
+- **goal:** `c-weigh-free-limits`
 - **answer:** no vendor needs a card to sign up; the terms say so in their first line. A card on
   file is a risk, not a requirement: on Harbor it lets bandwidth past 100 GB be billed, on Kettle it
   keeps the server running past the credit and bills; Brightpage can't bill at all.
-- **credit:** full for the first line of the terms named as contradicting the claim, and the card
-  risk stated for Harbor and Kettle. Half for one of the two.
-- **tutor note:** partner of `v2` and `v1`. If either was served, ask what each said about a card.
-
-### v7
-
-- **goal:** `c-weigh-hosting-plans`
-- **answer:** the strongest case for Plan S: nothing in it ever sleeps, so no grader waits a minute.
-  Also missing: whether a card is required (none is), and moving (easy
-  either way).
-- **credit:** full for a case for S from the terms (no sleep, or another term-based reason) plus the
-  card requirement. Half for the case alone, or for the missing items
-  without the case.
+- **credit:** full for the terms' first line named as contradicting the claim, and the risk of a
+  card on file stated for Harbor and Kettle. Half for one of the two.
+- **tutor note:** if `v3` was served before, ask what each said about a card.
 
 ### v8
 
-- **goal:** `c-weigh-hosting-plans`
+- **goal:** `c-weigh-free-limits`
 - **answer:** yes: a ping every ten minutes beats the 15-minute sleep, and one service awake all
-  month is about 744 hours, under Harbor's 750, so nothing is suspended and, with no card on file,
+  month is up to 744 hours, under Harbor's 750, so nothing is suspended and, with no card on file,
   nothing is billed. It costs nothing in these terms, though it leaves only a few hours' margin.
 - **credit:** full for "supported" with both reasons (ten minutes is under 15, and the hours stay
   under 750). Half for "supported" with one reason. None for "unsupported", which the terms
   contradict.
+
+### v4
+
+- **goal:** `c-weigh-vendor-count`
+- **answer:** a second set of agent credentials and a second tool, and a second dashboard and
+  place to look when something breaks. Kettle's address copied into the frontend's build may also be
+  named. Their "moving is easy from either" is right.
+- **credit:** full for the agent's second credentials (or second tool) and the second place to
+  look, with nothing unsupported; Kettle's address is credited if named, never required. Half for
+  one of the two.
+- **tutor note:** if `v11` was served before, ask which of what they named there this student
+  left out.
+
+### v7
+
+- **goal:** `c-weigh-other-case`
+- **answer:** the strongest case for Plan S: nothing in it ever sleeps, so no grader waits a minute.
+- **credit:** full for a case for S that rests on its never sleeping (or another difference in the
+  terms that matters for this app), with nothing unsupported. Half for a case that rests on
+  "simpler", or on a difference that doesn't decide anything here (bandwidth, logs).
+- **tutor note:** if `v1` or `v2` was served before, ask how this case compares with the ones given
+  there.
