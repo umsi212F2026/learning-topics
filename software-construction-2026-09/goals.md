@@ -1,5 +1,7 @@
 # Learning goals: software construction
 
+**origin:** course
+
 **What I want to be able to do, and what would count as having got there.**
 
 <!--
@@ -87,6 +89,12 @@ enough to act well at those moments: telling whether a check handed to you reall
 and asking whether something was tested and recognizing a hollow answer. When what it built is
 not what you wanted, you describe it the way the React apps topic practiced, and finding the cause
 is the agent's job. Diagnosing the problem yourself, and debugging by hand, are past that line.
+
+## Sequence
+
+1. orientation
+2. vocabulary
+3. capabilities
 
 ## Goals
 
@@ -197,7 +205,6 @@ is the agent's job. Diagnosing the problem yourself, and debugging by hand, are 
   such as "all 24 tests pass", is not an answer about one thing. Nor is a named test that would
   still pass if that one thing broke, such as one that checks a note was accepted without checking
   it was saved, or one that runs against a mock instead of the real database.
-- **origin:** course
 
 ### `c-judge-manual-test`
 
@@ -207,7 +214,6 @@ is the agent's job. Diagnosing the problem yourself, and debugging by hand, are 
   could, says what the automated test would do in the app and what it would check, well enough
   that the agent could write it. If it could not, names what the check needs that only a person
   can supply. "Automate it", with no account of what the test would check, does not meet it.
-- **origin:** course
 
 ### `o-orientation`
 
@@ -218,109 +224,90 @@ is the agent's job. Diagnosing the problem yourself, and debugging by hand, are 
 - **recurrence:** never
 - **is_required:** no
 - **group:** orientation
-- **origin:** course
 
 ### `w-tdd`
 
 - **goal:** test-driven development
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** a rule about which gets written first, the test or the code
 - **nearest confusable:** writing tests
 - **synonyms:** TDD, test-first development, red-green-refactor
-- **origin:** course
 
 ### `w-failing-test`
 
 - **goal:** failing test
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** a test's verdict that is not always bad news
 - **nearest confusable:** a broken test
 - **synonyms:** red test
-- **origin:** course
 
 ### `w-regression`
 
 - **goal:** regression
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** a step backwards, caused by a change
 - **nearest confusable:** a new bug; regression in statistics
-- **origin:** course
 
 ### `w-mock`
 
 - **goal:** mock
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** what a test puts where the real database or service would be
 - **nearest confusable:** a test dataset
 - **synonyms:** stub, fake, test double
-- **origin:** course
 
 ### `w-code-review`
 
 - **goal:** code review
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** a second reader's pass over a change before it is accepted
 - **nearest confusable:** testing
 - **synonyms:** review
-- **origin:** course
 
 ### `w-spec-review`
 
 - **goal:** spec compliance review
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the review that asks whether the change does what was asked
 - **nearest confusable:** code quality review
 - **synonyms:** spec review
-- **origin:** course
 
 ### `w-root-cause`
 
 - **goal:** root cause
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the reason underneath, not the thing you noticed first
 - **nearest confusable:** the symptom
-- **origin:** course
 
 ### `w-test-suite`
 
 - **goal:** test suite
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** everything that runs when the agent says it ran the tests
 - **synonyms:** the tests
-- **origin:** course
 
 ### `w-test-coverage`
 
 - **goal:** test coverage
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** how much of the code the tests reach
 - **nearest confusable:** how well tested the code is
 - **synonyms:** code coverage, coverage
-- **origin:** course

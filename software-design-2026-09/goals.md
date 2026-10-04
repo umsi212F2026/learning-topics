@@ -1,5 +1,7 @@
 # Learning goals — software design
 
+**origin:** course
+
 **What I want to be able to do, and what would count as having got there.**
 
 <!--
@@ -86,6 +88,11 @@ approaches that differ in those things, choosing between them is still yours, by
 mean for the app rather than by the technology itself. Checking that the spec the agent writes
 still says what you agreed is not part of this topic, and checking the finished app against it is
 a later one.
+
+## Sequence
+
+1. vocabulary
+2. capabilities
 
 ## Goals
 
@@ -195,7 +202,6 @@ a later one.
   fail at least one of them, counting only apps an honest builder, working from their sentence
   and their criteria alone, might plausibly ship. A list of the app's features does not count as
   saying what it is for.
-- **origin:** course
 
 ### `c-choose-approach`
 
@@ -205,109 +211,90 @@ a later one.
   one, says what that choice gives up, and gives a reason that comes from something in the app's
   situation, as described, that bears on the choice. A reason that would hold for any app,
   including that the agent recommended it, does not meet it.
-- **origin:** course
 
 ### `w-spec`
 
 - **goal:** spec
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the document about what gets built
 - **nearest confusable:** plan
 - **synonyms:** specification, design doc
-- **origin:** course
 
 ### `w-plan`
 
 - **goal:** plan
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the document about how it gets built, one piece at a time
 - **nearest confusable:** spec
 - **synonyms:** implementation plan
-- **origin:** course
 
 ### `w-success-criteria`
 
 - **goal:** success criteria
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** what the spec says will count as done
 - **nearest confusable:** tests
 - **synonyms:** acceptance criteria
-- **origin:** course
 
 ### `w-constraint`
 
 - **goal:** constraint
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** a limit the app has to fit inside, set from outside the design
 - **nearest confusable:** requirement
-- **origin:** course
 
 ### `w-mvp`
 
 - **goal:** MVP
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the first version of an app worth putting in front of anyone
 - **nearest confusable:** prototype
 - **synonyms:** minimum viable product
-- **origin:** course
 
 ### `w-yagni`
 
 - **goal:** YAGNI
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** why a feature nobody needs yet gets left out
 - **nearest confusable:** keep it simple
 - **synonyms:** you aren't gonna need it
-- **origin:** course
 
 ### `w-spike`
 
 - **goal:** spike
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** a quick try whose result is an answer, not code to keep
 - **nearest confusable:** prototype
-- **origin:** course
 
 ### `w-architecture`
 
 - **goal:** architecture
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** how the big parts of an app fit together
 - **nearest confusable:** tech stack
-- **origin:** course
 
 ### `w-tech-stack`
 
 - **goal:** tech stack
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the technologies an app is built from
 - **nearest confusable:** architecture
 - **synonyms:** stack
-- **origin:** course

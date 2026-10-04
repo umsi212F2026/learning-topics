@@ -1,5 +1,7 @@
 # Learning goals — commits and history
 
+**origin:** course
+
 **What I want to be able to do, and what would count as having got there.**
 
 <!--
@@ -85,6 +87,12 @@ closely enough to know whether it actually did what you asked, and being able to
 commit or a restore in your own words in the first place. Authoring commands, resolving a
 conflict by hand, and querying the log yourself are all past that line, and none of them is
 needed for the occasion this topic exists for.
+
+## Sequence
+
+1. orientation
+2. vocabulary
+3. capabilities
 
 ## Goals
 
@@ -188,7 +196,6 @@ needed for the occasion this topic exists for.
 
 - **goal:** make use of commits
 - **criterion:** Can ask the agent to commit saved work. Can ask the agent to recover all files to where they were at any commit.
-- **origin:** course
 
 ### `o-orientation`
 
@@ -199,98 +206,81 @@ needed for the occasion this topic exists for.
 - **recurrence:** never
 - **is_required:** no
 - **group:** orientation
-- **origin:** course
 
 ### `w-repository`
 
 - **goal:** repository
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the boundary around what git is keeping track of
 - **nearest confusable:** folder
 - **synonyms:** repo
-- **origin:** course
 
 ### `w-commit`
 
 - **goal:** commit
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the unit the record is made of, and the act of adding one
 - **nearest confusable:** save
-- **origin:** course
 
 ### `w-uncommitted`
 
 - **goal:** uncommitted
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the gap between what is on disk and what is in the record
 - **nearest confusable:** unsaved
 - **synonyms:** local changes
-- **origin:** course
 
 ### `w-staging-area`
 
 - **goal:** staging area
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the third place, sitting between the files and the record
 - **nearest confusable:** working directory
 - **synonyms:** index, cache
-- **origin:** course
 
 ### `w-diff`
 
 - **goal:** diff
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the answer to "what changed", in a form you can read
 - **nearest confusable:** status
 - **synonyms:** patch
-- **origin:** course
 
 ### `w-history`
 
 - **goal:** history
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** what the commits add up to once there is more than one
 - **nearest confusable:** an editor's undo history
 - **synonyms:** the log
-- **origin:** course
 
 ### `w-merge`
 
 - **goal:** merge
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** what happens when two diverged lines of work are made one record
 - **nearest confusable:** rebase
-- **origin:** course
 
 ### `w-merge-conflict`
 
 - **goal:** merge conflict
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** where git stops rather than choose between two changes to the same lines
 - **nearest confusable:** an error
 - **synonyms:** conflict
-- **origin:** course

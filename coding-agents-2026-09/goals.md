@@ -1,5 +1,7 @@
 # Learning goals: coding agents
 
+**origin:** course
+
 **What I want to be able to do, and what would count as having got there.**
 
 <!--
@@ -78,6 +80,11 @@ any others you have._
 decide, partway through real work, whether a better model is worth trying and whether to split
 work off, and to get a cost estimate you can trust. Not estimating costs by hand, not setting up
 an agent beyond choosing its model, and nothing about how a model works inside.
+
+## Sequence
+
+1. vocabulary
+2. capabilities
 
 ## Goals
 
@@ -189,7 +196,6 @@ an agent beyond choosing its model, and nothing about how a model works inside.
   model is worth trying and some where it is not, says which is which and gives a
   reason for each that comes from the situation described. A general preference for cheaper,
   or for better, does not meet it.
-- **origin:** course
 
 ### `c-split-chats`
 
@@ -199,7 +205,6 @@ an agent beyond choosing its model, and nothing about how a model works inside.
   which. When arguing for a split, names a reason that applies (independence/fresh start vs. saving
   tokens) and ties it to something in the situation. Naming a reason without that tie does not
   meet it.
-- **origin:** course
 
 ### `c-ask-cost-estimate`
 
@@ -208,124 +213,103 @@ an agent beyond choosing its model, and nothing about how a model works inside.
   as one chat. Can say what the figure it gives back is based on: which model's prices, and
   which token counts. Can say why that figure may differ from what was actually billed. "It's
   only an estimate" does not meet it.
-- **origin:** course
 
 ### `w-token`
 
 - **goal:** token
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the unit text is counted and billed in
 - **nearest confusable:** word
-- **origin:** course
 
 ### `w-input-tokens`
 
 - **goal:** input tokens
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the part of a turn's bill for what the model was sent
 - **nearest confusable:** output tokens
 - **synonyms:** prompt tokens
-- **origin:** course
 
 ### `w-output-tokens`
 
 - **goal:** output tokens
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the part of a turn's bill for what the model wrote
 - **nearest confusable:** input tokens
 - **synonyms:** completion tokens
-- **origin:** course
 
 ### `w-prompt-caching`
 
 - **goal:** prompt caching
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** why input sent again can cost less than new input
 - **nearest confusable:** memory
 - **synonyms:** context caching
-- **origin:** course
 
 ### `w-model`
 
 - **goal:** model
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** what the price table is priced by, as distinct from the program you talk to
 - **nearest confusable:** agent
 - **synonyms:** LLM
-- **origin:** course
 
 ### `w-reasoning-effort`
 
 - **goal:** reasoning effort
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the dial set separately from which model you picked
 - **nearest confusable:** model
 - **synonyms:** thinking level
-- **origin:** course
 
 ### `w-context`
 
 - **goal:** context
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** what the model has in front of it on a turn, which is more than what you
   typed
 - **nearest confusable:** memory
 - **watch for:** thinks the model remembers earlier chats
-- **origin:** course
 
 ### `w-context-window`
 
 - **goal:** context window
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the ceiling on how much context fits
 - **nearest confusable:** context
 - **synonyms:** context length, context limit
-- **origin:** course
 
 ### `w-compaction`
 
 - **goal:** compaction
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** what happens to a chat that nears its ceiling
 - **nearest confusable:** starting a new chat
 - **synonyms:** auto-compact
-- **origin:** course
 
 ### `w-system-prompt`
 
 - **goal:** system prompt
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the instructions sent ahead of anything you type
 - **nearest confusable:** your first message, AGENTS.md
 - **synonyms:** system message, developer instructions
-- **origin:** course
