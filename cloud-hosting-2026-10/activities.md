@@ -30,7 +30,7 @@ Taken together, it is the topic's one shared blind spot.
 | goal | study | checks | notes |
 | ---- | ----- | ------ | ----- |
 | `o-orientation` | `a-read-odin-deployment` | `a-dry-run-hosting-asks` | |
-| `c-place-app-parts` | `a-read-fso-serve-dist`, `a-judge-plan-coverage` | `a-place-described-plan`, `a-place-lab-plan` | The criterion names two hard cases: a vendor hosting more than one part, and the backend serving the built frontend. One counting pass exercises at most one of them. If the learner's pass came on one case, give the other in study or on a review visit. |
+| `c-place-app-parts` | `a-read-fso-serve-dist`, `a-judge-plan-coverage` | `a-place-described-plan`, `a-place-lab-plan` | The criterion's two named cases overlap: a backend that sends the built frontend is also one vendor hosting both, through a single service. Read the Coverage note's two cases as two instance shapes, one vendor with two services and one service sending both parts. A counting pass usually exercises one shape; if the learner's pass came on one, give the other in study or on a review visit. |
 | `c-check-vendor-claims` | `a-watch-claims-checked`, `a-check-2025-guide-claims`, `a-sort-claim-sources` | `a-plan-claim-checks`, `a-check-lab-answer` | Both checks rule on a written plan for checking claims, not on checks actually carried out. `a-check-lab-answer` has the learner carry the plan out, but the ruling is on the plan as first written. No check here establishes that the learner can find the settling sentence on a real vendor's site unaided, although the topic's Depth says they should be able to check a claim against the vendor's own pages. If that matters for this learner, look at what they found in `a-check-lab-answer`, or watch them do it in `a-check-2025-guide-claims`, and treat it as evidence beside the ruling, not as part of it. |
 | `c-weigh-hosting-plans` | `a-study-hatchable-traps`, `a-predict-overage-outcomes`, `a-judge-plan-weighings` | `a-weigh-described-plans`, `a-weigh-lab-plans` | |
 
@@ -103,6 +103,10 @@ Taken together, it is the topic's one shared blind spot.
   minutes with the stops; with `a-dry-run-hosting-asks`, about 20. Odin's vendor numbers are a year
   or so behind in places, and the tutor flags them if they come up; that is part of the lesson,
   not a defect in the choice. Followed by `a-dry-run-hosting-asks`.
+- **check note:** At stop 1, a frontend labeled "sent by the Express server itself" passes the check
+  as well as one on a host that sends files: some Problem Set 2 apps already serve `dist/` from
+  Express, and that arrangement is covered under `c-place-app-parts`. Don't steer the learner off
+  it.
 
 ### `a-dry-run-hosting-asks`
 
@@ -170,6 +174,7 @@ Taken together, it is the topic's one shared blind spot.
   address. Skip everything about Fly.io and Render setup (that is how to deploy, past this topic's
   depth, and its vendor details may lag like Odin's), Frontend production build, Same origin
   policy and CORS, and Proxy. 10 to 15 minutes.
+- **verified:** 2026-10-04
 - **learner does:** reads the two sections without running anything. Then draws one arrangement of
   their own Problem Set 2 app: the Express server sending the built frontend itself, labeled with
   the kind of host it needs (the database is left out; it belongs to the database-hosting topic).
@@ -213,6 +218,7 @@ Taken together, it is the topic's one shared blind spot.
   carry the cases students most often miss. Label the attempt `a-judge-plan-coverage/<plan>`, for
   example `a-judge-plan-coverage/q4`. Stop when done when has been met on two or three sittings
   with different cases, and offer `a-place-described-plan`; using up the bank is not the target.
+- **verified:** 2026-10-04
 - **learner does:** reads the header and the one plan served, then says which part each vendor in
   it hosts and names every gap and mismatch, or says both are covered. Then says in a
   sentence the rule they judged by.
@@ -800,6 +806,7 @@ Taken together, it is the topic's one shared blind spot.
   would have to be rewritten as Hatchable handlers: a port, not a deploy, and code written for one
   vendor's SDK, which is deep lock-in. The article's dated claims are claims to check, not facts
   to carry (`a-watch-claims-checked` uses them that way).
+- **verified:** 2026-10-04
 - **learner does:** before reading, writes the five things the goal asks them to compare (sleep;
   what happens past a limit; card required, and what a card on file risks; whether their agent can
   reach the host; how hard it is to move). Reads the assigned parts, and for each trap writes
@@ -860,6 +867,7 @@ Taken together, it is the topic's one shared blind spot.
      Settling lines: spin-down is named only for web services, so the static frontend doesn't
      sleep; "suspends all of your Free services" covers the static site too in the forum case.
   10 to 15 minutes.
+- **verified:** 2026-10-04
 - **learner does:** reads the story. Before opening Render's page, writes predictions for their
   own app's frontend and backend on Render's free plan in three cases: nobody visits for an hour,
   then a grader does; the app is shared on a busy forum and its traffic goes far past the free
@@ -909,6 +917,7 @@ Taken together, it is the topic's one shared blind spot.
   `a-judge-plan-weighings/<choice>`, for example `a-judge-plan-weighings/v6`. Stop when done when
   has been met on two or three sittings with different cases, and offer `a-weigh-described-plans`;
   using up the bank is not the target.
+- **verified:** 2026-10-04
 - **learner does:** reads the header and the one choice served, then says which of the
   criterion's parts it misses, if any: a difference that matters, the cost of the extra vendors,
   a claim the terms don't support, the case for the other plan. Points to the line in the terms
@@ -935,6 +944,10 @@ Taken together, it is the topic's one shared blind spot.
   study route that touches all five differences, the extra vendors, and the case for the other
   plan, including agent access, which no reading in this topic covers. Made-up vendors, so nothing
   here goes stale. 10 to 15 minutes, nothing to run.
+- **check note:** For `v6`, the line to point to is not "nothing in the terms says this" but the
+  terms' own first line, "No vendor needs a card to sign up": the claim is contradicted, not merely
+  unsupported. Accept either, but prefer the quoted line, since it is the habit of pointing to what
+  the terms say that this item is for.
 
 ### `a-weigh-described-plans`
 
@@ -1023,6 +1036,7 @@ Taken together, it is the topic's one shared blind spot.
   the frontend and backend with a single vendor and one using a separate vendor for each, with the
   vendors' free-tier terms as the tutor gathers them from the vendors' own pages. The database is
   left out. 20 minutes, plus the tutor's preparation.
+- **verified:** 2026-10-04
 - **learner does:** reads the two plans and the terms sheet, then writes alone which plan they would
   choose for Problem Set 3 and why, as in `a-weigh-described-plans`. Hands it to the tutor.
 - **tutor role:** none
