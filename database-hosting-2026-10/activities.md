@@ -5,7 +5,11 @@ with the learner.
 
 ## Check notes
 
-2026-10-04. The minimum route (orientation reading and dry run, then a-judge-described-plan with its worked example, then the seven words) comes to about 55 minutes. It fits the topic's 60-minute budget only if the first counting attempt passes; a retry, or a helped practice attempt after a hedged readiness answer, takes it past 60. a-judge-own-deploy-plan belongs with Problem Set 3 (Oct 8 to 14), not before session 11.
+2026-10-04. Route times:
+- **All four plan cases here:** about 65 minutes. That is the orientation in `a-read-database-survives` (about 20), one passing `a-judge-described-plan` question per case with the 4-minute worked example first (about 25), and the seven words (about 20). This assumes every first counting question passes. Each retry adds about 5 minutes.
+- **Plan questions deferred to the session 11 table activity:** about 40 minutes.
+
+`a-judge-own-deploy-plan` belongs with Problem Set 3 (Oct 8 to 14), not before session 11.
 
 ## Goals
 
@@ -19,7 +23,7 @@ with the learner.
 | goal | checks | notes |
 | ---- | ------ | ----- |
 | `o-orientation` | `a-read-database-survives` | |
-| `c-plan-first-deploy` | `a-judge-described-plan`, `a-judge-own-deploy-plan` | |
+| `c-plan-first-deploy` | `a-judge-described-plan`, `a-judge-own-deploy-plan` | In practice the two catch cases come from `a-judge-described-plan`: a competent agent's real plan usually yields only the clear cases. Both checks give the learner the host's storage rule and name the question to ask, so neither shows the learner would ask both questions unprompted or doubt a plan's own claim about storage. A learner who did the session 11 table activity may meet this goal as `elsewhere` without either check. |
 
 ---
 
