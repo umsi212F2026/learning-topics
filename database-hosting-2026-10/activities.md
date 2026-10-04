@@ -189,7 +189,7 @@ attempting them unaided. The two study activities were dropped for that reason.
   writes alone, for each plan, a yes or no to each of two questions, and for every no the plan
   step that decides it: will the data survive a redeploy? Does production get a database of its
   own, built by the code rather than copied from the laptop? Hands it to the tutor.
-- **tutor role:** none
+- **tutor role:** examiner
 - **tutor does:** before the learner's first attempt at this activity, works the worked example
   below aloud, on an Easy pair that is not from the bank. Then serves one question as written, with
   its scenario's setup. Waits, writing down any help word for word. Sends the adjudicator the
