@@ -32,7 +32,7 @@ examined only one handed claim at a time, never across a whole agent's answer. E
 | goal | study | checks | notes |
 | ---- | ----- | ------ | ----- |
 | `o-orientation` | | `a-read-odin-deployment` | |
-| `c-place-app-parts` | | `a-place-described-plan`, `a-place-lab-plan` | The criterion's two named cases overlap: a backend that sends the built frontend is also one vendor hosting both, through a single service. Read the Coverage note's two cases as two instance shapes, one vendor with two services and one service sending both parts. A pass usually exercises one shape; if the learner's pass came on one, give the other on a review visit. |
+| `c-place-app-parts` | | `a-place-described-plan`, `a-place-lab-plan` | |
 | `c-check-vendor-claims` | | `a-check-2025-guide-claims`, `a-sort-claim-sources`, `a-plan-claim-checks`, `a-check-lab-answer` | `a-plan-claim-checks` and `a-check-lab-answer` rule on a written plan for checking claims, not on checks carried out; `a-check-lab-answer` has the learner carry the plan out, but the ruling is on the plan as first written. `a-check-2025-guide-claims` rules on a lookup the learner does on the vendor's own pages, and `a-sort-claim-sources` on one source judged, each for one handed claim, so neither shows the whole plan the criterion asks for across an agent's answer. |
 | `c-weigh-hosting-plans` | | `a-weigh-described-plans`, `a-weigh-lab-plans` | |
 
@@ -173,27 +173,25 @@ examined only one handed claim at a time, never across a whole agent's answer. E
   `crumbs` plan. What
   varies: the app (a different one each attempt; its frontend is React or another framework built
   to static files, its backend Express or another long-running server), the vendors and their
-  offers, and the plan's shape:
-  - `split-clean` (Easy): one vendor per part, both covered.
-  - `one-gap` (Easy): one part left without a host.
-  - `wrong-host` (Medium): one part on a host that cannot run it as the app is now (a long-running
-    server on a files-only or functions-only host).
-  - `backend-serves` (Medium): the backend sends the built frontend itself and no static host is
-    named; both covered, or the backend on a host that cannot run it, in which case the key names
-    the backend mismatch and says the frontend is then not served either, and the answer must say
-    both.
-  - `shared-vendor` (Medium): one vendor hosts both parts as separate services; both covered, or
-    with one mismatch inside that vendor.
-  - `decoy` (Hard): both covered, but the backend sends the built frontend itself and the frontend
-    is also put on a static host, or a vendor hosting both has a limitation that doesn't bear on
-    either part it was given (never a limitation about databases); either way it invites a false
-    gap or mismatch.
-  - `two-faults` (Hard): both parts faulted, one a gap and one a mismatch, with the mismatch on a
-    vendor that offers both kinds of hosting (for example, the Express server put in that vendor's
-    static-site service, and nothing named for the frontend).
-  Difficulty as marked. A scenario mixes shapes, and includes the two the criterion names (one
-  vendor hosting both, and the backend serving the built frontend). For review visits, serve a
-  shape the learner hasn't had, reading the labels `served.mjs` returns.
+  offers, and the plan's shape, each with the cases it carries:
+  - `split-clean` (Easy; `all-covered`): one vendor per part, both covered.
+  - `one-gap` (Easy; `gap`): one part left without a host.
+  - `wrong-host` (Medium; `mismatch`): one part on a host that cannot run it as the app is now (a
+    long-running server on a files-only or functions-only host).
+  - `backend-serves` (Medium; `backend-serves`, with `all-covered` or `mismatch`): the backend
+    sends the built frontend itself and no static host is named; both covered, or the backend on a
+    host that cannot run it, in which case the key names the backend mismatch and says the
+    frontend is then not served either, and the answer must say both.
+  - `shared-vendor` (Medium; `one-vendor-both`, with `all-covered` or `mismatch`): one vendor hosts
+    both parts as separate services; both covered, or with one mismatch inside that vendor.
+  - `decoy` (Hard; `all-covered`, with `backend-serves` or `one-vendor-both` as the variant has it):
+    both covered, but the backend sends the built frontend itself and the frontend is also put on a
+    static host, or a vendor hosting both has a limitation that doesn't bear on either part it was
+    given (never a limitation about databases); either way it invites a false gap or mismatch.
+  A plan never holds both a gap and a mismatch, since a learner could find one and miss the other
+  under one ruling. Difficulty as marked. A scenario covers all five cases across its questions.
+  For review visits, serve a case the learner hasn't passed, reading the labels `served.mjs`
+  returns.
 - **worked example:** work one Easy instance aloud: list what each part needs, then go vendor by
   vendor saying what it was given and whether its offer can do that job, and finish by checking
   each part has somewhere to live. For the backend sending the frontend itself, point to Full
@@ -210,10 +208,6 @@ examined only one handed claim at a time, never across a whole agent's answer. E
   run, and the tutor picks the shape so the two cases the criterion names (one vendor hosting
   both, the backend serving the frontend) actually come up. `a-place-lab-plan` is the
   same capability on the plan your own lab prompt produced.
-- **check note:** A `decoy` instance is always fully covered, and a `backend-serves` or
-  `shared-vendor` instance may be. A pass on one of those shows the learner did not name a false
-  gap, not that they can find a real one. If a learner's only pass came on a fully covered plan,
-  offer a faulted one on a later visit.
 
 ### `a-place-lab-plan`
 
@@ -255,7 +249,10 @@ examined only one handed claim at a time, never across a whole agent's answer. E
 - **done when:** criterion met with no help.
 - **generator:** the material is whatever the learner's agent proposed, so no two instances match
   and nobody sets the difficulty. Hold fixed: offers come from the vendor's own pages on the day,
-  never from the agent's answer; the key comes from those offers and the app's code. Across visits, use a different agent answer each time (a tablemate's, or a fresh run of
+  never from the agent's answer; the key comes from those offers and the app's code. The tutor
+  records the cases the plan carries: `gap`, `mismatch` or `all-covered` by its verdict, plus
+  `one-vendor-both` or `backend-serves` where the plan has them. A plan with both a gap and a
+  mismatch is set as two questions, one on each part. Across visits, use a different agent answer each time (a tablemate's, or a fresh run of
   the lab prompt), preferring one that names a vendor the learner hasn't used.
 - **worked example:** none during the attempt. If the learner stalls, the first level of help is
   "what does each part need from a host?", and the attempt is recorded `unaided: no`.

@@ -11,6 +11,7 @@ it belongs to the database-hosting topic. Shapes, in the entry's generator's ter
 ### q1
 
 - **goal:** `c-place-app-parts`
+- **cases:** all-covered
 - **answer:** Brightpage hosts the frontend's built files, Kettle the Express server; both
   covered, no gap or mismatch.
 - **credit:** full for both covered, with each vendor matched to its part. Half for "both covered"
@@ -19,6 +20,7 @@ it belongs to the database-hosting topic. Shapes, in the entry's generator's ter
 ### q2
 
 - **goal:** `c-place-app-parts`
+- **cases:** mismatch
 - **answer:** mismatch: Brightpage runs no code, so it cannot run the Express server. The frontend
   on Brightpage is fine.
 - **credit:** full for the backend mismatch named and nothing false named; a reason (Brightpage
@@ -28,6 +30,7 @@ it belongs to the database-hosting topic. Shapes, in the entry's generator's ter
 ### q3
 
 - **goal:** `c-place-app-parts`
+- **cases:** backend-serves, all-covered
 - **answer:** both covered: Kettle runs the Express server, which sends the built frontend itself,
   so no static host is needed.
 - **credit:** full for both covered, saying the server sends the frontend. Half for "covered" with
@@ -38,6 +41,7 @@ it belongs to the database-hosting topic. Shapes, in the entry's generator's ter
 ### q4
 
 - **goal:** `c-place-app-parts`
+- **cases:** mismatch
 - **answer:** mismatch: Spark keeps no program running between requests, so the Express server as
   written, a program that listens all the time, cannot run there without being rewritten as
   functions. The frontend on Brightpage is fine.
@@ -49,6 +53,7 @@ it belongs to the database-hosting topic. Shapes, in the entry's generator's ter
 ### q5
 
 - **goal:** `c-place-app-parts`
+- **cases:** one-vendor-both, all-covered
 - **answer:** both covered: one vendor, two services, Harbor's static site for the frontend and its
   web service for the Express server.
 - **credit:** full for "Harbor hosts both, both covered" and nothing false named.
@@ -57,6 +62,7 @@ it belongs to the database-hosting topic. Shapes, in the entry's generator's ter
 ### q6
 
 - **goal:** `c-place-app-parts`
+- **cases:** gap
 - **answer:** gap: the frontend's code runs in the browser, but the browser has to get the files
   from somewhere, and nothing sends them: no static host, and the server doesn't send `dist/`.
   The backend on Kettle is fine.
@@ -69,6 +75,7 @@ it belongs to the database-hosting topic. Shapes, in the entry's generator's ter
 ### q8
 
 - **goal:** `c-place-app-parts`
+- **cases:** all-covered
 - **answer:** both covered: Spark can host a folder of files, which is all the frontend needs;
   Kettle runs the Express server. Spark's limits matter only for a backend, and the backend isn't
   on Spark.
@@ -79,6 +86,7 @@ it belongs to the database-hosting topic. Shapes, in the entry's generator's ter
 ### q10
 
 - **goal:** `c-place-app-parts`
+- **cases:** backend-serves, all-covered
 - **answer:** both covered: Kettle runs the server, which also sends the built frontend;
   Brightpage hosting the same files again is redundant, but not a gap or a mismatch.
 - **credit:** full for both covered, with the duplicate named as harmless or not named. Half for
@@ -87,6 +95,7 @@ it belongs to the database-hosting topic. Shapes, in the entry's generator's ter
 ### q11
 
 - **goal:** `c-place-app-parts`
+- **cases:** gap
 - **answer:** gap: a server on the learner's laptop is not reachable from visitors' browsers and is
   off whenever the laptop is, so the backend has no host. The frontend on Brightpage is fine.
 - **credit:** full for the backend gap named and nothing false named; a reason (not reachable, or
@@ -96,6 +105,7 @@ it belongs to the database-hosting topic. Shapes, in the entry's generator's ter
 ### q12
 
 - **goal:** `c-place-app-parts`
+- **cases:** mismatch, one-vendor-both
 - **answer:** mismatch: Harbor can host both, but this plan puts the Express server's code in a
   static site, which only sends files as they are. The fault is in the job given, not the vendor.
   The frontend in the static site is fine.
@@ -107,6 +117,7 @@ it belongs to the database-hosting topic. Shapes, in the entry's generator's ter
 ### q13
 
 - **goal:** `c-place-app-parts`
+- **cases:** mismatch, backend-serves
 - **answer:** mismatch, and the frontend not served either: Spark keeps no program running, so the
   Express server can't run there; and since the server is what sends the built frontend, the
   frontend isn't served.
