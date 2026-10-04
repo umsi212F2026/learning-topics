@@ -24,8 +24,8 @@ Nothing at file level.
 
 | goal | study | checks | notes |
 | ---- | ----- | ------ | ----- |
-| `c-place-settings` | `a-sort-setting-answers`, `a-read-own-exchange` | `a-read-described-exchange` | The Depth in goals.md includes asking the agent when you don't know what a setting is for. No check tests that: every check supplies the question already asked and a correct answer. Only `a-read-own-exchange` has the learner asking, and it does not count. A pass shows the learner can follow a good explanation, not that they would ask for one or spot a wrong one. |
-| `c-handle-secret` | `a-judge-agent-requests` | `a-handle-described-requests`, `a-handle-own-request` | Every activity for this goal asks the learner to judge messages on paper, in calm conditions. None shows they would notice a risky request in the middle of a deploy. Treat a pass as "knows what to do", and check during Problem Set 3 whether they did it. |
+| `c-place-settings` | `a-sort-setting-answers` | `a-read-described-exchange` | The Depth in goals.md includes asking the agent when you don't know what a setting is for. No check tests that: every check supplies the question already asked and a correct answer. A pass shows the learner can follow a good explanation, not that they would ask for one or spot a wrong one. |
+| `c-handle-secret` | `a-judge-agent-requests` | `a-handle-described-requests` | Every activity for this goal asks the learner to judge messages on paper, in calm conditions. None shows they would notice a risky request in the middle of a deploy. Treat a pass as "knows what to do", and check during Problem Set 3 whether they did it. |
 
 ---
 
@@ -136,45 +136,12 @@ Nothing at file level.
   vague or wrong answer. Vendors are made up, so a pass says nothing about real dashboards. The
   learner knows a check is on.
 - **offer as:** the check that's available now: two exchanges the tutor writes, 10 minutes, nothing
-  to run, built so the hard cases and a secret both come up. `a-read-own-exchange` is practice on
-  your own Problem Set 3 deploy.
+  to run, built so the hard cases and a secret both come up.
 - **check note:** Leave out the sentence saying the database host's connection details include a
   password. With it, the secret question for a connection string is answered by the setup instead
   of by the learner. A counting instance never includes a value the host sets itself. If the
   learner has not shown they know that case (item 4 in `a-sort-setting-answers`), check it
   informally. It is not part of what a pass shows.
-
-### `a-read-own-exchange`
-
-- **serves:** `c-place-settings`
-- **supports:** attempt
-- **artifact:** no external source. Exchanges from the learner's own Problem Set 3 deploy: their
-  agent asked for a setting, they asked it what the setting is for and where its value comes from,
-  and it answered. Copied into the session with any secret value taken out. 10 minutes, plus the
-  tutor's preparation. Available only once the learner is deploying; best taken before they enter
-  the values.
-- **verified:** 2026-10-04
-- **learner does:** brings one or more exchanges (the setting's name, their question, the agent's
-  answer, no secret values) and says which vendor each part of their app is on. For each, says
-  what the setting is for, whose value it needs, and whether it is a secret.
-- **tutor role:** socratic questioner
-- **tutor does:** first checks that what was pasted holds no secret value. If it does, stops, tells
-  the learner it is now in this chat's record too, which is what `c-handle-secret` is about, and
-  asks for the exchange again without it. Then reads the learner's app where each setting is read
-  and works out the answer from the code and the hosting arrangement, not from the agent's answer.
-  Takes the learner's answers before commenting. Where one differs from the code, asks "where does
-  the value you would copy actually point?" before saying more. If the agent's answer disagrees
-  with the code, says so: the agent was wrong, and catching that is the point of asking it. If the
-  learner wants the goal settled, offers `a-read-described-exchange`.
-- **done when:** the learner's answers match the code for every exchange they brought, with at most
-  one question each. No `checks`: a real deploy rarely puts two parts on one vendor, so the
-  answer's vendor usually gives the part away, and the learner chooses which settings to bring, so
-  a secret may never come up. A pass here would certify less than the criterion asks.
-- **offer as:** the real thing: settings your own agent asked for while deploying Problem Set 3,
-  checked against your own code, and a chance to catch your agent being wrong. It can't finish the
-  goal; `a-read-described-exchange` is the check.
-- **check note:** If the learner didn't ask their agent what a setting was for at the time, they
-  can ask it now and bring that exchange, still with no secret values in it.
 
 ### `a-judge-agent-requests`
 
@@ -267,7 +234,6 @@ Nothing at file level.
   The learner knows a check is on.
 - **offer as:** the check that's available now: a pair the tutor writes, 5 to 10 minutes, nothing to
   run, with one message to decline and one that is fine, so refusing everything fails.
-  `a-handle-own-request` is the same capability on your own deploy.
 - **check note:** Do not tell the learner that a pair always has one message to decline and one
   to go along with. After the bank they may expect it anyway. Watch for answers that decide the
   harder message by elimination ("the other one was obviously bad, so this one must be fine").
@@ -276,56 +242,6 @@ Nothing at file level.
   message names a secret but routes it from one dashboard to another, never through the chat.
   Going along with it is correct, because it is the criterion's own "instead" step. Tell the
   adjudicator so when you send the key.
-
-### `a-handle-own-request`
-
-- **serves:** `c-handle-secret`
-- **supports:** attempt
-- **checks:** `c-handle-secret`
-- **artifact:** no external source. A stretch of the agent's messages from the learner's own
-  Problem Set 3 deploy, including at least one that asked for a secret or proposed doing
-  something with one (most often the database's connection string). Copied into the session with
-  any secret value taken out. 10 minutes. Available only if the learner's agent made such a
-  request, which it may never do.
-- **verified:** 2026-10-04
-- **learner does:** brings the stretch of messages. Then, for the two the tutor picks, writes
-  alone whether they would go along with each, and if not, what they would do instead and why.
-- **tutor role:** none
-- **tutor does:** first checks that what was pasted holds no secret value. If it does, stops, tells
-  the learner that what they just did is the thing this capability is about, and asks for the
-  messages again without it; the attempt is not counted that day. Picks two messages from the
-  stretch: one that routes a secret through the agent and one that involves no secret. **Counts the
-  attempt only if the pair would count in `a-handle-described-requests`**: at least one message
-  Medium or Hard by that entry's shapes. An Easy pair is practice, and the tutor says so. Writes
-  the key before showing the pair: which message to decline, what to do instead, and the two
-  reasons. If the learner says they already went along with the secret request in the
-  real session, records the attempt as not met, and tells them that what to do about a secret that
-  has already been pasted belongs to a later topic, in session 13. Waits during the attempt,
-  writing down any help word for word. Sends the adjudicator both messages, the key, the learner's
-  answer and every piece of help. Labels the attempt `a-handle-own-request/<setting name>`.
-- **done when:** criterion met with no help, on a pair that counts.
-- **kind:** generator
-- **generator:** the material is whatever the learner's agent sent; the tutor sets the pair and
-  the floor. Hold fixed: two messages, one routing a secret through the agent and one involving
-  none; the difficulty floor from `a-handle-described-requests`; no secret value enters this
-  session. Across visits, use a different secret request each time.
-- **worked example:** none during the attempt. If the learner stalls, the first level of help is
-  "does any value in this message let someone into something?", and the attempt is recorded
-  `unaided: no`.
-- **doesn't show:** whether a request comes up at all depends on the agent, and real agents mostly
-  make the Easy kind, so many learners will have only a practice pair. The learner lived through
-  these messages and may remember which one was about a secret, so the sorting half is partly
-  done before the attempt. Answering here, after the fact, doesn't show what they did in the
-  moment, except when they report having gone along.
-- **offer as:** the real thing: a request your own agent made while deploying Problem Set 3. Take
-  it if your agent asked you for a secret; `a-handle-described-requests` is the one to take
-  otherwise.
-- **check note:** The learner brought this stretch because it contains a secret request, and they
-  lived through it, so they already know which message is about a secret. Treat a pass here as
-  showing that they know what to do instead and why, not that they can spot the risky message
-  unprompted. If you want the goal settled on solid ground, prefer `a-handle-described-requests`.
-  If the learner reports having already gone along with the request in the real session, record
-  not met and do not run the attempt. Then offer `a-handle-described-requests` on a later visit.
 
 ### `a-words`
 
