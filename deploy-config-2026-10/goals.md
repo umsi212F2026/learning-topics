@@ -70,6 +70,11 @@ about a secret that has already leaked in session 13, and defending the app in s
   address, and when the agent's answer names only a vendor that hosts two parts. Finding the
   value on the vendor's site, whether it is a secret, and what to do with one are not part of
   it.
+- **cases:**
+  - `shared-vendor`: the agent's answer names only a vendor that hosts two parts
+  - `cross-part`: on a shared vendor, a setting on one part that holds the other part's address
+  - `db-details`: a setting that needs the database's connection details
+  - `host-sets`: a value nobody enters, because a host sets it
 
 ### `c-spot-secret`
 
@@ -79,6 +84,9 @@ about a secret that has already leaked in session 13, and defending the app in s
   It passes when they call a secret one, including one whose name doesn't say so, such as a
   token or a connection string, and don't call a public value one, such as the frontend's or the
   backend's address. What to do with a secret is not part of it.
+- **cases:**
+  - `calls-secret`: a secret, including one whose name doesn't say so, called a secret
+  - `calls-public`: a public value, such as an address, not called a secret
 - **capability:** handle-secrets
 
 ### `c-judge-secret-request`
@@ -89,6 +97,11 @@ about a secret that has already leaked in session 13, and defending the app in s
   request that would put a secret in the chat or let the agent write one into a file, and go
   along with one that wouldn't, including an instruction to put a secret into the host's
   settings themselves. What to do instead is not part of it.
+- **cases:**
+  - `declines-chat`: a request that would put a secret in the chat
+  - `declines-file`: a request that would let the agent write a secret into a file
+  - `allows-safe`: a request involving no secret
+  - `allows-dashboard`: an instruction to put a secret into the host's settings themselves
 - **capability:** handle-secrets
 
 ### `c-secret-instead`

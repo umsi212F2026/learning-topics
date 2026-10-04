@@ -27,6 +27,7 @@ the next two can be answered by rote. Weigh the first repair served most.
 ### q1
 
 - **goal:** `c-trace-setting-value`, `c-spot-secret`
+- **cases:** c-trace-setting-value: shared-vendor; c-spot-secret: calls-public
 - **answer:** It is where the React app sends its requests. It needs the backend's address: the
   web service's, `https://crumbs-k3x9.harbor.app`, not the static site's. Not a secret: anyone
   using the app can see where its requests go.
@@ -41,6 +42,7 @@ the next two can be answered by rote. Weigh the first repair served most.
 ### q2
 
 - **goal:** `c-trace-setting-value`, `c-spot-secret`
+- **cases:** c-trace-setting-value: cross-part; c-spot-secret: calls-public
 - **answer:** It tells the server which pages may send it requests, so other sites can't use it.
   It needs the frontend's address: the static site's, `https://crumbs.harbor.app`, even though the
   setting is on the server and its name says "host". Not a secret: the site's address is public,
@@ -56,18 +58,23 @@ the next two can be answered by rote. Weigh the first repair served most.
 
 ### q3
 
-- **goal:** `c-spot-secret`
+- **goal:** `c-trace-setting-value`, `c-spot-secret`
+- **cases:** c-trace-setting-value: db-details; c-spot-secret: calls-secret
 - **answer:** It is how the server gets into the database. It needs the database's connection
   details, the connection string from Larder's dashboard. It is a secret: whoever holds it can get
   into the database.
-- **credit:** full for "a secret" because holding it gets someone into the database; half for "a
-  secret" with no reason or a reason that wouldn't make it one.
+- **credit:**
+  - `c-trace-setting-value`: full for what it is for and that it needs the database's connection
+    details; half for one of the two.
+  - `c-spot-secret`: full for "a secret" because holding it gets someone into the database; half
+    for "a secret" with no reason or a reason that wouldn't make it one.
 - **tutor note:** the near-miss is "not a secret, it's a link", read off the name. Ask what the
   agent said the server uses it for.
 
 ### q4
 
 - **goal:** `c-judge-secret-request`, `c-spot-secret`
+- **cases:** c-judge-secret-request: allows-safe; c-spot-secret: calls-public
 - **answer:** Yes. The static site's address is public (anyone who visits the site has it), so it
   can go in the chat.
 - **credit:**
@@ -78,6 +85,7 @@ the next two can be answered by rote. Weigh the first repair served most.
 ### q5
 
 - **goal:** `c-judge-secret-request`, `c-spot-secret`
+- **cases:** c-judge-secret-request: declines-chat; c-spot-secret: calls-secret
 - **answer:** No. A command that prints everything the backend needs to reach the database prints
   the connection string, a secret; pasting its output puts it in the chat, whatever the agent means
   to check.
@@ -91,6 +99,7 @@ the next two can be answered by rote. Weigh the first repair served most.
 ### q6
 
 - **goal:** `c-judge-secret-request`
+- **cases:** allows-safe
 - **answer:** Yes. Changing the start command and redeploying move no value through the chat or
   into a file; the server reaches the database with whatever is already in its settings.
 - **credit:** full for going along with it. None for declining.
@@ -100,6 +109,7 @@ the next two can be answered by rote. Weigh the first repair served most.
 ### q7
 
 - **goal:** `c-judge-secret-request`, `c-spot-secret`
+- **cases:** c-judge-secret-request: declines-file; c-spot-secret: calls-secret
 - **answer:** No. The connection string is a secret, and the agent would write it into
   `server/seed.js`, a file that gets committed, even though nothing is pasted into the chat.
 - **credit:**

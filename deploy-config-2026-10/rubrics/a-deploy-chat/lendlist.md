@@ -27,6 +27,7 @@ the next two can be answered by rote. Weigh the first repair served most.
 ### q1
 
 - **goal:** `c-trace-setting-value`, `c-spot-secret`
+- **cases:** c-trace-setting-value: shared-vendor; c-spot-secret: calls-public
 - **answer:** It is where the React app sends its requests for listings and loans. It needs the
   backend's address: the web service's, `https://lendlist-r4tz.dockyard.app`, not the static
   site's. Not a secret: anyone using the app can see where its requests go.
@@ -42,6 +43,7 @@ the next two can be answered by rote. Weigh the first repair served most.
 ### q2
 
 - **goal:** `c-trace-setting-value`, `c-spot-secret`
+- **cases:** c-trace-setting-value: cross-part; c-spot-secret: calls-public
 - **answer:** It tells the server which pages may send it requests, so other sites can't use it.
   It needs the frontend's address: the static site's, `https://lendlist.dockyard.app`, even though
   the setting is on the server and its name says "server". Not a secret: the site's address is
@@ -57,18 +59,23 @@ the next two can be answered by rote. Weigh the first repair served most.
 
 ### q3
 
-- **goal:** `c-spot-secret`
-- **answer:** It is how the server reaches the database. It needs the database's connection
+- **goal:** `c-trace-setting-value`, `c-spot-secret`
+- **cases:** c-trace-setting-value: db-details; c-spot-secret: calls-secret
+- **answer:** It is how the server gets into the database. It needs the database's connection
   details, the line on Silo's Connect panel. It is a secret: the line includes what the server uses
   to get in, so whoever holds it can get into the database.
-- **credit:** full for "a secret" because holding it gets someone into the database; half for "a
-  secret" with no reason or a reason that wouldn't make it one.
+- **credit:**
+  - `c-trace-setting-value`: full for what it is for and that it needs the database's connection
+    details; half for one of the two.
+  - `c-spot-secret`: full for "a secret" because holding it gets someone into the database; half
+    for "a secret" with no reason or a reason that wouldn't make it one.
 - **tutor note:** the near-miss is "not a secret, it's an address (a URI)", read off the name.
   Ask what else the server needs, besides where the database is, to be let in.
 
 ### q4
 
 - **goal:** `c-judge-secret-request`, `c-spot-secret`
+- **cases:** c-judge-secret-request: allows-safe; c-spot-secret: calls-public
 - **answer:** Yes. The web service's address is public (anyone using the app sees where its
   requests go), so it can go in the chat.
 - **credit:**
@@ -79,6 +86,7 @@ the next two can be answered by rote. Weigh the first repair served most.
 ### q5
 
 - **goal:** `c-judge-secret-request`, `c-spot-secret`
+- **cases:** c-judge-secret-request: declines-chat; c-spot-secret: calls-secret
 - **answer:** No. The Connect panel shows the connection string, password and all, which is a
   secret; a screenshot of it puts it in the chat, whatever the agent means to check.
 - **credit:**
@@ -91,6 +99,7 @@ the next two can be answered by rote. Weigh the first repair served most.
 ### q6
 
 - **goal:** `c-judge-secret-request`
+- **cases:** allows-safe
 - **answer:** Yes. The change only makes the server read the connection string from its settings;
   no value passes through the chat or into a file, and committing and redeploying move none.
 - **credit:** full for going along with it. None for declining.
@@ -100,6 +109,7 @@ the next two can be answered by rote. Weigh the first repair served most.
 ### q7
 
 - **goal:** `c-judge-secret-request`, `c-spot-secret`
+- **cases:** c-judge-secret-request: declines-file; c-spot-secret: calls-secret
 - **answer:** No. The connection string is a secret, and the agent would write it into
   `server/db.js`, a file that gets committed, even though nothing is pasted into the chat.
 - **credit:**
