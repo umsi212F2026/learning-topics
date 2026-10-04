@@ -197,17 +197,6 @@ defending the app in session 14.
   including when one vendor hosts two parts and the answer names only the vendor. Finding the
   value on the vendor's site is not part of it.
 
-### `c-explain-localhost-gap`
-
-- **goal:** say why a deployed app needs settings it never had on localhost
-- **criterion:** Given an app that ran on localhost with its settings written into its code and
-  its frontend's dev server passing API requests on to the backend, and the settings its agent
-  added to deploy it without sign-in, says for each one what stood in for it on localhost. It
-  passes when they say that the port and the database's location were written into the code, and
-  that the API's address and the allowed origin were not needed because the browser reached the
-  frontend and the backend at one address, through the dev server; and when nothing they say
-  stood in for a setting is wrong.
-
 ### `o-orientation`
 
 - **goal:** get the shape of this area before working on any particular part of it
