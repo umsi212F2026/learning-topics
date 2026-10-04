@@ -46,7 +46,7 @@ a secret? Say why.
 **Student:** What is that for, and where does its value come from?
 
 **Agent:** This is how the server gets into the database: its connection string, with the login
-it needs. Copy it from Larder's dashboard.
+it needs. Copy it from the Connect page on Larder's dashboard.
 
 What is `PG_CONNECTION` for? Whose value does it need: the frontend's address, the backend's
 address, the database's connection details, or nobody's, because a host sets it? And is its value

@@ -7,8 +7,9 @@ A connection string is one line telling the backend where the database is and ho
 a database on a host of its own it looks like `postgres://tally_app:pa55word@db.cellar.cloud:5432/tally`:
 the kind of database, a username and password, the machine and port it runs on, and the
 database's name. Its other names are database URL and `DATABASE_URL`, and neither of those, given
-as an answer, says what it is. The confusable is a database file path, such as
-`./data/budgets.sqlite`, which names a file on the same machine that the backend opens itself.
+as an answer, says what it is. The confusables are a database file path, such as
+`./data/budgets.sqlite`, which names a file on the same machine that the backend opens itself;
+and the database's password, which is only the part of the string that gets the backend in.
 
 ### q1
 

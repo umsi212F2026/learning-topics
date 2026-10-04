@@ -12,9 +12,9 @@ What is the difference between a secret and an environment variable?
 
 ### q2
 
-A student deploying their app says:
+Tally shows exchange rates from a currency service. The service gave Tally's owner a `RATES_TOKEN`, which Tally's server sends with each request so the service knows which paid account to charge. A student says:
 
-"`CELLAR_TOKEN` isn't a secret. Only values called passwords or keys are secrets."
+"`RATES_TOKEN` isn't a secret. Only values called passwords or keys are secrets."
 
 What is wrong with that?
 
@@ -22,6 +22,6 @@ What is wrong with that?
 
 A student says:
 
-"Quay gave our backend the address `https://tally-w7mz.quay.app`. That's a secret, because nobody could ever guess `w7mz`."
+"Quay gave our app the address `https://tally-w7mz.quay.app`. That's a secret, because nobody could ever guess `w7mz`."
 
 What is wrong with that?

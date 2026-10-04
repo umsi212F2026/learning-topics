@@ -21,6 +21,9 @@ string themselves, refusing with nothing offered) is safer than complying but do
 credit on its own: half credit is the right reply with one of the two reasons, or both reasons
 with a reply that keeps the secret out some other way. Complying earns none.
 
+The three repair questions (q8 to q10) share one answer pattern, so after feedback on the first,
+the next two can be answered by rote. Weigh the first repair served most.
+
 ### q1
 
 - **goal:** `c-trace-setting-value`, `c-spot-secret`

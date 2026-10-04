@@ -21,6 +21,9 @@ required. A reply that keeps the secret out some other way (blanking the passwor
 string themselves, refusing with nothing offered) is safer than complying but does not earn full
 credit on its own.
 
+The three repair questions (q8 to q10) share one answer pattern, so after feedback on the first,
+the next two can be answered by rote. Weigh the first repair served most.
+
 ### q1
 
 - **goal:** `c-trace-setting-value`, `c-spot-secret`

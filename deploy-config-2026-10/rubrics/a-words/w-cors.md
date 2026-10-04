@@ -6,8 +6,10 @@ recorded as helped and doesn't count), then come back to a production question.
 CORS is the browser's check on which other origins a page may call: when a page calls another
 origin, the browser hands the page the response only if that origin's server says the page's
 origin is allowed. The server may have answered perfectly well. Its other name is cross-origin
-resource sharing, and spelling the letters out, given as an answer, says nothing. The confusable
-is a server error, where the backend itself fails, such as by crashing or answering 500.
+resource sharing, and spelling the letters out, given as an answer, says nothing. The confusables
+are a server error, where the backend itself fails, such as by crashing or answering 500; and a
+server's own access control, such as a token check, where the server decides who may use it,
+for any caller, browser or not.
 
 ### q1
 

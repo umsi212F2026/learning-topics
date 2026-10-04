@@ -20,8 +20,8 @@ What is wrong with that?
 
 ### q3
 
-Tally's React frontend is at `https://tally.quay.app` and its Express backend is at `https://tally-w7mz.quay.app`. The backend has a setting listing the origin it accepts requests from. A student fills it in and explains:
+Tally's budget page is loaded from `https://tally.quay.app`. To show exchange rates, it also fetches data from a currency service at `https://rates.example.org`. A student writes in their notes:
 
-"The origin is where the requests go, so I set it to the backend's own address, `https://tally-w7mz.quay.app`."
+"A page's origin is where its requests go, so this page's origin is `https://rates.example.org`."
 
 What is wrong with that?

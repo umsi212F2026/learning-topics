@@ -6,8 +6,8 @@ is recorded as helped and doesn't count), then come back to a production questio
 An origin is where a page was loaded from, down to the port: `http://localhost:5173`, or
 `https://tally.quay.app`. It stops at the port, so a page's path is not part of it, and two
 addresses with the same domain but different ports, such as `http://localhost:5173` and
-`http://localhost:3000`, are different origins. The confusable is domain, the machine's name alone
-(`localhost`, `tally.quay.app`).
+`http://localhost:3000`, are different origins. The confusables are domain, the machine's name alone
+(`localhost`, `tally.quay.app`), and a full URL, which names one page and includes its path.
 
 ### q1
 
@@ -52,12 +52,12 @@ addresses with the same domain but different ports, such as `http://localhost:51
 
 - **goal:** `w-origin`
 - **move:** CATCH
-- **answer:** An origin is where a page was loaded from, not where its requests go. The requests
-  come from pages loaded from the frontend, so the origin the backend should accept is the
-  frontend's, `https://tally.quay.app`.
-- **credit:** full for naming that the origin is where the calling page came from, so the setting
-  needs the frontend's address. Half for giving the frontend's address without saying why, or for
+- **answer:** An origin is where a page was loaded from, not where its requests go. This page was
+  loaded from Tally's own site, so its origin is `https://tally.quay.app`, whatever it fetches;
+  the currency service is just somewhere it sends a request.
+- **credit:** full for naming that the origin is where the page came from, so it is
+  `https://tally.quay.app`. Half for giving `https://tally.quay.app` without saying why, or for
   saying origin means where the page came from without saying which address that is here. None
-  for a different quibble, such as the setting's name, or that both addresses are on Quay.
-- **tutor note:** if they answer with the frontend's address but no reason, ask what an origin
+  for a different quibble, such as that the currency service might be down.
+- **tutor note:** if they answer with the right address but no reason, ask what an origin
   describes: the page, or the place it sends to.

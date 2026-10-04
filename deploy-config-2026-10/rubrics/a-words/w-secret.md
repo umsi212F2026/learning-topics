@@ -6,8 +6,10 @@ is recorded as helped and doesn't count), then come back to a production questio
 A secret is a value that lets whoever holds it into something of yours: a database password, a
 connection string, a token for a vendor's account. What makes it one is what holding it lets
 someone do, not its name or how it looks. Its other name is credential, and that, given as an
-answer, says nothing. The confusable is a setting: any value the app needs, most of which, such as
-the frontend's or the backend's address, let nobody into anything and are public.
+answer, says nothing. The confusables are a setting: any value the app needs, most of which, such
+as the frontend's or the backend's address, let nobody into anything and are public; and an
+environment variable, which is about how a value reaches the program, not what holding it lets
+someone do, so a secret may be one and a public value may be one too.
 
 ### q1
 
@@ -40,9 +42,9 @@ the frontend's or the backend's address, let nobody into anything and are public
 
 - **goal:** `w-secret`
 - **move:** CATCH
-- **answer:** A value is a secret because of what it lets the holder do, not what it is called. A
-  token for Cellar lets whoever holds it into the database or the account, so it is a secret
-  whatever its name.
+- **answer:** A value is a secret because of what it lets the holder do, not what it is called.
+  Whoever holds `RATES_TOKEN` can use the paid account as Tally, and run up its bill, so it is a
+  secret whatever its name.
 - **credit:** full for naming that what makes a secret is that holding it lets someone in, which a
   token does, regardless of its name. Half for saying a token is a secret without saying why.
   None for a different quibble, such as that the name should be changed.
