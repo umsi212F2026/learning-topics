@@ -23,6 +23,20 @@ addresses with the same domain but different ports, such as `http://localhost:51
   difference. None for an incidental difference, such as that a domain is bought, or that one has
   `www` in it.
 
+### q4
+
+- **goal:** `w-origin`
+- **move:** DISTINGUISH
+- **answer:** A full URL names one particular page or file: the drill's page. An origin names the place
+  pages are loaded from, down to the port, and every page on that site shares it, so it is what
+  a browser or a backend compares when it asks where a page came from.
+- **credit:** full for naming that a full URL picks out one page or resource, while an origin
+  names the place it was loaded from, shared by every page there. Half for saying only that the
+  origin is the URL without the path, with nothing on what each one names. None for an
+  incidental difference alone, such as length, or that one has a slash.
+- **tutor note:** this one asks what each names, not only that the path is dropped. If the answer
+  only says "drop the path", ask what two different tool pages on Lendlist have in common.
+
 ### q2
 
 - **goal:** `w-origin`
@@ -47,17 +61,3 @@ addresses with the same domain but different ports, such as `http://localhost:51
   for a different quibble, such as the setting's name, or that both addresses are on Harbor.
 - **tutor note:** if they answer with the frontend's address but no reason, ask what an origin
   describes: the page, or the place it sends to.
-
-### q4
-
-- **goal:** `w-origin`
-- **move:** DISTINGUISH
-- **answer:** A full URL names one particular page or file: recipe 42. An origin names the place
-  pages are loaded from, down to the port, and every page on that site shares it, so it is what
-  a browser or a backend compares when it asks where a page came from.
-- **credit:** full for naming that a full URL picks out one page or resource, while an origin
-  names the place it was loaded from, shared by every page there. Half for saying only that the
-  origin is the URL without the path, with nothing on what each one names. None for an
-  incidental difference alone, such as length, or that one has a slash.
-- **tutor note:** q2 already turns on the path; this one asks what each names. If the answer only
-  repeats "drop the path", ask what two different recipe pages on Crumbs have in common.

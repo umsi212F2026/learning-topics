@@ -21,6 +21,21 @@ the frontend's or the backend's address, let nobody into anything and are public
   saying what makes it so. None for an incidental difference, such as that secrets have
   `PASSWORD` or `KEY` in their names, or are longer.
 
+### q4
+
+- **goal:** `w-secret`
+- **move:** DISTINGUISH
+- **answer:** An environment variable is a way of handing a value to the program, from outside its
+  code; a secret is a value that lets whoever holds it into something of yours. They answer
+  different questions: a secret is often handed over as an environment variable, but many
+  environment variables (the frontend's address) aren't secrets, and a secret written into the
+  code is still a secret.
+- **credit:** full for naming that one is about how a value reaches the program and the other
+  about what holding the value lets someone do, so neither implies the other. Half for an example
+  that shows they come apart (a public address in an environment variable) without saying what
+  each is. None for "secrets go in environment variables" or another rule about where to put
+  secrets, with nothing on what separates the terms.
+
 ### q2
 
 - **goal:** `w-secret`
@@ -44,18 +59,3 @@ the frontend's or the backend's address, let nobody into anything and are public
   saying why. None for a different quibble, such as that `k3x9` could in fact be guessed.
 - **tutor note:** if they say "it's public because the frontend sends it to the browser", that is
   true; ask whether it would be a secret if it weren't, and what it would let someone do.
-
-### q4
-
-- **goal:** `w-secret`
-- **move:** DISTINGUISH
-- **answer:** An environment variable is a way of handing a value to the program, from outside its
-  code; a secret is a value that lets whoever holds it into something of yours. They answer
-  different questions: a secret is often handed over as an environment variable, but many
-  environment variables (the frontend's address) aren't secrets, and a secret written into the
-  code is still a secret.
-- **credit:** full for naming that one is about how a value reaches the program and the other
-  about what holding the value lets someone do, so neither implies the other. Half for an example
-  that shows they come apart (a public address in an environment variable) without saying what
-  each is. None for "secrets go in environment variables" or another rule about where to put
-  secrets, with nothing on what separates the terms.

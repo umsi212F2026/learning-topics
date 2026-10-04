@@ -6,6 +6,10 @@ Answer in two or three sentences, in your own words, with nothing open in front 
 
 What is the difference between a page's origin and its domain?
 
+### q4
+
+`https://lendlist.dockyard.app/tools/drill` is a full URL, and `https://lendlist.dockyard.app` is an origin. What does each one name, and what is the difference between them?
+
 ### q2
 
 Crumbs, a recipe app, serves its React frontend at `https://crumbs.harbor.app`. A student opens a recipe at `https://crumbs.harbor.app/recipes/42` and writes:
@@ -21,7 +25,3 @@ Crumbs's React frontend is at `https://crumbs.harbor.app` and its Express backen
 "The origin is where the requests go, so I set it to the backend's own address, `https://crumbs-k3x9.harbor.app`."
 
 What is wrong with that?
-
-### q4
-
-`https://crumbs.harbor.app/recipes/42` is a full URL, and `https://crumbs.harbor.app` is an origin. What does each one name, and what is the difference between them?

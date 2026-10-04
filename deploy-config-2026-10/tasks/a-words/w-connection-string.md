@@ -6,6 +6,10 @@ Answer in two or three sentences, in your own words, with nothing open in front 
 
 What is the difference between a connection string and a database file path?
 
+### q4
+
+Larder's dashboard shows your database's password, and also its connection string. What is the difference between the two?
+
 ### q2
 
 A student adds this line to their project's README, which anyone can read on GitHub:
@@ -22,7 +26,3 @@ A student deploying their app writes in their notes:
 "I copied our connection string from Larder's dashboard: it's `db.larder.cloud`."
 
 What is wrong with that?
-
-### q4
-
-Larder's dashboard shows your database's password, and also its connection string. What is the difference between the two?
