@@ -33,16 +33,3 @@ test data; schema. Synonym: initial data.
   up. Half for one side right with the other missing or vague. Do not accept "the schema is
   written in SQL and seed data isn't" (both may be), "seed data is test data", or a difference of
   size.
-
-### q-catch-seed-schema
-
-- **goal:** `w-seed-data`
-- **move:** CATCH
-- **answer:** seed data is rows, not tables. It is the starting rows the code puts into the tables
-  when a database is first set up, such as the list of categories. Making the tables and their
-  columns is a different job, and the tables have to exist before any seed rows can go into them.
-- **credit:** full for naming the actual error: seed data is the rows the code puts in when a
-  database is first set up, while what the teammate describes is making the tables those rows go
-  into. Half for "that isn't seed data" or "that's the tables' definition" with nothing about seed
-  data being rows. Do not accept a different quibble: "they should have more seed data", or "they
-  should copy their laptop's database instead", neither of which is what the sentence gets wrong.

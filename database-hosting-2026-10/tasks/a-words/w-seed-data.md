@@ -11,8 +11,3 @@ and test data?
 
 Your agent's notes on your recipe app mention its schema and its seed data. What is the difference
 between a schema and seed data?
-
-### q-catch-seed-schema
-
-A teammate says: "Our seed data is the part of our code that makes the tables: the categories table
-and the recipes table, with their columns." What is wrong with what they said?
