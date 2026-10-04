@@ -77,7 +77,7 @@ to offer, and its `offer as` describes it rather than distinguishing it.
   one question served, and answers it. An exchange question asks what a setting is for, whose
   value it needs, and whether its value is a secret, and why. A message question asks whether
   they would go along with what the agent asks, and why or why not. A repair question asks for the
-  reply they would send the agent, and one sentence on why.
+  reply they would send the agent, and why that is safer.
 - **tutor role:** examiner
 - **tutor does:** sets the question as served, without rewording it or hinting, and never shows
   the rubric or says how many of a scenario's messages are safe. Gives help whenever it is asked
@@ -144,11 +144,11 @@ to offer, and its `offer as` describes it rather than distinguishing it.
 
   **Repair questions.** One message in the shape `paste-in-chat`, `write-into-code` or
   `debug-lure`, then "This message would put a secret where it shouldn't go. Write the reply you
-  would send the agent, then one sentence on why." Every repair question names
-  `c-secret-instead`. A full-credit reply says the learner will put (or has put) the secret into
-  the named host's settings themselves, under the setting's name, and tells the agent it is there;
-  the sentence gives both reasons: the chat is kept and can be shared, and an agent holding the
-  secret can write it into a file that gets committed.
+  would send the agent, then say why that is safer. There may be more than one reason." Every
+  repair question names `c-secret-instead`. A full-credit answer says the learner will put (or has
+  put) the secret into the host's settings themselves and tells the agent it is there, and gives
+  both reasons: the chat is kept and can be shared, and an agent holding the secret can write it
+  into a file that gets committed. Naming the setting or the host is welcome but not required.
 
   Each scenario has at least one `secret-db` exchange. A scenario meant to bear on
   `c-trace-setting-value` needs a setup with one vendor hosting two parts, and at least two
