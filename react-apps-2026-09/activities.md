@@ -801,110 +801,11 @@ instance.
   exists and your agent is asking for checks, which makes it the natural candidate for review visits.
   `a-run-tutor-agent-check` is the one to take now.
 
-### `a-w-component`
+### `a-words`
 
-- **origin:** generated
-- **serves:** `w-component`
-- **checks:** `w-component`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-state`
-
-- **origin:** generated
-- **serves:** `w-state`
-- **checks:** `w-state`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-render`
-
-- **origin:** generated
-- **serves:** `w-render`
-- **checks:** `w-render`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-event-handler`
-
-- **origin:** generated
-- **serves:** `w-event-handler`
-- **checks:** `w-event-handler`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-dev-server`
-
-- **origin:** generated
-- **serves:** `w-dev-server`
-- **checks:** `w-dev-server`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-dependency`
-
-- **origin:** generated
-- **serves:** `w-dependency`
-- **checks:** `w-dependency`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-build`
-
-- **origin:** generated
-- **serves:** `w-build`
-- **checks:** `w-build`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-hot-reload`
-
-- **origin:** generated
-- **serves:** `w-hot-reload`
-- **checks:** `w-hot-reload`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-browser-console`
-
-- **origin:** generated
-- **serves:** `w-browser-console`
-- **checks:** `w-browser-console`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-hard-reload`
-
-- **origin:** generated
-- **serves:** `w-hard-reload`
-- **checks:** `w-hard-reload`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-routing`
-
-- **origin:** generated
-- **serves:** `w-routing`
-- **checks:** `w-routing`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-headless-browser`
-
-- **origin:** generated
-- **serves:** `w-headless-browser`
-- **checks:** `w-headless-browser`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+- **serves:** group vocabulary
+- **generator:** the five moves in `workflows/learn/skills/goal-setting/references/vocabulary-moves.md`, set for one word at a time from its `what it names`, `nearest confusable` and `synonyms`. Each question names that word's goal and carries its move.
+- **learner does:** answers one short question about one word
+- **tutor role:** examiner
+- **tutor does:** sets the question as served, without rewording it or hinting; when the bank has nothing for the word, sets one move live, as vocabulary-moves.md describes
+- **offer as:** not offered as a choice; a word's question is set when that word is studied or due

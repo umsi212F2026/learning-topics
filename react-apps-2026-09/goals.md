@@ -1,5 +1,7 @@
 # Learning goals — react apps
 
+**origin:** course
+
 **What I want to be able to do, and what would count as having got there.**
 
 <!--
@@ -85,6 +87,12 @@ recognizing these words when the agent uses them, and describing the problem pre
 that it can be fixed. Writing or reading React code, deciding how an app is split into
 components, and debugging it by hand are all past that line. Planning the app is your agent's
 job too, with you approving what it proposes.
+
+## Sequence
+
+1. orientation
+2. vocabulary
+3. capabilities
 
 ## Goals
 
@@ -191,7 +199,6 @@ job too, with you approving what it proposes.
   It passes when someone who never saw the problem could make it happen again from that request
   alone, and could tell when it had been fixed. Any guess at the cause is labeled as a guess,
   separate from what they saw.
-- **origin:** course
 
 ### `c-run-browser-check`
 
@@ -200,7 +207,6 @@ job too, with you approving what it proposes.
   browser's developer tools, runs it only in their own app and reports back what it produced:
   copied text where it can be copied, a screenshot where it can't, complete and unedited, errors
   included. It passes when the agent could act on the result without asking again.
-- **origin:** course
 
 ### `o-orientation`
 
@@ -211,144 +217,119 @@ job too, with you approving what it proposes.
 - **recurrence:** never
 - **is_required:** no
 - **group:** orientation
-- **origin:** course
 
 ### `w-component`
 
 - **goal:** component
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the pieces a React screen is assembled from
 - **nearest confusable:** a page
-- **origin:** course
 
 ### `w-state`
 
 - **goal:** state
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** what the app is remembering at this moment
 - **nearest confusable:** data saved in a database
-- **origin:** course
 
 ### `w-render`
 
 - **goal:** render
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** what a component does to put itself on the screen
 - **nearest confusable:** reloading the page
-- **origin:** course
 
 ### `w-event-handler`
 
 - **goal:** event handler
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** what a click or a keystroke is connected to
 - **nearest confusable:** the event itself
 - **synonyms:** handler, event listener
-- **origin:** course
 
 ### `w-dev-server`
 
 - **goal:** dev server
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** what `npm run dev` leaves running while you work
 - **nearest confusable:** the backend
 - **synonyms:** development server
-- **origin:** course
 
 ### `w-dependency`
 
 - **goal:** dependency
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** what `npm install` fetches for a project
 - **nearest confusable:** a program installed on your computer
 - **synonyms:** package
-- **origin:** course
 
 ### `w-build`
 
 - **goal:** build
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** what the project becomes when it is ready to leave your laptop; as a verb, the process creating it
 - **nearest confusable:** dev server
 - **synonyms:** production build
-- **origin:** course
 
 ### `w-hot-reload`
 
 - **goal:** hot reload
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the page changing by itself when a file is saved
 - **nearest confusable:** refreshing the page
 - **synonyms:** hot module replacement, HMR
-- **origin:** course
 
 ### `w-browser-console`
 
 - **goal:** browser console
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** where the page reports what went wrong, out of the user's sight
 - **nearest confusable:** the terminal
 - **synonyms:** JavaScript console, DevTools console
-- **origin:** course
 
 ### `w-hard-reload`
 
 - **goal:** hard reload
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** a reload that doesn't trust what the browser kept from last time
 - **nearest confusable:** refreshing the page
 - **synonyms:** hard refresh, force reload
-- **origin:** course
 
 ### `w-routing`
 
 - **goal:** routing
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the link between the URL in the browser's address bar and what is on screen
 - **nearest confusable:** loading a new page
 - **synonyms:** client-side routing
-- **origin:** course
 
 ### `w-headless-browser`
 
 - **goal:** headless browser
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** what Playwright or Puppeteer lets the agent use to look at the app itself
 - **nearest confusable:** the dev server; your own browser
-- **origin:** course
