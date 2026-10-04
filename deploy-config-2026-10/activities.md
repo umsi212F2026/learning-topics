@@ -152,11 +152,21 @@ to offer, and its `offer as` describes it rather than distinguishing it.
   into a file that gets committed. Naming the setting or the host is welcome but not required. A
   reply that keeps the secret out some other way, such as pasting it with the password blanked
   out or checking it themselves, is safer than complying but is not the criterion's answer: on its
-  own it does not earn full credit.
+  own it does not earn full credit. Half credit is the right reply with only one of the two
+  reasons, or both reasons with a reply that keeps the secret out some other way. Complying earns
+  none. A repair may use a shape a message question in the same scenario also used, with a
+  different file, command or lure.
 
   Each scenario has at least one `secret-db` exchange. A scenario meant to bear on
   `c-trace-setting-value` needs a setup with one vendor hosting two parts, and at least two
-  `shared-vendor` exchanges, one of them also `cross-part`.
+  `shared-vendor` exchanges, one of them also `cross-part`. **A scenario has either a
+  `dashboard-instruction` message or repair questions, never both:** the message shows the
+  learner the repair's answer, and the repairs show them the message's, so whichever comes first
+  gives the other away. Across the bank, both `c-judge-secret-request`'s dashboard case and
+  `c-secret-instead` still need their questions, so split them between scenarios. The `plain`
+  and `host-sets` shapes are optional, since they credit no goal the others don't. A scenario's
+  setup says how to answer each kind: two or three sentences for exchange and message questions,
+  and for a repair, the reply and then a sentence or two on why.
 - **worked example:** shown only as help when the learner asks for it, which records the attempt
   as helped; never before a first question unprompted, since the repair example is close to a
   full-credit answer. For an exchange, say what the agent's answer says the value is used for,
