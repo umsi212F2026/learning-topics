@@ -4,7 +4,7 @@ Answer in two or three sentences, in your own words, with nothing open in front 
 
 ### q1
 
-Your backend needs the frontend's address. It could read it from an environment variable, or it could have a setting written into the code, such as `const frontendUrl = "http://localhost:5173";`. What is the difference between the two?
+Your backend needs the frontend's address. It could read it from an environment variable, or the address could be written into the code as a setting. What is the difference between the two?
 
 ### q2
 
