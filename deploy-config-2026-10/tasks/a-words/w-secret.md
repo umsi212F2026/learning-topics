@@ -21,3 +21,7 @@ A student says:
 "Harbor gave our backend the address `https://crumbs-k3x9.harbor.app`. That's a secret, because nobody could ever guess `k3x9`."
 
 What is wrong with that?
+
+### q4
+
+What is the difference between a secret and an environment variable?

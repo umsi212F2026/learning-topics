@@ -44,3 +44,17 @@ is a server error, where the backend itself fails, such as by crashing or answer
 - **credit:** full for naming that the call stays within the page's own origin, so CORS doesn't
   apply. Half for saying CORS isn't the cause without saying why. None for a different quibble,
   such as guessing the file is missing, with nothing on CORS.
+
+### q4
+
+- **goal:** `w-cors`
+- **move:** DISTINGUISH
+- **answer:** The token check is the server's own access control: the backend itself decides, on
+  every request from any caller, whether this user may have what they asked for. CORS is a check
+  the browser makes, about which origin the calling page came from: the backend only says which
+  origins it allows, and the browser decides whether the page gets to read the answer.
+- **credit:** full for naming both who checks and what about: the server checks who the caller
+  is, while CORS is the browser checking which origin the page came from. Half for only one of
+  those (for example, "one is about users, the other about sites" with nothing on the browser
+  doing the CORS check). None for an incidental difference alone, such as which one is set up
+  first or which uses a header.

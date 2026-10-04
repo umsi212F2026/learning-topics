@@ -21,3 +21,7 @@ Crumbs's React frontend is at `https://crumbs.harbor.app` and its Express backen
 "The origin is where the requests go, so I set it to the backend's own address, `https://crumbs-k3x9.harbor.app`."
 
 What is wrong with that?
+
+### q4
+
+`https://crumbs.harbor.app/recipes/42` is a full URL, and `https://crumbs.harbor.app` is an origin. What does each one name, and what is the difference between them?

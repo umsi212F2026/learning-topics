@@ -22,3 +22,7 @@ A student deploying their app writes in their notes:
 "I copied our connection string from Larder's dashboard: it's `db.larder.cloud`."
 
 What is wrong with that?
+
+### q4
+
+Larder's dashboard shows your database's password, and also its connection string. What is the difference between the two?

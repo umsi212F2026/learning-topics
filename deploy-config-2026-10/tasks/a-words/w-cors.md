@@ -21,3 +21,7 @@ Crumbs's React page at `https://crumbs.harbor.app` fetches `https://crumbs.harbo
 "CORS must have blocked it."
 
 What is wrong with that?
+
+### q4
+
+Your Express backend refuses any request that doesn't carry a signed-in user's token. It also lists `https://crumbs.harbor.app` as the one origin allowed under CORS. What is the difference between those two kinds of check?
