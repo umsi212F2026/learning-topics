@@ -81,8 +81,9 @@ never needed on localhost and asks you for values only you have, such as the add
 gave you. This topic is enough to follow its explanation of each setting and to know which of your
 hosts the value comes from.
 
-This topic assumes you have studied database-hosting first, so you know where your database will
-live. What sits past that line: choosing hosts belongs to cloud-hosting. Deploying automatically
+This topic assumes you have studied cloud-hosting and database-hosting first, so you already have
+the layout of a deployed app and know where your database will live. That is why it has no
+orientation of its own. What sits past that line: choosing hosts belongs to cloud-hosting. Deploying automatically
 and debugging a deployed app come in session 12, sign-in and catching a secret your agent has put in the wrong place in session 13, and
 defending the app in session 14.
 
@@ -196,16 +197,6 @@ defending the app in session 14.
   vendor fills the value in itself, they say which one. It passes when all of these are right,
   including when one vendor hosts two parts and the answer names only the vendor. Finding the
   value on the vendor's site is not part of it.
-
-### `o-orientation`
-
-- **goal:** get the shape of this area before working on any particular part of it
-- **criterion:** orientation
-- **adjudicator:** tutor
-- **bar:** did it once
-- **recurrence:** never
-- **is_required:** no
-- **group:** orientation
 
 ### `w-config`
 
