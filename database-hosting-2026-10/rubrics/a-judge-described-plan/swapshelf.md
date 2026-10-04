@@ -30,8 +30,10 @@ question, connection strings, passwords, backups, cost) are neither credited nor
 - **goal:** `c-clear-data-survives`
 - **answer:** Yes. Step 1 puts production's data in Harborline's managed Postgres, a separate
   service the host keeps, so redeploying the backend doesn't touch it.
-- **credit:** full for yes, tied to step 1 (production's data in managed Postgres). Not met for
-  no, for "can't tell", for yes with no step or tied only to step 2 or step 3, or for yes alongside
+- **credit:** full for yes, tied to step 1 (production's data in managed Postgres), or to step 2
+  when the answer ties it to Postgres (step 2 sets up the tables in Postgres, which the host keeps).
+  Not met for no, for "can't tell", for yes with no step, for yes tied to step 2 with nothing about
+  Postgres, or tied only to step 3, or for yes alongside
   a survival fault (for example that the backend's disk is ephemeral so the data is lost, or that
   step 2 rebuilds the tables and wipes them on each redeploy).
 - **tutor note:** the laptop still using `server/data/app.sqlite` is development, not production;
