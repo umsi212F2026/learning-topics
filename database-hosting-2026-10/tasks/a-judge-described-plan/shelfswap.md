@@ -9,8 +9,8 @@ attached to a service, mounted at `/data`, and only files under `/data` are kept
 also offers managed Postgres as a separate service.
 
 Two coding agents have each written a plan for deploying Shelfswap's database for the first
-time. For each plan, answer two questions, each with a yes or no and the plan step that decides
-it:
+time. For each plan, answer two questions with a yes or no, and for every no, name the plan step
+that decides it:
 
 - Will the data survive a redeploy?
 - Does production get a database of its own, built by the code rather than copied from the
