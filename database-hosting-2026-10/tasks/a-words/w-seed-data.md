@@ -7,12 +7,12 @@ Answer in two or three sentences, with nothing open in front of you.
 Your agent's notes mention both seed data and test data. What is the difference between seed data
 and test data?
 
-### q-catch-seed-schema
-
-A teammate says: "Our seed data is the part of our code that makes the tables: the categories table
-and the recipes table, with their columns." What is wrong with what they said?
-
 ### q-seed-vs-schema
 
 Your agent's notes on your recipe app mention its schema and its seed data. What is the difference
 between a schema and seed data?
+
+### q-catch-seed-schema
+
+A teammate says: "Our seed data is the part of our code that makes the tables: the categories table
+and the recipes table, with their columns." What is wrong with what they said?

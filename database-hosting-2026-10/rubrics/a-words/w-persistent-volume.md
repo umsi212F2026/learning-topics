@@ -3,6 +3,22 @@
 What it names: file storage space attached to a server that outlasts the server being replaced.
 Nearest confusable: database host; backup. Synonyms: volume, persistent disk.
 
+### q-catch-volume-size
+
+- **goal:** `w-persistent-volume`
+- **move:** CATCH
+- **answer:** a persistent volume is not about room. What makes it a persistent volume is that it
+  outlasts the server being replaced, as on a redeploy, so files on it are still there afterwards.
+  A few dozen sign-ups need that as much as a million do. Whether the app needs one turns on what
+  the host does to the server's own disk when it replaces the server, not on how much data there
+  is.
+- **credit:** full for naming the actual error: a volume is storage that outlasts the server being
+  replaced, and that, not space, is what it is for, so the size of the data does not decide whether
+  one is needed. Half for "small apps need a volume too" or "it isn't about size" with nothing
+  about what a volume keeps through. Do not accept a different quibble: "they will get more
+  sign-ups later", "use Postgres instead", or a remark about where on the volume the file must go,
+  none of which is what the sentence gets wrong.
+
 ### q-volume-vs-database-host
 
 - **goal:** `w-persistent-volume`
@@ -38,19 +54,3 @@ Nearest confusable: database host; backup. Synonyms: volume, persistent disk.
   copy is a backup.
 - **tutor note:** if the learner says the host keeps copies of the volume, ask whether the volume
   itself or a separate snapshot of it is what holds the earlier copy.
-
-### q-catch-volume-size
-
-- **goal:** `w-persistent-volume`
-- **move:** CATCH
-- **answer:** a persistent volume is not about room. What makes it a persistent volume is that it
-  outlasts the server being replaced, as on a redeploy, so files on it are still there afterwards.
-  A few dozen sign-ups need that as much as a million do. Whether the app needs one turns on what
-  the host does to the server's own disk when it replaces the server, not on how much data there
-  is.
-- **credit:** full for naming the actual error: a volume is storage that outlasts the server being
-  replaced, and that, not space, is what it is for, so the size of the data does not decide whether
-  one is needed. Half for "small apps need a volume too" or "it isn't about size" with nothing
-  about what a volume keeps through. Do not accept a different quibble: "they will get more
-  sign-ups later", "use Postgres instead", or a remark about where on the volume the file must go,
-  none of which is what the sentence gets wrong.
