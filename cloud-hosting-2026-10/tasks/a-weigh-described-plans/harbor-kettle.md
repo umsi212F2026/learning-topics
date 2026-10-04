@@ -52,8 +52,8 @@ for H is that it's one account." What does Plan S's extra vendor cost that this 
 
 ### v5
 
-A student wrote: "Plan S, because two specialized vendors will be faster and more reliable than
-one that does everything, and Kettle is more secure since it runs only one program. Harbor
+A student wrote: "Plan S, because two specialized vendors will be faster under load and more
+reliable than one that does everything, and Kettle is more secure since it runs only one program. Harbor
 sleeps." Which of their reasons do the terms not support, and what difference that matters for
 this app did they miss?
 

@@ -5,11 +5,12 @@ month, grading week, unless a card is on file, and then it bills; Harbor's serve
 **card** (none of the three requires one; one on file turns a stop or pause into a bill on Harbor,
 for bandwidth, and on Kettle, for credit; Brightpage can't bill); **agent access** (Harbor gives one
 tool for both parts; Plan S needs two, so two sets of credentials); **moving** (easy from both:
-ordinary npm and Node, plain files); **what the extra vendor adds** (a second account, Kettle's
-address copied into the frontend's build, agent credentials on each, two dashboards and log places).
+ordinary npm and Node, plain files); **what the extra vendor adds** (a second account, agent
+credentials on each, two dashboards and log places; Kettle's address copied into the frontend's
+build is credited if named, never required).
 
 Present but not deciding for twenty users, and never a miss when left out: Harbor's 750-hour limit
-(one web service all month is about 730 hours); the 100 GB bandwidth lines; Brightpage having no
+(one web service all month is up to 744 hours, a 31-day month); the 100 GB bandwidth lines; Brightpage having no
 request logs (it runs no code); Kettle's `kettle.toml`. Leaning on one is fine if what is said
 matches the terms. A claim the terms contradict is a miss; "nothing in the terms says this" is
 enough to name one that is merely unsupported. Remarks about where the database goes are neither
@@ -22,24 +23,23 @@ credited nor counted.
   terms don't support, and a real case for the other plan. For H, for instance: Kettle stops in
   grading week unless a card is on file, and then bills; Harbor sleeps but doesn't stop; no card
   needed anywhere, and one on Harbor or Kettle turns a stop into a bill, while Brightpage can't
-  bill; one agent tool against two; moving easy either way; S adds a second account, Kettle's
-  address in the build, two sets of credentials and two places to look. Case for S: nothing ever
-  sleeps, and Brightpage can never bill.
-- **credit:** full for every must-name difference, the extra vendor's cost, nothing unsupported,
-  and a strongest case for the other plan that comes from the terms. Half for all but one
-  must-name item, or a case for the other plan that is only "it's simpler" or "it never sleeps"
-  with nothing else. The choice itself earns nothing either way.
+  bill; one agent tool against two; moving easy either way; S adds a second account, two sets of
+  credentials and two places to look. Case for S: nothing in it ever sleeps, so a grader never
+  waits a minute.
+- **credit:** full for every must-name difference, the extra vendor's cost (accounts, credentials
+  and places to look), nothing unsupported, and a strongest case for the other plan that comes from
+  the terms; for S, "it never sleeps, so a grader never waits" is enough. Half for all but one
+  must-name item, or a case for the other plan that is only "it's simpler". The choice itself earns nothing either way.
 
 ### v2
 
 - **goal:** `c-weigh-hosting-plans`
 - **answer:** Harbor's server never stops, while Kettle's stops in grading week unless a card is on
-  file; one account and one agent tool for both parts; nothing to copy between vendors; with no
-  card on file, nothing on Harbor can bill. Its cost, a minute's wait after 15 idle minutes, is
+  file; one account and one agent tool for both parts; nothing to copy between vendors. Its cost, a minute's wait after 15 idle minutes, is
   the one the student already named.
-- **credit:** full for a case built from at least three terms (no stop, one account or one tool,
-  nothing copied between vendors, no card means no bill), with nothing unsupported. Half for one
-  or two of those, or for a case that rests on "simpler" alone.
+- **credit:** full for a case built from at least three terms (no stop, one account, one tool,
+  nothing copied between vendors), with nothing unsupported. "No card means no bill" holds equally
+  for S and doesn't count toward it. Half for one or two of those, or for a case that rests on "simpler" alone.
 - **tutor note:** partner of `v1`. If `v1` was served before, ask how this case compares with the
   one they gave there for the plan they didn't choose.
 
@@ -55,21 +55,21 @@ credited nor counted.
 ### v4
 
 - **goal:** `c-weigh-hosting-plans`
-- **answer:** two sets of agent credentials and two tools instead of Harbor's one; Kettle's address
-  copied into the frontend's build; two dashboards and places to look when something breaks.
-- **credit:** full for at least two of those three, with the agent's second tool or credentials
-  among them. Half for one.
+- **answer:** two sets of agent credentials and two tools instead of Harbor's one; two dashboards
+  and places to look when something breaks. Kettle's address copied into the frontend's build may
+  also be named.
+- **credit:** full for the agent's second set of credentials (or second tool) and the second place
+  to look; Kettle's address is credited if named, never required. Half for one of the two.
 
 ### v5
 
 - **goal:** `c-weigh-hosting-plans`
-- **answer:** faster, more reliable and more secure appear nowhere in the terms. Missed: Kettle's
+- **answer:** faster under load, more reliable and more secure appear nowhere in the terms. Missed: Kettle's
   server stops in grading week unless a card is on file, which is the difference that matters
   most against Harbor's sleep.
 - **credit:** full for all three reasons named as unsupported and Kettle's stop named as the
   missed difference. Half for the unsupported reasons alone, or for Kettle's stop alone. Another
-  must-name item (the card, moving, the address copied into the build) also counts as a miss
-  named, in place of Kettle's stop.
+  must-name item (the card, moving) also counts as a miss named, in place of Kettle's stop.
 
 ### v6
 
@@ -84,11 +84,11 @@ credited nor counted.
 ### v7
 
 - **goal:** `c-weigh-hosting-plans`
-- **answer:** the strongest case for Plan S: nothing in it ever sleeps, so no grader waits a minute;
-  Brightpage can never bill. Also missing: whether a card is required (none is), and moving (easy
+- **answer:** the strongest case for Plan S: nothing in it ever sleeps, so no grader waits a minute.
+  Also missing: whether a card is required (none is), and moving (easy
   either way).
-- **credit:** full for a case for S from the terms (no sleep, and Brightpage can't bill, or another
-  term-based reason) plus the card requirement. Half for the case alone, or for the missing items
+- **credit:** full for a case for S from the terms (no sleep, or another term-based reason) plus the
+  card requirement. Half for the case alone, or for the missing items
   without the case.
 
 ### v8
