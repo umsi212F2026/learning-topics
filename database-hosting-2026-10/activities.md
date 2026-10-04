@@ -7,6 +7,12 @@ with the learner.
 
 2026-10-04. The minimum route (orientation reading and dry run, then a-judge-described-plan with its worked example, then the seven words) comes to about 55 minutes and fits the topic's 60-minute budget only if the first counting attempt passes. A retry, or either study activity, takes it past 60. a-trace-own-database-setup and a-judge-own-deploy-plan belong naturally with Problem Set 3 (Oct 8 to 14), not before session 11.
 
+2026-10-04, from the curator, not the checker. The `study` cell for `c-plan-first-deploy` is empty
+on purpose, against the generate skill's rule that every goal has an activity that isn't a check.
+The course's rule is that outside orientation every activity is a question activity with a rubric:
+practice is attempting a check's questions with help, which doesn't count, and checking is
+attempting them unaided. The two study activities were dropped for that reason.
+
 ## Goals
 
 | id | Goal | Criterion: what gets examined, and what counts |
@@ -24,7 +30,7 @@ with the learner.
 | goal | study | checks | notes |
 | ---- | ----- | ------ | ----- |
 | `o-orientation` | `a-read-database-survives` | `a-dry-run-database-plan` | |
-| `c-plan-first-deploy` | `a-trace-own-database-setup`, `a-contrast-plan-pairs` | `a-judge-described-plan`, `a-judge-own-deploy-plan` | Both checks show the host's storage rule to the learner as true, and every banked plan says where the database lives. Neither check tests whether the learner would notice a plan that never says where the data goes, or doubt a plan's own claim that the host keeps its files, though that is the Problem Set 3 situation. The first counting question is also always an own-database fault (see a-judge-described-plan's note), so a met goal may rest on no unaided catch of a survival fault. When the learner reaches Problem Set 3, ask where their plan says the database lives and how they know the host keeps that place. |
+| `c-plan-first-deploy` | | `a-judge-described-plan`, `a-judge-own-deploy-plan` | Both checks show the host's storage rule to the learner as true, and every banked plan says where the database lives. Neither check tests whether the learner would notice a plan that never says where the data goes, or doubt a plan's own claim that the host keeps its files, though that is the Problem Set 3 situation. The first counting question is also always an own-database fault (see a-judge-described-plan's note), so a met goal may rest on no unaided catch of a survival fault. When the learner reaches Problem Set 3, ask where their plan says the database lives and how they know the host keeps that place. |
 
 ---
 
@@ -153,82 +159,20 @@ with the learner.
 
 ### `a-trace-own-database-setup`
 
-- **serves:** `c-plan-first-deploy`
-- **supports:** deepen
-- **artifact:** the learner's own Problem Set 2 repository and their coding agent. About 15
-  minutes. Nothing is changed.
-- **learner does:** finds four things in their own app, asking the agent to show the lines but
-  not to judge them: (1) where the backend sets the path of its SQLite file; (2) what the code does
-  when that file doesn't exist (does it create the tables?); (3) whether any code inserts rows
-  itself, and which (seed data), as against rows they typed in while testing; (4) whether the
-  database file is tracked by git (in `.gitignore` or not). Then says, for a host with an ephemeral
-  disk and no volume, and for one with a volume mounted at `/data`, what would happen to their data
-  on a redeploy, and what one line of a deploy plan would have to say for it to survive and for
-  production to start from the code rather than from their laptop.
-- **tutor role:** socratic questioner
-- **tutor does:** waits while the learner looks. On each answer, asks one near-miss question ("the
-  file is in `.gitignore`; then what does production start with?"; "your volume is at `/data` and
-  your file is at `./db/app.sqlite`; which of those survives?"). If item 4 shows the file is
-  committed, says plainly that shipping it would copy the laptop's test data up and, on every
-  redeploy, put it back. Makes no change to the app.
-- **done when:** the learner has all four facts about their own app, and says correctly for both
-  hosts whether their data would survive a redeploy and what the plan would need. No `checks`: the
-  learner is looking at their own code, not judging a plan.
-- **offer as:** the hands-on one, on your own app, and the best preparation for Problem Set 3: what
-  you find here is exactly what your agent's deploy plan has to get right, and it makes
-  `a-judge-own-deploy-plan` quick. About 15 minutes. Pick `a-contrast-plan-pairs` to practice on
-  made-up plans instead.
-- **check note:** If the learner's app does not create its tables when the database file is
-  missing, the right deploy-plan line is a code step (startup code or a setup script) that makes
-  them, never uploading the laptop's file. Steer there if the learner proposes copying the file.
+- **was:** a study activity: the learner found in their own Problem Set 2 repository where the
+  SQLite file lives, whether the code makes the tables and seed rows, and whether the file is
+  tracked by git.
+- **status:** dropped (curator, 2026-10-04): outside orientation, every activity in a course topic
+  is a question activity with a rubric, and this one had no checks. What it found is read by the
+  tutor in `a-judge-own-deploy-plan`.
 
 ### `a-contrast-plan-pairs`
 
-- **serves:** `c-plan-first-deploy`
-- **supports:** deepen
-- **artifact:** no external source. Pairs of plan excerpts written by the tutor per the generator
-  below, three pairs a sitting. About 10 minutes. Nothing to run.
-- **learner does:** for each pair, says which excerpt is sound and which is not, which of the two
-  questions the faulty one fails (survives a redeploy; production has its own database built by the
-  code), and the one detail that decides it. Some pairs are both sound, and then says so. After the
-  last pair, states in a sentence the rule they used for each question.
-- **tutor role:** socratic questioner
-- **tutor does:** shows one pair at a time and takes the answer before commenting. Where it is
-  wrong, asks what the host would do with the file, or where production's rows came from, rather
-  than giving the verdict; after one such question, gives the verdict and the deciding detail.
-- **done when:** the sitting's last two pairs are both called right on both questions, with the
-  deciding detail named, without a near-miss question; and the two stated rules would sort every
-  kind of pair in the generator correctly. No `checks`: each pair is identical but for one detail,
-  so the learner is shown where to look, which a whole plan never does.
-- **generator:** fixed: one made-up app like the learner's (React, Express, SQLite) and one made-up
-  host whose storage rule is stated in a line, as `a-judge-described-plan`'s generator states it.
-  Each excerpt is two or three lines of an agent's plan; the two excerpts in a pair are word for
-  word the same but for one detail. The kinds of pair:
-  - survival: the SQLite file's path under the volume's mount path, or beside it in the app's
-    folder.
-  - built by code: the backend creating the tables at startup, or "the tables are already there
-    because we made them locally", with the laptop's file uploaded.
-  - built by code: demo rows inserted by a seed script kept in the repository, or the laptop's
-    database copied up "so production has data".
-  - its own: the laptop's development server using its own local database, or pointed at the
-    production one "to test against real data".
-  - decoy, both sound, differing in a detail that doesn't bear: the database at the same vendor as
-    the backend or a different one; a seed script or none.
-  Serve three pairs a sitting: at least one survival pair and at least one built-by-code or its-own
-  pair, the third any kind, and at most one decoy. Easy: the faulty excerpt says outright what it
-  does. Medium: the deciding detail is a path or a single word; serve Easy first, Medium after.
-  **How the key treats a one-time script:** a seed or setup script kept in the code and run once
-  against production builds production from the code wherever it runs, on the host or from the
-  laptop as in Odin's lesson; it is never the its-own fault. That fault is only the laptop's
-  development server working against the production database. No connection strings, passwords,
-  backups, migrations or prices appear.
-- **offer as:** the quickest practice, on made-up plans: 10 minutes, nothing to run, with each pair
-  pointing at the detail that matters. Pick `a-trace-own-database-setup` to work on your own app
-  instead.
-- **check note:** Three pairs a sitting can't satisfy "last two pairs right without a near-miss
-  question" if pair 2 is missed. Serve further pairs until two in a row are right, and stop after
-  about six so the sitting stays near 10 minutes. The decoy kind has no stated difficulty; treat
-  it as Medium.
+- **was:** a study activity: pairs of made-up plan excerpts differing in one detail, the learner
+  saying which is sound and why.
+- **status:** dropped (curator, 2026-10-04): outside orientation, every activity in a course topic
+  is a question activity with a rubric, and this one had no checks. Practice on paired plans is
+  `a-judge-described-plan` attempted with help, which its bank serves.
 
 ### `a-judge-described-plan`
 
