@@ -30,18 +30,3 @@ confusable: restart.
   containing the fix) and what it rules out (the fix is not live yet; the old version runs until
   then). Half for the claim without anything it rules out. Do not accept "the host will restart the
   app", which loses the new version.
-
-### q-catch-nightly-restart
-
-- **goal:** `w-redeploy`
-- **move:** CATCH
-- **answer:** a restart is not a redeploy. A redeploy puts a new version of the app on the host in
-  place of the one that was running; a restart stops the running app and starts the same version
-  again. So the nightly restart puts no new version anywhere, and the app is redeployed only when a
-  new version is put in place.
-- **credit:** full for naming the actual error: a redeploy means putting a new version of the app in
-  place of the running one, and a restart only starts the same version again, so the nightly restart
-  is not a redeploy. Half for "a restart is different from a redeploy" or "a restart doesn't change
-  the code" with nothing about a redeploy putting a new version in place. Do not accept a different
-  quibble: "restarting every night is unnecessary", or "a restart may lose data", neither of which is
-  what the sentence gets wrong.
