@@ -138,9 +138,8 @@ are each a topic of their own. Sign-in belongs to Part B of Problem Set 3, not t
 - **criterion:** Given two hosting plans for an app's frontend and backend, one putting both with
   a single vendor and one using a separate vendor for each, and each vendor's free-tier terms,
   says for each plan whether the app sleeps when idle, what happens when it passes a limit, and
-  whether a credit card is required and what having one on file risks; says whether their agent
-  can reach every host to change its settings and read its logs, and what it can't do there; says
-  what the extra vendor adds in accounts, secrets and places to look when something breaks, and
+  whether a credit card is required and what having one on file risks; says what the extra
+  vendor adds in accounts, secrets and places to look when something breaks, and
   how hard each plan would be to move to another vendor; and chooses one and states the strongest
   case the terms give for the plan they didn't choose. It passes when each of these is stated as
   the terms give it, the case for the other plan rests on a difference that matters for a class
@@ -149,8 +148,6 @@ are each a topic of their own. Sign-in belongs to Part B of Problem Set 3, not t
 - **cases:**
   - `free-limits`: whether each plan sleeps, what happens past a limit, and whether a card is
     required and what one on file risks
-  - `agent-reach`: whether their agent can reach each host to change its settings and read its
-    logs
   - `vendor-count`: what the extra vendor adds, and how hard each plan is to move
   - `other-case`: choosing a plan and making the strongest case for the other
 - **taught elsewhere:** session 11
