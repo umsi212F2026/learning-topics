@@ -3,6 +3,11 @@
 Candidate activities for the study phase. More than will be used; the tutor chooses among them
 with the learner.
 
+In this topic's banks and live questions, a made-up vendor name stands for one vendor, with one
+offer and one set of terms, everywhere in the topic, and a new scenario or live instance invents
+names not used anywhere else in it; the names already in use are listed in the generators.
+Learner-facing text states the task, never the scoring.
+
 ## Check notes
 
 2026-10-01. In both checks for placing parts and both checks for weighing plans, the tutor writes
@@ -119,7 +124,8 @@ part of this.
 - **generator:** vary the made-up app and the two rehearsal items; hold the rest fixed. The app is
   small, with a React frontend and an Express server, used by a class (a study-group finder, a club
   sign-up sheet, a recipe box, a used-textbook board). Rehearsal one is one plan line from
-  `a-place-described-plan`'s generator at Easy: one vendor, one offer, one part. Rehearsal two is
+  `a-place-described-plan`'s generator at Easy: one vendor, one offer, one part, under a vendor
+  name never used anywhere else in the topic. Rehearsal two is
   one dimension from `a-weigh-described-plans`'s generator (sleep, past a limit, card, agent
   access, or moving), one line per plan, at Easy. Fixed: the reading and its two stops, then two
   rehearsals in that order, neither graded, then the readiness question word for word.
