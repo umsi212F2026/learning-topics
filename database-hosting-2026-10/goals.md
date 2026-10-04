@@ -61,6 +61,7 @@ session 14.
   named is the one that decides it. For a plan that never says where the database lives, "no" or
   "can't tell", with that omission named, passes.
 - **capability:** plan-first-deploy
+- **taught elsewhere:** session 11 table activity
 
 ### `c-check-own-database`
 
@@ -72,6 +73,7 @@ session 14.
   goes. It passes when the verdict is right and the step named is the one that decides it. A seed
   script kept in the code and run once against production counts as built by the code.
 - **capability:** plan-first-deploy
+- **taught elsewhere:** session 11 table activity
 
 ### `o-orientation`
 
