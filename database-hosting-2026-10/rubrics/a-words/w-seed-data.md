@@ -9,14 +9,15 @@ test data; schema. Synonym: initial data.
 - **move:** DISTINGUISH
 - **answer:** what the rows are there for, and what puts them in. Seed data is the rows the code
   itself puts in when a database is first set up, chosen on purpose as what every new database of
-  the app should start with, such as a list of categories or a few demo entries. Test data is rows
+  the app should start with, such as a list of categories or the first real listings. Test data is rows
   put in to try the app out or check that it works, whether typed in by hand or added by a test;
   nothing in setting up a database calls for them.
 - **credit:** full for the difference that matters: seed data is put in by the code when a database
   is set up, as the starting content the app is meant to have, while test data is put in to try or
   check the app and is not part of that setup. Half for one side right with the other missing or
-  vague. Do not accept "seed data is real and test data is fake", since seed rows may be demo rows,
-  or a difference in how many rows there are.
+  vague. Do not accept "seed data is real and test data is fake" as the whole answer, with nothing
+  about what puts the rows in or what they are for; alongside either of those it is fine. Do not
+  accept a difference in how many rows there are.
 
 ### q-seed-vs-schema
 
