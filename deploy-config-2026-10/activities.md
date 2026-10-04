@@ -149,7 +149,10 @@ to offer, and its `offer as` describes it rather than distinguishing it.
   repair question names `c-secret-instead`. A full-credit answer says the learner will put (or has
   put) the secret into the host's settings themselves and tells the agent it is there, and gives
   both reasons: the chat is kept and can be shared, and an agent holding the secret can write it
-  into a file that gets committed. Naming the setting or the host is welcome but not required.
+  into a file that gets committed. Naming the setting or the host is welcome but not required. A
+  reply that keeps the secret out some other way, such as pasting it with the password blanked
+  out or checking it themselves, is safer than complying but is not the criterion's answer: on its
+  own it does not earn full credit.
 
   Each scenario has at least one `secret-db` exchange. A scenario meant to bear on
   `c-trace-setting-value` needs a setup with one vendor hosting two parts, and at least two
