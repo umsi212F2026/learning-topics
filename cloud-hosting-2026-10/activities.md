@@ -7,11 +7,10 @@ with the learner.
 
 2026-10-01. In both checks for placing parts and both checks for weighing plans, the tutor writes
 the vendors' offers and terms, already distilled, for the learner. In the checks for vendor claims,
-the learner plans in `a-check-lab-answer`, judges one handed source in
-`a-sort-claim-sources`, and looks up one handed claim on the vendor's pages in
-`a-check-2025-guide-claims`. So reading a real vendor's pricing, docs and billing pages unaided is
-examined only one handed claim at a time, never across a whole agent's answer. Each entry's
-`doesn't show` admits its own part of this.
+the learner looks up one claim at a time on the vendor's own pages, or judges one source against
+one claim, so reading a real vendor's pricing, docs and billing pages unaided is examined one
+claim at a time, never across a whole agent's answer. Each entry's `doesn't show` admits its own
+part of this.
 
 ## Goals
 
@@ -19,7 +18,7 @@ examined only one handed claim at a time, never across a whole agent's answer. E
 | -- | ---- | ---------------------------------------------- |
 | `o-orientation` | get the shape of this area before working on any particular part of it | `orientation` |
 | `c-place-app-parts` | say which kind of host the frontend and the backend each need, and whether a hosting plan covers them | Given an app with a React frontend and an Express backend, and a hosting plan listing each vendor and what it offers, says which part each vendor would host, and names any part the plan leaves without a host or puts on a host that cannot run it, or says both are covered. It passes when every gap and mismatch is found and nothing is named that isn't one, including for a plan where one vendor hosts both, or where the backend serves the built frontend itself. Where the database is kept is not part of it. |
-| `c-check-vendor-claims` | find out whether what an agent says about a hosting vendor is true today | Given an agent's answer comparing hosting vendors, says how they would find out which of its claims about free tiers, limits and credit cards still hold. It passes when what they describe checks each claim against the vendor's own current pages, not against the agent, a blog post or a forum; would catch a free tier the vendor has since withdrawn, a limit that has changed, and a credit card requirement the answer left out; and says what they would add to the prompt so that every claim in the next answer comes with what they need to check it. Asking the agent whether it is sure does not meet it. |
+| `c-check-vendor-claims` | find out whether what an agent says about a hosting vendor is true today | Given a claim an agent made about a hosting vendor's free tier, finds on the vendor's own current pages the sentence that settles it, and says whether the claim still holds. Opening a deep link the agent gave to the vendor's page, and reading the sentence there, counts. Taking the agent's word for it, or a blog post's or a forum's, does not meet it, and neither does asking the agent whether it is sure. |
 | `c-weigh-hosting-plans` | choose between hosting plans for an app, knowing what each would cost | Given two hosting plans for an app's frontend and backend, one putting both with a single vendor and one using a separate vendor for each, and each vendor's free-tier terms, says for each plan whether the app sleeps when idle, what happens when it passes a limit, and whether a credit card is required and what having one on file risks; says whether their agent can reach every host to change its settings and read its logs, and what it can't do there; says what the extra vendor adds in accounts, secrets and places to look when something breaks, and how hard each plan would be to move to another vendor; and chooses one and states the strongest case the terms give for the plan they didn't choose. It passes when each of these is stated as the terms give it, the case for the other plan rests on a difference that matters for a class project with few users, and nothing is named that the terms don't support. Which plan they choose is not part of it, and neither is where the database is kept. |
 
 ## Coverage
@@ -33,7 +32,7 @@ examined only one handed claim at a time, never across a whole agent's answer. E
 | ---- | ------ | ----- |
 | `o-orientation` | `a-read-odin-deployment` | |
 | `c-place-app-parts` | `a-place-described-plan`, `a-place-lab-plan` | |
-| `c-check-vendor-claims` | `a-check-2025-guide-claims`, `a-sort-claim-sources`, `a-check-lab-answer` | `a-check-lab-answer` rules on a written plan for checking claims, not on checks carried out; it has the learner carry the plan out, but the ruling is on the plan as first written. `a-check-2025-guide-claims` rules on a lookup the learner does on the vendor's own pages, and `a-sort-claim-sources` on one source judged, each for one handed claim, so neither shows the whole plan the criterion asks for across an agent's answer. |
+| `c-check-vendor-claims` | `a-check-2025-guide-claims`, `a-sort-claim-sources`, `a-check-lab-answer` | Every check here is one claim at a time: `a-check-2025-guide-claims` on a claim from an old guide, `a-sort-claim-sources` on one source judged against a fixed claim, `a-check-lab-answer` on one claim from the learner's own agent. None asks the learner to find the claims worth checking in a whole answer. |
 | `c-weigh-hosting-plans` | `a-weigh-described-plans`, `a-weigh-lab-plans` | |
 
 ---
@@ -272,49 +271,36 @@ examined only one handed claim at a time, never across a whole agent's answer. E
 - **checks:** `c-check-vendor-claims`
 - **artifact:** six sentences quoted exactly from the deployment guide given to students in this
   course's 2025 predecessor (SI 211), about PlanetScale, Neon, Supabase and Render, one per
-  sitting, under a five-step procedure, checked against those vendors' own pages on 2026-10-01.
+  sitting, under a three-step procedure, checked against those vendors' own pages on 2026-10-01.
   One claim names a free tier that was already gone when the guide was written in fall 2025
   (PlanetScale's free Hobby plan ended April 8, 2024, with no new Hobby databases after March 6,
   2024).
-  The rest hold, with something left out: Render's Postgres "only free for the first month" was
-  already the 30-day rule when written (Render's changelog dates it to May 2024) but hides that the
-  database is deleted with its data after a 14-day grace period; the others leave out sleep,
-  pausing, or the card. None is a limit that has changed since 2025. The guide itself is in the instructor's files and is not available to students, which is
+  The rest hold: Render's Postgres "only free for the first month" was already the 30-day rule when
+  written (Render's changelog dates it to May 2024). None is a limit that has changed since 2025. The guide itself is in the instructor's files and is not available to students, which is
   why its sentences are quoted. 10 to 15 minutes a sitting, with a browser.
-- **learner does:** reads the procedure and the one claim served, then follows the five steps on it:
-  says which page on the vendor's own site they expect to settle it and why; finds it and copies
-  the sentence that settles it with its address and any date; says whether the claim holds, has
-  changed, or is gone; says what it leaves out that they would want before signing up; and says
-  what kind of page settled it, or that the vendor's pages couldn't. Ends with one sentence they
-  would add to a prompt so an agent's claim like this comes with what they'd need to check it.
+- **learner does:** reads the procedure and the one claim served, then follows the three steps on
+  it: says which page on the vendor's own site they expect to settle it and why; finds it and copies
+  the sentence that settles it with its address and any date; and says whether the claim holds,
+  has changed, or is gone.
 - **tutor role:** critic
 - **tutor does:** before the sitting, re-opens the settling page in the key for this claim and
   confirms it still says what is quoted; where it doesn't, the page wins and the tutor updates its
-  own copy of the verdict. Shows the procedure and the one claim, never the key. Takes the learner's five
+  own copy of the verdict. Shows the procedure and the one claim, never the key. Takes the learner's
   answers before commenting. If the verdict rests on something other than the vendor's page (a
   search result's snippet, a comparison article, the agent), asks where the vendor itself says
   that. On `g1`: an absence on a pricing page is evidence only once you're sure it's the page that
   would list the plan. On `g5`: "free for a month" and "deleted after a month unless you pay" are
   different risks. On `g6`, "holds" passes once the learner says what "a free account" must mean
   (permanent, no card, how big, whether it sleeps) and checks that on neon.com; "too vague" passes
-  only if they then make it checkable that way and check it. On `g3`, a card answer found
-  elsewhere on Supabase's own site beats "I'd find out at sign-up". If another claim has been
-  served before, asks how the page that settled this one differs in kind from the one that settled
-  that. From the second sitting on, the prompt sentence is revised, not written fresh: "would last
-  time's sentence have caught this claim?"
+  only if they then make it checkable that way and check it. If another claim has been served
+  before, asks how the page that settled this one differs in kind from the one that settled that.
 - **done when:** criterion met with no help, as it applies to this one claim: the learner's
   verdict rests on a quoted sentence from the vendor's own current page, or an honest "the
-  vendor's pages don't settle this", and matches the key (for `g1`, gone; for `g5`, the deletion
-  found; for `g6`, as above); and they have named the kind of page and written or revised a
-  prompt sentence that would make the next answer's claim come with what they need to check it.
+  vendor's pages don't settle this", and matches the key (for `g1`, gone; for `g6`, as above).
 - **generator:** the claims are the guide's six real sentences, scenario `guide-2025`, questions
   `g1` to `g6`; nothing is invented, and no new scenario can be drafted without another real
   source of dated claims. Kinds of claim: withdrawn `g1`; holds but hides the consequence `g5`;
-  holds with sleep or limits left out `g3`, `g4` (and `g3`'s card question isn't settled on the
-  pricing page); holds `g2`; too vague to check as it stands `g6`. Cases carried: every question
-  carries `vendor-page` (the verdict must rest on the vendor's own page) and `prompt-fix` (each
-  asks for the prompt sentence); `g1` also carries `withdrawn`. None carries `changed-limit` or
-  `card-omitted`. To pick the next, run
+  holds `g2`, `g3`, `g4`; too vague to check as it stands `g6`. To pick the next, run
   `served.mjs cloud-hosting-2026-10 c-check-vendor-claims`, take a claim not yet served, and prefer
   a kind the learner hasn't met; `g1` and `g5` make the best first two. Once the learner has met
   Render's 30-day expiry anywhere in this topic, prefer claims about other vendors over `g5`. Stop
@@ -328,12 +314,10 @@ examined only one handed claim at a time, never across a whole agent's answer. E
   machine time or 7 days, and "adding a card ends the free trial"). Say what kind of page settled
   each part. At the first level of help on a real attempt, ask only "where would the vendor itself
   say that?"
-- **doesn't show:** one claim per attempt, so a pass shows the learner caught that one claim's
-  kind, not all three the criterion names (a withdrawn free tier, a changed limit, an omitted card
-  requirement); none of the six is a limit changed since 2025, so that kind never comes up here.
-  The claims are handed over one at a time rather than met inside an agent's answer, and the
-  learner looks up rather than describes how they would, which is more than the criterion asks
-  but less like the lab. The six are fixed, so a later visit repeats a claim they have seen.
+- **doesn't show:** the claims come from an old guide rather than from the learner's own agent,
+  and none is a limit changed since 2025, so a pass shows nothing about catching one. They are
+  handed over one at a time rather than met inside an agent's answer. The six are fixed, so a
+  later visit repeats a claim they have seen.
 - **offer as:** real claims, from a real guide given to students in this course a year ago, some
   of them already stale when it was written, one at a time. You do the checking from the start, on real
   vendor pages, 10 to 15 minutes. The most hands-on of the checks, and the one that shows how fast
@@ -350,46 +334,42 @@ examined only one handed claim at a time, never across a whole agent's answer. E
 - **learner does:** hears the claim and the one source, and without opening it says: does this
   source settle the claim today, help only with knowing what to look for, or not help with this
   claim, and why. If it doesn't settle it, says where they would go instead. For `s1`, opens it
-  and checks both halves of the claim on it. Ends with one sentence they would add to a prompt so
-  an agent's claim like this one comes with a source that would settle it.
+  and checks both halves of the claim on it; for `s10`, opens the link and does the same.
 - **tutor role:** socratic questioner
 - **tutor does:** takes the learner's verdict and reason before commenting. Asks this source's
   near-miss question from its tutor note rather than giving a verdict. For `s1`, makes sure the learner
   finds that the free Postgres expires after 30 days, so the second half of the claim is false. If
   another source has been served before, asks how this one differs from that one, and whether the
   verdict should differ too (for `s2` after `s9`, "both are Render's own pages; why might one of
-  them settle it and the other not?"). On the prompt sentence, asks whether it would make the
-  agent link the vendor's own page rather than a comparison article; from the second sitting on,
-  asks "would last time's sentence have caught this?" and the learner revises it.
+  them settle it and the other not?").
 - **done when:** the criterion as it applies to one source, met with no help: the learner rules
-  rightly on whether this source settles the claim today (only `s1` does, being the vendor's own
-  current page on it), with the right reason (whose page it is, whether it is current, whether it
+  rightly on whether this source settles the claim today (only `s1` does, and `s10` once its link
+  to the vendor's own page is opened), with the right reason (whose page it is, whether it is current, whether it
   is about this claim). For `s2` and `s4` to `s9`, either non-settling verdict ("helps with what to
   look for" or "doesn't help") passes with the right reason; for `s3` only "doesn't help" passes,
   since asking the agent whether it is sure does not count; where it doesn't settle it, they named
-  the vendor's own current docs as where to go instead; for `s1`, they found the 30-day expiry.
+  the vendor's own current docs as where to go instead; for `s1` and `s10`, they found the 30-day
+  expiry on the page.
 - **generator:** the claim is fixed: "Render's free web services sleep after 15 minutes and its
-  free Postgres is free for good." The sources are scenario `render-claim`, questions `s1` to `s9`,
+  free Postgres is free for good." The sources are scenario `render-claim`, questions `s1` to `s10`,
   each with its verdict and near-miss question in the key; nothing is invented. Kinds of source:
-  settles it `s1`; vendor's own page not about this claim `s2`, `s9`; on the vendor's site but not
-  the vendor `s7`; dated secondary `s4`, `s5`, `s6`; the agent `s3`; an anecdote `s8`. Every
-  question carries the case `vendor-page` only. To pick the next, run
+  settles it `s1`; the agent's deep link to the vendor's page, which settles it once opened, `s10`;
+  vendor's own page not about this claim `s2`, `s9`; on the vendor's site but not the vendor `s7`;
+  dated secondary `s4`, `s5`, `s6`; the agent `s3`; an anecdote `s8`. To pick the next, run
   `served.mjs cloud-hosting-2026-10 c-check-vendor-claims`, take a source not yet served, and
   prefer a kind the learner hasn't met. Serve a near-miss (`s2`, `s7` or `s9`) before `s1`, so the
   learner meets a vendor page that doesn't settle it before one that does. Stop when done when has
   been met on two or three sittings with different kinds, and offer `a-check-lab-answer`; using up
-  the nine is not the target.
-- **worked example:** judge a source not in the nine aloud: a blog post found by searching the
+  the ten is not the target.
+- **worked example:** judge a source not in the ten aloud: a blog post found by searching the
   claim. Say whose page it is (not the vendor's), whether it is dated, and whether it is about
   this claim; conclude it can tell you what to look for but not settle it; then name where to go
   instead, Render's own free-plan docs. At the first level of help on a real attempt, ask only
   "whose page is this?"
-- **doesn't show:** the criterion asks for a whole plan for checking an agent's answer: every
-  claim checked on the vendor's own pages, the three kinds caught (a withdrawn free tier, a
-  changed limit, an omitted card requirement), and a prompt addition. One source judged against
-  one claim shows only the first of those, and only for a source the learner was handed: not that
-  they would find the right page themselves, not that they would catch an omission, and not a
-  prompt addition that works. The nine are fixed, so a later visit repeats one they have seen.
+- **doesn't show:** the criterion asks the learner to find the settling sentence on the vendor's
+  own pages. Judging a source they were handed shows they know which sources could settle a claim,
+  but except for `s1` and `s10` not that they would find the right page themselves. The ten are
+  fixed, so a later visit repeats one they have seen.
 - **offer as:** the quickest route, about 10 minutes, mostly without a browser: one source at a
   time, judged on whether it could settle a claim at all, rather than how to find one. The only
   candidate whose bank is near-misses (a forum on the vendor's own site, a careful dated
@@ -406,57 +386,36 @@ examined only one handed claim at a time, never across a whole agent's answer. E
 - **serves:** `c-check-vendor-claims`
 - **supports:** attempt
 - **checks:** `c-check-vendor-claims`
-- **artifact:** no external source. An agent's answer to the learner's table's session 11 lab
-  prompt comparing cloud hosting providers, kept word for word. In the lab itself students run the
-  prompt and sign up straight away, so by default the answer is a fresh rerun of the table's
-  prompt, or a tablemate's answer, that names at least one vendor the learner has not yet visited
-  or signed up for; the learner's own lab answer serves only if they had not opened any vendor it
-  names before writing the note. 15 minutes to write the plan, plus however long carrying it out
-  takes.
-- **verified:** 2026-10-01
-- **learner does:** with the answer in hand and before opening any vendor page it names or asking
-  the agent anything more about it, writes alone in a note how they will find out which of its
-  claims about free tiers, limits and credit cards still hold, claim by claim, and what they will
-  add to the table's prompt next time. Then carries the plan out, writing beside each claim what
-  the vendor's page said, with the address. Brings the tutor the answer, the note as first
-  written, and what they found.
+- **artifact:** no external source. One claim about a vendor's free tier from an agent's answer to
+  the learner's table's session 11 lab prompt, kept word for word. By default the answer is a
+  fresh rerun of the table's prompt, or a tablemate's answer, and the claim is about a vendor the
+  learner has not yet visited or signed up for. 10 to 15 minutes, with a browser.
+- **learner does:** reads the one claim the tutor picks from the answer, then checks it live, alone:
+  finds on the vendor's own current pages the sentence that settles it (opening a link the agent
+  gave to the vendor's page counts), copies it with its address, and says whether the claim still
+  holds.
 - **tutor role:** none
-- **tutor does:** when first offering this, tells the learner to write the note before opening any
-  vendor page, and to write at its top anything they looked at for help. Afterwards, confirms the
-  note came first. Before sending to the adjudicator, checks each claim in the answer on the
-  vendor's own pages that day and writes the key: which claims hold, which are stale, and any card
-  requirement the answer left out, with addresses. If the answer has no stale claim and no omitted
-  card requirement at all, tells the adjudicator so: the plan is still judged on whether it would
-  have caught one. Sends the adjudicator the answer, the note as first written, any help noted,
-  the key, and, marked as what happened afterwards, what the learner found. Labels the attempt
-  `a-check-lab-answer/<vendors, joined with +>`.
-- **done when:** criterion met with no help. The plan is judged as first written, not on what the
-  checks turned up.
-- **generator:** the material is whatever the learner's agent said in the lab, so no two instances
-  match and nobody sets the difficulty. Hold fixed: the note is written before any vendor page is
-  opened and before the agent is asked anything more; the answer is kept word for word. Claims
-  about a vendor the learner had already visited or signed up for before writing the note are left
-  out of the ruling (the tutor marks them in the key), and there is no instance if that leaves no
-  claim about free tiers, limits or cards; the tutor then supplies a rerun or a tablemate's answer
-  instead. Cases carried: every instance carries `vendor-page` and `prompt-fix`, plus `withdrawn`,
-  `changed-limit` or `card-omitted` for each such claim the key finds in the answer. A note that
-  says only "ask the agent if it's sure" or "check another AI" is an instance, and a miss. On
-  review visits, use a fresh answer (a rerun of the table's prompt, or a tablemate's answer the
-  learner hasn't checked).
-- **worked example:** no tutor is present, so nobody offers one. If the learner stalls, they may
-  look at `tasks/a-check-2025-guide-claims/guide-2025.md`, which holds no answers (its key is under
-  `rubrics/`, which the learner is never sent); they write at the top of the note that they did, and the
-  attempt is recorded `unaided: no`.
-- **doesn't show:** that the note came first rests on the learner's say-so. Whether the answer
-  happened to contain a withdrawn free tier, a changed limit or a missing card requirement is
-  luck, so a pass may never have faced one; the plan is judged on whether it would have. The
-  learner wrote the prompt with their table, so the prompt addition may be the table's idea.
-- **offer as:** the real thing: an answer to your own table's prompt, on vendors you haven't
-  looked at yet, and you find out what's still true before you'd act on it. Any time after the
-  session 11 lab, with a fresh run of the prompt or a tablemate's answer.
-- **check note:** When you write the key, record the kind of page that settles each claim (pricing
-  page, free-plan docs, trial page, billing docs). A plan that says only "check the pricing page" does not catch a claim
-  settled only in trial or billing docs.
+- **tutor does:** picks one claim from the answer about free tiers, limits or cards, on a vendor
+  the learner hasn't visited, and before the attempt checks it on the vendor's own pages that day,
+  writing the key: the settling sentence, its address, and whether the claim holds. Waits,
+  writing down any help word for word. Sends the adjudicator the claim, the key, the learner's
+  sentence, address and verdict, and the help. Labels the attempt
+  `a-check-lab-answer/<vendor>`.
+- **done when:** criterion met with no help, on this one claim.
+- **generator:** the material is whatever the learner's agent said in the lab, so no two
+  instances match and nobody sets the difficulty. Hold fixed: one claim per attempt, about a
+  vendor's free tier, limits or card, on a vendor the learner hasn't already visited; the key comes
+  from the vendor's own pages on the day. If the answer holds no such claim, the tutor uses a
+  rerun of the table's prompt or a tablemate's answer instead. Prefer a claim that turns out
+  stale, when the answer has one. On review visits, use a fresh claim, from a fresh answer if
+  need be.
+- **worked example:** none during the attempt. If the learner stalls, the first level of help is
+  "where would the vendor itself say that?", and the attempt is recorded `unaided: no`.
+- **doesn't show:** the tutor picks the claim, so a pass doesn't show the learner would pick out
+  the claims worth checking in a whole answer. Whether the claim turned out stale is luck. The key
+  rests on the tutor's reading of the vendor's pages on one day.
+- **offer as:** the real thing: a claim from your own table's prompt, on a vendor you haven't
+  looked at yet, checked on the vendor's own pages. Any time after the session 11 lab.
 
 ### `a-weigh-described-plans`
 

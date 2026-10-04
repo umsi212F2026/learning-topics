@@ -4,8 +4,7 @@ is free for good."
 You are given one source below. Without opening it, say whether it settles that claim today, helps
 only with knowing what to look for, or doesn't help with this claim, and why. If it doesn't settle
 the claim, say where you would go instead. If it does, open it and check both halves of the claim
-on it. Then write one sentence you would add to a prompt so that an agent's claim like this one
-comes with a source that would settle it.
+on it.
 
 ### s1
 
@@ -45,3 +44,7 @@ A classmate who signed up for Render last week.
 ### s9
 
 Render's docs page on its MCP server, https://render.com/docs/mcp-server.
+
+### s10
+
+Your agent's answer, which ends: "Source: https://render.com/docs/free".
