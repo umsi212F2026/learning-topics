@@ -22,7 +22,7 @@ with the learner.
 
 | goal | study | checks | notes |
 | ---- | ----- | ------ | ----- |
-| `c-place-settings` | `a-sort-setting-answers` | `a-read-described-exchange`, `a-read-own-exchange` | |
+| `c-place-settings` | `a-sort-setting-answers`, `a-read-own-exchange` | `a-read-described-exchange` | |
 | `c-handle-secret` | `a-judge-agent-requests` | `a-handle-described-requests`, `a-handle-own-request` | |
 
 ---
@@ -43,22 +43,24 @@ with the learner.
   15 minutes. Nothing to run.
 - **learner does:** reads the task file, puts each of the six settings in one of the four groups
   (the frontend's address, the backend's address, the database's connection details, or nobody's
-  because a host sets it), marks each secret, and says in a sentence or two the rule they sorted
-  by. Writes all of it before the tutor comments.
+  because a host sets it), says in a few words what each is for, marks each secret, and says in a
+  sentence or two the rule they sorted by. Writes all of it before the tutor comments.
 - **tutor role:** critic
 - **tutor does:** shows the task file, never the key. Takes the whole sort and the rule before
   commenting. For each placement that disagrees with the key, asks one question built from the
   key's _what decides it_ column rather than giving the verdict ("the server reads
   `CLIENT_ORIGIN`; whose pages is it letting in?"). If the placement still differs, gives the
   key's verdict and its reason. If the stated rule sorts by the setting's name or by where it is
-  entered, tests it against items 1 and 2. If the learner asks how to find a value on a vendor's
+  entered, tests it against items 1 and 2. If it looks up which vendor the answer names, tests it
+  against item 5, where Harbor hosts two parts and the vendor alone doesn't settle it. If the learner asks how to find a value on a vendor's
   site, says that isn't part of this topic; if they ask what to do with the secret, says that is
   the other capability, `c-handle-secret`.
 - **done when:** the sort matches the key, with at most one question per item, and the stated
   rule sorts by what the value is (whose address, or what it unlocks), not by the setting's name
-  or where it is entered. No `checks`: the six answers come in one set with the key discussed
-  afterwards, so the learner has seen every case with its verdict. The checks use settings named
-  differently.
+  or where it is entered. A rule that looks up the vendor is enough only if it also says what to
+  do when one vendor hosts two parts. No `checks`: the six answers come in one set with the key
+  discussed afterwards, so the learner has seen every case with its verdict. The checks use
+  settings named differently.
 - **offer as:** the quickest way in, 10 to 15 minutes, nothing to run: six short agent answers to
   sort, with the near-misses (a name that says "frontend" holding the backend's address, an
   origin setting on the backend, "your Harbor address" when Harbor hosts two parts, a token that
@@ -69,49 +71,56 @@ with the learner.
 - **serves:** `c-place-settings`
 - **supports:** attempt
 - **checks:** `c-place-settings`
-- **artifact:** no external source. A hosting line and one exchange, written by the tutor per the
-  generator below. 5 to 10 minutes.
-- **learner does:** reads the hosting line and the exchange, then writes alone what the setting is
-  for, whose value it needs (one of the four), and whether it is a secret. Hands it to the tutor.
+- **artifact:** no external source. A hosting line and two exchanges, written by the tutor per the
+  generator below. 10 minutes.
+- **learner does:** reads the hosting line and both exchanges, then writes alone, for each, what
+  the setting is for, whose value it needs (one of the four), and whether it is a secret. Hands
+  it to the tutor.
 - **tutor role:** none
 - **tutor does:** builds the instance per the generator and writes the key into the record before
-  showing anything: what the setting is for in a line, whose value it needs, and whether it is a
-  secret. Shows the hosting line and the exchange. Waits, writing down any help word for word.
-  Sends the adjudicator the hosting line, the exchange, the key, the learner's answer verbatim
-  and every piece of help. After the ruling, tells the learner what was missed or named wrongly.
-  Labels the attempt `a-read-described-exchange/<shape>`. A remark about finding the value on a
-  vendor's site, or about what to do with a secret, is neither credited nor counted against
-  them: the tutor tells the adjudicator to disregard it.
-- **done when:** criterion met with no help, on a `cross-part` or `shared-vendor` instance.
+  showing anything: for each exchange, what the setting is for in a line, whose value it needs,
+  and whether it is a secret. Shows the hosting line and both exchanges. Waits, writing down any
+  help word for word. Sends the adjudicator the hosting line, both exchanges, the key, the
+  learner's answer verbatim and every piece of help, and tells it the attempt is met only if both
+  exchanges are answered right. After the ruling, tells the learner what was missed or named
+  wrongly. Labels the attempt `a-read-described-exchange/<first shape>+<second shape>`. A remark
+  about finding the value on a vendor's site, or about what to do with a secret, is neither
+  credited nor counted against them: the tutor tells the adjudicator to disregard it.
+- **done when:** criterion met with no help, on both exchanges of a counting instance.
 - **kind:** generator
 - **generator:** fixed: the app has a React frontend, an Express backend and a database, shaped
   like Problem Set 2, and a hosting line names the made-up vendor each part is on, with each
   vendor's offer in a line, as `tasks/sort-setting-answers.md` describes them. Brightpage, Kettle,
-  Harbor and Larder may be reused, or new vendors invented on the same pattern; when the database
-  host's connection details include a password, the hosting line says so. The exchange has three
+  Harbor and Larder may be reused, or new vendors invented on the same pattern; the hosting line
+  says that the database host's connection details include a password. Each exchange has three
   parts: the agent's request, naming one setting; the student's question, asking what it is for
   and where its value comes from, worded as a student might; and the agent's answer, one to three
   sentences, true to the hosting line. The answer says what the value is used for and where to
   copy it from, naming a vendor or a dashboard, but never in the words "the frontend's address"
-  or "the backend's address". The setting's name is invented each time (for example
-  `SITE_URL`, `CORS_WHITELIST`, `REMOTE_DB`, `VITE_SERVER`), and is never one of the names in
-  `tasks/sort-setting-answers.md` or one of the criterion's examples (`VITE_API_URL`,
-  `ALLOWED_ORIGIN`, `PORT`, `DATABASE_URL`). What varies is the shape:
+  or "the backend's address". Each setting's name is invented each time (for example `SITE_URL`,
+  `CORS_WHITELIST`, `REMOTE_DB`, `VITE_SERVER`), and is never `PORT`, `VITE_API_URL`,
+  `ALLOWED_ORIGIN`, `DATABASE_URL`, or a name used in `tasks/sort-setting-answers.md` or
+  `tasks/judge-agent-requests.md`, all of which the learner may have met. Each exchange takes one
+  of these shapes:
   - `plain` (Easy): the name says plainly whose value it holds; not a secret.
   - `host-sets` (Easy): a value the host provides itself, which the agent says not to add.
   - `secret-db` (Medium): the database's connection details, as a connection string or as a
-    token or password on its own; a secret.
-  - `cross-part` (Hard): a setting read by one part that holds another part's address, whose name
-    points the wrong way: a backend setting holding the frontend's address (the pages it accepts
-    requests from), or a frontend setting named for the frontend that holds the backend's
-    address.
-  - `shared-vendor` (Hard): one vendor hosts two parts, each with its own address, and the
-    agent's answer names only the vendor ("use your Harbor address").
-  Difficulty as marked. **Only `cross-part` and `shared-vendor` count**, because each contains a
-  case the criterion names and the bar is one unaided pass. The other shapes are for the worked
-  example and for a retry with help after a miss. For review visits, serve a counting shape the
-  learner hasn't had, reading the labels `served.mjs` returns.
-- **worked example:** work one Easy instance aloud: say what the agent's answer says the value is
+    token or password on its own, under a name that doesn't say "secret", "password" or "key"
+    (for example `REMOTE_DB`, `STORE_LINK`); a secret.
+  - `shared-cross` (Hard): one vendor (like Harbor) hosts the frontend and the backend, each with
+    its own address, and the setting is read by one of them but holds the other's address: a
+    backend setting holding the frontend's address (the pages it accepts requests from), or a
+    frontend setting holding the backend's address under a name that points the wrong way. The
+    agent's answer names only the vendor ("use your Harbor address"), so the vendor alone doesn't
+    settle whose address it is.
+  **A counting instance is two exchanges: one `shared-cross` and one `secret-db`, in either
+  order.** Together they carry both cases the criterion names (a setting holding another part's
+  address, and an answer naming only a vendor that hosts two parts) and a secret that has to be
+  recognized, and the bar is one unaided pass. Any other pairing is for the worked example and
+  for a retry with help after a miss. For review visits, run
+  `served.mjs deploy-config-2026-10 c-place-settings` and vary which part's address the
+  `shared-cross` setting holds from the last one served.
+- **worked example:** work one Easy exchange aloud: say what the agent's answer says the value is
   used for, then ask whose address that is or what it unlocks, then whether someone holding it
   could get into something. At the first level of help on a real attempt, ask only "where does
   the value you would copy actually point?"
@@ -119,49 +128,38 @@ with the learner.
   pass doesn't show the learner would ask the question themselves, or could make sense of a
   vague or wrong answer. Vendors are made up, so a pass says nothing about real dashboards. The
   learner knows a check is on.
-- **offer as:** the check that's available now: one exchange the tutor writes, 5 to 10 minutes,
-  nothing to run, with the tutor choosing a shape so a hard case actually comes up.
-  `a-read-own-exchange` is the same capability on your own Problem Set 3 deploy.
+- **offer as:** the check that's available now: two exchanges the tutor writes, 10 minutes, nothing
+  to run, built so the hard cases and a secret both come up. `a-read-own-exchange` is practice on
+  your own Problem Set 3 deploy.
 
 ### `a-read-own-exchange`
 
 - **serves:** `c-place-settings`
 - **supports:** attempt
-- **checks:** `c-place-settings`
-- **artifact:** no external source. An exchange from the learner's own Problem Set 3 deploy: their
+- **artifact:** no external source. Exchanges from the learner's own Problem Set 3 deploy: their
   agent asked for a setting, they asked it what the setting is for and where its value comes from,
   and it answered. Copied into the session with any secret value taken out. 10 minutes, plus the
-  tutor's preparation. Available only once the learner is deploying.
-- **learner does:** brings the exchange (the setting's name, their question, the agent's answer,
-  no secret values) and says which vendor each part of their app is on. Then writes alone what the
-  setting is for, whose value it needs, and whether it is a secret.
-- **tutor role:** none
+  tutor's preparation. Available only once the learner is deploying; best taken before they enter
+  the values.
+- **learner does:** brings one or more exchanges (the setting's name, their question, the agent's
+  answer, no secret values) and says which vendor each part of their app is on. For each, says
+  what the setting is for, whose value it needs, and whether it is a secret.
+- **tutor role:** socratic questioner
 - **tutor does:** first checks that what was pasted holds no secret value. If it does, stops, tells
   the learner it is now in this chat's record too, which is what `c-handle-secret` is about, and
-  asks for the exchange again without it. Then, before the attempt, reads the learner's app where
-  the setting is read and writes the key from the code and the hosting arrangement, not from the
-  agent's answer. If the agent's answer disagrees with the code, tells the learner after the
-  attempt that the agent was wrong, and records the attempt as practice. **Counts the instance
-  only if it is a `cross-part` or `shared-vendor` case** as `a-read-described-exchange` defines
-  them; anything else is practice, and the tutor says so and offers that activity for the counting
-  attempt. Waits during the attempt, writing down any help word for word. Sends the adjudicator the
-  hosting arrangement, the exchange, the key, the learner's answer and every piece of help. Labels
-  the attempt `a-read-own-exchange/<setting name>`.
-- **done when:** criterion met with no help, on an exchange that counts.
-- **kind:** generator
-- **generator:** the material is whatever the learner's agent asked, so no two instances match and
-  nobody sets the difficulty. Hold fixed: the key comes from the code and the hosting arrangement;
-  only a `cross-part` or `shared-vendor` exchange counts; no secret value enters this session.
-  Across visits, use a different setting each time.
-- **worked example:** none during the attempt. If the learner stalls, the first level of help is
-  "where does the value you would copy actually point?", and the attempt is recorded
-  `unaided: no`.
-- **doesn't show:** whether a hard case comes up depends on the learner's app and agent. The
-  learner asked the question themselves, so a pass shows they asked once, not that they always
-  will. The key rests on the tutor's reading of the code.
-- **offer as:** the real thing: a setting your own agent asked for while deploying Problem Set 3,
-  checked against your own code. Take it during the deploy; `a-read-described-exchange` is the one
-  to take before.
+  asks for the exchange again without it. Then reads the learner's app where each setting is read
+  and works out the answer from the code and the hosting arrangement, not from the agent's answer.
+  Takes the learner's answers before commenting. Where one differs from the code, asks "where does
+  the value you would copy actually point?" before saying more. If the agent's answer disagrees
+  with the code, says so: the agent was wrong, and catching that is the point of asking it. If the
+  learner wants the goal settled, offers `a-read-described-exchange`.
+- **done when:** the learner's answers match the code for every exchange they brought, with at most
+  one question each. No `checks`: a real deploy rarely puts two parts on one vendor, so the
+  answer's vendor usually gives the part away, and the learner chooses which settings to bring, so
+  a secret may never come up. A pass here would certify less than the criterion asks.
+- **offer as:** the real thing: settings your own agent asked for while deploying Problem Set 3,
+  checked against your own code, and a chance to catch your agent being wrong. It can't finish the
+  goal; `a-read-described-exchange` is the check.
 
 ### `a-judge-agent-requests`
 
@@ -207,6 +205,7 @@ with the learner.
 - **checks:** `c-handle-secret`
 - **artifact:** no external source. A hosting line and a pair of agent messages, written by the
   tutor per the generator below. 5 to 10 minutes.
+- **verified:** 2026-10-04
 - **learner does:** reads the hosting line and both messages, then writes alone, for each, whether
   they would go along with it, and if not, what they would do instead and why. Hands it to the
   tutor.
@@ -224,11 +223,13 @@ with the learner.
   connection string includes its password. Each instance is a pair, because the criterion needs
   both a decline and a go-along: one message involving a secret and one involving none, in either
   order. Never reuse a message from `tasks/judge-agent-requests.md`. Never a message about a
-  secret that has already been pasted somewhere, since that case is excluded. The secret message
-  takes one of these shapes:
+  secret that has already been pasted somewhere, since that case is excluded. Every secret shape
+  routes the secret through the agent, so both of the criterion's reasons apply to it: the chat
+  is kept, and an agent holding the secret can write it into a file that gets committed. The key
+  expects both. The secret message takes one of these shapes:
   - `paste-in-chat` (Easy): asks for the secret to be pasted so the agent can set it up.
-  - `write-into-code` (Medium): proposes putting the secret in a source file, with a convenient
-    reason ("so it works the same everywhere").
+  - `write-into-code` (Medium): asks for the secret to be pasted so the agent can put it in a
+    source file, with a convenient reason ("so it works the same everywhere").
   - `debug-lure` (Hard): asks for the secret indirectly, as a copy or screenshot of the dashboard
     page that shows it, or the output of a command that prints it, to "check" something.
   The other message takes one of these:
@@ -236,8 +237,9 @@ with the learner.
   - `dashboard-instruction` (Hard): tells the learner to add a setting on the host themselves and
     paste the secret there, naming the secret but never asking for it.
   **A pair counts only if at least one of its messages is Medium or Hard.** An Easy pair is for the
-  worked example and for a retry with help after a miss. For review visits, serve a pair with
-  shapes the learner hasn't had, reading the labels `served.mjs` returns.
+  worked example and for a retry with help after a miss. For review visits, run
+  `served.mjs deploy-config-2026-10 c-handle-secret` and serve a pair with shapes the learner
+  hasn't had.
 - **worked example:** work an Easy pair aloud: for each message, say what value would pass through
   the chat or into a file, whether holding that value lets someone into something, and if so
   where it should go instead. At the first level of help on a real attempt, ask only "does any
@@ -254,34 +256,40 @@ with the learner.
 - **serves:** `c-handle-secret`
 - **supports:** attempt
 - **checks:** `c-handle-secret`
-- **artifact:** no external source. Two messages from the learner's own agent during their
-  Problem Set 3 deploy: one that asked for a secret or proposed doing something with one (most
-  often the database's connection string), and one from the same session that involved no secret.
-  Copied into the session with any secret value taken out. 10 minutes. Available only if the
-  learner's agent made such a request, which it may never do.
-- **learner does:** brings the two messages, without saying which is which, and writes alone, for
-  each, whether they would go along with it, and if not, what they would do instead and why.
+- **artifact:** no external source. A stretch of the agent's messages from the learner's own
+  Problem Set 3 deploy, including at least one that asked for a secret or proposed doing
+  something with one (most often the database's connection string). Copied into the session with
+  any secret value taken out. 10 minutes. Available only if the learner's agent made such a
+  request, which it may never do.
+- **learner does:** brings the stretch of messages. Then, for the two the tutor picks, writes
+  alone whether they would go along with each, and if not, what they would do instead and why.
 - **tutor role:** none
 - **tutor does:** first checks that what was pasted holds no secret value. If it does, stops, tells
   the learner that what they just did is the thing this capability is about, and asks for the
-  messages again without it; the attempt is not counted that day. Writes the key from the two
-  messages before reading the learner's answer: which involves a secret, what to do instead, and
-  the two reasons. If the learner says they already went along with the secret request in the
+  messages again without it; the attempt is not counted that day. Picks two messages from the
+  stretch: one that routes a secret through the agent and one that involves no secret. **Counts the
+  attempt only if the pair would count in `a-handle-described-requests`**: at least one message
+  Medium or Hard by that entry's shapes. An Easy pair is practice, and the tutor says so. Writes
+  the key before showing the pair: which message to decline, what to do instead, and the two
+  reasons. If the learner says they already went along with the secret request in the
   real session, records the attempt as not met, and tells them that what to do about a secret that
   has already been pasted belongs to a later topic, in session 13. Waits during the attempt,
   writing down any help word for word. Sends the adjudicator both messages, the key, the learner's
   answer and every piece of help. Labels the attempt `a-handle-own-request/<setting name>`.
-- **done when:** criterion met with no help.
+- **done when:** criterion met with no help, on a pair that counts.
 - **kind:** generator
-- **generator:** the material is whatever the learner's agent sent, so nobody sets the difficulty.
-  Hold fixed: two messages, one involving a secret and one not; no secret value enters this
+- **generator:** the material is whatever the learner's agent sent; the tutor sets the pair and
+  the floor. Hold fixed: two messages, one routing a secret through the agent and one involving
+  none; the difficulty floor from `a-handle-described-requests`; no secret value enters this
   session. Across visits, use a different secret request each time.
 - **worked example:** none during the attempt. If the learner stalls, the first level of help is
   "does any value in this message let someone into something?", and the attempt is recorded
   `unaided: no`.
-- **doesn't show:** whether a request comes up at all depends on the agent, and the learner picked
-  the messages, so the pair may be an easy one. Answering here, after the fact, doesn't show what
-  they did in the moment, except when they report having gone along.
+- **doesn't show:** whether a request comes up at all depends on the agent, and real agents mostly
+  make the Easy kind, so many learners will have only a practice pair. The learner lived through
+  these messages and may remember which one was about a secret, so the sorting half is partly
+  done before the attempt. Answering here, after the fact, doesn't show what they did in the
+  moment, except when they report having gone along.
 - **offer as:** the real thing: a request your own agent made while deploying Problem Set 3. Take
   it if your agent asked you for a secret; `a-handle-described-requests` is the one to take
   otherwise.

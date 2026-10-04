@@ -50,6 +50,6 @@ Put each setting in one of four groups, by whose value it needs:
 - **the database's connection details**
 - **nobody's**, because a host sets it automatically
 
-Then mark each one that is a secret.
+Beside each, say in a few words what it is for. Then mark each one that is a secret.
 
 Last, say in a sentence or two the rule you sorted by.

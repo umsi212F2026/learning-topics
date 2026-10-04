@@ -12,7 +12,12 @@
 | 5 | `API_BASE` | the backend's address | no | "Your Harbor address" is ambiguous, because Harbor gives the static site and the web service an address each. The requests go to the backend, so it is the web service's address. The near-miss is copying the first Harbor address in sight, often the site's. |
 | 6 | `LARDER_TOKEN` | the database's connection details | yes | Not an address at all, but it is what lets the server into the database. Anyone holding it gets in too. The near-miss is "not a secret, it's just a token". |
 
+**What each is for.** It is in the agent's answer in the task file. Accept any wording that says
+the same thing.
+
 **The rule.** A good rule says something like: sort by what the value is (whose address, or what
 it unlocks), not by which part reads the setting or what its name suggests; and a value is a
 secret when holding it lets you into something. A rule that sorts by the setting's name, or by
-where the setting is entered, should be pushed on with items 1 and 2.
+where the setting is entered, should be pushed on with items 1 and 2. A rule that looks up which
+vendor the answer names works for items 1 to 4 but not for item 5, where Harbor hosts two parts;
+push on it there.
