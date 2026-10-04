@@ -23,6 +23,18 @@ decision, full credit for `c-spot-secret` needs only the call (secret, or public
 reason a learner gives there is naturally about the route, not the value. Exchange questions
 still ask for and credit the reason.
 
+2026-10-04. A known weakness, waiting on a change to the workflow. `c-spot-secret` and
+`c-judge-secret-request` each have two sides (a secret and a public value; a request to decline
+and one to go along with), and `c-trace-setting-value` names cases it must include. Under `one
+unaided pass`, a pass on any one question meets the goal, so the easiest side can certify it. The
+instructor is adding a way for a criterion to name its cases and for the bar to require each; when
+it lands, the rubrics here gain `cases:` lines and nothing else changes. Until then, prefer serving
+a learner the side they haven't shown.
+
+2026-10-04. One activity, `a-deploy-chat`, serves every capability goal, by the instructor's
+choice: one scenario carries questions across all four goals, so there is no choice of activity
+to offer, and its `offer as` describes it rather than distinguishing it.
+
 ## Goals
 
 | id | Goal | Criterion: what gets examined, and what counts |
