@@ -4,11 +4,11 @@ If the learner misses a question here, set a DEFINE or INTERPRET move for connec
 as help (it is recorded as helped and doesn't count), then come back to a production question.
 
 A connection string is one line telling the backend where the database is and how to get in. For
-a database on a host of its own it looks like `postgres://crumbs_app:pa55word@db.larder.cloud:5432/crumbs`:
+a database on a host of its own it looks like `postgres://tally_app:pa55word@db.cellar.cloud:5432/tally`:
 the kind of database, a username and password, the machine and port it runs on, and the
 database's name. Its other names are database URL and `DATABASE_URL`, and neither of those, given
 as an answer, says what it is. The confusable is a database file path, such as
-`./data/recipes.sqlite`, which names a file on the same machine that the backend opens itself.
+`./data/budgets.sqlite`, which names a file on the same machine that the backend opens itself.
 
 ### q1
 
@@ -62,10 +62,10 @@ as an answer, says what it is. The confusable is a database file path, such as
 
 - **goal:** `w-connection-string`
 - **move:** CATCH
-- **answer:** `db.larder.cloud` is only the name of the machine the database runs on. A connection
+- **answer:** `db.cellar.cloud` is only the name of the machine the database runs on. A connection
   string is one line that also says how to get in (a username and password) and which database
   to use, and usually the kind of database and the port, as in
-  `postgres://crumbs_app:pa55word@db.larder.cloud:5432/crumbs`.
+  `postgres://tally_app:pa55word@db.cellar.cloud:5432/tally`.
 - **credit:** full for naming that what was copied is only where the database is, and a connection
   string also carries how to get in (the login). Half for saying it is incomplete or "just the
   host" without saying what is missing, or naming only a missing part that isn't the login (the

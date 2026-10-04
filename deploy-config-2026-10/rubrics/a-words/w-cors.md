@@ -53,7 +53,7 @@ is a server error, where the backend itself fails, such as by crashing or answer
 
 - **goal:** `w-cors`
 - **move:** CATCH
-- **answer:** The page and the file have the same origin, `https://crumbs.harbor.app`, and CORS
+- **answer:** The page and the file have the same origin, `https://tally.quay.app`, and CORS
   only checks calls to other origins. Whatever stopped this fetch, it wasn't CORS.
 - **credit:** full for naming that the call stays within the page's own origin, so CORS doesn't
   apply. Half for saying CORS isn't the cause without saying why. None for a different quibble,

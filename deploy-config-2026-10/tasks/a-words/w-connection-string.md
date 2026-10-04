@@ -8,7 +8,7 @@ What is the difference between a connection string and a database file path?
 
 ### q4
 
-Larder's dashboard shows your database's password, and also its connection string. What is the difference between the two?
+Cellar's dashboard shows your database's password, and also its connection string. What is the difference between the two?
 
 ### q2
 
@@ -23,6 +23,6 @@ What is wrong with that sentence?
 
 A student deploying their app writes in their notes:
 
-"I copied our connection string from Larder's dashboard: it's `db.larder.cloud`."
+"I copied our connection string from Cellar's dashboard: it's `db.cellar.cloud`."
 
 What is wrong with that?

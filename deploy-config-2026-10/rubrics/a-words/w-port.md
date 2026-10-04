@@ -6,7 +6,7 @@ is recorded as helped and doesn't count), then come back to a production questio
 A port is the number after the colon that says which program on a machine a request is for: in
 `http://localhost:5173`, the frontend's dev server listens on 5173 and the Express backend on
 3000, both on the same machine. The confusable is the address (`localhost`, or
-`crumbs.harbor.app`), which says which machine the request goes to.
+`tally.quay.app`), which says which machine the request goes to.
 
 ### q1
 

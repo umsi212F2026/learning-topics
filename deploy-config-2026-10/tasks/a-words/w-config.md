@@ -18,6 +18,6 @@ What is wrong with that?
 
 A teammate writes in the team's notes:
 
-"The function that formats a recipe's date for display belongs in our config, because we might decide to show dates differently next month."
+"The function that formats a budget's date for display belongs in our config, because we might decide to show dates differently next month."
 
 What is wrong with that sentence?

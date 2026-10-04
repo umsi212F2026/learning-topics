@@ -41,7 +41,7 @@ the frontend's or the backend's address, let nobody into anything and are public
 - **goal:** `w-secret`
 - **move:** CATCH
 - **answer:** A value is a secret because of what it lets the holder do, not what it is called. A
-  token for Larder lets whoever holds it into the database or the account, so it is a secret
+  token for Cellar lets whoever holds it into the database or the account, so it is a secret
   whatever its name.
 - **credit:** full for naming that what makes a secret is that holding it lets someone in, which a
   token does, regardless of its name. Half for saying a token is a secret without saying why.
@@ -56,6 +56,6 @@ the frontend's or the backend's address, let nobody into anything and are public
   is public.
 - **credit:** full for naming that the address doesn't let whoever holds it into anything, so it
   isn't a secret however random it looks. Half for saying it is public or not a secret without
-  saying why. None for a different quibble, such as that `k3x9` could in fact be guessed.
+  saying why. None for a different quibble, such as that `w7mz` could in fact be guessed.
 - **tutor note:** if they say "it's public because the frontend sends it to the browser", that is
   true; ask whether it would be a secret if it weren't, and what it would let someone do.

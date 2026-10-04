@@ -4,11 +4,11 @@ Answer in two or three sentences, in your own words, with nothing open in front 
 
 ### q1
 
-Your deployed React page asks your Express backend for the list of recipes, and the request fails. What is the difference between that failure being a CORS error and its being a server error?
+Your deployed React page asks your Express backend for the list of budgets, and the request fails. What is the difference between that failure being a CORS error and its being a server error?
 
 ### q4
 
-Your Express backend refuses any request that doesn't carry a signed-in user's token. It also lists `https://crumbs.harbor.app` as the one origin allowed under CORS. What is the difference between those two kinds of check?
+Your Express backend refuses any request that doesn't carry a signed-in user's token. It also lists `https://tally.quay.app` as the one origin allowed under CORS. What is the difference between those two kinds of check?
 
 ### q2
 
@@ -20,7 +20,7 @@ What is wrong with that?
 
 ### q3
 
-Crumbs's React page at `https://crumbs.harbor.app` fetches `https://crumbs.harbor.app/recipes.json`, a file served alongside the page. The fetch fails, and a student says:
+Tally's React page at `https://tally.quay.app` fetches `https://tally.quay.app/budgets.json`, a file served alongside the page. The fetch fails, and a student says:
 
 "CORS must have blocked it."
 

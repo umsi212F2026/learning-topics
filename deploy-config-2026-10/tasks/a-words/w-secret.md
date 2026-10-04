@@ -14,7 +14,7 @@ What is the difference between a secret and an environment variable?
 
 A student deploying their app says:
 
-"`LARDER_TOKEN` isn't a secret. Only values called passwords or keys are secrets."
+"`CELLAR_TOKEN` isn't a secret. Only values called passwords or keys are secrets."
 
 What is wrong with that?
 
@@ -22,6 +22,6 @@ What is wrong with that?
 
 A student says:
 
-"Harbor gave our backend the address `https://crumbs-k3x9.harbor.app`. That's a secret, because nobody could ever guess `k3x9`."
+"Quay gave our backend the address `https://tally-w7mz.quay.app`. That's a secret, because nobody could ever guess `w7mz`."
 
 What is wrong with that?
