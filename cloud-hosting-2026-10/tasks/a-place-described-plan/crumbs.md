@@ -5,7 +5,8 @@ frontend and its backend:
   build`), which turns it into a folder of plain files, `dist/`: one HTML page, some JavaScript and
   some CSS. The visitor's browser fetches those files and runs them.
 - **The backend:** an Express server. It has to be running all the time, listening for requests,
-  so that it can answer the frontend's requests for recipes and save new ones.
+  so that it can answer the frontend's requests for recipes and save new ones. As the app is now,
+  the server does not send the frontend's files; a plan below says so where it does.
 
 Crumbs also has a database. Where it is kept belongs to the database-hosting topic, so the plans
 below leave it out.
