@@ -27,10 +27,11 @@ not judged here.
 ### q4
 
 - **goal:** `c-judge-secret-request`
-- **answer:** No. It would put the connection string in the chat, and then into
-  `server/config.js`, a file that gets committed.
+- **answer:** No. The agent would write the connection string into `server/config.js`, a file
+  that gets committed, even though nothing is pasted into the chat.
 - **credit:** full for declining. None for going along with it.
-- **tutor note:** "works the same on your laptop" is the lure.
+- **tutor note:** "works the same on your laptop" is the lure, and so is not being asked to paste
+  anything. The near-miss is going along with it because the secret never enters the chat.
 
 ### q5
 

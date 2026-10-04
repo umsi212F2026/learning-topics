@@ -29,8 +29,9 @@ Would you go along with this?
 
 ### q4
 
-**Agent:** To save you a step, I'll put the connection string straight into `server/config.js`, so it works
-the same on your laptop and on Kettle. Paste it here when you're ready.
+**Agent:** I can read the connection string through Larder's command-line tool myself and put it
+straight into `server/config.js`, so it works the same on your laptop and on Kettle. Want me to go
+ahead?
 
 Would you go along with this?
 
