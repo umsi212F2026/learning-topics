@@ -63,8 +63,8 @@ _Yours to fill in. Say where your knowledge stops, not what you have heard of._
 ## What I'll use it for
 
 _Yours to fill in. The course supplies one occasion: Problem Set 3, which puts your Problem Set 2
-app on the public internet, first for anyone to use and then with sign-in, which brings your first
-real secrets. Name any others you have._
+app on the public internet, first for anyone to use and then with sign-in. Name any others you
+have._
 
 <!--
   The use, and a concrete occasion.
@@ -192,14 +192,15 @@ about a secret that has already leaked in session 13, and defending the app in s
 - **goal:** follow an agent's explanation of a setting it wants: what it is for and where its
   value comes from
 - **criterion:** Given an app whose frontend, backend and database are each on a named vendor,
-  and an exchange in which an agent deploying it asks for a setting under a name the learner
-  hasn't met, a student asks what it is for and where its value comes from, and the agent
-  answers, the learner says what the setting is for, which part's value it needs (the frontend's
-  address, the backend's address or the database's connection details), which vendor they would
-  copy it from, and whether the value is a secret. If a vendor fills the value in itself, they
-  say which one. It passes when all of these are right, including when one vendor hosts two
-  parts and the answer names only the vendor, and when nothing that isn't a secret is called
-  one. Finding the value on the vendor's site, and what to do with a secret, are not part of it.
+  and an exchange in which an agent asks for a setting under a name the learner hasn't met, a
+  student asks what it is for and where its value comes from, and the agent answers. The learner
+  says what the setting is for, whose value it needs (the frontend's address, the backend's
+  address, the database's connection details, or nobody's, because a host sets it automatically,
+  as with `PORT`), and whether it is a secret. It passes when all three are right, including when
+  the setting belongs to one part but holds another part's address, such as the backend's allowed
+  origin holding the frontend's address, and when the agent's answer names only a vendor that
+  hosts two parts. Finding the value on the vendor's site, and what to do with a secret, are not
+  part of it.
 
 ### `c-handle-secret`
 
