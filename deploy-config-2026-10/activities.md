@@ -154,7 +154,9 @@ to offer, and its `offer as` describes it rather than distinguishing it.
   Each scenario has at least one `secret-db` exchange. A scenario meant to bear on
   `c-trace-setting-value` needs a setup with one vendor hosting two parts, and at least two
   `shared-vendor` exchanges, one of them also `cross-part`.
-- **worked example:** for an exchange, say what the agent's answer says the value is used for,
+- **worked example:** shown only as help when the learner asks for it, which records the attempt
+  as helped; never before a first question unprompted, since the repair example is close to a
+  full-credit answer. For an exchange, say what the agent's answer says the value is used for,
   then ask whose address that is or what it unlocks, then whether someone holding it could get
   into something. For a message, say what value would pass through the chat or into a file, and
   whether holding it lets someone into something. For a repair, write a reply aloud in the
