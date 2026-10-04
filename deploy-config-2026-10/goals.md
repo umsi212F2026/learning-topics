@@ -80,8 +80,8 @@ your agent gets your app ready to deploy, it adds settings your app never needed
 asks you for values only you have, such as the addresses your hosts gave you. This topic is enough
 to know what each of those settings is for and what value each one needs.
 
-What sits past that line: choosing hosts belongs to cloud-hosting, and where the database lives
-belongs to database-hosting. Deploying automatically and debugging a deployed app come in session
+This topic assumes you have studied database-hosting first, so you know where your database
+will live. What sits past that line: choosing hosts belongs to cloud-hosting. Deploying automatically and debugging a deployed app come in session
 12, sign-in and catching a secret your agent has put in the wrong place in session 13, and
 defending the app in session 14.
 
@@ -186,12 +186,15 @@ defending the app in session 14.
 ### `c-place-settings`
 
 - **goal:** tell what each setting an agent asks for is for, and what value it needs
-- **criterion:** Given the settings an agent asks for while deploying an app with its frontend
-  and backend on different hosting services, each under the agent's own name for it (such as
-  `VITE_API_URL`, `ALLOWED_ORIGIN`, `PORT`, `DATABASE_URL`), says what each one is for and what
-  value it needs. If host supplies a value, they say which host's service needs to supply the value. It passes when every setting
-  is matched to what it's for, the frontend's and backend's addresses are not swapped, and a
-  value the host sets is recognized as one. Deciding where each setting goes is not part of it.
+- **criterion:** Given the settings an agent asks for while deploying an app whose frontend,
+  backend and database are on different hosting services, each under the agent's own name for it
+  (such as `VITE_API_URL`, `ALLOWED_ORIGIN`, `PORT`, `DATABASE_URL`), says what each one is for
+  and which part's address or value it needs. If a hosting service supplies the value itself,
+  they say which one. It passes when every setting is matched to what it's for, no setting is
+  given another part's value (the frontend's address where the backend's belongs, or the
+  backend's where the database's belongs), and every value a hosting service supplies is
+  recognized as one and credited to the right service. Deciding where each setting goes is not
+  part of it.
 
 ### `c-explain-localhost-gap`
 
