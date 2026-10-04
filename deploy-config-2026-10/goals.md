@@ -128,7 +128,7 @@ about a secret that has already leaked in session 13, and defending the app in s
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the number after the colon that says which program on a machine a request is for
-- **nearest confusable:** the address
+- **nearest confusable:** the host name
 
 ### `w-connection-string`
 

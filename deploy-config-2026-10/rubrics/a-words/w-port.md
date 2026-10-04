@@ -5,19 +5,20 @@ is recorded as helped and doesn't count), then come back to a production questio
 
 A port is the number after the colon that says which program on a machine a request is for: in
 `http://localhost:5173`, the frontend's dev server listens on 5173 and the Express backend on
-3000, both on the same machine. The confusable is the address (`localhost`, or
-`tally.quay.app`), which says which machine the request goes to.
+3000, both on the same machine. The confusable is the host name (`localhost`, or
+`tally.quay.app`), which says which machine the request goes to. In this file "address" is not
+used for the host name alone.
 
 ### q1
 
 - **goal:** `w-port`
 - **move:** DISTINGUISH
-- **answer:** The address, `localhost`, says which machine the request goes to (here, your own).
-  The port, 5173, says which program on that machine it is for, so one machine can run several
-  programs, each on its own port.
-- **credit:** full for naming both halves: the address picks the machine, the port picks the
+- **answer:** The host name, `localhost`, says which machine the request goes to (here, your
+  own). The port, 5173, says which program on that machine it is for, so one machine can run
+  several programs, each on its own port.
+- **credit:** full for naming both halves: the host name picks the machine, the port picks the
   program on it. Half for only one half (for example, "the port picks which program" with nothing
-  on what the address picks). None for an incidental difference alone, such as that the port is
+  on what the host name picks). None for an incidental difference alone, such as that the port is
   a number, comes after the colon, or is shorter.
 
 ### q2
@@ -35,11 +36,11 @@ A port is the number after the colon that says which program on a machine a requ
 
 - **goal:** `w-port`
 - **move:** CATCH
-- **answer:** Only the port changed. `localhost` is the address, and it still names the same
+- **answer:** Only the port changed. `localhost` is the host name, and it still names the same
   machine; 4000 just says the backend is now the program listening on a different port of it.
-- **credit:** full for naming that the address, which picks the machine, is unchanged, and only
+- **credit:** full for naming that the host name, which picks the machine, is unchanged, and only
   the port, which picks the program on it, changed. Half for saying it is the same machine
-  without saying which part of the address shows that. None for a different quibble, such as
-  that the frontend now needs updating.
-- **tutor note:** a learner who says "the frontend now needs the new address" is right but has
+  without saying which part of the URL shows that. None for a different quibble, such as that
+  the frontend now needs updating.
+- **tutor note:** a learner who says "the frontend now needs the new URL" is right but has
   answered a different question; ask whether the backend moved machines.

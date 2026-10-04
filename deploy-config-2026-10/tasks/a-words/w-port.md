@@ -4,7 +4,7 @@ Answer in two or three sentences, in your own words, with nothing open in front 
 
 ### q1
 
-In `http://localhost:5173`, what is the difference between the port and the address?
+In `http://localhost:5173`, what is the difference between the port and the host name?
 
 ### q2
 
