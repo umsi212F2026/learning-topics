@@ -1,6 +1,7 @@
 Crumbs is a recipe-sharing app shaped like your Problem Set 2 app. An agent is deploying it: the
 frontend on Brightpage, the backend on Kettle, and the database on Larder. These vendors are made
-up. Larder's dashboard shows a connection string for the database, which includes its password.
+up. Larder's dashboard shows a connection string for the database on its Connect page, and the
+string includes the database's password.
 Kettle's dashboard has a page where you can add settings for your server.
 
 Each question is one message from the agent. Say whether you would go along with it.
