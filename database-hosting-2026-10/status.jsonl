@@ -15,7 +15,4 @@
 {"at":"2026-10-04T16:43:36.660Z","kind":"curated","goal":"w-redeploy"}
 {"at":"2026-10-04T16:43:36.809Z","kind":"curated","goal":"w-seed-data"}
 {"at":"2026-10-04T16:43:36.911Z","kind":"curated","goal":"w-production"}
-{"at":"2026-10-04T17:26:51.715Z","kind":"goal-added","goal":"c-catch-data-loss","needs":"curation"}
-{"at":"2026-10-04T17:26:51.885Z","kind":"goal-added","goal":"c-clear-data-survives","needs":"curation"}
-{"at":"2026-10-04T17:26:52.017Z","kind":"goal-added","goal":"c-catch-copied-database","needs":"curation"}
-{"at":"2026-10-04T17:26:52.146Z","kind":"goal-added","goal":"c-clear-own-database","needs":"curation"}
+{"at":"2026-10-04T19:53:16.382Z","kind":"goal-added","goal":"c-plan-first-deploy","needs":"curation"}
