@@ -1,5 +1,7 @@
 # Learning goals: deploy config
 
+**origin:** course
+
 **What I want to be able to do, and what would count as having got there.**
 
 <!--
@@ -88,6 +90,11 @@ the layout of a deployed app and know where your database will live. That is why
 orientation of its own. What sits past that line: choosing hosts belongs to cloud-hosting.
 Deploying automatically and debugging a deployed app come in session 12, sign-in and what to do
 about a secret that has already leaked in session 13, and defending the app in session 14.
+
+## Sequence
+
+1. vocabulary
+2. capabilities
 
 ## Goals
 
@@ -218,7 +225,6 @@ about a secret that has already leaked in session 13, and defending the app in s
 
 - **goal:** config
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the values that differ depending on where the app runs
@@ -229,7 +235,6 @@ about a secret that has already leaked in session 13, and defending the app in s
 
 - **goal:** environment variable
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** a named value handed to the running program from outside its code
@@ -240,7 +245,6 @@ about a secret that has already leaked in session 13, and defending the app in s
 
 - **goal:** port
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the number after the colon that says which program on a machine a request is for
@@ -250,7 +254,6 @@ about a secret that has already leaked in session 13, and defending the app in s
 
 - **goal:** connection string
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** one line telling the backend where the database is and how to get in
@@ -261,7 +264,6 @@ about a secret that has already leaked in session 13, and defending the app in s
 
 - **goal:** origin
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** where a page was loaded from, down to the port
@@ -271,7 +273,6 @@ about a secret that has already leaked in session 13, and defending the app in s
 
 - **goal:** CORS
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the browser's check on which other origins a page may call
@@ -282,7 +283,6 @@ about a secret that has already leaked in session 13, and defending the app in s
 
 - **goal:** secret
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** a value that lets whoever holds it into something of yours

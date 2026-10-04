@@ -327,65 +327,11 @@ Nothing at file level.
   If the learner reports having already gone along with the request in the real session, record
   not met and do not run the attempt. Then offer `a-handle-described-requests` on a later visit.
 
-### `a-w-config`
+### `a-words`
 
-- **origin:** generated
-- **serves:** `w-config`
-- **checks:** `w-config`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-env-var`
-
-- **origin:** generated
-- **serves:** `w-env-var`
-- **checks:** `w-env-var`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-port`
-
-- **origin:** generated
-- **serves:** `w-port`
-- **checks:** `w-port`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-connection-string`
-
-- **origin:** generated
-- **serves:** `w-connection-string`
-- **checks:** `w-connection-string`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-origin`
-
-- **origin:** generated
-- **serves:** `w-origin`
-- **checks:** `w-origin`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-cors`
-
-- **origin:** generated
-- **serves:** `w-cors`
-- **checks:** `w-cors`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-secret`
-
-- **origin:** generated
-- **serves:** `w-secret`
-- **checks:** `w-secret`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+- **serves:** group vocabulary
+- **generator:** the five moves in `workflows/learn/skills/goal-setting/references/vocabulary-moves.md`, set for one word at a time from its `what it names`, `nearest confusable` and `synonyms`. Each question names that word's goal and carries its move.
+- **learner does:** answers one short question about one word
+- **tutor role:** examiner
+- **tutor does:** sets the question as served, without rewording it or hinting; when the bank has nothing for the word, sets one move live, as vocabulary-moves.md describes
+- **offer as:** not offered as a choice; a word's question is set when that word is studied or due
