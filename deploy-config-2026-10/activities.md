@@ -167,7 +167,11 @@ to offer, and its `offer as` describes it rather than distinguishing it.
   or wrong answer. The learner answers one question at a time, knowing they are being asked to,
   so a pass doesn't show they would notice a risky request in the middle of a deploy; and a
   repair question says the message is unsafe, so it doesn't show they would notice. Vendors are
-  made up, so a pass says nothing about real dashboards.
+  made up, so a pass says nothing about real dashboards. `c-trace-setting-value` is credited only
+  on `shared-vendor` exchanges about the frontend's and the backend's addresses, so a pass doesn't
+  show the learner can tell the database's connection details, or a value a host sets, from an
+  address; those are the criterion's easier answers, and the exchange questions about them are
+  credited to `c-spot-secret` alone.
 - **offer as:** the agent's side of a deploy, one question at a time, about 2 to 5 minutes each,
   nothing to run: the settings it asks for, the requests it makes, and what you say back.
 
