@@ -14,5 +14,5 @@ Your agent suggests using Postgres for your deployed app. Say what Postgres is, 
 ### q-catch-postgres-file
 
 A classmate says: "Switching my app from SQLite to Postgres just means changing a library. I'll
-install the Postgres package in place of the SQLite one, and my backend will open its Postgres file
-the same way it opened its old database file." What is wrong with what they said?
+install the Postgres package in place of the SQLite one, and my backend will open its Postgres
+database file directly." What is wrong with what they said?
