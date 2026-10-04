@@ -17,6 +17,12 @@ one story served in file order in study, and a later question may reveal an earl
 A quiz or a review draws few questions from any one scenario. Every question names at least one
 goal; there are no warm-ups.
 
+2026-10-04. A third deliberate deviation, from the `c-spot-secret` criterion, which asks the
+learner to say whether a value is a secret and why. On message questions, by the instructor's
+decision, full credit for `c-spot-secret` needs only the call (secret, or public), since the
+reason a learner gives there is naturally about the route, not the value. Exchange questions
+still ask for and credit the reason.
+
 ## Goals
 
 | id | Goal | Criterion: what gets examined, and what counts |
