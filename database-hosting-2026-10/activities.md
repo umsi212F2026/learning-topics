@@ -18,7 +18,7 @@ with the learner.
 
 | goal | checks | notes |
 | ---- | ------ | ----- |
-| `o-orientation` | `a-read-database-survives`, `a-dry-run-database-plan` | |
+| `o-orientation` | `a-read-database-survives` | |
 | `c-plan-first-deploy` | `a-judge-described-plan`, `a-judge-own-deploy-plan` | |
 
 ---
@@ -147,54 +147,11 @@ with the learner.
 
 ### `a-dry-run-database-plan`
 
-- **serves:** `all`
-- **supports:** orient
-- **checks:** `o-orientation`
-- **artifact:** no external source. The learner's answers from `a-read-database-survives`, still in
-  front of them. About 5 minutes. Nothing needs to be running.
-- **verified:** 2026-10-04
-- **learner does:** two quick rehearsals, neither judged, each answered in a sentence. First, the
-  tutor gives one line saying where a made-up app's database will live on a made-up host, and the
-  learner says whether its data would survive a redeploy. Second, the tutor gives one line saying how
-  that app's production database gets its tables and rows, and the learner says whether it is built
-  by the code or copied from the laptop. Then answers the question the tutor puts: with the readings
-  and your answers beside you, could you now take an agent's plan for deploying an app's database
-  for the first time and say whether the data will survive a redeploy, and whether production gets
-  a database of its own, built by the code rather than copied from your laptop?
-- **tutor role:** explainer
-- **tutor does:** sets the two rehearsals from the generator below and grades neither. If an answer
-  shows a misunderstanding (a file "on the server" taken as safe; a restart taken as the only thing
-  that can lose data), explains it once and moves on. Then puts the readiness question as written
-  and rules on the answer.
-- **done when:** criterion met. The ruling is on the learner's own indication, not on the
-  rehearsals. A plain yes to both parts is `criterion: met`. A hedge on either part, with no plain
-  no, is `criterion: unclear`: explain the hedged part once more and ask again; a second hedge stays
-  `unclear`, and the tutor offers a helped attempt at `a-judge-described-plan` as practice. A plain no is `criterion: not met`:
-  record it, ask what is missing, and offer to go back over the stop that bears on it; don't ask
-  again in the same sitting. This goal isn't required, so a no blocks nothing.
-- **generator:** vary the made-up app (small, React frontend, Express backend, SQLite: a club
-  sign-up sheet, a recipe box, a study-group finder) and the host's one-line storage rule. Neither rehearsal uses a fault that `a-judge-described-plan`
-  serves, so the learner doesn't meet a counting plan's deciding detail minutes before it.
-  Rehearsal one is a host whose disk is kept across a restart but starts empty on every redeploy,
-  and one plan line that is either "we restarted the server and the entries were still there, so
-  the data is safe" (a fault `a-judge-described-plan` never serves: a restart is not a redeploy)
-  or the SQLite file placed on a volume that is kept across redeploys (sound). Rehearsal two is one
-  plan line on how production gets its rows, either the backend creating empty tables at startup
-  (sound) or the agent exporting the rows from the laptop's database and importing them into
-  production (a fault `a-judge-described-plan` never serves). Never use the wording of a
-  `no-volume`, `silent-location`, `laptop-copy`, `shared-dev`, `outside-mount` or
-  `committed-file` step, and never give a line that leaves out where the database lives. The one
-  exception is the restart line ("we restarted the server and the entries were still there, so
-  the data is safe"): its point is that a restart is not a redeploy, not a plan that hides where
-  the data lives. Don't add a location to it, since any location would preview a banked shape. Fixed: two rehearsals in that order, neither graded, then the readiness
-  question word for word. Difficulty doesn't vary: this settles an indication, not a capability.
-- **worked example:** if the learner freezes, the tutor answers a different made-up line aloud in two
-  sentences, then hands the original back.
-- **doesn't show:** an indication of readiness is all this goal asks for and all this shows. Each
-  rehearsal is one line, helped and ungraded, so it shows nothing about finding the deciding detail
-  in a whole plan, and nothing about the seven words, which `a-words` serves.
-- **offer as:** the short step that closes orientation, after `a-read-database-survives`, not an
-  alternative to it. About 5 minutes; about 20 with the reading.
+- **was:** the orientation's closing step: two ungraded one-line rehearsals, then the readiness
+  question on which `o-orientation` was ruled.
+- **status:** dropped (curator, 2026-10-04): merged into `a-read-database-survives`, which now
+  ends with the same rehearsals and readiness question, so the orientation is one entry done in
+  order.
 
 ### `a-trace-own-database-setup`
 
