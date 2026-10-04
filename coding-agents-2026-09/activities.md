@@ -836,92 +836,11 @@ reasons a bill could differ can also come from the agent's replies; see each che
   learner's reasons first appeared in the agent's replies, so it can weigh whether the learner could
   give them without the agent.
 
-### `a-w-token`
+### `a-words`
 
-- **origin:** generated
-- **serves:** `w-token`
-- **checks:** `w-token`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-input-tokens`
-
-- **origin:** generated
-- **serves:** `w-input-tokens`
-- **checks:** `w-input-tokens`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-output-tokens`
-
-- **origin:** generated
-- **serves:** `w-output-tokens`
-- **checks:** `w-output-tokens`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-prompt-caching`
-
-- **origin:** generated
-- **serves:** `w-prompt-caching`
-- **checks:** `w-prompt-caching`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-model`
-
-- **origin:** generated
-- **serves:** `w-model`
-- **checks:** `w-model`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-reasoning-effort`
-
-- **origin:** generated
-- **serves:** `w-reasoning-effort`
-- **checks:** `w-reasoning-effort`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-context`
-
-- **origin:** generated
-- **serves:** `w-context`
-- **checks:** `w-context`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-context-window`
-
-- **origin:** generated
-- **serves:** `w-context-window`
-- **checks:** `w-context-window`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-compaction`
-
-- **origin:** generated
-- **serves:** `w-compaction`
-- **checks:** `w-compaction`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-system-prompt`
-
-- **origin:** generated
-- **serves:** `w-system-prompt`
-- **checks:** `w-system-prompt`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+- **serves:** group vocabulary
+- **generator:** the five moves in `workflows/learn/skills/goal-setting/references/vocabulary-moves.md`, set for one word at a time from its `what it names`, `nearest confusable` and `synonyms`. Each question names that word's goal and carries its move.
+- **learner does:** answers one short question about one word
+- **tutor role:** examiner
+- **tutor does:** sets the question as served, without rewording it or hinting; when the bank has nothing for the word, sets one move live, as vocabulary-moves.md describes
+- **offer as:** not offered as a choice; a word's question is set when that word is studied or due
