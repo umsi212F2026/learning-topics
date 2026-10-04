@@ -137,7 +137,7 @@ about a secret that has already leaked in session 13, and defending the app in s
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** one line telling the backend where the database is and how to get in
-- **nearest confusable:** a database file path
+- **nearest confusable:** a database file path; the database's password
 - **synonyms:** database URL, DATABASE_URL
 
 ### `w-origin`
@@ -147,7 +147,7 @@ about a secret that has already leaked in session 13, and defending the app in s
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** where a page was loaded from, down to the port
-- **nearest confusable:** domain
+- **nearest confusable:** domain; a full URL
 
 ### `w-cors`
 
@@ -156,7 +156,7 @@ about a secret that has already leaked in session 13, and defending the app in s
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the browser's check on which other origins a page may call
-- **nearest confusable:** a server error
+- **nearest confusable:** a server error; a server's own access control
 - **synonyms:** cross-origin resource sharing
 
 ### `w-secret`
@@ -166,5 +166,5 @@ about a secret that has already leaked in session 13, and defending the app in s
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** a value that lets whoever holds it into something of yours
-- **nearest confusable:** a setting
+- **nearest confusable:** a setting; an environment variable
 - **synonyms:** credential
