@@ -30,3 +30,16 @@ confusable: restart.
   containing the fix) and what it rules out (the fix is not live yet; the old version runs until
   then). Half for the claim without anything it rules out. Do not accept "the host will restart the
   app", which loses the new version.
+
+### q-define-redeploy
+
+- **goal:** `w-redeploy`
+- **move:** DEFINE
+- **answer:** putting a new version of the app on the host in place of the version that is
+  running, so that the new one is what users get from then on.
+- **credit:** full for a new version of the app replacing the running one on the host, in the
+  learner's own words. No credit for "a restart" or "restarting the app on the host", which
+  starts the same version again with nothing new in it. No credit for an answer that only restates
+  the word ("deploying it again", "doing the deploy over") without saying that a new version takes
+  the running one's place. No credit for defining it by what happens to stored data ("when your
+  data gets wiped"), which depends on the host and is not what the word names.

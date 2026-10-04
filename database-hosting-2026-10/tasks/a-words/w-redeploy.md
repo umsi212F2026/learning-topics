@@ -13,3 +13,7 @@ redeploy?
 Your app is already running on a host. Your agent says: "I've fixed the typo on the sign-up page
 and pushed it. The host will redeploy in about a minute." What is the agent claiming, and what does
 it rule out?
+
+### q-define-redeploy
+
+In your own words, what does it mean to redeploy an app that is already running on a host?
