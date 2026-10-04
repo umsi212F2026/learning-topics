@@ -253,7 +253,7 @@ session 14.
 - **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
-- **what it names:** a server's disk that starts empty again whenever the host replaces the server
+- **what it names:** a server's file storage that starts empty again whenever the host replaces the server
 - **nearest confusable:** persistent volume
 - **synonyms:** ephemeral filesystem, ephemeral storage
 - **origin:** course
@@ -265,7 +265,7 @@ session 14.
 - **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
-- **what it names:** disk space attached to a server that outlasts the server being replaced
+- **what it names:** file storage space attached to a server that outlasts the server being replaced
 - **nearest confusable:** database host
 - **synonyms:** volume, persistent disk
 - **origin:** course
