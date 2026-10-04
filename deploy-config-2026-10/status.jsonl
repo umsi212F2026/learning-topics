@@ -10,3 +10,14 @@
 {"at":"2026-10-04T16:12:42.266Z","kind":"goal-added","goal":"c-spot-secret","needs":"curation"}
 {"at":"2026-10-04T16:12:42.300Z","kind":"goal-added","goal":"c-judge-secret-request","needs":"curation"}
 {"at":"2026-10-04T16:12:42.333Z","kind":"goal-added","goal":"c-secret-instead","needs":"curation"}
+{"at":"2026-10-04T21:26:27.181Z","kind":"curated","goal":"c-trace-setting-value"}
+{"at":"2026-10-04T21:26:27.222Z","kind":"curated","goal":"c-spot-secret"}
+{"at":"2026-10-04T21:26:27.262Z","kind":"curated","goal":"c-judge-secret-request"}
+{"at":"2026-10-04T21:26:27.299Z","kind":"curated","goal":"c-secret-instead"}
+{"at":"2026-10-04T21:26:27.337Z","kind":"curated","goal":"w-config"}
+{"at":"2026-10-04T21:26:27.372Z","kind":"curated","goal":"w-env-var"}
+{"at":"2026-10-04T21:26:27.405Z","kind":"curated","goal":"w-port"}
+{"at":"2026-10-04T21:26:27.439Z","kind":"curated","goal":"w-connection-string"}
+{"at":"2026-10-04T21:26:27.476Z","kind":"curated","goal":"w-origin"}
+{"at":"2026-10-04T21:26:27.511Z","kind":"curated","goal":"w-cors"}
+{"at":"2026-10-04T21:26:27.545Z","kind":"curated","goal":"w-secret"}
