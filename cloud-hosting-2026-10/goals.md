@@ -179,7 +179,6 @@ are each a topic of their own. Sign-in belongs to Part B of Problem Set 3, not t
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** turning your code into what gets sent to the hosts
-- **nearest confusable:** deploy
 - **synonyms:** production build
 
 ### `w-static-host`
@@ -199,7 +198,6 @@ are each a topic of their own. Sign-in belongs to Part B of Problem Set 3, not t
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** a host that keeps your backend running
-- **nearest confusable:** static host
 - **synonyms:** app host, web service
 
 ### `w-database-host`
