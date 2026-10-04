@@ -143,9 +143,12 @@ with a reply that keeps the secret out some other way. Complying earns none.
   in the web service's settings on Harbor myself; it's there now, so please redeploy and check the
   logs." It is safer because the chat is kept and can be shared, and an agent holding the string
   can write it into a file that gets committed.
-- **credit:** full for a reply that puts the string into the host's settings themselves and tells
-  the agent it is there, with both reasons; half for that reply with one reason, or for both
-  reasons with a reply that keeps the string out some other way, such as a screenshot with the
-  value covered or checking for the stray space themselves.
-- **tutor note:** checking the value for a stray space themselves is the common reply here. It is
-  safer than complying, but on its own it is half credit at most.
+- **credit:** full for a reply that puts the string into the host's settings themselves, or checks
+  or re-enters it there themselves, and tells the agent it is there, with both reasons; half for
+  that reply with one reason, or for both reasons with a reply that keeps the string out some
+  other way, such as a screenshot with the value covered, or a check made somewhere other than
+  Harbor's settings.
+- **tutor note:** checking the value for a stray space in Harbor's settings themselves, and
+  telling the agent it's fixed, is the common reply here, and it is the criterion's answer. A
+  screenshot with the value covered is safer than complying, but on its own it is half credit at
+  most.

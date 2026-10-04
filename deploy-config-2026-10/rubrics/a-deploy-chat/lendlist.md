@@ -139,9 +139,10 @@ credit on its own.
   the web service's settings on Dockyard myself; it's there now, so please redeploy and check the
   logs." It is safer because the chat is kept and can be shared, and an agent holding the string
   can write it into a file that gets committed.
-- **credit:** full for a reply that puts the string into the host's settings themselves and tells
-  the agent it is there, with both reasons; half for that reply with one reason, or for both
-  reasons with a reply that keeps the string out some other way, such as pasting the output with
-  the password blanked out or comparing the two strings themselves.
+- **credit:** full for a reply that puts the string into the host's settings themselves, or checks
+  or re-enters it there themselves, and tells the agent it is there, with both reasons; half for
+  that reply with one reason, or for both reasons with a reply that keeps the string out some
+  other way, such as pasting the output with the password blanked out, or comparing the two
+  strings somewhere other than Dockyard's settings.
 - **tutor note:** offering to paste the output with the password blanked out is the common reply
   here. It is safer than complying, but on its own it is half credit at most.
