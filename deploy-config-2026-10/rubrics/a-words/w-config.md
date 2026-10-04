@@ -1,8 +1,5 @@
 # Rubric: config
 
-If the learner misses a question here, set a DEFINE or INTERPRET move for config live, as help (it
-is recorded as helped and doesn't count), then come back to a production question.
-
 Config is the values that differ depending on where the app runs: on localhost the frontend calls
 `http://localhost:3000` and the backend reaches a local database, while deployed they use the
 hosts' addresses and the database host's connection string. The code is the same in both places;

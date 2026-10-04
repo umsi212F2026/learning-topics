@@ -1,8 +1,5 @@
 # Rubric: port
 
-If the learner misses a question here, set a DEFINE or INTERPRET move for port live, as help (it
-is recorded as helped and doesn't count), then come back to a production question.
-
 A port is the number after the colon that says which program on a machine a request is for: in
 `http://localhost:5173`, the frontend's dev server listens on 5173 and the Express backend on
 3000, both on the same machine. The confusable is the host name (`localhost`, or

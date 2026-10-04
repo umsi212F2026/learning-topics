@@ -1,8 +1,5 @@
 # Rubric: secret
 
-If the learner misses a question here, set a DEFINE or INTERPRET move for secret live, as help (it
-is recorded as helped and doesn't count), then come back to a production question.
-
 A secret is a value that lets whoever holds it into something of yours: a database password, a
 connection string, a token for a vendor's account. What makes it one is what holding it lets
 someone do, not its name or how it looks. Its other name is credential, and that, given as an

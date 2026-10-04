@@ -1,8 +1,5 @@
 # Rubric: connection string
 
-If the learner misses a question here, set a DEFINE or INTERPRET move for connection string live,
-as help (it is recorded as helped and doesn't count), then come back to a production question.
-
 A connection string is one line telling the backend where the database is and how to get in. For
 a database on a host of its own it looks like `postgres://tally_app:pa55word@db.cellar.cloud:5432/tally`:
 the kind of database, a username and password, the machine and port it runs on, and the

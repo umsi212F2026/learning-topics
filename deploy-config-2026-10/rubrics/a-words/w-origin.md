@@ -1,8 +1,5 @@
 # Rubric: origin
 
-If the learner misses a question here, set a DEFINE or INTERPRET move for origin live, as help (it
-is recorded as helped and doesn't count), then come back to a production question.
-
 An origin is where a page was loaded from, down to the port: `http://localhost:5173`, or
 `https://tally.quay.app`. It stops at the port, so a page's path is not part of it, and two
 addresses with the same domain but different ports, such as `http://localhost:5173` and

@@ -1,9 +1,5 @@
 # Rubric: environment variable
 
-If the learner misses a question here, set a DEFINE or INTERPRET move for environment variable
-live, as help (it is recorded as helped and doesn't count), then come back to a production
-question.
-
 An environment variable is a named value handed to the running program from outside its code: the
 host's settings page, or a `.env` file the program loads when it starts, and the code only reads
 it by name (`process.env.FRONTEND_URL`). Its other name is env var, and that, given as an answer,
