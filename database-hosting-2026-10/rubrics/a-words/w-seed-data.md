@@ -33,3 +33,21 @@ test data; schema. Synonym: initial data.
   up. Half for one side right with the other missing or vague. Do not accept "the schema is
   written in SQL and seed data isn't" (both may be), "seed data is test data", or a difference of
   size.
+
+### q-catch-seed-rebuild
+
+- **goal:** `w-seed-data`
+- **move:** CATCH
+- **answer:** seed data is only the starting rows the code puts in when a database is first set up,
+  here the list of categories. It holds nothing users added afterwards, so running it again on an
+  empty database gives back the categories and none of the recipes people saved. It is not a copy
+  of the database as it stands, and putting the app back the way it was would need such a copy.
+- **credit:** full for naming the actual error: seed data is the fixed starting rows the code puts
+  in at setup, so it does not include what users added since, and running it again brings back only
+  the starting categories, not the saved recipes. Half for "seed data isn't a backup" or "you'd
+  lose the recipes" with nothing about seed data being only the starting rows. Do not accept a
+  different quibble: "keep the database on a persistent volume", "use Postgres instead", or a
+  remark about when or where the seed step should run, none of which is what the sentence gets
+  wrong.
+- **tutor note:** a learner who says the seed rows might be inserted twice has found a different
+  problem; ask what the app would hold after running the seed data on a database that was lost.
