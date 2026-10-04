@@ -325,9 +325,7 @@ part of this.
   holds `g2`, `g3`, `g4`; too vague to check as it stands `g6`. To pick the next, run
   `served.mjs cloud-hosting-2026-10 c-check-vendor-claims`, take a claim not yet served, and prefer
   a kind the learner hasn't met; `g1` and `g5` make the best first two. Once the learner has met
-  Render's 30-day expiry anywhere in this topic, prefer claims about other vendors over `g5`. Stop
-  when done when has been met on two or three sittings with different kinds, and offer
-  `a-check-lab-answer`; using up the six is not the target.
+  Render's 30-day expiry anywhere in this topic, prefer claims about other vendors over `g5`.
 - **worked example:** check a claim not in the six aloud, with a false start left in and named.
   For Fly.io's "only a short trial before pay-as-you-go": open the pricing page,
   https://docs.fly.io/about/pricing/, read "All organizations ... require a credit card on file"
@@ -380,9 +378,7 @@ part of this.
   dated secondary `s4`, `s5`, `s6`; the agent `s3`; an anecdote `s8`. To pick the next, run
   `served.mjs cloud-hosting-2026-10 c-check-vendor-claims`, take a source not yet served, and
   prefer a kind the learner hasn't met. Serve a near-miss (`s2`, `s7` or `s9`) before `s1`, so the
-  learner meets a vendor page that doesn't settle it before one that does. Stop when done when has
-  been met on two or three sittings with different kinds, and offer `a-check-lab-answer`; using up
-  the ten is not the target.
+  learner meets a vendor page that doesn't settle it before one that does.
 - **worked example:** judge a source not in the ten aloud: a blog post found by searching the
   claim. Say whose page it is (not the vendor's), whether it is dated, and whether it is about
   this claim; conclude it can tell you what to look for but not settle it; then name where to go
