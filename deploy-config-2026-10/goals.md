@@ -226,18 +226,8 @@ defending the app in session 14.
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** a named value handed to the running program from outside its code
-- **nearest confusable:** a variable in the code
+- **nearest confusable:** a setting written into the code
 - **synonyms:** env var
-
-### `w-env-file`
-
-- **goal:** .env file
-- **criterion:** vocabulary
-- **supply:** vocabulary
-- **bar:** one production pass
-- **group:** vocabulary
-- **what it names:** the file on your own machine that holds your app's environment variables
-- **nearest confusable:** the host's environment variables
 
 ### `w-port`
 
