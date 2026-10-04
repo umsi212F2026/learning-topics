@@ -194,32 +194,50 @@ about a secret that has already leaked in session 13, and defending the app in s
   placeholder capability entry; an empty section is the honest signal.
 -->
 
-### `c-place-settings`
+### `c-trace-setting-value`
 
 - **goal:** follow an agent's explanation of a setting it wants: what it is for and where its
   value comes from
 - **criterion:** Given an app whose frontend, backend and database are each on a named vendor,
   and an exchange in which an agent asks for a setting under a name the learner hasn't met, a
   student asks what it is for and where its value comes from, and the agent answers. The learner
-  says what the setting is for, whose value it needs (the frontend's address, the backend's
+  says what the setting is for and whose value it needs (the frontend's address, the backend's
   address, the database's connection details, or nobody's, because a host sets it automatically,
-  as with `PORT`), and whether it is a secret. It passes when all three are right, including when
-  the setting belongs to one part but holds another part's address, such as the backend's allowed
-  origin holding the frontend's address, and when the agent's answer names only a vendor that
-  hosts two parts. Finding the value on the vendor's site, and what to do with a secret, are not
-  part of it.
-
-### `c-handle-secret`
-
-- **goal:** keep a secret out of the agent's chat and the app's code
-- **criterion:** Given a message from an agent deploying an app that asks for a value or proposes
-  a step, says whether they would go along with it, and if not, what they would do instead and
-  why. It passes when they decline to paste a secret into the chat or to let the agent write one
-  into the code or the repository; instead put it straight into the host's settings and tell the
-  agent it is there; give as the reason that the chat is kept and can be shared, and that a
-  secret in a file can be committed; and go along with a request that involves no secret, such
-  as pasting the backend's address. Dealing with a secret that has already leaked is not part of
+  as with `PORT`). It passes when both are right, including when the setting belongs to one part
+  but holds another part's address, such as the backend's allowed origin holding the frontend's
+  address, and when the agent's answer names only a vendor that hosts two parts. Finding the
+  value on the vendor's site, whether it is a secret, and what to do with one are not part of
   it.
+
+### `c-spot-secret`
+
+- **goal:** tell whether a value an agent asks for is a secret
+- **criterion:** Given a setting an agent asks for and its explanation of what the value is, says
+  whether the value is a secret and why: someone holding it could get into something of yours.
+  It passes when they call a secret one, including one whose name doesn't say so, such as a
+  token or a connection string, and don't call a public value one, such as the frontend's or the
+  backend's address. What to do with a secret is not part of it.
+- **capability:** handle-secrets
+
+### `c-judge-secret-request`
+
+- **goal:** tell whether an agent's request would send a secret through the chat or into the code
+- **criterion:** Given one message from an agent deploying an app, which asks for a value or
+  proposes a step, says whether they would go along with it. It passes when they decline a
+  request that would put a secret in the chat or let the agent write one into a file, and go
+  along with one that wouldn't, including an instruction to put a secret into the host's
+  settings themselves. What to do instead is not part of it.
+- **capability:** handle-secrets
+
+### `c-secret-instead`
+
+- **goal:** say what to do instead of handing a secret to the agent, and why
+- **criterion:** Given a message from an agent that would route a secret through the chat or
+  into a file, says what they would do instead and why. It passes when they say to put the
+  secret into the host's settings themselves and tell the agent it is there, and give both
+  reasons: the chat is kept and can be shared, and an agent holding the secret can write it into
+  a file that gets committed. Dealing with a secret that has already leaked is not part of it.
+- **capability:** handle-secrets
 
 ### `w-config`
 
