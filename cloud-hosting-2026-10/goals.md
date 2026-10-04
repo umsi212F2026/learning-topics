@@ -1,5 +1,7 @@
 # Learning goals: cloud hosting
 
+**origin:** course
+
 **What I want to be able to do, and what would count as having got there.**
 
 <!--
@@ -91,6 +93,12 @@ are each a topic of their own. Sign-in belongs to Part B of Problem Set 3, not t
   Which of: recognize it / read it / modify something existing / author from scratch /
   judge someone else's work. One line on why that's enough.
 -->
+
+## Sequence
+
+1. orientation
+2. vocabulary
+3. capabilities
 
 ## Goals
 
@@ -200,7 +208,6 @@ are each a topic of their own. Sign-in belongs to Part B of Problem Set 3, not t
   covered. It passes when every gap and mismatch is found and nothing is named that isn't one,
   including for a plan where one vendor hosts both, or where the backend serves the built
   frontend itself. Where the database is kept is not part of it.
-- **origin:** course
 
 ### `c-check-vendor-claims`
 
@@ -212,7 +219,6 @@ are each a topic of their own. Sign-in belongs to Part B of Problem Set 3, not t
   that has changed, and a credit card requirement the answer left out; and says what they would
   add to the prompt so that every claim in the next answer comes with what they need to check it.
   Asking the agent whether it is sure does not meet it.
-- **origin:** course
 
 ### `c-weigh-hosting-plans`
 
@@ -227,7 +233,6 @@ are each a topic of their own. Sign-in belongs to Part B of Problem Set 3, not t
   look when something breaks; name nothing the terms don't support; and state the strongest case
   for the plan they didn't choose. Which plan they choose is not part of it, and neither is where
   the database is kept.
-- **origin:** course
 
 ### `o-orientation`
 
@@ -238,184 +243,153 @@ are each a topic of their own. Sign-in belongs to Part B of Problem Set 3, not t
 - **recurrence:** never
 - **is_required:** no
 - **group:** orientation
-- **origin:** course
 
 ### `w-deploy`
 
 - **goal:** deploy
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** putting the app where anyone's browser can reach it
 - **nearest confusable:** build
 - **synonyms:** ship, go live
-- **origin:** course
 
 ### `w-build`
 
 - **goal:** build
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** turning your code into what gets sent to the hosts
 - **nearest confusable:** deploy
 - **synonyms:** production build
-- **origin:** course
 
 ### `w-static-host`
 
 - **goal:** static host
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** a host that hands out the frontend's files as they are
 - **nearest confusable:** server host
 - **synonyms:** static site hosting
-- **origin:** course
 
 ### `w-server-host`
 
 - **goal:** server host
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** a host that keeps your backend running
 - **nearest confusable:** static host
 - **synonyms:** app host, web service
-- **origin:** course
 
 ### `w-database-host`
 
 - **goal:** database host
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** where the app's data is kept once it leaves your laptop
 - **nearest confusable:** server host
 - **synonyms:** managed database
-- **origin:** course
 
 ### `w-free-tier`
 
 - **goal:** free tier
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** what a vendor lets you use without paying, up to a limit
 - **nearest confusable:** free trial
 - **synonyms:** free plan, hobby plan
-- **origin:** course
 
 ### `w-idle-sleep`
 
 - **goal:** sleep
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** a free app being switched off while nobody is using it
 - **nearest confusable:** a crash
 - **synonyms:** spin down, scale to zero
-- **origin:** course
 
 ### `w-cold-start`
 
 - **goal:** cold start
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the wait while a sleeping app wakes for its first request
 - **nearest confusable:** a slow server
 - **synonyms:** spin-up time
-- **origin:** course
 
 ### `w-overage`
 
 - **goal:** overage
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** use past what your plan includes, and the charge for it
 - **nearest confusable:** hitting a limit that pauses the app
 - **synonyms:** overage charges
-- **origin:** course
 
 ### `w-lock-in`
 
 - **goal:** lock-in
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** what it would cost you to move to another vendor
 - **nearest confusable:** a contract
 - **synonyms:** vendor lock-in
-- **origin:** course
 
 ### `w-domain`
 
 - **goal:** domain
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the name people type to reach your app
 - **nearest confusable:** a URL
 - **synonyms:** domain name
-- **origin:** course
 
 ### `w-dns`
 
 - **goal:** DNS
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the lookup from a name to where the app is
 - **nearest confusable:** a domain
 - **synonyms:** Domain Name System
-- **origin:** course
 
 ### `w-https`
 
 - **goal:** HTTPS
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the padlock in the address bar
 - **nearest confusable:** HTTP
 - **synonyms:** TLS, SSL
-- **origin:** course
 
 ### `w-cdn`
 
 - **goal:** CDN
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** copies of your files kept close to wherever the visitor is
 - **nearest confusable:** static host
 - **synonyms:** content delivery network, edge network
-- **origin:** course
 
 ### `w-instance`
 
 - **goal:** instance
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** one running copy of your app on a host's machine
 - **nearest confusable:** server host
 - **synonyms:** dyno
-- **origin:** course
