@@ -5,7 +5,7 @@ with the learner.
 
 ## Check notes
 
-2026-10-04. The minimum route (orientation reading and dry run, then a-judge-described-plan with its worked example, then the seven words) comes to about 55 minutes and fits the topic's 60-minute budget only if the first counting attempt passes. A retry, or either study activity, takes it past 60. a-trace-own-database-setup and a-judge-own-deploy-plan belong naturally with Problem Set 3 (Oct 8 to 14), not before session 11.
+2026-10-04. The minimum route (orientation reading and dry run, then a-judge-described-plan with its worked example, then the seven words) comes to about 55 minutes. It fits the topic's 60-minute budget only if the first counting attempt passes; a retry, or a helped practice attempt after a hedged readiness answer, takes it past 60. a-judge-own-deploy-plan belongs with Problem Set 3 (Oct 8 to 14), not before session 11.
 
 2026-10-04, from the curator, not the checker. The `study` cell for `c-plan-first-deploy` is empty
 on purpose, against the generate skill's rule that every goal has an activity that isn't a check.
@@ -30,7 +30,7 @@ attempting them unaided. The two study activities were dropped for that reason.
 | goal | study | checks | notes |
 | ---- | ----- | ------ | ----- |
 | `o-orientation` | `a-read-database-survives` | `a-dry-run-database-plan` | |
-| `c-plan-first-deploy` | | `a-judge-described-plan`, `a-judge-own-deploy-plan` | Both checks show the host's storage rule to the learner as true, and every banked plan says where the database lives. Neither check tests whether the learner would notice a plan that never says where the data goes, or doubt a plan's own claim that the host keeps its files, though that is the Problem Set 3 situation. The first counting question is also always an own-database fault (see a-judge-described-plan's note), so a met goal may rest on no unaided catch of a survival fault. When the learner reaches Problem Set 3, ask where their plan says the database lives and how they know the host keeps that place. |
+| `c-plan-first-deploy` | | `a-judge-described-plan`, `a-judge-own-deploy-plan` | Both checks give the learner the host's storage rule as true, and every banked plan says where the database lives. A plan that never says where the data goes is tested only in `a-judge-own-deploy-plan`, and only if the agent's real plan happens to leave it out. Doubting a plan's own claim about how the host stores files is tested by neither, though that is the Problem Set 3 situation. One unaided pass also catches one kind of fault, survival or own database; the other kind comes on review. When the learner reaches Problem Set 3, ask where their plan says the database lives and how they know the host keeps that place. |
 
 ---
 
@@ -289,11 +289,6 @@ attempting them unaided. The two study activities were dropped for that reason.
   (20 minutes), then this (15 with the worked example), about 35 minutes, and the seven words in
   `a-words` (about 20), about 55 in all. `a-judge-own-deploy-plan` is the same capability on your
   own agent's plan.
-- **check note:** Every Medium faulted shape (`laptop-copy`, `shared-dev`) is an own-database
-  fault, so a first counting question never tests a survival fault, and a pass there meets the
-  goal. On review, choose a faulted shape of the other kind from the one already passed (survival
-  is `outside-mount` or `committed-file`), not merely an unseen shape. Bank labels don't name the
-  shape, so read it from the served question's rubric key.
 
 ### `a-judge-own-deploy-plan`
 
@@ -348,10 +343,9 @@ attempting them unaided. The two study activities were dropped for that reason.
 - **offer as:** the real thing: your own agent's plan for your own Problem Set 3 deploy, judged
   before you let it run. About 15 minutes, any time Oct 8 to 14. `a-judge-described-plan` is the one
   to take before session 11.
-- **check note:** When the real plan is sound, the made-up opposite plan is an own-database fault,
-  so prefer `outside-mount` or `committed-file` there if the learner has not yet caught a survival
-  fault unaided. If you can't read the code the plan is for (a tablemate's repository you don't
-  have), treat the sitting as practice, as when the host's pages are silent.
+- **check note:** If you can't read the code the plan is for (a tablemate's repository you don't
+  have), you can't settle the key: treat the sitting as practice, as when the host's pages are
+  silent, and offer `a-judge-described-plan`.
 
 ### `a-words`
 
