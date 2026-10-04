@@ -61,6 +61,7 @@ with the learner.
   filesystem" and "persistent disk"), redeploy (Render), production (MDN's title, Odin), seed data
   (Odin's "seeding..."). Not repeated here: MDN "What is a web server?" and Odin's "Deployment"
   lesson, read in cloud-hosting; its "see database-hosting" boxes are what this fills.
+- **verified:** 2026-10-04
 - **learner does:** reads with their Problem Set 2 repository open beside the pages, and stops twice
   to answer before reading on; asking their agent to point at a line of their code is fine, and "I
   don't know yet" is an honest answer:
@@ -305,65 +306,11 @@ with the learner.
   before you let it run. About 15 minutes, any time Oct 8 to 14. `a-judge-described-plan` is the one
   to take before session 11.
 
-### `a-w-sqlite`
+### `a-words`
 
-- **origin:** generated
-- **serves:** `w-sqlite`
-- **checks:** `w-sqlite`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-postgres`
-
-- **origin:** generated
-- **serves:** `w-postgres`
-- **checks:** `w-postgres`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-ephemeral-disk`
-
-- **origin:** generated
-- **serves:** `w-ephemeral-disk`
-- **checks:** `w-ephemeral-disk`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-persistent-volume`
-
-- **origin:** generated
-- **serves:** `w-persistent-volume`
-- **checks:** `w-persistent-volume`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-redeploy`
-
-- **origin:** generated
-- **serves:** `w-redeploy`
-- **checks:** `w-redeploy`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-seed-data`
-
-- **origin:** generated
-- **serves:** `w-seed-data`
-- **checks:** `w-seed-data`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-production`
-
-- **origin:** generated
-- **serves:** `w-production`
-- **checks:** `w-production`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+- **serves:** group vocabulary
+- **generator:** the five moves in `workflows/learn/skills/goal-setting/references/vocabulary-moves.md`, set for one word at a time from its `what it names`, `nearest confusable` and `synonyms`. Each question names that word's goal and carries its move.
+- **learner does:** answers one short question about one word
+- **tutor role:** examiner
+- **tutor does:** sets the question as served, without rewording it or hinting; when the bank has nothing for the word, sets one move live, as vocabulary-moves.md describes
+- **offer as:** not offered as a choice; a word's question is set when that word is studied or due

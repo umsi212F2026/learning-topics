@@ -1,5 +1,7 @@
 # Learning goals: database hosting
 
+**origin:** course
+
 **What I want to be able to do, and what would count as having got there.**
 
 <!--
@@ -189,7 +191,6 @@ session 14.
   whether the data will survive a redeploy, and whether production gets a database of its own,
   built by the code rather than copied from the laptop. It passes when they catch a plan that
   fails either one and don't fault a plan that meets both.
-- **origin:** course
 
 ### `o-orientation`
 
@@ -200,86 +201,71 @@ session 14.
 - **recurrence:** never
 - **is_required:** no
 - **group:** orientation
-- **origin:** course
 
 ### `w-sqlite`
 
 - **goal:** SQLite
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** a database that is a single file the backend opens itself
 - **nearest confusable:** Postgres
-- **origin:** course
 
 ### `w-postgres`
 
 - **goal:** Postgres
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** a database that runs as a program of its own, which the backend connects to
 - **nearest confusable:** SQL
 - **synonyms:** PostgreSQL
-- **origin:** course
 
 ### `w-ephemeral-disk`
 
 - **goal:** ephemeral disk
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** a server's file storage that starts empty again whenever the host replaces the server
 - **nearest confusable:** persistent volume
 - **synonyms:** ephemeral filesystem, ephemeral storage
-- **origin:** course
 
 ### `w-persistent-volume`
 
 - **goal:** persistent volume
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** file storage space attached to a server that outlasts the server being replaced
 - **nearest confusable:** database host
 - **synonyms:** volume, persistent disk
-- **origin:** course
 
 ### `w-redeploy`
 
 - **goal:** redeploy
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** putting a new version of the app on its hosts in place of the running one
 - **nearest confusable:** restart
-- **origin:** course
 
 ### `w-seed-data`
 
 - **goal:** seed data
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the rows your code puts in when a database is first set up
 - **nearest confusable:** fixture
 - **synonyms:** initial data
-- **origin:** course
 
 ### `w-production`
 
 - **goal:** production
 - **criterion:** vocabulary
-- **supply:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the copy of the app that real users use, along with its data
 - **nearest confusable:** development
 - **synonyms:** prod, live
-- **origin:** course
