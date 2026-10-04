@@ -7,6 +7,4 @@
 {"at":"2026-10-01T12:10:41.732Z","kind":"goal-added","goal":"w-redeploy","needs":"curation"}
 {"at":"2026-10-01T12:10:44.217Z","kind":"goal-added","goal":"w-seed-data","needs":"curation"}
 {"at":"2026-10-01T12:10:46.790Z","kind":"goal-added","goal":"w-production","needs":"curation"}
-{"at":"2026-10-01T12:10:57.793Z","kind":"goal-added","goal":"w-backup","needs":"curation"}
-{"at":"2026-10-01T12:11:00.216Z","kind":"goal-added","goal":"w-restore","needs":"curation"}
 {"at":"2026-10-01T13:15:08.730Z","kind":"goal-added","goal":"c-plan-first-deploy","needs":"curation"}
