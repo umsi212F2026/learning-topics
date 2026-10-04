@@ -5,6 +5,8 @@ with the learner.
 
 ## Check notes
 
+Nothing at file level.
+
 ## Goals
 
 | id | Goal | Criterion: what gets examined, and what counts |
@@ -22,8 +24,8 @@ with the learner.
 
 | goal | study | checks | notes |
 | ---- | ----- | ------ | ----- |
-| `c-place-settings` | `a-sort-setting-answers`, `a-read-own-exchange` | `a-read-described-exchange` | |
-| `c-handle-secret` | `a-judge-agent-requests` | `a-handle-described-requests`, `a-handle-own-request` | |
+| `c-place-settings` | `a-sort-setting-answers`, `a-read-own-exchange` | `a-read-described-exchange` | The Depth in goals.md includes asking the agent when you don't know what a setting is for. No check tests that: every check supplies the question already asked and a correct answer. Only `a-read-own-exchange` has the learner asking, and it does not count. A pass shows the learner can follow a good explanation, not that they would ask for one or spot a wrong one. |
+| `c-handle-secret` | `a-judge-agent-requests` | `a-handle-described-requests`, `a-handle-own-request` | Every activity for this goal asks the learner to judge messages on paper, in calm conditions. None shows they would notice a risky request in the middle of a deploy. Treat a pass as "knows what to do", and check during Problem Set 3 whether they did it. |
 
 ---
 
@@ -41,6 +43,7 @@ with the learner.
   and marks the secrets. The key, one row per setting with its near-miss, is in
   `tasks/sort-setting-answers-key.md`, for the tutor only. One sitting does the whole set. 10 to
   15 minutes. Nothing to run.
+- **verified:** 2026-10-04
 - **learner does:** reads the task file, puts each of the six settings in one of the four groups
   (the frontend's address, the backend's address, the database's connection details, or nobody's
   because a host sets it), says in a few words what each is for, marks each secret, and says in a
@@ -65,6 +68,9 @@ with the learner.
   sort, with the near-misses (a name that says "frontend" holding the backend's address, an
   origin setting on the backend, "your Harbor address" when Harbor hosts two parts, a token that
   is a secret though it isn't an address) all in one set. Made-up vendors, so nothing goes stale.
+- **check note:** The six items come with their key discussed in one sitting, so redoing the set
+  after a miss shows nothing. If `done when` isn't met, move to the worked example in
+  `a-read-described-exchange` and an Easy pairing there, rather than repeating the sort.
 
 ### `a-read-described-exchange`
 
@@ -73,6 +79,7 @@ with the learner.
 - **checks:** `c-place-settings`
 - **artifact:** no external source. A hosting line and two exchanges, written by the tutor per the
   generator below. 10 minutes.
+- **verified:** 2026-10-04
 - **learner does:** reads the hosting line and both exchanges, then writes alone, for each, what
   the setting is for, whose value it needs (one of the four), and whether it is a secret. Hands
   it to the tutor.
@@ -131,6 +138,11 @@ with the learner.
 - **offer as:** the check that's available now: two exchanges the tutor writes, 10 minutes, nothing
   to run, built so the hard cases and a secret both come up. `a-read-own-exchange` is practice on
   your own Problem Set 3 deploy.
+- **check note:** Leave out the sentence saying the database host's connection details include a
+  password. With it, the secret question for a connection string is answered by the setup instead
+  of by the learner. A counting instance never includes a value the host sets itself. If the
+  learner has not shown they know that case (item 4 in `a-sort-setting-answers`), check it
+  informally. It is not part of what a pass shows.
 
 ### `a-read-own-exchange`
 
@@ -141,6 +153,7 @@ with the learner.
   and it answered. Copied into the session with any secret value taken out. 10 minutes, plus the
   tutor's preparation. Available only once the learner is deploying; best taken before they enter
   the values.
+- **verified:** 2026-10-04
 - **learner does:** brings one or more exchanges (the setting's name, their question, the agent's
   answer, no secret values) and says which vendor each part of their app is on. For each, says
   what the setting is for, whose value it needs, and whether it is a secret.
@@ -160,6 +173,8 @@ with the learner.
 - **offer as:** the real thing: settings your own agent asked for while deploying Problem Set 3,
   checked against your own code, and a chance to catch your agent being wrong. It can't finish the
   goal; `a-read-described-exchange` is the check.
+- **check note:** If the learner didn't ask their agent what a setting was for at the time, they
+  can ask it now and bring that exchange, still with no secret values in it.
 
 ### `a-judge-agent-requests`
 
@@ -176,6 +191,7 @@ with the learner.
   the order A, B, C that the key gives. Label the attempt `a-judge-agent-requests/<pair>`, for
   example `a-judge-agent-requests/B`. Stop when done when has been met once, and offer
   `a-handle-described-requests`; using up the bank is not the target.
+- **verified:** 2026-10-04
 - **learner does:** reads the header and the one pair served, then says for each message whether
   they would go along with it, and for one they wouldn't, what they would do instead and why.
   Writes both answers before the tutor comments.
@@ -197,6 +213,8 @@ with the learner.
   decline beside one that is fine, so declining everything doesn't work, and pair B shows the safe
   pattern to copy: the agent names the setting and you carry the value between dashboards
   yourself.
+- **check note:** The `learner does` line says "for one they wouldn't". Read it as "for any they
+  wouldn't", and don't tell the learner that each pair has exactly one to decline.
 
 ### `a-handle-described-requests`
 
@@ -250,6 +268,14 @@ with the learner.
 - **offer as:** the check that's available now: a pair the tutor writes, 5 to 10 minutes, nothing to
   run, with one message to decline and one that is fine, so refusing everything fails.
   `a-handle-own-request` is the same capability on your own deploy.
+- **check note:** Do not tell the learner that a pair always has one message to decline and one
+  to go along with. After the bank they may expect it anyway. Watch for answers that decide the
+  harder message by elimination ("the other one was obviously bad, so this one must be fine").
+  When a pair counts only because of its harder message, write that message first and make the
+  easier one less obvious, so the harder one is judged on its merits. A `dashboard-instruction`
+  message names a secret but routes it from one dashboard to another, never through the chat.
+  Going along with it is correct, because it is the criterion's own "instead" step. Tell the
+  adjudicator so when you send the key.
 
 ### `a-handle-own-request`
 
@@ -261,6 +287,7 @@ with the learner.
   something with one (most often the database's connection string). Copied into the session with
   any secret value taken out. 10 minutes. Available only if the learner's agent made such a
   request, which it may never do.
+- **verified:** 2026-10-04
 - **learner does:** brings the stretch of messages. Then, for the two the tutor picks, writes
   alone whether they would go along with each, and if not, what they would do instead and why.
 - **tutor role:** none
@@ -293,6 +320,12 @@ with the learner.
 - **offer as:** the real thing: a request your own agent made while deploying Problem Set 3. Take
   it if your agent asked you for a secret; `a-handle-described-requests` is the one to take
   otherwise.
+- **check note:** The learner brought this stretch because it contains a secret request, and they
+  lived through it, so they already know which message is about a secret. Treat a pass here as
+  showing that they know what to do instead and why, not that they can spot the risky message
+  unprompted. If you want the goal settled on solid ground, prefer `a-handle-described-requests`.
+  If the learner reports having already gone along with the request in the real session, record
+  not met and do not run the attempt. Then offer `a-handle-described-requests` on a later visit.
 
 ### `a-w-config`
 
