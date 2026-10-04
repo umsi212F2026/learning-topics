@@ -53,11 +53,11 @@ question, connection strings, passwords, backups, cost) are neither credited nor
 - **goal:** `c-clear-own-database`
 - **answer:** Yes. Step 3: the backend, on starting against the empty file on the volume, creates
   the `items` and `claims` tables itself. Step 4's seed script, kept in the repository and run once
-  against production, also counts as built by the code and may be named alongside step 3. Nothing
-  comes from the laptop's file and nothing is shared with development.
-- **credit:** full for yes, tied to step 3 (the backend creating its tables), with or without step
-  4 also named. Not met for no, for yes with no step, for yes tied only to step 1, step 2 or step 4,
-  or for yes alongside a fault on this question, such as calling the seed script's sample items
-  copied or test data.
+  against production, also counts as built by the code, so either step decides it. Nothing comes
+  from the laptop's file and nothing is shared with development.
+- **credit:** full for yes, tied to step 3 (the backend creating its tables), step 4 (the seed
+  script from the repository), or both. Not met for no, for yes with no step, for yes tied only to
+  step 1 or step 2, or for yes alongside a fault on this question, such as calling the seed
+  script's sample items copied or test data.
 - **tutor note:** a remark that the volume at `/data` keeps the data is about the other question;
   disregard it, and say it belongs to the survival question.
