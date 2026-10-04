@@ -38,26 +38,3 @@ Your data will be safe.
 4. Deploy the backend and the frontend.
 
 Your data will be safe.
-
-### q2
-
-**Plan A**
-
-1. Create a managed Postgres database on Driftwood and connect the Shelfswap backend to it.
-2. On startup, the backend creates the `books` and `requests` tables if they don't exist yet.
-3. Point your laptop's development server at this same Driftwood database as well, so you can
-   test against real data while you keep building.
-4. Deploy the backend and the frontend.
-
-Your data will be safe.
-
-**Plan B**
-
-1. Create a managed Postgres database on Driftwood and connect the Shelfswap backend to it.
-2. On startup, the backend creates the `books` and `requests` tables if they don't exist yet.
-3. Run `npm run seed` once against the Driftwood database. The seed script, kept in the
-   repository at `server/seed.js`, adds three sample books so the board isn't empty on day one.
-4. Your laptop's development server keeps using its own `server/data/shelfswap.sqlite`.
-5. Deploy the backend and the frontend.
-
-Your data will be safe.
