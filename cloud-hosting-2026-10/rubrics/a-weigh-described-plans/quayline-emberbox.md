@@ -84,20 +84,6 @@ either way. Remarks about where the database goes are neither credited nor count
   unsupported. Half for a true case that rests only on a difference that doesn't decide anything
   here (bandwidth, logs, `emberbox.toml`), or on "it's simpler" alone.
 
-### v2
-
-- **goal:** `c-weigh-hosting-plans`
-- **cases:** other-case
-- **answer:** Quayline's server never stops, while Emberbox's stops in grading week unless a card is on
-  file; and one account and one agent tool for both parts, with nothing to copy between vendors.
-  The cost the student named, a minute's wait after 15 idle minutes, is the one Q carries.
-- **credit:** full for a case that rests on Quayline's server not stopping in grading week, or on one
-  account and one agent tool, stated as the terms give it, with nothing unsupported. "No card means
-  no bill" holds for S too and doesn't count. Half for a case that rests on "simpler" alone, or on
-  a difference that doesn't decide anything here.
-- **tutor note:** if `v1` was served before, ask how this case compares with the one they gave
-  there for the plan they didn't choose.
-
 ### v3
 
 - **goal:** `c-weigh-hosting-plans`
@@ -130,6 +116,16 @@ either way. Remarks about where the database goes are neither credited nor count
   card on file stated for Quayline and Emberbox. Half for one of the two.
 - **tutor note:** if `v3` was served before, ask what each said about a card.
 
+### v7
+
+- **goal:** `c-weigh-hosting-plans`
+- **cases:** other-case
+- **answer:** the strongest case for Plan S: nothing in it ever sleeps, so no grader waits a minute.
+- **credit:** full for a case for S that rests on its never sleeping (or another difference in the
+  terms that matters for this app), with nothing unsupported. Half for a case that rests on
+  "simpler", or on a difference that doesn't decide anything here (bandwidth, logs).
+- **tutor note:** if `v1` was served before, ask how this case compares with the one given there.
+
 ### v8
 
 - **goal:** `c-weigh-hosting-plans`
@@ -140,6 +136,20 @@ either way. Remarks about where the database goes are neither credited nor count
 - **credit:** full for "supported" with both reasons (ten minutes is under 15, and the hours stay
   under 750). Half for "supported" with one reason. None for "unsupported", which the terms
   contradict.
+
+### v2
+
+- **goal:** `c-weigh-hosting-plans`
+- **cases:** other-case
+- **answer:** Quayline's server never stops, while Emberbox's stops in grading week unless a card is on
+  file; and one account and one agent tool for both parts, with nothing to copy between vendors.
+  The cost the student named, a minute's wait after 15 idle minutes, is the one Q carries.
+- **credit:** full for a case that rests on Quayline's server not stopping in grading week, or on one
+  account and one agent tool, stated as the terms give it, with nothing unsupported. "No card means
+  no bill" holds for S too and doesn't count. Half for a case that rests on "simpler" alone, or on
+  a difference that doesn't decide anything here.
+- **tutor note:** if `v1` was served before, ask how this case compares with the one they gave
+  there for the plan they didn't choose.
 
 ### v4
 
@@ -153,14 +163,3 @@ either way. Remarks about where the database goes are neither credited nor count
   one of the two.
 - **tutor note:** if `v11` was served before, ask which of what they named there this student
   left out.
-
-### v7
-
-- **goal:** `c-weigh-hosting-plans`
-- **cases:** other-case
-- **answer:** the strongest case for Plan S: nothing in it ever sleeps, so no grader waits a minute.
-- **credit:** full for a case for S that rests on its never sleeping (or another difference in the
-  terms that matters for this app), with nothing unsupported. Half for a case that rests on
-  "simpler", or on a difference that doesn't decide anything here (bandwidth, logs).
-- **tutor note:** if `v1` or `v2` was served before, ask how this case compares with the ones given
-  there.

@@ -9,7 +9,7 @@ month. Its owner works through a coding agent.
 to sign up.
 
 - **Quayline.** Static sites never sleep. The web service sleeps after 15 minutes without a request,
-  and the next request waits about a minute; 750 free hours a month, then suspended. With a card
+  and the next request waits about a minute; 750 free hours a month (web services only), then suspended. With a card
   on file, bandwidth past 100 GB a month is billed ($0.15 per GB); without one, services are
   suspended. One official CLI and MCP server for both parts: deploy, read logs, set environment
   variables; can't delete services or change plans. Builds with ordinary `npm`.
@@ -43,13 +43,6 @@ and how hard each plan would be to move to another vendor.
 Make the call yourself. Choose Plan Q or Plan S, then state the strongest case the terms give for
 the plan you didn't choose.
 
-### v2
-
-A student chose Plan S and wrote: "A grader opening Crumbs after a quiet spell would wait a minute
-on Quayline; Emberbox never sleeps. Emberbox's credit only lasts about three weeks, so I'd need it to
-cover grading week, or put a card on and accept it bills." Give the strongest case for Plan Q, the
-plan they didn't choose, using only the terms.
-
 ### v3
 
 A student wrote: "Plan Q, because it's free forever and Quayline never charges anything. The other
@@ -69,11 +62,25 @@ A student wrote: "Plan Q. Plan S needs a credit card on Emberbox just to sign up
 give one." What have they got wrong about cards, and what would having a card on file actually
 risk on each vendor?
 
+### v7
+
+A student wrote: "Plan Q. Quayline's server sleeps after 15 minutes, but that's fine for a class
+project. My agent can reach both hosts through their tools. Plan S is just worse for this project."
+They give no case for the plan they didn't choose. Write the strongest case the terms give for
+Plan S.
+
 ### v8
 
 A student wrote: "Plan Q. The sleep matters most: a grader shouldn't wait a minute. I'll ask the
 agent to ping it every ten minutes so it never sleeps." Do the terms support that workaround? Say
 why, and say what it would cost them if they did it.
+
+### v2
+
+A student chose Plan S and wrote: "A grader opening Crumbs after a quiet spell would wait a minute
+on Quayline; Emberbox never sleeps. Emberbox's credit only lasts about three weeks, so I'd need it to
+cover grading week, or put a card on and accept it bills." Give the strongest case for Plan Q, the
+plan they didn't choose, using only the terms.
 
 ### v4
 
@@ -81,12 +88,3 @@ A student wrote: "Plan S. Nothing sleeps, and Lanternhost can't bill me. Quaylin
 after 15 minutes. Emberbox's credit runs out after about three weeks; if I keep a card off it, the
 worst case is the server stopping until next month. Moving is easy from either. The strongest case
 for Q is that it's one account." What does Plan S's extra vendor cost that this student left out?
-
-### v7
-
-A student wrote: "Plan Q. Quayline's server sleeps after 15 minutes; Emberbox's doesn't, but its credit
-runs out after about three weeks, in grading week. My agent can reach both hosts through their
-tools, though S needs two sets of credentials. S means two accounts, copying Emberbox's address into
-the build, and two places to look when something breaks. Plan S is just worse for this project."
-They give no case for the plan they didn't choose. Write the strongest case the terms give for
-Plan S.
