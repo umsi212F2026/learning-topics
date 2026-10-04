@@ -1,6 +1,7 @@
 # Learning goals: deploy config
 
 **origin:** course
+**study by:** 2026-10-06, 3 of 3
 
 **What I want to be able to do, and what would count as having got there.**
 
