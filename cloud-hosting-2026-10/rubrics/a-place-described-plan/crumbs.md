@@ -90,8 +90,9 @@ it belongs to the database-hosting topic. Shapes, in the entry's generator's ter
 - **cases:** backend-serves, all-covered
 - **answer:** both covered: Kettle runs the server, which also sends the built frontend;
   Brightpage hosting the same files again is redundant, but not a gap or a mismatch.
-- **credit:** full for both covered, with the duplicate named as harmless or not named. Half for
-  "covered" while calling the duplicate a problem to fix. None if it is called a gap or mismatch.
+- **credit:** full for both covered, unless the duplicate is called a gap or a mismatch or said to
+  break the app; calling it wasteful or worth tidying is fine. None if it is called a gap, a
+  mismatch or something that breaks the app.
 
 ### q11
 
@@ -100,8 +101,8 @@ it belongs to the database-hosting topic. Shapes, in the entry's generator's ter
 - **answer:** gap: a server on the learner's laptop is not reachable from visitors' browsers and is
   off whenever the laptop is, so the backend has no host. The frontend on Brightpage is fine.
 - **credit:** full for the backend named as having no working host, labeled either a gap or a
-  mismatch, as long as it is said to be unreachable from visitors' browsers or not always on, and
-  nothing false named. Half for the backend's fault named with neither reason, or alongside a false
+  mismatch, and nothing false named; a reason (unreachable from visitors' browsers, or not always
+  on) may be credited but is not required. Half for the backend's fault named alongside a false
   fault against the frontend.
 
 ### q12
