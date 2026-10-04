@@ -2,11 +2,11 @@ Mossgate keeps only files under `/data` on an attached volume, and its managed P
 separate service; everything else on a server's disk is gone after a redeploy. Shapes and
 questions:
 
-- q1: `outside-mount`, survival question (`c-catch-data-loss`, Hard).
+- q1: `outside-mount`, survival question (case `catch-data-loss`, Hard).
 - q2: `decoy`, `sound-volume` with no rows and a few seconds of downtime on each redeploy, survival
-  question (`c-clear-data-survives`, Hard).
-- q3: `laptop-copy`, own-database question (`c-catch-copied-database`, Medium).
-- q4: `silent-location`, own-database question (`c-clear-own-database`, Medium). Faulted on the
+  question (case `clear-survives`, Hard).
+- q3: `laptop-copy`, own-database question (case `catch-copied`, Medium).
+- q4: `silent-location`, own-database question (case `clear-own-database`, Medium). Faulted on the
   other question, sound on this one.
 
 No half credit on any question: a right verdict with no step, or tied to a step that doesn't
@@ -16,7 +16,8 @@ question, connection strings, passwords, backups, cost) are neither credited nor
 
 ### q1
 
-- **goal:** `c-catch-data-loss`
+- **goal:** `c-plan-first-deploy`
+- **cases:** catch-data-loss
 - **answer:** No. Step 2 sets the database file to `/app/server/data/rides.sqlite`, inside the
   app's folder and outside `/data`, so the file sits on Mossgate's ephemeral disk and is gone after
   every redeploy, even though step 1 attached a volume.
@@ -28,7 +29,8 @@ question, connection strings, passwords, backups, cost) are neither credited nor
 
 ### q2
 
-- **goal:** `c-clear-data-survives`
+- **goal:** `c-plan-first-deploy`
+- **cases:** clear-survives
 - **answer:** Yes. Step 2 puts the SQLite database at `/data/rides.sqlite`, on the volume step 1
   attached, and Mossgate keeps files under `/data` across redeploys.
 - **credit:** full for yes, tied to step 2 (the database at `/data/rides.sqlite`), alone or
@@ -41,7 +43,8 @@ question, connection strings, passwords, backups, cost) are neither credited nor
 
 ### q3
 
-- **goal:** `c-catch-copied-database`
+- **goal:** `c-plan-first-deploy`
+- **cases:** catch-copied
 - **answer:** No. Step 2 copies the laptop's `rides.sqlite` up as production's database, so
   production starts as a copy of the laptop's file, its tables and its rows, and no step has the code
   build it.
@@ -52,7 +55,8 @@ question, connection strings, passwords, backups, cost) are neither credited nor
 
 ### q4
 
-- **goal:** `c-clear-own-database`
+- **goal:** `c-plan-first-deploy`
+- **cases:** clear-own-database
 - **answer:** Yes. Step 2: on its first start the backend creates the `rides` and `seat_requests`
   tables, empty, so production's database is built by the code. Nothing comes from the laptop and
   nothing is shared with development.

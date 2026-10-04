@@ -2,12 +2,12 @@ Larkspan keeps only files under `/data` on an attached volume, and its managed P
 separate service; everything else on a server's disk is gone after a redeploy. Shapes and
 questions:
 
-- q1: `silent-location`, survival question (`c-catch-data-loss`, Medium).
-- q2: `laptop-copy`, survival question (`c-clear-data-survives`, Medium). Faulted on the other
+- q1: `silent-location`, survival question (case `catch-data-loss`, Medium).
+- q2: `laptop-copy`, survival question (case `clear-survives`, Medium). Faulted on the other
   question, sound on this one.
-- q3: `committed-file`, own-database question (`c-catch-copied-database`, Hard).
+- q3: `committed-file`, own-database question (case `catch-copied`, Hard).
 - q4: `decoy`, `sound-postgres` with a seed script run once from the laptop against production,
-  own-database question (`c-clear-own-database`, Hard).
+  own-database question (case `clear-own-database`, Hard).
 
 No half credit on any question: a right verdict with no step, or tied to a step that doesn't
 decide it, is not met. Naming a fault the key doesn't have on the asked question fails, as the
@@ -16,7 +16,8 @@ question, connection strings, passwords, backups, cost) are neither credited nor
 
 ### q1
 
-- **goal:** `c-catch-data-loss`
+- **goal:** `c-plan-first-deploy`
+- **cases:** catch-data-loss
 - **answer:** No, or can't tell. The plan never says where the database lives: no volume, no path,
   no managed Postgres. Nothing shows the data anywhere Larkspan keeps it, and left as it is, the
   backend's SQLite file stays at `server/data/pantry.sqlite` on the ephemeral disk and is gone after
@@ -31,7 +32,8 @@ question, connection strings, passwords, backups, cost) are neither credited nor
 
 ### q2
 
-- **goal:** `c-clear-data-survives`
+- **goal:** `c-plan-first-deploy`
+- **cases:** clear-survives
 - **answer:** Yes. Step 2 puts production's database at `/data/pantry.sqlite`, on the volume step 1
   attached, and Larkspan keeps files under `/data` across redeploys.
 - **credit:** full for yes, tied to step 2 (the database at `/data/pantry.sqlite`), alone or
@@ -45,7 +47,8 @@ question, connection strings, passwords, backups, cost) are neither credited nor
 
 ### q3
 
-- **goal:** `c-catch-copied-database`
+- **goal:** `c-plan-first-deploy`
+- **cases:** catch-copied
 - **answer:** No. Step 1 commits the laptop's `pantry.sqlite` and ships it with the app, so
   production starts as a copy of the laptop's database, rows and all, rather than one the code
   builds.
@@ -58,7 +61,8 @@ question, connection strings, passwords, backups, cost) are neither credited nor
 
 ### q4
 
-- **goal:** `c-clear-own-database`
+- **goal:** `c-plan-first-deploy`
+- **cases:** clear-own-database
 - **answer:** Yes. Step 2: the backend creates the `shelf_items` and `reservations` tables itself in
   the new Postgres database. Step 4's seed script, kept in the repository and run once against
   production, also counts as built by the code, even though it is run from the laptop, so either

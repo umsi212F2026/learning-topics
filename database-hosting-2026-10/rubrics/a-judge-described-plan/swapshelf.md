@@ -1,12 +1,12 @@
 Harborline keeps only files under `/data` on an attached volume, and its managed Postgres runs as
 a separate service; everything else on a server's disk is gone after a redeploy. Shapes and
-questions, all Medium, a first-attempt set with one question per goal:
+questions, all Medium, a first-attempt set with one question per case:
 
-- q1: `no-volume`, survival question (`c-catch-data-loss`).
-- q2: `sound-postgres` with no rows, survival question (`c-clear-data-survives`).
-- q3: `shared-dev`, own-database question (`c-catch-copied-database`).
+- q1: `no-volume`, survival question (case `catch-data-loss`).
+- q2: `sound-postgres` with no rows, survival question (case `clear-survives`).
+- q3: `shared-dev`, own-database question (case `catch-copied`).
 - q4: `sound-volume` with a seed script run once on the server, own-database question
-  (`c-clear-own-database`).
+  (case `clear-own-database`).
 
 No half credit on any question: a right verdict with no step, or tied to a step that doesn't
 decide it, is not met. Naming a fault the key doesn't have on the asked question fails, as the
@@ -15,7 +15,8 @@ question, connection strings, passwords, backups, cost) are neither credited nor
 
 ### q1
 
-- **goal:** `c-catch-data-loss`
+- **goal:** `c-plan-first-deploy`
+- **cases:** catch-data-loss
 - **answer:** No. Step 2 keeps the SQLite file at `server/data/app.sqlite` in the app's folder on
   the server, which is on Harborline's ephemeral disk and outside `/data`, and no volume or managed
   Postgres is used, so the file is gone after every redeploy.
@@ -27,7 +28,8 @@ question, connection strings, passwords, backups, cost) are neither credited nor
 
 ### q2
 
-- **goal:** `c-clear-data-survives`
+- **goal:** `c-plan-first-deploy`
+- **cases:** clear-survives
 - **answer:** Yes. Step 1 puts production's data in Harborline's managed Postgres, a separate
   service the host keeps, so redeploying the backend doesn't touch it.
 - **credit:** full for yes, tied to step 1 (production's data in managed Postgres), or to step 2
@@ -41,7 +43,8 @@ question, connection strings, passwords, backups, cost) are neither credited nor
 
 ### q3
 
-- **goal:** `c-catch-copied-database`
+- **goal:** `c-plan-first-deploy`
+- **cases:** catch-copied
 - **answer:** No. Step 3 points the laptop's development server at production's Postgres instance,
   so development shares production's database instead of production having one of its own.
 - **credit:** full for no, tied to step 3 (the development server working against production's
@@ -52,7 +55,8 @@ question, connection strings, passwords, backups, cost) are neither credited nor
 
 ### q4
 
-- **goal:** `c-clear-own-database`
+- **goal:** `c-plan-first-deploy`
+- **cases:** clear-own-database
 - **answer:** Yes. Step 3: the backend, on starting against the empty file on the volume, creates
   the `items` and `claims` tables itself. Step 4's seed script, kept in the repository and run once
   against production, also counts as built by the code, so either step decides it. Nothing comes
