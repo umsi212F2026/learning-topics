@@ -1,0 +1,114 @@
+Brightpage sends files only; Kettle keeps one program running; Spark sends files and runs short
+functions but keeps no program running; Harbor offers a static site and a web service. A part is
+hosted wherever it is served from, even if by another part: an Express server that sends `dist/`
+itself hosts the frontend. The rule the learner should arrive at: list what each part needs (files
+sent as they are; a program kept running), then check each vendor's offer against the part it was
+given. Remarks about where the database goes are neither credited nor counted as a false gap; say
+it belongs to the database-hosting topic. Shapes, in the entry's generator's terms: `q3` and `q13`
+(`backend-serves`), `q5` and `q12` (`shared-vendor`) and `q10` (`decoy`) are counting shapes; `q1`
+(`split-clean`), `q6` and `q11` (`one-gap`), `q2` and `q4` (`wrong-host`), and `q8` (a decoy on two
+vendors, so neither named case) are practice only. Question ids `q7` and `q9` were about the database and are not reused.
+
+### q1
+
+- **goal:** `c-place-app-parts`
+- **answer:** Brightpage hosts the frontend's built files, Kettle the Express server; both
+  covered, no gap or mismatch.
+- **credit:** full for both covered, with each vendor matched to its part. Half for "both covered"
+  with a vendor's job misdescribed. None if any gap or mismatch is named.
+
+### q2
+
+- **goal:** `c-place-app-parts`
+- **answer:** mismatch: Brightpage runs no code, so it cannot run the Express server. The frontend
+  on Brightpage is fine.
+- **credit:** full for the backend mismatch, tied to Brightpage running no code, and nothing else
+  named. Half for the mismatch named without the reason, or with a false fault also named against
+  the frontend.
+
+### q3
+
+- **goal:** `c-place-app-parts`
+- **answer:** both covered: Kettle runs the Express server, which sends the built frontend itself,
+  so no static host is needed.
+- **credit:** full for both covered, saying the server sends the frontend. Half for "covered" with
+  a hedge that a static host is still needed. None if the missing static host is named as a gap.
+- **tutor note:** partner of `q6` and `q13`. If `q6` was served before, ask what sends the
+  frontend's files here that nothing sent there.
+
+### q4
+
+- **goal:** `c-place-app-parts`
+- **answer:** mismatch: Spark keeps no program running between requests, so the Express server as
+  written, a program that listens all the time, cannot run there without being rewritten as
+  functions. The frontend on Brightpage is fine.
+- **credit:** full for the backend mismatch tied to Spark keeping nothing running, and nothing
+  else named. Half for the mismatch named without that reason.
+- **tutor note:** partner of `q8`. If `q8` was served before, ask why Spark was fine there.
+
+### q5
+
+- **goal:** `c-place-app-parts`
+- **answer:** both covered: one vendor, two services, Harbor's static site for the frontend and its
+  web service for the Express server.
+- **credit:** full for both covered, with the two services matched to the two parts. Half for
+  "covered" without saying which service holds which part.
+- **tutor note:** partner of `q12`.
+
+### q6
+
+- **goal:** `c-place-app-parts`
+- **answer:** gap: the frontend's code runs in the browser, but the browser has to get the files
+  from somewhere, and nothing sends them: no static host, and the server doesn't send `dist/`.
+  The backend on Kettle is fine.
+- **credit:** full for the frontend gap with the reason that its files must be sent from
+  somewhere. Half for the gap named without the reason.
+- **tutor note:** partner of `q3`. If `q3` was served before, ask how this plan differs: "last
+  time the frontend had no host of its own and was fine; what is different here?"
+
+### q8
+
+- **goal:** `c-place-app-parts`
+- **answer:** both covered: Spark can host a folder of files, which is all the frontend needs;
+  Kettle runs the Express server. Spark's limits matter only for a backend, and the backend isn't
+  on Spark.
+- **credit:** full for both covered. None if Spark is flagged as a mismatch for the frontend.
+- **tutor note:** partner of `q4`. A learner who flags Spark here is judging the vendor rather than
+  the job it was given.
+
+### q10
+
+- **goal:** `c-place-app-parts`
+- **answer:** both covered: Kettle runs the server, which also sends the built frontend;
+  Brightpage hosting the same files again is redundant, but not a gap or a mismatch.
+- **credit:** full for both covered, with the duplicate named as harmless or not named. Half for
+  "covered" while calling the duplicate a problem to fix. None if it is called a gap or mismatch.
+
+### q11
+
+- **goal:** `c-place-app-parts`
+- **answer:** gap: a server on the learner's laptop is not reachable from visitors' browsers and is
+  off whenever the laptop is, so the backend has no host. The frontend on Brightpage is fine.
+- **credit:** full for the backend gap with a reason (not reachable, or not always on). Half for
+  the gap named without a reason.
+
+### q12
+
+- **goal:** `c-place-app-parts`
+- **answer:** mismatch: Harbor can host both, but this plan puts the Express server's code in a
+  static site, which only sends files as they are. The fault is in the job given, not the vendor.
+  The frontend in the static site is fine.
+- **credit:** full for the backend mismatch tied to the static-site service, not to Harbor as a
+  whole. Half for the mismatch named but blamed on Harbor rather than on the service chosen.
+- **tutor note:** partner of `q5`. If `q5` was served before, ask: "last time Harbor hosted both and
+  that was fine; what is different here?"
+
+### q13
+
+- **goal:** `c-place-app-parts`
+- **answer:** mismatch, and the frontend not served either: Spark keeps no program running, so the
+  Express server can't run there; and since the server is what sends the built frontend, the
+  frontend isn't served.
+- **credit:** full for both: the backend mismatch and the frontend left unserved because of it.
+  Half for either alone.
+- **tutor note:** partner of `q3`: the same arrangement on a host that can't run it.

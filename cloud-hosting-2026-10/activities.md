@@ -30,7 +30,7 @@ Taken together, it is the topic's one shared blind spot.
 | goal | study | checks | notes |
 | ---- | ----- | ------ | ----- |
 | `o-orientation` | | `a-read-odin-deployment` | |
-| `c-place-app-parts` | `a-read-fso-serve-dist`, `a-judge-plan-coverage` | `a-place-described-plan`, `a-place-lab-plan` | The criterion's two named cases overlap: a backend that sends the built frontend is also one vendor hosting both, through a single service. Read the Coverage note's two cases as two instance shapes, one vendor with two services and one service sending both parts. A counting pass usually exercises one shape; if the learner's pass came on one, give the other in study or on a review visit. |
+| `c-place-app-parts` | | `a-place-described-plan`, `a-place-lab-plan` | The criterion's two named cases overlap: a backend that sends the built frontend is also one vendor hosting both, through a single service. Read the Coverage note's two cases as two instance shapes, one vendor with two services and one service sending both parts. A counting pass usually exercises one shape; if the learner's pass came on one, give the other in study or on a review visit. |
 | `c-check-vendor-claims` | `a-watch-claims-checked`, `a-check-2025-guide-claims`, `a-sort-claim-sources` | `a-plan-claim-checks`, `a-check-lab-answer` | Both checks rule on a written plan for checking claims, not on checks actually carried out. `a-check-lab-answer` has the learner carry the plan out, but the ruling is on the plan as first written. No check here establishes that the learner can find the settling sentence on a real vendor's site unaided, although the topic's Depth says they should be able to check a claim against the vendor's own pages. If that matters for this learner, look at what they found in `a-check-lab-answer`, or watch them do it in `a-check-2025-guide-claims`, and treat it as evidence beside the ruling, not as part of it. |
 | `c-weigh-hosting-plans` | `a-study-hatchable-traps`, `a-predict-overage-outcomes`, `a-judge-plan-weighings` | `a-weigh-described-plans`, `a-weigh-lab-plans` | |
 
@@ -141,90 +141,6 @@ Taken together, it is the topic's one shared blind spot.
   Express, and that arrangement is covered under `c-place-app-parts`. Don't steer the learner off
   it.
 
-### `a-read-fso-serve-dist`
-
-- **serves:** `c-place-app-parts`
-- **supports:** deepen
-- **artifact:** Full Stack Open, part 3b, "Deploying app to internet",
-  https://fullstackopen.com/en/part3/deploying_app_to_internet (University of Helsinki; free, no
-  account; checked 2026-10-01). Two sections only: Serving static files from the backend, and The
-  whole app to the internet. The sections contain commands and
-  short code; the one line that matters is `app.use(express.static('dist'))`, which makes the
-  Express server send the frontend's built files itself, so frontend and backend are at the same
-  address. Skip everything about Fly.io and Render setup (that is how to deploy, past this topic's
-  depth, and its vendor details may lag like Odin's), Frontend production build, Same origin
-  policy and CORS, and Proxy. 10 to 15 minutes.
-- **verified:** 2026-10-04
-- **learner does:** reads the two sections without running anything. Then draws one arrangement of
-  their own Problem Set 2 app: the Express server sending the built frontend itself, labeled with
-  the kind of host it needs (the database is left out; it belongs to the database-hosting topic).
-  Then answers: what does this plan no longer need? If a classmate's plan used this arrangement
-  and named no static host, would that be a gap?
-- **tutor role:** socratic questioner
-- **tutor does:** stays out of the reading unless asked; if the learner stalls on the code, says
-  only that `npm run build` makes a folder of plain files and `express.static('dist')` tells the
-  server to send them. On the drawing, asks a near-miss question ("the frontend has no host of its
-  own; is it unhosted?").
-- **done when:** the drawing labels the server with the kind of host it needs, and the learner
-  says that a missing static host in this arrangement is not a gap. No `checks`: the arrangement was shown to
-  them, and their own app is one they already know.
-- **offer as:** the one candidate about the arrangement the criterion singles out, the backend
-  serving the built frontend itself, shown in the course material many full-stack courses use.
-  Some code on the page, though the learner runs none. 10 to 15 minutes. Pick
-  `a-judge-plan-coverage` to judge one plan at a time instead.
-
-### `a-judge-plan-coverage`
-
-- **serves:** `c-place-app-parts`
-- **supports:** deepen
-- **artifact:** `tasks/judge-plan-coverage.md`, written for this topic, used as a bank of eleven
-  plans, one per sitting. Its header (about 370 words) describes Crumbs, a React and Express app
-  shaped like the learner's Problem Set 2 app, whose plans place only the frontend and the backend
-  (its database belongs to the database-hosting topic), and four made-up vendors, each saying in
-  a line what it offers (a files-only host, a host that runs a program, a host that runs short
-  functions and keeps nothing running, and one offering both static sites and web services).
-  Each plan is one to three lines and reads alone. The key, one row per plan with its case, is in
-  `tasks/judge-plan-coverage-key.md`, for the tutor only. Cases: clean split `q1`; one vendor
-  hosts both `q5`; backend serves the frontend `q3`, `q10` (also hosted twice); decoy `q8`
-  (functions host used only for files); gap `q6` (frontend), `q11` (backend left on a laptop);
-  mismatch `q2` (Express on a files-only host), `q4` (Express on a functions host), `q12` (inside
-  one vendor hosting both), `q13` (the backend serving the frontend from a host that can't run
-  it). 10 to 15 minutes a sitting. Nothing to run.
-- **kind:** bank
-- **bank:** the eleven plans in `tasks/judge-plan-coverage.md`, named `q1` to `q6`, `q8` and
-  `q10` to `q13`. To pick the next,
-  run `served.mjs cloud-hosting-2026-10 c-place-app-parts`, take a plan not yet served, and prefer a case the
-  learner hasn't met, from the list above; a good first three are `q3`, `q4` and `q6`, which
-  carry the cases students most often miss. Label the attempt `a-judge-plan-coverage/<plan>`, for
-  example `a-judge-plan-coverage/q4`. Stop when done when has been met on two or three sittings
-  with different cases, and offer `a-place-described-plan`; using up the bank is not the target.
-- **verified:** 2026-10-04
-- **learner does:** reads the header and the one plan served, then says which part each vendor in
-  it hosts and names every gap and mismatch, or says both are covered. Then says in a
-  sentence the rule they judged by.
-- **tutor role:** critic
-- **tutor does:** shows the header and the one plan, never the key file. Takes the learner's answer
-  and rule before commenting. Where the answer disagrees with the key, asks what that vendor would
-  actually do with the part it was given ("Brightpage gets the Express server; what does it do
-  when a request for recipes arrives?") rather than giving the verdict. If this plan's partner in
-  the key has been served before, asks how this plan differs from that one and whether the answer
-  should differ too (for `q6` after `q3`, "last time the frontend had no host of its own and was
-  fine; what is different here?"; for `q12` after `q5`, "last time Harbor hosted both and that
-  was fine; what is different here?"). If the answer still differs from the key after that one
-  question, gives the key's verdict and its what-decides-it line, and moves on. If the learner
-  raises where the database goes, says that belongs to the database-hosting topic.
-- **done when:** the learner's answer on this plan matches the key, every gap and mismatch and
-  nothing else, after at most one near-miss question; and their stated rule covers what each part
-  needs and checking each vendor's offer against the part it was given. No `checks`: every plan in
-  the bank uses the same four vendors, and each sitting ends with the key's verdict discussed, so
-  from the second sitting on the learner is judging vendors whose fit they have already been
-  told. A pass shows nothing about meeting new offers cold, which is what
-  `a-place-described-plan` sets.
-- **offer as:** one plan for one familiar-shaped app, 10 to 15 minutes, nothing to run, with the
-  near-misses careful students most often get wrong (calling a backend-served frontend unhosted,
-  flagging a vendor for a job it wasn't given) spread across the bank. Made-up vendors, so nothing
-  here goes stale. Take a few across visits.
-
 ### `a-place-described-plan`
 
 - **serves:** `c-place-app-parts`
@@ -242,20 +158,19 @@ Taken together, it is the topic's one shared blind spot.
   covered". Shows the app's parts and the plan. Waits, writing down any help word for word. Sends
   the adjudicator the parts, the plan, the key, the learner's answer verbatim and every piece of
   help. After the ruling, tells the learner what was missed or named wrongly. Labels the attempt
-  `a-place-described-plan/<shape>`. A remark about where the database goes is neither credited nor counted as a false gap or an
+  with the question's path, or `a-place-described-plan/<shape>` when the generator is run live. A remark about where the database goes is neither credited nor counted as a false gap or an
   unsupported claim: the tutor tells the adjudicator to disregard it, and the learner that it
   belongs to database-hosting.
 - **done when:** criterion met with no help, on a `backend-serves`, `shared-vendor`, `decoy` or
   `two-faults` instance.
-- **kind:** generator
 - **generator:** fixed: the app has a frontend and a backend, described in a short list in the
-  form of `tasks/judge-plan-coverage.md` (what each part is and what it needs to run); the app's
+  form of `tasks/a-place-described-plan/crumbs.md` (what each part is and what it needs to run); the app's
   database is never part of the plan or the key. The plan names one to three vendors, each with a
   one- or two-line offer written as that file writes them: what it hosts and runs, and what it does
-  not. Vendors are made up, so the key depends only on the stated offers. Brightpage, Kettle,
-  Spark and Harbor may be used for the worked example and for practice; a counting
-  instance invents new vendor names on the same pattern and never reproduces any plan in
-  `tasks/judge-plan-coverage.md`, which the learner may have judged with its key discussed. What
+  not. Vendors are made up, so the key depends only on the stated offers. The `crumbs` scenario
+  uses Brightpage, Kettle, Spark and Harbor, and its key says which of its questions are counting
+  shapes; a new scenario invents new vendor names on the same pattern and never reproduces a
+  `crumbs` plan. What
   varies: the app (a different one each attempt; its frontend is React or another framework built
   to static files, its backend Express or another long-running server), the vendors and their
   offers, and the plan's shape:
@@ -284,8 +199,11 @@ Taken together, it is the topic's one shared blind spot.
   counting shape the learner hasn't had, reading the labels `served.mjs` returns.
 - **worked example:** work one Easy instance aloud: list what each part needs, then go vendor by
   vendor saying what it was given and whether its offer can do that job, and finish by checking
-  each part has somewhere to live. At the first level of help on a real attempt, ask only "what
-  does each part need from a host?"
+  each part has somewhere to live. For the backend sending the frontend itself, point to Full
+  Stack Open part 3b, Serving static files from the backend,
+  https://fullstackopen.com/en/part3/deploying_app_to_internet: `app.use(express.static('dist'))`
+  makes the server send the built files, so no static host is needed. At the first level of help on
+  a real attempt, ask only "what does each part need from a host?"
 - **doesn't show:** the offers are stated plainly in a line each, so a pass doesn't show the
   learner could work out what a real vendor offers from its own pages, where the answer is spread
   over pricing and docs. Vendors are made up, so a pass says nothing about knowing which real
@@ -325,7 +243,7 @@ Taken together, it is the topic's one shared blind spot.
   for; if the answer suggests nothing for some part, assigns one of the vendors it names to that
   part the way a student reading the answer plausibly would, and records that the tutor did this.
   For each vendor in the plan, reads that vendor's own current pages and writes its offer in a
-  line or two, as `tasks/judge-plan-coverage.md` writes them, with the address and date of each
+  line or two, as `tasks/a-place-described-plan/crumbs.md` writes them, with the address and date of each
   page used, written from those pages that day; the offer must not be the agent's description of
   it, and a real functions host whose pages now say it runs an Express server unchanged is not a
   mismatch. If a vendor's pages don't settle
