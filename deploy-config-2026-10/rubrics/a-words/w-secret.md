@@ -1,0 +1,46 @@
+# Rubric: secret
+
+If the learner misses a question here, set a DEFINE or INTERPRET move for secret live, as help (it
+is recorded as helped and doesn't count), then come back to a production question.
+
+A secret is a value that lets whoever holds it into something of yours: a database password, a
+connection string, a token for a vendor's account. What makes it one is what holding it lets
+someone do, not its name or how it looks. Its other name is credential, and that, given as an
+answer, says nothing. The confusable is a setting: any value the app needs, most of which, such as
+the frontend's or the backend's address, let nobody into anything and are public.
+
+### q1
+
+- **goal:** `w-secret`
+- **move:** DISTINGUISH
+- **answer:** A setting is any value the app needs, and most are harmless to show, such as the
+  frontend's address. A secret is one that lets whoever holds it into something of yours, such as
+  the database's connection string, so anyone who sees it could get in.
+- **credit:** full for naming that a secret lets whoever holds it into something, and an ordinary
+  setting doesn't. Half for saying a secret is private, sensitive or must be hidden without
+  saying what makes it so. None for an incidental difference, such as that secrets have
+  `PASSWORD` or `KEY` in their names, or are longer.
+
+### q2
+
+- **goal:** `w-secret`
+- **move:** CATCH
+- **answer:** A value is a secret because of what it lets the holder do, not what it is called. A
+  token for Larder lets whoever holds it into the database or the account, so it is a secret
+  whatever its name.
+- **credit:** full for naming that what makes a secret is that holding it lets someone in, which a
+  token does, regardless of its name. Half for saying a token is a secret without saying why.
+  None for a different quibble, such as that the name should be changed.
+
+### q3
+
+- **goal:** `w-secret`
+- **move:** CATCH
+- **answer:** Being hard to guess doesn't make a value a secret. The address lets nobody into
+  anything of yours; it is where anyone, including every visitor's browser, sends requests, so it
+  is public.
+- **credit:** full for naming that the address doesn't let whoever holds it into anything, so it
+  isn't a secret however random it looks. Half for saying it is public or not a secret without
+  saying why. None for a different quibble, such as that `k3x9` could in fact be guessed.
+- **tutor note:** if they say "it's public because the frontend sends it to the browser", that is
+  true; ask whether it would be a secret if it weren't, and what it would let someone do.
