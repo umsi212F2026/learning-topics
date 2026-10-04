@@ -122,20 +122,11 @@ are each a topic of their own. Sign-in belongs to Part B of Problem Set 3, not t
 ### `c-check-vendor-claims`
 
 - **goal:** find out whether what an agent says about a hosting vendor is true today
-- **criterion:** Given an agent's answer comparing hosting vendors, says how they would find out
-  which of its claims about free tiers, limits and credit cards still hold. It passes when what
-  they describe checks each claim against the vendor's own current pages, not against the
-  agent, a blog post or a forum; would catch a free tier the vendor has since withdrawn, a limit
-  that has changed, and a credit card requirement the answer left out; and says what they would
-  add to the prompt so that every claim in the next answer comes with what they need to check it.
-  Asking the agent whether it is sure does not meet it.
-- **cases:**
-  - `vendor-page`: a claim settled on the vendor's own current pages, not the agent, a blog post
-    or a forum
-  - `withdrawn`: a free tier the vendor has since withdrawn
-  - `changed-limit`: a limit that has changed
-  - `card-omitted`: a credit card requirement the answer left out
-  - `prompt-fix`: what to add to the prompt so each claim comes with what is needed to check it
+- **criterion:** Given a claim an agent made about a hosting vendor's free tier, finds on the
+  vendor's own current pages the sentence that settles it, and says whether the claim still
+  holds. Opening a deep link the agent gave to the vendor's page, and reading the sentence there,
+  counts. Taking the agent's word for it, or a blog post's or a forum's, does not meet it, and
+  neither does asking the agent whether it is sure.
 
 ### `c-weigh-hosting-plans`
 
