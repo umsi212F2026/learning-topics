@@ -119,9 +119,12 @@ to offer, and its `offer as` describes it rather than distinguishing it.
     addresses nor the setting's name may say which part's value it holds (no `api`, `server`,
     `backend`, `client`, `site` or `frontend` pointing at the answer), unless the name points the
     wrong way, which makes the question also `cross-part`, its hardest form.
-  Every exchange question names `c-spot-secret`. Only a `shared-vendor` one also names
-  `c-trace-setting-value`: when each part is on its own vendor, the vendor named in the answer
-  gives the part away.
+  Every exchange question names `c-spot-secret`, with case `calls-secret` on a secret and
+  `calls-public` otherwise. It also names `c-trace-setting-value` on these shapes, with this case:
+  `shared-vendor` → `shared-vendor`; `shared-vendor` that is also `cross-part` → `cross-part`;
+  `secret-db` → `db-details`; `host-sets` → `host-sets`. A `plain` exchange, or a `cross-part` one
+  where each part has its own vendor, does not name `c-trace-setting-value`: the vendor named in
+  the answer gives the part away.
 
   **Message questions.** One message from the agent, which asks for a value or proposes a step,
   then "Would you go along with this? Say why or why not." Shapes:
@@ -141,9 +144,12 @@ to offer, and its `offer as` describes it rather than distinguishing it.
     risky (it mentions the database, the settings page or a redeploy).
   - `dashboard-instruction` (Hard; routes none): tells the learner to add a setting on the host
     and paste the secret there themselves, naming the secret but never asking for it.
-  Every message question names `c-judge-secret-request`, credited from the decision. One whose
-  message involves a value (every shape but `other-step`) also names `c-spot-secret`, with full
-  credit for saying whether the value is a secret, with or without an explanation. Mix messages
+  Every message question names `c-judge-secret-request`, credited from the decision, with this
+  case: `paste-in-chat` and `debug-lure` → `declines-chat`; `write-into-code` → `declines-file`;
+  `public-address` and `other-step` → `allows-safe`; `dashboard-instruction` → `allows-dashboard`.
+  One whose message involves a value (every shape but `other-step`) also names `c-spot-secret`,
+  case `calls-secret` or `calls-public`, with full credit for saying whether the value is a
+  secret, with or without an explanation. Mix messages
   that route a
   secret with ones that don't, in no fixed proportion.
 
@@ -161,7 +167,9 @@ to offer, and its `offer as` describes it rather than distinguishing it.
   none. A repair may use a shape a message question in the same scenario also used, with a
   different file, command or lure.
 
-  Each scenario has at least one `secret-db` exchange. A scenario meant to bear on
+  Across the bank, every case of every goal above is carried by some question; `host-sets` and
+  `allows-dashboard` are the easiest to leave out. `c-secret-instead` has no cases. Each scenario
+  has at least one `secret-db` exchange. A scenario meant to bear on
   `c-trace-setting-value` needs a setup with one vendor hosting two parts, and at least two
   `shared-vendor` exchanges, one of them also `cross-part`. **A scenario has either a
   `dashboard-instruction` message or repair questions, never both:** the message shows the
