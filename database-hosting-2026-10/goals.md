@@ -52,13 +52,26 @@ session 14.
 
 ## Goals
 
-### `c-plan-first-deploy`
+### `c-check-data-survives`
 
-- **goal:** say what has to be in place for an app's database the first time it is deployed
+- **goal:** say whether a first-deploy plan's data will survive a redeploy
+- **criterion:** Given an agent's plan for deploying an app's database for the first time, and the
+  host's rule for what it keeps, says whether the data will survive a redeploy and names the step
+  that decides it, whichever way the answer goes. It passes when the verdict is right and the step
+  named is the one that decides it. For a plan that never says where the database lives, "no" or
+  "can't tell", with that omission named, passes.
+- **capability:** plan-first-deploy
+
+### `c-check-own-database`
+
+- **goal:** say whether a first-deploy plan gives production a database of its own, built by the
+  code
 - **criterion:** Given an agent's plan for deploying an app's database for the first time, says
-  whether the data will survive a redeploy, and whether production gets a database of its own,
-  built by the code rather than copied from the laptop. It passes when they catch a plan that
-  fails either one and don't fault a plan that meets both.
+  whether production gets a database of its own, built by the code rather than copied from the
+  laptop or shared with development, and names the step that decides it, whichever way the answer
+  goes. It passes when the verdict is right and the step named is the one that decides it. A seed
+  script kept in the code and run once against production counts as built by the code.
+- **capability:** plan-first-deploy
 
 ### `o-orientation`
 

@@ -7,9 +7,7 @@
 {"at":"2026-10-01T12:10:41.732Z","kind":"goal-added","goal":"w-redeploy","needs":"curation"}
 {"at":"2026-10-01T12:10:44.217Z","kind":"goal-added","goal":"w-seed-data","needs":"curation"}
 {"at":"2026-10-01T12:10:46.790Z","kind":"goal-added","goal":"w-production","needs":"curation"}
-{"at":"2026-10-01T13:15:08.730Z","kind":"goal-added","goal":"c-plan-first-deploy","needs":"curation"}
 {"at":"2026-10-04T16:43:35.883Z","kind":"curated","goal":"o-orientation"}
-{"at":"2026-10-04T16:43:36.024Z","kind":"curated","goal":"c-plan-first-deploy"}
 {"at":"2026-10-04T16:43:36.147Z","kind":"curated","goal":"w-sqlite"}
 {"at":"2026-10-04T16:43:36.258Z","kind":"curated","goal":"w-postgres"}
 {"at":"2026-10-04T16:43:36.410Z","kind":"curated","goal":"w-ephemeral-disk"}
@@ -17,3 +15,5 @@
 {"at":"2026-10-04T16:43:36.660Z","kind":"curated","goal":"w-redeploy"}
 {"at":"2026-10-04T16:43:36.809Z","kind":"curated","goal":"w-seed-data"}
 {"at":"2026-10-04T16:43:36.911Z","kind":"curated","goal":"w-production"}
+{"at":"2026-10-04T17:23:19.085Z","kind":"goal-added","goal":"c-check-data-survives","needs":"curation"}
+{"at":"2026-10-04T17:23:19.255Z","kind":"goal-added","goal":"c-check-own-database","needs":"curation"}
