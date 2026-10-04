@@ -113,9 +113,10 @@ to offer, and its `offer as` describes it rather than distinguishing it.
     frontend setting named for the frontend that holds the backend's address, or a backend
     setting holding the frontend's address (the pages it accepts requests from).
   - `shared-vendor` (Hard): the setup puts two parts on one vendor (like Harbor), each with its
-    own address, and the agent's answer names only the vendor. The setup's example addresses
-    must not say which part each is for (no `api` in one of them). The hardest form is also
-    `cross-part`.
+    own address, and the agent's answer names only the vendor. Neither the setup's example
+    addresses nor the setting's name may say which part's value it holds (no `api`, `server`,
+    `backend`, `client`, `site` or `frontend` pointing at the answer), unless the name points the
+    wrong way, which makes the question also `cross-part`, its hardest form.
   Every exchange question names `c-spot-secret`. Only a `shared-vendor` one also names
   `c-trace-setting-value`: when each part is on its own vendor, the vendor named in the answer
   gives the part away.
