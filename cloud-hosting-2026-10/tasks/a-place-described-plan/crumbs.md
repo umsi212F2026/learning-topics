@@ -8,7 +8,7 @@ frontend and its backend:
   so that it can answer the frontend's requests for recipes and save new ones.
 
 Crumbs also has a database. Where it is kept belongs to the database-hosting topic, so the plans
-below leave it out and so do you.
+below leave it out.
 
 The vendors are made up, so nothing here goes out of date. Each says what it offers, and that is
 all you know about it.
@@ -23,8 +23,7 @@ all you know about it.
   services (like Kettle).
 
 For the plan below, say which part each vendor hosts. Then name every gap (a part with no host)
-and every mismatch (a part on a host that cannot run it as the app is now), and nothing that
-isn't one; or say both are covered.
+and every mismatch (a part on a host that cannot run it as the app is now); or say there are none.
 
 ### q1
 
