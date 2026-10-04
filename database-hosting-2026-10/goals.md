@@ -73,16 +73,14 @@ app, and the data in its SQLite database, on the public internet. Name any other
 
 ## Depth
 
-**Get your app's database deployed, and then change its tables without losing what is
-there.** Not writing SQL or migrations, and not setting up the database yourself. When your agent
-deploys your app, and again whenever a new feature needs new tables, it hands you a plan and says
-the data is safe. This topic is enough to catch what that plan leaves out: where the data will
-live, what goes into the production database and what stays in development, and what has to
-happen, in what order, before a change to the tables reaches real users' data.
+**Get your app's database deployed so its data survives.** Not writing SQL or migrations, and
+not setting up the database yourself. When your agent deploys your app, it hands you a plan and
+says the data is safe. This topic is enough to catch what that plan leaves out: where the data
+will live, and what goes into the production database and what stays in development.
 
 What sits past that line: choosing hosts and comparing free tiers in general belong to
 cloud-hosting, and keeping the connection string and the database's password out of your code
-belongs to config-and-secrets. Deploying automatically and debugging a deployed app come in
+belongs to deploy-config. Deploying automatically and debugging a deployed app come in
 session 12, sign-in and any table of users it needs in session 13, and defending the app in
 session 14.
 
@@ -191,15 +189,6 @@ session 14.
   whether the data will survive a redeploy, and whether production gets a database of its own,
   built by the code rather than copied from the laptop. It passes when they catch a plan that
   fails either one and don't fault a plan that meets both.
-- **origin:** course
-
-### `c-plan-migration`
-
-- **goal:** say what has to happen to change the tables of a deployed app that holds data
-- **criterion:** Given an agent's plan for changing the tables of a deployed app that holds
-  users' data, says what has to happen before the change reaches production. It passes when they
-  say it should be tried on a copy of the data first, that production should be backed up just
-  before, and that someone should ask whether the app has to be stopped while it runs.
 - **origin:** course
 
 ### `o-orientation`
@@ -316,28 +305,4 @@ session 14.
 - **group:** vocabulary
 - **what it names:** putting a backup's data back into a working database
 - **nearest confusable:** backup
-- **origin:** course
-
-### `w-downtime`
-
-- **goal:** downtime
-- **criterion:** vocabulary
-- **supply:** vocabulary
-- **bar:** one production pass
-- **group:** vocabulary
-- **what it names:** a stretch when the app is deliberately stopped, so nobody can use it
-- **nearest confusable:** sleep
-- **synonyms:** maintenance window
-- **origin:** course
-
-### `w-rollback`
-
-- **goal:** rollback
-- **criterion:** vocabulary
-- **supply:** vocabulary
-- **bar:** one production pass
-- **group:** vocabulary
-- **what it names:** going back to the version that worked after a change goes wrong
-- **nearest confusable:** restore
-- **synonyms:** revert, roll back
 - **origin:** course

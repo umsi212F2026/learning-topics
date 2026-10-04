@@ -10,6 +10,3 @@
 {"at":"2026-10-01T12:10:57.793Z","kind":"goal-added","goal":"w-backup","needs":"curation"}
 {"at":"2026-10-01T12:11:00.216Z","kind":"goal-added","goal":"w-restore","needs":"curation"}
 {"at":"2026-10-01T13:15:08.730Z","kind":"goal-added","goal":"c-plan-first-deploy","needs":"curation"}
-{"at":"2026-10-01T13:15:08.874Z","kind":"goal-added","goal":"c-plan-migration","needs":"curation"}
-{"at":"2026-10-01T13:15:11.533Z","kind":"goal-added","goal":"w-downtime","needs":"curation"}
-{"at":"2026-10-01T13:15:14.214Z","kind":"goal-added","goal":"w-rollback","needs":"curation"}
