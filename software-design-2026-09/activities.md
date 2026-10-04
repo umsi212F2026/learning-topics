@@ -636,83 +636,11 @@ on the orientation question, so the learner's answer to it is recorded against n
   its clarifying questions ("so the list has to be shared, since all six officers need it"), if the
   learner's reason repeats it.
 
-### `a-w-spec`
+### `a-words`
 
-- **origin:** generated
-- **serves:** `w-spec`
-- **checks:** `w-spec`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-plan`
-
-- **origin:** generated
-- **serves:** `w-plan`
-- **checks:** `w-plan`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-success-criteria`
-
-- **origin:** generated
-- **serves:** `w-success-criteria`
-- **checks:** `w-success-criteria`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-constraint`
-
-- **origin:** generated
-- **serves:** `w-constraint`
-- **checks:** `w-constraint`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-mvp`
-
-- **origin:** generated
-- **serves:** `w-mvp`
-- **checks:** `w-mvp`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-yagni`
-
-- **origin:** generated
-- **serves:** `w-yagni`
-- **checks:** `w-yagni`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-spike`
-
-- **origin:** generated
-- **serves:** `w-spike`
-- **checks:** `w-spike`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-architecture`
-
-- **origin:** generated
-- **serves:** `w-architecture`
-- **checks:** `w-architecture`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
-
-### `a-w-tech-stack`
-
-- **origin:** generated
-- **serves:** `w-tech-stack`
-- **checks:** `w-tech-stack`
-- **learner does:** whatever the goal's supply instantiates (see
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md)
-- **offer as:** the only candidate; which move gets set is the supply's, not this entry's
+- **serves:** group vocabulary
+- **generator:** the five moves in `workflows/learn/skills/goal-setting/references/vocabulary-moves.md`, set for one word at a time from its `what it names`, `nearest confusable` and `synonyms`. Each question names that word's goal and carries its move.
+- **learner does:** answers one short question about one word
+- **tutor role:** examiner
+- **tutor does:** sets the question as served, without rewording it or hinting; when the bank has nothing for the word, sets one move live, as vocabulary-moves.md describes
+- **offer as:** not offered as a choice; a word's question is set when that word is studied or due
