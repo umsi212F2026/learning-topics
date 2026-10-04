@@ -18,19 +18,6 @@ Nearest confusable: database host. Synonyms: volume, persistent disk.
   "only one of them survives a redeploy", which the question rules out, and do not accept a
   difference of price or of which company provides it.
 
-### q-catch-volume-backup
-
-- **goal:** `w-persistent-volume`
-- **move:** CATCH
-- **answer:** a persistent volume is storage that outlasts the server being replaced; it is not a
-  copy or a backup. The database is on the volume once, and deleting a recipe deletes it there.
-  What the volume protects against is a redeploy wiping the file, not a mistake made through the
-  app.
-- **credit:** full for naming the actual error: a volume keeps the one file through server
-  replacement and holds no earlier copy, so a deletion is just as permanent. Half for "a volume
-  isn't a backup" with nothing about what it does keep the file through. Do not accept a different
-  quibble: "they should use Postgres", or "volumes cost money".
-
 ### q-define-volume
 
 - **goal:** `w-persistent-volume`

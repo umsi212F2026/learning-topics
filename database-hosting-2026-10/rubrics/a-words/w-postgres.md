@@ -17,22 +17,6 @@ Nearest confusable: SQL. Synonym: PostgreSQL.
   "Postgres is a newer version of SQL", which are the confusion itself, and do not accept a
   difference of size or speed.
 
-### q-interpret-postgresql
-
-- **goal:** `w-postgres`
-- **move:** INTERPRET
-- **answer:** the data would be held by a Postgres database running as its own service, separate
-  from the backend, which reaches it over the network rather than opening a file. It rules out the
-  data sitting on the backend's own server as a file, so replacing the backend in a redeploy leaves
-  the database and its data where they were.
-- **credit:** full for recovering both parts: the database runs separately from the backend and the
-  backend connects to it, and so a redeploy of the backend does not touch the data (or, equally,
-  the data is not a file on the backend's server). Half for one part without the other. Do not
-  accept "the data is kept in SQL", or a reading that the database is copied onto the backend's
-  server.
-- **tutor note:** this question uses PostgreSQL, a name the readings don't. If the learner doesn't
-  recognise it as Postgres, record the answer as given; don't tell them.
-
 ### q-define-postgres
 
 - **goal:** `w-postgres`

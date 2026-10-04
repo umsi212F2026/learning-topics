@@ -13,9 +13,3 @@ redeploy?
 Your app is already running on a host. Your agent says: "I've fixed the typo on the sign-up page
 and pushed it. The host will redeploy in about a minute." What is the agent claiming, and what does
 it rule out?
-
-### q-catch-redeploy-crash
-
-A classmate says: "I fixed a bug on my laptop this morning but haven't pushed it yet. My app
-crashed at noon and the host redeployed it, so users have the fix now." What is wrong with what
-they said?
