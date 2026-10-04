@@ -18,10 +18,7 @@ attempting them unaided. The two study activities were dropped for that reason.
 | id | Goal | Criterion: what gets examined, and what counts |
 | -- | ---- | ---------------------------------------------- |
 | `o-orientation` | get the shape of this area before working on any particular part of it | `orientation` |
-| `c-catch-data-loss` | catch a first-deploy plan whose data won't survive a redeploy | Given an agent's plan for deploying an app's database for the first time whose data will not survive a redeploy, and the host's rule for what it keeps, says that it won't and names the step that decides it. It passes when they say no and tie it to that step. For a plan that never says where the database lives, "no" or "can't tell", with that omission named, passes. |
-| `c-clear-data-survives` | recognise a first-deploy plan whose data will survive a redeploy | Given an agent's plan for deploying an app's database for the first time whose data will survive a redeploy, and the host's rule for what it keeps, says that it will and names the step that puts the data somewhere the host keeps. It passes when they say yes and name that step. Faulting the plan on survival fails it. |
-| `c-catch-copied-database` | catch a first-deploy plan that copies or shares production's database | Given an agent's plan for deploying an app's database for the first time in which production's database is copied from the laptop or shared with development, says that production does not get a database of its own, built by the code, and names the step that decides it. It passes when they say no and tie it to that step. |
-| `c-clear-own-database` | recognise a first-deploy plan that gives production a database of its own, built by the code | Given an agent's plan for deploying an app's database for the first time in which production gets a database of its own, built by the code, says that it does and names the step that builds it. It passes when they say yes and name that step. A seed script kept in the code and run once against production counts as built by the code; faulting it, or faulting the plan on this question in any other way, fails it. |
+| `c-plan-first-deploy` | say whether a first-deploy plan keeps the data and gives production a database of its own | Given an agent's plan for deploying an app's database for the first time, the host's rule for what it keeps, and one of two questions (will the data survive a redeploy, or does production get a database of its own, built by the code rather than copied from the laptop or shared with development), answers yes or no and names the step that decides it, whichever way the answer goes. It passes when the verdict is right and the step named is the one that decides it. For a plan that never says where the database lives, "no" or "can't tell" on survival, with that omission named, passes. A seed script kept in the code and run once against production counts as built by the code. Cases: `catch-data-loss`, `clear-survives`, `catch-copied`, `clear-own-database`. |
 
 ## Coverage
 
@@ -33,10 +30,7 @@ attempting them unaided. The two study activities were dropped for that reason.
 | goal | study | checks | notes |
 | ---- | ----- | ------ | ----- |
 | `o-orientation` | `a-read-database-survives` | `a-dry-run-database-plan` | |
-| `c-catch-data-loss` | | `a-judge-described-plan`, `a-judge-own-deploy-plan` | |
-| `c-clear-data-survives` | | `a-judge-described-plan`, `a-judge-own-deploy-plan` | |
-| `c-catch-copied-database` | | `a-judge-described-plan`, `a-judge-own-deploy-plan` | |
-| `c-clear-own-database` | | `a-judge-described-plan`, `a-judge-own-deploy-plan` | |
+| `c-plan-first-deploy` | | `a-judge-described-plan`, `a-judge-own-deploy-plan` | |
 
 ---
 
