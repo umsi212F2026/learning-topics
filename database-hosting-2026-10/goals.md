@@ -86,6 +86,12 @@ belongs to deploy-config. Deploying automatically and debugging a deployed app c
 session 12, sign-in and any table of users it needs in session 13, and defending the app in
 session 14.
 
+## Sequence
+
+1. orientation
+2. vocabulary
+3. capabilities
+
 ## Goals
 
 <!--
