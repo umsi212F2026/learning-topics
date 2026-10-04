@@ -5,35 +5,11 @@ with the learner.
 
 ## Check notes
 
-2026-10-04. A deliberate deviation from `curation/generate`, which asks for at least one activity
-per goal that isn't a check. By the instructor's decision, every activity in this topic sets
-questions with rubrics, and there are no study-only activities: practice is an attempt with help,
-which is recorded but doesn't count, and a check is an attempt without. The `study` cells in
-Coverage are empty for that reason, not because something is missing.
-
-2026-10-04. A second deliberate deviation, from `curation/bank-check`, which asks that no question
-give away another's answer in the same scenario. By the instructor's decision, a scenario here is
-one story served in file order in study, and a later question may reveal an earlier one's answer.
-A quiz or a review draws few questions from any one scenario. Every question names at least one
-goal; there are no warm-ups.
-
-2026-10-04. A third deliberate deviation, from the `c-spot-secret` criterion, which asks the
-learner to say whether a value is a secret and why. On message questions, by the instructor's
-decision, full credit for `c-spot-secret` needs only the call (secret, or public), since the
-reason a learner gives there is naturally about the route, not the value. Exchange questions
-still ask for and credit the reason.
-
-2026-10-04. A known weakness, waiting on a change to the workflow. `c-spot-secret` and
-`c-judge-secret-request` each have two sides (a secret and a public value; a request to decline
-and one to go along with), and `c-trace-setting-value` names cases it must include. Under `one
-unaided pass`, a pass on any one question meets the goal, so the easiest side can certify it. The
-instructor is adding a way for a criterion to name its cases and for the bar to require each; when
-it lands, the rubrics here gain `cases:` lines and nothing else changes. Until then, prefer serving
-a learner the side they haven't shown.
-
-2026-10-04. One activity, `a-deploy-chat`, serves every capability goal, by the instructor's
-choice: one scenario carries questions across all four goals, so there is no choice of activity
-to offer, and its `offer as` describes it rather than distinguishing it.
+2026-10-04. A deliberate deviation from the `c-spot-secret` criterion, which asks the learner to
+say whether a value is a secret and why. On message questions, by the instructor's decision, full
+credit for `c-spot-secret` needs only the call (secret, or public), since the reason a learner
+gives there is naturally about the route, not the value. Exchange questions still ask for and
+credit the reason.
 
 ## Goals
 
