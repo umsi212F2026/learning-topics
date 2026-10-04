@@ -47,5 +47,3 @@ Nearest confusable: database host. Synonyms: volume, persistent disk.
   on a disk now" with nothing about its outlasting the server being replaced. Do not accept a reading
   that the data has become a Postgres database, or that the disk lasts only as long as the server
   does.
-- **tutor note:** this question uses "persistent disk", a name the readings don't. If the learner
-  doesn't recognise it as a persistent volume, record the answer as given; don't tell them.

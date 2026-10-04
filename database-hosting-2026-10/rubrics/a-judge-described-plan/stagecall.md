@@ -19,7 +19,9 @@ migrating data, cost or free tiers are neither credited nor counted as a false f
   tables, and step 4's seed script is kept in the repository and run once after the first
   deploy).
 - **credit:** full for all four yes-or-no answers right, with Plan A's no on survival (or "can't
-  tell") tied to the plan's never saying where the database lives, and no fault named in Plan B.
+  tell") tied either to the plan's never saying where the database lives, or to there being no
+  volume and no managed Postgres, so the file stays at its default path on the ephemeral disk, and
+  no fault named in Plan B.
   A yes on Plan A's survival is wrong. Half for one plan judged fully right and the other not.
 - **tutor note:** a learner who passes Plan A because the backend makes its tables on startup has
   seen that the app will run, not where its data goes: ask which step says where the database

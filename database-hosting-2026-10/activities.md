@@ -227,9 +227,10 @@ attempting them unaided. The two study activities were dropped for that reason.
       database goes: no volume, no path, no managed Postgres, only steps such as "deploy the
       backend" and "the backend creates its tables on startup". The backend creates the tables at
       startup and nothing comes from the laptop. Survives: no, keyed as not shown to survive; an
-      answer of no, or "can't tell, the plan doesn't say", passes, and yes fails. The deciding
-      "step" is the absence: a no must say the plan never says where the database lives. Its own,
-      built by code: yes.
+      answer of no, or "can't tell, the plan doesn't say", passes, and yes fails. A no may rest on
+      either reason, and both earn full credit: the plan never says where the database lives; or,
+      with no volume and no managed Postgres in the plan, the file stays at the setup's default
+      path on the ephemeral disk. Its own, built by code: yes.
     - `outside-mount` (faulted, survival, Hard): a volume is attached at `/data`, but the database path, in a
       step or an environment setting, is still inside the app's folder (`server/data/app.sqlite`,
       or `/app/server/data/app.sqlite`). The backend creates the tables at startup. Survives: no.
@@ -283,8 +284,9 @@ attempting them unaided. The two study activities were dropped for that reason.
   - **Which goal:** every question bears on `c-plan-first-deploy` alone. Rubric: `answer` gives, for
     each plan, yes or no on each question and the deciding step for every no (a yes may cite its
     step too, but the learner need not); full credit is all four yes-or-no answers right, each no
-    tied to the step that decides it (for `silent-location`, to the plan's never saying where the
-    database lives, and "can't tell" counts as no), and no fault named that the key doesn't have; a yes given
+    tied to the step that decides it (for `silent-location`, to either the plan's never saying where the
+    database lives or the file staying at its default path on the ephemeral disk because the plan
+    names no volume and no managed Postgres; "can't tell" counts as no), and no fault named that the key doesn't have; a yes given
     without a step loses nothing; half credit is one plan judged fully right and the other not.
 - **worked example:** before a learner's first attempt, take a `laptop-export` plan and a
   `sound-volume` plan for a made-up app (its fault is one the bank never serves), and work them

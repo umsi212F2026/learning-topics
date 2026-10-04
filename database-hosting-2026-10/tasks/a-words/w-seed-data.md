@@ -4,8 +4,8 @@ Answer in two or three sentences, with nothing open in front of you.
 
 ### q-seed-vs-test-data
 
-Your agent's notes mention both seed data and test data. Both are rows in your database's tables.
-What is the difference between seed data and test data?
+Your agent's notes mention both seed data and test data. What is the difference between seed data
+and test data?
 
 ### q-interpret-initial-data
 
