@@ -109,7 +109,8 @@ to offer, and its `offer as` describes it rather than distinguishing it.
   - `host-sets` (Easy): a value the host provides itself, which the agent says not to add.
   - `secret-db` (Medium): the database's connection details, as a connection string or as a
     token or password on its own, under a name that doesn't say "secret", "password" or "key";
-    a secret.
+    a secret. The agent's answer must say the value gets the server *into* the database (it
+    holds the login), not only that it reaches it, or the learner can't tell it from an address.
   - `cross-part` (Medium): a setting read by one part that holds another part's address: a
     frontend setting named for the frontend that holds the backend's address, or a backend
     setting holding the frontend's address (the pages it accepts requests from).

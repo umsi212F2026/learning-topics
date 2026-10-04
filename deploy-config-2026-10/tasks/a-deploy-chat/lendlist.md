@@ -46,8 +46,8 @@ a secret? Say why.
 
 **Student:** What is that for, and where does its value come from?
 
-**Agent:** The server uses it to reach your database. Copy the line shown on the Connect panel of
-Silo's dashboard.
+**Agent:** The server uses it to get into your database: it says where the database is and holds
+the login. Copy the line shown on the Connect panel of Silo's dashboard.
 
 What is `SILO_URI` for? Whose value does it need: the frontend's address, the backend's address,
 the database's connection details, or nobody's, because a host sets it? And is its value a
