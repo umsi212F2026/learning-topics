@@ -52,26 +52,46 @@ session 14.
 
 ## Goals
 
-### `c-check-data-survives`
+### `c-catch-data-loss`
 
-- **goal:** say whether a first-deploy plan's data will survive a redeploy
-- **criterion:** Given an agent's plan for deploying an app's database for the first time, and the
-  host's rule for what it keeps, says whether the data will survive a redeploy and names the step
-  that decides it, whichever way the answer goes. It passes when the verdict is right and the step
-  named is the one that decides it. For a plan that never says where the database lives, "no" or
-  "can't tell", with that omission named, passes.
+- **goal:** catch a first-deploy plan whose data won't survive a redeploy
+- **criterion:** Given an agent's plan for deploying an app's database for the first time whose
+  data will not survive a redeploy, and the host's rule for what it keeps, says that it won't and
+  names the step that decides it. It passes when they say no and tie it to that step. For a plan
+  that never says where the database lives, "no" or "can't tell", with that omission named,
+  passes.
 - **capability:** plan-first-deploy
 - **taught elsewhere:** session 11 table activity
 
-### `c-check-own-database`
+### `c-clear-data-survives`
 
-- **goal:** say whether a first-deploy plan gives production a database of its own, built by the
-  code
-- **criterion:** Given an agent's plan for deploying an app's database for the first time, says
-  whether production gets a database of its own, built by the code rather than copied from the
-  laptop or shared with development, and names the step that decides it, whichever way the answer
-  goes. It passes when the verdict is right and the step named is the one that decides it. A seed
-  script kept in the code and run once against production counts as built by the code.
+- **goal:** recognise a first-deploy plan whose data will survive a redeploy
+- **criterion:** Given an agent's plan for deploying an app's database for the first time whose
+  data will survive a redeploy, and the host's rule for what it keeps, says that it will and names
+  the step that puts the data somewhere the host keeps. It passes when they say yes and name that
+  step. Faulting the plan on survival fails it.
+- **capability:** plan-first-deploy
+- **taught elsewhere:** session 11 table activity
+
+### `c-catch-copied-database`
+
+- **goal:** catch a first-deploy plan that copies or shares production's database
+- **criterion:** Given an agent's plan for deploying an app's database for the first time in which
+  production's database is copied from the laptop or shared with development, says that production
+  does not get a database of its own, built by the code, and names the step that decides it. It
+  passes when they say no and tie it to that step.
+- **capability:** plan-first-deploy
+- **taught elsewhere:** session 11 table activity
+
+### `c-clear-own-database`
+
+- **goal:** recognise a first-deploy plan that gives production a database of its own, built by
+  the code
+- **criterion:** Given an agent's plan for deploying an app's database for the first time in which
+  production gets a database of its own, built by the code, says that it does and names the step
+  that builds it. It passes when they say yes and name that step. A seed script kept in the code
+  and run once against production counts as built by the code; faulting it, or faulting the plan
+  on this question in any other way, fails it.
 - **capability:** plan-first-deploy
 - **taught elsewhere:** session 11 table activity
 
