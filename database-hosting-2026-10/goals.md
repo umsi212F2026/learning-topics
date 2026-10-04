@@ -91,7 +91,7 @@ session 14.
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** a database that is a single file the backend opens itself
-- **nearest confusable:** Postgres
+- **nearest confusable:** Postgres; SQL
 
 ### `w-postgres`
 
@@ -120,7 +120,7 @@ session 14.
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** file storage space attached to a server that outlasts the server being replaced
-- **nearest confusable:** database host
+- **nearest confusable:** database host; backup
 - **synonyms:** volume, persistent disk
 
 ### `w-redeploy`
@@ -130,7 +130,7 @@ session 14.
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** putting a new version of the app on its hosts in place of the running one
-- **nearest confusable:** restart
+- **nearest confusable:** restart; deploy
 
 ### `w-seed-data`
 
@@ -139,7 +139,7 @@ session 14.
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the rows your code puts in when a database is first set up
-- **nearest confusable:** test data
+- **nearest confusable:** test data; schema
 - **synonyms:** initial data
 
 ### `w-production`
