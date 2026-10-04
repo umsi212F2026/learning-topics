@@ -193,8 +193,8 @@ defending the app in session 14.
   they say which one. It passes when every setting is matched to what it's for, no setting is
   given another part's value (the frontend's address where the backend's belongs, or the
   backend's where the database's belongs), and every value a hosting service supplies is
-  recognized as one and credited to the right service. Deciding where each setting goes is not
-  part of it.
+  recognized as one and credited to the right service. Knowing which service's settings or which
+  file each one is entered in is not part of it; the agent says that.
 
 ### `c-explain-localhost-gap`
 
