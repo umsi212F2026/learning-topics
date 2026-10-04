@@ -248,18 +248,7 @@ defending the app in session 14.
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the file on your own machine that holds your app's environment variables
-- **nearest confusable:** .env.example
-
-### `w-env-example`
-
-- **goal:** .env.example
-- **criterion:** vocabulary
-- **supply:** vocabulary
-- **bar:** one production pass
-- **group:** vocabulary
-- **what it names:** the committed list of the settings an app needs, without their real values
-- **nearest confusable:** .env file
-- **synonyms:** .env.sample, .env.template
+- **nearest confusable:** the host's environment variables
 
 ### `w-port`
 
