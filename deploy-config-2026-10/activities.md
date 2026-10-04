@@ -74,17 +74,20 @@ Coverage are empty for that reason, not because something is missing.
   - `secret-db` (Medium): the database's connection details, as a connection string or as a
     token or password on its own, under a name that doesn't say "secret", "password" or "key";
     a secret.
-  - `cross-part` (Hard): a setting read by one part that holds another part's address: a
+  - `cross-part` (Medium): a setting read by one part that holds another part's address: a
     frontend setting named for the frontend that holds the backend's address, or a backend
     setting holding the frontend's address (the pages it accepts requests from).
   - `shared-vendor` (Hard): the setup puts two parts on one vendor (like Harbor), each with its
-    own address, and the agent's answer names only the vendor.
+    own address, and the agent's answer names only the vendor. The setup's example addresses
+    must not say which part each is for (no `api` in one of them). The hardest form is also
+    `cross-part`.
   **Every question names `c-spot-secret`**, since each asks whether a value is a secret, public
-  addresses included. **Only a `cross-part` or `shared-vendor` question also names
-  `c-trace-setting-value`**, because those carry the cases its criterion names; a pass on an
-  Easy or `secret-db` question doesn't show them. A scenario has four to six questions, with at
-  least one `secret-db` and at least one `cross-part` or `shared-vendor`. A scenario with a
-  `shared-vendor` question needs a setup with one vendor hosting two parts.
+  addresses included. **Only a `shared-vendor` question also names `c-trace-setting-value`.**
+  When each part is on its own vendor, the vendor named in the agent's answer gives the part away,
+  so a pass on any other shape, `cross-part` included, doesn't show the cases the criterion names.
+  A scenario has four to six questions, with at least one `secret-db`. A scenario meant to bear
+  on `c-trace-setting-value` needs a setup with one vendor hosting two parts, and at least two
+  `shared-vendor` questions, one of them also `cross-part`.
 - **worked example:** work one Easy exchange aloud: say what the agent's answer says the value is
   used for, then ask whose address that is or what it unlocks, then whether someone holding it
   could get into something.
