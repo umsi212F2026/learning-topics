@@ -26,7 +26,8 @@ doesn't settle the claim, the right place to go instead is Render's own free-pla
 - **answer:** doesn't settle it: Render's own page, but it has no spin-down or Postgres-expiry
   wording. Go to Render's free-plan docs instead.
 - **credit:** full for a non-settling verdict with the reason that the page doesn't address the
-  claim, and the free-plan docs named instead. Half for the verdict with "it's a pricing page" and
+  claim, or that idle and expiry rules live in a vendor's free-plan docs rather than on a pricing
+  page, and the free-plan docs named instead. Half for the verdict with "it's a pricing page" and
   no more, or with nowhere better named.
 - **tutor note:** "does the pricing page say what happens when the service is idle, or when the
   database is a month old?" If `s9` was served before, ask why one of Render's own pages might
