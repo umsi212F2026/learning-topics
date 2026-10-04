@@ -69,7 +69,8 @@ Swapshelf's coding agent proposes this plan:
 > 2. Set the backend's database path to `/data/app.sqlite`, so the SQLite file lives on the volume.
 > 3. Deploy the backend. On startup it creates the `items` and `claims` tables if they are missing.
 > 4. Once the backend is running, run the seed script in your repository, `server/seed.js`, once on
->    the server. It adds three sample items so the shelf doesn't look empty to the first visitors.
+>    the server. It adds the three things the hall's front desk is giving away this week (a
+>    microwave, a floor lamp and a box of hangers), so the shelf opens with real listings.
 >
 > Your data will be safe.
 

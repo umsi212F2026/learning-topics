@@ -60,6 +60,6 @@ question, connection strings, passwords, backups, cost) are neither credited nor
 - **credit:** full for yes, tied to step 3 (the backend creating its tables), step 4 (the seed
   script from the repository), or both. Not met for no, for yes with no step, for yes tied only to
   step 1 or step 2, or for yes alongside a fault on this question, such as calling the seed
-  script's sample items copied or test data.
+  script's front-desk listings copied or test data.
 - **tutor note:** a remark that the volume at `/data` keeps the data is about the other question;
   disregard it, and say it belongs to the survival question.
