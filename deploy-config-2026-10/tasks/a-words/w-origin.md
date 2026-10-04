@@ -8,7 +8,7 @@ What is the difference between a page's origin and its domain?
 
 ### q4
 
-`https://tally.quay.app/budgets/march` is a full URL, and `https://tally.quay.app` is an origin. What does each one name, and what is the difference between them?
+What is the difference between a page's full URL and its origin? Say what each one names.
 
 ### q2
 
