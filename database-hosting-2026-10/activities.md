@@ -286,13 +286,16 @@ attempting them unaided. The two study activities were dropped for that reason.
       startup if they are missing; either no rows, or a seed script kept in the repository inserts
       two or three demo rows once, in a step after the first deploy. Survival: yes, decided by the
       step putting the file at `/data/app.sqlite` (`c-clear-data-survives`, Medium). Own database:
-      yes, decided by the step where the backend creates its tables (the seed step may be named
-      too) (`c-clear-own-database`, Medium).
+      yes, decided by the step where the backend creates its tables; when the plan has a seed step,
+      naming only that step earns full credit too, and either step or both is fine
+      (`c-clear-own-database`, Medium).
     - `sound-postgres`: managed Postgres; the backend creates the tables at startup; either no
       rows, or a seed script kept in the repository is run once against production, in a step after
       the first deploy. The laptop keeps using its own SQLite file. Survival: yes, decided by the
       managed Postgres step (`c-clear-data-survives`, Medium). Own database: yes, decided by the
-      step where the backend creates its tables (`c-clear-own-database`, Medium).
+      step where the backend creates its tables; when the plan has a seed step, naming only that
+      step earns full credit too, and either step or both is fine (`c-clear-own-database`,
+      Medium).
     - `decoy`: `sound-volume` or `sound-postgres` plus one detail that sounds alarming and doesn't
       bear on the asked question. For the survival question: a few seconds of downtime on each
       redeploy because a volume is attached; the database at a different vendor from the backend;
@@ -300,7 +303,9 @@ attempting them unaided. The two study activities were dropped for that reason.
       script kept in the repository is run once from the laptop against production, as in Odin's
       lesson; the laptop keeps its own SQLite file with the same tables, made by the same code.
       Survival: yes (`c-clear-data-survives`, Hard). Own database: yes (`c-clear-own-database`,
-      Hard). The deciding step is the sound shape's.
+      Hard). The deciding step is the sound shape's, so on the own-database question a seed step,
+      including one run from the laptop, earns full credit on its own, as the table-creating step
+      does.
     The `laptop-export` shape (a managed Postgres database, and a step where the agent exports the
     rows from the laptop's database and imports them into production; survival yes, own database
     no) is for the worked example and the dry run only and is never banked.
@@ -330,7 +335,10 @@ attempting them unaided. The two study activities were dropped for that reason.
   - **Which goal:** each question bears on exactly one goal, the one its plan's truth on the asked
     question gives, as above; no question names two. Rubric: `goal:` that one id. `answer` is the
     verdict, yes or no, and the step that decides it. `credit`: full credit is the right verdict
-    tied to that step. For `silent-location` on the survival question, as the criterion for
+    tied to that step. On the own-database question, for a plan built by the code that has a seed
+    step (a seed script kept in the repository and run once against production), the seed step
+    and the step where the backend creates its tables each decide it: naming either one, or both,
+    earns full credit for `c-clear-own-database`, and `answer` lists both. For `silent-location` on the survival question, as the criterion for
     `c-catch-data-loss` says, no or "can't tell", with the omission named (the plan never says
     where the database lives; an answer that the plan names no volume and no managed Postgres, so
     the file stays on the ephemeral disk, names it too), and yes fails. No half credit: a right
@@ -394,7 +402,9 @@ attempting them unaided. The two study activities were dropped for that reason.
   the verdict, the step that decides it, and so the one goal that question bears on, by
   `a-judge-described-plan`'s mapping (survival: no is `c-catch-data-loss`, yes is
   `c-clear-data-survives`; own database: copied or shared is `c-catch-copied-database`, built by
-  the code is `c-clear-own-database`), with its one-time-script rule. A plan that never says where
+  the code is `c-clear-own-database`), with its one-time-script rule; on the own-database question
+  a seed step run once against production and the step that creates the tables each decide it, so
+  the key lists both and naming either earns full credit. A plan that never says where
   the database will live is keyed no on survival: an answer of no, or "can't tell, the plan doesn't
   say", with that omission named, counts as catching it, and yes does not. In the sitting, shows the
   real plan and the storage line, and puts the survival question; takes the answer in before
