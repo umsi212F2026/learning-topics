@@ -78,14 +78,16 @@ real secrets. Name any others you have._
 you don't.** Not writing the code that reads settings, not deciding where each one goes, and not
 setting up the hosts. When your agent gets your app ready to deploy, it adds settings your app
 never needed on localhost and asks you for values only you have, such as the addresses your hosts
-gave you. This topic is enough to follow its explanation of each setting and to know which of your
-hosts the value comes from.
+gave you. If your database is on a host of its own, its connection details are one of those, and
+they are a secret. This topic is enough to
+follow the agent's explanation of each setting, to know which of your hosts the value comes from,
+and to carry a secret from one host to another yourself instead of handing it to the agent.
 
 This topic assumes you have studied cloud-hosting and database-hosting first, so you already have
 the layout of a deployed app and know where your database will live. That is why it has no
-orientation of its own. What sits past that line: choosing hosts belongs to cloud-hosting. Deploying automatically
-and debugging a deployed app come in session 12, sign-in and catching a secret your agent has put in the wrong place in session 13, and
-defending the app in session 14.
+orientation of its own. What sits past that line: choosing hosts belongs to cloud-hosting.
+Deploying automatically and debugging a deployed app come in session 12, sign-in and what to do
+about a secret that has already leaked in session 13, and defending the app in session 14.
 
 ## Goals
 
@@ -190,13 +192,26 @@ defending the app in session 14.
 - **goal:** follow an agent's explanation of a setting it wants: what it is for and where its
   value comes from
 - **criterion:** Given an app whose frontend, backend and database are each on a named vendor,
-  and an exchange in which an agent deploying it asks for a setting under a name they haven't
-  met, a student asks what it is for and where its value comes from, and the agent answers: says
-  what the setting is for, which part's value it needs (the frontend's address, the backend's
-  address or the database's connection details), and which vendor they would copy it from. If a
-  vendor fills the value in itself, they say which one. It passes when all of these are right,
-  including when one vendor hosts two parts and the answer names only the vendor. Finding the
-  value on the vendor's site is not part of it.
+  and an exchange in which an agent deploying it asks for a setting under a name the learner
+  hasn't met, a student asks what it is for and where its value comes from, and the agent
+  answers, the learner says what the setting is for, which part's value it needs (the frontend's
+  address, the backend's address or the database's connection details), which vendor they would
+  copy it from, and whether the value is a secret. If a vendor fills the value in itself, they
+  say which one. It passes when all of these are right, including when one vendor hosts two
+  parts and the answer names only the vendor, and when nothing that isn't a secret is called
+  one. Finding the value on the vendor's site, and what to do with a secret, are not part of it.
+
+### `c-handle-secret`
+
+- **goal:** keep a secret out of the agent's chat and the app's code
+- **criterion:** Given a message from an agent deploying an app that asks for a value or proposes
+  a step, says whether they would go along with it, and if not, what they would do instead and
+  why. It passes when they decline to paste a secret into the chat or to let the agent write one
+  into the code or the repository; instead put it straight into the host's settings and tell the
+  agent it is there; give as the reason that the chat is kept and can be shared, and that a
+  secret in a file can be committed; and go along with a request that involves no secret, such
+  as pasting the backend's address. Dealing with a secret that has already leaked is not part of
+  it.
 
 ### `w-config`
 
@@ -261,3 +276,14 @@ defending the app in session 14.
 - **what it names:** the browser's check on which other origins a page may call
 - **nearest confusable:** a server error
 - **synonyms:** cross-origin resource sharing
+
+### `w-secret`
+
+- **goal:** secret
+- **criterion:** vocabulary
+- **supply:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a value that lets whoever holds it into something of yours
+- **nearest confusable:** a setting
+- **synonyms:** credential
