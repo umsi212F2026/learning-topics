@@ -67,6 +67,16 @@ with the learner.
      sat on an ephemeral disk and the host redeployed between adding something and checking for it.
   2. After Odin: says which lines of Odin's script build the production database, and what would be
      different in production if the laptop's database file were copied up instead.
+  Then, in the same sitting, with the readings and those answers still in front of them and
+  nothing running, two quick rehearsals, neither judged, each answered in a sentence. First, the
+  tutor gives one line saying where a made-up app's database will live on a made-up host, and the
+  learner says whether its data would survive a redeploy. Second, the tutor gives one line saying
+  how that app's production database gets its tables and rows, and the learner says whether it is
+  built by the code or copied from the laptop. Last, answers the readiness question the tutor
+  puts: with the readings and your answers beside you, could you now take an agent's plan for
+  deploying an app's database for the first time and say whether the data will survive a
+  redeploy, and whether production gets a database of its own, built by the code rather than
+  copied from your laptop?
 - **tutor role:** explainer
 - **tutor does:** stays quiet through the reading except at the stops and when asked. At each stop,
   takes the learner's answer first and replies with one near-miss question rather than a verdict.
@@ -89,15 +99,46 @@ with the learner.
   per service, with a little downtime on each redeploy. Choosing a host is cloud-hosting's;
   connection strings and passwords are deploy-config's; backups and migrating real data are a
   later topic. Makes no change to the learner's app.
-- **done when:** both stops have an answer: what the restart test would show after a redeploy on an
-  ephemeral disk, and what in Odin's script builds production's database as against copying the
-  laptop's file. No `checks`: the readiness indication is taken in `a-dry-run-database-plan`, which
-  follows.
-- **offer as:** this topic's orientation, one entry holding a sequence of three short passages: why
-  SQLite needs storage that lasts (MDN), what ephemeral and persistent storage are on a real host
-  (Render), and a production database filled by a script rather than by hand (Odin). About 15
-  minutes with the two short stops; with `a-dry-run-database-plan`, about 20. Followed by
-  `a-dry-run-database-plan`.
+  After the second stop, sets the two rehearsals from the generator below and grades neither. If
+  an answer shows a misunderstanding (a file "on the server" taken as safe; a restart taken as the
+  only thing that can lose data), explains it once and moves on. Then puts the readiness question
+  as written and rules on the answer. That is the only ruling on `o-orientation`; nothing earlier
+  in the sitting is ruled on.
+- **done when:** criterion met. Both stops and both rehearsals come first, but the ruling is on the
+  learner's own indication at the readiness question, not on the stops or the rehearsals. A plain
+  yes to both parts is `criterion: met`. A hedge on either part, with no plain no, is
+  `criterion: unclear`: explain the hedged part once more and ask again; a second hedge stays
+  `unclear`, and the tutor offers a helped attempt at an `a-judge-described-plan` question as
+  practice. A plain no is `criterion: not met`: record it, ask what is missing, and offer to go
+  back over the stop that bears on it; don't ask again in the same sitting. This goal isn't
+  required, so a no blocks nothing.
+- **generator:** for the two rehearsals only. Vary the made-up app (small, React frontend, Express
+  backend, SQLite: a club sign-up sheet, a recipe box, a study-group finder) and the host's
+  one-line storage rule. Neither rehearsal uses a fault that `a-judge-described-plan` serves, so
+  the learner doesn't meet a counting plan's deciding detail minutes before it. Rehearsal one is a
+  host whose disk is kept across a restart but starts empty on every redeploy, and one plan line
+  that is either "we restarted the server and the entries were still there, so the data is safe"
+  (a fault `a-judge-described-plan` never serves: a restart is not a redeploy) or the SQLite file
+  placed on a volume that is kept across redeploys (sound). Rehearsal two is one plan line on how
+  production gets its rows, either the backend creating empty tables at startup (sound) or the
+  agent exporting the rows from the laptop's database and importing them into production (a fault
+  `a-judge-described-plan` never serves). Never use the wording of a `no-volume`,
+  `silent-location`, `laptop-copy`, `shared-dev`, `outside-mount` or `committed-file` step, and
+  never give a line that leaves out where the database lives. The one exception is the restart
+  line ("we restarted the server and the entries were still there, so the data is safe"): its
+  point is that a restart is not a redeploy, not a plan that hides where the data lives. Don't add
+  a location to it, since any location would preview a banked shape. Fixed: the two stops, then
+  the two rehearsals in that order, neither graded, then the readiness question word for word.
+  Difficulty doesn't vary: this settles an indication, not a capability.
+- **worked example:** if the learner freezes on a rehearsal, the tutor answers a different made-up
+  line aloud in two sentences, then hands the original back.
+- **doesn't show:** an indication of readiness is all this goal asks for and all this shows. Each
+  rehearsal is one line, helped and ungraded, so it shows nothing about finding the deciding detail
+  in a whole plan, and nothing about the seven words, which `a-words` serves.
+- **offer as:** this topic's orientation, one entry in one sitting of about 20 minutes: three short
+  passages, why SQLite needs storage that lasts (MDN), what ephemeral and persistent storage are on
+  a real host (Render), and a production database filled by a script rather than by hand (Odin),
+  with two short stops; then two one-line rehearsals; then the readiness question.
 - **check note:** MDN's line that SQLite "cannot be used on some popular hosting services" can
   leave a learner thinking SQLite itself is unsafe in production. At the Render stop, make clear
   that SQLite on a persistent disk or volume is sound, and that the trouble is the ephemeral disk.
@@ -304,7 +345,8 @@ with the learner.
       does.
     The `laptop-export` shape (a managed Postgres database, and a step where the agent exports the
     rows from the laptop's database and imports them into production; survival yes, own database
-    no) is for the worked example and the dry run only and is never banked.
+    no) is for the worked example and the orientation's rehearsals in `a-read-database-survives`
+    only and is never banked.
   - **How the key treats a one-time script:** a seed or setup script kept in the code and run once
     against production builds production from the code, wherever it runs, on the host or from the
     laptop as in Odin's lesson; it is never the copied-or-shared fault, and on the own-database
@@ -370,7 +412,7 @@ with the learner.
   there later (deferred, then recorded as done elsewhere after the table activity); or remove it.
   This is the one to take in the learn tool before session 11: one short made-up plan and one
   question at a time, about 5 minutes each, nothing to run, with a 4-minute worked example the
-  first time, about 25 minutes for one passing question per case. With `a-read-database-survives` and `a-dry-run-database-plan` (20 minutes) and
+  first time, about 25 minutes for one passing question per case. With the orientation, `a-read-database-survives` (about 20 minutes), and
   the seven words in `a-words` (about 20), the route is about 65 minutes for a student who takes
   all four plan questions here, a little past the topic's 60-minute budget, and well under an
   hour for one who defers them to the table activity. Questions from it also serve review.
