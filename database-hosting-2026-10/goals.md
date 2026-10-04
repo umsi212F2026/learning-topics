@@ -187,29 +187,19 @@ session 14.
 ### `c-plan-first-deploy`
 
 - **goal:** say what has to be in place for an app's database the first time it is deployed
-- **criterion:** Given an app that ran on localhost with a SQLite file, and an agent's plan for
-  deploying it for the first time, names every step the plan is missing or gets wrong, or says
-  that none is. It passes when they catch a plan that keeps the data in a file on a disk the host
-  wipes; one that uses the development database as production, or copies its test rows across;
-  one that has the tables made by hand instead of by the code's migrations running on deploy; one
-  that puts the test fixtures into production instead of only the seed data the app needs to
-  start; and one with no check, from the deployed app after a redeploy, that what was put in is
-  still there. They must name nothing that isn't a problem. Setting the connection string, and
-  keeping the database's password out of the repository, are not part of it.
+- **criterion:** Given an agent's plan for deploying an app's database for the first time, says
+  whether the data will survive a redeploy, and whether production gets a database of its own,
+  built by the code rather than copied from the laptop. It passes when they catch a plan that
+  fails either one and don't fault a plan that meets both.
 - **origin:** course
 
 ### `c-plan-migration`
 
 - **goal:** say what has to happen to change the tables of a deployed app that holds data
-- **criterion:** Given a change to the tables of a deployed app that already holds users' data,
-  and an agent's plan for making it, names every step the plan is missing or has in the wrong
-  order, or says that none is. It passes when they require the migration to be tried first on a
-  development database holding a copy of production; a backup of production taken just before,
-  and a way back by restoring it; the migration run as part of the deploy, before the new code
-  answers requests; and a check afterwards, from the deployed app, that the data already there
-  survived. They must also ask whether the app has to be stopped while the migration runs;
-  answering that is not part of it. They must name nothing that isn't a problem. Writing the
-  migration is not part of it.
+- **criterion:** Given an agent's plan for changing the tables of a deployed app that holds
+  users' data, says what has to happen before the change reaches production. It passes when they
+  say it should be tried on a copy of the data first, that production should be backed up just
+  before, and that someone should ask whether the app has to be stopped while it runs.
 - **origin:** course
 
 ### `o-orientation`
