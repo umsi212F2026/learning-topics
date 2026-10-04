@@ -7,7 +7,7 @@ with the learner.
 
 2026-10-01. In both checks for placing parts and both checks for weighing plans, the tutor writes
 the vendors' offers and terms, already distilled, for the learner. In the checks for vendor claims,
-the learner plans in `a-plan-claim-checks` and `a-check-lab-answer`, judges one handed source in
+the learner plans in `a-check-lab-answer`, judges one handed source in
 `a-sort-claim-sources`, and looks up one handed claim on the vendor's pages in
 `a-check-2025-guide-claims`. So reading a real vendor's pricing, docs and billing pages unaided is
 examined only one handed claim at a time, never across a whole agent's answer. Each entry's
@@ -33,7 +33,7 @@ examined only one handed claim at a time, never across a whole agent's answer. E
 | ---- | ------ | ----- |
 | `o-orientation` | `a-read-odin-deployment` | |
 | `c-place-app-parts` | `a-place-described-plan`, `a-place-lab-plan` | |
-| `c-check-vendor-claims` | `a-check-2025-guide-claims`, `a-sort-claim-sources`, `a-plan-claim-checks`, `a-check-lab-answer` | `a-plan-claim-checks` and `a-check-lab-answer` rule on a written plan for checking claims, not on checks carried out; `a-check-lab-answer` has the learner carry the plan out, but the ruling is on the plan as first written. `a-check-2025-guide-claims` rules on a lookup the learner does on the vendor's own pages, and `a-sort-claim-sources` on one source judged, each for one handed claim, so neither shows the whole plan the criterion asks for across an agent's answer. |
+| `c-check-vendor-claims` | `a-check-2025-guide-claims`, `a-sort-claim-sources`, `a-check-lab-answer` | `a-check-lab-answer` rules on a written plan for checking claims, not on checks carried out; it has the learner carry the plan out, but the ruling is on the plan as first written. `a-check-2025-guide-claims` rules on a lookup the learner does on the vendor's own pages, and `a-sort-claim-sources` on one source judged, each for one handed claim, so neither shows the whole plan the criterion asks for across an agent's answer. |
 | `c-weigh-hosting-plans` | `a-weigh-described-plans`, `a-weigh-lab-plans` | |
 
 ---
@@ -279,8 +279,7 @@ examined only one handed claim at a time, never across a whole agent's answer. E
   The rest hold, with something left out: Render's Postgres "only free for the first month" was
   already the 30-day rule when written (Render's changelog dates it to May 2024) but hides that the
   database is deleted with its data after a 14-day grace period; the others leave out sleep,
-  pausing, or the card. None is a limit that has changed since 2025; that case is in
-  `a-plan-claim-checks`'s generator. The guide itself is in the instructor's files and is not available to students, which is
+  pausing, or the card. None is a limit that has changed since 2025. The guide itself is in the instructor's files and is not available to students, which is
   why its sentences are quoted. 10 to 15 minutes a sitting, with a browser.
 - **learner does:** reads the procedure and the one claim served, then follows the five steps on it:
   says which page on the vendor's own site they expect to settle it and why; finds it and copies
@@ -315,12 +314,12 @@ examined only one handed claim at a time, never across a whole agent's answer. E
   pricing page); holds `g2`; too vague to check as it stands `g6`. Cases carried: every question
   carries `vendor-page` (the verdict must rest on the vendor's own page) and `prompt-fix` (each
   asks for the prompt sentence); `g1` also carries `withdrawn`. None carries `changed-limit` or
-  `card-omitted`, which `a-plan-claim-checks` carries. To pick the next, run
+  `card-omitted`. To pick the next, run
   `served.mjs cloud-hosting-2026-10 c-check-vendor-claims`, take a claim not yet served, and prefer
   a kind the learner hasn't met; `g1` and `g5` make the best first two. Once the learner has met
   Render's 30-day expiry anywhere in this topic, prefer claims about other vendors over `g5`. Stop
   when done when has been met on two or three sittings with different kinds, and offer
-  `a-plan-claim-checks`; using up the six is not the target.
+  `a-check-lab-answer`; using up the six is not the target.
 - **worked example:** check a claim not in the six aloud, with a false start left in and named.
   For Fly.io's "only a short trial before pay-as-you-go": open the pricing page,
   https://docs.fly.io/about/pricing/, read "All organizations ... require a credit card on file"
@@ -378,7 +377,7 @@ examined only one handed claim at a time, never across a whole agent's answer. E
   `served.mjs cloud-hosting-2026-10 c-check-vendor-claims`, take a source not yet served, and
   prefer a kind the learner hasn't met. Serve a near-miss (`s2`, `s7` or `s9`) before `s1`, so the
   learner meets a vendor page that doesn't settle it before one that does. Stop when done when has
-  been met on two or three sittings with different kinds, and offer `a-plan-claim-checks`; using up
+  been met on two or three sittings with different kinds, and offer `a-check-lab-answer`; using up
   the nine is not the target.
 - **worked example:** judge a source not in the nine aloud: a blog post found by searching the
   claim. Say whose page it is (not the vendor's), whether it is dated, and whether it is about
@@ -401,98 +400,6 @@ examined only one handed claim at a time, never across a whole agent's answer. E
   learner skim only the first line of each vendor in Odin's lesson, so they probably haven't seen
   that its Render paragraph says both "$7" and "expires 30 days". If they judge it without opening
   it, tell them the paragraph says both, then ask "when was this true?"
-
-### `a-plan-claim-checks`
-
-- **serves:** `c-check-vendor-claims`
-- **supports:** attempt
-- **checks:** `c-check-vendor-claims`
-- **artifact:** no external source. An agent's answer comparing hosting vendors, written by the
-  tutor per the generator below, in an agent's voice. 15 minutes.
-- **verified:** 2026-10-01
-- **learner does:** reads the answer, then writes alone, claim by claim, how they would find out
-  whether each claim about free tiers, limits and credit cards still holds: where they would look
-  and what they would look for. Then writes what they would add to the prompt so that every claim
-  in the next answer comes with what they need to check it. Does not open a browser: it is a plan,
-  judged as written. Hands it to the tutor.
-- **tutor role:** none
-- **tutor does:** builds the instance per the generator and, before showing anything, writes into
-  the record each claim, its true status today, the vendor page that settles it (opened that
-  day) with its address, the kind of page it is (pricing page, free-plan docs, trial page, billing
-  docs, changelog), and which claims are the three planted kinds. Shows only the agent's answer. Waits,
-  writing down any help word for word. Sends the adjudicator the answer, the key (with each settling
-  page's kind), the learner's plan verbatim and the help, and the generator's rule below on what
-  "would catch" means. After the ruling, opens the settling pages with the learner and shows
-  which claims were stale. Labels the attempt `a-plan-claim-checks/<vendors, joined with +>`.
-- **done when:** criterion met with no help.
-- **generator:** fixed: the answer is 150 to 300 words in a coding agent's voice, confident, with
-  no sources and no dates, answering a lab-style prompt ("compare free hosting for a React,
-  Express and SQLite class project"). It names three to five real vendors and makes six to nine
-  claims about free tiers, limits and credit cards. Every instance plants all three kinds the
-  criterion names:
-  - `withdrawn`: a free tier the vendor has since withdrawn, stated as current.
-  - `changed`: a limit stated as it used to be.
-  - `card-omitted`: a vendor recommended with no mention of a card requirement it has.
-  The remaining claims are true today. The tutor chooses each planted claim from what it can
-  confirm that day on the vendor's own page and records the address; examples confirmed on
-  2026-10-01, to be re-confirmed before use: `withdrawn`, PlanetScale's free MySQL plan (no free
-  plan on https://planetscale.com/pricing), Heroku's free dynos (ended 2022), or Fly.io's free
-  allowance for new accounts; `changed`, Render's free Postgres described as costing $7 or as
-  lasting indefinitely (https://render.com/docs/free: free, expires after 30 days), Railway
-  described as "a $5 credit every month" (https://docs.railway.com/reference/pricing/free-trial:
-  a one-time $5 trial, then $1 a month), or Neon's compute described as always on
-  (https://neon.com/pricing: scales to zero after 5 minutes); `card-omitted`, Fly.io recommended
-  for its trial with no mention that a card is needed to keep going: its pricing page,
-  https://docs.fly.io/about/pricing/, says "All organizations ... require a credit card on
-  file", and its trial page, https://docs.fly.io/about/free-trial/, says no card is needed to
-  start, the trial is 2 hours of machine time or 7 days, and "adding a card ends the free trial"
-  (settling page: both, a pricing page and a trial page). Never plant a claim the tutor cannot settle on the
-  vendor's own page that day. What varies: the vendors, which claims are planted, and the
-  disguise:
-  - `plain` (Easy): planted claims stated flatly.
-  - `hedged` (Medium): the answer adds "as of my last update" or "prices may change", which tempts
-    a plan that only re-asks the agent.
-  - `sourced-wrong` (Medium): the answer cites a comparison article or a forum for one planted
-    claim, which tempts a plan that checks the citation rather than the vendor.
-  - `mixed-true` (Hard): one true claim sits next to each planted one about the same vendor (a
-    true sleep time beside a wrong database limit), so a plan that checks "Render" as a whole
-    rather than each claim can miss one.
-  Difficulty as marked. Across visits, serve `sourced-wrong` and `mixed-true` at least once each, reading the labels `served.mjs` returns.
-  The plan passes when, followed as written, it checks every claim on the vendor's own current
-  pages, would catch all three planted claims, and includes a prompt addition that would make each
-  claim come with what is needed to check it (for example, a link to the vendor's own page for
-  each claim, and the date of the agent's information). Cases carried: every instance carries all
-  five, `vendor-page`, `withdrawn`, `changed-limit`, `card-omitted` and `prompt-fix`, one for each
-  planted kind and one each for checking on the vendor's pages and for the prompt addition. A plan that would check only the claims
-  that look doubtful misses `card-omitted`, since an omission doesn't look doubtful; the plan has
-  to say how it would find what a vendor requires, not only test what was said. "Would catch" is
-  judged against the settling page recorded in the key, not against "the vendor's site" in
-  general: a plan catches a planted claim if the place it says it would look, followed as
-  written, would reach that page or one of the same kind on that vendor's site, and it says what
-  it would look for there. A plan that says only "check the vendor's pricing page" for everything
-  catches a claim settled on a pricing page, but not one settled only in trial, billing or
-  free-plan docs; for those it must say it would look past the pricing table (the docs on the
-  free plan or trial, the billing docs, or what the vendor's sign-up asks for). Naming the exact
-  page or address is never required.
-- **worked example:** work one Easy instance aloud: for each claim, name the vendor page that
-  would settle it and why that page, then ask "what has the answer not said about this vendor that
-  I'd need before signing up?" At the first level of help on a real attempt, ask only "for this
-  claim, who would know for sure today?"
-- **doesn't show:** it is a plan, not a check carried out, so whether the learner can find the
-  settling sentence on a real vendor site (often spread over pricing, docs and billing pages) is
-  not examined. The planted claims are of the three kinds the criterion names and no others. The
-  learner knows a check is on and that stale claims are in there, which a real answer doesn't
-  announce.
-- **offer as:** the check that's available now: an agent's answer the tutor wrote, 15 minutes,
-  nothing to open. The tutor picks the disguise, so the harder answers (one that cites a blog, one
-  that hedges) actually come up. `a-check-lab-answer` is the same capability on the answer your own
-  table's prompt got.
-- **check note:** Every planted-claim example in the generator also appears elsewhere in this
-  topic, in the orientation reading, `a-check-2025-guide-claims` (its claims and its worked example)
-  or `a-sort-claim-sources`: PlanetScale, Heroku, Railway's $5, Render's Postgres, Neon's compute,
-  Fly.io's card rule. A learner who has done those routes may recognize the planted claims from
-  memory. For a check question, plant claims about vendors or limits the learner has not met in
-  this topic. If you can't, note in the record which planted claims the learner had already seen.
 
 ### `a-check-lab-answer`
 
@@ -546,12 +453,9 @@ examined only one handed claim at a time, never across a whole agent's answer. E
   learner wrote the prompt with their table, so the prompt addition may be the table's idea.
 - **offer as:** the real thing: an answer to your own table's prompt, on vendors you haven't
   looked at yet, and you find out what's still true before you'd act on it. Any time after the
-  session 11 lab, with a fresh run of the prompt or a tablemate's answer. `a-plan-claim-checks`
-  is the one to take before it.
+  session 11 lab, with a fresh run of the prompt or a tablemate's answer.
 - **check note:** When you write the key, record the kind of page that settles each claim (pricing
-  page, free-plan docs, trial page, billing docs). Send the adjudicator the "would catch" rule from
-  `a-plan-claim-checks`'s generator along with the key, so that this check and that one are judged
-  to the same standard. A plan that says only "check the pricing page" does not catch a claim
+  page, free-plan docs, trial page, billing docs). A plan that says only "check the pricing page" does not catch a claim
   settled only in trial or billing docs.
 
 ### `a-weigh-described-plans`
