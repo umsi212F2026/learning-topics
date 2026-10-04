@@ -1,6 +1,7 @@
 **The app.** Crumbs, a recipe-sharing class project: a React frontend built with Vite and an
 Express server. About twenty users, mostly in the week it is graded, which is the last week of the
-month. Its owner works through a coding agent.
+month. It has to stay up all month, so a server that stops partway through the month is down in
+grading week. Its owner works through a coding agent.
 
 **Plan Q, one vendor:** Quayline hosts the frontend (a static site) and the server (a web service).
 **Plan S, a vendor for each:** Lanternhost hosts the frontend, Emberbox runs the server.
@@ -11,8 +12,9 @@ to sign up.
 - **Quayline.** Static sites never sleep. The web service sleeps after 15 minutes without a request,
   and the next request waits about a minute; 750 free hours a month (web services only), then suspended. With a card
   on file, bandwidth past 100 GB a month is billed ($0.15 per GB); without one, services are
-  suspended. One official CLI and MCP server for both parts: deploy, read logs, set environment
-  variables; can't delete services or change plans. Builds with ordinary `npm`.
+  suspended. One official CLI and MCP server for both parts: deploy and set environment variables;
+  it can't read the web service's logs (those are only in the dashboard), and it can't delete
+  services or change plans. Builds with ordinary `npm`.
 - **Lanternhost.** Never sleeps. 100 GB a month, a hard cap: past it, paused until next month. The
   free plan takes no card, so it can't bill. A CLI that deploys and sets build settings; deploy
   logs only, since it runs no code. Any static host can take the files.
@@ -72,14 +74,13 @@ Plan S.
 ### v8
 
 A student wrote: "Plan Q. The sleep matters most: a grader shouldn't wait a minute. I'll ask the
-agent to ping it every ten minutes so it never sleeps." Do the terms support that workaround? Say
-why, and say what it would cost them if they did it.
+agent to ping it every ten minutes so it never sleeps." Would that workaround work under these
+terms, and what would it cost?
 
 ### v2
 
 A student chose Plan S and wrote: "A grader opening Crumbs after a quiet spell would wait a minute
-on Quayline; Emberbox never sleeps. Emberbox's credit only lasts about three weeks, so I'd need it to
-cover grading week, or put a card on and accept it bills." Give the strongest case for Plan Q, the
+on Quayline; Emberbox never sleeps." Give the strongest case for Plan Q, the
 plan they didn't choose, using only the terms.
 
 ### v4
