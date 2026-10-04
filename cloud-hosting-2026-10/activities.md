@@ -273,11 +273,9 @@ examined only one handed claim at a time, never across a whole agent's answer. E
 - **serves:** `c-check-vendor-claims`
 - **supports:** attempt
 - **checks:** `c-check-vendor-claims`
-- **artifact:** `tasks/check-2025-guide-claims.md`, written for this topic, used as a bank of six
-  sentences quoted exactly from the deployment guide given to students in this course's 2025
-  predecessor (SI 211), about PlanetScale, Neon, Supabase and Render, one per sitting, under a
-  short header and a five-step procedure. The key, checked against those vendors' own pages
-  on 2026-10-01, is in its own file, `tasks/check-2025-guide-claims-key.md`, for the tutor only.
+- **artifact:** six sentences quoted exactly from the deployment guide given to students in this
+  course's 2025 predecessor (SI 211), about PlanetScale, Neon, Supabase and Render, one per
+  sitting, under a five-step procedure, checked against those vendors' own pages on 2026-10-01.
   One claim names a free tier since withdrawn (PlanetScale's free MySQL, whose plan ended in 2024).
   The rest hold, with something left out: Render's Postgres "only free for the first month" was
   already the 30-day rule when written (Render's changelog dates it to May 2024) but hides that the
@@ -285,16 +283,16 @@ examined only one handed claim at a time, never across a whole agent's answer. E
   pausing, or the card. None is a limit that has changed since 2025; that case is in
   `a-plan-claim-checks`'s generator. The guide itself is in the instructor's files and is not available to students, which is
   why its sentences are quoted. 10 to 15 minutes a sitting, with a browser.
-- **learner does:** reads the header and the one claim served, then follows the five steps on it:
+- **learner does:** reads the procedure and the one claim served, then follows the five steps on it:
   says which page on the vendor's own site they expect to settle it and why; finds it and copies
   the sentence that settles it with its address and any date; says whether the claim holds, has
   changed, or is gone; says what it leaves out that they would want before signing up; and says
   what kind of page settled it, or that the vendor's pages couldn't. Ends with one sentence they
   would add to a prompt so an agent's claim like this comes with what they'd need to check it.
 - **tutor role:** critic
-- **tutor does:** before the sitting, opens the address in the key for this claim and confirms it
-  still says what is quoted; where it doesn't, the page wins and the tutor updates its own copy of
-  the verdict. Shows the header and the one claim, never the key file. Takes the learner's five
+- **tutor does:** before the sitting, re-opens the settling page in the key for this claim and
+  confirms it still says what is quoted; where it doesn't, the page wins and the tutor updates its
+  own copy of the verdict. Shows the procedure and the one claim, never the key. Takes the learner's five
   answers before commenting. If the verdict rests on something other than the vendor's page (a
   search result's snippet, a comparison article, the agent), asks where the vendor itself says
   that. On `g1`: an absence on a pricing page is evidence only once you're sure it's the page that
@@ -311,14 +309,13 @@ examined only one handed claim at a time, never across a whole agent's answer. E
   vendor's pages don't settle this", and matches the key (for `g1`, gone; for `g5`, the deletion
   found; for `g6`, as above); and they have named the kind of page and written or revised a
   prompt sentence that would make the next answer's claim come with what they need to check it.
-- **generator:** the claims are the six real sentences in `tasks/check-2025-guide-claims.md`,
-  named `g1` to `g6`, with the tutor's key in `tasks/check-2025-guide-claims-key.md`; nothing is
-  invented. Cases: withdrawn `g1`; holds but hides the consequence `g5`; holds with sleep or
+- **generator:** the claims are the guide's six real sentences, scenario `guide-2025`, questions
+  `g1` to `g6`; nothing is invented, and no new scenario can be drafted without another real
+  source of dated claims. Cases: withdrawn `g1`; holds but hides the consequence `g5`; holds with sleep or
   limits left out `g3`, `g4` (and `g3`'s card question isn't settled on the pricing page); holds
   `g2`; too vague to check as it stands `g6`. To pick the next, run
   `served.mjs cloud-hosting-2026-10 c-check-vendor-claims`, take a claim not yet served, and prefer
-  a case the learner hasn't met; `g1` and `g5` make the best first two. Label the attempt
-  `a-check-2025-guide-claims/<claim>`, for example `a-check-2025-guide-claims/g1`. Once the
+  a case the learner hasn't met; `g1` and `g5` make the best first two. Once the
   learner has met Render's 30-day expiry anywhere in this topic, prefer claims about other vendors
   over `g5`. Stop when done when has been met on two or three sittings with different cases, and
   offer `a-plan-claim-checks`; using up the six is not the target.
@@ -577,8 +574,8 @@ examined only one handed claim at a time, never across a whole agent's answer. E
   review visits, use a fresh answer (a rerun of the table's prompt, or a tablemate's answer the
   learner hasn't checked).
 - **worked example:** no tutor is present, so nobody offers one. If the learner stalls, they may
-  look at `tasks/check-2025-guide-claims.md`, which holds no answers (its key is in a separate
-  file the learner is never sent); they write at the top of the note that they did, and the
+  look at `tasks/a-check-2025-guide-claims/guide-2025.md`, which holds no answers (its key is under
+  `rubrics/`, which the learner is never sent); they write at the top of the note that they did, and the
   attempt is recorded `unaided: no`.
 - **doesn't show:** that the note came first rests on the learner's say-so. Whether the answer
   happened to contain a withdrawn free tier, a changed limit or a missing card requirement is
