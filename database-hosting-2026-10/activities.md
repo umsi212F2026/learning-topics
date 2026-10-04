@@ -71,8 +71,8 @@ attempting them unaided. The two study activities were dropped for that reason.
   lesson, read in cloud-hosting; its "see database-hosting" boxes are what this fills.
 - **verified:** 2026-10-04
 - **learner does:** reads, and stops twice to answer in a sentence or two before reading on. Neither
-  stop needs their code open; looking through their own app is `a-trace-own-database-setup`'s job.
-  "I don't know yet" is an honest answer:
+  stop needs their code open; their own app's plan is judged in `a-judge-own-deploy-plan`, during
+  Problem Set 3. "I don't know yet" is an honest answer:
   1. After Render: says what their Problem Set 2 restart test would show if their app's SQLite file
      sat on an ephemeral disk and the host redeployed between adding something and checking for it.
   2. After Odin: says which lines of Odin's script build the production database, and what would be
@@ -135,18 +135,19 @@ attempting them unaided. The two study activities were dropped for that reason.
 - **done when:** criterion met. The ruling is on the learner's own indication, not on the
   rehearsals. A plain yes to both parts is `criterion: met`. A hedge on either part, with no plain
   no, is `criterion: unclear`: explain the hedged part once more and ask again; a second hedge stays
-  `unclear`, and the tutor offers `a-contrast-plan-pairs`. A plain no is `criterion: not met`:
+  `unclear`, and the tutor offers a helped attempt at `a-judge-described-plan` as practice. A plain no is `criterion: not met`:
   record it, ask what is missing, and offer to go back over the stop that bears on it; don't ask
   again in the same sitting. This goal isn't required, so a no blocks nothing.
 - **generator:** vary the made-up app (small, React frontend, Express backend, SQLite: a club
-  sign-up sheet, a recipe box, a study-group finder) and the host's one-line storage rule, written
-  as `a-judge-described-plan`'s generator writes it. Rehearsal one is one plan line placing the
-  SQLite file either in the app's folder with no volume (the `ephemeral` case, which that check
-  never counts) or under the volume's mount path (sound). Rehearsal two is one plan line on how
-  production gets its rows, either the backend creating empty tables at startup (sound) or the
-  agent exporting the rows from the laptop's database and importing them into production (a
-  fault that check never serves, so the learner doesn't meet a counting plan's deciding detail
-  minutes before it). Never use the wording of a `laptop-copy`, `shared-dev`, `outside-mount` or
+  sign-up sheet, a recipe box, a study-group finder) and the host's one-line storage rule. Neither rehearsal uses a fault that check serves, so the learner doesn't meet a
+  counting plan's deciding detail minutes before it. Rehearsal one is a host whose disk is kept
+  across a restart but starts empty on every redeploy, and one plan line that is either "we
+  restarted the server and the entries were still there, so the data is safe" (a fault that
+  check never serves: a restart is not a redeploy) or the SQLite file placed on a volume that is
+  kept across redeploys (sound). Rehearsal two is one plan line on how production gets its rows,
+  either the backend creating empty tables at startup (sound) or the agent exporting the rows from
+  the laptop's database and importing them into production (a fault that check never serves).
+  Never use the wording of a `no-volume`, `laptop-copy`, `shared-dev`, `outside-mount` or
   `committed-file` step. Fixed: two rehearsals in that order, neither graded, then the readiness
   question word for word. Difficulty doesn't vary: this settles an indication, not a capability.
 - **worked example:** if the learner freezes, the tutor answers a different made-up line aloud in two
@@ -184,9 +185,9 @@ attempting them unaided. The two study activities were dropped for that reason.
   Written per the generator below. About 10 to 12 minutes, plus 3 for the worked example before a
   learner's first attempt.
 - **learner does:** reads the app's description, the host's storage line and both plans, then
-  writes alone, for each plan, two answers, each a yes or no with the plan step that decides it:
-  will the data survive a redeploy? Does production get a database of its own, built by the code
-  rather than copied from the laptop? Hands it to the tutor.
+  writes alone, for each plan, a yes or no to each of two questions, and for every no the plan
+  step that decides it: will the data survive a redeploy? Does production get a database of its
+  own, built by the code rather than copied from the laptop? Hands it to the tutor.
 - **tutor role:** none
 - **tutor does:** before the learner's first attempt at this activity, works the worked example
   below aloud, on an Easy pair that is not from the bank. Then serves one question as written, with
@@ -212,18 +213,24 @@ attempting them unaided. The two study activities were dropped for that reason.
     passwords, backups, migrations of existing data, prices or free tiers. Label the two plans A
     and B; which one is faulted varies.
   - **What varies:** the app, the host's name, the wording, which plan is A, and the shapes. One
-    plan is a faulted shape and the other a sound shape:
-    - `outside-mount` (faulted, Hard): a volume is attached at `/data`, but the database path, in a
+    plan is a faulted shape and the other a sound shape. Each faulted shape is a survival fault, an
+    own-database fault, or both, as marked:
+    - `no-volume` (faulted, survival, Medium): no volume is attached, and a step says plainly that
+      the backend keeps its SQLite file at its default path in the app's folder
+      (`server/data/app.sqlite`) on the server. The backend creates the tables at startup.
+      Survives: no. Its own, built by code: yes.
+    - `outside-mount` (faulted, survival, Hard): a volume is attached at `/data`, but the database path, in a
       step or an environment setting, is still inside the app's folder (`server/data/app.sqlite`,
       or `/app/server/data/app.sqlite`). The backend creates the tables at startup. Survives: no.
       Its own, built by code: yes.
-    - `laptop-copy` (faulted, Medium): volume at `/data`, path `/data/app.sqlite`, but a step
-      uploads the laptop's `app.sqlite` to `/data` "so production starts with the entries you
-      already have". Survives: yes. Its own, built by code: no.
-    - `shared-dev` (faulted, Medium): managed Postgres; the backend creates the tables at startup;
+    - `laptop-copy` (faulted, own-database, Medium): volume at `/data`, path `/data/app.sqlite`,
+      but a step uploads the laptop's `app.sqlite` to `/data` "so production starts with the
+      entries you already have". No step creates tables: the uploaded laptop file is the only
+      source of production's tables and rows. Survives: yes. Its own, built by code: no.
+    - `shared-dev` (faulted, own-database, Medium): managed Postgres; the backend creates the tables at startup;
       a step also points the laptop's development server at that same production database "so you
       can test against real data". Survives: yes. Its own: no.
-    - `committed-file` (faulted, Hard): no volume; the database file stays at its path in the app's
+    - `committed-file` (faulted, both, Hard): no volume; the database file stays at its path in the app's
       folder, and a step takes it out of `.gitignore` and commits it "so the database ships with
       the app". Survives: no, since the disk is ephemeral and each redeploy starts again from the
       committed copy, losing what users added. Its own, built by code: no, since production starts
@@ -240,26 +247,35 @@ attempting them unaided. The two study activities were dropped for that reason.
       alarming and doesn't bear: a few seconds of downtime on each redeploy because a volume is
       attached; the database at a different vendor from the backend; a note that the server
       restarts after each deploy. Survives: yes. Its own, built by code: yes.
-    The `ephemeral` shape (no volume, file in the app's folder; survives: no) is for the worked
-    example only and is never banked.
+    The `laptop-export` shape (the agent exports the rows from the laptop's database and imports
+    them into production; its own, built by code: no) is for the worked example and the dry run
+    only and is never banked.
   - **How the key treats a one-time script:** a seed or setup script kept in the code and run once
     against production builds production from the code, wherever it runs, on the host or from the
     laptop as in Odin's lesson; it is never the its-own fault. That fault is only the laptop's
     development server working against the production database.
   - **Difficulty:** a question is as hard as its faulted plan, and Hard if the sound plan is a
-    `decoy`. Serve Medium for a learner's first counting question; Hard on review visits.
+    `decoy`. A learner's first counting question is Medium with no decoy, and its fault may be of
+    either kind. On review visits, prefer a question whose faulted plan is of the other kind from
+    the one the learner has already passed (survival: `no-volume`, `outside-mount`; own-database:
+    `laptop-copy`, `shared-dev`; `committed-file` is both), then one whose faulted shape they
+    haven't had, Hard once Medium is passed.
   - **Coverage of a bank:** each faulted shape appears in at least one question and each sound shape
-    in at least one, with at least two Medium questions with no decoy, for first attempts. On review
-    visits serve a question whose faulted shape the learner hasn't had, reading the labels
-    `served.mjs` returns.
+    in at least one, with at least two Medium questions with no decoy for first attempts, at least
+    one of them a survival fault and one an own-database fault.
+  - **The rubric key names the shapes.** Each scenario's rubric file says in its top part, for every
+    question, which shape the faulted plan is and which the sound plan is, so the tutor reads the
+    shape of a served question from its key (bank labels don't carry it).
   - **Which goal:** every question bears on `c-plan-first-deploy` alone. Rubric: `answer` gives, for
-    each plan, yes or no on each question and the deciding step for every no; full credit is all
-    four yes-or-no answers right, each no tied to the step that decides it, and no fault named that
-    the key doesn't have; half credit is one plan judged fully right and the other not.
-- **worked example:** before a learner's first attempt, take an `ephemeral` plan and a `sound-volume`
-  plan for a made-up app, and work them aloud: in each, find the step that says where the file goes
-  and read it against the host's storage line, then find the step that says where production's
-  tables and rows come from. About 3 minutes. At the first level of help on a real attempt, ask only
+    each plan, yes or no on each question and the deciding step for every no (a yes may cite its
+    step too, but the learner need not); full credit is all four yes-or-no answers right, each no
+    tied to the step that decides it, and no fault named that the key doesn't have; a yes given
+    without a step loses nothing; half credit is one plan judged fully right and the other not.
+- **worked example:** before a learner's first attempt, take a `laptop-export` plan and a
+  `sound-volume` plan for a made-up app (its fault is one the bank never serves), and work them
+  aloud: in each, find the step that says where the file goes and read it against the host's
+  storage line, then find the step that says where production's tables and rows come from. About
+  3 minutes. At the first level of help on a real attempt, ask only
   "where does the file live, and what does this host do to that place on a redeploy?"
 - **doesn't show:** one question shows the learner catching one kind of fault (survival, or own
   database built by code), not both kinds; review visits serve the other. The host's storage is
@@ -290,8 +306,9 @@ attempting them unaided. The two study activities were dropped for that reason.
   case, so the sitting has one faulted plan and one sound one. About 15 minutes, plus the tutor's
   preparation, done before the sitting.
 - **learner does:** before telling the agent to go ahead, writes alone, for the real plan and the
-  made-up one, the same two answers as in `a-judge-described-plan`, each a yes or no with the plan
-  step that decides it, and for any no on the real plan, what it would have to say instead. Hands
+  made-up one, the same two answers as in `a-judge-described-plan`, a yes or no to each with the
+  plan step that decides every no, and for any no on the real plan, what it would have to say
+  instead. Hands
   it to the tutor.
 - **tutor role:** none
 - **tutor does:** before the sitting, reads the app the plan is for (the learner's own, or the
@@ -303,7 +320,9 @@ attempting them unaided. The two study activities were dropped for that reason.
   the database will live is keyed no on survival: an answer of no, or "can't tell, the plan doesn't
   say", counts as catching it, and yes does not. Then writes one made-up plan of the opposite case,
   for the same app and host, from `a-judge-described-plan`'s shapes: a sound shape if the real plan
-  is faulted, a Medium faulted shape if it is sound. In the sitting, shows both plans and the
+  is faulted; if it is sound, a Medium faulted shape (`no-volume` for survival, `laptop-copy` or
+  `shared-dev` for own-database), of the kind the learner has not yet caught unaided, if there is
+  one. In the sitting, shows both plans and the
   storage line. Waits, writing down any help word for word. Sends the adjudicator both plans, the
   storage line with its source, the key, the learner's answer and every piece of help. Labels the
   attempt `a-judge-own-deploy-plan/<host>`. Disregards remarks on connection strings, passwords,
