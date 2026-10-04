@@ -29,7 +29,7 @@ Taken together, it is the topic's one shared blind spot.
 
 | goal | study | checks | notes |
 | ---- | ----- | ------ | ----- |
-| `o-orientation` | `a-read-odin-deployment` | `a-dry-run-hosting-asks` | |
+| `o-orientation` | | `a-read-odin-deployment` | |
 | `c-place-app-parts` | `a-read-fso-serve-dist`, `a-judge-plan-coverage` | `a-place-described-plan`, `a-place-lab-plan` | The criterion's two named cases overlap: a backend that sends the built frontend is also one vendor hosting both, through a single service. Read the Coverage note's two cases as two instance shapes, one vendor with two services and one service sending both parts. A counting pass usually exercises one shape; if the learner's pass came on one, give the other in study or on a review visit. |
 | `c-check-vendor-claims` | `a-watch-claims-checked`, `a-check-2025-guide-claims`, `a-sort-claim-sources` | `a-plan-claim-checks`, `a-check-lab-answer` | Both checks rule on a written plan for checking claims, not on checks actually carried out. `a-check-lab-answer` has the learner carry the plan out, but the ruling is on the plan as first written. No check here establishes that the learner can find the settling sentence on a real vendor's site unaided, although the topic's Depth says they should be able to check a claim against the vendor's own pages. If that matters for this learner, look at what they found in `a-check-lab-answer`, or watch them do it in `a-check-2025-guide-claims`, and treat it as evidence beside the ruling, not as part of it. |
 | `c-weigh-hosting-plans` | `a-study-hatchable-traps`, `a-predict-overage-outcomes`, `a-judge-plan-weighings` | `a-weigh-described-plans`, `a-weigh-lab-plans` | |
@@ -42,6 +42,7 @@ Taken together, it is the topic's one shared blind spot.
 
 - **serves:** `all`
 - **supports:** orient
+- **checks:** `o-orientation`
 - **artifact:** two free pages, no account, read in this order as one sitting. Both checked
   2026-10-01.
   1. **Read first:** MDN Web Docs, "What is a web server?",
@@ -80,6 +81,15 @@ Taken together, it is the topic's one shared blind spot.
      hold their frontend or backend box,
      and names one thing in its paragraph they would check on the vendor's own site before relying
      on it.
+  Then the close, about 5 minutes, with the sketch and the reading still beside them: two quick
+  rehearsals, neither judged, each answered in a sentence. First, the tutor describes a made-up
+  app's frontend and backend and one vendor's offer in a line, and the learner says which part
+  that vendor could host, or none. Second, the tutor gives one line of terms from each of two
+  plans, and the learner says one difference between them that would matter for a class project.
+  Then answers the question the tutor puts: with your sketch and the reading beside you, could you
+  now attempt these three things for real: saying which kind of host an app's frontend and backend
+  each need and whether a plan covers them; finding out whether what an agent says about a hosting
+  vendor is true today; and choosing between two hosting plans knowing what each would cost you?
 - **tutor role:** explainer
 - **tutor does:** stays quiet through the reading except at the stops and when asked. At each
   stop, takes the learner's answer first and replies with one near-miss question rather than a
@@ -91,75 +101,45 @@ Taken together, it is the topic's one shared blind spot.
   then a Free plan with $1 of free credit a month; Render's free Postgres (Odin says both "$7" and "expires 30
   days") expires after 30 days and is deleted 14 days later; Neon's compute now scales to zero
   after 5 minutes idle; Aiven's free service is 1 GB and powers off when idle, still with no card.
-  Says secrets, backups and debugging are later topics. Makes no change to the learner's app.
-- **done when:** both stops have an answer tied to the learner's own app: a sketch with the
-  frontend and backend boxes labeled and the database box marked "see database-hosting", and one
-  vendor placed against a box with one thing to check.
-  No `checks`: the readiness indication `o-orientation` is ruled on is taken in
-  `a-dry-run-hosting-asks`, which follows.
+  Says secrets, backups and debugging are later topics. Makes no change to the learner's app. At
+  the close, sets the two rehearsals from the generator below and grades neither; if an answer
+  shows a misunderstanding (the frontend needing a server host because it is React; "free" as the
+  only difference worth naming), explains it once and moves on. Then puts the readiness question
+  as written above and rules on the answer.
+- **done when:** criterion met. The bar for this goal is did it once and help is expected
+  throughout, so the ruling is on the learner's answer to the readiness question, not on the stops,
+  the rehearsals, or whether the tutor thinks they are ready. A plain yes to all three parts is
+  `criterion: met`. A hedge on any part, with no plain no, is `criterion: unclear`: explain the
+  hedged part once more and put the question again; a second hedge stays `unclear`, and the tutor
+  offers an activity on that capability. A plain no to any part is `criterion: not met`: record it,
+  ask what is missing, and offer to go back over the stops that bear on the capability named, or an
+  activity on it; don't put the question again in the same sitting. This goal isn't required, so a
+  no never blocks anything else the learner wants to try.
+- **generator:** vary the made-up app and the two rehearsal items; hold the rest fixed. The app is
+  small, with a React frontend and an Express server, used by a class (a study-group finder, a club
+  sign-up sheet, a recipe box, a used-textbook board). Rehearsal one is one plan line from
+  `a-place-described-plan`'s generator at Easy: one vendor, one offer, one part. Rehearsal two is
+  one dimension from `a-weigh-described-plans`'s generator (sleep, past a limit, card, agent
+  access, or moving), one line per plan, at Easy. Fixed: the reading and its two stops, then two
+  rehearsals in that order, neither graded, then the readiness question word for word.
+  Difficulty doesn't vary: this settles an indication, not a capability.
+- **worked example:** if the learner freezes on a rehearsal, the tutor answers a different made-up
+  one aloud in two or three sentences, then hands the original back.
+- **doesn't show:** an indication of readiness is all this goal asks for and all this shows. It
+  shows nothing about any of the three capabilities: the stops and rehearsals are helped, ungraded
+  and of the easiest kind, a one-sentence answer never has to be complete, and claim checking is
+  rehearsed only at the second stop. It shows nothing about the fifteen words, which have their
+  own supply.
 - **offer as:** this topic's orientation, deliberately one entry holding a sequence: two sections
   of a short MDN page that supply the static web server, then the first half of Odin's lesson,
-  which supplies hosting providers, PaaS, instances and four real vendors, skimmed. About 15
-  minutes with the stops; with `a-dry-run-hosting-asks`, about 20. Odin's vendor numbers are a year
-  or so behind in places, and the tutor flags them if they come up; that is part of the lesson,
-  not a defect in the choice. Followed by `a-dry-run-hosting-asks`.
+  which supplies hosting providers, PaaS, instances and four real vendors, skimmed, then a short
+  close where you say whether you have the shape. About 20 minutes: 15 for the reading and its
+  stops, 5 for the close. Odin's vendor numbers are a year or so behind in places, and the tutor
+  flags them if they come up; that is part of the lesson, not a defect in the choice.
 - **check note:** At stop 1, a frontend labeled "sent by the Express server itself" passes the check
   as well as one on a host that sends files: some Problem Set 2 apps already serve `dist/` from
   Express, and that arrangement is covered under `c-place-app-parts`. Don't steer the learner off
   it.
-
-### `a-dry-run-hosting-asks`
-
-- **serves:** `all`
-- **supports:** orient
-- **checks:** `o-orientation`
-- **artifact:** no external source. The learner's three-box sketch and their answers from
-  `a-read-odin-deployment`, still in front of them. About 5 minutes. Nothing needs to be running.
-- **verified:** 2026-10-01
-- **learner does:** two quick rehearsals, neither judged, each answered in a sentence. First, the
-  tutor describes a made-up app's frontend and backend and one vendor's offer in a line, and the learner
-  says which part that vendor could host, or none. Second, the tutor gives one line of terms from
-  each of two plans, and the learner says one difference between them that would matter for a
-  class project. (Finding out whether a vendor claim is true was rehearsed at the reading's second
-  stop.) Then answers the question the tutor puts: with your sketch and the reading beside you,
-  could you now attempt these three things for real: saying which kind of host an app's frontend
-  and backend each need and whether a plan covers them; finding out whether what an agent says about a
-  hosting vendor is true today; and choosing between two hosting plans knowing what each would
-  cost you?
-- **tutor role:** explainer
-- **tutor does:** sets the two rehearsals from the generator below and grades neither. If an
-  answer shows a misunderstanding (the frontend needing a server host because it is React; "free"
-  as the only difference worth naming),
-  explains it once and moves on. Then puts the readiness question as written above and rules on
-  the answer.
-- **done when:** criterion met. The bar for this goal is did it once and help is expected
-  throughout, so the ruling is on the learner's own indication, not on the rehearsals and not on
-  whether the tutor thinks they are ready. A plain yes to all three parts is `criterion: met`. A
-  hedge on any part, with no plain no, is `criterion: unclear`: explain the hedged part once more
-  and put the question again; a second hedge stays `unclear`, and the tutor offers a study activity
-  on that capability. A plain no to any part is `criterion: not met`: record it, ask what is
-  missing, and offer to go back over the reading's stops that bear on the capability named, or a
-  study activity on it; don't put the question again in the same sitting. This goal isn't
-  required, so a no never blocks anything else the learner wants to try.
-- **kind:** generator
-- **generator:** vary the made-up app and the two items; hold the rest fixed. The app is small,
-  with a React frontend and an Express server, used by a class (a study-group finder,
-  a club sign-up sheet, a recipe box, a used-textbook board). Rehearsal one is one plan line from
-  `a-place-described-plan`'s generator at Easy: one vendor, one offer, one part. Rehearsal two is
-  one dimension from `a-weigh-described-plans`'s generator (sleep, past a limit, card, agent
-  access, or moving), one line per plan, at Easy. Fixed: two rehearsals in that order, neither
-  graded, then the readiness question word for word. Difficulty doesn't vary: this settles an
-  indication, not a capability.
-- **worked example:** if the learner freezes on a rehearsal, the tutor answers a different made-up
-  one aloud in two or three sentences, then hands the original back.
-- **doesn't show:** an indication of readiness is all this goal asks for and all this shows. It
-  shows nothing about any of the three capabilities: every rehearsal is helped, ungraded and of the
-  easiest kind, a one-sentence answer never has to be complete, and claim checking is rehearsed
-  only at the reading's second stop. It shows nothing about the
-  fifteen words, which have their own supply.
-- **offer as:** the short step that closes orientation, after `a-read-odin-deployment`. Not an
-  alternative to it: the reading gives you the shape, and this is where you say whether you have
-  it. About 5 minutes, nothing to run; about 20 with the reading.
 
 ### `a-read-fso-serve-dist`
 
