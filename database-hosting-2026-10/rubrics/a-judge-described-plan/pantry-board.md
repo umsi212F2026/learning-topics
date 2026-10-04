@@ -6,9 +6,8 @@ questions:
 - q2: `laptop-copy`, survival question (`c-clear-data-survives`, Medium). Faulted on the other
   question, sound on this one.
 - q3: `committed-file`, own-database question (`c-catch-copied-database`, Hard).
-- q4: `decoy`, `sound-postgres` with a seed script run once from the laptop against production and
-  the laptop keeping its own SQLite file with the same tables, own-database question
-  (`c-clear-own-database`, Hard).
+- q4: `decoy`, `sound-postgres` with a seed script run once from the laptop against production,
+  own-database question (`c-clear-own-database`, Hard).
 
 No half credit on any question: a right verdict with no step, or tied to a step that doesn't
 decide it, is not met. Naming a fault the key doesn't have on the asked question fails, as the
@@ -63,12 +62,12 @@ question, connection strings, passwords, backups, cost) are neither credited nor
 - **answer:** Yes. Step 2: the backend creates the `shelf_items` and `reservations` tables itself in
   the new Postgres database. Step 4's seed script, kept in the repository and run once against
   production, also counts as built by the code, even though it is run from the laptop, so either
-  step decides it. Nothing is copied from the laptop's file, and the laptop's development backend
-  keeps its own database.
+  step decides it. Nothing is copied from the laptop's file, and nothing is shared with
+  development.
 - **credit:** full for yes, tied to step 2 (the backend creating its tables), step 4 (the seed
   script from the repository), or both. Not met for no, for yes with no step, for yes tied only to
   step 1 or step 3, or for yes alongside a fault on this question, such as calling step 4 a copy
   from the laptop because it runs there, or calling the staple items test data.
-- **tutor note:** both decoy details are on this question: the seed run from the laptop and the
-  laptop's own SQLite file with the same tables. A learner who faults either has taken "on the
-  laptop" for "copied from the laptop"; ask where the rows step 4 adds come from.
+- **tutor note:** the decoy is the seed script run from the laptop. A learner who faults it has
+  taken "run from the laptop" for "copied from the laptop"; ask where the rows step 4 adds come
+  from.

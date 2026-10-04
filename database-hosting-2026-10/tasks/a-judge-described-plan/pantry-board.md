@@ -64,9 +64,7 @@ Pantry Board's coding agent proposes this plan:
 
 > Plan for Pantry Board's production database:
 >
-> 1. Set up a Larkspan managed Postgres database and have the production backend use it. The backend
->    on your laptop goes on using its own `server/data/pantry.sqlite`, with the same two tables made
->    by the same code.
+> 1. Set up a Larkspan managed Postgres database and have the production backend use it.
 > 2. Deploy the backend. On its first start it creates the `shelf_items` and `reservations` tables
 >    in Postgres.
 > 3. Deploy the frontend.
