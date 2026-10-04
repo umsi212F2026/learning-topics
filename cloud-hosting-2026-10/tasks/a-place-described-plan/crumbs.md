@@ -16,7 +16,7 @@ all you know about it.
 - **Brightpage:** hosts a folder of files and sends them, as they are, to anyone who asks. Runs no
   code of yours.
 - **Kettle:** runs one program of yours (such as a Node server) all the time.
-- **Spark:** hosts a folder of files the way Brightpage does, and also runs short functions: each
+- **Flintlet:** hosts a folder of files the way Brightpage does, and also runs short functions: each
   request starts a fresh copy of a function, which answers and stops. It never keeps a program
   running between requests.
 - **Harbor:** offers two things under one account: static sites (like Brightpage) and web
@@ -40,7 +40,7 @@ Kettle runs the Express server, and the server also sends the frontend's built f
 
 ### q4
 
-Brightpage for the frontend, Spark for the Express server.
+Brightpage for the frontend, Flintlet for the Express server.
 
 ### q5
 
@@ -52,7 +52,7 @@ Kettle for the Express server. The frontend doesn't need a host, because it runs
 
 ### q8
 
-Spark for the frontend's built files, Kettle for the Express server.
+Flintlet for the frontend's built files, Kettle for the Express server.
 
 ### q10
 
@@ -76,11 +76,11 @@ service chosen for the Express server? Say why.
 
 ### q13
 
-Spark runs the Express server, and the server also sends the frontend's built files itself
+Flintlet runs the Express server, and the server also sends the frontend's built files itself
 (`express.static('dist')`).
 
 ### q14
 
-Spark runs the Express server, and the server also sends the frontend's built files itself
+Flintlet runs the Express server, and the server also sends the frontend's built files itself
 (`express.static('dist')`). For this plan, answer only this: do the frontend's built files reach
 the visitor's browser, and why or why not?

@@ -1,4 +1,4 @@
-Brightpage sends files only; Kettle keeps one program running; Spark sends files and runs short
+Brightpage sends files only; Kettle keeps one program running; Flintlet sends files and runs short
 functions but keeps no program running; Harbor offers a static site and a web service. A part is
 hosted wherever it is served from, even if by another part: an Express server that sends `dist/`
 itself hosts the frontend. The rule the learner should arrive at: list what each part needs (files
@@ -43,13 +43,13 @@ it belongs to the database-hosting topic. Shapes, in the entry's generator's ter
 
 - **goal:** `c-place-app-parts`
 - **cases:** mismatch
-- **answer:** mismatch: Spark keeps no program running between requests, so the Express server as
+- **answer:** mismatch: Flintlet keeps no program running between requests, so the Express server as
   written, a program that listens all the time, cannot run there without being rewritten as
   functions. The frontend on Brightpage is fine.
-- **credit:** full for the backend mismatch named and nothing false named; a reason (Spark keeps
+- **credit:** full for the backend mismatch named and nothing false named; a reason (Flintlet keeps
   nothing running) may be credited but is not required. Half for the mismatch named alongside a
   false fault against the frontend.
-- **tutor note:** partner of `q8`. If `q8` was served before, ask why Spark was fine there.
+- **tutor note:** partner of `q8`. If `q8` was served before, ask why Flintlet was fine there.
 
 ### q5
 
@@ -77,11 +77,11 @@ it belongs to the database-hosting topic. Shapes, in the entry's generator's ter
 
 - **goal:** `c-place-app-parts`
 - **cases:** all-covered
-- **answer:** both covered: Spark can host a folder of files, which is all the frontend needs;
-  Kettle runs the Express server. Spark's limits matter only for a backend, and the backend isn't
-  on Spark.
-- **credit:** full for both covered. None if Spark is flagged as a mismatch for the frontend.
-- **tutor note:** partner of `q4`. A learner who flags Spark here is judging the vendor rather than
+- **answer:** both covered: Flintlet can host a folder of files, which is all the frontend needs;
+  Kettle runs the Express server. Flintlet's limits matter only for a backend, and the backend isn't
+  on Flintlet.
+- **credit:** full for both covered. None if Flintlet is flagged as a mismatch for the frontend.
+- **tutor note:** partner of `q4`. A learner who flags Flintlet here is judging the vendor rather than
   the job it was given.
 
 ### q10
@@ -128,7 +128,7 @@ it belongs to the database-hosting topic. Shapes, in the entry's generator's ter
 
 - **goal:** `c-place-app-parts`
 - **cases:** mismatch
-- **answer:** mismatch: Spark keeps no program running, so the Express server can't run there.
+- **answer:** mismatch: Flintlet keeps no program running, so the Express server can't run there.
   (Since the server is what sends the built frontend, the frontend isn't served either; naming that
   is credited, never required.)
 - **credit:** full for the backend mismatch named and nothing false named. Half for the mismatch
@@ -139,7 +139,7 @@ it belongs to the database-hosting topic. Shapes, in the entry's generator's ter
 
 - **goal:** `c-place-app-parts`
 - **cases:** backend-serves
-- **answer:** no: the server is what sends the built frontend, and the server can't run on Spark,
+- **answer:** no: the server is what sends the built frontend, and the server can't run on Flintlet,
   which keeps no program running, so nothing sends the frontend's files.
 - **credit:** full for "no", tied to the server being what sends the files and not running on
-  Spark. Half for "no" with only one of those.
+  Flintlet. Half for "no" with only one of those.

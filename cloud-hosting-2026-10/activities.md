@@ -5,8 +5,11 @@ with the learner.
 
 In this topic's banks and live questions, a made-up vendor name stands for one vendor, with one
 offer and one set of terms, everywhere in the topic, and a new scenario or live instance invents
-names not used anywhere else in it; the names already in use are listed in the generators.
-Learner-facing text states the task, never the scoring.
+names not used anywhere else in it. The names in use: in `crumbs` (`a-place-described-plan`),
+Brightpage, Kettle, Flintlet and Harbor; in `quayline-emberbox` (`a-weigh-described-plans`),
+Quayline, Lanternhost and Emberbox; in `a-words`, Driftwell (`w-free-tier`) and Copperstack
+(`w-lock-in`). Learner-facing text states the task, never the scoring; a setup may say what the
+plans or terms contain and that something, like the database, is outside them.
 
 ## Check notes
 
@@ -125,7 +128,7 @@ part of this.
   small, with a React frontend and an Express server, used by a class (a study-group finder, a club
   sign-up sheet, a recipe box, a used-textbook board). Rehearsal one is one plan line from
   `a-place-described-plan`'s generator at Easy: one vendor, one offer, one part, under a vendor
-  name never used anywhere else in the topic. Rehearsal two is
+  name not on the topic's list of names in use. Rehearsal two is
   one dimension from `a-weigh-described-plans`'s generator (sleep, past a limit, card, agent
   access, or moving), one line per plan, at Easy. Fixed: the reading and its two stops, then two
   rehearsals in that order, neither graded, then the readiness question word for word.
@@ -172,14 +175,14 @@ part of this.
 - **generator:** fixed: the app has a frontend and a backend, described in a short list in the
   form of `tasks/a-place-described-plan/crumbs.md` (what each part is and what it needs to run); the app's
   database is never part of the plan or the key. In what the learner sees, state the task, never the scoring: no criterion guard such as "and
-  nothing that isn't one" or "name nothing the terms don't support". The setup never tells the
-  learner what to ignore: the database is simply absent, and a remark about it is the tutor's and
-  the rubric's matter. The plan names one to three vendors, each with a
+  nothing that isn't one" or "name nothing the terms don't support". A setup may say what the plans
+  or terms contain and that something, like the database, is outside them; it never tells the
+  learner how they will be scored, and a remark about the database is the tutor's and the rubric's
+  matter. The plan names one to three vendors, each with a
   one- or two-line offer written as that file writes them: what it hosts and runs, and what it does
-  not. Vendors are made up, so the key depends only on the stated offers. The `crumbs` scenario
-  uses Brightpage, Kettle, Spark and Harbor; a new scenario invents new vendor names on the same
-  pattern, never reusing a vendor name from any scenario in this topic (a made-up name stands for
-  one vendor everywhere, with one offer), and never reproduces a `crumbs` plan. What
+  not. Vendors are made up, so the key depends only on the stated offers. A new scenario invents
+  new vendor names on the same pattern, never one on the topic's list of names in use (at the head
+  of this file), and never reproduces a `crumbs` plan. What
   varies: the app (a different one each attempt; its frontend is React or another framework built
   to static files, its backend Express or another long-running server), the vendors and their
   offers, and the plan's shape, each with the cases it carries:
@@ -264,9 +267,10 @@ part of this.
 - **generator:** the material is whatever the learner's agent proposed, so no two instances match
   and nobody sets the difficulty. Hold fixed: offers come from the vendor's own pages on the day,
   never from the agent's answer; the key comes from those offers and the app's code. In what the learner sees, state the task, never the scoring: no criterion guard such as "and
-  nothing that isn't one" or "name nothing the terms don't support". The setup never tells the
-  learner what to ignore: the database is simply absent, and a remark about it is the tutor's and
-  the rubric's matter. The tutor
+  nothing that isn't one" or "name nothing the terms don't support". A setup may say what the plans
+  or terms contain and that something, like the database, is outside them; it never tells the
+  learner how they will be scored, and a remark about the database is the tutor's and the rubric's
+  matter. The tutor
   records the cases the plan carries: `gap`, `mismatch` or `all-covered` by its verdict, plus
   `one-vendor-both` or `backend-serves` where the plan has them. A plan with both a gap and a
   mismatch is set as two questions, one on each part. Across visits, use a different agent answer each time (a tablemate's, or a fresh run of
@@ -460,9 +464,10 @@ part of this.
 - **generator:** fixed: the app is a class project with a React frontend and an Express server,
   used by about twenty people, built by someone working through a coding agent; its database is
   never part of the plans, the terms or the key. In what the learner sees, state the task, never the scoring: no criterion guard such as "and
-  nothing that isn't one" or "name nothing the terms don't support". The setup never tells the
-  learner what to ignore: the database is simply absent, and a remark about it is the tutor's and
-  the rubric's matter. Plan one puts the frontend and backend with one
+  nothing that isn't one" or "name nothing the terms don't support". A setup may say what the plans
+  or terms contain and that something, like the database, is outside them; it never tells the
+  learner how they will be scored, and a remark about the database is the tutor's and the rubric's
+  matter. Plan one puts the frontend and backend with one
   vendor; plan two uses a separate vendor for each. Vendors are made up. Each vendor's terms are
   four to six bullets, always covering: whether anything sleeps and how long it takes to wake; what
   happens past each limit (paused, suspended, stopped when credit runs out, billed with a card);
@@ -492,9 +497,8 @@ part of this.
   - `irrelevant-difference` (Hard, `other-case`): one large difference that doesn't matter
     for twenty users (a bandwidth allowance of 100 GB against 1 TB, a region list, team seats); a
     case resting on it doesn't rest on a difference that matters.
-  The `quayline-emberbox` scenario uses Quayline, Lanternhost and Emberbox. A made-up vendor name
-  stands for one vendor everywhere in this topic, with one offer and one set of terms, so a new
-  scenario always invents new names, never reusing one from any scenario here.
+  A new scenario always invents new vendor names, never one on the topic's list of names in use
+  (at the head of this file).
   Difficulty as marked. Across visits, serve each case, and `agent-gap` and `card-trap` at least
   once each, reading the labels `served.mjs` returns.
 - **worked example:** work one Easy question aloud on the same case as the one being asked: for
