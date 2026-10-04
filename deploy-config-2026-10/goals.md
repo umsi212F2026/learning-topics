@@ -187,9 +187,9 @@ defending the app in session 14.
 
 - **goal:** tell what each setting an agent asks for is for, and what value it needs
 - **criterion:** Given the settings an agent asks for while deploying an app with its frontend
-  and backend on different hosts, each under the agent's own name for it (such as
+  and backend on different hosting services, each under the agent's own name for it (such as
   `VITE_API_URL`, `ALLOWED_ORIGIN`, `PORT`, `DATABASE_URL`), says what each one is for and what
-  value it needs. If the host supplies a value, they say so instead. It passes when every setting
+  value it needs. If host supplies a value, they say which host's service needs to supply the value. It passes when every setting
   is matched to what it's for, the frontend's and backend's addresses are not swapped, and a
   value the host sets is recognized as one. Deciding where each setting goes is not part of it.
 
