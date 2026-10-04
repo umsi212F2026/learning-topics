@@ -47,18 +47,16 @@ to offer, and its `offer as` describes it rather than distinguishing it.
 ## Coverage
 
 <!--
-  Derivation convention: an activity carrying `checks` sits only in the `checks` cell, never in
-  `study`. No orientation row: goals.md has no orientation goal, because cloud-hosting and
-  database-hosting come first and lay the area out. Empty `study` cells are by design; see
-  Check notes.
+  No orientation row: goals.md has no orientation goal, because cloud-hosting and
+  database-hosting come first and lay the area out.
 -->
 
-| goal | study | checks | notes |
-| ---- | ----- | ------ | ----- |
-| `c-trace-setting-value` | | `a-deploy-chat` | Credited only on `shared-vendor` exchanges, where the choice is between the frontend's and the backend's addresses. The database's connection details and a value a host sets, which the criterion also names, are never credited to this goal, so a pass here says nothing about telling those apart from an address. |
-| `c-spot-secret` | | `a-deploy-chat` | |
-| `c-judge-secret-request` | | `a-deploy-chat` | |
-| `c-secret-instead` | | `a-deploy-chat` | |
+| goal | checks | notes |
+| ---- | ------ | ----- |
+| `c-trace-setting-value` | `a-deploy-chat` | |
+| `c-spot-secret` | `a-deploy-chat` | |
+| `c-judge-secret-request` | `a-deploy-chat` | |
+| `c-secret-instead` | `a-deploy-chat` | |
 
 ---
 
