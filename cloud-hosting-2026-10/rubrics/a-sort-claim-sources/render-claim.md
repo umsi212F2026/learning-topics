@@ -14,6 +14,7 @@ than a comparison article; from the second question on, it is a revision of the 
 ### s1
 
 - **goal:** `c-check-vendor-claims`
+- **cases:** vendor-page
 - **answer:** settles it: Render's own current docs on the free plan. The sleep half holds
   ("Render spins down a Free web service that goes 15 minutes without receiving any inbound
   traffic"); the Postgres half is false ("Free Render Postgres databases expire 30 days after
@@ -24,6 +25,7 @@ than a comparison article; from the second question on, it is a revision of the 
 ### s2
 
 - **goal:** `c-check-vendor-claims`
+- **cases:** vendor-page
 - **answer:** doesn't settle it: Render's own page, but it has no spin-down or Postgres-expiry
   wording. Go to Render's free-plan docs instead.
 - **credit:** full for a non-settling verdict with the reason that the page doesn't address the
@@ -36,6 +38,7 @@ than a comparison article; from the second question on, it is a revision of the 
 ### s3
 
 - **goal:** `c-check-vendor-claims`
+- **cases:** vendor-page
 - **answer:** doesn't help: the agent again, saying the same thing with more confidence. Go to
   Render's own free-plan docs.
 - **credit:** full for "doesn't help", with the reason that re-asking the agent is not checking,
@@ -46,6 +49,7 @@ than a comparison article; from the second question on, it is a revision of the 
 ### s4
 
 - **goal:** `c-check-vendor-claims`
+- **cases:** vendor-page
 - **answer:** doesn't settle it: dated and secondary, and its Render paragraph contradicts itself
   on databases (both "$7" and "expires 30 days"). Go to Render's free-plan docs.
 - **credit:** full for a non-settling verdict with either disqualifying reason (it is not
@@ -57,6 +61,7 @@ than a comparison article; from the second question on, it is a revision of the 
 ### s5
 
 - **goal:** `c-check-vendor-claims`
+- **cases:** vendor-page
 - **answer:** doesn't settle it: a vendor's article about other vendors, with an interest in what
   you choose, and only as current as its last update. Go to Render's free-plan docs.
 - **credit:** full for a non-settling verdict with the reason that it isn't Render's page (and,
@@ -67,6 +72,7 @@ than a comparison article; from the second question on, it is a revision of the 
 ### s6
 
 - **goal:** `c-check-vendor-claims`
+- **cases:** vendor-page
 - **answer:** doesn't settle it: careful and dated, but secondary; true as of 2026-09-16 at best,
   and nobody would update it the day Render changed. Go to Render's free-plan docs.
 - **credit:** full for a non-settling verdict with the reason that it is not the vendor's own
@@ -77,6 +83,7 @@ than a comparison article; from the second question on, it is a revision of the 
 ### s7
 
 - **goal:** `c-check-vendor-claims`
+- **cases:** vendor-page
 - **answer:** doesn't settle it: on Render's site, but users talking, not Render, and from 2024. The
   forum itself was shut: community.render.com now redirects to https://render.com/docs/community,
   which says "The community forum was sunset on March 24, 2026". Go to Render's free-plan docs.
@@ -88,6 +95,7 @@ than a comparison article; from the second question on, it is a revision of the 
 ### s8
 
 - **goal:** `c-check-vendor-claims`
+- **cases:** vendor-page
 - **answer:** doesn't settle it: recent and first-hand, but one account on one day, and nobody's
   database is 30 days old after a week. Go to Render's free-plan docs.
 - **credit:** full for a non-settling verdict with the reason that a week's experience can't show
@@ -98,6 +106,7 @@ than a comparison article; from the second question on, it is a revision of the 
 ### s9
 
 - **goal:** `c-check-vendor-claims`
+- **cases:** vendor-page
 - **answer:** doesn't settle it: Render's own page, but about something else, its MCP server. It
   matters for whether an agent can reach the host, which belongs to weighing plans. Go to Render's
   free-plan docs.

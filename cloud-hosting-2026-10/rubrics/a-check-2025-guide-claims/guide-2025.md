@@ -3,6 +3,12 @@ Checked against the vendors' own pages on 2026-10-01 (Neon's storage figure re-r
 and confirm it still says what is quoted. If it doesn't, the page wins and this key is wrong for
 that question.**
 
+Scenario note: `g2` and `g6` are both settled on Neon's pricing page. If `g2` has been served,
+`g6` is mostly about deciding what a vague claim would have to mean before it can be checked, so
+put the weight there. Neon's storage went from 0.5 GB to 1 GB per project overnight on 2026-10-02.
+Neither claim states a figure, so neither is stale; the change is still worth mentioning as an
+example of how fast these limits move.
+
 What holds for every question: full credit always includes naming the kind of page that settled
 it (pricing page, free-plan docs, billing docs, changelog, trial page), or saying the vendor's
 pages couldn't. The verdict must rest on a sentence from the vendor's own current
@@ -22,6 +28,7 @@ one. None of the six is a limit changed since 2025.
 ### g1
 
 - **goal:** `c-check-vendor-claims`
+- **cases:** withdrawn, vendor-page, prompt-fix
 - **answer:** gone, and already gone when the guide was written. PlanetScale's pricing page,
   https://planetscale.com/pricing, lists no free plan; the cheapest listed option was a $5/month
   Postgres single node, and it now sells Postgres as well as MySQL (Vitess). Its changelog,
@@ -39,6 +46,7 @@ one. None of the six is a limit changed since 2025.
 ### g2
 
 - **goal:** `c-check-vendor-claims`
+- **cases:** vendor-page, prompt-fix
 - **answer:** holds. Neon's pricing page, https://neon.com/pricing (neon.tech redirects there):
   the Free plan is "permanent (not a trial); no credit card required", storage "1 GB/project, 20 GB
   account total" (0.5 GB on 2026-10-01), 100 CU-hours per project, compute that scales to zero
@@ -54,6 +62,7 @@ one. None of the six is a limit changed since 2025.
 ### g3
 
 - **goal:** `c-check-vendor-claims`
+- **cases:** vendor-page, prompt-fix
 - **answer:** holds, with limits left out: Supabase's pricing page, https://supabase.com/pricing,
   gives 500 MB per project, 2 active projects, and "Free projects are paused after 1 week of
   inactivity." The pricing page did not say whether a card is required. Supabase's billing docs say
@@ -71,6 +80,7 @@ one. None of the six is a limit changed since 2025.
 ### g4
 
 - **goal:** `c-check-vendor-claims`
+- **cases:** vendor-page, prompt-fix
 - **answer:** holds, with the sleep left out ("ample" can't be checked). Render's free docs,
   https://render.com/docs/free: static sites are free; a free web service gets 750 instance hours a
   month per workspace, spins down after 15 minutes without traffic and takes about a minute to come
@@ -82,6 +92,7 @@ one. None of the six is a limit changed since 2025.
 ### g5
 
 - **goal:** `c-check-vendor-claims`
+- **cases:** vendor-page, prompt-fix
 - **answer:** holds, with the consequence left out. Render's free docs: "Free Render Postgres
   databases expire 30 days after creation. An expired Free database is inaccessible unless you
   upgrade it to a paid compute plan." and "After the grace period, Render deletes the database
@@ -99,6 +110,7 @@ one. None of the six is a limit changed since 2025.
 ### g6
 
 - **goal:** `c-check-vendor-claims`
+- **cases:** vendor-page, prompt-fix
 - **answer:** holds, as a statement about signing up: Neon's Free plan is "permanent (not a trial);
   no credit card required", 1 GB per project, compute that scales to zero after 5 minutes idle. It
   carries no detail, so the learner first has to say what "a free account" must mean.

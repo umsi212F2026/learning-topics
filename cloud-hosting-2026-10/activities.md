@@ -310,14 +310,17 @@ examined only one handed claim at a time, never across a whole agent's answer. E
   prompt sentence that would make the next answer's claim come with what they need to check it.
 - **generator:** the claims are the guide's six real sentences, scenario `guide-2025`, questions
   `g1` to `g6`; nothing is invented, and no new scenario can be drafted without another real
-  source of dated claims. Cases: withdrawn `g1`; holds but hides the consequence `g5`; holds with sleep or
-  limits left out `g3`, `g4` (and `g3`'s card question isn't settled on the pricing page); holds
-  `g2`; too vague to check as it stands `g6`. To pick the next, run
+  source of dated claims. Kinds of claim: withdrawn `g1`; holds but hides the consequence `g5`;
+  holds with sleep or limits left out `g3`, `g4` (and `g3`'s card question isn't settled on the
+  pricing page); holds `g2`; too vague to check as it stands `g6`. Cases carried: every question
+  carries `vendor-page` (the verdict must rest on the vendor's own page) and `prompt-fix` (each
+  asks for the prompt sentence); `g1` also carries `withdrawn`. None carries `changed-limit` or
+  `card-omitted`, which `a-plan-claim-checks` carries. To pick the next, run
   `served.mjs cloud-hosting-2026-10 c-check-vendor-claims`, take a claim not yet served, and prefer
-  a case the learner hasn't met; `g1` and `g5` make the best first two. Once the
-  learner has met Render's 30-day expiry anywhere in this topic, prefer claims about other vendors
-  over `g5`. Stop when done when has been met on two or three sittings with different cases, and
-  offer `a-plan-claim-checks`; using up the six is not the target.
+  a kind the learner hasn't met; `g1` and `g5` make the best first two. Once the learner has met
+  Render's 30-day expiry anywhere in this topic, prefer claims about other vendors over `g5`. Stop
+  when done when has been met on two or three sittings with different kinds, and offer
+  `a-plan-claim-checks`; using up the six is not the target.
 - **worked example:** check a claim not in the six aloud, with a false start left in and named.
   For Fly.io's "only a short trial before pay-as-you-go": open the pricing page,
   https://docs.fly.io/about/pricing/, read "All organizations ... require a credit card on file"
@@ -336,11 +339,6 @@ examined only one handed claim at a time, never across a whole agent's answer. E
   of them already stale when it was written, one at a time. You do the checking from the start, on real
   vendor pages, 10 to 15 minutes. The most hands-on of the checks, and the one that shows how fast
   this goes stale.
-- **check note:** `g2` and `g6` are both settled on Neon's pricing page. If `g2` has been served,
-  `g6` is mostly about deciding what a vague claim would have to mean before it can be checked, so
-  put the weight there. The key notes that Neon's storage went from 0.5 GB to 1 GB per project
-  overnight on 2026-10-02. Neither claim states a figure, so neither is stale. The change is still
-  worth mentioning as an example of how fast these limits move.
 
 ### `a-sort-claim-sources`
 
@@ -373,14 +371,15 @@ examined only one handed claim at a time, never across a whole agent's answer. E
   the vendor's own current docs as where to go instead; for `s1`, they found the 30-day expiry.
 - **generator:** the claim is fixed: "Render's free web services sleep after 15 minutes and its
   free Postgres is free for good." The sources are scenario `render-claim`, questions `s1` to `s9`,
-  each with its verdict and near-miss question in the key; nothing is invented. Cases: settles it `s1`; vendor's own page not about this claim `s2`, `s9`; on the
-  vendor's site but not the vendor `s7`; dated secondary `s4`, `s5`, `s6`; the agent `s3`; an
-  anecdote `s8`. To pick the next, run `served.mjs cloud-hosting-2026-10 c-check-vendor-claims`,
-  take a source not yet served, and prefer a case the learner hasn't met. Serve a near-miss (`s2`,
-  `s7` or `s9`) before `s1`, so the learner meets a vendor page that doesn't settle it before one
-  that does. If the learner has already met Render's 30-day expiry elsewhere in
-  this topic, skip `s1`. Stop when done when has been met on two or three sittings with different
-  cases, and offer `a-plan-claim-checks`; using up the nine is not the target.
+  each with its verdict and near-miss question in the key; nothing is invented. Kinds of source:
+  settles it `s1`; vendor's own page not about this claim `s2`, `s9`; on the vendor's site but not
+  the vendor `s7`; dated secondary `s4`, `s5`, `s6`; the agent `s3`; an anecdote `s8`. Every
+  question carries the case `vendor-page` only. To pick the next, run
+  `served.mjs cloud-hosting-2026-10 c-check-vendor-claims`, take a source not yet served, and
+  prefer a kind the learner hasn't met. Serve a near-miss (`s2`, `s7` or `s9`) before `s1`, so the
+  learner meets a vendor page that doesn't settle it before one that does. Stop when done when has
+  been met on two or three sittings with different kinds, and offer `a-plan-claim-checks`; using up
+  the nine is not the target.
 - **worked example:** judge a source not in the nine aloud: a blog post found by searching the
   claim. Say whose page it is (not the vendor's), whether it is dated, and whether it is about
   this claim; conclude it can tell you what to look for but not settle it; then name where to go
@@ -397,13 +396,8 @@ examined only one handed claim at a time, never across a whole agent's answer. E
   candidate whose bank is near-misses (a forum on the vendor's own site, a careful dated
   comparison with affiliate links, the vendor's docs about something else). Pick
   `a-check-2025-guide-claims` to do the finding yourself.
-- **check note:** Whether `s1` gets skipped depends on the route the learner took. Orientation skims
-  the vendor paragraphs and raises Render's 30-day Postgres expiry only if the learner stopped on
-  it, so a learner fresh from orientation usually still gets `s1`. A learner who has met the expiry
-  in `a-check-2025-guide-claims` (`g5`) has `s1` skipped, and this route then judges only sources that don't
-  settle the claim. That is fine, because the route teaches what a source can and can't settle. But
-  don't let a run of non-settling verdicts suggest that nothing could settle the claim: say once
-  that Render's free-plan docs, https://render.com/docs/free, would. On `s4`, orientation had the
+- **check note:** Don't let a run of non-settling verdicts suggest that nothing could settle the
+  claim: say once that Render's free-plan docs, https://render.com/docs/free, would. On `s4`, orientation had the
   learner skim only the first line of each vendor in Odin's lesson, so they probably haven't seen
   that its Render paragraph says both "$7" and "expires 30 days". If they judge it without opening
   it, tell them the paragraph says both, then ask "when was this true?"
@@ -467,7 +461,9 @@ examined only one handed claim at a time, never across a whole agent's answer. E
   The plan passes when, followed as written, it checks every claim on the vendor's own current
   pages, would catch all three planted claims, and includes a prompt addition that would make each
   claim come with what is needed to check it (for example, a link to the vendor's own page for
-  each claim, and the date of the agent's information). A plan that would check only the claims
+  each claim, and the date of the agent's information). Cases carried: every instance carries all
+  five, `vendor-page`, `withdrawn`, `changed-limit`, `card-omitted` and `prompt-fix`, one for each
+  planted kind and one each for checking on the vendor's pages and for the prompt addition. A plan that would check only the claims
   that look doubtful misses `card-omitted`, since an omission doesn't look doubtful; the plan has
   to say how it would find what a vendor requires, not only test what was said. "Would catch" is
   judged against the settling page recorded in the key, not against "the vendor's site" in
@@ -535,7 +531,8 @@ examined only one handed claim at a time, never across a whole agent's answer. E
   about a vendor the learner had already visited or signed up for before writing the note are left
   out of the ruling (the tutor marks them in the key), and there is no instance if that leaves no
   claim about free tiers, limits or cards; the tutor then supplies a rerun or a tablemate's answer
-  instead. A note that
+  instead. Cases carried: every instance carries `vendor-page` and `prompt-fix`, plus `withdrawn`,
+  `changed-limit` or `card-omitted` for each such claim the key finds in the answer. A note that
   says only "ask the agent if it's sure" or "check another AI" is an instance, and a miss. On
   review visits, use a fresh answer (a rerun of the table's prompt, or a tablemate's answer the
   learner hasn't checked).
