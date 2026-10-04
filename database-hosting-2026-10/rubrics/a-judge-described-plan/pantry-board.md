@@ -66,8 +66,8 @@ question, connection strings, passwords, backups, cost) are neither credited nor
 - **answer:** Yes. Step 2: the backend creates the `shelf_items` and `reservations` tables itself in
   the new Postgres database. Step 4's seed script, kept in the repository and run once against
   production, also counts as built by the code, even though it is run from the laptop, so either
-  step decides it. Nothing is copied from the laptop's file, and nothing is shared with
-  development.
+  step decides it. Nothing is copied from the laptop's file, and step 1 keeps the laptop's backend
+  on its own `server/data/pantry.sqlite`, so nothing is shared with development.
 - **credit:** full for yes, tied to step 2 (the backend creating its tables), step 4 (the seed
   script from the repository), or both. Not met for no, for yes with no step, for yes tied only to
   step 1 or step 3, or for yes alongside a fault on this question, such as calling step 4 a copy

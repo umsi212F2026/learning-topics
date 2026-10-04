@@ -64,13 +64,14 @@ Pantry Board's coding agent proposes this plan:
 
 > Plan for Pantry Board's production database:
 >
-> 1. Set up a Larkspan managed Postgres database and have the production backend use it.
+> 1. Set up a Larkspan managed Postgres database and have the production backend use it. On your
+>    laptop, the backend keeps using `server/data/pantry.sqlite`.
 > 2. Deploy the backend. On its first start it creates the `shelf_items` and `reservations` tables
 >    in Postgres.
 > 3. Deploy the frontend.
 > 4. After that, from your laptop, run the seed script in the repository, `server/seed.js`, once
->    against the production Postgres database. It adds five staple items (rice, pasta, canned beans,
->    oatmeal, peanut butter) so the shelf isn't empty on opening day.
+>    against the production Postgres database. It adds the three staples the pantry stocks every
+>    week (rice, pasta and canned beans), so students can reserve them from opening day.
 >
 > Your data is in good hands.
 
