@@ -55,7 +55,7 @@ to offer, and its `offer as` describes it rather than distinguishing it.
 
 | goal | study | checks | notes |
 | ---- | ----- | ------ | ----- |
-| `c-trace-setting-value` | | `a-deploy-chat` | |
+| `c-trace-setting-value` | | `a-deploy-chat` | Credited only on `shared-vendor` exchanges, where the choice is between the frontend's and the backend's addresses. The database's connection details and a value a host sets, which the criterion also names, are never credited to this goal, so a pass here says nothing about telling those apart from an address. |
 | `c-spot-secret` | | `a-deploy-chat` | |
 | `c-judge-secret-request` | | `a-deploy-chat` | |
 | `c-secret-instead` | | `a-deploy-chat` | |
@@ -174,6 +174,28 @@ to offer, and its `offer as` describes it rather than distinguishing it.
   credited to `c-spot-secret` alone.
 - **offer as:** the agent's side of a deploy, one question at a time, about 2 to 5 minutes each,
   nothing to run: the settings it asks for, the requests it makes, and what you say back.
+- **check note:** On message questions the learner is asked only whether they would go along and
+  why, not whether the value is a secret. So `c-spot-secret` credit there depends on their
+  volunteering the call. If they say nothing about the value, record that as no evidence for
+  `c-spot-secret`, not as a wrong call, and don't prompt for it during the attempt.
+
+  The decision on a message question earns `c-judge-secret-request` whatever reason comes with it.
+  When the reason given wouldn't make the decision right (declining because the message mentions
+  the database, or going along because nothing is pasted into the chat), the credit stands. Serve
+  that learner a message of the opposite kind next, and treat the pass as thin.
+
+  On a `shared-vendor` exchange, the vendor named in the agent's answer leaves only two addresses
+  in play, so a correct part can be a lucky pick. If the learner names the right address without
+  saying how they knew, ask afterwards which of the vendor's two offerings the setting's purpose
+  points to. That is a follow-up once the attempt is recorded, not help during it.
+
+  Once a learner has had feedback on one `shared-vendor` exchange in a scenario, a later one there
+  may be answerable by elimination. Weigh the first one served most.
+
+  A repair built on a `debug-lure` message invites replies the criterion doesn't name, such as
+  offering to paste the page with the password blanked out, or to check the format themselves.
+  These are safer than complying but are not the criterion's answer. Unless the question's rubric
+  says otherwise, such a reply alone does not meet `c-secret-instead`.
 
 ### `a-words`
 
