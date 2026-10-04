@@ -23,7 +23,7 @@ _Yours to fill in. Say where your knowledge stops, not what you have heard of._
 ## What I'll use it for
 
 _Yours to fill in. The course supplies one occasion: Problem Set 3, which puts your Problem Set 2
-app, and the data in its SQLite database, on the public internet. Name any others you have._
+app, frontend, backend and database, on the public internet. Name any others you have._
 
 <!--
   The use, and a concrete occasion.
