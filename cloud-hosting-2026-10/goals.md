@@ -98,7 +98,9 @@ are each a topic of their own. Sign-in belongs to Part B of Problem Set 3, not t
 
 1. orientation
 2. vocabulary
-3. capabilities
+3. c-place-app-parts
+4. c-check-vendor-claims
+5. c-weigh-hosting-plans
 
 ## Goals
 
