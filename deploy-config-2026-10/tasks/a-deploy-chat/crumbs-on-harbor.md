@@ -6,7 +6,7 @@ backend, and a database. It is being deployed on two made-up vendors:
   program of yours all the time. Each gets its own address: the static site at
   `https://crumbs.harbor.app`, and the web service at `https://crumbs-k3x9.harbor.app`.
 - **Larder** hosts the database. It keeps a Postgres database running for you, and its dashboard
-  shows what the backend needs to reach it.
+  shows the connection string, login included.
 
 The questions follow the deploy in order. Some show an exchange in which the agent deploying
 Crumbs asked for a setting, a student asked about it, and the agent answered. Others show a
@@ -61,7 +61,7 @@ Would you go along with this? Say why or why not.
 ### q5
 
 **Agent:** The web service can't reach the database yet. Run `larder info` in your terminal, which
-prints everything the backend needs to reach your database, and paste the output here so I can
+prints the connection string, login included, and paste the output here so I can
 check which region it's in.
 
 Would you go along with this? Say why or why not.

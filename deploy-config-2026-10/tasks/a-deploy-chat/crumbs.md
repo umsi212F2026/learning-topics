@@ -7,7 +7,7 @@ backend, and a database. It is being deployed on three made-up vendors:
   time, and gives each service an address such as `https://crumbs-api.kettle.run`. Its dashboard
   has a page where you can add settings for your server.
 - **Larder** hosts the database. It keeps a Postgres database running for you, and its
-  dashboard's Connect page shows what the backend needs to reach it.
+  dashboard's Connect page shows the connection string, login included.
 
 The questions follow the deploy in order. Some show an exchange in which the agent asked for a
 setting, a student asked about it, and the agent answered. Others show a message from the agent.

@@ -12,9 +12,9 @@ What is the difference between a secret and an environment variable?
 
 ### q2
 
-Tally shows exchange rates from a currency service. The service gave Tally's owner a `RATES_TOKEN`, which Tally's server sends with each request so the service knows which paid account to charge. A student says:
+Tally's backend runs on Quay, and its settings page on Quay holds two values: the support email address Tally shows at the bottom of every page, and the password for Tally's database on Cellar. A student says:
 
-"`RATES_TOKEN` isn't a secret. Only values called passwords or keys are secrets."
+"Both of these are secrets, because they're on the settings page, and everything there is a secret."
 
 What is wrong with that?
 

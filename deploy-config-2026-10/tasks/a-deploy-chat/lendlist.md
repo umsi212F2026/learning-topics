@@ -7,7 +7,7 @@ an Express backend, and a database. It is being deployed on two made-up vendors:
   `https://lendlist.dockyard.app`, and the web service at `https://lendlist-r4tz.dockyard.app`.
   Each has a settings page on Dockyard's dashboard.
 - **Silo** hosts the database. It keeps a Postgres database running for you, and its dashboard's
-  Connect panel shows the one line the backend needs to reach it.
+  Connect panel shows the connection string, login included, as one line.
 
 The questions follow the deploy in order. Some show an exchange in which the agent asked for a
 setting, a student asked about it, and the agent answered. Others show a message from the agent.

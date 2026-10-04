@@ -42,12 +42,14 @@ someone do, so a secret may be one and a public value may be one too.
 
 - **goal:** `w-secret`
 - **move:** CATCH
-- **answer:** A value is a secret because of what it lets the holder do, not what it is called.
-  Whoever holds `RATES_TOKEN` can use the paid account as Tally, and run up its bill, so it is a
-  secret whatever its name.
-- **credit:** full for naming that what makes a secret is that holding it lets someone in, which a
-  token does, regardless of its name. Half for saying a token is a secret without saying why.
-  None for a different quibble, such as that the name should be changed.
+- **answer:** Where a value is kept doesn't make it a secret; what holding it lets someone do does.
+  The database password lets whoever holds it into the database, so it is a secret. The support
+  email is shown to every visitor and lets nobody into anything, so it is not, even though it
+  sits on the same page.
+- **credit:** full for naming that being a secret depends on what holding the value lets someone
+  do, not where it is kept, and so the password is one and the email is not. Half for sorting the
+  two correctly without saying why, or for saying why without sorting them. None for a different
+  quibble, such as that the email should be moved off the settings page.
 
 ### q3
 

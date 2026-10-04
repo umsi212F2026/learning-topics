@@ -15,12 +15,13 @@ and the database's password, which is only the part of the string that gets the 
 
 - **goal:** `w-connection-string`
 - **move:** DISTINGUISH
-- **answer:** A connection string tells the backend how to reach a database running somewhere
-  else, as its own server (often on another host), and carries what it needs to get in, such as
-  a username and password. A database file path only names a file on the same machine, which the
+- **answer:** A connection string tells the backend how to reach a separate database server it
+  connects to (usually on another host), and carries what it needs to get in, such as a username
+  and password. A database file path only names a file on the same machine, which the
   backend opens directly, with nothing to log in with and no other machine involved.
 - **credit:** full for naming both halves of the difference that matters: the connection string
-  reaches a database server elsewhere and carries the login, while the file path points at a file
+  reaches a separate database server it connects to (usually on another host) and carries the
+  login, while the file path points at a file
   on the backend's own machine that needs no login. Half for only one of those halves (for
   example, "one includes a password, the other doesn't" with nothing on where the database is).
   None for an incidental difference alone, such as how they look (one starts with `postgres://`),
@@ -49,15 +50,15 @@ and the database's password, which is only the part of the string that gets the 
 
 - **goal:** `w-connection-string`
 - **move:** CATCH
-- **answer:** A connection string doesn't only say where the database is; it also says how to get
-  in, because it carries the database's username and password. So it is a secret, and anyone who
-  reads it in the README could get into the database.
-- **credit:** full for naming that the connection string also carries how to get in (the password,
-  or the login), so it is not safe to share. Half for saying it is a secret or shouldn't be in the
-  README without saying what in it makes it one. None for a different quibble, such as that the
-  README is the wrong place for setup details, or that the database's address is also private.
-- **tutor note:** a learner who says "it's a secret because it's a setting" has the call right for
-  the wrong reason; ask what someone could do with the line if they copied it.
+- **answer:** A connection string says where the database is and how to get in, not where the
+  backend is. The database is still on Cellar, so the same string still works from Quay; the
+  backend just carries it along, set in Quay's settings this time.
+- **credit:** full for naming that the connection string describes the database (where it is, and
+  the login), not the backend, so moving the backend doesn't change it. Half for saying it
+  doesn't need to change without saying why. None for a different quibble, such as that the
+  string should be kept out of the notes.
+- **tutor note:** a learner who says "it changes because it's set somewhere new" is mixing up
+  where the value is entered with what it describes; ask what the string points at.
 
 ### q3
 

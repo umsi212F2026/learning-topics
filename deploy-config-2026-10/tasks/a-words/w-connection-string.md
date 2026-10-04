@@ -12,12 +12,11 @@ Cellar's dashboard shows your database's password, and also its connection strin
 
 ### q2
 
-A student adds this line to their project's README, which anyone can read on GitHub:
+Tally's database is on Cellar. A student moves Tally's backend from their laptop to Quay and writes in their notes:
 
-"Our backend's connection string is safe to share, because all it does is tell the backend where
-the database is."
+"Our connection string has to change now, because it says where the backend is, and the backend has moved."
 
-What is wrong with that sentence?
+What is wrong with that?
 
 ### q3
 
