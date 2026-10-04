@@ -36,9 +36,10 @@ question, connection strings, passwords, backups, cost) are neither credited nor
 - **answer:** Yes. Step 2 puts production's database at `/data/pantry.sqlite`, on the volume step 1
   attached, and Larkspan keeps files under `/data` across redeploys.
 - **credit:** full for yes, tied to step 2 (the database at `/data/pantry.sqlite`), alone or
-  together with step 1. Not met for no, for "can't tell", for yes with no step, for yes tied only to
-  step 1 (attaching a volume does not by itself put the file on it), step 3 or step 4, or for yes
-  alongside a survival fault.
+  together with step 1; or tied to step 3 when the answer says the uploaded file lands at
+  `/data/pantry.sqlite` on the volume. Not met for no, for "can't tell", for yes with no step, for
+  yes tied only to step 1 (attaching a volume does not by itself put the file on it), to step 3
+  with nothing about where the file lands, or to step 4, or for yes alongside a survival fault.
 - **tutor note:** step 3's upload of the laptop's file is the other question's fault. A remark about
   it is disregarded and belongs to the own-database question; a learner who answers no on survival
   because of it has mixed the two questions, and fails.
