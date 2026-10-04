@@ -25,8 +25,8 @@ Nearest confusable: SQL. Synonym: PostgreSQL.
   service on another machine. The backend connects to it and sends it queries, rather than opening a
   database file itself.
 - **credit:** full for a database that runs as its own program, which the backend connects to.
-  Half for "a database" described only by size, power or popularity ("a bigger database than
-  SQLite"), with nothing about its running apart from the backend. Do not accept "PostgreSQL",
+  No credit for "a database" described only by size, power or popularity ("a bigger database than
+  SQLite"), which says nothing about what Postgres names. Do not accept "PostgreSQL",
   which names it again, or "a SQL database" or "a kind of SQL" alone, which say what kind of thing
   it is without saying what it is.
 

@@ -12,8 +12,9 @@ confusable: restart.
   set it up on a fresh server to do it. One runs the same code again; the other swaps in different
   code.
 - **credit:** full for the difference that matters: a redeploy replaces the running app with a new
-  version, while a restart starts the same version again. Half for "a redeploy happens on the host
-  and a restart on your laptop", with nothing about a new version. Do not accept "a redeploy loses
+  version, while a restart starts the same version again. No credit for "a redeploy happens on the
+  host and a restart on your laptop", an incidental difference with nothing about a new version.
+  Do not accept "a redeploy loses
   your data and a restart doesn't": on some hosts a restart wipes an ephemeral disk too, and data on
   a volume survives both.
 
