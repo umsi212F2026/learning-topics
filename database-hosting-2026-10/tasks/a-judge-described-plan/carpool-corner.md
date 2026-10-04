@@ -5,7 +5,7 @@ seat. It has a React frontend and an Express backend. The backend keeps its data
 Carpool Corner will be deployed to Mossgate, a made-up host. Mossgate's servers have ephemeral
 disks, so anything written to them is gone after every redeploy or restart. A volume can be attached
 to a service, mounted at `/data`, and only files under `/data` are kept. Mossgate also offers
-managed Postgres as a separate service.
+managed Postgres as a separate service, which keeps its data across redeploys.
 
 ### q1
 

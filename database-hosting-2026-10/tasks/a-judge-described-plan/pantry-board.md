@@ -5,7 +5,7 @@ file at `server/data/pantry.sqlite`, with two tables, `shelf_items` and `reserva
 Pantry Board will be deployed to Larkspan, a made-up host. Larkspan's servers have ephemeral disks,
 so anything written to them is gone after every redeploy or restart. A volume can be attached to a
 service, mounted at `/data`, and only files under `/data` are kept. Larkspan also offers managed
-Postgres as a separate service.
+Postgres as a separate service, which keeps its data across redeploys.
 
 ### q1
 

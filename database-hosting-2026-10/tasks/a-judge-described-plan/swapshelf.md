@@ -6,7 +6,7 @@ backend. The backend keeps its data in a SQLite file at `server/data/app.sqlite`
 Swapshelf will be deployed to Harborline, a made-up host. Harborline's servers have ephemeral
 disks, so anything written to them is gone after every redeploy or restart. A volume can be attached
 to a service, mounted at `/data`, and only files under `/data` are kept. Harborline also offers
-managed Postgres as a separate service.
+managed Postgres as a separate service, which keeps its data across redeploys.
 
 ### q1
 
