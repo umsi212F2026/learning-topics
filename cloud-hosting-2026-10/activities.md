@@ -7,9 +7,11 @@ with the learner.
 
 2026-10-01. In both checks for placing parts and both checks for weighing plans, the tutor writes
 the vendors' offers and terms, already distilled, for the learner. In the checks for vendor claims,
-the learner only plans. So nowhere in this topic is the learner examined on reading a real vendor's
-pricing, docs and billing pages unaided. Each entry's `doesn't show` admits its own part of this.
-Taken together, it is the topic's one shared blind spot.
+the learner plans in `a-plan-claim-checks` and `a-check-lab-answer`, judges one handed source in
+`a-sort-claim-sources`, and looks up one handed claim on the vendor's pages in
+`a-check-2025-guide-claims`. So reading a real vendor's pricing, docs and billing pages unaided is
+examined only one handed claim at a time, never across a whole agent's answer. Each entry's
+`doesn't show` admits its own part of this.
 
 ## Goals
 
@@ -30,8 +32,8 @@ Taken together, it is the topic's one shared blind spot.
 | goal | study | checks | notes |
 | ---- | ----- | ------ | ----- |
 | `o-orientation` | | `a-read-odin-deployment` | |
-| `c-place-app-parts` | | `a-place-described-plan`, `a-place-lab-plan` | The criterion's two named cases overlap: a backend that sends the built frontend is also one vendor hosting both, through a single service. Read the Coverage note's two cases as two instance shapes, one vendor with two services and one service sending both parts. A counting pass usually exercises one shape; if the learner's pass came on one, give the other in study or on a review visit. |
-| `c-check-vendor-claims` | | `a-check-2025-guide-claims`, `a-sort-claim-sources`, `a-plan-claim-checks`, `a-check-lab-answer` | Both checks rule on a written plan for checking claims, not on checks actually carried out. `a-check-lab-answer` has the learner carry the plan out, but the ruling is on the plan as first written. No check here establishes that the learner can find the settling sentence on a real vendor's site unaided, although the topic's Depth says they should be able to check a claim against the vendor's own pages. If that matters for this learner, look at what they found in `a-check-lab-answer`, or watch them do it in `a-check-2025-guide-claims`, and treat it as evidence beside the ruling, not as part of it. |
+| `c-place-app-parts` | | `a-place-described-plan`, `a-place-lab-plan` | The criterion's two named cases overlap: a backend that sends the built frontend is also one vendor hosting both, through a single service. Read the Coverage note's two cases as two instance shapes, one vendor with two services and one service sending both parts. A counting pass usually exercises one shape; if the learner's pass came on one, give the other on a review visit. |
+| `c-check-vendor-claims` | | `a-check-2025-guide-claims`, `a-sort-claim-sources`, `a-plan-claim-checks`, `a-check-lab-answer` | `a-plan-claim-checks` and `a-check-lab-answer` rule on a written plan for checking claims, not on checks carried out; `a-check-lab-answer` has the learner carry the plan out, but the ruling is on the plan as first written. `a-check-2025-guide-claims` rules on a lookup the learner does on the vendor's own pages, and `a-sort-claim-sources` on one source judged, each for one handed claim, so neither shows the whole plan the criterion asks for across an agent's answer. |
 | `c-weigh-hosting-plans` | | `a-weigh-described-plans`, `a-weigh-lab-plans` | |
 
 ---
@@ -259,7 +261,6 @@ Taken together, it is the topic's one shared blind spot.
   unsupported claim: the tutor tells the adjudicator to disregard it, and the learner that it
   belongs to database-hosting.
 - **done when:** criterion met with no help.
-- **kind:** generator
 - **generator:** the material is whatever the learner's agent proposed, so no two instances match
   and nobody sets the difficulty. Hold fixed: offers come from the vendor's own pages on the day,
   never from the agent's answer; the key comes from those offers and the app's code. Only a plan
@@ -476,7 +477,6 @@ Taken together, it is the topic's one shared blind spot.
   "would catch" means. After the ruling, opens the settling pages with the learner and shows
   which claims were stale. Labels the attempt `a-plan-claim-checks/<vendors, joined with +>`.
 - **done when:** criterion met with no help, on a Medium or Hard instance.
-- **kind:** generator
 - **generator:** fixed: the answer is 150 to 300 words in a coding agent's voice, confident, with
   no sources and no dates, answering a lab-style prompt ("compare free hosting for a React,
   Express and SQLite class project"). It names three to five real vendors and makes six to nine
@@ -538,8 +538,9 @@ Taken together, it is the topic's one shared blind spot.
   nothing to open. The tutor picks the disguise, so the harder answers (one that cites a blog, one
   that hedges) actually come up. `a-check-lab-answer` is the same capability on the answer your own
   table's prompt got.
-- **check note:** Every planted-claim example in the generator also appears in a study entry or the
-  orientation reading: PlanetScale, Heroku, Railway's $5, Render's Postgres, Neon's compute,
+- **check note:** Every planted-claim example in the generator also appears elsewhere in this
+  topic, in the orientation reading, `a-check-2025-guide-claims` (its claims and its worked example)
+  or `a-sort-claim-sources`: PlanetScale, Heroku, Railway's $5, Render's Postgres, Neon's compute,
   Fly.io's card rule. A learner who has done those routes may recognize the planted claims from
   memory. For a counting instance, plant claims about vendors or limits the learner has not met in
   this topic. If you can't, note in the record which planted claims the learner had already seen.
@@ -575,7 +576,6 @@ Taken together, it is the topic's one shared blind spot.
   `a-check-lab-answer/<vendors, joined with +>`.
 - **done when:** criterion met with no help. The plan is judged as first written, not on what the
   checks turned up.
-- **kind:** generator
 - **generator:** the material is whatever the learner's agent said in the lab, so no two instances
   match and nobody sets the difficulty. Hold fixed: the note is written before any vendor page is
   opened and before the agent is asked anything more; the answer is kept word for word. Claims
