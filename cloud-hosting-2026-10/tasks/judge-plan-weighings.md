@@ -81,9 +81,9 @@ it chose doesn't count either way.
 
 ### v6
 
-> Plan H. Plan S needs a credit card on Kettle to keep it running, and I don't want to give one.
-> Harbor's sleep is annoying but fine for a class project. My agent can do everything on Harbor
-> through one tool. S would be two accounts and the server's address would have to be copied into
+> Plan H. Plan S needs a credit card on Kettle just to sign up, and I don't want to give one.
+> Harbor's sleep is annoying but fine for a class project. My agent can deploy, read logs and set
+> environment variables for both parts on Harbor through one tool. S would be two accounts and the server's address would have to be copied into
 > the frontend. The best case for S is that nothing sleeps.
 
 ### v7

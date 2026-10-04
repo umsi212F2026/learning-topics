@@ -1,9 +1,8 @@
 # Judge a hosting plan for one app
 
 **Used by:** `a-judge-plan-coverage`, which serves `c-place-app-parts`. A study activity: nothing
-here can meet the goal. A bank of ten plans (`q1` to `q6`, `q8`, `q10` to `q12`; `q7` and `q9`
-were about the database and are gone): each sitting shows the sections above the line and one plan
-below it. The key is in `judge-plan-coverage-key.md`, for the tutor.
+here can meet the goal. A bank of eleven plans: each sitting shows the sections above the line
+and one plan below it. The key is in `judge-plan-coverage-key.md`, for the tutor.
 
 ## The app
 
@@ -87,3 +86,8 @@ Then say, in a sentence, the rule you judged by.
 
 > Harbor for both: one static site holding the frontend's built files and the Express server's
 > code.
+
+### q13
+
+> Spark runs the Express server, and the server also sends the frontend's built files itself
+> (`express.static('dist')`).

@@ -17,6 +17,7 @@ Take the learner's answer and rule before commenting. Each row is one bank item.
 | q10 | backend serves the frontend, and the frontend hosted twice |
 | q11 | gap (backend left on a laptop) |
 | q12 | mismatch inside one vendor hosting both |
+| q13 | backend serves the frontend, on a host that can't run the backend |
 
 `q7` and `q9` were about the database and have been dropped; their ids are not reused.
 
@@ -32,11 +33,13 @@ Take the learner's answer and rule before commenting. Each row is one bank item.
 | q10 | both covered | The frontend is hosted twice. Wasteful, perhaps confusing, but not a gap and not a mismatch. A learner who names it as a problem has named something that isn't one. |
 | q11 | gap | A server on the learner's laptop is not reachable from visitors' browsers and is off whenever the laptop is, so the backend has no host. The frontend is fine. |
 | q12 | mismatch | Harbor can host both, but this plan puts the Express server's code in a static site, which only sends files as they are. The fault is in the job given, not the vendor. Its partner is q5. |
+| q13 | mismatch, and the frontend not served either | Spark keeps no program running, so the Express server can't run there; and since the server is what sends the built frontend, the frontend isn't served either. The answer must say both. Its partner is q3. |
 
 Pairs that answer each other, for the tutor's question "how does this one differ from the one you
 did before?": q3 and q6 (does anything send the frontend's files?), q4 and q8 (the same functions
 host, given a different job), q5 and q12 (the same vendor, a different service for the server), q1
-and q5 (the same coverage, one account or two). Ask it on the second of the pair, only when the
+and q5 (the same coverage, one account or two), q3 and q13 (the same arrangement, a host that can't
+run it). Ask it on the second of the pair, only when the
 first has already been served.
 
 If the learner raises where the database goes, say it belongs to the database-hosting topic and
