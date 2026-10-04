@@ -67,8 +67,8 @@ message question, the decision is credited to `c-judge-secret-request` and the r
   with it can get into the database), and pasting it here puts it in the chat.
 - **credit:**
   - `c-judge-secret-request`: full for declining. None for going along with it.
-  - `c-spot-secret`: full for a reason that treats the connection string as a secret because it
-    gets someone into the database; half for calling it secret or sensitive with no why.
+  - `c-spot-secret`: full for saying the connection string is a secret (or sensitive), with or
+    without a reason. None for saying nothing about the value, or calling it not a secret.
 
 ### q7
 
@@ -77,8 +77,8 @@ message question, the decision is credited to `c-judge-secret-request` and the r
   go), so it can go in the chat.
 - **credit:**
   - `c-judge-secret-request`: full for going along with it. None for declining.
-  - `c-spot-secret`: full for a reason that says the address isn't a secret because it is public;
-    half for going along with no reason about the value.
+  - `c-spot-secret`: full for saying the address isn't a secret (or is public), with or without a
+    reason. None for saying nothing about the value, or calling it a secret.
 - **tutor note:** the near-miss is declining because it looks like a setting.
 
 ### q8
@@ -88,9 +88,8 @@ message question, the decision is credited to `c-judge-secret-request` and the r
   Kettle's without passing through the chat or any file; the agent only names the setting.
 - **credit:**
   - `c-judge-secret-request`: full for going along with it. None for declining.
-  - `c-spot-secret`: full for calling the connection string a secret because it gets someone into
-    the database; half for calling it secret or sensitive with no reason; none for saying nothing
-    about the value, or calling it not a secret.
+  - `c-spot-secret`: full for saying the connection string is a secret (or sensitive), with or
+    without a reason. None for saying nothing about the value, or calling it not a secret.
 - **tutor note:** the near-miss is declining because the message mentions a connection string. Ask
   where the string goes on its way from Larder to Kettle.
 
@@ -101,8 +100,8 @@ message question, the decision is credited to `c-judge-secret-request` and the r
   `server/config.js`, a file that gets committed, even though nothing is pasted into the chat.
 - **credit:**
   - `c-judge-secret-request`: full for declining. None for going along with it.
-  - `c-spot-secret`: full for a reason that treats the connection string as a secret because it
-    gets someone into the database; half for calling it secret or sensitive with no why.
+  - `c-spot-secret`: full for saying the connection string is a secret (or sensitive), with or
+    without a reason. None for saying nothing about the value, or calling it not a secret.
 - **tutor note:** "works the same on your laptop" is the lure, and so is not being asked to paste
   anything. The near-miss is going along with it because the secret never enters the chat.
 
@@ -113,8 +112,8 @@ message question, the decision is credited to `c-judge-secret-request` and the r
   is the connection string with its password, a secret; pasting the page puts it in the chat.
 - **credit:**
   - `c-judge-secret-request`: full for declining. None for going along with it.
-  - `c-spot-secret`: full for a reason that treats what's on the page as a secret because it gets
-    someone into the database; half for calling it secret or sensitive with no why.
+  - `c-spot-secret`: full for saying what's on the page is a secret (or sensitive), with or
+    without a reason. None for saying nothing about it, or calling it not a secret.
 - **tutor note:** asking to "check the format" is a reasonable-sounding way to get the whole
   string.
 
@@ -125,5 +124,5 @@ message question, the decision is credited to `c-judge-secret-request` and the r
   can go in the chat.
 - **credit:**
   - `c-judge-secret-request`: full for going along with it. None for declining.
-  - `c-spot-secret`: full for a reason that says the address isn't a secret because it is public;
-    half for going along with no reason about the value.
+  - `c-spot-secret`: full for saying the address isn't a secret (or is public), with or without a
+    reason. None for saying nothing about the value, or calling it a secret.

@@ -117,8 +117,9 @@ goal; there are no warm-ups.
   - `dashboard-instruction` (Hard; routes none): tells the learner to add a setting on the host
     and paste the secret there themselves, naming the secret but never asking for it.
   Every message question names `c-judge-secret-request`, credited from the decision. One whose
-  message involves a value (every shape but `other-step`) also names `c-spot-secret`, credited
-  from the reason: whether it treats the value as a secret, and why. Mix messages that route a
+  message involves a value (every shape but `other-step`) also names `c-spot-secret`, with full
+  credit for saying whether the value is a secret, with or without an explanation. Mix messages
+  that route a
   secret with ones that don't, in no fixed proportion.
 
   **Repair questions.** One message in the shape `paste-in-chat`, `write-into-code` or
