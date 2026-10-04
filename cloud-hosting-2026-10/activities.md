@@ -644,13 +644,6 @@ examined only one handed claim at a time, never across a whole agent's answer. E
   to 10 minutes a question, nothing to run, and the tutor picks the twist so the hard cases (a card that can be billed once
   added, an agent that can't see the backend's logs) actually come up. `a-weigh-lab-plans` is the same
   capability on two plans from your own lab.
-- **check note:** On an `irrelevant-difference` instance, the generator calls leaning on the large
-  irrelevant difference "unsupported", but the criterion's clause is about what the terms support,
-  and a true difference is supported. The `harbor-kettle` key accepts leaning on an accurate
-  non-deciding item. When you send the instance to the adjudicator, say what the twist
-  was. Ask it to rule against the criterion as written: a true but irrelevant reason is not by
-  itself a miss, while a claim the terms contradict (that twenty users would reach the limit, for
-  instance) is.
 
 ### `a-weigh-lab-plans`
 

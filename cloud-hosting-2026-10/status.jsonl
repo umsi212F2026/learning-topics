@@ -41,3 +41,11 @@
 {"at":"2026-10-04T14:08:56.785Z","kind":"goal-added","goal":"c-weigh-hosting-plans","needs":"curation"}
 {"at":"2026-10-04T14:24:27.632Z","kind":"curated","goal":"c-place-app-parts"}
 {"at":"2026-10-04T14:24:27.671Z","kind":"curated","goal":"c-weigh-hosting-plans"}
+{"at":"2026-10-04T17:35:29.953Z","kind":"goal-added","goal":"c-weigh-free-limits","needs":"curation"}
+{"at":"2026-10-04T17:35:30.012Z","kind":"curated","goal":"c-weigh-free-limits"}
+{"at":"2026-10-04T17:35:30.043Z","kind":"goal-added","goal":"c-weigh-agent-reach","needs":"curation"}
+{"at":"2026-10-04T17:35:30.076Z","kind":"curated","goal":"c-weigh-agent-reach"}
+{"at":"2026-10-04T17:35:30.110Z","kind":"goal-added","goal":"c-weigh-vendor-count","needs":"curation"}
+{"at":"2026-10-04T17:35:30.142Z","kind":"curated","goal":"c-weigh-vendor-count"}
+{"at":"2026-10-04T17:35:30.175Z","kind":"goal-added","goal":"c-weigh-other-case","needs":"curation"}
+{"at":"2026-10-04T17:35:30.209Z","kind":"curated","goal":"c-weigh-other-case"}
