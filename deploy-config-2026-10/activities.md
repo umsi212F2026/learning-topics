@@ -84,7 +84,8 @@ to offer, and its `offer as` describes it rather than distinguishing it.
   for, and records the attempt as helped. A remark beyond what the question asks (where to find a
   value on a vendor's site, or what to do instead in answer to a message question) is neither
   credited nor counted against them.
-- **done when:** each goal the question names has its criterion met with no help.
+- **done when:** each goal the question names has its criterion met with no help, which means
+  full credit for that goal on that question; half credit is not met.
 - **generator:** a scenario is one app shaped like Problem Set 2 (a React frontend, an Express
   backend and a database) being deployed by an agent. Its setup names the made-up vendor each
   part is on, with that vendor's offer in a line; Brightpage, Kettle, Harbor and Larder may be
