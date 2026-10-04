@@ -157,7 +157,10 @@ attempting them unaided. The two study activities were dropped for that reason.
   (sound) or the agent exporting the rows from the laptop's database and importing them into
   production (a fault `a-judge-described-plan` never serves). Never use the wording of a
   `no-volume`, `silent-location`, `laptop-copy`, `shared-dev`, `outside-mount` or
-  `committed-file` step, and never give a line that leaves out where the database lives. Fixed: two rehearsals in that order, neither graded, then the readiness
+  `committed-file` step, and never give a line that leaves out where the database lives. The one
+  exception is the restart line ("we restarted the server and the entries were still there, so
+  the data is safe"): its point is that a restart is not a redeploy, not a plan that hides where
+  the data lives. Don't add a location to it, since any location would preview a banked shape. Fixed: two rehearsals in that order, neither graded, then the readiness
   question word for word. Difficulty doesn't vary: this settles an indication, not a capability.
 - **worked example:** if the learner freezes, the tutor answers a different made-up line aloud in two
   sentences, then hands the original back.
