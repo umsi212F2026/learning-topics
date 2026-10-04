@@ -32,3 +32,16 @@ Nearest confusable: SQL. Synonym: PostgreSQL.
   server.
 - **tutor note:** this question uses PostgreSQL, a name the readings don't. If the learner doesn't
   recognise it as Postgres, record the answer as given; don't tell them.
+
+### q-define-postgres
+
+- **goal:** `w-postgres`
+- **move:** DEFINE
+- **answer:** a database that runs as a program of its own, apart from the backend, often as its own
+  service on another machine. The backend connects to it and sends it queries, rather than opening a
+  database file itself.
+- **credit:** full for a database that runs as its own program, which the backend connects to.
+  Half for "a database" described only by size, power or popularity ("a bigger database than
+  SQLite"), with nothing about its running apart from the backend. Do not accept "PostgreSQL",
+  which names it again, or "a SQL database" or "a kind of SQL" alone, which say what kind of thing
+  it is without saying what it is.

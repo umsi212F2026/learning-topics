@@ -30,3 +30,16 @@ Nearest confusable: database host. Synonyms: volume, persistent disk.
   replacement and holds no earlier copy, so a deletion is just as permanent. Half for "a volume
   isn't a backup" with nothing about what it does keep the file through. Do not accept a different
   quibble: "they should use Postgres", or "volumes cost money".
+
+### q-define-volume
+
+- **goal:** `w-persistent-volume`
+- **move:** DEFINE
+- **answer:** storage space for files, attached to a server, that the host keeps when it replaces
+  the server, as it does on a redeploy. Files written there are still there afterwards, unlike files
+  on the server's own disk.
+- **credit:** full for file storage attached to a server that outlasts the server being replaced.
+  Half for "extra storage for the server" with nothing about its outlasting the server being
+  replaced, or for "storage where files are kept" with nothing about what it is attached to or what
+  it outlasts. Do not accept "a volume" or "a persistent disk" alone, which name it again, or "a
+  backup" or "a database", which it is not.

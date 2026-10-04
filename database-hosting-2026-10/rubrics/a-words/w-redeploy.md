@@ -29,3 +29,18 @@ confusable: restart.
   containing the fix) and what it rules out (the fix is not live yet; the old version runs until
   then). Half for the claim without anything it rules out. Do not accept "the host will restart the
   app", which loses the new version.
+
+### q-catch-redeploy-crash
+
+- **goal:** `w-redeploy`
+- **move:** CATCH
+- **answer:** a redeploy puts a new version of the app on the host in place of the running one, and
+  the only new version the host can put there is one it has been given. The fix never left the
+  laptop, so whatever the host did at noon, it brought back the version it already had: a restart
+  of the old code, not a redeploy of the fixed one. Users still have the bug.
+- **credit:** full for naming the actual error: bringing the crashed app back runs the version
+  already on the host, while getting the fix to users takes a redeploy of a new version the host
+  has been given, which hasn't happened. Half for "they need to push first" with nothing about the
+  host bringing back the version it already had. Do not accept a different quibble: "the crash may
+  have lost their data", or "they should have tested more", neither of which is what the sentence
+  gets wrong.

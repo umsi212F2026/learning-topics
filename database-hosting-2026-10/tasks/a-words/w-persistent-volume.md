@@ -12,3 +12,8 @@ the difference between a persistent volume and a database host?
 
 A classmate says: "I put my database on a persistent volume, so the host keeps a copy of it. If I
 delete a recipe by mistake, I can get it back." What is wrong with what they said?
+
+### q-define-volume
+
+Your agent's plan says: "I'll attach a persistent volume to the backend's server." Say what a
+persistent volume is, in your own words.

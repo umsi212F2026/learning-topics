@@ -34,3 +34,16 @@ Postgres.
   about there being no separate program, or for "a small database the backend uses" with nothing
   about its being a file. Do not accept "a SQL database" or "a lightweight database" alone, which
   say what kind of thing it is without saying what it is.
+
+### q-catch-sqlite-server
+
+- **goal:** `w-sqlite`
+- **move:** CATCH
+- **answer:** SQLite has no server. The database is a single file, and the backend opens and works
+  on it itself, through a library; there is no separate program to start first or to connect to.
+  Starting a database program for the backend to connect to is what Postgres needs, not SQLite.
+- **credit:** full for naming the actual error: SQLite is not a separate running program, since the
+  backend opens the file itself, so there is no SQLite server to start or connect to. Half for
+  "SQLite doesn't need starting" with nothing about the backend opening the file itself. Do not
+  accept a different quibble: "SQLite isn't meant for production", "use Postgres instead", or a
+  remark about the order of the startup steps.

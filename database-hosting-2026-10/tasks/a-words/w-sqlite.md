@@ -11,3 +11,8 @@ between SQLite and Postgres?
 ### q-define-sqlite
 
 Your Problem Set 2 app keeps its data in SQLite. Say what SQLite is, in your own words.
+
+### q-catch-sqlite-server
+
+Your agent writes: "Before the backend starts, I'll start the SQLite server, so the backend has a
+database to connect to." What is wrong with what the agent said?
