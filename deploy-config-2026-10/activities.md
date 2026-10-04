@@ -166,11 +166,9 @@ credit the reason.
   or wrong answer. The learner answers one question at a time, knowing they are being asked to,
   so a pass doesn't show they would notice a risky request in the middle of a deploy; and a
   repair question says the message is unsafe, so it doesn't show they would notice. Vendors are
-  made up, so a pass says nothing about real dashboards. `c-trace-setting-value` is credited only
-  on `shared-vendor` exchanges about the frontend's and the backend's addresses, so a pass doesn't
-  show the learner can tell the database's connection details, or a value a host sets, from an
-  address; those are the criterion's easier answers, and the exchange questions about them are
-  credited to `c-spot-secret` alone.
+  made up, so a pass says nothing about real dashboards. A `cross-part` exchange where each part
+  has its own vendor is not credited to `c-trace-setting-value`, since the vendor gives the part
+  away, so that goal's `cross-part` case is shown only on a shared vendor.
 - **offer as:** the agent's side of a deploy, one question at a time, about 2 to 5 minutes each,
   nothing to run: the settings it asks for, the requests it makes, and what you say back.
 - **check note:** On message questions the learner is asked only whether they would go along and
