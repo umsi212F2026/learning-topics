@@ -68,7 +68,19 @@ runs now.
 
 Harbor for both: one static site holding the frontend's built files and the Express server's code.
 
+### q15
+
+Harbor for both: one static site holding the frontend's built files and the Express server's code.
+For this plan, answer only this: is the plan's problem with Harbor as a vendor, or with the
+service chosen for the Express server? Say why.
+
 ### q13
 
 Spark runs the Express server, and the server also sends the frontend's built files itself
 (`express.static('dist')`).
+
+### q14
+
+Spark runs the Express server, and the server also sends the frontend's built files itself
+(`express.static('dist')`). For this plan, answer only this: do the frontend's built files reach
+the visitor's browser, and why or why not?

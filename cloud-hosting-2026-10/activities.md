@@ -187,12 +187,17 @@ part of this.
   - `one-gap` (Easy; `gap`): one part left without a host.
   - `wrong-host` (Medium; `mismatch`): one part on a host that cannot run it as the app is now (a
     long-running server on a files-only or functions-only host).
-  - `backend-serves` (Medium; `backend-serves`, with `all-covered` or `mismatch`): the backend
-    sends the built frontend itself and no static host is named; both covered, or the backend on a
-    host that cannot run it, in which case the key names the backend mismatch and says the
-    frontend is then not served either, and the answer must say both.
-  - `shared-vendor` (Medium; `one-vendor-both`, with `all-covered` or `mismatch`): one vendor hosts
-    both parts as separate services; both covered, or with one mismatch inside that vendor.
+  - `backend-serves` (Medium; `backend-serves`, with `all-covered`): the backend sends the built
+    frontend itself and no static host is named, and both are covered. If the backend is on a host
+    that cannot run it, the plan is set as two questions, one per case: one on the backend's host
+    (`mismatch`), and a later one asking only whether the frontend's files reach the browser
+    (`backend-serves`).
+  - `shared-vendor` (Medium; `one-vendor-both`, with `all-covered`): one vendor hosts both parts as
+    separate services, and both are covered. If one part is in that vendor's wrong service, the plan
+    is set as two questions: one naming the faults (`mismatch`), and a later one asking only whether
+    the vendor or the service chosen is at fault (`one-vendor-both`).
+  A question carries one case a learner could get right or wrong on its own; never give half credit
+  for one of two cases.
   - `decoy` (Hard; `all-covered`, with `backend-serves` or `one-vendor-both` as the variant has it):
     both covered, but the backend sends the built frontend itself and the frontend is also put on a
     static host, or a vendor hosting both has a limitation that doesn't bear on either part it was

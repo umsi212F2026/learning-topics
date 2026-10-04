@@ -4,8 +4,9 @@ hosted wherever it is served from, even if by another part: an Express server th
 itself hosts the frontend. The rule the learner should arrive at: list what each part needs (files
 sent as they are; a program kept running), then check each vendor's offer against the part it was
 given. Remarks about where the database goes are neither credited nor counted as a false gap; say
-it belongs to the database-hosting topic. Shapes, in the entry's generator's terms: `q3` and `q13` `backend-serves`, `q5` and `q12`
-`shared-vendor`, `q10` `decoy`, `q1` `split-clean`, `q6` and `q11` `one-gap`, `q2` and `q4`
+it belongs to the database-hosting topic. Shapes, in the entry's generator's terms: `q3` `backend-serves`, `q13` and `q14` a faulted
+`backend-serves` set as two questions, `q5` `shared-vendor`, `q12` and `q15` a faulted
+`shared-vendor` set as two questions, `q10` `decoy`, `q1` `split-clean`, `q6` and `q11` `one-gap`, `q2` and `q4`
 `wrong-host`, `q8` a decoy across two vendors. Question ids `q7` and `q9` were about the database and are not reused.
 
 ### q1
@@ -98,29 +99,47 @@ it belongs to the database-hosting topic. Shapes, in the entry's generator's ter
 - **cases:** gap
 - **answer:** gap: a server on the learner's laptop is not reachable from visitors' browsers and is
   off whenever the laptop is, so the backend has no host. The frontend on Brightpage is fine.
-- **credit:** full for the backend gap named and nothing false named; a reason (not reachable, or
-  not always on) may be credited but is not required. Half for the gap named alongside a false
+- **credit:** full for the backend named as having no working host, labeled either a gap or a
+  mismatch, as long as it is said to be unreachable from visitors' browsers or not always on, and
+  nothing false named. Half for the backend's fault named with neither reason, or alongside a false
   fault against the frontend.
 
 ### q12
 
 - **goal:** `c-place-app-parts`
-- **cases:** mismatch, one-vendor-both
-- **answer:** mismatch: Harbor can host both, but this plan puts the Express server's code in a
-  static site, which only sends files as they are. The fault is in the job given, not the vendor.
-  The frontend in the static site is fine.
-- **credit:** full for the backend mismatch tied to the static-site service, not to Harbor as a
-  whole. Half for the mismatch named but blamed on Harbor rather than on the service chosen.
+- **cases:** mismatch
+- **answer:** mismatch: the Express server's code is put in a static site, which only sends files
+  as they are, so the backend cannot run. The frontend in the static site is fine.
+- **credit:** full for the backend mismatch named and nothing false named. Half for the mismatch
+  named alongside a false fault against the frontend.
 - **tutor note:** partner of `q5`. If `q5` was served before, ask: "last time Harbor hosted both and
   that was fine; what is different here?"
+
+### q15
+
+- **goal:** `c-place-app-parts`
+- **cases:** one-vendor-both
+- **answer:** the service chosen, not the vendor: Harbor offers web services, which can run the
+  Express server, but the plan put the server's code in its static site, which only sends files.
+- **credit:** full for the service chosen, with the reason that Harbor's web service could run the
+  server. Half for "the service" with no reason. None for blaming Harbor as a vendor.
 
 ### q13
 
 - **goal:** `c-place-app-parts`
-- **cases:** mismatch, backend-serves
-- **answer:** mismatch, and the frontend not served either: Spark keeps no program running, so the
-  Express server can't run there; and since the server is what sends the built frontend, the
-  frontend isn't served.
-- **credit:** full for both: the backend mismatch and the frontend left unserved because of it.
-  Half for either alone.
+- **cases:** mismatch
+- **answer:** mismatch: Spark keeps no program running, so the Express server can't run there.
+  (Since the server is what sends the built frontend, the frontend isn't served either; naming that
+  is credited, never required.)
+- **credit:** full for the backend mismatch named and nothing false named. Half for the mismatch
+  named alongside a false fault.
 - **tutor note:** partner of `q3`: the same arrangement on a host that can't run it.
+
+### q14
+
+- **goal:** `c-place-app-parts`
+- **cases:** backend-serves
+- **answer:** no: the server is what sends the built frontend, and the server can't run on Spark,
+  which keeps no program running, so nothing sends the frontend's files.
+- **credit:** full for "no", tied to the server being what sends the files and not running on
+  Spark. Half for "no" with only one of those.
