@@ -210,7 +210,8 @@ with the learner.
     a made-up host (never a real vendor's name) described in exactly these three facts, in one or
     two lines: its servers' disks are ephemeral, so anything written to them is gone after every
     redeploy or restart; a volume can be attached to a service, mounted at `/data`, and only files
-    under `/data` are kept; it also offers managed Postgres as a separate service. A scenario may
+    under `/data` are kept; it also offers managed Postgres as a separate service, which keeps its
+    data across redeploys. A scenario may
     hold several questions on the same app and host, each in its own `###` section with its own
     plan and its one question. Scenarios are written in study order, and no question may give
     away the answer to a later one in its scenario: no plan is written as a correction or variant
@@ -440,7 +441,9 @@ with the learner.
   and where do they come from?", and that question's attempt is recorded `unaided: no`.
 - **doesn't show:** one real plan's two questions can pass at most two of the goal's four cases,
   one per question, and which two is up to the agent; the other two come from
-  `a-judge-described-plan` or another plan, so this alone never meets the goal. The
+  `a-judge-described-plan` or another plan, so this rarely meets the goal alone. Across visits
+  with different real plans it could reach all four cases, but a competent agent's plan usually
+  yields the two clear cases, so the catch cases usually come from `a-judge-described-plan`. The
   learner is handed the two questions, while in Problem Set 3 itself they must think to ask them.
   The tutor writes the storage line, while in Problem Set 3 itself the learner has only the
   agent's plan, which may assert how the host stores files; so a pass doesn't show they would

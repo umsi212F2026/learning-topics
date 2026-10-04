@@ -8,6 +8,24 @@ disks, so anything written to them is gone after every redeploy or restart. A vo
 to a service, mounted at `/data`, and only files under `/data` are kept. Harborline also offers
 managed Postgres as a separate service, which keeps its data across redeploys.
 
+### q3
+
+Swapshelf's coding agent proposes this plan:
+
+> Here's the deployment plan for Swapshelf's database:
+>
+> 1. Spin up a Harborline managed Postgres instance for Swapshelf.
+> 2. Ship the backend, configured to talk to that Postgres instance. The first time it boots, it
+>    builds the `items` and `claims` tables.
+> 3. Switch your laptop's development server over to that same Postgres instance as well, so you
+>    can test against real data.
+> 4. Ship the frontend.
+>
+> You're all set, and your data is in good hands.
+
+Does production get a database of its own, built by the code rather than copied from the laptop or
+shared with development? Say yes or no, and name the step in the plan that decides it.
+
 ### q1
 
 Swapshelf's coding agent proposes this plan:
@@ -40,24 +58,6 @@ Swapshelf's coding agent proposes this plan:
 
 Will this plan's data survive a redeploy? Say yes or no, and name the step in the plan that decides
 it.
-
-### q3
-
-Swapshelf's coding agent proposes this plan:
-
-> Here's the deployment plan for Swapshelf's database:
->
-> 1. Spin up a Harborline managed Postgres instance for Swapshelf.
-> 2. Ship the backend, configured to talk to that Postgres instance. The first time it boots, it
->    builds the `items` and `claims` tables.
-> 3. Switch your laptop's development server over to that same Postgres instance as well, so you
->    can test against real data.
-> 4. Ship the frontend.
->
-> You're all set, and your data is in good hands.
-
-Does production get a database of its own, built by the code rather than copied from the laptop or
-shared with development? Say yes or no, and name the step in the plan that decides it.
 
 ### q4
 

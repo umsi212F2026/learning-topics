@@ -13,6 +13,18 @@ decide it, is not met. Naming a fault the key doesn't have on the asked question
 reason for a wrong verdict or alongside a right one. Remarks off the asked question (the other
 question, connection strings, passwords, backups, cost) are neither credited nor counted.
 
+### q3
+
+- **goal:** `c-plan-first-deploy`
+- **cases:** catch-copied
+- **answer:** No. Step 3 points the laptop's development server at production's Postgres instance,
+  so development shares production's database instead of production having one of its own.
+- **credit:** full for no, tied to step 3 (the development server working against production's
+  database). Not met for yes, for no tied only to step 1 or step 2, or for no with no step.
+- **tutor note:** a remark that step 2 builds the tables, so production's tables come from the code,
+  is true and doesn't change the verdict; if the learner says yes on that ground, ask who else is
+  reading and writing that database after step 3.
+
 ### q1
 
 - **goal:** `c-plan-first-deploy`
@@ -40,18 +52,6 @@ question, connection strings, passwords, backups, cost) are neither credited nor
   step 2 rebuilds the tables and wipes them on each redeploy).
 - **tutor note:** the laptop still using `server/data/app.sqlite` is development, not production;
   a learner who faults the plan for it on survival has read the laptop's file as production's.
-
-### q3
-
-- **goal:** `c-plan-first-deploy`
-- **cases:** catch-copied
-- **answer:** No. Step 3 points the laptop's development server at production's Postgres instance,
-  so development shares production's database instead of production having one of its own.
-- **credit:** full for no, tied to step 3 (the development server working against production's
-  database). Not met for yes, for no tied only to step 1 or step 2, or for no with no step.
-- **tutor note:** a remark that step 2 builds the tables, so production's tables come from the code,
-  is true and doesn't change the verdict; if the learner says yes on that ground, ask who else is
-  reading and writing that database after step 3.
 
 ### q4
 
