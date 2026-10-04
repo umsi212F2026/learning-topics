@@ -1,0 +1,69 @@
+# Rubric: connection string
+
+A connection string is one line telling the backend where the database is and how to get in. For
+a database on a host of its own it looks like `postgres://tally_app:pa55word@db.cellar.cloud:5432/tally`:
+the kind of database, a username and password, the machine and port it runs on, and the
+database's name. Its other names are database URL and `DATABASE_URL`, and neither of those, given
+as an answer, says what it is. The confusables are a database file path, such as
+`./data/budgets.sqlite`, which names a file on the same machine that the backend opens itself;
+and the database's password, which is only the part of the string that gets the backend in.
+
+### q1
+
+- **goal:** `w-connection-string`
+- **move:** DISTINGUISH
+- **answer:** A connection string tells the backend how to reach a separate database server it
+  connects to (usually on another host), and carries what it needs to get in, such as a username
+  and password. A database file path only names a file on the same machine, which the
+  backend opens directly, with nothing to log in with and no other machine involved.
+- **credit:** full for naming both halves of the difference that matters: the connection string
+  reaches a separate database server it connects to (usually on another host) and carries the
+  login, while the file path points at a file
+  on the backend's own machine that needs no login. Half for only one of those halves (for
+  example, "one includes a password, the other doesn't" with nothing on where the database is).
+  None for an incidental difference alone, such as how they look (one starts with `postgres://`),
+  their length, or that one is a URL.
+- **tutor note:** if they answer "a connection string is a secret and a file path isn't", ask what
+  in the connection string makes it one, and what a file path would need to have for the same to
+  be true.
+
+### q4
+
+- **goal:** `w-connection-string`
+- **move:** DISTINGUISH
+- **answer:** The password is only the part that lets you in. The connection string is one line
+  that carries the password together with where the database is (its machine and port), the
+  username, and which database to use, so it is everything the backend needs to connect.
+- **credit:** full for naming that the connection string also says where the database is (and as
+  whom, and which database), with the password inside it, while the password alone says nothing
+  about where to go. Half for saying the connection string "has more in it" or "contains the
+  password" without saying what else it carries. None for an incidental difference alone, such
+  as length or that one starts with `postgres://`.
+
+### q2
+
+- **goal:** `w-connection-string`
+- **move:** CATCH
+- **answer:** A connection string says where the database is and how to get in, not where the
+  backend is. The database is still on Cellar, so the same string still works from Quay; the
+  backend just carries it along, set in Quay's settings this time.
+- **credit:** full for naming that the connection string describes the database (where it is, and
+  the login), not the backend, so moving the backend doesn't change it. Half for saying it
+  doesn't need to change without saying why. None for a different quibble, such as that the
+  string should be kept out of the notes.
+- **tutor note:** a learner who says "it changes because it's set somewhere new" is mixing up
+  where the value is entered with what it describes; ask what the string points at.
+
+### q3
+
+- **goal:** `w-connection-string`
+- **move:** CATCH
+- **answer:** `db.cellar.cloud` is only the name of the machine the database runs on. A connection
+  string is one line that also says how to get in (a username and password) and which database
+  to use, and usually the kind of database and the port, as in
+  `postgres://tally_app:pa55word@db.cellar.cloud:5432/tally`.
+- **credit:** full for naming that what was copied is only where the database is, and a connection
+  string also carries how to get in (the login). Half for saying it is incomplete or "just the
+  host" without saying what is missing, or naming only a missing part that isn't the login (the
+  port, or the database's name). None for a different quibble, such as that it should have been
+  copied into the host's settings rather than the notes.
