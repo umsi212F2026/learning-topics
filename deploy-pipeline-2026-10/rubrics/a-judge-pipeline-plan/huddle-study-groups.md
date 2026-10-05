@@ -24,7 +24,8 @@ secret into the repository or a Pinecart setting, or stop a deploy waiting for t
   workflow. A reason is welcome, not required. Half for naming step 3 with no workable change: a
   vague one ("keep it somewhere safe", "hide it"), or a place the workflow can't read or that is
   no safer (a `.env` file that `.gitignore` covers, which never reaches GitHub; a Pinecart
-  setting; another committed file). None for agreeing, or for objecting only to sound steps.
+  setting). None for agreeing, for objecting only to sound steps, or for moving the token to
+  another committed file, which leaves it in the repository.
 - **tutor note:** "nothing else to set up" is the bait. If they agree, ask who can read
   `deploy.yml` and what they could do with the token. If they move the token to a git-ignored
   `.env`, ask how the workflow, running on GitHub, would read it.

@@ -37,7 +37,9 @@ order.
 - **credit:** full for naming step 5 and saying the fix should have been pushed to
   `add-recipe-roulette`, the pull request's own branch. Half for step 5 with a missing or wrong fix
   (such as opening a new pull request from the fork's `main`, or "update the pull request" with no
-  word on how). None for agreeing, or for naming step 1, 2, 3 or 4.
+  word on how). None for agreeing, or for naming step 1, 2, 3 or 4. Saying that step 2's entry
+  was missing its `url`, alongside naming step 5, is true and harmless: neither credited nor
+  counted against them, and not naming a sound step as wrong.
 - **tutor note:** if they agree, ask which branch the pull request in step 3 comes from, and which
   branch step 5 pushed to.
 
@@ -48,6 +50,8 @@ order.
 - **answer:** Yes. Every step is sound: the fork, the branch pushed to the fork, the pull request
   with base `cedar-hall-cs/demo-day` `main` and head `june-makes/demo-day` `add-recipe-roulette`,
   and the fix pushed to the same branch, which the open pull request picked up.
-- **credit:** full for agreeing. None for naming any step as wrong.
+- **credit:** full for agreeing. None for naming any step as wrong. Saying that step 2's entry
+  was missing its `url` while agreeing to the route is true and harmless: neither credited nor
+  counted against them, and not naming a step as wrong.
 - **tutor note:** a learner who calls step 3 backwards has swapped base and head; ask which
   repository the base names and which should end up with the new entry.

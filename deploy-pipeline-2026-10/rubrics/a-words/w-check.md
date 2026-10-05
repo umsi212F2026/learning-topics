@@ -23,16 +23,16 @@ nothing.
 
 - **goal:** `w-check`
 - **move:** CATCH
-- **answer:** A green tick means a check on that commit passed, for example that its tests ran and
-  passed. It says nothing about whether the host has deployed the commit; that is shown in the
-  host's list of deploys, or by seeing the change in the live app.
+- **answer:** The green tick comes from the GitHub Actions workflow, and means the tests ran on
+  that commit and passed. It says nothing about whether the host has deployed the commit; that is
+  shown in the host's list of deploys, or by seeing the change in the live app.
 - **credit:** full for naming the actual error: a check is the result of a job run on the commit,
   such as its tests, not a sign that the host deployed it. Half for "that doesn't mean it's
   deployed" with nothing on what the tick does mean. None for a different quibble, such as that
   the browser might be showing an old copy.
 - **tutor note:** a learner may say some hosts report their deploys back to GitHub as a check.
-  That is true of some hosts, but nothing in the question says where this tick came from; ask what
-  this tick, on its own, could be the result of.
+  That is true of some hosts, but here the only check comes from the workflow that runs the
+  tests; ask what that workflow's tick reports.
 
 ### q-catch-failed-check-rejects-push
 

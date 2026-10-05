@@ -44,6 +44,8 @@ pull request and so answers q1 and q2; hence this order.
   `tomas-ships/arcade`, and pushed there, not to the arcade or to `tomas-ships/bus-buddy`; the pull
   request runs from the fork's branch into the arcade's `main`; and the fix was pushed to the same
   branch, which the open pull request picked up.
-- **credit:** full for agreeing. None for naming any step as wrong.
+- **credit:** full for agreeing. None for naming any step as wrong. Saying that step 2's entry
+  was missing its `link` while agreeing to the route is true and harmless: neither credited nor
+  counted against them, and not naming a step as wrong.
 - **tutor note:** a learner who calls step 3's check of `origin` unnecessary has not named a wrong
   step; ask whether the push itself went to the right place.

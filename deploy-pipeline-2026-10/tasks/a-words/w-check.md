@@ -8,7 +8,8 @@ What is the difference between a check and a test?
 
 ### q-catch-check-means-live
 
-A student says:
+A student's repository has a GitHub Actions workflow that runs the app's tests on every push, and
+nothing else puts a check on their commits. They say:
 
 "There's a green tick next to my latest commit on GitHub, so that commit is live on the host now."
 

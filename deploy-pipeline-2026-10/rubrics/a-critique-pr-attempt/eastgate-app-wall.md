@@ -51,7 +51,9 @@ order.
   `add-plant-pal`, the open pull request's own branch; or for naming step 6 with a fix that goes
   back to step 5 (the fix belonged on the first pull request's branch). Half for step 5 with a
   missing or wrong fix (such as "update the pull request" with no word on how). None for
-  agreeing, or for naming step 1, 2, 3 or 4.
+  agreeing, or for naming step 1, 2, 3 or 4. Saying that step 2's entry was missing its `url`,
+  alongside naming step 5 (or step 6), is true and harmless: neither credited nor counted against
+  them, and not naming a sound step as wrong.
 
 ### q4
 
@@ -60,4 +62,6 @@ order.
 - **answer:** Yes. Every step is sound: the fork, the branch pushed to the fork, the pull request
   from the fork's branch into the app wall's `main`, and the fix pushed to the same branch, which
   the open pull request picked up.
-- **credit:** full for agreeing. None for naming any step as wrong.
+- **credit:** full for agreeing. None for naming any step as wrong. Saying that step 2's entry
+  was missing its `url` while agreeing to the route is true and harmless: neither credited nor
+  counted against them, and not naming a step as wrong.

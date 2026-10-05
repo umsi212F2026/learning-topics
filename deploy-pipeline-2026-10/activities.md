@@ -296,8 +296,14 @@ task, never the scoring.
   full, half when it meets at least half on each but not full on both, and none otherwise; their
   rubric `cases:` line lists both. On the `sound` plan, what `sound-plan` asks for: agreeing, with
   or without harmless remarks; it is missed by asking to change a sound step into a faulty one, or
-  by refusing the plan on a wrong ground (such as "the `.env` file shouldn't exist at all"). What
-  `deploy-token` asks for: the repository's GitHub secrets (Actions secrets), read by the workflow,
+  by refusing the plan on a wrong ground (such as "the `.env` file shouldn't exist at all"). In the
+  hook form, the roster's deploy hook deploys the latest commit on the linked branch, not the
+  commit whose tests just passed, so a push with failing tests that lands before the earlier push's
+  workflow calls the hook can go live untested. A learner who raises this race, as a remark or as
+  their reason to qualify or refuse the plan, meets `sound-plan` in full; it is never a wrong
+  ground. The question's single ruling still needs `deploy-token` met as well. For the tutor: this
+  is a real flaw in the hook form, not a misreading, and a learner who finds it deserves praise for
+  it. What `deploy-token` asks for: the repository's GitHub secrets (Actions secrets), read by the workflow,
   for full; "somewhere secret, not in the file" with no place named is half; the workflow file, a
   `.env` file, a Pinecart setting, or the chat is none. So a wrong place for the token fails the
   question however the plan itself is judged. On the confirmation question, an answer may cover the
@@ -666,7 +672,13 @@ task, never the scoring.
   fix given goes back to it (the pull request should come from a fork of the original), and as
   half when the fix stays with the later step (open the pull request somewhere else). Half for the
   right step with a missing or wrong fix. None for agreeing to a faulty account, or for naming a
-  sound step. On a `sound` account: full for agreeing; none for naming any step as wrong. A
+  sound step. On a `sound` account: full for agreeing; none for naming any step as wrong. In an
+  account built around a failing check (`new-pr-for-fix`, `fix-on-wrong-branch`, or a `sound`
+  account written around `failing-check`), the step that added the entry really did add it with
+  a field missing, which the check later reports. A learner who says so ("step 2's entry was
+  missing its `url`") while agreeing to the route, or while naming the route's actual wrong step,
+  is saying something true: that remark is harmless, neither credited nor counted against them,
+  and is not naming a sound step as wrong. A
   scenario may hold several accounts, with at least one faulty account and at most one `sound`
   one. They are separate accounts of the same classmate's attempt, each judged on its own. Their
   order is fixed, because one account can give another away (an account with a sound fork answers

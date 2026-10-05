@@ -45,8 +45,9 @@ stop a deploy waiting for the tests.
   welcome, not required. Half for naming the key in Pinecart's settings with no workable change
   (only "take the key out", leaving the button with no way to work, or "keep it safe"). None for
   agreeing, for objecting only to sound steps (`VITE_BACKEND_URL` in Pinecart's settings is sound:
-  the backend's address is not a secret; the hook call in step 3 is sound), or for moving the key
-  into a committed file.
+  the backend's address is not a secret), or for moving the key into a committed file. Raising the
+  hook race in step 3 (the hook deploys the latest commit on `main`, not the one just tested) is a
+  true remark: harmless, neither credited nor counted, and it does not stand in for the key.
 - **tutor note:** if they accept "answer faster", ask who else can read a value that ends up in
   the files every visitor's browser downloads.
 
@@ -79,21 +80,28 @@ stop a deploy waiting for the tests.
   parts deploy only from the workflow once the tests pass (Pinecart's link off, Ropewalk's
   auto-deploy off and called through its hook). Tell the agent to keep the token in the
   repository's GitHub secrets (Actions secrets), where the workflow reads it, not in the workflow
-  file.
+  file. One real flaw a learner may also raise: the hook deploys the latest commit on `main`, not
+  the commit whose tests just passed, so a push with failing tests that lands before an earlier
+  push's workflow calls the hook can go live untested.
 - **credit:** one ruling for the question: full only when the answer meets what each case below
   asks for full, half when it meets at least half on each but not full on both, and none
   otherwise.
   - `sound-plan`: full for agreeing, with or without harmless remarks (saying the hook's URL
     belongs in GitHub secrets too is one). None for asking to change a sound step into a faulty
     one, or for refusing it on a wrong ground (such as "the `.env` file shouldn't exist at all",
-    "`VITE_BACKEND_URL` is a secret", or "Ropewalk won't deploy with auto-deploy off").
+    "`VITE_BACKEND_URL` is a secret", or "Ropewalk won't deploy with auto-deploy off"). Raising
+    the race above (the hook deploys the latest commit on `main`, so a later push with failing
+    tests can go live untested), as a remark or as the reason to qualify or refuse the plan, is
+    also full; it is never a wrong ground.
   - `deploy-token`: full for the repository's GitHub secrets (Actions secrets), read by the
     workflow. Half for "somewhere secret, not in the file" with no place named. None for the
     workflow file, a `.env` file, a Pinecart setting, or the chat.
   So a wrong place for the token fails the question however the plan itself is judged, and so
   does putting the hook's URL in the workflow file.
 - **tutor note:** if they object that Ropewalk will never deploy with auto-deploy off, ask what
-  the request to the deploy hook in step 5 does.
+  the request to the deploy hook in step 5 does. If they notice that the hook deploys whatever is
+  latest on `main` rather than the commit just tested, that is a real flaw in this plan, not a
+  misreading: praise it.
 
 ### q5
 
