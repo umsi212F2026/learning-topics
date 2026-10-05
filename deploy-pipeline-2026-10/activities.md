@@ -17,11 +17,13 @@ task, never the scoring.
     every push to that branch. It cannot wait for GitHub checks.
   - Its repository link can be switched off. A deploy then happens only when Pinecart's deploy
     command runs with a Pinecart deploy token, for example as a step in a GitHub Actions workflow.
-    Anyone who holds the token can deploy to the site.
-  - Frontend settings are entered on the site's Settings page. A build copies their values into
-    the files it produces, which every visitor's browser downloads, so a setting changed after a
-    build has no effect until the next build. The Rebuild button builds and deploys the latest
-    commit again.
+    Anyone who holds the token can deploy to the site. The deploy command builds the frontend on
+    Pinecart from the pushed commit, using the site's settings, then deploys it.
+  - Frontend settings are entered on the site's Settings page, which shows when each setting was
+    last saved. A build copies their values into the files it produces, which every visitor's
+    browser downloads, so a setting changed after a build has no effect until the next build. The
+    Rebuild button builds the commit of the site's latest deploy again, using the current
+    settings, and deploys it, whether the repository link is on or off.
   - Its CDN keeps a copy of each page for up to 12 hours. The setting "Clear CDN cache on deploy"
     is on for a new site; with it off, a deploy leaves the CDN's copies in place, and the deploy
     list says "CDN cache kept" beside that deploy. The Clear CDN cache button clears it at any time.
@@ -50,8 +52,8 @@ task, never the scoring.
 | id | Goal | Criterion: what gets examined, and what counts |
 | -- | ---- | ---------------------------------------------- |
 | `o-orientation` | get the shape of this area before working on any particular part of it | `orientation` |
-| `c-set-up-auto-deploy` | work with an agent to make an app deploy itself on each push, and confirm that it does | Given an agent's plan for making an app's frontend and backend deploy themselves whenever `main` is pushed to GitHub, says what they would change before agreeing to it, and how they would confirm afterwards that it works. It passes when they catch a plan that would put a secret into the repository, such as a value written into the code or a `.env` file that git will commit; catch a plan that puts a secret into a frontend setting, which the build copies into files every visitor's browser downloads; go along with a plan that keeps secrets in the backend host's settings and keeps a local `.env` file that `.gitignore` covers; for a plan that deploys through GitHub Actions, put the host's deploy token in the repository's GitHub secrets rather than in the workflow file; catch a plan whose deploy doesn't wait for the app's tests to pass, including one that runs them in GitHub Actions while the host deploys every push on its own, and ask for the deploy to wait; and would confirm the pipeline by pushing a small visible change and seeing it in the live app, not by taking the agent's word or the host's "deployed" message for it, and by pushing a change with a failing test and seeing that it doesn't go live. Cases: `secret-in-repo`, `frontend-secret`, `sound-plan`, `deploy-token`, `no-test-gate`, `confirm-live`, `confirm-gate`. |
-| `c-find-missing-change` | find out why a change doesn't show up in the live app | Given an app that deploys itself from `main` and a change that the live app doesn't show, says what they would look at first (git's output, the commit's checks on GitHub, the host's list of deploys, or the page in the browser), is shown it, and goes on until they can say why and what to do next. It passes when they name the right reason: the change never reached `main` on GitHub (not committed, not pushed, pushed to another branch, or waiting in a pull request nobody has merged), so get it there; the tests failed, so the host never deployed it, and the tests have to pass first; the deploy failed and the old version is still live, so look at that deploy; the browser is showing its own old copy, so reload without its cache; or the host's CDN is serving an old copy, so ask for a fresh one by changing the URL, such as adding `?v=2`, to see whether the new version is there, and clear the CDN's cache so that every visitor gets it; or a frontend setting was changed on the host after the last build, so the frontend has to be built again before it takes effect. Finding out why a deploy failed is not part of it. Cases: `not-pushed`, `tests-failed`, `deploy-failed`, `browser-cache`, `cdn-cache`, `old-build-setting`. |
+| `c-set-up-auto-deploy` | work with an agent to make an app deploy itself on each push, and confirm that it does | Given an agent's plan for making an app's frontend and backend deploy themselves whenever `main` is pushed to GitHub, says what they would change before agreeing to it, and how they would confirm afterwards that it works. It passes when they catch a plan that would put a secret into the repository, such as a value written into the code or a `.env` file that git will commit; catch a plan that puts a secret into a frontend setting, which the build copies into files every visitor's browser downloads; go along with a plan that keeps secrets in the backend host's settings and keeps a local `.env` file that `.gitignore` covers; for a plan that deploys through GitHub Actions, put the host's deploy token in the repository's GitHub secrets rather than in the workflow file; catch a plan whose deploy doesn't wait for the app's tests to pass, including one that runs them in GitHub Actions while the host deploys every push on its own, and ask for the deploy to wait; and would confirm the pipeline by pushing a small change that shows in the live app only once both the frontend and the backend have deployed it, such as new text the page gets from the backend, and seeing it there, not by taking the agent's word or the host's "deployed" message for it; and by pushing a change with a failing test and seeing that neither part deploys it. Cases: `secret-in-repo`, `frontend-secret`, `sound-plan`, `deploy-token`, `no-test-gate`, `confirm-live`, `confirm-gate`. |
+| `c-find-missing-change` | find out why a change doesn't show up in the live app | Given an app that deploys itself from `main` and a change that the live app doesn't show, says what they would look at first (git's output, the commit's checks on GitHub, the host's list of deploys, or the page in the browser), is shown it, and goes on until they can say why and what to do next. It passes when they name the right reason: the change never reached `main` on GitHub (not committed, not pushed, pushed to another branch, or waiting in a pull request nobody has merged), so get it there; the tests failed, so the host never deployed it, and the tests have to pass first; the deploy failed and the old version is still live, so look at that deploy; the browser is showing its own old copy, so reload without its cache; or the host's CDN is serving an old copy, so ask for a fresh one by changing the URL, such as adding `?v=2`, to see whether the new version is there, and clear the CDN's cache so that every visitor gets it; or a frontend setting was changed on the host after the last build, so the frontend has to be built again before it takes effect. Finding out why a deploy failed is not part of it. Cases: `not-pushed`, `not-on-main`, `tests-failed`, `deploy-failed`, `browser-cache`, `cdn-cache`, `old-build-setting`. |
 | `c-showcase-pr` | get a change into a repository I can't push to, through a pull request | Given a repository they can't push to, such as the class showcase, and a change to make in it, says how the change gets there with their agent's help: copy the repository into their own account, make the change on a branch of that copy, push it, and open a pull request from that branch into the original repository; and, once it is open, says what to do when one of its checks fails. It passes when they put the change in their own copy, not in the original or in their app's repository; open the pull request from their copy's branch into the original, not the other way round; and fix a failing check by pushing to the same branch, not by opening a new pull request. Cases: `where-to-push`, `pr-direction`, `failing-check`. |
 
 ## Coverage
@@ -204,8 +206,10 @@ task, never the scoring.
   fault, or none: every step not named as the fault below is sound, so a plan with a secret fault
   still waits for the tests, and an ungated plan keeps every secret where it belongs. The fault is
   stated in the plan's words, not hidden by omission, except in the two ungated shapes, where the
-  fault is that nothing makes a deploy wait. A faulty step may come with a convenient reason ("so
-  it still works if the setting is missing"). Shapes, each with the case it carries:
+  fault is that nothing makes a deploy wait. Every workflow in a plan runs the tests in both
+  `client/` and `server/`, and the plan says so ("runs `npm test` in `client/` and in `server/`").
+  A faulty step may come with a convenient reason ("so it still works if the setting is
+  missing"). Shapes, each with the case it carries:
   - `committed-secret` (Easy; `secret-in-repo`): a step writes a secret into a source file, such
     as the connection string as a fallback in `server/db.js`, or into a config file that is
     committed.
@@ -217,7 +221,7 @@ task, never the scoring.
   - `token-in-workflow` (Medium; `deploy-token`): Pinecart's repository link is off, and a workflow
     runs the tests and then Pinecart's deploy command; the plan writes the Pinecart deploy token
     into the workflow file, or into a committed file the workflow reads.
-  - `ungated-watch` (Easy; `no-test-gate`): no workflow and no tests anywhere in the pipeline:
+  - `ungated-watch` (Medium; `no-test-gate`): no workflow and no tests anywhere in the pipeline:
     Pinecart linked to `main` and Ropewalk linked with "Wait for GitHub checks" left off. Neither
     part waits, and that counts as the plan's one fault.
   - `tests-beside` (Hard; `no-test-gate`): a workflow runs `npm test` on every push, worded so it
@@ -240,9 +244,9 @@ task, never the scoring.
   agent has carried out plan 4, says everything is set up, and both hosts' deploy lists show the
   latest deploy as Live").
   - `confirm-live` (Medium; `confirm-live`): "How would you make sure that a push to `main` now
-    reaches the live app?"
+    reaches the live app, both its frontend and its backend?"
   - `confirm-gate` (Hard; `confirm-gate`), always after `confirm-live`: "How would you make sure
-    that a push whose tests fail doesn't go live?"
+    that a push whose tests fail goes live in neither the frontend nor the backend?"
 
   Credit. Plan questions on a faulty plan: full for naming the faulty step and asking for a change
   that removes it (a reason is welcome, not required): the secret into Ropewalk's
@@ -253,21 +257,28 @@ task, never the scoring.
   Half for naming the right step with no workable change, or a change that is vague ("keep it
   safe"). None for agreeing, or for objecting only to sound steps. On an `ungated-watch` plan, full
   needs both the tests run somewhere (a workflow running `npm test`) and both parts made to wait
-  for them; making only one part wait, or turning on "Wait for GitHub checks" with no tests
-  running (a commit with no checks deploys straight away), is half. On a `tests-beside` plan,
+  for them; as on every plan question, saying how each part is made to wait is not required, so
+  "run the tests, and make both deploys wait for them" is full. Making only one part wait, naming
+  for a part a way of waiting the roster rules out (Pinecart waiting for GitHub checks), or
+  turning on "Wait for GitHub checks" with no tests running (a commit with no checks deploys
+  straight away), is half. On a `tests-beside` plan,
   asking only for tests to be added, as if none ran, is none. On a `sound` plan: full for agreeing, with or
   without harmless remarks; none for asking to change a sound step into a faulty one, or for
   refusing it on a wrong ground (such as "the `.env` file shouldn't exist at all"). Token
   questions: full for the repository's GitHub secrets (Actions secrets), read by the workflow;
   half for "somewhere secret, not in the file" with no place named; none for the workflow file, a
-  `.env` file, a Pinecart setting, or the chat. `confirm-live`: full for pushing a small visible
-  change and seeing it in the live app in the browser; half for pushing a change and checking only
-  a deploy list or the agent's report, or for opening the live app without pushing anything new;
-  none for taking the agent's word or the Live status. `confirm-gate`: full for pushing a change
-  that makes a test fail, together with something visible (or watching a visible part of the
-  change), and seeing that the live app still shows the old version, then fixing or reverting it;
-  half for pushing a failing test and watching only the red check or a deploy list; none for
-  reading the host's setting or asking the agent.
+  `.env` file, a Pinecart setting, or the chat. `confirm-live`: full for pushing a small change
+  that shows in the live app only once both parts have deployed it (such as new text the page gets
+  from the backend, or a frontend change together with the backend change it relies on) and seeing
+  it in the live app in the browser; half for a change that shows once only one part has deployed
+  it (a frontend-only change, or a backend change checked only by calling the backend directly),
+  for pushing a change and checking only the deploy lists or the agent's report, or for opening
+  the live app without pushing anything new; none for taking the agent's word or the Live status.
+  `confirm-gate`: full for pushing a change that makes a test fail together with something visible
+  from each part (such as new text in the page itself and new text the page gets from the backend),
+  and seeing that the live app shows neither, then fixing or reverting it; half for a failing push
+  whose visible change comes from one part only, or for watching only the red check or the deploy
+  lists; none for reading the hosts' settings or asking the agent.
 
   Across the bank, every case is carried, and `no-test-gate` is carried by `tests-beside` at least
   once with Pinecart linked and once with Ropewalk's wait off. A scenario holds four to seven
@@ -287,9 +298,7 @@ task, never the scoring.
   doesn't show they would recognize one (`deploy-config`'s `c-spot-secret` covers that). Vendors
   are made up, with their behavior stated, so a pass says nothing about reading a real host's
   docs to learn whether it can wait for checks. The confirmation questions are answered in words:
-  they don't show the learner carrying the confirmation out. They also pass on a change to the
-  frontend alone, so a pass doesn't show the learner would confirm that the backend's deploy, and
-  Ropewalk's wait for the tests, work too.
+  they don't show the learner carrying the confirmation out.
 - **offer as:** invented plans for one app, one question at a time, about 3 to 5 minutes each,
   nothing to run; works the same alone with the tutor or at a table in class.
 
@@ -307,8 +316,9 @@ task, never the scoring.
   themselves on every push to `main`, without telling it what to watch for. Before the agent does
   anything, says in writing what they would change in the plan, or that they would agree to it as
   it stands. Once a plan they agree to has been carried out, says how they will confirm that a
-  push reaches the live app, does it, then says how they will confirm that a push whose tests fail
-  doesn't go live, and does that.
+  push reaches both the frontend and the backend of the live app, does it, then says how they will
+  confirm that a push whose tests fail goes live in neither, and does that, showing the tutor the
+  live page beside the pushed commit each time (a screenshot or a shared screen).
 - **tutor role:** examiner
 - **tutor does:** reads the plan before the learner answers and writes a key: each fault the plan
   has and its case (`secret-in-repo`, `frontend-secret`, `deploy-token`, `no-test-gate`), or
@@ -322,8 +332,15 @@ task, never the scoring.
   never taken from the agent or from memory. Records one question per case in the key, then the
   two confirmation questions (`confirm-live`, `confirm-gate`) once the plan is carried out. Labels
   each attempt `a-review-own-pipeline-plan/<case>`. Credits each as `a-judge-pipeline-plan`'s
-  generator credits that case. If the learner's agreed plan still has a fault the learner missed,
-  says so after recording, before the agent goes ahead. At a table in class, the instructor or a
+  generator credits that case. Those credit rules are written in Pinecart and Ropewalk terms, so
+  the tutor applies each to the real host feature that does the same job (whatever makes a deploy
+  wait for checks, whatever switches off a host's own deploys, wherever a host keeps its settings),
+  as checked on that host's docs when keying. A real fault in the plan outside the keyed cases
+  (the wrong branch, a CORS setting, a misnamed build variable) is not keyed and not recorded; the
+  tutor mentions it after recording. The tutor can't see the live app, so for each confirmation
+  asks the learner to show the live page beside the pushed commit (a screenshot or a shared
+  screen) and rules on what is shown, not on the learner's report of it. If the learner's agreed
+  plan still has a fault the learner missed, says so after recording, before the agent goes ahead. At a table in class, the instructor or a
   teaching assistant keys and credits it; a tablemate does not.
 - **done when:** the criterion met with no help, case by case, on the cases this plan carries.
 - **generator:** picks rather than invents: the plan is whatever the learner's own agent writes for
@@ -338,9 +355,7 @@ task, never the scoring.
   learner's own.
 - **doesn't show:** it carries only the cases the agent's plan happens to have, and a capable
   agent's plan often has no fault, so this alone rarely shows the learner catching one. It is the
-  one check that shows the confirmations done, not just described, but a confirmation done with a
-  frontend change alone passes, so it may never show the backend's deploy or its wait for the tests
-  confirmed. A plan that already keeps the token in GitHub secrets shows nothing about the token.
+  one check that shows the confirmations done, not just described. A plan that already keeps the token in GitHub secrets shows nothing about the token.
 - **offer as:** your own app and your own agent's real plan, checked as you set the pipeline up;
   slower and less predictable than the invented plans, and the only one where you see it work.
 
@@ -369,24 +384,31 @@ task, never the scoring.
 - **generator:** a scenario is one app shaped like Problem Set 3's (React frontend on Pinecart,
   Express backend on Ropewalk, one GitHub repository), with the pipeline's setup stated in two or
   three sentences in roster terms (which part is linked to `main`, whether Ropewalk waits for
-  checks, whether a workflow runs the tests and deploys the frontend). Then what the learner
-  changed and roughly when, a visible change ("the sign-up button now says Join the club", or a
-  frontend setting saved on Pinecart's Settings page, with whether they pressed Rebuild), and that
-  the live app doesn't show it. One question: "Where would you look first: git's output on
+  checks, whether a workflow runs the tests and deploys the frontend). The setup also quotes, word
+  for word, the parts of the roster at the head of this file that the scenario needs: for Pinecart,
+  always the Settings and build bullet, the CDN bullet and the deploy-list bullet, plus the link
+  bullet or bullets that describe how this pipeline deploys the frontend; for Ropewalk, its bullets
+  whenever they bear on the scenario (its link and wait bullet when the backend deploys the change,
+  its deploy-list bullet when its deploys are evidence). Then what the learner changed and roughly
+  when, a visible change ("the sign-up button now says Join the club", or a frontend setting saved
+  on Pinecart's Settings page), and that the live app doesn't show it. The setup never says whether
+  anything was rebuilt after a setting was saved; Pinecart's deploy times against the setting's
+  save time carry that. One question: "Where would you look first: git's output on
   your machine, the commit's checks on GitHub, a host's deploy list, or the page in the browser?
   You'll be shown what it shows. Keep going until you can say why the change isn't showing and
   what you'd do next." The rubric holds, before the key, the evidence for every place, consistent
   with one cause: `git status`, `git branch --show-current` and `git log --oneline -3` output; the
   latest commits on `main` on GitHub, any open pull request, and the checks on the relevant
-  commit; each host's last two or three deploys from its deploy list; Pinecart's Settings page, with
-  when each setting was saved; and the page under each browser view. True red herrings are allowed
+  commit; each host's last two or three deploys from its deploy list, and beside Pinecart's,
+  its Settings page with when each setting was last saved (shown when the learner asks for
+  Pinecart's deploy list); and the page under each browser view. True red herrings are allowed
   (an older failed deploy, a failed check on an older commit), false ones are not. Shapes, each
   carrying one case:
   - `uncommitted` (Easy; `not-pushed`): `git status` shows the file modified.
   - `unpushed` (Easy; `not-pushed`): committed; `git status` says the branch is ahead of
     `origin/main` by one commit.
-  - `other-branch` (Medium; `not-pushed`): pushed to a branch other than `main`.
-  - `unmerged-pr` (Medium; `not-pushed`): in an open pull request nobody has merged.
+  - `other-branch` (Medium; `not-on-main`): pushed to a branch other than `main`.
+  - `unmerged-pr` (Medium; `not-on-main`): in an open pull request nobody has merged.
   - `red-check` (Easy; `tests-failed`): the commit's check failed, and the deploy that waits on it
     never ran (no Pinecart deploy for the commit, or Ropewalk's list shows it Skipped).
   - `failed-deploy` (Easy; `deploy-failed`): checks passed; the deploy list shows the commit's
@@ -399,12 +421,13 @@ task, never the scoring.
     load, a reload skipping the cache, a private window and another device all show the old page;
     `?v=2` shows the new one.
   - `setting-after-build` (Medium; `old-build-setting`): the change was a frontend setting saved on
-    Pinecart's Settings page, with no push since; the latest Pinecart deploy is older than the save.
-    To keep a setting in the setup from naming this case, some scenarios of other shapes mention a
-    Pinecart setting changed earlier that a later deploy has already picked up, and some scenarios
-    of the `failed-deploy`, `stale-cdn` and `stale-browser` shapes have the change itself be a
-    Pinecart setting followed by a Rebuild, whose deploy then fails, leaves the CDN's copy in
-    place, or is hidden by the browser's old copy.
+    Pinecart's Settings page, with no push or Rebuild since; the latest Pinecart deploy is older
+    than the save. To keep a setting in the setup from naming this case, some scenarios of other
+    shapes mention a Pinecart setting changed earlier that a later deploy has already picked up,
+    and some scenarios of the `failed-deploy`, `stale-cdn` and `stale-browser` shapes have the
+    change itself be a Pinecart setting followed by a Rebuild, shown only as a Pinecart deploy of
+    the same commit timed after the save, whose deploy then fails, leaves the CDN's copy in place,
+    or is hidden by the browser's old copy.
   Credit: full for the case's reason and its next step as the criterion gives them: get the commit
   onto `main` (commit and push, push, merge the branch through a pull request, or merge the open
   pull request); make the tests pass and push; look at the failed deploy (finding the cause is not
@@ -441,10 +464,12 @@ task, never the scoring.
   asked, and records the attempt as helped. At a table in class, each student writes an answer
   before any are read out, and one checks them against the rubric.
 - **done when:** the criterion met with no help: full credit.
-- **generator:** as `a-trace-missing-change`'s generator, with the same app shape, shapes, cases
-  and credit, except for difficulty and except that the evidence is in the task, shown at once in four labeled blocks (git's
-  output, GitHub, the deploy lists, the browser), and the question is "Why isn't the change showing,
-  and what would you do next?". The browser block always shows a normal load and a reload that
+- **generator:** as `a-trace-missing-change`'s generator, with the same app shape, setup (the
+  roster bullets quoted word for word, and nothing said about a Rebuild), shapes, cases and credit,
+  except for difficulty and except that the evidence is in the task, shown at once in four labeled
+  blocks (git's output, GitHub, the deploy lists, the browser), and the question is "Why isn't the change showing,
+  and what would you do next?". The deploy-lists block always holds, beside Pinecart's deploys,
+  its Settings page with when each setting was last saved. The browser block always shows a normal load and a reload that
   skips the cache; in half the `stale-cdn` questions it also shows `?v=2`, and in the other half it
   doesn't, so full credit there needs the learner to propose changing the URL as well as clearing
   the CDN's cache. Difficulty is this activity's own, since the evidence is all shown: Easy for
@@ -555,9 +580,10 @@ task, never the scoring.
   opened from the new repository). Shapes, each carrying one case:
   - `entry-in-app-repo` (Easy; `where-to-push`): the entry is added to the classmate's own app
     repository, and a pull request is opened there.
-  - `new-unrelated-repo` (Medium; `where-to-push`): a push to the original is refused, and the agent
+  - `new-unrelated-repo` (Medium; `where-to-push`): the account states the lack of push access as a
+    fact, not as an attempted step ("I don't have push access to the showcase"), and the agent
     creates a new repository of the classmate's and pushes the change there instead of forking the
-    original.
+    original. No step tries to push to the original.
   - `reversed-pr` (Medium; `pr-direction`): the change is on a branch of the fork, and the pull
     request runs from the original's `main` into that branch.
   - `new-pr-for-fix` (Easy; `failing-check`): the check fails, and the fix goes into a second pull
