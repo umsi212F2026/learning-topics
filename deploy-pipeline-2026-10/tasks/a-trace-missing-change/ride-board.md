@@ -1,9 +1,10 @@
-Bookswap is a site where students at your college trade used textbooks. Its React frontend is in
-the `client` folder of one GitHub repository and its Express backend in the `server` folder. A
-GitHub Actions workflow runs on every push to `main`: it runs the frontend's and the backend's
-tests, and if they pass, it runs Pinecart's deploy command with the Pinecart deploy token, which
-is kept in the repository's GitHub secrets. Pinecart's repository link is off. Ropewalk is linked
-to the repository's `main` branch and its `server` folder, with "Wait for GitHub checks" on.
+Ride Board lets students offer and find rides home for the holidays. Its React frontend is in the
+`client` folder of one GitHub repository and its Express backend in the `server` folder. Pinecart's
+repository link is off, and Ropewalk is linked to the repository's `main` branch and its `server`
+folder with "Auto-deploy: off". A GitHub Actions workflow runs the frontend's and the backend's
+tests on every pull request and on every push to `main`. On a push to `main`, if the tests pass,
+it also runs Pinecart's deploy command with the Pinecart deploy token and then sends a request to
+Ropewalk's deploy hook. The token and the hook's URL are kept in the repository's GitHub secrets.
 
 How the two hosts behave:
 
@@ -30,6 +31,10 @@ How the two hosts behave:
     that branch. Its setting "Wait for GitHub checks", off for a new service, makes it deploy a
     commit only once every check on that commit has passed, and skip the commit if one fails. A
     commit with no checks on it is deployed straight away, as if the setting were off.
+  - Its auto-deploy can be switched off ("Auto-deploy: off"); the service stays linked to its
+    branch.
+  - Each service has a deploy hook: a URL that deploys the latest commit on the linked branch when
+    a request is sent to it, whether auto-deploy is on or off. Anyone who has the URL can trigger a deploy.
   - Its deploy list shows each deploy with its commit, its time and its status: Building, Live,
     Replaced, Failed, or Skipped (checks failed). While auto-deploy is on, every push to its linked
     branch appears on the list, including a push that changes only the frontend, so with "Wait for
@@ -37,10 +42,9 @@ How the two hosts behave:
     Live deploy shows as Replaced once a later deploy goes live, so only one deploy is Live at a
     time. When a deploy fails, the previous one stays live.
 
-On Saturday you changed the backend's address in Pinecart's settings, after moving the backend to
-a new Ropewalk service. Today, at about 2:10 pm, your agent changed the sign-up button's text from
-"Sign up" to "Join the swap" and told you the change was committed and pushed. It is now 3:00 pm,
-and the live site's button still says "Sign up".
+Yesterday, at about 4:00 pm, your agent changed the "Offer a ride" button to say "Offer a seat",
+and told you the change was pushed to GitHub and its tests passed. It is now 10:00 am, and the live
+site's button still says "Offer a ride".
 
 ### q1
 

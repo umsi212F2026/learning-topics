@@ -29,3 +29,15 @@ and says nothing.
   `main`, not who can see the code, which is what making the repository private does. Half for
   "that's what private is for" with nothing on what branch protection does instead. None for a
   different quibble, such as that outsiders can't push anyway.
+
+### q-catch-protection-freezes-main
+
+- **goal:** `w-branch-protection`
+- **move:** CATCH
+- **answer:** Branch protection stops pushes straight to `main`; it doesn't stop `main` changing.
+  Changes still reach it through a pull request from another branch, merged once the rules allow,
+  for example once its checks pass. Turning it off would only let pushes skip that route.
+- **credit:** full for naming the actual error: branch protection blocks pushing straight to
+  `main`, and changes still get in through a merged pull request. Half for "use a pull request"
+  with nothing on protection only stopping direct pushes. None for a different quibble, such as
+  that an admin could change the rules, or that the rules take time to set up.

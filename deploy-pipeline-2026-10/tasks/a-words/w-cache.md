@@ -17,3 +17,12 @@ A student says:
 take the site down until we deploy again."
 
 What is wrong with what they said?
+
+### q-catch-cache-only-in-browser
+
+A student says:
+
+"A cache is something each visitor's browser keeps for itself. So after a deploy, anyone opening
+our site for the first time always gets the new version."
+
+What is wrong with what they said?

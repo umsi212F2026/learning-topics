@@ -19,3 +19,12 @@ A student says:
 frontend setting on Pinecart now, the next person who opens the site gets the new value."
 
 What is wrong with what they said?
+
+### q-catch-build-time-secret-safe
+
+A student says:
+
+"It's safe to put our API key in a frontend setting. The value is only used at build time, on the
+host, so it never reaches visitors' browsers."
+
+What is wrong with what they said?

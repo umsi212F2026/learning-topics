@@ -1,9 +1,10 @@
-Bookswap is a site where students at your college trade used textbooks. Its React frontend is in
-the `client` folder of one GitHub repository and its Express backend in the `server` folder. A
-GitHub Actions workflow runs on every push to `main`: it runs the frontend's and the backend's
-tests, and if they pass, it runs Pinecart's deploy command with the Pinecart deploy token, which
-is kept in the repository's GitHub secrets. Pinecart's repository link is off. Ropewalk is linked
-to the repository's `main` branch and its `server` folder, with "Wait for GitHub checks" on.
+Pantry Hours shows when your campus food pantry is open and what it has in stock. Its React
+frontend is in the `client` folder of one GitHub repository and its Express backend in the `server`
+folder. A GitHub Actions workflow runs on every push to `main`: it runs the frontend's and the
+backend's tests, and if they pass, it runs Pinecart's deploy command with the Pinecart deploy
+token, which is kept in the repository's GitHub secrets. Pinecart's repository link is off.
+Ropewalk is linked to the repository's `main` branch and its `server` folder, with "Wait for GitHub
+checks" on.
 
 How the two hosts behave:
 
@@ -37,10 +38,10 @@ How the two hosts behave:
     Live deploy shows as Replaced once a later deploy goes live, so only one deploy is Live at a
     time. When a deploy fails, the previous one stays live.
 
-On Saturday you changed the backend's address in Pinecart's settings, after moving the backend to
-a new Ropewalk service. Today, at about 2:10 pm, your agent changed the sign-up button's text from
-"Sign up" to "Join the swap" and told you the change was committed and pushed. It is now 3:00 pm,
-and the live site's button still says "Sign up".
+The opening-hours notice at the top of every page comes from a frontend setting,
+`VITE_HOURS_NOTICE`, on Pinecart's Settings page. This morning, at about 9:30, you changed it from
+"Open Mon to Thu, 10 am to 4 pm" to "Open Mon to Fri, 10 am to 4 pm". It is now 11:15 am, and the
+live site's notice still says "Open Mon to Thu".
 
 ### q1
 

@@ -25,3 +25,15 @@ What it names: sending your commits from your machine up to GitHub. Nearest conf
   cannot have been pushed and is not on GitHub. Half for "you have to commit before you push" with
   nothing on a push being what carries commits. None for a different quibble, such as that they
   should test it before pushing, or that they should commit more often.
+
+### q-catch-push-reaches-partner
+
+- **goal:** `w-push`
+- **move:** CATCH
+- **answer:** A push sends commits from their machine up to GitHub, and no further. The fix is on
+  GitHub now, but nothing arrives on the partner's laptop until the partner pulls it down from
+  GitHub.
+- **credit:** full for naming the actual error: a push sends commits to GitHub only, so the partner
+  has the fix once they pull it from there. Half for "your partner has to pull" with nothing on
+  the push going to GitHub and stopping there. None for a different quibble, such as that the fix
+  should be tested first or put on a branch.

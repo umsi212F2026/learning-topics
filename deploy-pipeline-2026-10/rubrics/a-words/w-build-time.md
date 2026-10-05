@@ -32,3 +32,16 @@ runtime.
   misspelled.
 - **tutor note:** a learner who raises the CDN has named something real that is not this
   sentence's error; ask what the new visitor would get even with the CDN's copy cleared.
+
+### q-catch-build-time-secret-safe
+
+- **goal:** `w-build-time`
+- **move:** CATCH
+- **answer:** Being used at build time is exactly what puts the key in front of visitors. The
+  build fixes the setting's value into the frontend's files, and those files are what every
+  visitor's browser downloads, so anyone can read the key there. A secret belongs on the backend.
+- **credit:** full for naming the actual error: at build time the value is copied into the
+  frontend's files, which every browser downloads, so the key is readable by any visitor. Half
+  for "frontend settings aren't secret" with nothing on the build putting the value into the
+  downloaded files. None for a different quibble, such as that the key might change and need a
+  rebuild, or that the key should have a clearer name.

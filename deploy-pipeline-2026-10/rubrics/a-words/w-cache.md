@@ -27,3 +27,16 @@ again. Nearest confusable: a backup.
   nothing and the pages are fetched again from the deployed site. Half for "the site won't go
   down" with nothing on the cache being only a copy. None for a different quibble, such as that
   the first visitors after clearing get a slower page.
+
+### q-catch-cache-only-in-browser
+
+- **goal:** `w-cache`
+- **move:** CATCH
+- **answer:** A cache isn't only in the visitor's browser; one can sit on the way to it, such as
+  a host's CDN, which keeps copies of pages and hands them to every visitor who asks. A first-time
+  visitor has no copy of their own, but a CDN on the way can still hand them the old version
+  until its copy is cleared or expires.
+- **credit:** full for naming the actual error: caches also sit between the site and the browser,
+  such as a CDN shared by every visitor, so a first-time visitor can still get an old copy. Half
+  for "they might still see the old version" with nothing on a cache outside their browser. None
+  for a different quibble, such as that the deploy might not have finished or might have failed.

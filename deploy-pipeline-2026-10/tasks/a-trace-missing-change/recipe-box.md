@@ -1,4 +1,4 @@
-Bookswap is a site where students at your college trade used textbooks. Its React frontend is in
+Recipe Box lets the members of your cooking club save and share recipes. Its React frontend is in
 the `client` folder of one GitHub repository and its Express backend in the `server` folder. A
 GitHub Actions workflow runs on every push to `main`: it runs the frontend's and the backend's
 tests, and if they pass, it runs Pinecart's deploy command with the Pinecart deploy token, which
@@ -37,10 +37,10 @@ How the two hosts behave:
     Live deploy shows as Replaced once a later deploy goes live, so only one deploy is Live at a
     time. When a deploy fails, the previous one stays live.
 
-On Saturday you changed the backend's address in Pinecart's settings, after moving the backend to
-a new Ropewalk service. Today, at about 2:10 pm, your agent changed the sign-up button's text from
-"Sign up" to "Join the swap" and told you the change was committed and pushed. It is now 3:00 pm,
-and the live site's button still says "Sign up".
+Two weeks ago you changed the club name shown in the page header, on Pinecart's Settings page.
+Today, at about 1:45 pm, your agent made the photo on each recipe's page twice as large, and told
+you the change was committed and pushed to GitHub. It is now 3:30 pm, and the photos on the live
+site are still the old, small size.
 
 ### q1
 

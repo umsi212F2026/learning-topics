@@ -47,3 +47,17 @@ auto-deploy.
   quibble, such as that the tests might take a long time, or that Actions has a monthly limit.
 - **tutor note:** a learner may say GitHub offers ready-made workflows to pick from. That is right,
   and picking one adds a file to the repository; ask where the steps it runs are written down.
+
+### q-catch-actions-on-laptop
+
+- **goal:** `w-github-actions`
+- **move:** CATCH
+- **answer:** GitHub Actions jobs run on GitHub's own machines, set off by the push to the
+  repository. Once the push has reached GitHub, the student's laptop plays no part, so they can
+  close it; the result appears on GitHub either way.
+- **credit:** full for naming the actual error: GitHub runs the jobs on its own machines when the
+  repository changes, so their computer is not needed once the push is done. Half for "you can
+  close it" with nothing on where the jobs run. None for a different quibble, such as that the
+  tests might be slow, or that they should run the tests themselves before pushing.
+- **tutor note:** a learner may know that a team can register its own machine to run jobs. That
+  is true and is set up on purpose; ask where a workflow's jobs run when nobody has done that.

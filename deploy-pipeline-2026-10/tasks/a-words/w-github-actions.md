@@ -18,3 +18,12 @@ A student says:
 every time I push."
 
 What is wrong with what they said?
+
+### q-catch-actions-on-laptop
+
+A student says:
+
+"After I push, I have to leave my laptop open until the tests finish, because GitHub Actions runs
+them on my computer."
+
+What is wrong with what they said?

@@ -14,3 +14,11 @@ A student says:
 later this week, once I'm sure it works."
 
 What is wrong with what they said?
+
+### q-catch-push-reaches-partner
+
+A student says:
+
+"I've committed my fix and pushed it, so it's on my partner's laptop now and they can run it."
+
+What is wrong with what they said?

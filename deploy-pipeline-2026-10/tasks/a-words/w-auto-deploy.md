@@ -14,3 +14,12 @@ A student says:
 host picks up the change and redeploys my app."
 
 What is wrong with what they said?
+
+### q-catch-auto-deploy-runs-tests
+
+A student says:
+
+"Auto-deploy only puts a commit live once the host has checked that its tests pass, so a broken
+commit can't reach the live app."
+
+What is wrong with what they said?

@@ -32,3 +32,20 @@ thing again and says nothing.
   Half for "you still have to push" with nothing on what auto-deploy responds to. None for a
   different quibble, such as that redeploying on every save would be too often, or that the tests
   should run first.
+
+### q-catch-auto-deploy-runs-tests
+
+- **goal:** `w-auto-deploy`
+- **move:** CATCH
+- **answer:** Auto-deploy runs no tests. It redeploys the app whenever the repository changes, on
+  every push to the linked branch, broken or not. Holding a deploy back until the tests pass is a
+  separate arrangement, such as a host setting that waits for GitHub checks, or a workflow that
+  runs the tests and then deploys; without one, a broken commit goes live like any other.
+- **credit:** full for naming the actual error: auto-deploy redeploys on every change without
+  testing anything, so waiting for the tests has to be set up separately. Half for "it deploys
+  broken commits too" with nothing on waiting for tests being a separate arrangement, or the
+  reverse. None for a different quibble, such as that the tests might not catch every bug, or
+  that a deploy can fail for other reasons.
+- **tutor note:** a learner may say some hosts can wait for GitHub checks. That is right, and it
+  is a setting beside auto-deploy, not what auto-deploy is; ask what such a host does with a
+  failing commit while that setting is off.

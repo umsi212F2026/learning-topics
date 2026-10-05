@@ -35,9 +35,11 @@ What the two hosts do:
     commit only once every check on that commit has passed, and skip the commit if one fails. A
     commit with no checks on it is deployed straight away, as if the setting were off.
   - Its deploy list shows each deploy with its commit, its time and its status: Building, Live,
-    Replaced, Failed, or Skipped (checks failed). A Live deploy shows as Replaced once a later
-    deploy goes live, so only one deploy is Live at a time. When a deploy fails, the previous one
-    stays live.
+    Replaced, Failed, or Skipped (checks failed). While auto-deploy is on, every push to its linked
+    branch appears on the list, including a push that changes only the frontend, so with "Wait for
+    GitHub checks" on, a frontend-only commit whose checks fail shows as Skipped (checks failed). A
+    Live deploy shows as Replaced once a later deploy goes live, so only one deploy is Live at a
+    time. When a deploy fails, the previous one stays live.
 
 The live app is at `https://swapshelf.pinecart.app`.
 

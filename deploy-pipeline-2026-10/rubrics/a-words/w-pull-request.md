@@ -43,3 +43,16 @@ one names the thing again and says nothing.
   is not on `main`, and not deployed, until the pull request is merged. Half for "it has to be
   merged first" with nothing on `main` staying unchanged until then. None for a different quibble,
   such as that the checks might fail or that they should wait for the deploy to finish.
+
+### q-catch-new-pull-request-for-fix
+
+- **goal:** `w-pull-request`
+- **move:** CATCH
+- **answer:** A pull request asks for a branch to be merged, and it follows that branch. Pushing
+  the fix to `fix-footer` adds it to the open pull request, and its checks run again on the new
+  commit. There is no need to close it and open another.
+- **credit:** full for naming the actual error: a pull request is for a branch, not a frozen set of
+  commits, so pushing the fix to the same branch updates it and the checks run again. Half for
+  "just push to the same branch" with nothing on the pull request taking in what is pushed to its
+  branch. None for a different quibble, such as that the check might be wrong, or that they
+  should ask a reviewer first.

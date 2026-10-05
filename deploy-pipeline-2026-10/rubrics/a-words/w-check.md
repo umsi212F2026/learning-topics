@@ -33,3 +33,17 @@ nothing.
 - **tutor note:** a learner may say some hosts report their deploys back to GitHub as a check.
   That is true of some hosts and not of Pinecart or Ropewalk in this topic; ask what this tick, on
   its own, could be the result of.
+
+### q-catch-failed-check-rejects-push
+
+- **goal:** `w-check`
+- **move:** CATCH
+- **answer:** The push succeeded: the commit is on GitHub, on `fix-footer`, and the check is a
+  result GitHub shows beside it, from a job that ran on it after it arrived. A failing check
+  reports that the job failed, such as the tests; it doesn't undo the push. They fix the code and
+  push a new commit, which gets checks of its own.
+- **credit:** full for naming the actual error: a check is a result shown beside a commit that is
+  already on GitHub, so a failed one leaves the commit there and only reports the failure. Half
+  for "the commit is on GitHub" with nothing on the check being a result reported about it. None
+  for a different quibble, such as that they should run the tests before pushing, or that the
+  check might be flaky.

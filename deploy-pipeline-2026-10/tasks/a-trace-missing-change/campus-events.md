@@ -1,17 +1,14 @@
-Bookswap is a site where students at your college trade used textbooks. Its React frontend is in
-the `client` folder of one GitHub repository and its Express backend in the `server` folder. A
-GitHub Actions workflow runs on every push to `main`: it runs the frontend's and the backend's
-tests, and if they pass, it runs Pinecart's deploy command with the Pinecart deploy token, which
-is kept in the repository's GitHub secrets. Pinecart's repository link is off. Ropewalk is linked
-to the repository's `main` branch and its `server` folder, with "Wait for GitHub checks" on.
+Campus Events lists what's on at your college this week. Its React frontend is in the `client`
+folder of one GitHub repository and its Express backend in the `server` folder. Pinecart is linked
+to the repository's `main` branch and its `client` folder. Ropewalk is linked to `main` and the
+`server` folder, with "Wait for GitHub checks" on, and a GitHub Actions workflow runs the
+frontend's and the backend's tests on every push to `main`.
 
 How the two hosts behave:
 
 - **Pinecart** hosts a built frontend and serves it through its CDN.
-  - Its repository link can be switched off. A deploy then happens only when Pinecart's deploy
-    command runs with a Pinecart deploy token, for example as a step in a GitHub Actions workflow.
-    Anyone who holds the token can deploy to the site. The deploy command builds the frontend on
-    Pinecart from the pushed commit, using the site's settings, then deploys it.
+  - Linked to a GitHub repository, a branch and a folder, it builds and deploys the frontend on
+    every push to that branch. It cannot wait for GitHub checks.
   - Frontend settings are entered on the site's Settings page, which shows when each setting was
     last saved. A build copies their values into the files it produces, which every visitor's
     browser downloads, so a setting changed after a build has no effect until the next build. The
@@ -37,10 +34,10 @@ How the two hosts behave:
     Live deploy shows as Replaced once a later deploy goes live, so only one deploy is Live at a
     time. When a deploy fails, the previous one stays live.
 
-On Saturday you changed the backend's address in Pinecart's settings, after moving the backend to
-a new Ropewalk service. Today, at about 2:10 pm, your agent changed the sign-up button's text from
-"Sign up" to "Join the swap" and told you the change was committed and pushed. It is now 3:00 pm,
-and the live site's button still says "Sign up".
+Last week you changed how dates are written on the site, through a setting on Pinecart's Settings
+page. Today, at about 8:15 am, your agent changed the "Add an event" button to say "Post an
+event", and told you the change was committed and pushed. It is now 9:30 am, and the live site's
+button still says "Add an event".
 
 ### q1
 

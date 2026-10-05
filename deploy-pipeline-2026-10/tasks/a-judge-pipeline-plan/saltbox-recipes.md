@@ -1,13 +1,15 @@
 Answer each question in two to four sentences.
 
-Ridgeline is a climbing club's sign-up sheet. Members pick a weekend trip, add their name, and see
-a map of where the trip meets. The React frontend is in `client/` and the Express backend in
-`server/`, both in one GitHub repository, `ridgeline-club/signup`, and each folder has tests that
-`npm test` runs. The database is on a database host outside this plan.
+Saltbox is a shared recipe box for a group of housemates. They save recipes, plan the week's
+meals, and press "Suggest a swap" to have an AI service propose a substitute for an ingredient
+they don't have. The React frontend is in `client/` and the Express backend in `server/`, both in
+one GitHub repository, `jo-okafor/saltbox`, and each folder has tests that `npm test` runs. The
+database is on a database host outside this plan.
 
-The backend reads the database's connection string, `DATABASE_URL`, and the maps service's key,
-`MAPS_KEY`. The frontend reads the backend's address, `VITE_API_URL`. Secrets: the database's
-connection string, the maps service's key, and the Pinecart deploy token.
+The backend reads the database's connection string, `RECIPES_DB_URL`, and the AI service's key,
+`SWAP_AI_KEY`. The frontend reads the backend's address, `VITE_BACKEND_URL`. Secrets: the
+database's connection string, the AI service's key, the Pinecart deploy token, and Ropewalk's
+deploy hook URL.
 
 The frontend is hosted on Pinecart and the backend on Ropewalk. This is how they behave:
 
@@ -31,6 +33,10 @@ The frontend is hosted on Pinecart and the backend on Ropewalk. This is how they
     that branch. Its setting "Wait for GitHub checks", off for a new service, makes it deploy a
     commit only once every check on that commit has passed, and skip the commit if one fails. A
     commit with no checks on it is deployed straight away, as if the setting were off.
+  - Its auto-deploy can be switched off ("Auto-deploy: off"); the service stays linked to its
+    branch.
+  - Each service has a deploy hook: a URL that deploys the latest commit on the linked branch when
+    a request is sent to it, whether auto-deploy is on or off. Anyone who has the URL can trigger a deploy.
   - Settings (environment variables) entered on the service's Settings page reach the running
     server and never the browser. Saving one restarts the server with the new value.
   - Its deploy list shows each deploy with its commit, its time and its status: Building, Live,
@@ -40,9 +46,9 @@ The frontend is hosted on Pinecart and the backend on Ropewalk. This is how they
     Live deploy shows as Replaced once a later deploy goes live, so only one deploy is Live at a
     time. When a deploy fails, the previous one stays live.
 
-You asked an agent to make Ridgeline deploy itself, frontend and backend, whenever `main` is
-pushed to GitHub. It proposed each plan below in a different session. Each question is about its
-own plan alone.
+You asked an agent to make Saltbox deploy itself, frontend and backend, whenever `main` is pushed
+to GitHub. It proposed each plan below in a different session. Each question is about its own plan
+alone.
 
 ### q1
 
@@ -50,16 +56,15 @@ The agent proposes:
 
 1. I'll add a GitHub Actions workflow that runs on every push to `main`. It runs `npm test` in
    `client/` and in `server/`, and once both pass, it runs Pinecart's deploy command to deploy
-   the frontend.
-2. I'll switch off Pinecart's repository link, so the workflow is the only way the frontend
-   deploys.
-3. I'll link Ropewalk to `ridgeline-club/signup`, branch `main`, folder `server/`, and turn on
-   "Wait for GitHub checks".
-4. I'll enter `DATABASE_URL` and `MAPS_KEY` on Ropewalk's Settings page, and `VITE_API_URL` on
-   Pinecart's Settings page.
-5. In `server/db.js` I'll write the connection string in as a fallback,
-   `process.env.DATABASE_URL || "postgres://ridgeline:...@db.example.net/signup"`, so the server
-   still starts if the setting is ever missing.
+   the frontend. I'll switch off Pinecart's repository link.
+2. I'll link Ropewalk to `jo-okafor/saltbox`, branch `main`, folder `server/`, and turn on "Wait
+   for GitHub checks".
+3. I'll enter `RECIPES_DB_URL` and `SWAP_AI_KEY` on Ropewalk's Settings page, and
+   `VITE_BACKEND_URL` on Pinecart's Settings page.
+4. For running the app on your own machine, I'll put `RECIPES_DB_URL` and `SWAP_AI_KEY` in
+   `server/.env`.
+5. I'll add a `.gitignore` at the top of the repository listing `node_modules`, so the installed
+   packages stay out of git and everything else in the project is committed.
 
 Would you agree to this plan as it stands? If not, say what you would change before agreeing.
 
@@ -67,15 +72,16 @@ Would you agree to this plan as it stands? If not, say what you would change bef
 
 The agent proposes:
 
-1. I'll add a GitHub Actions workflow that runs on every push to `main`. It runs `npm test` in
-   `client/` and in `server/`, and once both pass, it runs Pinecart's deploy command to deploy
-   the frontend. I'll switch off Pinecart's repository link.
-2. I'll link Ropewalk to `ridgeline-club/signup`, branch `main`, folder `server/`, and turn on
-   "Wait for GitHub checks".
-3. I'll enter `DATABASE_URL` on Ropewalk's Settings page.
-4. On Pinecart's Settings page I'll enter `VITE_API_URL`, the backend's address, and
-   `VITE_MAPS_KEY`, the maps service's key, so the map on the trip page can call the maps service
-   straight from the browser without a round trip through the server.
+1. I'll link Ropewalk to `jo-okafor/saltbox`, branch `main`, folder `server/`, and set
+   "Auto-deploy: off".
+2. I'll switch off Pinecart's repository link.
+3. I'll add a GitHub Actions workflow that runs on every push to `main`. It runs `npm test` in
+   `client/` and in `server/`, and once both pass, it runs Pinecart's deploy command to deploy the
+   frontend and sends a request to Ropewalk's deploy hook to deploy the backend.
+4. I'll enter `RECIPES_DB_URL` on Ropewalk's Settings page.
+5. On Pinecart's Settings page I'll enter `VITE_BACKEND_URL`, the backend's address, and
+   `VITE_SWAP_AI_KEY`, the AI service's key, so the "Suggest a swap" button can ask the AI service
+   straight from the browser and answer faster.
 
 Would you agree to this plan as it stands? If not, say what you would change before agreeing.
 
@@ -83,13 +89,13 @@ Would you agree to this plan as it stands? If not, say what you would change bef
 
 The agent proposes:
 
-1. I'll link Pinecart to `ridgeline-club/signup`, branch `main`, folder `client/`.
-2. I'll link Ropewalk to `ridgeline-club/signup`, branch `main`, folder `server/`, keeping its
-   other settings as they are.
-3. I'll enter `DATABASE_URL` and `MAPS_KEY` on Ropewalk's Settings page, and `VITE_API_URL` on
-   Pinecart's Settings page.
-4. From then on, every push to `main` deploys both parts within a few minutes, with nothing extra
-   to maintain.
+1. I'll link Pinecart to `jo-okafor/saltbox`, branch `main`, folder `client/`.
+2. I'll link Ropewalk to `jo-okafor/saltbox`, branch `main`, folder `server/`, and turn on "Wait
+   for GitHub checks".
+3. I'll enter `RECIPES_DB_URL` and `SWAP_AI_KEY` on Ropewalk's Settings page, and
+   `VITE_BACKEND_URL` on Pinecart's Settings page.
+4. I'll add a GitHub Actions workflow that runs `npm test` in `client/` and in `server/` on every
+   push to `main`, so CI will check every push.
 
 Would you agree to this plan as it stands? If not, say what you would change before agreeing.
 
@@ -97,16 +103,16 @@ Would you agree to this plan as it stands? If not, say what you would change bef
 
 The agent proposes:
 
-1. I'll add `.env` to `.gitignore`, beside `node_modules`.
-2. For running the app on your own machine, I'll put `DATABASE_URL` and `MAPS_KEY` in
-   `server/.env`.
-3. I'll enter `DATABASE_URL` and `MAPS_KEY` on Ropewalk's Settings page, and link Ropewalk to
-   `ridgeline-club/signup`, branch `main`, folder `server/`, with "Wait for GitHub checks" on.
-4. I'll enter `VITE_API_URL`, the backend's address, on Pinecart's Settings page, and switch off
-   Pinecart's repository link.
+1. I'll add `.env` to `.gitignore`, beside `node_modules`, and put `RECIPES_DB_URL` and
+   `SWAP_AI_KEY` in `server/.env` for running the app on your own machine.
+2. I'll enter `RECIPES_DB_URL` and `SWAP_AI_KEY` on Ropewalk's Settings page.
+3. I'll link Ropewalk to `jo-okafor/saltbox`, branch `main`, folder `server/`, and set
+   "Auto-deploy: off".
+4. I'll enter `VITE_BACKEND_URL`, the backend's address, on Pinecart's Settings page, and switch
+   off Pinecart's repository link.
 5. I'll add a GitHub Actions workflow that runs on every push to `main`. It runs `npm test` in
-   `client/` and in `server/`, and once both pass, it runs Pinecart's deploy command to deploy
-   the frontend.
+   `client/` and in `server/`, and once both pass, it runs Pinecart's deploy command to deploy the
+   frontend and sends a request to Ropewalk's deploy hook to deploy the backend.
 
 I'll need a Pinecart deploy token for the workflow. Where should I keep it?
 
