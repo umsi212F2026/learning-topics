@@ -274,9 +274,10 @@ comes in session 13, and watching the logs of an app that is already live in ses
 - **goal:** connect my coding agent to my host so it can read the deployed app's logs
 - **criterion:** With their own app deployed, connects their coding agent to the host through the
   host's CLI or MCP server, makes a request to the deployed app, and has the agent show the server
-  log lines that request produced. It passes when the lines come from the deployed app rather than
-  from localhost, and no token or password went through the chat to make the connection. Having the
-  agent change the host's settings is not part of it.
+  log lines that request produced, and the latest deploy's status and build log. It passes when all
+  three come from the deployed app rather than from localhost, and no token or password went
+  through the chat to make the connection. Having the agent change the host's settings is not part
+  of it.
 - **taught elsewhere:** session 12 lab
 
 ### `c-locate-failure`
