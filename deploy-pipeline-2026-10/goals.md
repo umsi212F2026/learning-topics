@@ -52,9 +52,13 @@
 
 ## Where this came from
 
+_Yours to fill in. Nobody can answer this one for you._
+
 <!-- Which of A / B / C / D, and the answer to the follow-up. -->
 
 ## What I already have
+
+_Yours to fill in. Say where your knowledge stops, not what you have heard of._
 
 <!--
   The nearest thing already known well, and where it stops.
@@ -64,6 +68,10 @@
 
 ## What I'll use it for
 
+_Yours to fill in. The course supplies one occasion: Problem Set 3, where your app deploys itself
+each time you push, and which ends with a pull request adding your app to the class showcase. Name
+any others you have._
+
 <!--
   The use, and a concrete occasion.
   If several uses apply, rank them: the top one sets the depth, the rest are cut first
@@ -71,6 +79,16 @@
 -->
 
 ## Depth
+
+**Get your app deploying itself with your agent, and know why a change isn't showing up.** Not
+writing the pipeline's configuration yourself, and not finding out why a failed deploy failed.
+Your agent can connect your repository to your hosts so that each push to `main` redeploys the
+app. This topic is enough to catch a setup that would put a secret where it can leak or deploy
+without running your tests, to confirm the pipeline really works, to tell why a change you made
+isn't in the live app yet, and to get your app into the class showcase through a pull request.
+
+What sits past that line: reading a failed deploy's logs to find the cause belongs to
+debug-deployed, and what to do about a secret that has already leaked to session 13.
 
 <!--
   Which of: recognize it / read it / modify something existing / author from scratch /
@@ -247,6 +265,76 @@
   placeholder capability entry; an empty section is the honest signal.
 -->
 
+### `c-set-up-auto-deploy`
+
+- **goal:** work with an agent to make an app deploy itself on each push, and confirm that it
+  does
+- **criterion:** Given an agent's plan for making an app's frontend and backend deploy themselves
+  whenever `main` is pushed to GitHub, says what they would change before agreeing to it, and how
+  they would confirm afterwards that it works. It passes when they catch a plan that would put a
+  secret into the repository, such as a value written into the code or a `.env` file that git
+  will commit; catch a plan that puts a secret into a frontend setting, which the build copies
+  into files every visitor's browser downloads; go along with a plan that keeps secrets in the
+  backend host's settings and keeps a local `.env` file that `.gitignore` covers; for a plan that
+  deploys through GitHub Actions, put the host's deploy token in the repository's GitHub secrets
+  rather than in the workflow file; catch a plan whose deploy doesn't wait for the app's tests to
+  pass, including one that runs them in GitHub Actions while the host deploys every push on its
+  own, and ask for the deploy to wait; and would confirm the pipeline by pushing a small visible
+  change and seeing it in the live app, not by taking the agent's word or the host's "deployed"
+  message for it, and by pushing a change with a failing test and seeing that it doesn't go live.
+- **cases:**
+  - `secret-in-repo`: a plan that would put a secret into the repository
+  - `frontend-secret`: a plan that would put a secret into a frontend setting
+  - `sound-plan`: a plan that keeps secrets in the backend host's settings, with a local `.env`
+    file that `.gitignore` covers
+  - `deploy-token`: a plan that deploys through GitHub Actions with a token from the host
+  - `no-test-gate`: a plan whose deploy doesn't wait for the tests, including one that runs them
+    in GitHub Actions while the host deploys every push on its own
+  - `confirm-live`: how they would confirm that a push reaches the live app
+  - `confirm-gate`: how they would confirm that a push with a failing test doesn't
+- **taught elsewhere:** session 12 lab
+
+### `c-find-missing-change`
+
+- **goal:** find out why a change doesn't show up in the live app
+- **criterion:** Given an app that deploys itself from `main` and a change that the live app
+  doesn't show, says what they would look at first (git's output, the commit's checks on GitHub,
+  the host's list of deploys, or the page in the browser), is shown it, and goes on until they
+  can say why and what to do next. It passes when they name the right reason: the change
+  never reached `main` on GitHub (not committed, not pushed, pushed to another branch, or waiting
+  in a pull request nobody has merged), so get it there; the tests failed, so the host never
+  deployed it, and the tests have to pass first; the deploy failed and the old version is still
+  live, so look at that deploy; the browser is showing its own old copy, so reload without its
+  cache; or the host's CDN is serving an old copy, so ask for a fresh one by changing the URL, such as adding `?v=2`, to see whether
+  the new version is there, and clear the CDN's cache so that every visitor gets it; or a
+  frontend setting was changed on the host after the last build, so the frontend has to be built
+  again before it takes effect. Finding out why a deploy failed is not part of it.
+- **cases:**
+  - `not-pushed`: the change never reached `main` on GitHub
+  - `tests-failed`: the tests failed, so the host never deployed the change
+  - `deploy-failed`: the deploy failed and the old version is still live
+  - `browser-cache`: the browser is showing its own old copy
+  - `cdn-cache`: the host's CDN is serving an old copy
+  - `old-build-setting`: a frontend setting changed on the host since the last build
+- **taught elsewhere:** session 12 class
+
+### `c-showcase-pr`
+
+- **goal:** get a change into a repository I can't push to, through a pull request
+- **criterion:** Given a repository they can't push to, such as the class showcase, and a change
+  to make in it, says how the change gets there with their agent's help: copy the repository
+  into their own account, make the change on a branch of that copy, push it, and open a pull
+  request from that branch into the original repository; and, once it is open, says what to do
+  when one of its checks fails. It passes when they put the change in their own copy, not in
+  the original or in their app's repository; open the pull request from their copy's branch
+  into the original, not the other way round; and fix a failing check by pushing to the same
+  branch, not by opening a new pull request.
+- **cases:**
+  - `where-to-push`: where the change goes before there is a pull request
+  - `pr-direction`: which repository and branch the pull request goes from and into
+  - `failing-check`: a check fails on their open pull request
+- **taught elsewhere:** session 13 lab
+
 ### `o-orientation`
 
 - **goal:** get the shape of this area before working on any particular part of it
@@ -256,3 +344,137 @@
 - **recurrence:** never
 - **is_required:** no
 - **group:** orientation
+
+### `w-auto-deploy`
+
+- **goal:** auto-deploy
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a host redeploying the app by itself whenever the repository changes
+- **nearest confusable:** redeploy
+- **synonyms:** continuous deployment, CD
+
+### `w-push`
+
+- **goal:** push
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** sending your commits from your machine up to GitHub
+- **nearest confusable:** commit
+
+### `w-branch`
+
+- **goal:** branch
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a separate line of commits that can grow without changing main
+- **nearest confusable:** a fork
+
+### `w-pull-request`
+
+- **goal:** pull request
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** asking, on GitHub, for one branch to be merged into another, where it can be looked at first
+- **nearest confusable:** merge; push
+- **synonyms:** PR, merge request
+
+### `w-branch-protection`
+
+- **goal:** branch protection
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** GitHub rules that stop anyone pushing straight to a branch such as main
+- **nearest confusable:** a private repository
+- **synonyms:** ruleset
+
+### `w-github-actions`
+
+- **goal:** GitHub Actions
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** GitHub running jobs described in a file in the repository when something happens to it
+- **nearest confusable:** the course's skill file for updating course repos; auto-deploy
+
+### `w-env-file`
+
+- **goal:** .env file
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a file of named values your app reads on your own machine
+- **nearest confusable:** the host's environment variables
+- **synonyms:** dotenv file
+
+### `w-gitignore`
+
+- **goal:** .gitignore
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the list of files git leaves out of every commit
+- **nearest confusable:** removing a file from the repository
+
+### `w-build-time`
+
+- **goal:** build time
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the moment a value gets fixed into the frontend's files
+- **nearest confusable:** runtime
+
+### `w-cache`
+
+- **goal:** cache
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a saved copy, in the browser or on the way to it, kept so it need not be
+  fetched again
+- **nearest confusable:** a backup
+
+### `w-cache-invalidation`
+
+- **goal:** cache invalidation
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** making a cache stop handing out its old copy
+- **nearest confusable:** reloading the page; redeploy
+- **synonyms:** purge, cache busting
+
+### `w-ci`
+
+- **goal:** CI
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** running the tests automatically on every push, before anything goes further
+- **nearest confusable:** auto-deploy; a test suite
+- **synonyms:** continuous integration
+
+### `w-check`
+
+- **goal:** check
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a pass or fail result GitHub shows beside a commit or pull request
+- **nearest confusable:** a test
+- **synonyms:** status check
+
+### `w-fork`
+
+- **goal:** fork
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** your own copy, on GitHub, of a repository someone else owns
+- **nearest confusable:** a clone
