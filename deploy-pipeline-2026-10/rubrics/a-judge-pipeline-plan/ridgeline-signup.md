@@ -74,15 +74,16 @@ setting, or stop a deploy waiting for the tests.
   `server/.env` that `.gitignore` covers, Pinecart holds only the backend's address, and both
   parts wait for the tests. Tell the agent to keep the token in the repository's GitHub secrets
   (Actions secrets), where the workflow reads it, not in the workflow file.
-- **credit:** credited per case.
+- **credit:** one ruling for the question: full only when the answer meets what each case below
+  asks for full, half when it meets at least half on each but not full on both, and none
+  otherwise.
   - `sound-plan`: full for agreeing, with or without harmless remarks. None for asking to change a
     sound step into a faulty one, or for refusing it on a wrong ground (such as "the `.env` file
     shouldn't exist at all", or "`VITE_API_URL` is a secret").
   - `deploy-token`: full for the repository's GitHub secrets (Actions secrets), read by the
     workflow. Half for "somewhere secret, not in the file" with no place named. None for the
     workflow file, a `.env` file, a Pinecart setting, or the chat.
-  A wrong place for the token loses `deploy-token` only and leaves `sound-plan` as the rest of the
-  answer earns it.
+  So a wrong place for the token fails the question however the plan itself is judged.
 - **tutor note:** if they put the token in `server/.env` because that is where the other secrets
   went, ask whether the workflow, running on GitHub, can read a file that `.gitignore` keeps out
   of the repository.
@@ -96,7 +97,9 @@ setting, or stop a deploy waiting for the tests.
   live app in the browser to see the new text there. Then push a change that makes a test fail,
   along with something visible from each part (new text in the page itself and new text the page
   gets from the backend), see that the live app shows neither, and then fix or revert it.
-- **credit:** credited per case; the answer may cover the two in either order.
+- **credit:** one ruling for the question: full only when the answer meets what each case below
+  asks for full, half when it meets at least half on each but not full on both, and none
+  otherwise. The answer may cover the two in either order.
   - `confirm-live`: full for pushing a small change that shows in the live app only once both
     parts have deployed it (new text the page gets from the backend, or a frontend change together
     with the backend change it relies on) and seeing it in the live app in the browser. Half for a

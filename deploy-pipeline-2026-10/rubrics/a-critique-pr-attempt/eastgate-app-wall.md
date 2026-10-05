@@ -6,8 +6,7 @@ The plainest shapes: three faulty accounts, one per case in case order (`entry-i
 pushing to that same branch. `priya-builds/plant-pal` is the app's own repository and plays no
 part in the route. Each account is judged on its own. q2 has a sound fork and so answers q1; q3
 has a sound fork and pull request and so answers q1 and q2; q4 answers all three; hence this
-order. In q3 and q4 the missing `url` is the occasion for the check, not a step in the route:
-the entry's content is not what this goal checks.
+order.
 
 ### q1
 
@@ -53,8 +52,6 @@ the entry's content is not what this goal checks.
   back to step 5 (the fix belonged on the first pull request's branch). Half for step 5 with a
   missing or wrong fix (such as "update the pull request" with no word on how). None for
   agreeing, or for naming step 1, 2, 3 or 4.
-- **tutor note:** a learner may point at step 2 for leaving out the `url`. Ask what they would do
-  once the check had failed: that is the step this account is about.
 
 ### q4
 
@@ -64,6 +61,3 @@ the entry's content is not what this goal checks.
   from the fork's branch into the app wall's `main`, and the fix pushed to the same branch, which
   the open pull request picked up.
 - **credit:** full for agreeing. None for naming any step as wrong.
-- **tutor note:** a learner who calls step 2 wrong for leaving out the `url` has named a sound
-  step of the route; ask whether anything the agent did after the check failed should have gone
-  differently.

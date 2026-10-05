@@ -14,14 +14,14 @@ What is the difference between cache invalidation and a redeploy?
 
 What is the difference between cache invalidation and cache busting?
 
-### q-catch-invalidation-reaches-browsers
+### q-catch-new-address-invalidates
 
 A site's frontend is on Pinecart, whose CDN keeps a copy of each page for up to 12 hours. After a
-deploy, the team presses the Clear CDN cache button.
+deploy, a student opens the site and still sees the old version. They add `?v=2` to the end of the
+address, load it, and see the new version.
 
-A student says:
+The student says:
 
-"We've invalidated the cache, so every visitor who opened the old page this morning now has the new
-version in their browser."
+"There, I've invalidated the cache, so every visitor sees the new version now."
 
 What is wrong with what they said?

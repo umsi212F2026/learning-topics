@@ -54,15 +54,20 @@ says nothing.
   That is true when the address is changed in the site's own links; ask who gets past the cache
   when one person types `?v=2` into their own address bar.
 
-### q-catch-invalidation-reaches-browsers
+### q-catch-new-address-invalidates
 
 - **goal:** `w-cache-invalidation`
 - **move:** CATCH
-- **answer:** Pressing Clear CDN cache invalidates the CDN's cache, so the CDN stops handing out
-  its old copy and fetches the new version on the next request. It does nothing to the copies in
-  visitors' browsers, which are separate caches; a visitor gets the new version only when their
-  browser asks again, for example when they reload.
-- **credit:** full for naming the actual error: the invalidation reached only the CDN's cache, and
-  each visitor's browser keeps its own copy until it asks again. Half for "they still have to
-  reload" with nothing on the browser keeping a separate copy. None for a different quibble, such
-  as that the CDN might take a little while to clear, or that the new version might have a bug.
+- **answer:** Adding `?v=2` invalidated nothing. It asked for a different address, which the CDN
+  had no copy of, so that one request got past the cache to the new version. The CDN still holds
+  its old copy of the plain address, and every other visitor who asks for it gets the old version
+  until the cache is cleared or the copy expires.
+- **credit:** full for naming the actual error: changing the address only got the student's own
+  request past the cached copy; nothing was dropped from the cache, so visitors at the plain
+  address still get the old copy until it is cleared or expires. Half for "other visitors still
+  see the old version" with nothing on why (the cache still holding its copy of the plain
+  address), or for "that's cache busting, not invalidation" with nothing on who still gets the old
+  copy. None for a different quibble, such as that the student should have reloaded first, or that
+  the new version might have a bug.
+- **tutor note:** a learner may say the CDN now has a copy of the new version. Ask which address
+  that copy is filed under, and what a visitor typing the plain address gets.
