@@ -6,7 +6,7 @@ Kettlerun stops a backend that has had no requests for 15 minutes and starts it 
 request, which takes up to about a minute. When a new deploy fails on either host, that host keeps
 the previous version serving. Roomly has been live and working for several weeks.
 
-Each question below is a separate incident on Roomly, independent of the others. Each gives one
+Each question is a separate incident on Roomly, independent of the others. Each gives one
 line on what you did or noticed, then your coding agent's account of it, then a question. Answer
 in two or three sentences.
 
