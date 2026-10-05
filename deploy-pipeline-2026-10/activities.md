@@ -25,15 +25,19 @@ task, never the scoring.
   - Its CDN keeps a copy of each page for up to 12 hours. The setting "Clear CDN cache on deploy"
     is on for a new site; with it off, a deploy leaves the CDN's copies in place, and the deploy
     list says "CDN cache kept" beside that deploy. The Clear CDN cache button clears it at any time.
+    A request for a page whose address differs, even only after a `?`, is fetched fresh from the
+    latest deploy.
   - Its deploy list shows each deploy with its commit, its time and its status: Building, Live or
     Failed. When a deploy fails, the previous one stays live.
 - **Ropewalk** runs a long-running backend, such as an Express server.
   - Linked to a GitHub repository, a branch and a folder, it deploys the backend on every push to
     that branch. Its setting "Wait for GitHub checks", off for a new service, makes it deploy a
-    commit only once every check on that commit has passed, and skip the commit if one fails.
-  - Its repository link can be switched off ("Auto-deploy: off").
+    commit only once every check on that commit has passed, and skip the commit if one fails. A
+    commit with no checks on it is deployed straight away, as if the setting were off.
+  - Its auto-deploy can be switched off ("Auto-deploy: off"); the service stays linked to its
+    branch.
   - Each service has a deploy hook: a URL that deploys the latest commit on the linked branch when
-    a request is sent to it. Anyone who has the URL can trigger a deploy.
+    a request is sent to it, whether auto-deploy is on or off. Anyone who has the URL can trigger a deploy.
   - Settings (environment variables) entered on the service's Settings page reach the running
     server and never the browser. Saving one restarts the server with the new value.
   - Its deploy list shows each deploy with its commit, its time and its status: Building, Live,
@@ -78,11 +82,11 @@ task, never the scoring.
   1. **Read first:** MDN Web Docs, "Deploying our app" (the last article of the Client-side
      tooling module; last modified Sep 4, 2026),
      https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_tools/Deployment.
-     Read Post development (about 350 words) and Using GitHub Actions for deployment (about 200).
+     Read Post development (about 470 words) and Using GitHub Actions for deployment (about 200).
      Skim The build process. Skip Committing changes to GitHub, which is git commands the learner
      already uses. In Testing, read the opening paragraph, skip the Vitest setup, and read from the
      step that adds the test to the workflow to the end of the section ("This will run the test
-     before the build step..."). Skip Summary. About 700 words. What it gives: a GitHub Actions
+     before the build step..."). Skip Summary. About 800 words. What it gives: a GitHub Actions
      workflow that builds and deploys the site on every push to `main`; the green check, yellow
      dot and red cross GitHub shows beside a commit; cache busting; and a test step that stops a
      deploy. It deploys to GitHub Pages, which needs no token, so it doesn't show a workflow
@@ -102,12 +106,13 @@ task, never the scoring.
      Commit messages for collaboration. What it gives: the original repository (upstream), your
      own copy of it on GitHub (a fork, origin), your local copy, a feature branch, and a pull
      request "to merge your feature branch into the original upstream repository's main branch".
-  About 1,300 words read and a skim: 10 to 12 minutes of reading, 15 with the three stops, 20 with
-  the close. Words in place: auto-deploy (MDN's "deployed automatically", Render's automatic
+  About 1,400 words read and a skim: 11 to 13 minutes of reading, about 16 with the three stops, 21
+  with the close. Words in place: auto-deploy (MDN's "deployed automatically", Render's automatic
   deploys), push, branch, GitHub Actions, check (the green check and red cross), CI (Render's
   "After CI Checks Pass"), cache and cache busting (MDN), fork and pull request (Odin). Not in
   place: `.env` file, `.gitignore`, build time, branch protection; they have their own supply,
   and glossing any word as it comes up is optional.
+- **verified:** 2026-10-05
 - **learner does:** reads in order and stops three times, answering before reading on; "I don't
   know yet" is an honest answer.
   1. After MDN: says in their own words what happens, in MDN's example, between `git push` and the
@@ -119,8 +124,8 @@ task, never the scoring.
      boxes, with an arrow for each push and pull, and one for the pull request.
   Then the close, about 5 minutes, with the reading and the sketch still beside them: answers the
   question the tutor puts: with these pages beside you, could you now attempt these three things
-  for real: reading an agent's plan for making your app deploy itself on every push and saying
-  what you would change; working out why a change you made isn't showing in the live app; and
+  for real: reading an agent's plan for making your app deploy itself on every push, saying
+  what you would change and how you'd confirm it works; working out why a change you made isn't showing in the live app; and
   getting a change into a repository you can't push to, through a pull request?
 - **tutor role:** explainer
 - **tutor does:** stays quiet through the reading except at the stops and when asked. At each
@@ -163,6 +168,7 @@ task, never the scoring.
 - **artifact:** no external source. A made-up app hosted on Pinecart and Ropewalk, and agents'
   plans for making it deploy itself, from this activity's bank or written live per the generator
   below. About 3 to 5 minutes a question.
+- **verified:** 2026-10-05
 - **learner does:** reads the scenario's setup and the one question served. A plan question shows
   one plan an agent proposed and asks whether they would agree to it as it stands, and if not,
   what they would change before agreeing. A token question shows a plan and the agent asking where
@@ -188,7 +194,9 @@ task, never the scoring.
   setup names which values are secrets ("Secrets: the database's connection string and the maps
   service's key"), so the question tests the plan and not spotting a secret. The setup also says
   that the agent proposed each plan in a different session, and that each question is about its
-  own plan alone. Names of settings, files and tokens are invented per scenario.
+  own plan alone. Only the app's own names are invented per scenario (its environment variable
+  names, its config files, the label on the token); the hosts' settings are named word for word
+  as the roster names them.
 
   **Plan questions.** One plan, three to six numbered steps in the agent's voice, covering how each
   part gets deployed on a push to `main` and where each value goes. "Would you agree to this plan
@@ -219,7 +227,7 @@ task, never the scoring.
   - `sound` (Medium; `sound-plan`): secrets only in Ropewalk's settings; a local `server/.env`
     holding them for the learner's own machine, with `.gitignore` listing `.env`; only the
     backend's address in a Pinecart setting; Ropewalk linked with "Wait for GitHub checks" on (or
-    its link off and the workflow sending a request to the deploy hook once the tests pass, with
+    its auto-deploy off and the workflow sending a request to the deploy hook once the tests pass, with
     the hook's URL in GitHub secrets); Pinecart's link off and the workflow deploying the frontend
     once the tests pass, with the token in the repository's GitHub secrets.
 
@@ -236,17 +244,18 @@ task, never the scoring.
   - `confirm-gate` (Hard; `confirm-gate`), always after `confirm-live`: "How would you make sure
     that a push whose tests fail doesn't go live?"
 
-  Credit. Plan questions on a faulty plan: full for naming the faulty step, saying why it is a
-  problem in the plan's terms (the secret would be committed; every visitor's browser gets the
-  value; anyone who reads the workflow can deploy; the part deploys before the tests finish or
-  whatever they say), and asking for a change that removes it: the secret into Ropewalk's
+  Credit. Plan questions on a faulty plan: full for naming the faulty step and asking for a change
+  that removes it (a reason is welcome, not required): the secret into Ropewalk's
   settings or a `.env` that `.gitignore` covers; the outside service called through the backend,
   with the key in Ropewalk's settings; the token in the repository's GitHub secrets; the deploy
   made to wait, by any means the roster allows (Ropewalk's "Wait for GitHub checks", or Pinecart's
   link off and the workflow deploying after the tests). Naming the means is welcome, not required.
   Half for naming the right step with no workable change, or a change that is vague ("keep it
-  safe"). None for agreeing, or for objecting only to sound steps. On a `tests-beside` plan, asking
-  only for tests to be added, as if none ran, is none. On a `sound` plan: full for agreeing, with or
+  safe"). None for agreeing, or for objecting only to sound steps. On an `ungated-watch` plan, full
+  needs both the tests run somewhere (a workflow running `npm test`) and both parts made to wait
+  for them; making only one part wait, or turning on "Wait for GitHub checks" with no tests
+  running (a commit with no checks deploys straight away), is half. On a `tests-beside` plan,
+  asking only for tests to be added, as if none ran, is none. On a `sound` plan: full for agreeing, with or
   without harmless remarks; none for asking to change a sound step into a faulty one, or for
   refusing it on a wrong ground (such as "the `.env` file shouldn't exist at all"). Token
   questions: full for the repository's GitHub secrets (Actions secrets), read by the workflow;
@@ -278,7 +287,9 @@ task, never the scoring.
   doesn't show they would recognize one (`deploy-config`'s `c-spot-secret` covers that). Vendors
   are made up, with their behavior stated, so a pass says nothing about reading a real host's
   docs to learn whether it can wait for checks. The confirmation questions are answered in words:
-  they don't show the learner carrying the confirmation out.
+  they don't show the learner carrying the confirmation out. They also pass on a change to the
+  frontend alone, so a pass doesn't show the learner would confirm that the backend's deploy, and
+  Ropewalk's wait for the tests, work too.
 - **offer as:** invented plans for one app, one question at a time, about 3 to 5 minutes each,
   nothing to run; works the same alone with the tutor or at a table in class.
 
@@ -300,8 +311,11 @@ task, never the scoring.
 - **tutor role:** examiner
 - **tutor does:** reads the plan before the learner answers and writes a key: each fault the plan
   has and its case (`secret-in-repo`, `frontend-secret`, `deploy-token`, `no-test-gate`), or
-  `sound-plan` if it has none; and `deploy-token` also when the plan deploys through GitHub Actions
-  with a host token, whatever it says about where the token goes. Anything the key depends on about
+  `sound-plan` if it has none. When the plan deploys through GitHub Actions with a host token but
+  leaves the token's place open, the key also holds `deploy-token`, and once the learner has
+  answered on the plan the tutor puts the token question as `a-judge-pipeline-plan` words it. A
+  plan that already keeps the token in the repository's GitHub secrets carries no `deploy-token`
+  attempt, since agreeing to it says nothing about the token. Anything the key depends on about
   a real host (whether it can wait for GitHub checks, whether a frontend setting is copied into the
   build, what its deploy token is called) is checked on that host's current docs before keying,
   never taken from the agent or from memory. Records one question per case in the key, then the
@@ -323,7 +337,9 @@ task, never the scoring.
   learner's own.
 - **doesn't show:** it carries only the cases the agent's plan happens to have, and a capable
   agent's plan often has no fault, so this alone rarely shows the learner catching one. It is the
-  one check that shows the confirmations done, not just described.
+  one check that shows the confirmations done, not just described, but a confirmation done with a
+  frontend change alone passes, so it may never show the backend's deploy or its wait for the tests
+  confirmed. A plan that already keeps the token in GitHub secrets shows nothing about the token.
 - **offer as:** your own app and your own agent's real plan, checked as you set the pipeline up;
   slower and less predictable than the invented plans, and the only one where you see it work.
 
@@ -352,8 +368,9 @@ task, never the scoring.
   Express backend on Ropewalk, one GitHub repository), with the pipeline's setup stated in two or
   three sentences in roster terms (which part is linked to `main`, whether Ropewalk waits for
   checks, whether a workflow runs the tests and deploys the frontend). Then what the learner
-  changed and roughly when, a visible change ("the sign-up button now says Join the club"), and
-  that the live app doesn't show it. One question: "Where would you look first: git's output on
+  changed and roughly when, a visible change ("the sign-up button now says Join the club", or a
+  frontend setting saved on Pinecart's Settings page, with whether they pressed Rebuild), and that
+  the live app doesn't show it. One question: "Where would you look first: git's output on
   your machine, the commit's checks on GitHub, a host's deploy list, or the page in the browser?
   You'll be shown what it shows. Keep going until you can say why the change isn't showing and
   what you'd do next." The rubric holds, before the key, the evidence for every place, consistent
@@ -375,13 +392,17 @@ task, never the scoring.
   - `stale-browser` (Medium; `browser-cache`): the deploy is Live; a normal load shows the old
     page; a reload skipping the cache, a private window, another device and `?v=2` all show the new
     one.
-  - `stale-cdn` (Hard; `cdn-cache`): the Pinecart deploy is Live with "CDN cache kept"; a normal
+  - `stale-cdn` (Hard; `cdn-cache`): the Pinecart deploy is Live, less than 12 hours old, with
+    "CDN cache kept"; a normal
     load, a reload skipping the cache, a private window and another device all show the old page;
     `?v=2` shows the new one.
   - `setting-after-build` (Medium; `old-build-setting`): the change was a frontend setting saved on
     Pinecart's Settings page, with no push since; the latest Pinecart deploy is older than the save.
     To keep a setting in the setup from naming this case, some scenarios of other shapes mention a
-    Pinecart setting changed earlier that a later deploy has already picked up.
+    Pinecart setting changed earlier that a later deploy has already picked up, and some scenarios
+    of the `failed-deploy`, `stale-cdn` and `stale-browser` shapes have the change itself be a
+    Pinecart setting followed by a Rebuild, whose deploy then fails, leaves the CDN's copy in
+    place, or is hidden by the browser's old copy.
   Credit: full for the case's reason and its next step as the criterion gives them: get the commit
   onto `main` (commit and push, push, merge the branch through a pull request, or merge the open
   pull request); make the tests pass and push; look at the failed deploy (finding the cause is not
@@ -418,12 +439,16 @@ task, never the scoring.
   before any are read out, and one checks them against the rubric.
 - **done when:** the criterion met with no help: full credit.
 - **generator:** as `a-trace-missing-change`'s generator, with the same app shape, shapes, cases
-  and credit, except that the evidence is in the task, shown at once in four labeled blocks (git's
+  and credit, except for difficulty and except that the evidence is in the task, shown at once in four labeled blocks (git's
   output, GitHub, the deploy lists, the browser), and the question is "Why isn't the change showing,
   and what would you do next?". The browser block always shows a normal load and a reload that
   skips the cache; in half the `stale-cdn` questions it also shows `?v=2`, and in the other half it
   doesn't, so full credit there needs the learner to propose changing the URL as well as clearing
-  the CDN's cache. Scenarios are not shared with `a-trace-missing-change`'s bank. A scenario may
+  the CDN's cache. Difficulty is this activity's own, since the evidence is all shown: Easy for
+  `uncommitted`, `unpushed`, `red-check`, `failed-deploy` and `stale-browser` (the cache-skipping
+  reload in the browser block settles it); Medium for `other-branch`, `unmerged-pr` and
+  `setting-after-build`; for `stale-cdn`, Medium when the block shows `?v=2` and Hard when it
+  doesn't. Scenarios are not shared with `a-trace-missing-change`'s bank. A scenario may
   hold several questions, each a different change on a different day with its own evidence, in no
   fixed order of cases.
 - **worked example:** as `a-trace-missing-change`'s.
@@ -441,6 +466,7 @@ task, never the scoring.
 - **artifact:** no external source. A made-up repository the learner can't push to and a change to
   make in it, from this activity's bank or written live per the generator below. About 2 to 3
   minutes a question.
+- **verified:** 2026-10-05
 - **learner does:** reads the setup and the one question served, and says in two or three sentences
   where the change goes, which way the pull request runs, or what to do about a failing check.
 - **tutor role:** examiner
@@ -505,19 +531,24 @@ task, never the scoring.
 - **artifact:** no external source. A made-up classmate's account, or an agent's summary, of how
   they got an entry into a repository they couldn't push to, from this activity's bank or written
   live per the generator below. About 3 minutes a question.
-- **learner does:** reads the account, which has one step that goes wrong, and says which step and
-  what should have happened instead.
+- **learner does:** reads the account, which may or may not have a step that goes wrong, and says
+  whether they would have gone along with it, and if not, which step goes wrong and what should
+  have happened instead.
 - **tutor role:** examiner
-- **tutor does:** sets the question as served, without rewording it or hinting. Gives help when
+- **tutor does:** sets the question as served, without rewording it or hinting, and never says
+  whether an account has a wrong step. Gives help when
   asked, and records the attempt as helped. At a table in class, each student writes the step and
   the fix before any are read out, and one checks them against the rubric.
 - **done when:** the criterion met with no help: full credit.
 - **generator:** a scenario uses the same kind of setup as `a-route-showcase-change`'s (a username,
   their app's repository, a made-up showcase they can't push to, its check) with different names.
   Each question is one account of four to seven numbered steps, in the first person of a made-up
-  classmate or as an agent's summary of what it did, with exactly one step that goes wrong and
-  every other step sound. "One step here goes wrong. Which one, and what should have happened
-  instead?" Shapes, each carrying one case:
+  classmate or as an agent's summary of what it did, with one step that goes wrong or none, and
+  every step before a wrong one sound. "Would you have gone along with this? If a step goes wrong,
+  which one, and what should have happened instead?" In `entry-in-app-repo`, `new-unrelated-repo`
+  and `reversed-pr`, the account ends at the wrong step or one step after it, and that later step
+  only follows from the wrong one (the pull request opened in the app repository, the pull request
+  opened from the new repository). Shapes, each carrying one case:
   - `entry-in-app-repo` (Easy; `where-to-push`): the entry is added to the classmate's own app
     repository, and a pull request is opened there.
   - `new-unrelated-repo` (Medium; `where-to-push`): a push to the original is refused, and the agent
@@ -530,16 +561,25 @@ task, never the scoring.
   - `fix-on-wrong-branch` (Hard; `failing-check`): the check fails, and the fix is pushed to the
     fork's `main` while the pull request comes from another branch of the fork, so the pull request
     never gets it.
+  - `sound` (Medium; the case of the step it is written around): every step sound, the whole route
+    from fork to fixed check, with one step (where the change was pushed, which way the pull
+    request runs, or how a failing check was fixed) given in full detail; it carries that step's
+    case.
   Credit: full for naming the wrong step and what should have happened (fork the original and push
   there; base the original's `main`, head the fork's branch; push the fix to the pull request's own
-  branch). Half for the right step with a missing or wrong fix. None for naming a sound step. A
-  scenario may hold several accounts, in any order, since none gives another away. Across the bank,
-  every shape appears.
+  branch). Naming the step that follows from the wrong one counts as naming the wrong one when the
+  fix given goes back to it (the pull request should come from a fork of the original), and as
+  half when the fix stays with the later step (open the pull request somewhere else). Half for the
+  right step with a missing or wrong fix. None for agreeing to a faulty account, or for naming a
+  sound step. On a `sound` account: full for agreeing; none for naming any step as wrong. A
+  scenario may hold several accounts, in any order, since none gives another away, with at least
+  one faulty account and at most one `sound` one. Across the bank, every shape appears, and `sound`
+  accounts are written around each of the three steps.
 - **worked example:** as `a-route-showcase-change`'s.
-- **doesn't show:** the learner is told one step goes wrong, so a pass doesn't show they would
-  notice a wrong step in an account that might be fine, or in their own agent's work as it happens.
-  The rest of `a-route-showcase-change`'s `doesn't show` applies too.
-- **offer as:** someone else's attempt to find the mistake in: more reading, less recall than
+- **doesn't show:** each account has at most one wrong step, so a pass doesn't show the learner
+  would untangle two, and it is a finished account, so it doesn't show they would notice a wrong
+  step in their own agent's work as it happens. The rest of `a-route-showcase-change`'s `doesn't show` applies too.
+- **offer as:** someone else's whole attempt to judge, which may or may not hold a mistake: more reading, less recall than
   saying the route yourself. About 3 minutes a question.
 
 ### `a-words`
