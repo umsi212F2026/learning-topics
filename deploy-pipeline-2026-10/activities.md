@@ -66,9 +66,9 @@ task, never the scoring.
 | goal | checks | notes |
 | ---- | ------ | ----- |
 | `o-orientation` | `a-read-deploy-pipeline` | |
-| `c-set-up-auto-deploy` | `a-judge-pipeline-plan`, `a-review-own-pipeline-plan` | |
+| `c-set-up-auto-deploy` | `a-judge-pipeline-plan`, `a-review-own-pipeline-plan` | Only `a-judge-pipeline-plan` can carry every case; `a-review-own-pipeline-plan` usually carries only `sound-plan` and the two confirmations, so it adds to this goal rather than meeting it alone. |
 | `c-find-missing-change` | `a-trace-missing-change`, `a-diagnose-from-evidence` | |
-| `c-showcase-pr` | `a-route-showcase-change`, `a-critique-pr-attempt` | |
+| `c-showcase-pr` | `a-route-showcase-change`, `a-critique-pr-attempt` | A sound proposal (`a-route-showcase-change`'s Hard forms) or a `sound` account (`a-critique-pr-attempt`) carries the same case as the faulty ones, so one agreement can pass a case. Treat a case whose only unaided pass came from agreeing as thin, and serve it again in an open or faulty form before calling the goal met. |
 
 ---
 
@@ -301,6 +301,7 @@ task, never the scoring.
   they don't show the learner carrying the confirmation out.
 - **offer as:** invented plans for one app, one question at a time, about 3 to 5 minutes each,
   nothing to run; works the same alone with the tutor or at a table in class.
+- **note:** On an `ungated-watch` plan, the credit rules don't cover an answer that asks only for the tests to be run (a workflow running `npm test`) with nothing made to wait for them. Rule it half: it supplies one of the two things full credit needs, as turning on "Wait for GitHub checks" with no tests running supplies the other. It is the same misunderstanding `tests-beside` is built to catch, so if the scenario has a `tests-beside` plan still to come, serve it.
 
 ### `a-review-own-pipeline-plan`
 
@@ -358,6 +359,7 @@ task, never the scoring.
   one check that shows the confirmations done, not just described. A plan that already keeps the token in GitHub secrets shows nothing about the token.
 - **offer as:** your own app and your own agent's real plan, checked as you set the pipeline up;
   slower and less predictable than the invented plans, and the only one where you see it work.
+- **note:** The 20 to 30 minutes counts reading the plan, the two confirmations and the waits for deploys, not the agent carrying the plan out on real hosts (linking accounts, entering secrets), so run this alongside the session 12 lab or Problem Set 3 rather than as a study slot of its own. Key `sound-plan` for a plan with no fault as written, but if the plan says nothing about a local `.env` file, agreeing to it shows nothing about the `.env` half of that case; treat that pass as thin and let `a-judge-pipeline-plan`'s `sound` plan supply it.
 
 ### `a-trace-missing-change`
 
