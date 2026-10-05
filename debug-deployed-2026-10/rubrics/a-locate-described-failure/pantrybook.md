@@ -9,8 +9,8 @@ minute to start `pantry-api` after 20 idle minutes. Here the build that fails is
 
 One case per question: q1 `waking` (Medium), q2 `failed-start` (Hard, visitor answer turns on the
 previous version still serving), q3 `cors-blocked` (Medium), q4 `local-only` (Medium, lines from
-`server/` only), q5 `failed-build` (Medium), q6 `wrong-address` (Hard, red herring: a database
-error from two days earlier), q7 `request-error` (Hard, red herring: a deprecation warning in the
+`server/` only), q5 `failed-build` (Medium), q6 `wrong-address` (Medium, an explained red herring: a database
+error from two days earlier), q7 `request-error` (Medium, an explained red herring: a deprecation warning in the
 build log of the deploy that went live). A remark on how to fix any of these is neither credited
 nor counted against the learner.
 

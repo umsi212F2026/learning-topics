@@ -318,12 +318,15 @@ text states the task, never the scoring.
     live; an error from an earlier day still in the log); a visitor answer that turns on one stated
     fact (the previous version still serving, or this being the first deploy); or, for
     `local-only`, an agent that writes as if it had checked ("I reproduced it") with nothing from
-    the host. An account never draws a conclusion its own quoted lines contradict.
+    the host. An account never draws a conclusion its own quoted lines contradict. An account may
+    explain its red herring away ("the rimraf line is a deprecation notice"), since judging a log
+    line unaided is beyond this goal; a question whose only Hard feature is a red herring the
+    account explains counts as Medium, not Hard.
 
   A credit statement: full when both the kind (in the learner's own words, matching the case) and
   what a visitor sees match the key, or for `local-only` when they say it isn't evidence about the
   deployed app; half when one of the two is right; none otherwise. A scenario carries all seven cases
-  across its questions, one each, every one at Medium or Hard and at least two at Hard. No
+  across its questions, one each, every one at Medium or Hard and at least one at Hard. No
   question's text gives away another's answer. A scenario's setup states the task
   and how long an answer should be, never the scoring.
 - **worked example:** shown only as help when the learner asks for it, which records the attempt as

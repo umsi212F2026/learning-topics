@@ -7,7 +7,7 @@ start a backend that has been idle 15 minutes. q5 turns on the account's own sta
 settings restart is not a new deploy, so nothing else is serving.
 
 One case per question: q1 `failed-build` (Medium), q2 `request-error` (Medium), q3
-`wrong-address` (Medium), q4 `waking` (Hard, red herring: last night's database timeout), q5
+`wrong-address` (Medium), q4 `waking` (Medium, an explained red herring: last night's database timeout), q5
 `failed-start` (Hard, visitor answer turns on no previous version serving), q6 `local-only` (Hard,
 "I reproduced it" with nothing from the host), q7 `cors-blocked` (Medium). A remark on how to fix
 any of these is neither credited nor counted against the learner.

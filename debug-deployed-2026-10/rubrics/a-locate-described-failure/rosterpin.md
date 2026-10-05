@@ -7,7 +7,7 @@ backend before starting a new one, so a new backend that won't start leaves noth
 Moorbolt takes up to about half a minute to start a backend that has been idle 10 minutes. Here
 the failed build is the frontend's, on the first deploy, so there is no earlier version.
 
-One case per question: q1 `request-error` (Medium), q2 `cors-blocked` (Hard, red herring: a
+One case per question: q1 `request-error` (Medium), q2 `cors-blocked` (Medium, an explained red herring: a
 deprecation warning in the build log of the release that went live), q3 `failed-start` (Medium),
 q4 `waking` (Medium), q5 `local-only` (Hard, "I've confirmed ... on the live site" with only lines
 from `server/`), q6 `failed-build` (Hard, the first deploy, so nothing is at the address), q7

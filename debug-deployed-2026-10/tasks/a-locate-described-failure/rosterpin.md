@@ -69,9 +69,9 @@ Browser console:
 Access to fetch at 'https://rosterpin-api.moorbolt.dev/api/trips' from origin 'https://rosterpin.glintpage.site' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
 ```
 
-The tidy-up in `91fd2a3` moved the `app.use(cors(...))` line in `server/index.js` below the
-routes, so `/api/trips` sends its 200 before that middleware runs, without an
-`Access-Control-Allow-Origin` header, and the page's `fetch` rejects it. The `rimraf` line is a
+The tidy-up in `91fd2a3` moved the middleware that sets `Access-Control-Allow-Origin` in
+`server/index.js` below the routes, so `/api/trips` sends its 200 before that middleware runs,
+without an `Access-Control-Allow-Origin` header, and the page's `fetch` rejects it. The `rimraf` line is a
 deprecation notice for a package the build tools pull in.
 
 From your agent's account, where did things go wrong, if they did, and what does someone visiting
