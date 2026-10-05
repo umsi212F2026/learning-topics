@@ -15,6 +15,8 @@ text states the task, never the scoring.
 
 ## Check notes
 
+2026-10-05: nothing at file level.
+
 ## Goals
 
 | id | Goal | Criterion: what gets examined, and what counts |
@@ -210,6 +212,15 @@ text states the task, never the scoring.
   not examined, and neither is whether the agent's access is read-only.
 - **offer as:** the real thing, on your own app and host, and the same task as the session 12 lab;
   do it there if you can. 20 to 40 minutes, most of it the host's sign-in.
+- **check note:** The sign-in advice you give before the attempt is part of the task statement,
+  given to everyone. Don't count it as help when you rule. That does mean a pass on the no-secret
+  clause shows only that the learner followed a stated instruction, as reported by them
+  afterwards.
+
+  You see only what the learner shows you. Whether the agent fetched the three things, rather than
+  the learner copying them off the host's dashboard, rests on the learner's account just as the
+  sign-in does. Where it's easy, ask to see the agent's output with the command or tool call that
+  produced it.
 
 ### `a-locate-described-failure`
 
@@ -333,6 +344,24 @@ text states the task, never the scoring.
 - **offer as:** the check you can do any time, without a deployed app: an agent's account of one
   incident on a made-up app, 3 to 5 minutes a question, one kind of failure each. Take it if you
   missed the session 12 lab, or to review.
+- **check note:** On `wrong-address` and `cors-blocked`, the criterion asks only for "the frontend
+  can't reach the backend". An answer saying the page's calls to the backend aren't getting
+  answers through has the kind right on either case. Don't require the learner to name CORS or the
+  wrong address, even though `doesn't show` says only the kind tells the two apart.
+
+  For the visitor half, credit an answer that captures what the key turns on, not every detail of
+  it. That means: whether the rest of the app works (`request-error`), whether the old version or
+  nothing is at the address (`failed-build`, `failed-start`), and a wait followed by normal use
+  (`waking`). An answer that leaves out the part the key turns on is half credit.
+
+  A scenario holds one question per case, so a learner who has worked several of its questions can
+  sometimes narrow the last ones by elimination. Where you can, move to a different scenario
+  before a learner works a single scenario's last two questions.
+
+  For a 502 against a 500, the worked example cites Render's page under "Runtime errors". The
+  orientation's reading assignment names that page's "500 Internal Server Error" and "502 Bad
+  Gateway" lists instead, so look for the material under those headings if the section names
+  differ.
 
 ### `a-locate-own-failure`
 
@@ -344,6 +373,7 @@ text states the task, never the scoring.
   run before `c-connect-agent-host` is met: an agent not yet connected to the host can only answer
   from the code or a laptop run, which is the `local-only` case. 5 to 10 minutes, whenever it
   happens.
+- **verified:** 2026-10-05
 - **learner does:** asks their agent why the deployed app isn't working, and gets its account. Before
   the tutor says anything, says in two or three sentences what kind of failure the account
   describes, if any, and what someone visiting the app right now sees; or, if the agent answered
@@ -378,6 +408,11 @@ text states the task, never the scoring.
 - **offer as:** the real thing: your own app, your own agent's account, the first time something
   breaks. Any time from the session 12 lab on; `a-locate-described-failure` covers the cases your
   app hasn't had.
+- **check note:** When the agent's account names the stage plainly (as the Easy level in
+  `a-locate-described-failure` describes), don't record a ruled attempt. Record it as `criterion:
+  unchecked` and treat the incident as practice. The recording tool refuses a ruled attempt on
+  this goal without `--cases`, and an attempt with no cases would count toward all seven. Rule, and
+  pass `--cases`, only when the account left the kind for the learner to work out.
 
 ### `a-words`
 
