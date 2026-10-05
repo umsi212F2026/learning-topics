@@ -453,8 +453,8 @@ debug-deployed, and what to do about a secret that has already leaked to session
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** making a cache stop handing out its old copy
-- **nearest confusable:** reloading the page; redeploy
-- **synonyms:** purge, cache busting
+- **nearest confusable:** reloading the page; redeploy; cache busting
+- **synonyms:** purge
 
 ### `w-ci`
 
@@ -462,7 +462,8 @@ debug-deployed, and what to do about a secret that has already leaked to session
 - **criterion:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
-- **what it names:** running the tests automatically on every push, before anything goes further
+- **what it names:** running the tests automatically on every push and reporting whether they
+  passed
 - **nearest confusable:** auto-deploy; a test suite
 - **synonyms:** continuous integration
 

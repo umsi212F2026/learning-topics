@@ -4,9 +4,7 @@ Answer in two or three sentences, in your own words, with nothing open in front 
 
 ### q-actions-vs-update-skill
 
-The course gives your agent an `update` skill: a file of instructions it follows when you ask it to
-bring one of your course repositories up to date. A GitHub Actions workflow is also a file of steps,
-kept in a repository. What is the difference between them?
+What is the difference between a GitHub Actions workflow and the course's `update` skill?
 
 ### q-actions-vs-auto-deploy
 

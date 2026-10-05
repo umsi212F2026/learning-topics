@@ -8,12 +8,14 @@ auto-deploy.
 
 - **goal:** `w-github-actions`
 - **move:** DISTINGUISH
-- **answer:** GitHub runs an Actions workflow itself, on its own machines, when something happens
-  to the repository, such as a push, with nobody asking. The `update` skill is followed by your
-  agent, on your machine, when you ask it to. Both are files of steps; what differs is who runs
-  them, where, and what sets them off.
-- **credit:** full for the difference that matters: an Actions workflow is run by GitHub when
-  something happens to the repository, and the skill is followed by your agent on your machine
+- **answer:** An Actions workflow is a script: GitHub runs its steps exactly as written, on its own
+  machines, when something happens to the repository, such as a push, with nobody asking. The
+  `update` skill is instructions in plain language that your agent reads and interprets, on your
+  machine, when you ask it to. What differs is what kind of file each is, who runs it, where, and
+  what sets it off.
+- **credit:** full for either difference that matters: a workflow is a script that runs its steps
+  exactly, while a skill is instructions an agent interprets; or a workflow is run by GitHub when
+  something happens to the repository, while the skill is followed by your agent on your machine
   when you ask. Half for naming only where each runs, or only what sets each off. None for an
   incidental difference, such as the file's format or the folder it is kept in.
 

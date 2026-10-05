@@ -29,8 +29,9 @@ task, never the scoring.
     list says "CDN cache kept" beside that deploy. The Clear CDN cache button clears it at any time.
     A request for a page whose address differs, even only after a `?`, is fetched fresh from the
     latest deploy.
-  - Its deploy list shows each deploy with its commit, its time and its status: Building, Live or
-    Failed. When a deploy fails, the previous one stays live.
+  - Its deploy list shows each deploy with its commit, its time and its status: Building, Live,
+    Replaced or Failed. A Live deploy shows as Replaced once a later deploy goes live, so only one
+    deploy is Live at a time. When a deploy fails, the previous one stays live.
 - **Ropewalk** runs a long-running backend, such as an Express server.
   - Linked to a GitHub repository, a branch and a folder, it deploys the backend on every push to
     that branch. Its setting "Wait for GitHub checks", off for a new service, makes it deploy a
@@ -43,7 +44,9 @@ task, never the scoring.
   - Settings (environment variables) entered on the service's Settings page reach the running
     server and never the browser. Saving one restarts the server with the new value.
   - Its deploy list shows each deploy with its commit, its time and its status: Building, Live,
-    Failed, or Skipped (checks failed). When a deploy fails, the previous one stays live.
+    Replaced, Failed, or Skipped (checks failed). A Live deploy shows as Replaced once a later
+    deploy goes live, so only one deploy is Live at a time. When a deploy fails, the previous one
+    stays live.
 
 ## Check notes
 
@@ -169,13 +172,13 @@ task, never the scoring.
 - **checks:** `c-set-up-auto-deploy`
 - **artifact:** no external source. A made-up app hosted on Pinecart and Ropewalk, and agents'
   plans for making it deploy itself, from this activity's bank or written live per the generator
-  below. About 3 to 5 minutes a question.
+  below. Five questions a scenario, about 5 minutes each: 25 to 30 minutes a scenario.
 - **verified:** 2026-10-05
 - **learner does:** reads the scenario's setup and the one question served. A plan question shows
   one plan an agent proposed and asks whether they would agree to it as it stands, and if not,
-  what they would change before agreeing. A token question shows a plan and the agent asking where
-  to keep a token, and asks what they would tell it. A confirmation question asks how they would
-  make sure the finished pipeline does what it should. Answers in two or three sentences.
+  what they would change before agreeing; the fourth plan also asks where the deploy token should
+  go. The confirmation question asks how they would make sure the finished pipeline does what it
+  should. Answers in two to four sentences.
 - **tutor role:** examiner
 - **tutor does:** sets the question as served, without rewording it or hinting, and never says
   how many of a scenario's plans need changing. Gives help whenever it is asked for, and records
@@ -183,9 +186,10 @@ task, never the scoring.
   rubric file and the others answer in turn, each in writing before anyone speaks. A remark beyond
   what the question asks is neither credited nor counted against the learner, unless it asks for a
   change that would itself put a secret into the repository or a frontend setting, put the token
-  in the workflow file, or stop a deploy waiting for the tests; such a change cancels the credit.
-- **done when:** the criterion met with no help, case by case: full credit on a question passes
-  every case it carries, and half credit passes none.
+  or the deploy hook's URL in the workflow file, or stop a deploy waiting for the tests; such a
+  change cancels the credit.
+- **done when:** the criterion met with no help, case by case: a question carrying two cases is
+  credited per case, full credit on a case passes it, and half credit passes nothing.
 - **generator:** a scenario is one app shaped like the course's Problem Set 3 app: a React
   frontend in `client/` and an Express backend in `server/`, in one GitHub repository, each folder
   with tests run by `npm test`, and a database on a host outside the plan. The app varies (a club
@@ -194,11 +198,23 @@ task, never the scoring.
   head of this file; the backend reads the database's connection string, and may read one outside
   service's key (a weather, maps or AI service); the frontend reads the backend's address. The
   setup names which values are secrets ("Secrets: the database's connection string and the maps
-  service's key"), so the question tests the plan and not spotting a secret. The setup also says
+  service's key"), so the question tests the plan and not spotting a secret; the list always
+  includes the Pinecart deploy token, and Ropewalk's deploy hook URL whenever a plan in the
+  scenario uses the hook. The setup also says
   that the agent proposed each plan in a different session, and that each question is about its
   own plan alone. Only the app's own names are invented per scenario (its environment variable
   names, its config files, the label on the token); the hosts' settings are named word for word
   as the roster names them.
+
+  **A scenario holds five questions, in this order:**
+  1. a faulty plan carrying `secret-in-repo`: one of `committed-secret`, `unignored-env` or
+     `token-in-workflow`;
+  2. a `frontend-secret` plan;
+  3. a faulty plan carrying `no-test-gate`: `ungated-watch` or `tests-beside`;
+  4. the `sound` plan with the token question, carrying `sound-plan` and `deploy-token`;
+  5. the confirmation question, carrying `confirm-live` and `confirm-gate`.
+  The faulty plans come first and the `sound` plan after them, since it shows what the others
+  should have been; the confirmation question is about the `sound` plan, so it comes last.
 
   **Plan questions.** One plan, three to six numbered steps in the agent's voice, covering how each
   part gets deployed on a push to `main` and where each value goes. "Would you agree to this plan
@@ -209,7 +225,12 @@ task, never the scoring.
   fault is that nothing makes a deploy wait. Every workflow in a plan runs the tests in both
   `client/` and `server/`, and the plan says so ("runs `npm test` in `client/` and in `server/`").
   A faulty step may come with a convenient reason ("so it still works if the setting is
-  missing"). Shapes, each with the case it carries:
+  missing"). In plans 1 to 3, a plan that deploys with the Pinecart deploy token or calls
+  Ropewalk's deploy hook leaves where the token or the hook's URL is kept unsaid, except a
+  `token-in-workflow` plan, whose fault is the token's place. A learner's remark there about where
+  to keep it is neither credited nor counted, unless they say to put it in the workflow file (or
+  another committed file), which cancels the credit as `tutor does` says. Shapes, each with the
+  case it carries:
   - `committed-secret` (Easy; `secret-in-repo`): a step writes a secret into a source file, such
     as the connection string as a fallback in `server/db.js`, or into a config file that is
     committed.
@@ -218,9 +239,11 @@ task, never the scoring.
     read it".
   - `frontend-secret` (Medium; `frontend-secret`): a step puts a secret into a Pinecart setting so
     the frontend can call the outside service directly.
-  - `token-in-workflow` (Medium; `deploy-token`): Pinecart's repository link is off, and a workflow
-    runs the tests and then Pinecart's deploy command; the plan writes the Pinecart deploy token
-    into the workflow file, or into a committed file the workflow reads.
+  - `token-in-workflow` (Medium; `secret-in-repo` and `deploy-token`): Pinecart's repository link
+    is off, and a workflow runs the tests and then Pinecart's deploy command; the plan writes the
+    Pinecart deploy token into the workflow file, or into a committed file the workflow reads. The
+    token is a secret written into a committed file, so it carries `secret-in-repo` in slot 1, and
+    one fix (the token into the repository's GitHub secrets) passes both cases.
   - `ungated-watch` (Medium; `no-test-gate`): no workflow and no tests anywhere in the pipeline:
     Pinecart linked to `main` and Ropewalk linked with "Wait for GitHub checks" left off. Neither
     part waits, and that counts as the plan's one fault.
@@ -228,25 +251,22 @@ task, never the scoring.
     sounds like protection ("and CI will check every push"), while Pinecart stays linked to `main`,
     or Ropewalk stays linked with "Wait for GitHub checks" off, so that part deploys whatever the
     tests say.
-  - `sound` (Medium; `sound-plan`): secrets only in Ropewalk's settings; a local `server/.env`
-    holding them for the learner's own machine, with `.gitignore` listing `.env`; only the
-    backend's address in a Pinecart setting; Ropewalk linked with "Wait for GitHub checks" on (or
-    its auto-deploy off and the workflow sending a request to the deploy hook once the tests pass, with
-    the hook's URL in GitHub secrets); Pinecart's link off and the workflow deploying the frontend
-    once the tests pass, with the token in the repository's GitHub secrets.
+  - `sound` (Medium; `sound-plan` and `deploy-token`; slot 4 only): secrets only in Ropewalk's
+    settings; a local `server/.env` holding them for the learner's own machine, with `.gitignore`
+    listing `.env`; only the backend's address in a Pinecart setting; Ropewalk linked with "Wait
+    for GitHub checks" on (or its auto-deploy off and the workflow sending a request to the deploy
+    hook once the tests pass, the hook's URL's place unsaid); Pinecart's link off and the workflow
+    deploying the frontend once the tests pass. The plan ends with the agent's message: "I'll need
+    a Pinecart deploy token for the workflow. Where should I keep it?" The token's place is a
+    question about the plan, not a fault in it, so the plan still has no fault. Asks: "Would you
+    go along with this plan? And what would you tell the agent about where to keep the token?"
 
-  **Token questions** (Easy; `deploy-token`). A plan in the `sound` shape except that it leaves
-  the Pinecart token's place open, then the agent's message: "I need a Pinecart deploy token for
-  the workflow. Where should I keep it?" Asks: "What would you tell the agent?"
-
-  **Confirmation questions**, set after every plan and token question in the scenario, about its
-  `sound` plan, which the setup of these questions says the agent has carried out ("Suppose the
-  agent has carried out plan 4, says everything is set up, and both hosts' deploy lists show the
-  latest deploy as Live").
-  - `confirm-live` (Medium; `confirm-live`): "How would you make sure that a push to `main` now
-    reaches the live app, both its frontend and its backend?"
-  - `confirm-gate` (Hard; `confirm-gate`), always after `confirm-live`: "How would you make sure
-    that a push whose tests fail goes live in neither the frontend nor the backend?"
+  **Confirmation question** (Hard; `confirm-live` and `confirm-gate`), about the scenario's
+  `sound` plan, which the question's setup says the agent has carried out ("Suppose the agent has
+  carried out plan 4, keeping the token in the repository's GitHub secrets, says everything is set up, and both
+  hosts' deploy lists show the latest deploy as Live"). Asks: "How would you make sure that a
+  push to `main` now reaches the live app, both its frontend and its backend, and that a push
+  whose tests fail goes live in neither?"
 
   Credit. Plan questions on a faulty plan: full for naming the faulty step and asking for a change
   that removes it (a reason is welcome, not required): the secret into Ropewalk's
@@ -262,12 +282,16 @@ task, never the scoring.
   for a part a way of waiting the roster rules out (Pinecart waiting for GitHub checks), or
   turning on "Wait for GitHub checks" with no tests running (a commit with no checks deploys
   straight away), is half. On a `tests-beside` plan,
-  asking only for tests to be added, as if none ran, is none. On a `sound` plan: full for agreeing, with or
-  without harmless remarks; none for asking to change a sound step into a faulty one, or for
-  refusing it on a wrong ground (such as "the `.env` file shouldn't exist at all"). Token
-  questions: full for the repository's GitHub secrets (Actions secrets), read by the workflow;
-  half for "somewhere secret, not in the file" with no place named; none for the workflow file, a
-  `.env` file, a Pinecart setting, or the chat. `confirm-live`: full for pushing a small change
+  asking only for tests to be added, as if none ran, is none. On a `token-in-workflow` plan, the
+  credit above goes to both its cases alike. The `sound` plan is credited per case. `sound-plan`:
+  full for agreeing, with or without harmless remarks; none for asking to change a sound step into
+  a faulty one, or for refusing it on a wrong ground (such as "the `.env` file shouldn't exist at
+  all"). `deploy-token`: full for the repository's GitHub secrets (Actions secrets), read by the
+  workflow; half for "somewhere secret, not in the file" with no place named; none for the
+  workflow file, a `.env` file, a Pinecart setting, or the chat. The token answer is credited only
+  under `deploy-token`: a wrong place for the token loses that case and leaves `sound-plan` as the
+  rest of the answer earns it. The confirmation question is credited per case, and an answer may
+  cover the two in either order. `confirm-live`: full for pushing a small change
   that shows in the live app only once both parts have deployed it (such as new text the page gets
   from the backend, or a frontend change together with the backend change it relies on) and seeing
   it in the live app in the browser; half for a change that shows once only one part has deployed
@@ -280,12 +304,13 @@ task, never the scoring.
   whose visible change comes from one part only, or for watching only the red check or the deploy
   lists; none for reading the hosts' settings or asking the agent.
 
-  Across the bank, every case is carried, and `no-test-gate` is carried by `tests-beside` at least
-  once with Pinecart linked and once with Ropewalk's wait off. A scenario holds four to seven
-  questions: at least one faulty plan, at most one `sound` plan, and both confirmation questions
-  only if it has a `sound` plan. **Study order:** plan and token questions first, the `sound` plan
-  last among them, since it shows what the others should have been; confirmation questions after
-  it.
+  Every scenario carries all seven cases. **Rotation across the bank:** slot 1 rotates through
+  `committed-secret`, `unignored-env` and `token-in-workflow`; slot 3 rotates through
+  `ungated-watch`, `tests-beside` with Pinecart linked to `main`, and `tests-beside` with
+  Ropewalk's "Wait for GitHub checks" off; slot 4 alternates between Ropewalk waiting for checks
+  and Ropewalk deployed through its hook. Scenarios take the next shape in each rotation, so a
+  bank of three scenarios shows every shape once, and no two scenarios in a row repeat a slot's
+  shape.
 - **worked example:** shown only as help when asked for. For a plan: the tutor works a different
   made-up plan aloud, step by step, asking of each value "where does this end up, and who can read
   it there?" and of each deploy "what starts it, and does anything make it wait for the tests?".
@@ -299,9 +324,9 @@ task, never the scoring.
   are made up, with their behavior stated, so a pass says nothing about reading a real host's
   docs to learn whether it can wait for checks. The confirmation questions are answered in words:
   they don't show the learner carrying the confirmation out.
-- **offer as:** invented plans for one app, one question at a time, about 3 to 5 minutes each,
-  nothing to run; works the same alone with the tutor or at a table in class.
-- **note:** On an `ungated-watch` plan, the credit rules don't cover an answer that asks only for the tests to be run (a workflow running `npm test`) with nothing made to wait for them. Rule it half: it supplies one of the two things full credit needs, as turning on "Wait for GitHub checks" with no tests running supplies the other. It is the same misunderstanding `tests-beside` is built to catch, so if the scenario has a `tests-beside` plan still to come, serve it.
+- **offer as:** invented plans for one app, five questions one at a time, about 25 to 30 minutes
+  for a scenario, nothing to run; works the same alone with the tutor or at a table in class.
+- **note:** On an `ungated-watch` plan, the credit rules don't cover an answer that asks only for the tests to be run (a workflow running `npm test`) with nothing made to wait for them. Rule it half: it supplies one of the two things full credit needs, as turning on "Wait for GitHub checks" with no tests running supplies the other. It is the same misunderstanding `tests-beside` is built to catch.
 
 ### `a-review-own-pipeline-plan`
 
@@ -386,11 +411,13 @@ task, never the scoring.
 - **generator:** a scenario is one app shaped like Problem Set 3's (React frontend on Pinecart,
   Express backend on Ropewalk, one GitHub repository), with the pipeline's setup stated in two or
   three sentences in roster terms (which part is linked to `main`, whether Ropewalk waits for
-  checks, whether a workflow runs the tests and deploys the frontend). The setup also quotes, word
+  checks or has its auto-deploy off and is deployed by the workflow through its deploy hook,
+  whether a workflow runs the tests and deploys the frontend). The setup also quotes, word
   for word, the parts of the roster at the head of this file that the scenario needs: for Pinecart,
   always the Settings and build bullet, the CDN bullet and the deploy-list bullet, plus the link
   bullet or bullets that describe how this pipeline deploys the frontend; for Ropewalk, its bullets
   whenever they bear on the scenario (its link and wait bullet when the backend deploys the change,
+  plus its auto-deploy and deploy-hook bullets when the workflow deploys it through the hook, and
   its deploy-list bullet when its deploys are evidence). Then what the learner changed and roughly
   when, a visible change ("the sign-up button now says Join the club", or a frontend setting saved
   on Pinecart's Settings page), and that the live app doesn't show it. The setup never says whether
@@ -401,7 +428,9 @@ task, never the scoring.
   what you'd do next." The rubric holds, before the key, the evidence for every place, consistent
   with one cause: `git status`, `git branch --show-current` and `git log --oneline -3` output; the
   latest commits on `main` on GitHub, any open pull request, and the checks on the relevant
-  commit; each host's last two or three deploys from its deploy list, and beside Pinecart's,
+  commit; each host's last two or three deploys from its deploy list, with statuses as the
+  roster gives them (only one deploy Live, an earlier one that went live shown Replaced, and the
+  Live one staying the previous deploy when a later one failed or was skipped), and beside Pinecart's,
   its Settings page with when each setting was last saved (shown when the learner asks for
   Pinecart's deploy list); and the page under each browser view. True red herrings are allowed
   (an older failed deploy, a failed check on an older commit), false ones are not. Shapes, each
@@ -412,7 +441,10 @@ task, never the scoring.
   - `other-branch` (Medium; `not-on-main`): pushed to a branch other than `main`.
   - `unmerged-pr` (Medium; `not-on-main`): in an open pull request nobody has merged.
   - `red-check` (Easy; `tests-failed`): the commit's check failed, and the deploy that waits on it
-    never ran (no Pinecart deploy for the commit, or Ropewalk's list shows it Skipped).
+    never ran: no Pinecart deploy for the commit when the workflow deploys the frontend; for
+    Ropewalk, its list shows the commit Skipped when "Wait for GitHub checks" is on, or holds no
+    deploy for it when its auto-deploy is off and the workflow calls its deploy hook after the
+    tests pass.
   - `failed-deploy` (Easy; `deploy-failed`): checks passed; the deploy list shows the commit's
     deploy Failed and the previous one Live.
   - `stale-browser` (Medium; `browser-cache`): the deploy is Live; a normal load shows the old
@@ -470,7 +502,9 @@ task, never the scoring.
   roster bullets quoted word for word, and nothing said about a Rebuild), shapes, cases and credit,
   except for difficulty and except that the evidence is in the task, shown at once in four labeled
   blocks (git's output, GitHub, the deploy lists, the browser), and the question is "Why isn't the change showing,
-  and what would you do next?". The deploy-lists block always holds, beside Pinecart's deploys,
+  and what would you do next?". The deploy-lists block shows each host's statuses as
+  `a-trace-missing-change`'s evidence does (one deploy Live, earlier ones that went live
+  Replaced), and always holds, beside Pinecart's deploys,
   its Settings page with when each setting was last saved. The browser block always shows a normal load and a reload that
   skips the cache; in half the `stale-cdn` questions it also shows `?v=2`, and in the other half it
   doesn't, so full credit there needs the learner to propose changing the URL as well as clearing
@@ -604,8 +638,12 @@ task, never the scoring.
   half when the fix stays with the later step (open the pull request somewhere else). Half for the
   right step with a missing or wrong fix. None for agreeing to a faulty account, or for naming a
   sound step. On a `sound` account: full for agreeing; none for naming any step as wrong. A
-  scenario may hold several accounts, in any order, since none gives another away, with at least
-  one faulty account and at most one `sound` one. Across the bank, every shape appears, and `sound`
+  scenario may hold several accounts, with at least one faulty account and at most one `sound`
+  one. They are separate accounts of the same classmate's attempt, each judged on its own. Their
+  order is fixed, because one account can give another away (an account with a sound fork answers
+  one that skips the fork, and one with the right pull-request direction answers one that
+  reverses it), so an account comes only after those it could answer: faulty accounts first, in the order of their cases, `where-to-push`, then `pr-direction`,
+  then `failing-check`, and the `sound` account, if any, last. Across the bank, every shape appears, and `sound`
   accounts are written around each of the three steps.
 - **worked example:** as `a-route-showcase-change`'s.
 - **doesn't show:** each account has at most one wrong step, so a pass doesn't show the learner
