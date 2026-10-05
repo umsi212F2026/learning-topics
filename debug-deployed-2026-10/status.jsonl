@@ -1,2 +1,13 @@
 {"at":"2026-10-05T12:40:09.118Z","kind":"created"}
 {"at":"2026-10-05T12:40:09.119Z","kind":"goal-added","goal":"o-orientation","needs":"curation"}
+{"at":"2026-10-05T15:07:07.216Z","kind":"goal-added","goal":"w-stack-trace","needs":"curation"}
+{"at":"2026-10-05T15:16:36.069Z","kind":"goal-added","goal":"w-build-log","needs":"curation"}
+{"at":"2026-10-05T15:16:36.119Z","kind":"goal-added","goal":"w-deploy-status","needs":"curation"}
+{"at":"2026-10-05T15:16:36.155Z","kind":"goal-added","goal":"w-health-check","needs":"curation"}
+{"at":"2026-10-05T15:16:36.199Z","kind":"goal-added","goal":"w-gateway-error","needs":"curation"}
+{"at":"2026-10-05T15:16:36.238Z","kind":"goal-added","goal":"w-rollback","needs":"curation"}
+{"at":"2026-10-05T15:16:36.277Z","kind":"goal-added","goal":"w-cli","needs":"curation"}
+{"at":"2026-10-05T15:16:36.314Z","kind":"goal-added","goal":"w-mcp-server","needs":"curation"}
+{"at":"2026-10-05T15:16:36.351Z","kind":"goal-added","goal":"w-timeout","needs":"curation"}
+{"at":"2026-10-05T15:17:38.416Z","kind":"goal-added","goal":"c-connect-agent-host","needs":"curation"}
+{"at":"2026-10-05T15:17:38.487Z","kind":"goal-added","goal":"c-locate-failure","needs":"curation"}

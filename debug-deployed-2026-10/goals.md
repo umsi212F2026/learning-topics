@@ -1,4 +1,6 @@
-# Learning goals — debug deployed
+# Learning goals: debug deployed
+
+**study by:** 2026-10-08, 2 of 2
 
 **What I want to be able to do, and what would count as having got there.**
 
@@ -52,9 +54,13 @@
 
 ## Where this came from
 
+_Yours to fill in. Nobody can answer this one for you._
+
 <!-- Which of A / B / C / D, and the answer to the follow-up. -->
 
 ## What I already have
+
+_Yours to fill in. Say where your knowledge stops, not what you have heard of._
 
 <!--
   The nearest thing already known well, and where it stops.
@@ -64,6 +70,10 @@
 
 ## What I'll use it for
 
+_Yours to fill in. The course supplies one occasion: Problem Set 3, where your deployed app will
+break in ways it never did on localhost, and your agent has to find out why. Name any others you
+have._
+
 <!--
   The use, and a concrete occasion.
   If several uses apply, rank them: the top one sets the depth, the rest are cut first
@@ -71,6 +81,17 @@
 -->
 
 ## Depth
+
+**Get your agent looking at the deployed app's own logs, and know where a failure happened.** Not
+fixing the code yourself, and not reading every line of a log. When your deployed app breaks, your
+agent will happily guess from the code on your laptop, which is not what is running. This topic is
+enough to connect your agent to your host so it can read the logs itself, and to follow what it
+tells you: whether the build failed, the app never started, it is running and erroring, or the
+frontend can't reach the backend, and what each means for anyone using the app right now.
+
+What sits past that line: choosing hosts belongs to cloud-hosting, where each setting's value comes
+from to deploy-config, and setting up the deploy that runs on each push to deploy-pipeline. Sign-in
+comes in session 13, and watching the logs of an app that is already live in session 14.
 
 <!--
   Which of: recognize it / read it / modify something existing / author from scratch /
@@ -114,7 +135,8 @@
 
 1. orientation
 2. vocabulary
-3. capabilities
+3. c-connect-agent-host
+4. c-locate-failure
 
 ## Goals
 
@@ -247,6 +269,37 @@
   placeholder capability entry; an empty section is the honest signal.
 -->
 
+### `c-connect-agent-host`
+
+- **goal:** connect my coding agent to my host so it can read the deployed app's logs
+- **criterion:** With their own app deployed, connects their coding agent to the host through the
+  host's CLI or MCP server, makes a request to the deployed app, and has the agent show the server
+  log lines that request produced. It passes when the lines come from the deployed app rather than
+  from localhost, and no token or password went through the chat to make the connection. Having the
+  agent change the host's settings is not part of it.
+- **taught elsewhere:** session 12 lab
+
+### `c-locate-failure`
+
+- **goal:** get my agent to say where a deployed app's failure happened, and follow what it says
+- **criterion:** Given an agent's account of why a deployed app isn't working, in the agent's own
+  terms, says which kind of failure it describes (the build failed, the app failed to start, the
+  app is running but a request errors, the frontend can't reach the backend, or nothing has failed
+  because the app is waking from sleep) and what a visitor to the app sees right now because of
+  it. It passes when both are right, including for an account that never names the stage in plain
+  words. For an account drawn from the code or a run on the laptop rather than the deployed app's
+  logs, it passes when they say it isn't evidence about the deployed app. Fixing it is not part of
+  it.
+- **cases:**
+  - `failed-build`: the build failed, so the last version is still live, or nothing is
+  - `failed-start`: the app crashes as it starts
+  - `request-error`: the app is running, but a request to it errors, which leaves a stack trace
+    in the server log
+  - `cant-reach-backend`: the frontend can't reach the backend, through a wrong address or CORS
+  - `waking`: a sleeping app's cold start, which only looks like a failure
+  - `local-only`: an account drawn from the code or a laptop run, not the deployed app's logs
+- **taught elsewhere:** session 12 lab
+
 ### `o-orientation`
 
 - **goal:** get the shape of this area before working on any particular part of it
@@ -256,3 +309,89 @@
 - **recurrence:** never
 - **is_required:** no
 - **group:** orientation
+
+### `w-stack-trace`
+
+- **goal:** stack trace
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the trail an error leaves in the log of where in the code it happened
+- **nearest confusable:** error message
+- **synonyms:** traceback, backtrace
+
+### `w-build-log`
+
+- **goal:** build log
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** what the host printed while turning your code into what it runs
+- **nearest confusable:** server log
+
+### `w-deploy-status`
+
+- **goal:** deploy status
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the host's one-word verdict on the latest deploy
+- **nearest confusable:** whether the app works
+
+### `w-health-check`
+
+- **goal:** health check
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** an address the host keeps asking, to see whether the app still answers
+- **nearest confusable:** a test
+- **synonyms:** health endpoint
+
+### `w-gateway-error`
+
+- **goal:** gateway error
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the host answering for your app because your app didn't
+- **nearest confusable:** a 500 error from your app
+- **synonyms:** 502 Bad Gateway, 503 Service Unavailable
+
+### `w-rollback`
+
+- **goal:** rollback
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** putting the last working deploy back in place
+- **nearest confusable:** redeploy; a git revert
+- **synonyms:** roll back
+
+### `w-cli`
+
+- **goal:** CLI
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a program you, or your agent, drive by typing commands
+- **synonyms:** command-line interface, command-line tool
+
+### `w-mcp-server`
+
+- **goal:** MCP server
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** what plugs a service into your agent as tools it can call
+- **nearest confusable:** CLI; your app's backend
+- **synonyms:** connector
+
+### `w-timeout`
+
+- **goal:** timeout
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** giving up on a request that took too long to answer
+- **nearest confusable:** a crash
