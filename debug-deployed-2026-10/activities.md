@@ -40,8 +40,7 @@ text states the task, never the scoring.
 - **serves:** `all`
 - **supports:** orient
 - **checks:** `o-orientation`
-- **artifact:** three free pages, no account, read in this order as one sitting. All three checked
-  2026-10-05.
+- **artifact:** three free pages, no account, read in this order as one sitting.
   1. **Read first:** The Odin Project, "Deployment" (Node path),
      https://www.theodinproject.com/lessons/node-path-nodejs-deployment, from the heading
      "Debugging and troubleshooting deployments" down to, and not including, "Assignment". This is
@@ -76,6 +75,7 @@ text states the task, never the scoring.
   Deploy status and CLI are not named in the reading; the tutor names them at stop 2. Two of the
   five kinds of failure in `c-locate-failure`, an app waking from sleep and a frontend that can't
   reach its backend, are in none of the three pages; the tutor brings them in at stop 1.
+- **verified:** 2026-10-05
 - **learner does:** reads Odin first, with their own deployed app (or, before it is deployed, their
   Problem Set 2 app) in mind, then the two Render pages. Stops twice and answers before reading on;
   "I don't know yet" is an honest answer:
@@ -154,7 +154,8 @@ text states the task, never the scoring.
   https://render.com/docs/mcp-server, which connects through a sign-in in the browser; for a CLI,
   Railway's CLI page, https://docs.railway.com/cli, whose `railway login` opens a browser and whose
   `railway logs`, `railway logs --build` and `railway deployment list` cover all three things.
-  Both checked 2026-10-05. Other hosts have their own CLI or MCP server pages.
+  Other hosts have their own CLI or MCP server pages.
+- **verified:** 2026-10-05
 - **learner does:** connects their coding agent to the host their backend runs on, through the
   host's CLI or MCP server, signing in themselves. Then opens the deployed app in a browser and
   does one thing in it that calls the backend, noting the time, and asks the agent to show three
@@ -207,6 +208,7 @@ text states the task, never the scoring.
 - **artifact:** no external source. A made-up app and host, and an agent's account of one incident
   on it, from this activity's bank or written live per the generator below. 3 to 5 minutes a
   question.
+- **verified:** 2026-10-05
 - **learner does:** reads the scenario's setup and the one account served, and answers in two or
   three sentences the question every account ends with: "From your agent's account, where did
   things go wrong, if they did, and what does someone visiting the app right now see? If the
@@ -317,6 +319,7 @@ text states the task, never the scoring.
 - **artifact:** no external source. The learner's own deployed app when it actually misbehaves, in
   the session 12 lab or while working on Problem Set 3, with their agent connected to the host
   (`c-connect-agent-host`), and the agent's account of why. 5 to 10 minutes, whenever it happens.
+- **verified:** 2026-10-05
 - **learner does:** asks their agent why the deployed app isn't working, and gets its account. Before
   the tutor says anything, says in two or three sentences what kind of failure the account
   describes, if any, and what someone visiting the app right now sees; or, if the agent answered
