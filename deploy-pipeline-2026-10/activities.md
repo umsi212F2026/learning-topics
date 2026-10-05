@@ -44,9 +44,11 @@ task, never the scoring.
   - Settings (environment variables) entered on the service's Settings page reach the running
     server and never the browser. Saving one restarts the server with the new value.
   - Its deploy list shows each deploy with its commit, its time and its status: Building, Live,
-    Replaced, Failed, or Skipped (checks failed). A Live deploy shows as Replaced once a later
-    deploy goes live, so only one deploy is Live at a time. When a deploy fails, the previous one
-    stays live.
+    Replaced, Failed, or Skipped (checks failed). While auto-deploy is on, every push to its linked
+    branch appears on the list, including a push that changes only the frontend, so with "Wait for
+    GitHub checks" on, a frontend-only commit whose checks fail shows as Skipped (checks failed). A
+    Live deploy shows as Replaced once a later deploy goes live, so only one deploy is Live at a
+    time. When a deploy fails, the previous one stays live.
 
 ## Check notes
 
@@ -188,8 +190,10 @@ task, never the scoring.
   change that would itself put a secret into the repository or a frontend setting, put the token
   or the deploy hook's URL in the workflow file, or stop a deploy waiting for the tests; such a
   change cancels the credit.
-- **done when:** the criterion met with no help, case by case: a question carrying two cases is
-  credited per case, full credit on a case passes it, and half credit passes nothing.
+- **done when:** the criterion met with no help. Each question gets one ruling: full credit passes
+  every case it carries, and half credit or none passes nothing. A question carrying two cases (a
+  `token-in-workflow` plan, the `sound` plan, the confirmation question) is passed only when the
+  answer meets both, and its rubric `cases:` line lists both.
 - **generator:** a scenario is one app shaped like the course's Problem Set 3 app: a React
   frontend in `client/` and an Express backend in `server/`, in one GitHub repository, each folder
   with tests run by `npm test`, and a database on a host outside the plan. The app varies (a club
@@ -283,15 +287,17 @@ task, never the scoring.
   turning on "Wait for GitHub checks" with no tests running (a commit with no checks deploys
   straight away), is half. On a `tests-beside` plan,
   asking only for tests to be added, as if none ran, is none. On a `token-in-workflow` plan, the
-  credit above goes to both its cases alike. The `sound` plan is credited per case. `sound-plan`:
-  full for agreeing, with or without harmless remarks; none for asking to change a sound step into
-  a faulty one, or for refusing it on a wrong ground (such as "the `.env` file shouldn't exist at
-  all"). `deploy-token`: full for the repository's GitHub secrets (Actions secrets), read by the
-  workflow; half for "somewhere secret, not in the file" with no place named; none for the
-  workflow file, a `.env` file, a Pinecart setting, or the chat. The token answer is credited only
-  under `deploy-token`: a wrong place for the token loses that case and leaves `sound-plan` as the
-  rest of the answer earns it. The confirmation question is credited per case, and an answer may
-  cover the two in either order. `confirm-live`: full for pushing a small change
+  credit above goes to both its cases alike. The `sound` plan and the confirmation question each
+  carry two cases and get one ruling: full only when the answer meets what each case below asks for
+  full, half when it meets at least half on each but not full on both, and none otherwise; their
+  rubric `cases:` line lists both. On the `sound` plan, what `sound-plan` asks for: agreeing, with
+  or without harmless remarks; it is missed by asking to change a sound step into a faulty one, or
+  by refusing the plan on a wrong ground (such as "the `.env` file shouldn't exist at all"). What
+  `deploy-token` asks for: the repository's GitHub secrets (Actions secrets), read by the workflow,
+  for full; "somewhere secret, not in the file" with no place named is half; the workflow file, a
+  `.env` file, a Pinecart setting, or the chat is none. So a wrong place for the token fails the
+  question however the plan itself is judged. On the confirmation question, an answer may cover the
+  two cases in either order. `confirm-live`: full for pushing a small change
   that shows in the live app only once both parts have deployed it (such as new text the page gets
   from the backend, or a frontend change together with the backend change it relies on) and seeing
   it in the live app in the browser; half for a change that shows once only one part has deployed
@@ -415,10 +421,10 @@ task, never the scoring.
   whether a workflow runs the tests and deploys the frontend). The setup also quotes, word
   for word, the parts of the roster at the head of this file that the scenario needs: for Pinecart,
   always the Settings and build bullet, the CDN bullet and the deploy-list bullet, plus the link
-  bullet or bullets that describe how this pipeline deploys the frontend; for Ropewalk, its bullets
-  whenever they bear on the scenario (its link and wait bullet when the backend deploys the change,
-  plus its auto-deploy and deploy-hook bullets when the workflow deploys it through the hook, and
-  its deploy-list bullet when its deploys are evidence). Then what the learner changed and roughly
+  bullet or bullets that describe how this pipeline deploys the frontend; for Ropewalk, always its
+  link and wait bullet and its deploy-list bullet, since its deploy list is always evidence and
+  lists every push, frontend-only ones included, plus its auto-deploy and deploy-hook bullets when
+  the workflow deploys it through the hook. Then what the learner changed and roughly
   when, a visible change ("the sign-up button now says Join the club", or a frontend setting saved
   on Pinecart's Settings page), and that the live app doesn't show it. The setup never says whether
   anything was rebuilt after a setting was saved; Pinecart's deploy times against the setting's
@@ -430,7 +436,9 @@ task, never the scoring.
   latest commits on `main` on GitHub, any open pull request, and the checks on the relevant
   commit; each host's last two or three deploys from its deploy list, with statuses as the
   roster gives them (only one deploy Live, an earlier one that went live shown Replaced, and the
-  Live one staying the previous deploy when a later one failed or was skipped), and beside Pinecart's,
+  Live one staying the previous deploy when a later one failed or was skipped, and Ropewalk's list
+  holding every push to `main` while its auto-deploy is on, even one that changes only the
+  frontend), and beside Pinecart's,
   its Settings page with when each setting was last saved (shown when the learner asks for
   Pinecart's deploy list); and the page under each browser view. True red herrings are allowed
   (an older failed deploy, a failed check on an older commit), false ones are not. Shapes, each
@@ -442,7 +450,8 @@ task, never the scoring.
   - `unmerged-pr` (Medium; `not-on-main`): in an open pull request nobody has merged.
   - `red-check` (Easy; `tests-failed`): the commit's check failed, and the deploy that waits on it
     never ran: no Pinecart deploy for the commit when the workflow deploys the frontend; for
-    Ropewalk, its list shows the commit Skipped when "Wait for GitHub checks" is on, or holds no
+    Ropewalk, its list shows the commit Skipped when "Wait for GitHub checks" is on, even when the
+    change touches only the frontend, or holds no
     deploy for it when its auto-deploy is off and the workflow calls its deploy hook after the
     tests pass.
   - `failed-deploy` (Easy; `deploy-failed`): checks passed; the deploy list shows the commit's
@@ -504,7 +513,8 @@ task, never the scoring.
   blocks (git's output, GitHub, the deploy lists, the browser), and the question is "Why isn't the change showing,
   and what would you do next?". The deploy-lists block shows each host's statuses as
   `a-trace-missing-change`'s evidence does (one deploy Live, earlier ones that went live
-  Replaced), and always holds, beside Pinecart's deploys,
+  Replaced, and on Ropewalk's list every push to `main` while its auto-deploy is on, frontend-only
+  ones included), and always holds, beside Pinecart's deploys,
   its Settings page with when each setting was last saved. The browser block always shows a normal load and a reload that
   skips the cache; in half the `stale-cdn` questions it also shows `?v=2`, and in the other half it
   doesn't, so full credit there needs the learner to propose changing the URL as well as clearing
@@ -613,7 +623,11 @@ task, never the scoring.
   which one, and what should have happened instead?" In `entry-in-app-repo`, `new-unrelated-repo`
   and `reversed-pr`, the account ends at the wrong step or one step after it, and that later step
   only follows from the wrong one (the pull request opened in the app repository, the pull request
-  opened from the new repository). Shapes, each carrying one case:
+  opened from the new repository). When a shape needs the check to fail (`new-pr-for-fix`,
+  `fix-on-wrong-branch`, or a `sound` account written around `failing-check`), the account never
+  shows the entry's contents, so that no step before the failure reads as a fault: the failure
+  shows only in the check's message, quoted after the pull request is opened. Shapes, each carrying
+  one case:
   - `entry-in-app-repo` (Easy; `where-to-push`): the entry is added to the classmate's own app
     repository, and a pull request is opened there.
   - `new-unrelated-repo` (Medium; `where-to-push`): the account states the lack of push access as a
