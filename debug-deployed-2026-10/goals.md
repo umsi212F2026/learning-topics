@@ -1,5 +1,6 @@
 # Learning goals: debug deployed
 
+**origin:** course
 **study by:** 2026-10-08, 2 of 2
 
 **What I want to be able to do, and what would count as having got there.**
