@@ -231,6 +231,7 @@ part of this.
 - **serves:** `c-place-app-parts`
 - **supports:** attempt
 - **checks:** `c-place-app-parts`
+- **status:** dropped: the session 11 lab has each student write their own prompt, so there is no shared answer to start from. `a-place-described-plan` covers this goal.
 - **artifact:** no external source. A hosting plan for the learner's own Problem Set 2 app, from
   an agent's answer to their table's session 11 lab prompt, and the parts of that app. By
   default the answer is a fresh rerun of the table's prompt or a tablemate's answer, chosen so
@@ -404,6 +405,7 @@ part of this.
 - **serves:** `c-check-vendor-claims`
 - **supports:** attempt
 - **checks:** `c-check-vendor-claims`
+- **status:** dropped: the session 11 lab has each student write their own prompt, so there is no shared answer to start from. `a-check-2025-guide-claims` and `a-sort-claim-sources` cover this goal.
 - **artifact:** no external source. One claim about a vendor's free tier from an agent's answer to
   the learner's table's session 11 lab prompt, kept word for word. By default the answer is a
   fresh rerun of the table's prompt, or a tablemate's answer, and the claim is about a vendor the
@@ -516,6 +518,7 @@ part of this.
 - **serves:** `c-weigh-hosting-plans`
 - **supports:** attempt
 - **checks:** `c-weigh-hosting-plans`
+- **status:** dropped: the session 11 lab has each student write their own prompt, so there is no shared answer to start from. `a-weigh-described-plans` covers this goal.
 - **artifact:** no external source. Two plans for the learner's own Problem Set 2 app taken from the
   session 11 lab (their agent's answer and a tablemate's, or one answer's two options), one putting
   the frontend and backend with a single vendor and one using a separate vendor for each, with the
