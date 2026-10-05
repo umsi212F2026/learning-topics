@@ -200,13 +200,17 @@ task, never the scoring.
   sign-up sheet, a study-group finder, a recipe box, a used-textbook board), and so do its values.
   Fixed: the frontend is on Pinecart and the backend on Ropewalk, quoted from the roster at the
   head of this file; the backend reads the database's connection string, and may read one outside
-  service's key (a weather, maps or AI service); the frontend reads the backend's address. The
-  setup names which values are secrets ("Secrets: the database's connection string and the maps
+  service's key, always a service whose key must stay on the server (an AI service, a payment or
+  email service, a weather API with a private key), never one whose key is made to sit in the
+  browser, such as a maps service; the frontend reads the backend's address. The
+  setup names which values are secrets ("Secrets: the database's connection string and the AI
   service's key"), so the question tests the plan and not spotting a secret; the list always
   includes the Pinecart deploy token, and Ropewalk's deploy hook URL whenever a plan in the
   scenario uses the hook. The setup also says
   that the agent proposed each plan in a different session, and that each question is about its
-  own plan alone. Only the app's own names are invented per scenario (its environment variable
+  own plan alone. It also says that neither host is set up yet, so each plan creates the Pinecart
+  site and the Ropewalk service; a fault that rests on a roster default for a new service (such as
+  "Wait for GitHub checks", off for a new service) rests on that sentence. Only the app's own names are invented per scenario (its environment variable
   names, its config files, the label on the token); the hosts' settings are named word for word
   as the roster names them.
 
@@ -304,11 +308,15 @@ task, never the scoring.
   it (a frontend-only change, or a backend change checked only by calling the backend directly),
   for pushing a change and checking only the deploy lists or the agent's report, or for opening
   the live app without pushing anything new; none for taking the agent's word or the Live status.
-  `confirm-gate`: full for pushing a change that makes a test fail together with something visible
-  from each part (such as new text in the page itself and new text the page gets from the backend),
-  and seeing that the live app shows neither, then fixing or reverting it; half for a failing push
-  whose visible change comes from one part only, or for watching only the red check or the deploy
-  lists; none for reading the hosts' settings or asking the agent.
+  `confirm-gate`: full for pushing a change that makes a test fail and seeing that neither part
+  deploys it, then fixing or reverting it. Either kind of evidence is full: the live app, when the
+  push carries something visible from each part (such as new text in the page itself and new text
+  the page gets from the backend) and the live app shows neither; or the deploy lists, when
+  Ropewalk's list shows the commit Skipped (checks failed), or no Ropewalk deploy of it, and
+  Pinecart's list shows no new deploy. The rule against trusting the hosts' word belongs to
+  `confirm-live` alone. Half for seeing it for one part only (a failing push whose visible change
+  comes from one part only, or checking one host's deploy list), or for watching only the red
+  check; none for reading the hosts' settings or asking the agent.
 
   Every scenario carries all seven cases. **Rotation across the bank:** slot 1 rotates through
   `committed-secret`, `unignored-env` and `token-in-workflow`; slot 3 rotates through
@@ -569,7 +577,10 @@ task, never the scoring.
     each?" Or (Easy) the same as a four-option multiple choice of base and head pairs, `type: mcq`.
     Or (Hard) the agent reports "I've opened a pull request from `northfield-cs/showcase:main`
     into `mara-codes/showcase:add-study-buddy`", reversed, or the right way round, and the question
-    asks whether it is right and, if not, what it should be. Full: base is the original repository
+    asks whether it is right and, if not, what it should be. A scenario whose report is reversed
+    says in its setup that other entries have been merged into the original since the fork, since
+    GitHub opens a pull request from the original's `main` into the fork's branch only when that
+    `main` has commits the branch lacks. Full: base is the original repository
     and its `main`; head is their fork and the branch with the change (and, for a right-way report,
     agreeing). None: reversed, or their app's repository anywhere.
   - `failing-check` (Medium): "Your pull request is open, and its check has failed with this
@@ -620,10 +631,11 @@ task, never the scoring.
   Each question is one account of four to seven numbered steps, in the first person of a made-up
   classmate or as an agent's summary of what it did, with one step that goes wrong or none, and
   every step before a wrong one sound. "Would you have gone along with this? If a step goes wrong,
-  which one, and what should have happened instead?" In `entry-in-app-repo`, `new-unrelated-repo`
-  and `reversed-pr`, the account ends at the wrong step or one step after it, and that later step
-  only follows from the wrong one (the pull request opened in the app repository, the pull request
-  opened from the new repository). When a shape needs the check to fail (`new-pr-for-fix`,
+  which one, and what should have happened instead?" In `entry-in-app-repo` and `reversed-pr`, the
+  account ends at the wrong step or one step after it, and that later step only follows from the
+  wrong one (the pull request opened in the app repository). A `new-unrelated-repo` account ends at
+  the wrong step, creating the new repository and pushing the entry to it, and never goes on to a
+  pull request, since GitHub cannot open one from a repository with no shared history. When a shape needs the check to fail (`new-pr-for-fix`,
   `fix-on-wrong-branch`, or a `sound` account written around `failing-check`), the account never
   shows the entry's contents, so that no step before the failure reads as a fault: the failure
   shows only in the check's message, quoted after the pull request is opened. Shapes, each carrying
@@ -633,9 +645,12 @@ task, never the scoring.
   - `new-unrelated-repo` (Medium; `where-to-push`): the account states the lack of push access as a
     fact, not as an attempted step ("I don't have push access to the showcase"), and the agent
     creates a new repository of the classmate's and pushes the change there instead of forking the
-    original. No step tries to push to the original.
+    original. No step tries to push to the original, and the account ends with that push.
   - `reversed-pr` (Medium; `pr-direction`): the change is on a branch of the fork, and the pull
-    request runs from the original's `main` into that branch.
+    request runs from the original's `main` into that branch. A scenario holding a `reversed-pr`
+    account says in its setup that other entries have been merged into the original since the
+    fork, since GitHub opens a pull request that way round only when the original's `main` has
+    commits the fork's branch lacks.
   - `new-pr-for-fix` (Easy; `failing-check`): the check fails, and the fix goes into a second pull
     request.
   - `fix-on-wrong-branch` (Hard; `failing-check`): the check fails, and the fix is pushed to the
