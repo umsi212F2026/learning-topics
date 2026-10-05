@@ -21,7 +21,8 @@ where should it go?
 ### q2
 
 Your change is pushed, on a branch called `add-bus-times` in `kofi-builds/demo-shelf`, your own
-copy of the demo shelf. Your agent reports: "I've opened a pull request from
+copy of the demo shelf. Since you forked it, other members' entries have been merged into
+`westbrook-devs/demo-shelf`. Your agent reports: "I've opened a pull request from
 `westbrook-devs/demo-shelf:main` into `kofi-builds/demo-shelf:add-bus-times`." Is that right? If
 not, what should it be?
 

@@ -12,7 +12,7 @@ What is the difference between CI and a test suite?
 
 ### q-catch-ci-blocks-deploys
 
-A team's backend is on Ropewalk, which deploys every push to `main`. A GitHub Actions workflow runs
+A team's backend is on Ropewalk, which is linked to `main`. A GitHub Actions workflow runs
 the team's tests on every push and shows the result as a check.
 
 A student says:

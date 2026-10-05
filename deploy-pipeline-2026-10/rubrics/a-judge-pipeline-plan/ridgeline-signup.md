@@ -33,18 +33,18 @@ setting, or stop a deploy waiting for the tests.
 
 - **goal:** `c-set-up-auto-deploy`
 - **cases:** frontend-secret
-- **answer:** Not as it stands. Step 4 puts the maps service's key in a Pinecart setting, and
+- **answer:** Not as it stands. Step 4 puts the AI service's key in a Pinecart setting, and
   Pinecart's build copies it into the files every visitor's browser downloads, so anyone can read
-  it. Keep `MAPS_KEY` on Ropewalk's Settings page and have the frontend get the map through the
-  backend, which calls the maps service with the key.
-- **credit:** full for naming the maps key in Pinecart's settings (step 4) and asking for the
+  it. Keep `AI_KEY` on Ropewalk's Settings page and have the "Packing list" button ask the
+  backend, which calls the AI service with the key.
+- **credit:** full for naming the AI key in Pinecart's settings (step 4) and asking for the
   outside service to be called through the backend, with the key in Ropewalk's settings. A reason
   is welcome, not required. Half for naming the key in Pinecart's settings with no workable change
-  (only "take the key out", leaving the map with no way to work, or "keep it safe"). None for
+  (only "take the key out", leaving the button with no way to work, or "keep it safe"). None for
   agreeing, for objecting only to sound steps (`VITE_API_URL` in Pinecart's settings is sound: the
   backend's address is not a secret), or for moving the key into a committed file.
-- **tutor note:** if they say only "don't put the key there", ask how the map on the trip page
-  gets drawn once the key is gone from the frontend.
+- **tutor note:** if they say only "don't put the key there", ask how the packing list gets
+  drafted once the key is gone from the frontend.
 
 ### q3
 
@@ -96,7 +96,8 @@ setting, or stop a deploy waiting for the tests.
   text on the trip page that the page gets from the backend, wait for both deploys, and open the
   live app in the browser to see the new text there. Then push a change that makes a test fail,
   along with something visible from each part (new text in the page itself and new text the page
-  gets from the backend), see that the live app shows neither, and then fix or revert it.
+  gets from the backend), see that the live app shows neither (or see on the deploy lists that
+  Ropewalk skipped the commit and Pinecart made no new deploy), and then fix or revert it.
 - **credit:** one ruling for the question: full only when the answer meets what each case below
   asks for full, half when it meets at least half on each but not full on both, and none
   otherwise. The answer may cover the two in either order.
@@ -107,10 +108,13 @@ setting, or stop a deploy waiting for the tests.
     change checked only by calling the backend directly), for pushing a change and checking only
     the deploy lists or the agent's report, or for opening the live app without pushing anything
     new. None for taking the agent's word or the Live status.
-  - `confirm-gate`: full for pushing a change that makes a test fail together with something
-    visible from each part, and seeing that the live app shows neither, then fixing or reverting
-    it. Half for a failing push whose visible change comes from one part only, or for watching
-    only the red check or the deploy lists (Ropewalk showing the commit Skipped, Pinecart showing
-    no new deploy). None for reading the hosts' settings or asking the agent.
-- **tutor note:** if they stop at the deploy lists, ask what a visitor to the site would see, and
-  how they would know it came from the new commit.
+  - `confirm-gate`: full for pushing a change that makes a test fail and seeing that neither part
+    deploys it, then fixing or reverting it. Either kind of evidence is full: the live app, when
+    the push carries something visible from each part and the live app shows neither; or the
+    deploy lists, when Ropewalk's list shows the commit Skipped (checks failed), or no Ropewalk
+    deploy of it, and Pinecart's list shows no new deploy. The rule against trusting the hosts'
+    word belongs to `confirm-live` alone. Half for seeing it for one part only (a failing push
+    whose visible change comes from one part only, or checking one host's deploy list), or for
+    watching only the red check. None for reading the hosts' settings or asking the agent.
+- **tutor note:** if they check the working push only on the deploy lists, ask what a visitor to
+  the site would see, and how they would know it came from the new commit.

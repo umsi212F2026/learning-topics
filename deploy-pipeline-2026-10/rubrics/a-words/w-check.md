@@ -31,8 +31,8 @@ nothing.
   deployed" with nothing on what the tick does mean. None for a different quibble, such as that
   the browser might be showing an old copy.
 - **tutor note:** a learner may say some hosts report their deploys back to GitHub as a check.
-  That is true of some hosts and not of Pinecart or Ropewalk in this topic; ask what this tick, on
-  its own, could be the result of.
+  That is true of some hosts, but nothing in the question says where this tick came from; ask what
+  this tick, on its own, could be the result of.
 
 ### q-catch-failed-check-rejects-push
 

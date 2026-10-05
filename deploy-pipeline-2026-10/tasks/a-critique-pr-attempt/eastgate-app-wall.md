@@ -8,7 +8,8 @@ it, but she can't push to it.
 The app wall keeps its list in one file, `apps.json`, with an entry per app giving its `name`,
 `author` and `url`. Priya's change is to add an entry for Plant Pal. A check called
 `check-app-wall` runs on every pull request to the app wall and fails if an entry is missing a
-field or is badly formed. Her agent did the typing.
+field or is badly formed. Her agent did the typing. Other members' entries were merged into
+`eastgate-coders/app-wall` while Priya was working on hers.
 
 Each question below is a separate account of how Priya got her entry onto the app wall. Read each
 one on its own.

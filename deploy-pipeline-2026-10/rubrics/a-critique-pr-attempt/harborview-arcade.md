@@ -14,13 +14,11 @@ pull request and so answers q1 and q2; hence this order.
 - **answer:** No. Step 3 goes wrong: the agent made a brand-new repository,
   `tomas-ships/arcade-entry`, which is not a copy of the arcade, and pushed the entry there. It
   should have forked `harborview-makers/arcade` into Tomas's account, as `tomas-ships/arcade`, and
-  pushed a branch with the entry to that fork. Step 4 only follows from step 3.
+  pushed a branch with the entry to that fork, ready for a pull request into the arcade.
 - **credit:** full for naming step 3 and saying the change should have gone into a fork of
-  `harborview-makers/arcade` under his account, pushed there; or for naming step 4 with a fix that
-  goes back to step 3 (the pull request should come from a fork of the arcade). Half for step 3
-  with a missing or wrong fix (such as pushing to `harborview-makers/arcade` directly, or to
-  `tomas-ships/bus-buddy`), or for step 4 with a fix that stays there (open the pull request from
-  some other branch or repository). None for agreeing, or for naming step 1 or 2.
+  `harborview-makers/arcade` under his account, pushed there. Half for step 3 with a missing or
+  wrong fix (such as pushing to `harborview-makers/arcade` directly, or to
+  `tomas-ships/bus-buddy`). None for agreeing, or for naming step 1 or 2.
 - **tutor note:** if they agree, ask what `tomas-ships/arcade-entry` has in common with the arcade
   besides a file name.
 

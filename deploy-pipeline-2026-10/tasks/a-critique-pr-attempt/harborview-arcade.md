@@ -8,7 +8,8 @@ read it, but he can't push to it.
 The arcade keeps its list in one file, `projects.yaml`, with an entry per project giving its
 `title`, `maker` and `link`. Tomas's change is to add an entry for Bus Buddy. A check called
 `lint-arcade` runs on every pull request to the arcade and fails if an entry is missing a field or
-is badly formed. His agent did the typing.
+is badly formed. His agent did the typing. Other members' entries were merged into
+`harborview-makers/arcade` while Tomas was working on his.
 
 Each question below is a separate account of how Tomas got his entry into the arcade. Read each
 one on its own.
@@ -22,8 +23,6 @@ Tomas tells it like this:
 2. I asked my agent to add an entry for Bus Buddy.
 3. The agent created a new repository in my account, `tomas-ships/arcade-entry`, added a
    `projects.yaml` holding my entry, and pushed it to `main` in `tomas-ships/arcade-entry`.
-4. It opened a pull request from `tomas-ships/arcade-entry` branch `main` into
-   `harborview-makers/arcade` branch `main`.
 
 Would you have gone along with this? If a step goes wrong, which one, and what should have
 happened instead?

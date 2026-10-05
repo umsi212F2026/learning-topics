@@ -26,8 +26,8 @@ pull request to start again. q2 names the fork, which gives q1's answer away, so
 - **cases:** pr-direction
 - **type:** mcq
 - **answer:** 2
-- **credit:** full for 2 only. 1 is reversed; 3 takes the head from the app's repository, which
-  has no gallery in it; 4 runs inside the fork, so the gallery never gets the entry.
+- **credit:** full for 2 only. 1 is reversed; 3 takes the head from the fork's `main`, which
+  lacks the entry, since it was pushed to `add-recipe-box`; 4 runs inside the fork, so the gallery never gets the entry.
 - **tutor note:** if they choose 1, ask which repository should end up with the new entry: that
   one is the base.
 

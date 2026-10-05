@@ -27,8 +27,7 @@ a head repository and branch. Which do you choose?
    `main`.
 2. Base `riverside-hack-club/gallery` branch `main`; head `theo-makes/gallery` branch
    `add-recipe-box`.
-3. Base `riverside-hack-club/gallery` branch `main`; head `theo-makes/recipe-box` branch
-   `add-recipe-box`.
+3. Base `riverside-hack-club/gallery` branch `main`; head `theo-makes/gallery` branch `main`.
 4. Base `theo-makes/gallery` branch `main`; head `theo-makes/gallery` branch `add-recipe-box`.
 
 ### q3

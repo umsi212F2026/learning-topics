@@ -1,13 +1,13 @@
 Answer each question in two to four sentences.
 
-Ridgeline is a climbing club's sign-up sheet. Members pick a weekend trip, add their name, and see
-a map of where the trip meets. The React frontend is in `client/` and the Express backend in
+Ridgeline is a climbing club's sign-up sheet. Members pick a weekend trip, add their name, and
+press "Packing list" to have an AI service draft what to bring for that trip. The React frontend is in `client/` and the Express backend in
 `server/`, both in one GitHub repository, `ridgeline-club/signup`, and each folder has tests that
 `npm test` runs. The database is on a database host outside this plan.
 
-The backend reads the database's connection string, `DATABASE_URL`, and the maps service's key,
-`MAPS_KEY`. The frontend reads the backend's address, `VITE_API_URL`. Secrets: the database's
-connection string, the maps service's key, and the Pinecart deploy token.
+The backend reads the database's connection string, `DATABASE_URL`, and the AI service's key,
+`AI_KEY`. The frontend reads the backend's address, `VITE_API_URL`. Secrets: the database's
+connection string, the AI service's key, and the Pinecart deploy token.
 
 The frontend is hosted on Pinecart and the backend on Ropewalk. This is how they behave:
 
@@ -41,8 +41,9 @@ The frontend is hosted on Pinecart and the backend on Ropewalk. This is how they
     time. When a deploy fails, the previous one stays live.
 
 You asked an agent to make Ridgeline deploy itself, frontend and backend, whenever `main` is
-pushed to GitHub. It proposed each plan below in a different session. Each question is about its
-own plan alone.
+pushed to GitHub. Neither host is set up yet, so each plan creates the Pinecart site and the
+Ropewalk service. The agent proposed each plan below in a different session. Each question is
+about its own plan alone.
 
 ### q1
 
@@ -55,7 +56,7 @@ The agent proposes:
    deploys.
 3. I'll link Ropewalk to `ridgeline-club/signup`, branch `main`, folder `server/`, and turn on
    "Wait for GitHub checks".
-4. I'll enter `DATABASE_URL` and `MAPS_KEY` on Ropewalk's Settings page, and `VITE_API_URL` on
+4. I'll enter `DATABASE_URL` and `AI_KEY` on Ropewalk's Settings page, and `VITE_API_URL` on
    Pinecart's Settings page.
 5. In `server/db.js` I'll write the connection string in as a fallback,
    `process.env.DATABASE_URL || "postgres://ridgeline:...@db.example.net/signup"`, so the server
@@ -74,7 +75,7 @@ The agent proposes:
    "Wait for GitHub checks".
 3. I'll enter `DATABASE_URL` on Ropewalk's Settings page.
 4. On Pinecart's Settings page I'll enter `VITE_API_URL`, the backend's address, and
-   `VITE_MAPS_KEY`, the maps service's key, so the map on the trip page can call the maps service
+   `VITE_AI_KEY`, the AI service's key, so the "Packing list" button can ask the AI service
    straight from the browser without a round trip through the server.
 
 Would you agree to this plan as it stands? If not, say what you would change before agreeing.
@@ -86,7 +87,7 @@ The agent proposes:
 1. I'll link Pinecart to `ridgeline-club/signup`, branch `main`, folder `client/`.
 2. I'll link Ropewalk to `ridgeline-club/signup`, branch `main`, folder `server/`, keeping its
    other settings as they are.
-3. I'll enter `DATABASE_URL` and `MAPS_KEY` on Ropewalk's Settings page, and `VITE_API_URL` on
+3. I'll enter `DATABASE_URL` and `AI_KEY` on Ropewalk's Settings page, and `VITE_API_URL` on
    Pinecart's Settings page.
 4. From then on, every push to `main` deploys both parts within a few minutes, with nothing extra
    to maintain.
@@ -98,9 +99,9 @@ Would you agree to this plan as it stands? If not, say what you would change bef
 The agent proposes:
 
 1. I'll add `.env` to `.gitignore`, beside `node_modules`.
-2. For running the app on your own machine, I'll put `DATABASE_URL` and `MAPS_KEY` in
+2. For running the app on your own machine, I'll put `DATABASE_URL` and `AI_KEY` in
    `server/.env`.
-3. I'll enter `DATABASE_URL` and `MAPS_KEY` on Ropewalk's Settings page, and link Ropewalk to
+3. I'll enter `DATABASE_URL` and `AI_KEY` on Ropewalk's Settings page, and link Ropewalk to
    `ridgeline-club/signup`, branch `main`, folder `server/`, with "Wait for GitHub checks" on.
 4. I'll enter `VITE_API_URL`, the backend's address, on Pinecart's Settings page, and switch off
    Pinecart's repository link.

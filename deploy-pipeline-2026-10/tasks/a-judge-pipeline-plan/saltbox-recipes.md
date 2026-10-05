@@ -47,8 +47,9 @@ The frontend is hosted on Pinecart and the backend on Ropewalk. This is how they
     time. When a deploy fails, the previous one stays live.
 
 You asked an agent to make Saltbox deploy itself, frontend and backend, whenever `main` is pushed
-to GitHub. It proposed each plan below in a different session. Each question is about its own plan
-alone.
+to GitHub. Neither host is set up yet, so each plan creates the Pinecart site and the Ropewalk
+service. The agent proposed each plan below in a different session. Each question is about its own
+plan alone.
 
 ### q1
 

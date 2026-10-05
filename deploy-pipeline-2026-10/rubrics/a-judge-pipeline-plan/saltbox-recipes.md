@@ -103,8 +103,8 @@ stop a deploy waiting for the tests.
   line of text under each suggested swap that the page gets from the backend, wait for both
   deploys, and open the live app in the browser to see the new text there. Then push a change
   that makes a test fail, along with something visible from each part (new text in the page itself
-  and new text the page gets from the backend), see that the live app shows neither, and then fix
-  or revert it.
+  and new text the page gets from the backend), see that the live app shows neither (or see on the
+  deploy lists that neither host made a new deploy of the commit), and then fix or revert it.
 - **credit:** one ruling for the question: full only when the answer meets what each case below
   asks for full, half when it meets at least half on each but not full on both, and none
   otherwise. The answer may cover the two in either order.
@@ -115,10 +115,14 @@ stop a deploy waiting for the tests.
     change checked only by calling the backend directly), for pushing a change and checking only
     the deploy lists or the agent's report, or for opening the live app without pushing anything
     new. None for taking the agent's word or the Live status.
-  - `confirm-gate`: full for pushing a change that makes a test fail together with something
-    visible from each part, and seeing that the live app shows neither, then fixing or reverting
-    it. Half for a failing push whose visible change comes from one part only, or for watching
-    only the red check or the deploy lists (with Ropewalk's auto-deploy off, neither list shows a
-    deploy for the commit). None for reading the hosts' settings or asking the agent.
+  - `confirm-gate`: full for pushing a change that makes a test fail and seeing that neither part
+    deploys it, then fixing or reverting it. Either kind of evidence is full: the live app, when
+    the push carries something visible from each part and the live app shows neither; or the
+    deploy lists, when Ropewalk's list shows no deploy of the commit (with its auto-deploy off,
+    nothing but the hook deploys it; a Skipped (checks failed) entry would do as well) and
+    Pinecart's list shows no new deploy. The rule against trusting the hosts' word belongs to
+    `confirm-live` alone. Half for seeing it for one part only (a failing push whose visible change
+    comes from one part only, or checking one host's deploy list), or for watching only the red
+    check. None for reading the hosts' settings or asking the agent.
 - **tutor note:** if they check the backend's change by visiting the backend's address directly,
   ask whether that shows the frontend has deployed too.
