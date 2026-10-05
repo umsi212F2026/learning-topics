@@ -1,339 +1,349 @@
-# Activities — debug deployed
+# Activities: debug deployed
 
 Candidate activities for the study phase. More than will be used; the tutor chooses among them
 with the learner.
 
-<!--
-  WHO THIS IS FOR. Written by the curation agent, read by the tutor agent. A human can read
-  it and occasionally will — someone debugging the workflow, or the learner if they ask —
-  so keep it legible. But write for the tutor: fields over prose, and everything it needs to
-  actually run an activity rather than describe one.
+The minimum route, the orientation and one passed question for each of the nine words, comes to
+about 47 minutes: 20 for `a-read-odin-debugging` and about 3 a word. Both capabilities are taught
+in the session 12 lab and carry `taught elsewhere`, so the tutor offers the learner the lab first;
+`a-locate-described-failure` is there for anyone who wants to check `c-locate-failure` outside it,
+at about 3 to 5 minutes a question across six cases.
 
-  Delete these comments as you fill the file. Not for tidiness — they cost the tutor
-  context on every read.
-
-  This is the layout for <area>-<yyyy>-<mm>/activities.md in your learning-topics repository,
-  which is created blank by
-  workflows/learn/tools/new-topic.mjs before any phase runs. Don't edit this file; edit the copy.
-
-  ONE FLAT LIST. No sections per goal — an activity can serve several, and orienting
-  activities just serve all of them. The `serves` and `supports` fields are how the tutor
-  narrows down.
-
-  IDs are `a-` plus two to four kebab-case words, readable on their own —
-  `a-read-unseen-diagram`, not `a-1`. The `a-` prefix is the one namespace rule that is
-  load-bearing: goals.md's ids never start with it, and workflows/learn/tools/survey.mjs checks that.
-
-  UNIQUE ACROSS THE TOPIC, not just across this file: these entries and every goal in
-  goals.md. Nothing checks as you write — workflows/learn/tools/survey.mjs reports a duplicate the next time
-  it walks the folder, by which point attempts point at it.
-
-  They are STABLE. An id assigned once never changes, even if the wording it was derived from
-  gets reworded later. If something is genuinely replaced rather than reworded, the
-  replacement gets a new id and the old one gets `status: dropped`.
-
-  VOCABULARY IS ONE ACTIVITY, `a-words`, an ordinary entry that serves every word through its
-  group, those added later included. Curation writes it, exactly as below, when the topic has
-  words and no such entry; its generator is
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md, and a course topic's bank
-  holds one scenario file per word, tasks/a-words/<goal-id>.md:
-
-      ### `a-words`
-
-      - **serves:** group vocabulary
-      - **generator:** the five moves in `workflows/learn/skills/goal-setting/references/vocabulary-moves.md`, set for one word at a time from its `what it names`, `nearest confusable` and `synonyms`. Each question names that word's goal and carries its move.
-      - **learner does:** answers one short question about one word
-      - **tutor role:** examiner
-      - **tutor does:** sets the question as served, without rewording it or hinting; when the bank has nothing for the word, sets one move live, as vocabulary-moves.md describes
-      - **offer as:** not offered as a choice; a word's question is set when that word is studied or due
-
-  LEGACY STAMPS. An older file may hold entries carrying `origin: generated`, placeholders that
-  curation once stamped for each word. They are retired: nothing serves from one, survey skips
-  them, and workflows/learn/tools/migrate-words.mjs removes them. Never write one; leave an old
-  one alone until that tool runs.
-
-  AN ACTIVITY IS THE ORIENTATION, OR A SOURCE OF QUESTIONS, banked or set live. Every question
-  has a rubric (a live one's is its generator's criterion) and names at least one goal, so every
-  activity carries `checks` and anything a learner does can move a goal to met. Any question can
-  be attempted with help, so nothing needs a separate place to practise first. Outside the
-  orientation, a reading, a video or a worked example is not an activity: it is help on a
-  question, the first level of it, in that activity's `worked example`.
-
-  Every entry says what the LEARNER DOES. A resource is not an activity: "read chapter 3"
-  is not an entry, "read chapter 3 writing a one-line gloss for each unfamiliar term" is, and
-  then only as the orientation.
-
-  ONE SCENARIO MAY SPAN GOALS. An exercise of many items (sort these, judge each, critique this)
-  is a scenario with one question per item, so repeats count and the learner stops once the goal
-  is met; and where the method is the same, one scenario may carry questions on several goals,
-  in different capabilities.
-
-  CANDIDATES, deliberately more than will be used — you can't tell whether an artifact will
-  orient someone until they try it. Don't rank them; characterize them, so the tutor can
-  offer a real choice.
-
-  Entries serving the same goal are SUBSTITUTES. The learner does one, not all of them, and
-  for checks an unaided pass on either one meets the goal's bar. A goal that genuinely needs
-  two different things done is a goal that should have been two, and the fix belongs in
-  goals.md.
-
-  Curation is agent-driven. Nothing here is negotiated with the learner.
-
-  goals.md is authoritative. If a criterion here disagrees with the one there, fix this file.
--->
+In this topic's banks and live questions, hosts are made up, invented for each scenario and used
+under one name throughout it, and an agent's account never names a real vendor. Learner-facing
+text states the task, never the scoring.
 
 ## Check notes
 
-<!--
-  Authored by curation/critique and placed by the orchestrator. Rewritten wholesale each pass,
-  so don't edit it — it will be replaced.
-
-  Dated, and short. What the tutor should know about this file as a whole before using it:
-  the menu skews toward reading, two capabilities are thinner than they look, the depth
-  runs heavier than goals.md asks for. Only things that survived the revision round —
-  anything that got fixed doesn't belong here.
-
-  Empty is a legitimate and good outcome. Say "nothing at file level" rather than inventing
-  an observation.
--->
-
 ## Goals
 
-<!--
-  Copied from goals.md so the tutor doesn't need both files open. ONE ROW PER GOAL CURATION
-  SERVES: every goal except the words. That is what this phase is for: finding real things for
-  a learner to do.
-
-  A word is NOT copied here and gets no Coverage row. The `a-words` entry serves it through
-  its group, with a generator that is fixed, so there is nothing to choose among and no gap a
-  Coverage row could show.
-
-  The `criterion` column is COPIED, and for a goal whose criterion is a reference rather than
-  the learner's own text — `vocabulary`, `orientation` — copy the reference name. The
-  sentence it points at is in workflows/learn/skills/goal-setting/references/slots.md and doesn't belong here
-  in two places.
-
-  The ids here are what `serves` refers to. They are COPIED FROM goals.md, not assigned here —
-  goals.md is where a goal is named, and this table is a convenience copy of it. If an id
-  here doesn't match one there, this file is the one that's wrong.
--->
-
-| id                      | Goal | Criterion — what gets examined, and what counts |
-| ----------------------- | ---- | ----------------------------------------------- |
-| `o-orientation`         |      | `orientation`                                   |
-| `c-read-unseen-diagram` |      |                                                 |
+| id | Goal | Criterion: what gets examined, and what counts |
+| -- | ---- | ---------------------------------------------- |
+| `o-orientation` | get the shape of this area before working on any particular part of it | `orientation` |
+| `c-connect-agent-host` | connect my coding agent to my host so it can read the deployed app's logs | With their own app deployed, connects their coding agent to the host through the host's CLI or MCP server, makes a request to the deployed app, and has the agent show the server log lines that request produced, and the latest deploy's status and build log. It passes when all three come from the deployed app rather than from localhost, and no token or password went through the chat to make the connection. Having the agent change the host's settings is not part of it. |
+| `c-locate-failure` | get my agent to say where a deployed app's failure happened, and follow what it says | Given an agent's account of why a deployed app isn't working, in the agent's own terms, says which kind of failure it describes (the build failed, the app failed to start, the app is running but a request errors, the frontend can't reach the backend, or nothing has failed because the app is waking from sleep) and what a visitor to the app sees right now because of it. It passes when both are right, including for an account that never names the stage in plain words. For an account drawn from the code or a run on the laptop rather than the deployed app's logs, it passes when they say it isn't evidence about the deployed app. Fixing it is not part of it. |
 
 ## Coverage
 
-<!--
-  DERIVED. Every cell here is computed from the `checks` fields of the activities below and
-  the rubric `goal:` lines of their banks; this table declares nothing. If the two disagree,
-  the activities win and this table is stale.
-
-  Regenerate it whenever activities are added, dropped, or re-tagged. It exists to restore
-  the coverage view that was lost when activities became one flat list, and it's the first
-  thing to read when deciding what's missing.
-
-  ONE ROW PER GOAL IN THE TABLE ABOVE, in the same order. `a-words` doesn't appear here and
-  neither do the words it serves; nothing is ever missing for those.
-
-  checks  live activities whose `checks` names this goal, or whose bank holds a question
-          whose rubric `goal:` names it
-  notes   authored by curation/critique, placed by the orchestrator. Usually empty. For deficiencies an empty cell can't
-          express — most often that every check for this goal shares the same
-          `doesn't show`, so the coverage is only apparent.
-
-  Dropped activities don't appear. An empty `checks` cell is a gap, and that's the whole
-  point of the table. A goal with cases has a second kind of gap the table can't show, a case
-  no question exercises; curation/verify looks for that one.
-
-  A cell may instead read `blocked — <why>`, meaning curation tried and couldn't: no
-  verifiable artifact exists, or the criterion can't be examined by anything constructible.
-  That's a defect in goals.md rather than here, and it needs the learner to resolve.
-
-  THE ORIENTATION GOAL is an ordinary row and always first, because it is first in goals.md.
-  It is a goal like any other, with a criterion, an adjudicator and a bar — a row naming no
-  goal could never finish. Its `checks` cell is filled like any other, with the activity whose
-  `checks` names it: the one that gives the learner the shape of the thing before any
-  particular part is in play.
-
-  If `goals.md` says the learner is already oriented, its entry there will have been deleted
-  and this row won't exist. If the entry is there but `what I already have` settles it, write
-  `n/a: already oriented` in `checks` and leave it. That's a complete row too.
--->
-
-| goal                    | checks | notes |
-| ----------------------- | ------ | ----- |
-| `o-orientation`         |        |       |
-| `c-read-unseen-diagram` |        |       |
+| goal | checks | notes |
+| ---- | ------ | ----- |
+| `o-orientation` | `a-read-odin-debugging` | |
+| `c-connect-agent-host` | `a-connect-own-host` | |
+| `c-locate-failure` | `a-locate-described-failure`, `a-locate-own-failure` | |
 
 ---
 
 ## Activities
 
-<!--
-  One heading per activity, one bullet per field, not a table row. Several values run to a
-  sentence or more, which table cells can't hold. The Goals block above is a table for the
-  opposite reason: short values, same shape every row.
+### `a-read-odin-debugging`
 
-  FIELDS. Every activity has `serves` through `offer as`, and the block at the end, `checks`
-  through `doesn't show`; one that sets questions has a `generator`. `status` appears only once
-  the activity is dead, and `origin` only on a legacy stamp, which nothing writes now.
+- **serves:** `all`
+- **supports:** orient
+- **checks:** `o-orientation`
+- **artifact:** three free pages, no account, read in this order as one sitting. All three checked
+  2026-10-05.
+  1. **Read first:** The Odin Project, "Deployment" (Node path),
+     https://www.theodinproject.com/lessons/node-path-nodejs-deployment, from the heading
+     "Debugging and troubleshooting deployments" down to, and not including, "Assignment". This is
+     the section cloud-hosting's orientation told students to skip. Read in full: the three
+     opening paragraphs, On deployment, After deployment and One final tip. Skim Node version
+     compatibility and Going further with troubleshooting tools (Sentry is out of scope). About
+     640 words, 4 to 5 minutes. What it gives: the two stages where problems turn up ("during
+     deployment and right after"); build logs, "the stream of output you'll see after kicking off
+     a new deployment", whose errors "look like the stack traces you've already seen"; the 500
+     page, "deliberately vague"; application logs, "the output of your application as it's
+     running"; and backtracking "to the last working version". Odin's advice to paste an error into
+     a search engine assumes you read the log yourself; in this course the agent reads it.
+  2. **Then:** Render, "Troubleshooting Your Deploy",
+     https://render.com/docs/troubleshooting-deploys. Read the opening paragraph ("an app that runs
+     fine locally might fail to deploy"), 1. Check the logs, and under Common errors only the
+     bullet Misconfigured health checks and the two lists under 500 Internal Server Error and 502
+     Bad Gateway. Skip 2. Ensure matching versions and configuration, the other errors, and When to
+     contact support. About 450 words, 3 to 4 minutes. What it gives: a failed deploy's logs and a
+     running app's logs as two different places; a health check that cancels a deploy when it gets
+     no answer; a 500 as "an uncaught exception" in the app, against a 502 when the host can't get
+     an answer from it; and timeouts.
+  3. **Last:** Render, "Render MCP Server", https://render.com/docs/mcp-server. Read the opening
+     paragraph and its list, What is MCP?, and under Setup only the warning that the server
+     "supports potentially destructive operations, including modifying a service's environment
+     variables and triggering deploys", then the Troubleshooting example prompts ("Pull the most
+     recent error-level logs for my API service"). Skip the per-tool setup steps and the table of
+     supported actions. About 200 words, 2 minutes.
+  About 1,300 words: 10 minutes of reading, 15 with the two stops. Render is one host among
+  several a learner may be on; the tutor says so, and that theirs has the same things under its
+  own names. Words in place: stack trace, build log, health check, gateway error (as "502 Bad
+  Gateway"), timeout, MCP server, and the idea behind rollback in Odin's "last working version".
+  Deploy status and CLI are not named in the reading; the tutor names them at stop 2. Two of the
+  five kinds of failure in `c-locate-failure`, an app waking from sleep and a frontend that can't
+  reach its backend, are in none of the three pages; the tutor brings them in at stop 1.
+- **learner does:** reads Odin first, with their own deployed app (or, before it is deployed, their
+  Problem Set 2 app) in mind, then the two Render pages. Stops twice and answers before reading on;
+  "I don't know yet" is an honest answer:
+  1. After Odin: **sketches the path a change takes from a push to a visitor's screen as four
+     boxes, build, start, a request to the running backend, and the frontend calling the
+     backend**, and marks which of Odin's two stages each box is in and which log, the build log or
+     the application log, would show a failure there.
+  2. After Render's two pages: says how their agent could get at those two logs on their own host
+     (or on Render, if they haven't chosen one): through a CLI it runs, or through the host's MCP
+     server; and names one thing they would not want the agent to do with that access.
+  Then the close, about 5 minutes, with the sketch and the reading still beside them: two quick
+  rehearsals, neither judged, each answered in a sentence or two. First, the tutor gives a short
+  agent account of a failure and the learner says which box on the sketch it happened at and what
+  a visitor sees. Second, the tutor names a host and the learner says how they would let their
+  agent read its logs, and what must not go through the chat to set that up. Then answers the
+  question the tutor puts: with your sketch and the reading beside you, could you now attempt these
+  two things for real: connecting your coding agent to your host so it can show you the deployed
+  app's logs, and saying from your agent's account where a deployed app's failure happened and
+  what a visitor sees because of it?
+- **tutor role:** explainer
+- **tutor does:** stays quiet through the reading except at the stops and when asked. At each
+  stop, takes the learner's answer first and replies with one near-miss question rather than a
+  verdict ("you put a missing package at the request box; when would the host first have needed
+  that package?"). At stop 1, adds the two failures the reading doesn't cover if the sketch has no
+  place for them, quoting: for waking, Render's free-instance page, https://render.com/docs/free,
+  where a free web service that "goes 15 minutes without receiving any inbound traffic" spins
+  down, and spinning back up "takes about one minute"; for a frontend that can't reach its
+  backend, MDN's "CORS errors" page,
+  https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS/Errors, where "the browser
+  console will present an error like 'Cross-Origin Request Blocked'", so the server log can show
+  nothing wrong at all; and says a frontend still calling `localhost` works on the laptop that runs
+  the backend and nowhere else. At stop 2, names deploy status (the host's one-word verdict on the
+  latest deploy, such as live or failed) and CLI if the learner hasn't, and if they named nothing
+  they'd keep the agent from doing, points at Render's warning about changing settings and
+  triggering deploys. Says fixing a failure, and watching the logs of an app that is already in use
+  (session 14), are out of scope. Connects nothing and makes no change to the learner's app or host.
+  At the close, sets the two rehearsals from the generator below and grades neither; if an answer
+  shows a misunderstanding (a failed build meaning the site is down, when the last version is still
+  live; a 502 meaning a bug in the app's code), explains it once and moves on. Then puts the
+  readiness question as written above and rules on the answer.
+- **done when:** criterion met. The bar for this goal is did it once and help is expected
+  throughout, so the ruling is on the learner's answer to the readiness question, not on the stops,
+  the rehearsals, or whether the tutor thinks they are ready. A plain yes to both parts is
+  `criterion: met`. A hedge on either part, with no plain no, is `criterion: unclear`: explain the
+  hedged part once more and put the question again; a second hedge stays `unclear`, and the tutor
+  offers an activity on that capability, or the session 12 lab. A plain no to either part is
+  `criterion: not met`: record it, ask what is missing, and offer to go back over the stop that
+  bears on it, or an activity on it; don't put the question again in the same sitting. This goal
+  isn't required, so a no never blocks anything else the learner wants to try.
+- **generator:** vary the two rehearsal items; hold the rest fixed. Rehearsal one is one question
+  from `a-locate-described-failure`'s generator at Easy, case `failed-build` or `request-error`,
+  on a made-up app and host. Rehearsal two names one host: the learner's own if they have chosen
+  it, otherwise Render or Railway. Fixed: the reading and its two stops, then the two rehearsals in
+  that order, neither graded, then the readiness question word for word. Difficulty doesn't vary:
+  this settles an indication, not a capability.
+- **worked example:** if the learner freezes on a rehearsal, the tutor answers a different made-up
+  one aloud in two or three sentences, then hands the original back.
+- **doesn't show:** an indication of readiness is all this goal asks for and all this shows. It
+  shows nothing about either capability: the stops and rehearsals are helped, ungraded and of the
+  easiest kind, nothing is connected, and only one of the six cases of `c-locate-failure` is
+  rehearsed. It shows nothing about the nine words, which have their own supply.
+- **offer as:** this topic's orientation, deliberately one entry holding a sequence: the debugging
+  section of the Odin lesson you read half of for cloud-hosting, then two short Render pages on
+  what its logs and errors look like and how an agent gets at them, then a short close where you
+  say whether you have the shape. About 20 minutes: 15 for the reading and its stops, 5 for the
+  close.
 
-  serves        goal ids from the table above, or `all`: which goals this helps with. An item
-                may also be `group <name>`, which stands for every goal in that group, those
-                added later included. A group no goal is in is reported by survey.
-  supports      one or more of:
-                  orient   first pass; get the shape of the thing
-                  deepen   build up a specific part, or connect it to what's known
-                  attempt  do the real thing, with help available if asked for
+### `a-connect-own-host`
 
-                There is no separate "check" value. Every attempt is made the same way, with
-                the tutor helping on request; whether an attempt turns out to have been
-                unaided is an outcome, not a setting. What an unaided pass can *finish* is
-                the `checks` field below.
-  artifact      what it is and where, and roughly how long it takes
-  verified      the date curation/verify confirmed this artifact is real and
-                is what the entry says it is. `NOT VERIFIED — <what couldn't be confirmed>`
-                if it couldn't. Absent means nobody has looked yet.
+- **serves:** `c-connect-agent-host`
+- **supports:** attempt
+- **checks:** `c-connect-agent-host`
+- **artifact:** no external source. The learner's own deployed app, their own host account and
+  their own coding agent, in the session 12 lab or at home after it. 20 to 40 minutes, depending
+  on the host. Help to point at: for an MCP server, Render's "Render MCP Server",
+  https://render.com/docs/mcp-server, which connects through a sign-in in the browser; for a CLI,
+  Railway's CLI page, https://docs.railway.com/cli, whose `railway login` opens a browser and whose
+  `railway logs`, `railway logs --build` and `railway deployment list` cover all three things.
+  Both checked 2026-10-05. Other hosts have their own CLI or MCP server pages.
+- **learner does:** connects their coding agent to the host their backend runs on, through the
+  host's CLI or MCP server, signing in themselves. Then opens the deployed app in a browser and
+  does one thing in it that calls the backend, noting the time, and asks the agent to show three
+  things: the server log lines that request produced, the latest deploy's status, and that deploy's
+  build log. Shows the tutor the agent's answers (copied or as screenshots) and says, for each,
+  how they know it came from the host and not from their laptop.
+- **tutor role:** none
+- **tutor does:** before the attempt, says once: sign in yourself, in the browser or in your own
+  terminal; if a step asks for a token or key, put it in yourself, never into the chat; and tell
+  the agent to read only, since an MCP server can change settings and start deploys. Waits during
+  the attempt, writing down any help word for word. Then checks each of the three against the
+  learner's evidence: the log lines show the request they made (its path, and a time within a
+  minute or two of theirs) with the host's own timestamps or instance names, not output from
+  `npm run dev` or a `localhost` address; the deploy status names a deploy whose commit or time
+  matches their latest push; and the build log is that deploy's. Asks the learner to look back
+  through the chat for any token, key or password, and any command the agent ran with one in it.
+  Rules, and records the attempt labeled `a-connect-own-host/<host>-<cli or mcp>`. If the agent
+  changed a setting or started a deploy along the way, says so and how to stop it next time, but
+  that alone doesn't fail the attempt. Offers to let the session 12 lab stand for this goal, as
+  `taught elsewhere` allows.
+- **done when:** criterion met with no help: all three from the deployed app, and no token or
+  password through the chat.
+- **generator:** the material is the learner's own app, host and agent, so this stays live and no
+  two instances match; nobody sets the difficulty, which is the host's. Varies: the host, whether
+  it is reached by CLI or MCP server, and the request the learner makes. Fixed: the request is one
+  that reaches the backend (loading the frontend's files alone produces no server log line); the
+  three things are shown by the agent, not read off the host's dashboard by the learner; the
+  connection is made with no secret in the chat. Where the frontend and backend are on different
+  hosts, the backend's host is the one connected, and its latest deploy is the one whose status and
+  build log count; connecting the frontend's host too is welcome and not required. Where the
+  backend serves the built frontend, there is one host. On a review visit, the learner makes a
+  fresh request and has the agent show the three again, in a new session of the agent.
+- **worked example:** if the learner is stuck connecting, the first level of help is the host's
+  own CLI or MCP page, read together, starting from the sign-in step; if stuck on the log lines,
+  ask "what would the request you just made look like in the log, and when did you make it?" Either
+  records the attempt as helped.
+- **doesn't show:** one host, connected once; a pass doesn't show they could do it on a host whose
+  CLI or MCP server works differently. The request is one the learner chose and knows succeeded or
+  failed, so a pass doesn't show they could find the lines for a failing request among many. A
+  secret typed into the agent's config file outside the chat is not examined, and neither is
+  whether the agent's access is read-only.
+- **offer as:** the real thing, on your own app and host, and the same task as the session 12 lab;
+  do it there if you can. 20 to 40 minutes, most of it the host's sign-in.
 
-                Anyone editing the artifact clears this — a marker attached to a different
-                source than the one it was granted for is worse than none.
-  learner does  the obligation, not just the resource — this is the field that makes it an
-                activity rather than a reading list
-  tutor role    the stance to take while this runs: explainer, socratic questioner,
-                critique target, critic, role-play partner, examiner (sets a question cold and
-                leaves the judging to the adjudicator), or none (the learner works
-                alone and you wait)
-  tutor does    during, and afterwards
-  done when     the criterion of a goal in `checks` met with no help. For the orientation,
-                that is the learner able to attempt the real thing with the artifact still
-                beside them.
-  offer as      what makes this one different from its neighbors — fastest, most thorough,
-                assumes more background, hands-on rather than expository. This is what you
-                say when presenting a choice, so make it a real distinction.
-  check note    authored by curation/critique, placed by the orchestrator. Present only when there is
-                something the tutor should know that the entry itself doesn't say — a
-                generator whose difficulty is underspecified, an artifact that's real but
-                harder going than it looks, a task that works but only once.
+### `a-locate-described-failure`
 
-                Only for what survived the revision round; anything fixed leaves no note.
-                curation/generate may delete a note whose cause it has fixed, and must not
-                otherwise edit one. Each check pass rewrites them.
+- **serves:** `c-locate-failure`
+- **supports:** attempt
+- **checks:** `c-locate-failure`
+- **artifact:** no external source. A made-up app and host, and an agent's account of one incident
+  on it, from this activity's bank or written live per the generator below. 3 to 5 minutes a
+  question.
+- **learner does:** reads the scenario's setup and the one account served, and answers in two or
+  three sentences the question every account ends with: "From your agent's account, where did
+  things go wrong, if they did, and what does someone visiting the app right now see? If the
+  account can't tell you, say why."
+- **tutor role:** examiner
+- **tutor does:** sets the question as served, without rewording it or hinting, and never names the
+  kinds of failure or says which ones a scenario holds. When the generator is run live, writes the
+  key into the record before showing anything. Gives help whenever it is asked for, and records the
+  attempt as helped. A remark about how to fix the failure is neither credited nor counted against
+  them. Labels the attempt with the question's path, or `a-locate-described-failure/<case>-<level>`
+  when run live, and records the case with `--cases`.
+- **done when:** full credit on the question, with no help: for every case but `local-only`, both
+  the kind of failure and what a visitor sees right now are right; for `local-only`, they say the
+  account isn't evidence about the deployed app. Half credit is not met.
+- **generator:** a scenario is one made-up app shaped like Problem Set 2: a React frontend built to
+  static files, an Express backend and a database, with a line on what the app does (a club
+  sign-up sheet, a study-room finder, a recipe box). The setup names the made-up host of each part,
+  in one of three arrangements: frontend and backend on two hosts; one host running them as two
+  services; or the backend serving the built frontend itself. It says whether the backend's host
+  puts it to sleep when nobody has visited for a while, and that the app has been live and working
+  before. Host names are invented per scenario and never a real vendor's. **Each question is a
+  separate incident** on that app, and the setup says the questions are independent. A question
+  gives one line on what the student did or noticed ("I pushed a change that adds a search box",
+  "a friend says the sign-up page is broken"), then the agent's account, 3 to 8 lines, written as a
+  coding agent writes after reading the host through its CLI or MCP server: what it looked at, a
+  few quoted log or status lines, and its reading of them. Then the fixed question quoted under
+  `learner does`. Log lines are realistic Node, npm, Vite and browser output (`Error: Cannot find
+  module 'dotenv'`, `Exited with status 1`, `TypeError: Cannot read properties of undefined
+  (reading 'map')` with an `at /app/server/routes/...` line, `GET /api/rooms 500`, a browser
+  console's "blocked by CORS policy"), with the host's own wording for statuses invented to match
+  the made-up host.
 
-  generator     the instruction for producing a fresh question: what varies, what is held
-                fixed, how hard, and which of the goals in `checks` a question bears on. For
-                a goal with cases, it also says which cases each shape of question carries,
-                so the tutor can record them, and between its shapes every case is carried.
-                Every activity that sets questions has one. Precise enough to run, or to
-                draft a bank from, without asking the curator anything. Where there is no
-                bank the tutor runs it live, so every attempt is a new question.
+  **Every question carries exactly one case**, named on its rubric `cases:` line, and each case
+  fixes what the account must contain and what the key says a visitor sees:
+  - `failed-build`: the build log shows an error and the latest deploy's status is failed; nothing
+    after the build ran. Key: visitors see the version before this push, unchanged, because a
+    failed build replaces nothing; the change isn't there. (Hard variant: the setup or the line
+    says this was the first deploy, so there is no app at the address yet.)
+  - `failed-start`: the build succeeded, then the process exited or never answered as it started
+    (a module missing at run time, a setting the code needs at start, listening on the wrong port so
+    the health check fails). The account must say whether the host kept the previous version
+    serving. Key: if it did, visitors see the previous version, the change isn't there, and to them
+    it looks like nothing happened; if it didn't (the first deploy of the backend, or a restart
+    that keeps exiting), visitors get the host's error where the backend should answer: with the
+    frontend on its own host, the page loads but everything that needs data fails; with the backend
+    serving the frontend, the host's error page and no app.
+  - `request-error`: the latest deploy is live and the app answers, and one request fails with a
+    stack trace in the server log, at one route. Key: visitors can use the app, except the one
+    action that hits that route, which shows an error or does nothing.
+  - `cant-reach-backend`: the frontend loads, and either the backend's log shows no request
+    arriving at the time (the frontend calls `localhost` or an old address), or it shows the request
+    answered normally and the browser console shows it blocked by CORS. Key: every visitor sees the
+    page, but nothing that needs the backend appears or works. For the `localhost` variant, it works
+    only in a browser on the student's own laptop while their local backend runs.
+  - `waking`: no error anywhere; the backend's log shows it stopping after a quiet spell and starting
+    again on a request, with the next requests succeeding; the student noticed only that the first
+    load was slow. Key: nothing has failed; the first visitor after a quiet spell waits up to about a
+    minute (a loading page, or a page whose data appears late), then the app works.
+  - `local-only`: the account is drawn from the code (the agent read the files and found a likely
+    bug) or from a run on the laptop (`npm run dev` works, so the agent concludes something about
+    the deployed app), and quotes nothing from the host. Key: it isn't evidence about the deployed
+    app; full credit needs only that, and saying the agent should read the host's logs is welcome
+    and not required.
 
-  origin        omit. `generated` marks a legacy stamp from before `a-words`; see the note
-                at the head of this file. Nothing serves from one and nothing new carries it.
+  How hard, by how the account is worded:
+  - Easy: the account names the stage in plain words ("the build failed", "the server is
+    erroring on that route"). Used only for `failed-build`, `request-error` and `local-only`, where
+    naming it still leaves what a visitor sees to work out.
+  - Medium: no plain stage words anywhere ("build failed", "failed to start", "crashed",
+    "CORS", "can't reach", "asleep", "cold start" are not used outside quoted log lines): only
+    statuses, exit codes, HTTP codes and quoted log lines, with the agent's reading in its own
+    jargon.
+  - Hard: Medium, plus one of: a red herring (a warning in the build log of a deploy that went
+    live; an error from an earlier day still in the log); a visitor answer that turns on one stated
+    fact (the previous version still serving, or this being the first deploy); or, for
+    `local-only`, an agent that writes as if it had checked ("I reproduced it") with nothing from
+    the host. An account never draws a conclusion its own quoted lines contradict.
 
-  status        omit while the activity is live — that's the default and needs no saying.
-                When it stops being a candidate, `dropped — <why, and who>`: the curator
-                writing it off as unworkable before anyone tried, or the tutor after it
-                failed in practice — a source that oriented nobody, a task that turned out
-                to test the wrong thing.
+  A credit statement: full when both the kind (in the learner's own words, matching the case) and
+  what a visitor sees match the key, or for `local-only` when they say it isn't evidence about the
+  deployed app; half when one of the two is right; none otherwise. A scenario carries all six cases
+  across its questions, one each, with at least two at Hard and `waking` and `cant-reach-backend`
+  never at Easy. No question's text gives away another's answer. A scenario's setup states the task
+  and how long an answer should be, never the scoring.
+- **worked example:** shown only as help when the learner asks for it, which records the attempt as
+  helped. Work a different account aloud: find the last thing that went right (the build finished;
+  the server printed that it was listening; the request reached the server), then the first thing
+  that didn't, and name the box; then ask what a visitor's browser asks for and which version, if
+  any, is answering. For a 502 against a 500, cite Render's "Troubleshooting Your Deploy",
+  https://render.com/docs/troubleshooting-deploys, under Runtime errors. At the first level of help
+  on a real attempt, ask only "where did the last thing that went right happen?"
+- **doesn't show:** the accounts are written to be clear and true to their own log lines, so a pass
+  doesn't show the learner would catch an agent drawing the wrong conclusion from its logs, or
+  would ask the agent for logs it didn't fetch. Hosts are made up, so a pass says nothing about a
+  real host's status words. The learner answers one account at a time, knowing a check is on. The
+  `waking` and `failed-start` keys depend on host behavior the setup states (whether a failed
+  deploy leaves the old version serving, how long waking takes); a learner who knew their own host
+  behaves otherwise could be right there and marked wrong.
+- **offer as:** the check you can do any time, without a deployed app: an agent's account of one
+  incident on a made-up app, 3 to 5 minutes a question, one kind of failure each. Take it if you
+  missed the session 12 lab, or to review.
 
-                Not progress. What's been attempted and how it went lives in
-                evidence/attempts.jsonl; this field is only about whether the candidate is
-                still worth offering, and it is the only place that question is answered.
+### `a-locate-own-failure`
 
-                Dropped entries stay in the file. Deleting one means it gets regenerated
-                next time curation runs, and this field is the only feedback curation
-                receives. Trim a dead entry to its id, a line saying what it was, and this
-                field; the rest is dead weight in the tutor's context.
-
-  WHAT AN ACTIVITY CAN FINISH, on every activity
-
-  checks          the goals an unaided attempt at this activity's questions can establish:
-                  one id or several, comma-separated, and always a subset of `serves`. An
-                  activity can help with several goals while settling fewer. This is the
-                  generator's declaration of what its questions bear on; in a bank, each
-                  question's rubric `goal:` line narrows it to the ones that question bears
-                  on, and `checks` includes every goal its rubrics name. A live activity has
-                  no rubrics, so this is its only declaration. The pass condition is each
-                  goal's criterion from the table above, applied as written; don't restate it
-                  here or the two will drift.
-
-                  Never omit it (`a-words` aside: its questions name their words, and it
-                  serves them through their group). Something whose unaided attempt still
-                  wouldn't establish a criterion, because it does part of the work itself
-                  (completing a partial instance doesn't show they could produce one from
-                  nothing), is not an activity: it is help on some activity's questions. An
-                  older entry with no `checks` stays as it is until it is converted: on a
-                  course topic at curation's next course-path run, on a student's own topic
-                  when its learner next curates it.
-
-                  THE ORIENTATION'S ENTRY CARRIES `checks: o-orientation`. It sets no
-                  questions, so it has no bank, no rubric and no generator: the tutor rules
-                  the orientation's `did it once` bar from the learner saying they could now
-                  attempt the real thing. Its `worked example` and `doesn't show` may read
-                  `n/a`. An older orientation entry with no `checks` converts by gaining that
-                  line, and nothing else about it changes.
-
-  worked example  what to show at the first level of help: a solved instance, or an
-                  instruction to work one live and narrate the decisions. It may cite a
-                  reading or a video, named as precisely as an `artifact` is; that is where
-                  readings and walkthroughs live now that they are not activities.
-  doesn't show    what a pass here still leaves open, stated as a claim the checker can
-                  contest. Both kinds belong: part of the criterion this activity doesn't
-                  exercise, and what the criterion can't settle even when fully met: "only
-                  one instance exists, so this doesn't show they could do it again."
-
-                  "Nothing" is a legitimate entry. It's also a strong claim, so expect
-                  curation/critique to test it.
-
-  BANKS. An activity has a bank when tasks/<activity-id>/ and rubrics/<activity-id>/ exist (a
-  tasks folder alone is an older study artifact, and is not read as a bank); the folders are the
-  whole declaration, and the entry says nothing about them. Course topics have them, drafted
-  from the generator and reviewed by the instructor at curation; a student's own topic runs its
-  generators live. On a course topic any question activity may be banked, except one whose
-  generator picks from real items or the learner's own work, and an orientation rehearsal: those
-  stay live, since the picker serves a bank whenever one exists. One file per scenario, with a
-  twin under rubrics/:
-
-      tasks/<activity-id>/<scenario-id>.md     the setup, then one `### <question-id>` per question
-      rubrics/<activity-id>/<scenario-id>.md   the key, then one `### <question-id>` per question
-
-  A file's top part, before its first `###`, is shared by that scenario's questions; nothing is
-  shared across files. `main-bank` is the reserved scenario name for questions with no shared
-  setup. Scenario files are named for their content (`crumbs.md`), question ids are unique
-  within their scenario, and a question's label everywhere is its path,
-  `<activity-id>/<scenario-id>/<question-id>`. workflows/learn/tools/next-item.mjs serves from
-  banks, unseen questions first; workflows/learn/tools/survey.mjs reports a malformed bank, and
-  a bank folder with no entry here.
-
-  WRITE A SCENARIO IN STUDY ORDER. Study serves its questions in file order, skipping one no
-  longer needed, so a later question may give away an earlier one's answer, never the reverse.
-
-  Each rubric question section carries:
-
-      goal:        ids from `checks`, comma-separated; at least one, always
-      cases:       for each goal named that has cases, the ones this question exercises:
-                   `x, y` when it names one goal, `c-a: x, y; c-b: z` per goal otherwise. A
-                   pass passes every case listed and a miss none, so cases a learner could
-                   get one right and one wrong on belong in separate questions
-      answer:      what a complete answer says
-      credit:      what full and half credit mean. A question naming two or more goals lists
-                   one statement per goal, each starting `<goal-id>`: with the id in backticks
-      type:        free (the default) or mcq; an mcq's question ends in a numbered list and
-                   `answer` is the 1-based choice
-      move:        for a word's question, its move
-      tutor note:  optional; follow-ups for this one question, for the tutor only
-
-  What holds for every question stays in the entry here. A note about one scenario goes in its
-  key, and a note about one question in its `tutor note`.
-
-  RETIRED: `kind` and `bank`. An older entry may still carry `kind: generator | bank | single
-  instance` or a `bank:` line; ignore both. When curation converts the entry, any substance in a
-  `bank:` line (where the items live, how they are named, how to pick) moves into `generator`,
-  and a bare path or a `kind:` line is simply deleted. What was a single authored instance is a
-  bank with one scenario, and if that is all a check has, say so in `doesn't show`.
--->
+- **serves:** `c-locate-failure`
+- **supports:** attempt
+- **checks:** `c-locate-failure`
+- **artifact:** no external source. The learner's own deployed app when it actually misbehaves, in
+  the session 12 lab or while working on Problem Set 3, with their agent connected to the host
+  (`c-connect-agent-host`), and the agent's account of why. 5 to 10 minutes, whenever it happens.
+- **learner does:** asks their agent why the deployed app isn't working, and gets its account. Before
+  the tutor says anything, says in two or three sentences what kind of failure the account
+  describes, if any, and what someone visiting the app right now sees; or, if the agent answered
+  from the code or a laptop run, that this isn't evidence about the deployed app.
+- **tutor role:** none
+- **tutor does:** reads the agent's account and the log or status lines it quotes, and writes the key
+  into the record before hearing the learner: the case (one of the six named in
+  `a-locate-described-failure`'s generator) and what a visitor sees. If the quoted lines don't
+  settle it, says "not judged" and records no attempt, rather than guessing. Waits, writing down
+  any help word for word. Rules, records the case with `--cases`, and labels the attempt
+  `a-locate-own-failure/<case>`. Does not help fix the failure as part of this; that comes after.
+- **done when:** criterion met with no help, on the one case this incident carries.
+- **generator:** the material is whatever goes wrong with the learner's own app, so this stays live
+  and nobody sets the case or the difficulty. Fixed: the account is the learner's own agent's, word
+  for word, and the key comes from the lines it quotes from the host, or their absence. An agent
+  that guessed from the code is the `local-only` case, and the most likely one before the agent is
+  connected. On review visits, use the next real incident; until all six cases have passed, offer
+  `a-locate-described-failure` for the ones that haven't come up.
+- **worked example:** none during the attempt. If the learner stalls, the first level of help is
+  "did that line come from the build log or from the running app's log?", and the attempt is
+  recorded as helped.
+- **doesn't show:** which cases come up is luck, and `waking` and `cant-reach-backend` may never
+  come up on a learner's own app. The learner usually knows what they last changed, which can stand
+  in for reading the account. The key rests on the tutor's reading of what the agent quoted.
+- **offer as:** the real thing: your own app, your own agent's account, the first time something
+  breaks. Any time from the session 12 lab on; `a-locate-described-failure` covers the cases your
+  app hasn't had.
 
 ### `a-words`
 
