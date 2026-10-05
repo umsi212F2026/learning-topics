@@ -281,9 +281,11 @@ debug-deployed, and what to do about a secret that has already leaked to session
   deploys through GitHub Actions, put the host's deploy token in the repository's GitHub secrets
   rather than in the workflow file; catch a plan whose deploy doesn't wait for the app's tests to
   pass, including one that runs them in GitHub Actions while the host deploys every push on its
-  own, and ask for the deploy to wait; and would confirm the pipeline by pushing a small visible
-  change and seeing it in the live app, not by taking the agent's word or the host's "deployed"
-  message for it, and by pushing a change with a failing test and seeing that it doesn't go live.
+  own, and ask for the deploy to wait; and would confirm the pipeline by pushing a small change
+  that shows in the live app only once both the frontend and the backend have deployed it, such
+  as new text the page gets from the backend, and seeing it there, not by taking the agent's word
+  or the host's "deployed" message for it; and by pushing a change with a failing test and seeing
+  that neither part deploys it.
 - **cases:**
   - `secret-in-repo`: a plan that would put a secret into the repository
   - `frontend-secret`: a plan that would put a secret into a frontend setting
@@ -292,8 +294,8 @@ debug-deployed, and what to do about a secret that has already leaked to session
   - `deploy-token`: a plan that deploys through GitHub Actions with a token from the host
   - `no-test-gate`: a plan whose deploy doesn't wait for the tests, including one that runs them
     in GitHub Actions while the host deploys every push on its own
-  - `confirm-live`: how they would confirm that a push reaches the live app
-  - `confirm-gate`: how they would confirm that a push with a failing test doesn't
+  - `confirm-live`: how they would confirm that a push reaches both parts of the live app
+  - `confirm-gate`: how they would confirm that a push with a failing test reaches neither
 - **taught elsewhere:** session 12 lab
 
 ### `c-find-missing-change`
@@ -312,7 +314,9 @@ debug-deployed, and what to do about a secret that has already leaked to session
   frontend setting was changed on the host after the last build, so the frontend has to be built
   again before it takes effect. Finding out why a deploy failed is not part of it.
 - **cases:**
-  - `not-pushed`: the change never reached `main` on GitHub
+  - `not-pushed`: the change never left their machine (not committed, or not pushed)
+  - `not-on-main`: the change is on GitHub but not on `main` (on another branch, or in a pull
+    request nobody has merged)
   - `tests-failed`: the tests failed, so the host never deployed the change
   - `deploy-failed`: the deploy failed and the old version is still live
   - `browser-cache`: the browser is showing its own old copy

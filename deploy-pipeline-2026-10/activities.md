@@ -302,6 +302,7 @@ task, never the scoring.
   writes when asked to make it deploy itself on each push to `main` (in the session 12 lab or on
   Problem Set 3), the real hosts that plan uses, and the live app afterwards. 20 to 30 minutes,
   most of it waiting for pushes to deploy.
+- **verified:** 2026-10-05
 - **learner does:** asks their agent for a plan to make the app's frontend and backend deploy
   themselves on every push to `main`, without telling it what to watch for. Before the agent does
   anything, says in writing what they would change in the plan, or that they would agree to it as
@@ -351,6 +352,7 @@ task, never the scoring.
 - **artifact:** no external source. A made-up app that deploys itself from `main`, a change it
   doesn't show, and what each place would show, from this activity's bank or written live per the
   generator below. About 5 minutes a scenario.
+- **verified:** 2026-10-05
 - **learner does:** reads the setup, says where they would look first (git's output on their
   machine, the commit's checks on GitHub, a host's deploy list, or the page in the browser), is
   shown what that place shows, and goes on choosing places until they can say why the change isn't
@@ -431,6 +433,7 @@ task, never the scoring.
 - **artifact:** no external source. A made-up app, a change its live app doesn't show, and
   everything the four places show, all at once, from this activity's bank or written live per the
   generator below. About 2 to 3 minutes a question.
+- **verified:** 2026-10-05
 - **learner does:** reads the setup and the evidence, then says why the change isn't showing and
   what they would do next.
 - **tutor role:** examiner
@@ -531,6 +534,7 @@ task, never the scoring.
 - **artifact:** no external source. A made-up classmate's account, or an agent's summary, of how
   they got an entry into a repository they couldn't push to, from this activity's bank or written
   live per the generator below. About 3 minutes a question.
+- **verified:** 2026-10-05
 - **learner does:** reads the account, which may or may not have a step that goes wrong, and says
   whether they would have gone along with it, and if not, which step goes wrong and what should
   have happened instead.
