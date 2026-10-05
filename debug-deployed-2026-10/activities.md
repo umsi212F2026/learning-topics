@@ -7,7 +7,7 @@ The minimum route, the orientation and one passed question for each of the nine 
 about 47 minutes: 20 for `a-read-odin-debugging` and about 3 a word. Both capabilities are taught
 in the session 12 lab and carry `taught elsewhere`, so the tutor offers the learner the lab first;
 `a-locate-described-failure` is there for anyone who wants to check `c-locate-failure` outside it,
-at about 3 to 5 minutes a question across six cases.
+at about 3 to 5 minutes a question across seven cases.
 
 In this topic's banks and live questions, hosts are made up, invented for each scenario and used
 under one name throughout it, and an agent's account never names a real vendor. Learner-facing
@@ -135,7 +135,7 @@ text states the task, never the scoring.
   one aloud in two or three sentences, then hands the original back.
 - **doesn't show:** an indication of readiness is all this goal asks for and all this shows. It
   shows nothing about either capability: the stops and rehearsals are helped, ungraded and of the
-  easiest kind, nothing is connected, and only one of the six cases of `c-locate-failure` is
+  easiest kind, nothing is connected, and only one of the seven cases of `c-locate-failure` is
   rehearsed. It shows nothing about the nine words, which have their own supply.
 - **offer as:** this topic's orientation, deliberately one entry holding a sequence: the debugging
   section of the Odin lesson you read half of for cloud-hosting, then two short Render pages on
@@ -160,10 +160,8 @@ text states the task, never the scoring.
   host's CLI or MCP server, signing in themselves. Then opens the deployed app in a browser and
   does one thing in it that calls the backend, noting the time, and asks the agent to show three
   things: the server log lines that request produced, the latest deploy's status, and that deploy's
-  build log. Shows the tutor the agent's session from the start of the connection on, as its
-  transcript or, where that is too long, the agent's own list of every command and tool call it
-  made in the session, and says, for each of the three, how they know it came from the host and
-  not from their laptop.
+  build log. Shows the tutor what the agent showed for each of the three, and says, for each, how
+  they know it came from the host and not from their laptop.
 - **tutor role:** none
 - **tutor does:** before the attempt, says once: sign in yourself, in the browser or in your own
   terminal, and tell the agent to read only, since an MCP server can change settings and start
@@ -172,9 +170,11 @@ text states the task, never the scoring.
   time within a minute or two of theirs) with the host's own timestamps or instance names, not
   output from `npm run dev` or a `localhost` address; the deploy status names the backend's latest
   deploy, whose commit or time matches their latest push to the backend; and the build log is that
-  deploy's. Reads the transcript or command list itself for any token, key or password, in a
-  message or in a command the agent ran; if one is there, the attempt fails, and the tutor tells
-  the learner to revoke it on the host and make a new one. Rules, and records the attempt labeled
+  deploy's. Then, and only after the attempt (it is never announced beforehand), asks how they
+  signed the agent in to the host: in the browser or their own terminal, or by giving the agent a
+  token or password. Does not ask for the agent's transcript or its list of commands. A token or
+  password given to the agent fails the attempt, and the tutor tells the learner to revoke it on
+  the host and make a new one. Rules, and records the attempt labeled
   `a-connect-own-host/<host>-<cli or mcp>`. If the agent
   changed a setting or started a deploy along the way, says so and how to stop it next time, but
   that alone doesn't fail the attempt. Offers to let the session 12 lab stand for this goal, as
@@ -203,10 +203,11 @@ text states the task, never the scoring.
 - **doesn't show:** one host, connected once; a pass doesn't show they could do it on a host whose
   CLI or MCP server works differently. The request is one the learner chose and knows succeeded or
   failed, so a pass doesn't show they could find the lines for a failing request among many. The
-  transcript or command list is the learner's to hand over, so a secret in a part they left out, or
-  in an earlier session of the agent, is not seen; a secret typed into the agent's config file or
-  their own terminal outside the chat is not examined, and neither is whether the agent's access is
-  read-only.
+  pass on the no-secret clause rests on the learner's own account of how they signed the agent in:
+  the tutor reads no transcript, so a token or password that went through the chat and goes
+  unmentioned is not caught. The session 12 lab teaches the same connection where a person can
+  watch it. A secret typed into the agent's config file or their own terminal outside the chat is
+  not examined, and neither is whether the agent's access is read-only.
 - **offer as:** the real thing, on your own app and host, and the same task as the session 12 lab;
   do it there if you can. 20 to 40 minutes, most of it the host's sign-in.
 
@@ -269,12 +270,16 @@ text states the task, never the scoring.
   - `request-error`: the latest deploy is live and the app answers, and one request fails with a
     stack trace in the server log, at one route. Key: visitors can use the app, except the one
     action that hits that route, which shows an error or does nothing.
-  - `cant-reach-backend`: always the CORS variant here. The frontend loads, the backend's log
-    shows the request arriving and answered normally, and the browser console shows it blocked by
-    CORS. Key: every visitor sees the page, but nothing that needs the backend appears or works. The
-    wrong-address variant (no request arriving, because the frontend calls `localhost` or an old
-    address) is not written into questions here, since one pass would credit both and the two are
-    read differently; it is left to `a-locate-own-failure`, where it is the commoner real incident.
+  - `wrong-address`: the frontend loads at its deployed address, and the browser console or
+    network panel there shows its calls to the backend going to a wrong or local address
+    (`GET http://localhost:3001/api/rooms net::ERR_CONNECTION_REFUSED`, or an old or misspelled
+    host address that doesn't resolve); the backend's log on the host, quoted for the same minutes,
+    shows no such request arriving. The account quotes both the browser side and the backend's log,
+    so it is never drawn from the laptop alone. Key: every visitor sees the page, but nothing that
+    needs the backend appears or works.
+  - `cors-blocked`: the frontend loads, the backend's log shows the request arriving and answered
+    normally, and the browser console shows the answer blocked by CORS. Key: every visitor sees the
+    page, but nothing that needs the backend appears or works.
   - `waking`: no error anywhere; the backend's log shows it stopping after a quiet spell and starting
     again on a request, with the next requests succeeding; the student noticed only that the first
     load was slow. Key: nothing has failed; the first visitor after a quiet spell waits up to about a
@@ -291,7 +296,8 @@ text states the task, never the scoring.
     and the criterion asks for it from accounts that don't. It exists only for the orientation's
     ungraded rehearsal.
   - Medium: no plain stage words anywhere ("build failed", "failed to start", "crashed",
-    "CORS", "can't reach", "asleep", "cold start" are not used outside quoted log lines): only
+    "CORS", "can't reach", "wrong address", "never reached", "asleep", "cold start" are not used
+    outside quoted log lines): only
     statuses, exit codes, HTTP codes and quoted log lines, with the agent's reading in its own
     jargon. For `local-only`, the account doesn't say in plain words where it looked ("I read the
     code", "I ran it locally", "on your machine" are not used): it quotes lines from the code (a
@@ -305,7 +311,7 @@ text states the task, never the scoring.
 
   A credit statement: full when both the kind (in the learner's own words, matching the case) and
   what a visitor sees match the key, or for `local-only` when they say it isn't evidence about the
-  deployed app; half when one of the two is right; none otherwise. A scenario carries all six cases
+  deployed app; half when one of the two is right; none otherwise. A scenario carries all seven cases
   across its questions, one each, every one at Medium or Hard and at least two at Hard. No
   question's text gives away another's answer. A scenario's setup states the task
   and how long an answer should be, never the scoring.
@@ -322,9 +328,8 @@ text states the task, never the scoring.
   real host's status words. The learner answers one account at a time, knowing a check is on. The
   `waking` and `failed-start` keys depend on host behavior the setup states (whether a failed
   deploy leaves the old version serving, how long waking takes); a learner who knew their own host
-  behaves otherwise could be right there and marked wrong. `cant-reach-backend` is passed here on
-  CORS alone, so a pass doesn't show they would read a log with no request in it as a frontend
-  calling the wrong address.
+  behaves otherwise could be right there and marked wrong. `wrong-address` and `cors-blocked` share
+  a visitor key, so on those two only the kind of failure tells them apart.
 - **offer as:** the check you can do any time, without a deployed app: an agent's account of one
   incident on a made-up app, 3 to 5 minutes a question, one kind of failure each. Take it if you
   missed the session 12 lab, or to review.
@@ -345,7 +350,7 @@ text states the task, never the scoring.
   from the code or a laptop run, that this isn't evidence about the deployed app.
 - **tutor role:** none
 - **tutor does:** reads the agent's account and the log or status lines it quotes, and writes the key
-  into the record before hearing the learner: the case (one of the six named in
+  into the record before hearing the learner: the case (one of the seven named in
   `a-locate-described-failure`'s generator) and what a visitor sees. If the quoted lines don't
   settle it, or the agent's reading of them disagrees with what they show, says "not judged" and
   records no attempt, rather than guessing; after the learner has answered, says where the reading
@@ -360,13 +365,13 @@ text states the task, never the scoring.
   and nobody sets the case or the difficulty. Fixed: the account is the learner's own agent's, word
   for word, and the key comes from the lines it quotes from the host, or their absence. An agent
   that guessed from the code is the `local-only` case, and the only one possible before the agent
-  is connected. On review visits, use the next real incident; until all six cases have passed, offer
+  is connected. On review visits, use the next real incident; until all seven cases have passed, offer
   `a-locate-described-failure` for the ones that haven't come up.
 - **worked example:** none during the attempt. If the learner stalls, the first level of help is
   "did that line come from the build log or from the running app's log?", and the attempt is
   recorded as helped.
-- **doesn't show:** which cases come up is luck, and `waking` and `cant-reach-backend` may never
-  come up on a learner's own app. The learner usually knows what they last changed, which can stand
+- **doesn't show:** which cases come up is luck, and `waking`, `wrong-address` or `cors-blocked`
+  may never come up on a learner's own app. The learner usually knows what they last changed, which can stand
   in for reading the account. The key rests on the tutor's reading of what the agent quoted. A real
   agent usually names the stage plainly, and such an incident credits no case, so many incidents
   here end as practice.

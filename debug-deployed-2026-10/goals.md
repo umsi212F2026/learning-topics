@@ -297,7 +297,9 @@ comes in session 13, and watching the logs of an app that is already live in ses
   - `failed-start`: the app crashes as it starts
   - `request-error`: the app is running, but a request to it errors, which leaves a stack trace
     in the server log
-  - `cant-reach-backend`: the frontend can't reach the backend, through a wrong address or CORS
+  - `wrong-address`: the frontend calls the backend at a wrong or local address, so no request
+    reaches it
+  - `cors-blocked`: the backend answers, but the browser blocks the answer because of CORS
   - `waking`: a sleeping app's cold start, which only looks like a failure
   - `local-only`: an account drawn from the code or a laptop run, not the deployed app's logs
 - **taught elsewhere:** session 12 lab
