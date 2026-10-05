@@ -1,4 +1,6 @@
-# Learning goals — deploy pipeline
+# Learning goals: deploy pipeline
+
+**origin:** course
 
 **What I want to be able to do, and what would count as having got there.**
 
