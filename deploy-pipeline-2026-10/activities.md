@@ -3,8 +3,8 @@
 Candidate activities for the study phase. More than will be used; the tutor chooses among them
 with the learner.
 
-**Made-up vendors.** Every banked or live scenario in this topic hosts its app on two made-up
-vendors, Pinecart and Ropewalk, and each name stands for one vendor with the one set of behaviors
+**Made-up vendors.** Every banked or live scenario in this topic hosts its app on made-up
+vendors, Pinecart and Ropewalk, and for `c-deploy-keeps-data` also Cellarstone, and each name stands for one vendor with the one set of behaviors
 below, everywhere in the topic. A scenario never changes these behaviors and never invents another
 vendor. The activities for `c-deploy-keeps-data` put the database on a third, Cellarstone; in
 every other activity the database is "on a database host outside this plan", unnamed. A scenario's setup quotes
@@ -55,8 +55,9 @@ orientation's reading. Learner-facing text states the task, never the scoring.
     deploy fails and the previous one stays live.
 - **Cellarstone** hosts Postgres databases.
   - A database keeps its tables and rows across every deploy and restart of the backend that uses
-    it; nothing a Pinecart or Ropewalk deploy does changes it. Only SQL sent to it changes its
-    tables or rows: from the backend, from a script, or typed into Cellarstone's query console.
+    it: a deploy or a restart does not by itself change it. Only SQL sent to it changes its tables
+    or rows: from the backend as it starts or runs, from a pre-deploy command or another script, or
+    typed into Cellarstone's query console.
   - Each database has a connection string, which is a secret. An account can hold several
     databases, each with its own.
 
@@ -84,8 +85,8 @@ orientation's reading. Learner-facing text states the task, never the scoring.
 | `o-orientation` | `a-read-deploy-pipeline` | |
 | `c-set-up-auto-deploy` | `a-judge-pipeline-plan` | Every scenario carries all seven cases. The two confirmations are answered in words here; the session 12 lab is where they are carried out. |
 | `c-find-missing-change` | `a-trace-missing-change`, `a-diagnose-from-evidence` | |
-| `c-deploy-keeps-data` | `a-judge-database-plan`, `a-critique-database-account` | |
 | `c-showcase-pr` | `a-route-showcase-change`, `a-critique-pr-attempt` | A sound proposal (`a-route-showcase-change`'s Hard forms) or a `sound` account (`a-critique-pr-attempt`) carries the same case as the faulty ones, so one agreement can pass a case. Treat a case whose only unaided pass came from agreeing as thin, and serve it again in an open or faulty form before calling the goal met. |
+| `c-deploy-keeps-data` | `a-judge-database-plan`, `a-critique-database-account` | |
 
 ---
 
@@ -665,6 +666,7 @@ orientation's reading. Learner-facing text states the task, never the scoring.
 - **artifact:** no external source. A made-up app on Pinecart, Ropewalk and Cellarstone, and
   agents' plans for its production database, from this activity's bank or written live per the
   generator below. Four questions a scenario, about 5 minutes each: about 20 minutes a scenario.
+- **verified:** 2026-10-07
 - **learner does:** reads the scenario's setup and the one question served. A plan question shows
   one plan an agent proposed and asks whether they would agree to it as it stands, and if not,
   what they would change before agreeing. The confirmation question asks how they would make sure
@@ -682,17 +684,18 @@ orientation's reading. Learner-facing text states the task, never the scoring.
 - **generator:** a scenario is one app shaped like the course's Problem Set 3 app: a React
   frontend in `client/` on Pinecart, an Express backend in `server/` on Ropewalk, and its Postgres
   database on Cellarstone, in one GitHub repository. The app varies (a club sign-up sheet, a ride
-  board, a tool-lending list, a study-room booker), and so do its tables: one or two, named, one of
-  them holding what users add (sign-ups, rides, loans) and, in some scenarios, one holding
-  starting rows the app is meant to open with (the clubs, the rooms, the tools), real content and
-  never described as "sample", "demo" or "so it doesn't look empty".
+  board, a tool-lending list, a study-room booker), and so do its two named tables: one holding
+  what users add (sign-ups, rides, loans), and one holding starting rows the app is meant to open
+  with (the clubs, the rooms, the tools), real content and never described as "sample", "demo" or
+  "so it doesn't look empty". Every scenario has both.
 
   **Fixed setup.** The pipeline is already working and is not in question: Ropewalk is linked to
-  `main` with "Wait for GitHub checks" on, a workflow runs `npm test` in `client/` and in
-  `server/` on every push and then deploys the frontend to Pinecart, and the tests use a database
-  of their own that the workflow creates for each run. The backend reads production's connection
-  string from Ropewalk's settings. The app has been live for some weeks and users have added rows
-  in production. The setup quotes, word for word, the roster bullets this activity rests on:
+  `main` with "Wait for GitHub checks" on, and a workflow runs `npm test` in `client/` and in
+  `server/` on every push, against a Postgres database started inside the GitHub Actions run for
+  the tests alone (not a Cellarstone database). How the frontend deploys is not part of these
+  questions. The backend reads production's connection string from Ropewalk's settings. The app
+  has been live for some weeks: production already has its tables and its starting rows, and
+  users have added rows of their own. The setup quotes, word for word, the roster bullets this activity rests on:
   Cellarstone's two bullets; Ropewalk's link and wait bullet, its settings bullet (saving a setting
   restarts the server), its start-afresh bullet and its pre-deploy bullet. It says that the agent
   proposed each plan in a different session, and that each question is about its own plan alone.
@@ -707,42 +710,47 @@ orientation's reading. Learner-facing text states the task, never the scoring.
   The faulty plans come first and the `sound` plan after them, since it shows what the others
   should have been; the confirmation question is about the `sound` plan, so it comes last.
 
-  **Plan questions.** One plan, three to six numbered steps in the agent's voice, covering how
-  production's tables and any starting rows come to exist, and for slot 2, how a change to them
-  reaches production. "Would you agree to this plan as it stands? If not, say what you would
-  change before agreeing." Every plan has exactly one fault, or none, and every step not named as
-  the fault is sound: in particular, every plan's backend creates its tables if they are missing
-  when it starts (`CREATE TABLE IF NOT EXISTS`), which is sound, and no plan names a connection
-  string's value. The fault is stated in the plan's words, not hidden by omission, except in
+  **Plan questions.** Each question's setup says in one line what the plan is for: for slots 1
+  and 3, the agent proposes reworking how the backend sets up its database ("so a fresh copy of
+  the app sets itself up"); for slot 2, the feature the plan adds or, in `drop-to-fix`, the error
+  it fixes. One plan, three to six numbered steps in the agent's voice, covering how the tables
+  and starting rows come to exist, and for slot 2, how a change to them reaches production.
+  "Would you agree to this plan as it stands? If not, say what you would change before
+  agreeing." Every plan has exactly one fault, or none, and every step not named as the fault is
+  sound: in particular, every plan's backend except `drop-on-start`'s creates its tables if they
+  are missing when it starts (`CREATE TABLE IF NOT EXISTS`), which is sound, and no plan names a
+  connection string's value. The fault is stated in the plan's words, not hidden by omission, except in
   `code-only`, where the fault is that nothing changes production's tables. A faulty step may come
   with a convenient reason ("so the tables always match the code"). Shapes, each with its case:
-  - `drop-on-start` (Easy; `seed-every-start`): the backend's startup code drops its tables and
-    creates them again before loading the starting rows.
+  - `drop-on-start` (Easy; `seed-every-start`): the backend's startup code runs `DROP TABLE` and
+    then `CREATE TABLE` for each table, and then loads the starting rows.
   - `reset-in-start` (Medium; `seed-every-start`): the service's start command runs a script
     before the server, such as `node db/reset.js && node index.js`, and a step says what the
     script does in plain words: it empties the tables and loads the starting rows.
   - `reseed-on-start` (Hard; `seed-every-start`): the backend creates its tables if they are
     missing, which is sound, then inserts the starting rows every time it starts, with nothing
     checking whether they are already there. Users' rows survive; the starting rows are doubled on
-    every deploy and restart. Only scenarios with a starting-rows table use it.
+    every deploy and restart.
   - `code-only` (Hard; `schema-not-applied`): the question's setup names a new feature that needs
     a new column or table (rides marked full, a phone number on each sign-up). The plan changes the
     code, adds the column to the backend's `CREATE TABLE IF NOT EXISTS` statement, adds tests that
     pass, and pushes. Nothing changes production's existing table, which the statement skips
     because it already exists, so the live app errors when it uses the column.
   - `local-only` (Medium; `schema-not-applied`): the same kind of feature; the plan adds the column
-    to the learner's local database by hand ("I've added the column to your local database") and
-    to the code, says the tests pass, and pushes. No step touches production's tables.
+    to the code and to the backend's `CREATE TABLE IF NOT EXISTS` statement, so the tests pass
+    against their fresh database, and to the learner's local database by hand ("I've added the
+    column to your local database so it works there too"), then pushes. No step touches
+    production's tables.
   - `drop-to-fix` (Medium; `schema-not-applied`): the question's setup says the feature has been
     pushed and the live app now errors ("column `is_full` does not exist"). The agent's plan to fix
     it adds a pre-deploy command, or a one-time script against production, that drops the table
     and creates it again with the new column.
   - `sound` (Medium; `sound-plan`; slot 3 only): the backend creates its tables if they are
-    missing when it starts; any starting rows go in once, either from a seed script kept in the
-    repository and run once against production after the first deploy, or from an insert that
-    skips rows already there; a change to the tables is written as a migration file in the
-    repository, and a migration script that applies each file not yet applied, and records it, runs
-    either as Ropewalk's pre-deploy command or as the backend starts. Asks: "Would you go along
+    missing when it starts; the starting rows go in once, either from a seed script kept in the
+    repository, which the plan says production already ran once and is run only on a fresh
+    database, or from an insert that skips rows already there; a change to the tables is written
+    as a migration file in the repository, and a migration script that applies each file not yet
+    applied, and records it, runs as Ropewalk's pre-deploy command. Asks: "Would you go along
     with this plan?"
 
   **Confirmation question** (Hard; `confirm-data`), about the scenario's `sound` plan, which the
@@ -752,22 +760,30 @@ orientation's reading. Learner-facing text states the task, never the scoring.
 
   Credit. Plan questions on a faulty plan: full for naming the faulty step and asking for a change
   that removes it (a reason is welcome, not required). For `seed-every-start`: the tables created
-  only if missing, and the starting rows put in once (run once after the first deploy, or skipped
-  when already there). For `schema-not-applied`: production's existing table changed to add the
-  column or table, keeping its rows, when that version deploys (a migration run by Ropewalk's
-  pre-deploy command or as the backend starts); naming the means is welcome, not required, so
-  "change the live table to add the column, keeping its rows, as part of the deploy" is full. Half
+  only if missing, and the starting rows put in once (run once on a fresh database, or skipped
+  when already there); since production already has its starting rows, "take the insert out of
+  startup, the rows are already there" is full too. For `schema-not-applied` in `code-only` and
+  `local-only`: production's existing table changed to add the column or table, keeping its rows,
+  when that version deploys (a migration run by Ropewalk's pre-deploy command or as the backend
+  starts); naming the means is welcome, not required, so "change the live table to add the
+  column, keeping its rows, as part of the deploy" is full. In `drop-to-fix` the version is
+  already live, so full is any change to production's table that adds the column and keeps its
+  rows, run now (a one-time `ALTER TABLE`, by script or in the query console, or a migration on
+  the next deploy); asking that later changes run as a deploy step is welcome, not required. Half
   for naming the right step with no workable change, a vague one ("be careful with the data"), or a
   change that keeps the fault: moving a reset or a drop into the pre-deploy command, which runs on
-  every deploy; changing production's table by hand once in Cellarstone's query console, which
-  keeps the rows but leaves the next change to memory; dropping the table after a backup. None for
+  every deploy; in `code-only` and `local-only`, changing production's table by hand once in
+  Cellarstone's query console, which keeps the rows but leaves the next change to memory;
+  dropping the table after a backup. None for
   agreeing, or for objecting only to sound steps. A remark objecting to the backend creating
   missing tables when it starts, beside a right answer, is neither credited nor counted. On a
   `reseed-on-start` plan, full needs the starting-rows step named; objecting only to the
   table-creating step is none. On the `sound` plan: full for agreeing, with or without harmless
-  remarks; none for asking to change a sound step into a faulty one, or for refusing the plan on a
-  wrong ground (creating missing tables at startup wipes the data; a pre-deploy migration
-  re-applies every change on every deploy, when the plan says each is applied once). On the
+  remarks, and asking to swap one sound step for another sound one (the seed script for an insert
+  that skips existing rows) counts as a harmless remark; none for asking to change a sound step
+  into a faulty one, or for refusing the plan on a wrong ground (creating missing tables at
+  startup wipes the data; a pre-deploy migration re-applies every change on every deploy, when
+  the plan says each is applied once; a seed script kept in the repository will run again). On the
   confirmation question: full for adding something through the live app (in the browser, or
   through the backend's own HTTP API), pushing a change to `main`, and once Ropewalk shows that
   push's deploy Live, looking in the live app and seeing the thing still there; checking that
@@ -778,11 +794,10 @@ orientation's reading. Learner-facing text states the task, never the scoring.
   status, or for reading the plan or the settings again.
 
   Every scenario carries all four cases. **Rotation across the bank:** slot 1 rotates through
-  `drop-on-start`, `reset-in-start` and `reseed-on-start` (a scenario with no starting-rows table
-  takes the next shape); slot 2 through `code-only`, `local-only` and `drop-to-fix`; slot 3
-  alternates the migration's place between the pre-deploy command and the backend's start, and
-  the starting rows between a once-run seed script and an insert that skips rows already there.
-  A bank of three scenarios shows every faulty shape once.
+  `drop-on-start`, `reset-in-start` and `reseed-on-start`; slot 2 through `code-only`,
+  `local-only` and `drop-to-fix`; slot 3 alternates the starting rows between a seed script run
+  only on a fresh database and an insert that skips rows already there. A bank of three scenarios
+  shows every faulty shape once.
 - **worked example:** shown only as help when asked for. For a plan: the tutor works a different
   made-up plan aloud, step by step, asking of each step "when does this run: once, on every
   deploy, or on every start?" and "what does it do to the rows users have already added?". For the
@@ -790,8 +805,7 @@ orientation's reading. Learner-facing text states the task, never the scoring.
   asks the learner what they could see in the live app that shows it. The Odin Project, "Using
   PostgreSQL" (Node path), https://www.theodinproject.com/lessons/nodejs-using-postgresql, section
   "Populate the db via a script" (its `CREATE TABLE IF NOT EXISTS` and its seed run once), may be
-  cited; database-hosting's orientation already points the learner there. NOT VERIFIED here,
-  tutor should check the section is still there before citing it.
+  cited; database-hosting's orientation already points the learner there. Checked 2026-10-07.
 - **doesn't show:** each plan has at most one fault and the learner is told to look, so a pass
   doesn't show they would catch two at once or notice one while an agent is working. The plans
   say plainly what each step does; a pass doesn't show they could read a seed or migration script
@@ -811,6 +825,7 @@ orientation's reading. Learner-facing text states the task, never the scoring.
 - **artifact:** no external source. An agent's account, after the fact, of how it set up or
   changed a made-up app's production database and how it checked its work, from this activity's
   bank or written live per the generator below. About 3 minutes a question.
+- **verified:** 2026-10-07
 - **learner does:** reads the account, which may or may not have a step that goes wrong, and says
   whether they would have accepted it, and if not, which step goes wrong and what should have
   happened instead.
@@ -833,39 +848,46 @@ orientation's reading. Learner-facing text states the task, never the scoring.
   - `duplicated-rows` (Hard; `seed-every-start`): the agent added an insert of the starting rows to
     the backend's startup, then reports, as a step, that the app's list of clubs now shows each
     club twice and that it will "tidy the duplicates by hand"; the wrong step is the startup
-    insert, not the tidying.
+    insert, not the tidying. Naming the tidying step counts as naming the wrong one when the fix
+    given goes back to the startup insert (stop inserting on every start), and as half when the
+    fix stays with the tidying (delete the duplicates).
   - `skipped-table` (Hard; `schema-not-applied`): the agent added a column to the `CREATE TABLE IF
     NOT EXISTS` statement, saw the tests pass, pushed, and reports the feature done; the account
-    quotes nothing from the live app.
+    quotes nothing from the live app. The wrong step is the column added only to that statement,
+    which skips production's existing table; naming the push or the "done" step with the fix
+    (change production's table, keeping its rows, when that version deploys) is full too. Saying
+    only that the agent never checked the live app is half: it is true, and doesn't say what is
+    missing.
   - `dropped-to-fix` (Medium; `schema-not-applied`): the live app errored on a missing column, and
     the agent dropped production's table and created it again with the column, "and the error is
     gone".
   - `restart-check` (Medium; `confirm-data`): a sound setup, then the agent's check: it added a row
     through the live app, saved a setting to restart the backend, and saw the row still there,
     and calls the pipeline's data handling confirmed.
-  - `console-check` (Medium; `confirm-data`): a sound setup, then the agent's check: after a push
-    deployed, it counted the rows in Cellarstone's query console and found the same number as
-    before.
-  - `sound` (Medium; the case of the step it is written around): every step sound, with one step
-    (how the starting rows went in, how a table change reached production, or how the agent
-    checked that a push keeps the data: a row added through the live app, a push, and the row seen
-    in the live app once that deploy was Live) given in full detail; it carries `seed-every-start`,
-    `schema-not-applied` or `confirm-data` accordingly, and `sound-plan` when written around the
-    starting rows or the table change.
+  - `console-check` (Medium; `confirm-data`): a sound setup, then the agent's check: it pushed,
+    and while Ropewalk's deploy list still showed that push's deploy as Building, counted the rows
+    in Cellarstone's query console, found the same number as before, and calls it confirmed. The
+    count was taken before the new version ran, so it shows nothing about the push.
+  - `sound` (Medium; `sound-plan`): every step sound, with one step (how the starting rows went
+    in, or how a table change reached production) given in full detail. It carries `sound-plan`
+    only: accepting a sound account shows nothing about catching a fault.
   Credit: full for naming the wrong step and what should have happened, as
   `a-judge-database-plan`'s credit gives the change for that case. For `restart-check` and
   `console-check`, full is naming the check as the weak step and saying what would show it: a row
   added through the live app, a push to `main`, and the row seen in the live app once that push's
   deploy is Live; a restart alone runs the startup code but not the pre-deploy command or a new
-  version, and a row count in the console doesn't show the app still serves the row. Half for the
+  version, and a count taken while the deploy was still Building was taken before the push
+  changed anything. As `dropped-to-fix` comes after the version is live, its fix is ruled as
+  `a-judge-database-plan`'s `drop-to-fix`. Half for the
   right step with a missing or wrong fix. None for accepting a faulty account, or for naming a
-  sound step. On a `sound` account: full for accepting; none for naming any step as wrong. A
-  `sound` account written around the starting rows or the table change carries two cases, its
-  step's and `sound-plan`, and gets one ruling: accepting passes both. A scenario may hold several
-  accounts, each judged on its own, faulty ones first in the order of their cases
-  (`seed-every-start`, `schema-not-applied`, `confirm-data`) and at most one `sound` account, last,
-  since a sound account can answer a faulty one. Across the bank, every shape appears, and `sound`
-  accounts are written around each of the three steps.
+  sound step. On a `sound` account: full for accepting; none for naming any step as wrong.
+  **Scenarios and the bank.** A scenario holds four accounts, separate accounts of the same app,
+  each judged on its own: one `seed-every-start` shape, one `schema-not-applied` shape, one
+  `confirm-data` shape, in that order, and one `sound` account last, since a sound account can
+  answer a faulty one. A bank is two scenarios: the first takes `reset-on-deploy`,
+  `skipped-table`, `restart-check` and a `sound` account written around the starting rows; the
+  second takes `duplicated-rows`, `dropped-to-fix`, `console-check` and a `sound` account written
+  around a table change. About 12 minutes a scenario.
 - **worked example:** as `a-judge-database-plan`'s.
 - **doesn't show:** each account has at most one wrong step, and it is a finished account, so a
   pass doesn't show the learner would notice a wrong step while their own agent is doing it. The
