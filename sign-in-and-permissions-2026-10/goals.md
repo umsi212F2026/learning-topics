@@ -52,9 +52,13 @@
 
 ## Where this came from
 
+_Yours to fill in. Nobody can answer this one for you._
+
 <!-- Which of A / B / C / D, and the answer to the follow-up. -->
 
 ## What I already have
+
+_Yours to fill in. Say where your knowledge stops, not what you have heard of._
 
 <!--
   The nearest thing already known well, and where it stops.
@@ -64,6 +68,10 @@
 
 ## What I'll use it for
 
+_Yours to fill in. The course supplies one occasion: Part B of Problem Set 3, where your app's
+single password gives way to sign-in through Google or GitHub, and you decide who may do what.
+Name any others you have._
+
 <!--
   The use, and a concrete occasion.
   If several uses apply, rank them: the top one sets the depth, the rest are cut first
@@ -71,6 +79,17 @@
 -->
 
 ## Depth
+
+**Get sign-in and permissions into your app with your agent, and check that they hold.** Not
+writing the sign-in code yourself, and not building a password system of your own. Your agent
+can register your app with Google or GitHub and write the code that signs people in. This topic
+is enough to follow what happens when someone signs in, to decide who may do what in your app and
+catch a plan that wouldn't really enforce it, to keep the sign-in secret out of places it can
+leak, to confirm from outside the app that the rules hold, and to find out why sign-in that works
+on localhost fails on the live app.
+
+What sits past that line: how tokens are built and signed, cryptography, and defending a live app
+against abuse, which belongs to session 14.
 
 <!--
   Which of: recognize it / read it / modify something existing / author from scratch /
@@ -247,6 +266,66 @@
   placeholder capability entry; an empty section is the honest signal.
 -->
 
+### `c-review-permissions`
+
+- **goal:** work with an agent to give an app levels of who may do what, and confirm that the
+  server enforces them
+- **criterion:** Given a table of who may do what in an app and an agent's plan for enforcing it,
+  says what they would change before agreeing to it, and how they would confirm afterwards that
+  the rules hold. It passes when they catch a table that leaves out something one of its levels
+  could try to do, such as deleting, or leaves out someone who isn't signed in at all; catch a
+  plan that enforces a rule only in React, such as hiding the Edit button from everyone but the
+  owner; catch a plan in which the server takes the user's word for who they are, such as a user
+  id the frontend sends with the request, rather than the session; go along with a plan that
+  checks every rule on the server against the signed-in user and keeps only the provider's id
+  for each user and perhaps an email; and would confirm the rules from outside the app, not from
+  what the page shows: a request to a protected path with no sign-in is refused with 401, and a
+  second account, signed in, is refused the owner's actions with 403.
+- **cases:**
+  - `incomplete-table`: a table missing an action, or missing someone who isn't signed in
+  - `react-only`: a plan that enforces a rule only in the frontend
+  - `trusts-frontend`: a plan whose server believes a user id the frontend sends
+  - `sound-plan`: a plan that checks every rule on the server against the signed-in user
+  - `confirm-401`: how they would confirm a request with no sign-in is turned away
+  - `confirm-403`: how they would confirm a second account is refused the owner's actions
+
+### `c-catch-misplaced-secret`
+
+- **goal:** catch a secret my agent put somewhere it can leak, and know what to do once one has
+- **criterion:** Given what an agent changed to add sign-in to an app (the files it touched, what
+  is in each, and the repository's `.gitignore`), names every secret that is somewhere it should
+  not be and says where it belongs instead, or says that none is. It passes when they catch a
+  secret written into the code, a `.env` file that git will commit, a real value in
+  `.env.example`, and a client secret in a frontend setting; name nothing that isn't misplaced,
+  such as the client ID or the redirect URL in the frontend, or placeholders in `.env.example`;
+  and, for a secret already pushed to a public repository, say that it has to be rotated and
+  that deleting it from the repository does not fix it. Asking the agent whether its secrets
+  are safe does not meet it.
+- **cases:**
+  - `in-code`: a secret written into the code
+  - `committed-env`: a `.env` file that git will commit
+  - `real-example`: a real value in `.env.example`
+  - `frontend-secret`: the client secret in a frontend setting
+  - `public-values`: the client ID, the redirect URL, or placeholders, not called misplaced
+  - `already-pushed`: a secret already pushed to a public repository
+
+### `c-fix-live-sign-in`
+
+- **goal:** find out why sign-in works on localhost but not on the live app
+- **criterion:** Given an app whose sign-in works on localhost and fails on the live app, and
+  what the user sees when it fails, says what they would look at first, is shown it, and goes on
+  until they can say why and what to do next. It passes when they name the right reason: the
+  provider has only the localhost redirect URL, so the live one has to be registered too (with
+  GitHub, usually as a second registered app); the backend host has no client ID or client
+  secret in its settings, so they put them there themselves; or the browser never sends the
+  session cookie back to the backend, because the frontend and backend are on different hosts,
+  so the agent has to let the backend accept credentials from the frontend's origin and set the
+  cookie so it travels between sites.
+- **cases:**
+  - `redirect-url`: the provider doesn't know the live app's redirect URL
+  - `missing-settings`: the backend host lacks the client ID or client secret
+  - `cookie-not-sent`: the session cookie doesn't reach the backend across hosts
+
 ### `o-orientation`
 
 - **goal:** get the shape of this area before working on any particular part of it
@@ -256,3 +335,144 @@
 - **recurrence:** never
 - **is_required:** no
 - **group:** orientation
+
+### `w-authentication`
+
+- **goal:** authentication
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** finding out who someone is
+
+### `w-authorization`
+
+- **goal:** authorization
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** deciding what someone may do
+- **nearest confusable:** authentication
+- **synonyms:** permissions, access control
+
+### `w-oauth`
+
+- **goal:** OAuth
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the standard way an app lets you sign in with an account you already have elsewhere
+- **nearest confusable:** basic auth; giving the app your Google password
+
+### `w-identity-provider`
+
+- **goal:** identity provider
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the outside service that vouches for who the user is, such as Google or GitHub
+- **nearest confusable:** your host
+- **synonyms:** IdP, sign-in provider
+
+### `w-client-id`
+
+- **goal:** client ID
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the public name your app gets when you register it with the provider
+- **nearest confusable:** the user's id
+- **synonyms:** app ID
+
+### `w-client-secret`
+
+- **goal:** client secret
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the private value that proves to the provider a request comes from your app's server
+- **nearest confusable:** client ID; the user's password
+
+### `w-redirect-url`
+
+- **goal:** redirect URL
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the address in your app the provider sends the user back to after signing in
+- **nearest confusable:** the app's own URL
+- **synonyms:** callback URL, redirect URI
+
+### `w-scope`
+
+- **goal:** scope
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** what your app asks the provider to let it see or do with the user's account
+- **nearest confusable:** role
+
+### `w-session`
+
+- **goal:** session
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the server remembering that this browser has signed in, until sign-out or expiry
+- **nearest confusable:** signing in
+
+### `w-cookie`
+
+- **goal:** cookie
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a small value the server asks the browser to send back with each request to it
+- **nearest confusable:** session; localStorage
+
+### `w-401`
+
+- **goal:** 401
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the status code for a request from someone not signed in
+- **synonyms:** Unauthorized
+- **watch for:** takes the name Unauthorized to mean signed in but not allowed
+
+### `w-403`
+
+- **goal:** 403
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the status code for a request from someone signed in but not allowed to do this
+- **nearest confusable:** 401; 404
+- **synonyms:** Forbidden
+
+### `w-role`
+
+- **goal:** role
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a named level of what a group of users may do in your app
+- **nearest confusable:** an account
+- **synonyms:** permission level
+
+### `w-rotate`
+
+- **goal:** rotate
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** replacing a secret with a new one and making the old one stop working
+- **nearest confusable:** deleting the secret from the repository
+
+### `w-env-example`
+
+- **goal:** .env.example
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a committed file listing the settings the app needs, without their real values
+- **nearest confusable:** .env file
