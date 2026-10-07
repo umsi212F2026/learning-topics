@@ -86,7 +86,8 @@ any others you have._
 writing the pipeline's configuration yourself, and not finding out why a failed deploy failed.
 Your agent can connect your repository to your hosts so that each push to `main` redeploys the
 app. This topic is enough to catch a setup that would put a secret where it can leak or deploy
-without running your tests, to confirm the pipeline really works, to tell why a change you made
+without running your tests, to confirm the pipeline really works, to catch a setup whose deploys
+would wipe production's data or leave its tables behind the code, to tell why a change you made
 isn't in the live app yet, and to get your app into the class showcase through a pull request.
 
 What sits past that line: reading a failed deploy's logs to find the cause belongs to
@@ -340,6 +341,32 @@ debug-deployed, and what to do about a secret that has already leaked to session
   - `pr-direction`: which repository and branch the pull request goes from and into
   - `failing-check`: a check fails on their open pull request
 - **taught elsewhere:** session 13 lab
+
+### `c-deploy-keeps-data`
+
+- **goal:** make sure a self-deploying app treats its production database on purpose
+- **criterion:** Given an agent's plan for how an app that deploys itself on every push to `main`
+  gives its production database its tables and starting rows, and how a change to those tables
+  reaches production, says what they would change before agreeing to it, and how they would
+  confirm afterwards that a push leaves production's data in place. It passes when they catch a
+  plan whose backend, every time it starts, deletes and recreates its tables or inserts its
+  starting rows again, so each deploy or restart wipes or duplicates what users added; catch a
+  plan that ships code needing a new table or column while nothing changes production's tables,
+  or that changes them by dropping and recreating the tables, and ask for the change to be
+  applied to production's tables, keeping their rows, when that version deploys; go along with a
+  plan whose backend creates any missing tables when it starts, whose starting rows go in once,
+  and whose table changes are applied as a deploy step; and would confirm it by adding something
+  through the live app, pushing a change that redeploys the backend, and seeing, once that deploy
+  is live, that the thing is still there, once and not twice.
+- **cases:**
+  - `seed-every-start`: the backend deletes and recreates its tables, or inserts its starting rows
+    again, every time it starts
+  - `schema-not-applied`: code needing a new table or column ships with nothing changing
+    production's tables, or with the tables dropped and recreated
+  - `sound-plan`: missing tables created on start, starting rows put in once, table changes
+    applied as a deploy step
+  - `confirm-data`: how they would confirm that a push leaves production's data in place
+- **taught elsewhere:** session 12 class
 
 ### `o-orientation`
 
