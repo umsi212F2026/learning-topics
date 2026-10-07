@@ -18,3 +18,4 @@
 {"at":"2026-10-07T17:33:18.092Z","kind":"goal-added","goal":"c-review-permissions","needs":"curation"}
 {"at":"2026-10-07T17:33:18.150Z","kind":"goal-added","goal":"c-catch-misplaced-secret","needs":"curation"}
 {"at":"2026-10-07T17:33:18.195Z","kind":"goal-added","goal":"c-fix-live-sign-in","needs":"curation"}
+{"at":"2026-10-07T22:56:52.216Z","kind":"goal-added","goal":"c-set-up-sign-in","needs":"curation"}

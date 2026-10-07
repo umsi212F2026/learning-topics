@@ -266,6 +266,30 @@ against abuse, which belongs to session 14.
   placeholder capability entry; an empty section is the honest signal.
 -->
 
+### `c-set-up-sign-in`
+
+- **goal:** work with an agent to add sign-in through Google or GitHub to an app, on localhost
+  and on the live app
+- **criterion:** Given an agent's plan for adding sign-in through Google or GitHub to a described
+  app whose frontend and backend are on separate hosts, says which steps are theirs to do and what
+  they would change before agreeing to it. It passes when they say that they register the app
+  with the provider themselves, which gives them a client ID and a client secret; give the
+  provider a redirect URL for localhost and another for the live app, and with GitHub, which
+  allows only one per registered app, register the app twice; put the client secret into the
+  backend host's settings themselves rather than hand it to the agent, while the client ID may go
+  in the frontend; catch a plan that asks the provider for more of the user's account than the
+  app needs, such as their repositories when the app only shows their name; and go along with a
+  plan in which the backend trades the code the provider sends back for who the user is, and
+  keeps the provider's id for that user rather than a password.
+- **cases:**
+  - `register-yourself`: who registers the app with the provider, and what that gives them
+  - `two-redirects`: redirect URLs for localhost and the live app, including GitHub's one-per-app
+    limit
+  - `secret-placement`: where the client secret and the client ID each go
+  - `too-much-scope`: a plan that asks for more of the user's account than the app needs
+  - `sound-plan`: a plan whose backend trades the code for the user's identity and keeps their
+    provider id
+
 ### `c-review-permissions`
 
 - **goal:** work with an agent to give an app levels of who may do what, and confirm that the
