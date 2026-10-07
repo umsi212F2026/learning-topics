@@ -314,26 +314,6 @@ against abuse, which belongs to session 14.
   - `confirm-401`: the request that would show someone not signed in is turned away
   - `confirm-403`: the request that would show a second account is refused the owner's actions
 
-### `c-catch-misplaced-secret`
-
-- **goal:** catch a secret my agent put somewhere it can leak, and know what to do once one has
-- **criterion:** Given what an agent changed to add sign-in to a described app (the files it
-  touched, what is in each, and the repository's `.gitignore`), names every secret that is
-  somewhere it should not be and says where it belongs instead, or says that none is. It passes
-  when they catch a secret written into the code, a `.env` file that git will commit, a real value
-  in `.env.example`, and a client secret in a frontend setting; name nothing that isn't misplaced,
-  such as the client ID or the redirect URL in the frontend, or placeholders in `.env.example`;
-  and, for a secret already pushed to a public repository, say that it has to be rotated and
-  that deleting it from the repository does not fix it. Asking the agent whether its secrets
-  are safe does not meet it.
-- **cases:**
-  - `in-code`: a secret written into the code
-  - `committed-env`: a `.env` file that git will commit
-  - `real-example`: a real value in `.env.example`
-  - `frontend-secret`: the client secret in a frontend setting
-  - `public-values`: the client ID, the redirect URL, or placeholders, not called misplaced
-  - `already-pushed`: a secret already pushed to a public repository
-
 ### `c-fix-live-sign-in`
 
 - **goal:** find out why sign-in works on localhost but not on the live app
