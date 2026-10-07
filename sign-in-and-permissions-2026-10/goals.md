@@ -408,15 +408,6 @@ debug-deployed. Defending a live app against abuse belongs to session 14.
 - **what it names:** the server remembering that this browser has signed in, until sign-out or expiry
 - **nearest confusable:** signing in
 
-### `w-cookie`
-
-- **goal:** cookie
-- **criterion:** vocabulary
-- **bar:** one production pass
-- **group:** vocabulary
-- **what it names:** a small value the server asks the browser to send back with each request to it
-- **nearest confusable:** session; localStorage
-
 ### `w-401`
 
 - **goal:** 401
