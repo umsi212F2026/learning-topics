@@ -360,7 +360,7 @@ debug-deployed, and what to do about a secret that has already leaked to session
   is live, that the thing is still there.
 - **cases:**
   - `seed-every-start`: the backend deletes and recreates its tables, or inserts its starting rows
-    again, every time it starts
+    again, every time it deploys or starts
   - `schema-not-applied`: code needing a new table or column ships with nothing changing
     production's tables, or with the tables dropped and recreated
   - `sound-plan`: missing tables created on start, starting rows put in once, table changes
