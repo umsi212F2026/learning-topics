@@ -4,7 +4,6 @@
 {"at":"2026-10-07T17:32:41.657Z","kind":"goal-added","goal":"w-authorization","needs":"curation"}
 {"at":"2026-10-07T17:32:41.701Z","kind":"goal-added","goal":"w-oauth","needs":"curation"}
 {"at":"2026-10-07T17:32:41.742Z","kind":"goal-added","goal":"w-identity-provider","needs":"curation"}
-{"at":"2026-10-07T17:32:41.779Z","kind":"goal-added","goal":"w-client-id","needs":"curation"}
 {"at":"2026-10-07T17:32:41.820Z","kind":"goal-added","goal":"w-client-secret","needs":"curation"}
 {"at":"2026-10-07T17:32:41.861Z","kind":"goal-added","goal":"w-redirect-url","needs":"curation"}
 {"at":"2026-10-07T17:32:41.896Z","kind":"goal-added","goal":"w-scope","needs":"curation"}

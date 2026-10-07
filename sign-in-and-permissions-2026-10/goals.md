@@ -363,16 +363,6 @@ debug-deployed. Defending a live app against abuse belongs to session 14.
 - **nearest confusable:** your host
 - **synonyms:** IdP, sign-in provider
 
-### `w-client-id`
-
-- **goal:** client ID
-- **criterion:** vocabulary
-- **bar:** one production pass
-- **group:** vocabulary
-- **what it names:** the public name your app gets when you register it with the provider
-- **nearest confusable:** the user's id
-- **synonyms:** app ID
-
 ### `w-client-secret`
 
 - **goal:** client secret
