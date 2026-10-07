@@ -54,7 +54,8 @@ You asked the agent to rework how the backend sets up and changes its database, 
 and changing it is all in the code. Here's what it told you:
 
 1. I kept the backend's startup code in `server/db/setup.js`, which runs `CREATE TABLE IF NOT
-   EXISTS` for `scores` and for `checkouts` each time the server starts.
+   EXISTS` for `scores` and for `checkouts` each time the server starts, which creates each table
+   only if it isn't there yet.
 2. I moved the choir's 64 pieces into `server/db/scores.sql`, so the list of pieces lives in the
    repository.
 3. I wrote `server/db/reset.js`, which empties `scores` and `checkouts` and then loads the pieces
@@ -72,7 +73,8 @@ back. Here's what it told you:
 
 1. I added a due date to the checkout form, and to the backend route that saves a checkout.
 2. I added a `due_date` column to the `CREATE TABLE IF NOT EXISTS checkouts` statement in
-   `server/db/setup.js`, which the backend runs each time it starts.
+   `server/db/setup.js`, which the backend runs each time it starts and which creates `checkouts`
+   only if it isn't there yet.
 3. I added tests for the due date. `npm test` passes in `client/` and in `server/`.
 4. I pushed to `main`. The checks passed, and Ropewalk's deploy list shows the deploy as Live.
 5. The due date feature is done.
@@ -87,7 +89,8 @@ and changing it is all in the code, and to check afterwards that production's da
 what it told you:
 
 1. I kept the backend's startup code in `server/db/setup.js`, which runs `CREATE TABLE IF NOT
-   EXISTS` for `scores` and for `checkouts` each time the server starts.
+   EXISTS` for `scores` and for `checkouts` each time the server starts, which creates each table
+   only if it isn't there yet.
 2. The choir's 64 pieces are loaded by `server/db/seed.js`, kept in the repository. Production
    already ran it once, when Stave went live. It is run only on a fresh database, and nothing in
    the start command or the pre-deploy command runs it.
@@ -109,7 +112,8 @@ and changing it is all in the code, and to check afterwards that production's da
 what it told you:
 
 1. I kept the backend's startup code in `server/db/setup.js`, which runs `CREATE TABLE IF NOT
-   EXISTS` for `scores` and for `checkouts` each time the server starts.
+   EXISTS` for `scores` and for `checkouts` each time the server starts, which creates each table
+   only if it isn't there yet.
 2. The choir's 64 pieces are in `server/db/scores.sql`, each with its `catalog_number`. Right after
    creating the tables, the startup code inserts them with `INSERT INTO scores ... ON CONFLICT
    (catalog_number) DO NOTHING`. Since `catalog_number` is unique in `scores`, a piece whose number

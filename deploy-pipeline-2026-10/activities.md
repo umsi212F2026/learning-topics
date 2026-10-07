@@ -726,7 +726,13 @@ orientation's reading. Learner-facing text states the task, never the scoring.
   `drop-to-fix`, the error it fixes. Every slot 2 feature needs a new column on a table
   production already has, never a whole new table, which the backend's `CREATE TABLE IF NOT
   EXISTS` would create in production on its next start. The explanations in these shape
-  descriptions, and the words "sound" and "fault", are for the rubric and never appear in a plan. One plan, three to six numbered steps in the agent's voice, covering how the tables
+  descriptions, and the words "sound" and "fault", are for the rubric and never appear in a plan.
+  **No SQL to read.** Learners are not expected to know SQL. A plan may show SQL, as an agent
+  would, but every statement it names comes with what it does in plain words ("runs `CREATE
+  TABLE IF NOT EXISTS`, which creates each table only if it isn't there yet"; "drops the table,
+  deleting it and every row in it"), so no answer depends on reading SQL. A learner's answer
+  never needs SQL either: credit asks for what has to change, in any words, and the SQL named in
+  the credit below is for the tutor. One plan, three to six numbered steps in the agent's voice, covering how the tables
   and starting rows come to exist, and for slot 2, how a change to them reaches production.
   "Would you agree to this plan as it stands? If not, say what you would change before
   agreeing." Every plan has exactly one fault, or none, and every step not named as the fault is
@@ -775,8 +781,8 @@ orientation's reading. Learner-facing text states the task, never the scoring.
   that removes it (a reason is welcome, not required). For `seed-every-start`: the tables created
   only if missing, and the starting rows put in once (run once on a fresh database, or skipped
   when already there); since production already has its starting rows, "take the insert out of
-  startup, the rows are already there" is full too. On `drop-on-start`, "remove the `DROP TABLE`"
-  alone is half: the starting rows would still go in on every start. For `schema-not-applied` in `code-only` and
+  startup, the rows are already there" is full too. On `drop-on-start`, only stopping the drop
+  ("don't delete the tables") is half: the starting rows would still go in on every start. For `schema-not-applied` in `code-only` and
   `local-only`: production's existing table changed to add the column or table, keeping its rows,
   when that version deploys (a migration run by Ropewalk's pre-deploy command or as the backend
   starts); naming the means is welcome, not required, so "change the live table to add the
@@ -860,7 +866,9 @@ orientation's reading. Learner-facing text states the task, never the scoring.
   wrong or none, and every step before a wrong one sound. Every account's backend creates its
   tables if they are missing when it starts, which is sound. Every table change in an account is
   a new column on a table production already has. The explanations in these shape descriptions,
-  and the words "sound" and "fault", are for the rubric and never appear in an account. "Would you have accepted this? If a
+  and the words "sound" and "fault", are for the rubric and never appear in an account. The
+  no-SQL rule of `a-judge-database-plan`'s generator holds here too: every SQL statement an
+  account names comes with what it does in plain words, and no answer needs SQL. "Would you have accepted this? If a
   step goes wrong, which one, and what should have happened instead?" Shapes, each carrying one
   case:
   - `reset-on-deploy` (Medium; `seed-every-start`): the agent set a script that empties the

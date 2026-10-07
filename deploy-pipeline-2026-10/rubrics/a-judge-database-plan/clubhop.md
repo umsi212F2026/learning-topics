@@ -27,14 +27,15 @@ credit.
 - **credit:** full for naming step 2 and asking for a change that removes it: the tables created
   only if missing, and the clubs put in once (run once on a fresh database, or skipped when
   already there); "take the load out of startup, the clubs are already there" is full too. A
-  reason is welcome, not required. Half for "remove the `DROP TABLE`" alone, since the clubs would
+  reason is welcome, not required. Half for only stopping the drop, in any words ("don't delete
+  the tables"), since the clubs would
   still go in on every start; for naming step 2 with no workable change, or a vague one ("be
   careful with the data"); for moving the drop and reload into Ropewalk's pre-deploy command, which
   runs on every deploy; or for dropping the tables after a backup. None for agreeing, or for
   objecting only to sound steps (keeping the definitions and the clubs in the repository, reading
   `CLUBHOP_DB` from Ropewalk's settings, the column test).
 - **tutor note:** "so the tables always match the code" is the bait. If they agree, ask what is in
-  `signups` just after Ropewalk's next deploy. If they only remove the `DROP TABLE`, ask what
+  `signups` just after Ropewalk's next deploy. If they only stop the drop, ask what
   `clubs` holds after the third restart.
 
 ### q2

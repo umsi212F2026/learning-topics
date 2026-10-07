@@ -55,9 +55,10 @@ and changing it is all in the code. The agent proposes:
 
 1. I'll keep the definitions of `clubs` and `signups` in `server/db/schema.sql`, and the list of
    clubs in `server/db/clubs.json`, both in the repository.
-2. Each time the backend starts, before it listens for requests, it will run `DROP TABLE` and then
-   `CREATE TABLE` for `signups` and `clubs` from `schema.sql`, and then load the clubs from
-   `clubs.json` into `clubs`, so the tables always match the code.
+2. Each time the backend starts, before it listens for requests, it will run `DROP TABLE` for
+   `signups` and `clubs`, which deletes each table and every row in it, then `CREATE TABLE` from
+   `schema.sql`, which makes them again, empty, and then load the clubs from `clubs.json` into
+   `clubs`, so the tables always match the code.
 3. The backend will keep reading the connection string from `CLUBHOP_DB` on Ropewalk's Settings
    page.
 4. I'll add a test, run by `npm test` in `server/`, that checks the tables have every column the
@@ -71,11 +72,12 @@ You asked the agent to add a phone number to each sign-up, so a club's leader ca
 students who signed up. The agent proposes:
 
 1. As now, each time the backend starts it runs `CREATE TABLE IF NOT EXISTS` for `clubs` and
-   `signups`, and the clubs are already in production, so nothing about them changes.
+   `signups`, which creates each table only if it isn't there yet, and the clubs are already in
+   production, so nothing about them changes.
 2. I'll add a phone field to the sign-up form in `client/`, and send it with each sign-up.
 3. In `server/`, the sign-up route will save the number in a new `phone` column, and the leader's
    list will show it.
-4. I'll add `phone text` to the `signups` table in the backend's `CREATE TABLE IF NOT EXISTS`
+4. I'll add a `phone` column to the `signups` table in that `CREATE TABLE IF NOT EXISTS`
    statement, so the table has the column the route uses.
 5. I'll add tests for saving and listing a phone number, and check that they pass.
 6. I'll push to `main`, and Ropewalk will deploy it once the checks pass.
@@ -88,7 +90,7 @@ You asked the agent to rework how the backend sets up and changes its database, 
 and changing it is all in the code. The agent proposes:
 
 1. Each time the backend starts, it will run `CREATE TABLE IF NOT EXISTS` for `clubs` and
-   `signups`.
+   `signups`, which creates each table only if it isn't there yet.
 2. The clubs will go in from a seed script kept in the repository, `server/db/seed.js`, which
    inserts them into `clubs`. It is run by hand, and only on a fresh database. Production already
    ran it once when Clubhop launched, so it won't be run there again.

@@ -41,8 +41,8 @@ once and its migration step answer q1 and q2, and q4's check answers q3, hence t
   (keeps the rows but leaves the next change to memory), dropping and recreating `checkouts`, with
   or without a backup, or saying only that the agent never checked the live app (true, but it
   doesn't say what is missing). None for accepting, or for naming only step 1 or 3.
-- **tutor note:** if they accept, ask what `CREATE TABLE IF NOT EXISTS checkouts` does on a
-  database that already has a `checkouts` table, and what the tests' database had before they ran.
+- **tutor note:** if they accept, ask what step 2's statement does when production already has a
+  `checkouts` table, and what the tests' database had before they ran.
 
 ### q3
 
