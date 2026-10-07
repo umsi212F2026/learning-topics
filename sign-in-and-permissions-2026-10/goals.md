@@ -85,8 +85,8 @@ writing the sign-in code yourself, and not building a password system of your ow
 can register your app with Google or GitHub and write the code that signs people in. This topic
 is enough to follow what happens when someone signs in, to decide who may do what in your app and
 catch a plan that wouldn't really enforce it, to keep the sign-in secret out of places it can
-leak, to confirm from outside the app that the rules hold, and to find out why sign-in that works
-on localhost fails on the live app.
+leak, to know which requests would show that the rules hold, and to find out why sign-in that
+works on localhost fails on the live app.
 
 What sits past that line: how tokens are built and signed, cryptography, and defending a live app
 against abuse, which belongs to session 14.
@@ -270,33 +270,34 @@ against abuse, which belongs to session 14.
 
 - **goal:** work with an agent to give an app levels of who may do what, and confirm that the
   server enforces them
-- **criterion:** Given a table of who may do what in an app and an agent's plan for enforcing it,
-  says what they would change before agreeing to it, and how they would confirm afterwards that
-  the rules hold. It passes when they catch a table that leaves out something one of its levels
+- **criterion:** Given a table of who may do what in a described app and an agent's plan for
+  enforcing it, says what they would change before agreeing to it, and how they would confirm
+  afterwards that the rules hold. It passes when they catch a table that leaves out something one of its levels
   could try to do, such as deleting, or leaves out someone who isn't signed in at all; catch a
   plan that enforces a rule only in React, such as hiding the Edit button from everyone but the
   owner; catch a plan in which the server takes the user's word for who they are, such as a user
   id the frontend sends with the request, rather than the session; go along with a plan that
   checks every rule on the server against the signed-in user and keeps only the provider's id
-  for each user and perhaps an email; and would confirm the rules from outside the app, not from
-  what the page shows: a request to a protected path with no sign-in is refused with 401, and a
-  second account, signed in, is refused the owner's actions with 403.
+  for each user and perhaps an email; and say which requests would confirm the rules, rather
+  than what the page shows, and what each should get back: a request to a protected path with no
+  sign-in is refused with 401, and a second account, signed in, is refused the owner's actions
+  with 403.
 - **cases:**
   - `incomplete-table`: a table missing an action, or missing someone who isn't signed in
   - `react-only`: a plan that enforces a rule only in the frontend
   - `trusts-frontend`: a plan whose server believes a user id the frontend sends
   - `sound-plan`: a plan that checks every rule on the server against the signed-in user
-  - `confirm-401`: how they would confirm a request with no sign-in is turned away
-  - `confirm-403`: how they would confirm a second account is refused the owner's actions
+  - `confirm-401`: the request that would show someone not signed in is turned away
+  - `confirm-403`: the request that would show a second account is refused the owner's actions
 
 ### `c-catch-misplaced-secret`
 
 - **goal:** catch a secret my agent put somewhere it can leak, and know what to do once one has
-- **criterion:** Given what an agent changed to add sign-in to an app (the files it touched, what
-  is in each, and the repository's `.gitignore`), names every secret that is somewhere it should
-  not be and says where it belongs instead, or says that none is. It passes when they catch a
-  secret written into the code, a `.env` file that git will commit, a real value in
-  `.env.example`, and a client secret in a frontend setting; name nothing that isn't misplaced,
+- **criterion:** Given what an agent changed to add sign-in to a described app (the files it
+  touched, what is in each, and the repository's `.gitignore`), names every secret that is
+  somewhere it should not be and says where it belongs instead, or says that none is. It passes
+  when they catch a secret written into the code, a `.env` file that git will commit, a real value
+  in `.env.example`, and a client secret in a frontend setting; name nothing that isn't misplaced,
   such as the client ID or the redirect URL in the frontend, or placeholders in `.env.example`;
   and, for a secret already pushed to a public repository, say that it has to be rotated and
   that deleting it from the repository does not fix it. Asking the agent whether its secrets
@@ -312,9 +313,9 @@ against abuse, which belongs to session 14.
 ### `c-fix-live-sign-in`
 
 - **goal:** find out why sign-in works on localhost but not on the live app
-- **criterion:** Given an app whose sign-in works on localhost and fails on the live app, and
-  what the user sees when it fails, says what they would look at first, is shown it, and goes on
-  until they can say why and what to do next. It passes when they name the right reason: the
+- **criterion:** Given a described app whose sign-in works on localhost and fails on the live
+  app, and what the user sees when it fails, says what they would look at first, is shown it, and
+  goes on until they can say why and what to do next. It passes when they name the right reason: the
   provider has only the localhost redirect URL, so the live one has to be registered too (with
   GitHub, usually as a second registered app); the backend host has no client ID or client
   secret in its settings, so they put them there themselves; or the browser never sends the
