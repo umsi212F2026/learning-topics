@@ -92,8 +92,8 @@ and changing it is all in the code. The agent proposes:
 2. The clubs will go in from a seed script kept in the repository, `server/db/seed.js`, which
    inserts them into `clubs`. It is run by hand, and only on a fresh database. Production already
    ran it once when Clubhop launched, so it won't be run there again.
-3. A change to the tables will be written as a migration file in `server/db/migrations/`, such as
-   `002-add-signup-phone.sql`, kept in the repository.
+3. A change to the tables will be written as a migration file in `server/db/migrations/`, numbered in
+   order (`001-...sql`, `002-...sql`) and kept in the repository.
 4. I'll add a migration script, `server/db/migrate.js`, and set `node db/migrate.js` as Ropewalk's
    pre-deploy command. On each deploy it first creates any tables that are missing, then applies,
    in order, each migration file not yet applied, and records it in a `migrations` table.

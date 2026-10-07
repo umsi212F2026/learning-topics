@@ -799,8 +799,8 @@ orientation's reading. Learner-facing text states the task, never the scoring.
   into a faulty one, or for refusing the plan on a wrong ground (creating missing tables at
   startup wipes the data; a pre-deploy migration re-applies every change on every deploy, when
   the plan says each is applied once; a seed script kept in the repository will run again). A
-  learner who raises a real gap in the plan as written, such as the order of steps on a fresh
-  database or the seed script needing someone to run it, is right: it is never a wrong ground and
+  learner who raises a real gap in the plan as written, such as the seed script needing someone to
+  remember to run it, is right: it is never a wrong ground and
   meets `sound-plan` in full. On the
   confirmation question: full for adding something through the live app (in the browser, or
   through the backend's own HTTP API), pushing a change to `main`, and once Ropewalk shows that

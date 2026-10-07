@@ -72,8 +72,7 @@ credit.
 - **credit:** full for agreeing, with or without harmless remarks; asking to swap the seed script
   for an insert that skips clubs already there counts as a harmless remark. A learner who raises a
   real gap in the plan as written is right, and that meets the case in full: for example, that the
-  seed script needs someone to remember to run it on a fresh database, or the order of the steps on
-  a fresh database (when the seed script runs relative to the tables being created). None for asking to change a sound step into a faulty one
+  seed script needs someone to remember to run it on a fresh database. None for asking to change a sound step into a faulty one
   (seeding on every start or every deploy, dropping tables to apply a change), or for refusing the
   plan on a wrong ground: creating missing tables at startup wipes the data; the pre-deploy
   migration re-applies every change on every deploy, when step 4 says each is applied once and
