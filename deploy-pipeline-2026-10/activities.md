@@ -143,9 +143,11 @@ orientation's reading. Learner-facing text states the task, never the scoring.
   3. After Odin: sketches the three repositories (the original, their fork, their local copy) as
      boxes, with an arrow for each push and pull, and one for the pull request.
   Then the close, about 5 minutes, with the reading and the sketch still beside them: answers the
-  question the tutor puts: with these pages beside you, could you now attempt these three things
+  question the tutor puts: with these pages beside you, could you now attempt these four things
   for real: reading an agent's plan for making your app deploy itself on every push, saying
-  what you would change and how you'd confirm it works; working out why a change you made isn't showing in the live app; and
+  what you would change and how you'd confirm it works; reading an agent's plan for how your
+  app's production database gets its tables and rows, and how a change to them reaches it;
+  working out why a change you made isn't showing in the live app; and
   getting a change into a repository you can't push to, through a pull request?
 - **tutor role:** explainer
 - **tutor does:** stays quiet through the reading except at the stops and when asked. At each
@@ -157,11 +159,14 @@ orientation's reading. Learner-facing text states the task, never the scoring.
   learner asks, says those are what the session 12 lab and class and the session 13 lab are for,
   and what this topic's other activities check. If the learner stops on a Render setting, says it
   is one real host's settings as of 2026-10-05, and that other hosts name and offer these things
-  differently. At the close, puts the readiness question as written above and rules on the
-  answer.
+  differently. None of these pages is about the database: for the question's database part, the
+  page that bears on it is database-hosting's orientation, `a-read-database-survives`, which the
+  learner read for session 11 (Odin's "Using PostgreSQL" and its seed script run once); the tutor
+  does not say what a sound database plan contains. At the close, puts the readiness question as
+  written above and rules on the answer.
 - **done when:** criterion met. The bar for this goal is did it once and help is expected
   throughout, so the ruling is on the learner's answer to the readiness question, not on the stops
-  or on whether the tutor thinks they are ready. A plain yes to all three parts is
+  or on whether the tutor thinks they are ready. A plain yes to all four parts is
   `criterion: met`. A hedge on any part, with no plain no, is `criterion: unclear`: go over the
   page that bears on the hedged part once more and put the question again; a second hedge stays
   `unclear`, and the tutor offers an activity on that capability. A plain no to any part is
@@ -170,8 +175,9 @@ orientation's reading. Learner-facing text states the task, never the scoring.
   isn't required, so a no never blocks anything else the learner wants to try.
 - **worked example:** n/a
 - **doesn't show:** an indication of readiness is all this goal asks for and all this shows. It
-  shows nothing about any of the three capabilities: there is no rehearsal of their questions, by
-  design, and the stops are helped and ungraded. MDN deploys to GitHub Pages, so the reading never
+  shows nothing about any of the four capabilities: there is no rehearsal of their questions, by
+  design, and the stops are helped and ungraded. Nothing in its reading is about the database, so
+  the database part of the question rests on database-hosting's orientation, read earlier. MDN deploys to GitHub Pages, so the reading never
   shows a host token or where one is kept, and Render is the only host whose settings the learner
   sees. It shows nothing about the fourteen words, which have their own supply.
 - **offer as:** this topic's orientation, one entry holding a sequence: parts of MDN's deployment
