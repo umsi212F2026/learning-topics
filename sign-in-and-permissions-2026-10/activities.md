@@ -125,6 +125,7 @@ with the learner.
 - **offer as:** the explanation first: why sign-in through another service works the way it does
   (MDN), then what goes wrong with who may do what (OWASP), then a short close. Vendor-neutral; the
   OpenID Connect flow it describes is the one Google uses. About 20 minutes.
+- **note:** Plan on 25 to 30 minutes, not 20: the sketch at stop 1 and the table at stop 2 each take a few minutes once the reading is done.
 
 ### `a-read-github-oauth-flow`
 
@@ -163,6 +164,7 @@ with the learner.
   stops. GitHub is one of the two providers; the
   tutor says Google works the same way except that it hands back an ID token naming the user, so
   the backend need not call an API to ask.
+- **verified:** 2026-10-07
 - **learner does:** reads the four pages in order with Part B of Problem Set 3 in mind. Stops twice
   and answers before reading on; "I don't know yet" is an honest answer:
   1. After the two GitHub pages: **sketches sign-in as four boxes, the browser, the React frontend
@@ -203,6 +205,7 @@ with the learner.
 - **offer as:** the concrete version: GitHub's own pages on the steps your app will actually take,
   then the two status codes, then what goes wrong with who may do what. Less of the why than the MDN
   reading, and closest to Part B if you are using GitHub. About 20 minutes.
+- **note:** Plan on 25 to 30 minutes, not 20. At stop 1, along with identity provider and the session, say that Google works the same way except that it hands back an ID token naming the user, so the backend need not call an API to ask.
 
 ### `a-critique-sign-in-plan`
 
@@ -332,6 +335,7 @@ with the learner.
   says nothing about finding their way around Google's or GitHub's console.
 - **offer as:** plan review: your agent shows you a short plan before it writes any code, and you
   say what you'd change. One question per thing that could be wrong, 2 to 4 minutes each.
+- **note:** When writing an excerpt live, any step outside `register-yourself`, `secret-placement` and `leaked-secret` that registers the app or sets the client secret should say the learner does it, or be left out. An unattributed step in an agent's plan reads as the agent's own, and a learner who flags it is right. Don't count a flag on a step the excerpt left ambiguous against them.
 
 ### `a-reply-to-sign-in-agent`
 
@@ -401,6 +405,7 @@ with the learner.
 - **offer as:** the same six things as plan review, met the way they really arrive: one message from
   your agent partway through, and you write the reply. Shorter questions, and closer to the moment
   you'll actually face.
+- **note:** As in `a-critique-sign-in-plan`: in a message written live, any mention of registering the app or setting the client secret outside its own cases should say the learner does it. A reply that objects to the agent handling the secret, where the message left that unclear, is not a mistake.
 
 ### `a-sort-sign-in-steps`
 
@@ -410,6 +415,7 @@ with the learner.
 - **artifact:** no external source. A made-up app and a deck of cards, each one step someone has
   proposed for adding sign-in to it, from this activity's bank or written live per the generator
   below. 1 to 2 minutes a card.
+- **verified:** 2026-10-07
 - **learner does:** reads the scenario's setup and the one card served, and puts it in one of three
   piles, saying why in one to three sentences: **yours** (you do it by hand, at the provider or in
   a host's settings), **your agent's, as written** (code or config your agent can do as the card
@@ -500,6 +506,7 @@ with the learner.
   shows more. Nothing is registered.
 - **offer as:** the quickest and most structured check: one step at a time, sort it into yours,
   your agent's, or change it first. A good way in before plan review, which shows more.
+- **note:** For a card with no actor named that belongs to the learner (the registration step, or the sound placement of the secret and the ID), "change it first" with the change being "I do this myself" is the same answer as "yours". Credit it as the right pile.
 
 ### `a-critique-permissions-plan`
 
@@ -602,6 +609,7 @@ with the learner.
 - **offer as:** plan review for who may do what: a table or a short plan, and you say what you'd
   change, or which request would prove it. One question per thing that could be wrong, 2 to 4
   minutes each.
+- **note:** The setup names "someone not signed in" among the app's levels. A pass on `missing-signed-out` therefore shows that the learner checked the table's columns against a list they were given. It does not show that they would think of the signed-out visitor unprompted. When writing a setup live, it is fair to list only the signed-in levels.
 
 ### `a-contrast-permission-plans`
 
