@@ -64,6 +64,7 @@ with the learner.
   which is what Google sign-in uses; GitHub sign-in is plain OAuth, so there is no ID token, and the
   backend instead uses the access token to ask GitHub's API who the user is. The tutor says so at
   stop 1.
+- **verified:** 2026-10-07
 - **learner does:** reads the three pages in order with Part B of Problem Set 3 in mind (an app
   whose single basic-auth password gives way to sign-in through Google or GitHub). Stops twice and
   answers before reading on; "I don't know yet" is an honest answer:
@@ -210,6 +211,7 @@ with the learner.
 - **artifact:** no external source. A made-up app and short excerpts of an agent's plan for adding
   sign-in to it, from this activity's bank or written live per the generator below. 2 to 4 minutes
   a question.
+- **verified:** 2026-10-07
 - **learner does:** reads the scenario's setup and the one excerpt served, and answers in two to
   four sentences the question every excerpt ends with: "Would you agree to this as it stands? If
   not, what would you change, and who does it, you or your agent?"
@@ -330,6 +332,7 @@ with the learner.
 - **artifact:** no external source. A made-up app and single messages an agent sends partway
   through adding sign-in to it, from this activity's bank or written live per the generator below.
   2 to 3 minutes a question.
+- **verified:** 2026-10-07
 - **learner does:** reads the scenario's setup and the one agent message served, and writes the
   reply they would send the agent, in two to four sentences, as they would type it: what they say
   yes or no to, what they will do themselves, and what they want changed.
@@ -391,6 +394,7 @@ with the learner.
 - **artifact:** no external source. A made-up app with its routes, and a who-may-do-what table and
   short excerpts of an agent's plan for enforcing it, from this activity's bank or written live per
   the generator below. 2 to 4 minutes a question.
+- **verified:** 2026-10-07
 - **learner does:** reads the scenario's setup and the one question served, and answers in two to
   four sentences. A table or plan question ends: "Would you agree to this as it stands? If not, what
   would you change?" A confirming question ends: "Which request would you make to show this rule
@@ -488,6 +492,7 @@ with the learner.
 - **artifact:** no external source. A made-up app and pairs of versions of one piece of the work, A
   and B, from this activity's bank or written live per the generator below. 2 to 3 minutes a
   question.
+- **verified:** 2026-10-07
 - **learner does:** reads the setup and the one pair served, and answers: "Would you agree to A, B,
   or both? What gives it away?" For the confirming pairs, also says what the request they chose
   should get back.
