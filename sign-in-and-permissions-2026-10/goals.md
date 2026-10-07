@@ -85,11 +85,11 @@ writing the sign-in code yourself, and not building a password system of your ow
 can register your app with Google or GitHub and write the code that signs people in. This topic
 is enough to follow what happens when someone signs in, to decide who may do what in your app and
 catch a plan that wouldn't really enforce it, to keep the sign-in secret out of places it can
-leak, to know which requests would show that the rules hold, and to find out why sign-in that
-works on localhost fails on the live app.
+leak, and to know which requests would show that the rules hold.
 
-What sits past that line: how tokens are built and signed, cryptography, and defending a live app
-against abuse, which belongs to session 14.
+What sits past that line: how tokens are built and signed, and cryptography. Sign-in that works on
+localhost and fails on the live app is a job for your agent with the host's logs, as in
+debug-deployed. Defending a live app against abuse belongs to session 14.
 
 <!--
   Which of: recognize it / read it / modify something existing / author from scratch /
@@ -313,23 +313,6 @@ against abuse, which belongs to session 14.
   - `sound-plan`: a plan that checks every rule on the server against the signed-in user
   - `confirm-401`: the request that would show someone not signed in is turned away
   - `confirm-403`: the request that would show a second account is refused the owner's actions
-
-### `c-fix-live-sign-in`
-
-- **goal:** find out why sign-in works on localhost but not on the live app
-- **criterion:** Given a described app whose sign-in works on localhost and fails on the live
-  app, and what the user sees when it fails, says what they would look at first, is shown it, and
-  goes on until they can say why and what to do next. It passes when they name the right reason: the
-  provider has only the localhost redirect URL, so the live one has to be registered too (with
-  GitHub, usually as a second registered app); the backend host has no client ID or client
-  secret in its settings, so they put them there themselves; or the browser never sends the
-  session cookie back to the backend, because the frontend and backend are on different hosts,
-  so the agent has to let the backend accept credentials from the frontend's origin and set the
-  cookie so it travels between sites.
-- **cases:**
-  - `redirect-url`: the provider doesn't know the live app's redirect URL
-  - `missing-settings`: the backend host lacks the client ID or client secret
-  - `cookie-not-sent`: the session cookie doesn't reach the backend across hosts
 
 ### `o-orientation`
 
