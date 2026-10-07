@@ -783,7 +783,7 @@ orientation's reading. Learner-facing text states the task, never the scoring.
   when already there); since production already has its starting rows, "take the insert out of
   startup, the rows are already there" is full too. On `drop-on-start`, only stopping the drop
   ("don't delete the tables") is half: the starting rows would still go in on every start. For `schema-not-applied` in `code-only` and
-  `local-only`: production's existing table changed to add the column or table, keeping its rows,
+  `local-only`: production's existing table changed to add the column, keeping its rows,
   when that version deploys (a migration run by Ropewalk's pre-deploy command or as the backend
   starts); naming the means is welcome, not required, so "change the live table to add the
   column, keeping its rows, as part of the deploy" is full. Naming the step that adds the column
@@ -792,10 +792,14 @@ orientation's reading. Learner-facing text states the task, never the scoring.
   rows, run now (a one-time `ALTER TABLE`, by script or in the query console, or a migration on
   the next deploy); asking that later changes run as a deploy step is welcome, not required. Half
   for naming the right step with no workable change, a vague one ("be careful with the data"), or a
-  change that keeps the fault: moving a reset or a drop into the pre-deploy command, which runs on
-  every deploy; in `code-only` and `local-only`, changing production's table by hand once in
-  Cellarstone's query console, which keeps the rows but leaves the next change to memory;
-  dropping the table after a backup. None for
+  change that keeps the fault without deleting rows users added: moving a repeated insert into the
+  pre-deploy command, which runs on every deploy; in `code-only` and `local-only`, changing
+  production's table by hand once in Cellarstone's query console, which keeps the rows but leaves
+  the next change to memory. None for any change that still deletes rows users added, wherever it
+  is offered and however it is named: moving a reset or a drop into the pre-deploy command or the
+  start command, running a drop once, stopping only the reload while the tables are still
+  emptied, dropping the table after a backup or not. This matches `tutor does`, where such a
+  change offered as a remark cancels the credit. None for
   agreeing, or for objecting only to sound steps. A remark objecting to the backend creating
   missing tables when it starts, beside a right answer, is neither credited nor counted. On a
   `reseed-on-start` plan, full needs the starting-rows step named; objecting only to the

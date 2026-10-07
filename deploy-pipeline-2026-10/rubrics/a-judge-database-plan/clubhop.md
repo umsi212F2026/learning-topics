@@ -30,8 +30,9 @@ credit.
   reason is welcome, not required. Half for only stopping the drop, in any words ("don't delete
   the tables"), since the clubs would
   still go in on every start; for naming step 2 with no workable change, or a vague one ("be
-  careful with the data"); for moving the drop and reload into Ropewalk's pre-deploy command, which
-  runs on every deploy; or for dropping the tables after a backup. None for agreeing, or for
+  careful with the data"). None for any change that still deletes the sign-ups: moving the drop
+  and reload into Ropewalk's pre-deploy command, which runs on every deploy, or dropping the
+  tables after a backup. None for agreeing, or for
   objecting only to sound steps (keeping the definitions and the clubs in the repository, reading
   `CLUBHOP_DB` from Ropewalk's settings, the column test).
 - **tutor note:** "so the tables always match the code" is the bait. If they agree, ask what is in
@@ -55,12 +56,13 @@ credit.
   welcome, not required, so "change the live table to add the column, keeping its rows, as part of
   the deploy" is full. Half for naming the gap with no workable change or a vague one; for adding
   the column by hand once in Cellarstone's query console, which keeps the rows but leaves the next
-  change to memory; or for dropping and recreating `signups`, after a backup or not. None for
+  change to memory. None for dropping and recreating `signups`, after a backup or not, which
+  deletes the sign-ups; none for
   agreeing, or for objecting only to sound steps (the backend creating missing tables at startup,
   the form, the route, the tests, the push). A remark objecting to the backend creating missing
   tables when it starts, beside a right answer, is neither credited nor counted.
-- **tutor note:** the passing tests are the bait. If they agree, ask what `CREATE TABLE IF NOT
-  EXISTS` does on a database where `signups` is already there, and which database the tests ran
+- **tutor note:** the passing tests are the bait. If they agree, ask what step 1 says that
+  statement does when production already has `signups`, and which database the tests ran
   against.
 
 ### q3
@@ -73,7 +75,8 @@ credit.
 - **credit:** full for agreeing, with or without harmless remarks; asking to swap the seed script
   for an insert that skips clubs already there counts as a harmless remark. A learner who raises a
   real gap in the plan as written is right, and that meets the case in full: for example, that the
-  seed script needs someone to remember to run it on a fresh database. None for asking to change a sound step into a faulty one
+  seed script needs someone to remember to run it on a fresh database, or that a club the student
+  union recognizes later has no stated way into production's `clubs`. None for asking to change a sound step into a faulty one
   (seeding on every start or every deploy, dropping tables to apply a change), or for refusing the
   plan on a wrong ground: creating missing tables at startup wipes the data; the pre-deploy
   migration re-applies every change on every deploy, when step 4 says each is applied once and

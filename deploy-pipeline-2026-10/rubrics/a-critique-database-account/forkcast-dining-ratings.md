@@ -44,9 +44,10 @@ check answers q3, hence this order.
   console, and naming none is fine. Asking that later table changes run as a deploy step is
   welcome, not required. Naming step 4 is naming the wrong step when the fix given goes back to the
   drop (add the column, keeping the rows), and is full then. Half for the right step with a
-  missing or wrong fix: a vague one ("be careful with the data"), moving the drop and recreate
-  into the pre-deploy command, which runs it on every deploy, or dropping the table after a
-  backup. None for accepting, or for naming only step 1.
+  missing or wrong fix: a vague one ("be careful with the data"). None for any fix that still
+  deletes the ratings: moving the drop and recreate into the pre-deploy command, which runs it on
+  every deploy, or dropping the table after a backup. None for accepting, or for naming only step
+  1.
 - **tutor note:** a learner who adds that the lost ratings now need restoring from a backup is
   neither credited nor counted for it; backups are not part of this goal. If they accept, ask what
   `ratings` held just before step 3 and just after.
@@ -56,8 +57,8 @@ check answers q3, hence this order.
 - **goal:** `c-deploy-keeps-data`
 - **cases:** confirm-data
 - **answer:** No. Steps 1 to 4 hold, but step 5's check shows nothing: the second count was taken
-  while the deploy was still Building, before the pre-deploy command or the new version had run,
-  and nothing the agent added was looked for. The agent should have added a rating through the
+  while the deploy was still Building, before the deploy was live, so the pre-deploy command and
+  the new version may not yet have run, and nothing the agent added was looked for. The agent should have added a rating through the
   live app, pushed a change to `main`, and once that push's deploy was Live on Ropewalk's list,
   seen the rating still there in the live app.
 - **credit:** full for naming step 5's check as the weak step and saying what would show it: a
@@ -83,9 +84,9 @@ check answers q3, hence this order.
 - **credit:** full for accepting, with or without harmless remarks; asking to swap the seed for an
   insert that skips dishes already there is a harmless remark. A learner who raises a real gap in
   the account as written is right, and that meets `sound-plan` in full: for example, that the seed
-  script needs someone to remember to run it on a fresh database, that the startup `CREATE TABLE
-  IF NOT EXISTS ratings` doesn't list `meal` (harmless, since the migration adds it), or that Test
-  Diner's rating should be removed afterwards. None for naming any step as wrong on a ground the
+  script needs someone to remember to run it on a fresh database, or that Test Diner's rating
+  should be removed afterwards. Asking, while accepting, for `meal` also to be listed in the
+  startup statement is a harmless remark. None for naming any step as wrong on a ground the
   account rules out: that the startup `CREATE TABLE IF NOT EXISTS` wipes the data, that the seed
   script kept in the repository will run again (nothing runs it), that the pre-deploy migration
   re-applies every change on every deploy (it applies each once), or that adding the column

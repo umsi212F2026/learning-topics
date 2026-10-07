@@ -18,9 +18,10 @@ once and its migration step answer q1 and q2, and q4's check answers q3, hence t
 - **credit:** full for naming step 3 (or the reset script as the pre-deploy command) and asking for
   the reset to stop running on each deploy, with the pieces put in only once; "take the reset out
   of the pre-deploy command, the pieces are already there" is full. Half for step 3 with a missing
-  or wrong fix: a vague one ("be careful with the data"), moving the reset into the start command or
-  the startup code, which runs it on every start instead, or keeping the reset but backing up
-  `checkouts` first. None for accepting, or for naming only step 1, 2 or 4. A remark objecting to
+  or wrong fix: a vague one ("be careful with the data"). None for any fix that still deletes the
+  checkouts: moving the reset into the start command or the startup code, which runs it on every
+  start instead, or keeping the reset but backing up `checkouts` first. None for accepting, or for
+  naming only step 1, 2 or 4. A remark objecting to
   the startup `CREATE TABLE IF NOT EXISTS`, beside a right answer, is neither credited nor counted.
 - **tutor note:** if they accept, ask when a pre-deploy command runs, and what `checkouts` holds
   just after the next push.
@@ -38,9 +39,10 @@ once and its migration step answer q1 and q2, and q4's check answers q3, hence t
   production's existing `checkouts` table to be changed to add the column, keeping its rows, as
   part of the deploy; naming the means is welcome, not required. Half for the right step with a
   missing or wrong fix: a vague one, adding the column once by hand in Cellarstone's query console
-  (keeps the rows but leaves the next change to memory), dropping and recreating `checkouts`, with
-  or without a backup, or saying only that the agent never checked the live app (true, but it
-  doesn't say what is missing). None for accepting, or for naming only step 1 or 3.
+  (keeps the rows but leaves the next change to memory), or saying only that the agent never
+  checked the live app (true, but it doesn't say what is missing). None for dropping and recreating
+  `checkouts`, with or without a backup, which deletes the checkouts. None for accepting, or for
+  naming only step 1 or 3.
 - **tutor note:** if they accept, ask what step 2's statement does when production already has a
   `checkouts` table, and what the tests' database had before they ran.
 
@@ -79,5 +81,6 @@ once and its migration step answer q1 and q2, and q4's check answers q3, hence t
   as wrong on a ground the account rules out: that the insert in step 2 doubles the pieces on every
   start (it skips existing numbers), that the startup `CREATE TABLE IF NOT EXISTS` wipes the data,
   or that the pre-deploy migration re-applies every change on every deploy (it applies each once).
-- **tutor note:** a learner who calls step 2 a reseed has missed `ON CONFLICT ... DO NOTHING`; ask
-  what the insert adds on a database that already has all 64 numbers.
+- **tutor note:** a learner who calls step 2 a reseed has missed its plain-words sentence, "a piece
+  whose number is already there is skipped"; ask what the insert adds on a database that already
+  has all 64 numbers.

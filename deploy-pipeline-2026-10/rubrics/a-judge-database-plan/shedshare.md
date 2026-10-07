@@ -50,11 +50,11 @@ credit.
   script or in Cellarstone's query console, or a migration on the next deploy); naming the means
   is welcome, not required, so "add the column to the live table without deleting the loans" is
   full. Asking that later changes run as a deploy step is welcome, not required. Half for naming
-  the drop with no workable change, or a vague one; for keeping the drop but running it only once
-  (taking it out of the pre-deploy command afterwards), which still deletes every loan; or for
-  dropping the table after a backup. None for agreeing, or for objecting only to sound steps (the
-  backend creating missing tables at startup, the script reading `SHEDSHARE_DB`), or only to the
-  script running on every deploy while keeping the drop.
+  the drop with no workable change, or a vague one. None for any change that still deletes the
+  loans: keeping the drop but running it only once (taking it out of the pre-deploy command
+  afterwards), or dropping the table after a backup. None for agreeing, or for objecting only to
+  sound steps (the backend creating missing tables at startup, the script reading
+  `SHEDSHARE_DB`).
 - **tutor note:** "so the table matches the code" is the bait, and the error makes any fix look
   welcome. If they agree, ask what `loans` holds once the next deploy is live.
 

@@ -29,10 +29,10 @@ such a change cancels the question's credit.
   the games put in once (run once on a fresh database, or skipped when already there); "take the
   reset out of the start command, the games are already there" is full too. A reason is welcome,
   not required. Half for only stopping the emptying, in any words ("don't delete the rows"), since
-  the games would still go in on every start; for only stopping the load while the tables are still
-  emptied; for naming the reset with no workable change, or a vague one ("be careful with the
-  data"); for moving the reset into Ropewalk's pre-deploy command, which runs on every deploy; or
-  for resetting after a backup. None for agreeing, or for objecting only to sound steps (keeping the
+  the games would still go in on every start; for naming the reset with no workable change, or a
+  vague one ("be careful with the data"). None for any change that still deletes the rides: only
+  stopping the load while the tables are still emptied, moving the reset into Ropewalk's
+  pre-deploy command, which runs on every deploy, or resetting after a backup. None for agreeing, or for objecting only to sound steps (keeping the
   schedule in the repository, creating missing tables, reading `AWAYDAY_DB` from Ropewalk's
   settings, the ride test).
 - **tutor note:** "the same known state" is the bait. If they agree, ask what is in `rides` just
@@ -58,7 +58,7 @@ such a change cancels the question's credit.
   column, keeping its rows, as part of the deploy" is full. Half for naming the gap with no
   workable change or a vague one; for adding the column by hand once in Cellarstone's query
   console, the way step 5 did locally, which keeps the rows but leaves the next change to memory;
-  or for dropping and recreating `rides`, after a backup or not. None for agreeing, or for
+  none for dropping and recreating `rides`, after a backup or not, which deletes the rides. None for agreeing, or for
   objecting only to sound steps (the backend creating missing tables at startup, the form, the
   route, the tests, the push). A remark objecting to the backend creating missing tables when it
   starts, beside a right answer, is neither credited nor counted.
