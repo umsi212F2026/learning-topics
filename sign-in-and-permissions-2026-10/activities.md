@@ -3,351 +3,543 @@
 Candidate activities for the study phase. More than will be used; the tutor chooses among them
 with the learner.
 
-<!--
-  WHO THIS IS FOR. Written by the curation agent, read by the tutor agent. A human can read
-  it and occasionally will — someone debugging the workflow, or the learner if they ask —
-  so keep it legible. But write for the tutor: fields over prose, and everything it needs to
-  actually run an activity rather than describe one.
-
-  Delete these comments as you fill the file. Not for tidiness — they cost the tutor
-  context on every read.
-
-  This is the layout for <area>-<yyyy>-<mm>/activities.md in your learning-topics repository,
-  which is created blank by
-  workflows/learn/tools/new-topic.mjs before any phase runs. Don't edit this file; edit the copy.
-
-  ONE FLAT LIST. No sections per goal — an activity can serve several, and orienting
-  activities just serve all of them. The `serves` and `supports` fields are how the tutor
-  narrows down.
-
-  IDs are `a-` plus two to four kebab-case words, readable on their own —
-  `a-read-unseen-diagram`, not `a-1`. The `a-` prefix is the one namespace rule that is
-  load-bearing: goals.md's ids never start with it, and workflows/learn/tools/survey.mjs checks that.
-
-  UNIQUE ACROSS THE TOPIC, not just across this file: these entries and every goal in
-  goals.md. Nothing checks as you write — workflows/learn/tools/survey.mjs reports a duplicate the next time
-  it walks the folder, by which point attempts point at it.
-
-  They are STABLE. An id assigned once never changes, even if the wording it was derived from
-  gets reworded later. If something is genuinely replaced rather than reworded, the
-  replacement gets a new id and the old one gets `status: dropped`.
-
-  VOCABULARY IS ONE ACTIVITY, `a-words`, an ordinary entry that serves every word through its
-  group, those added later included. Curation writes it, exactly as below, when the topic has
-  words and no such entry; its generator is
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md, and a course topic's bank
-  holds one scenario file per word, tasks/a-words/<goal-id>.md:
-
-      ### `a-words`
-
-      - **serves:** group vocabulary
-      - **generator:** the five moves in `workflows/learn/skills/goal-setting/references/vocabulary-moves.md`, set for one word at a time from its `what it names`, `nearest confusable` and `synonyms`. Each question names that word's goal and carries its move.
-      - **learner does:** answers one short question about one word
-      - **tutor role:** examiner
-      - **tutor does:** sets the question as served, without rewording it or hinting; when the bank has nothing for the word, sets one move live, as vocabulary-moves.md describes
-      - **offer as:** not offered as a choice; a word's question is set when that word is studied or due
-
-  LEGACY STAMPS. An older file may hold entries carrying `origin: generated`, placeholders that
-  curation once stamped for each word. They are retired: nothing serves from one, survey skips
-  them, and workflows/learn/tools/migrate-words.mjs removes them. Never write one; leave an old
-  one alone until that tool runs.
-
-  AN ACTIVITY IS THE ORIENTATION, OR A SOURCE OF QUESTIONS, banked or set live. Every question
-  has a rubric (a live one's is its generator's criterion) and names at least one goal, so every
-  activity carries `checks` and anything a learner does can move a goal to met. Any question can
-  be attempted with help, so nothing needs a separate place to practise first. Outside the
-  orientation, a reading, a video or a worked example is not an activity: it is help on a
-  question, the first level of it, in that activity's `worked example`.
-
-  Every entry says what the LEARNER DOES. A resource is not an activity: "read chapter 3"
-  is not an entry, "read chapter 3 writing a one-line gloss for each unfamiliar term" is, and
-  then only as the orientation.
-
-  ONE SCENARIO MAY SPAN GOALS. An exercise of many items (sort these, judge each, critique this)
-  is a scenario with one question per item, so repeats count and the learner stops once the goal
-  is met; and where the method is the same, one scenario may carry questions on several goals,
-  in different capabilities.
-
-  CANDIDATES, deliberately more than will be used — you can't tell whether an artifact will
-  orient someone until they try it. Don't rank them; characterize them, so the tutor can
-  offer a real choice.
-
-  Entries serving the same goal are SUBSTITUTES. The learner does one, not all of them, and
-  for checks an unaided pass on either one meets the goal's bar. A goal that genuinely needs
-  two different things done is a goal that should have been two, and the fix belongs in
-  goals.md.
-
-  Curation is agent-driven. Nothing here is negotiated with the learner.
-
-  goals.md is authoritative. If a criterion here disagrees with the one there, fix this file.
--->
-
 ## Check notes
-
-<!--
-  Authored by curation/critique and placed by the orchestrator. Rewritten wholesale each pass,
-  so don't edit it — it will be replaced.
-
-  Dated, and short. What the tutor should know about this file as a whole before using it:
-  the menu skews toward reading, two capabilities are thinner than they look, the depth
-  runs heavier than goals.md asks for. Only things that survived the revision round —
-  anything that got fixed doesn't belong here.
-
-  Empty is a legitimate and good outcome. Say "nothing at file level" rather than inventing
-  an observation.
--->
 
 ## Goals
 
-<!--
-  Copied from goals.md so the tutor doesn't need both files open. ONE ROW PER GOAL CURATION
-  SERVES: every goal except the words. That is what this phase is for: finding real things for
-  a learner to do.
-
-  A word is NOT copied here and gets no Coverage row. The `a-words` entry serves it through
-  its group, with a generator that is fixed, so there is nothing to choose among and no gap a
-  Coverage row could show.
-
-  The `criterion` column is COPIED, and for a goal whose criterion is a reference rather than
-  the learner's own text — `vocabulary`, `orientation` — copy the reference name. The
-  sentence it points at is in workflows/learn/skills/goal-setting/references/slots.md and doesn't belong here
-  in two places.
-
-  The ids here are what `serves` refers to. They are COPIED FROM goals.md, not assigned here —
-  goals.md is where a goal is named, and this table is a convenience copy of it. If an id
-  here doesn't match one there, this file is the one that's wrong.
--->
-
-| id                      | Goal | Criterion — what gets examined, and what counts |
-| ----------------------- | ---- | ----------------------------------------------- |
-| `o-orientation`         |      | `orientation`                                   |
-| `c-read-unseen-diagram` |      |                                                 |
+| id | Goal | Criterion: what gets examined, and what counts |
+| -- | ---- | ---------------------------------------------- |
+| `o-orientation` | get the shape of this area before working on any particular part of it | `orientation` |
+| `c-set-up-sign-in` | work with an agent to add sign-in through Google or GitHub to an app, on localhost and on the live app | Given an agent's plan for adding sign-in through Google or GitHub to a described app whose frontend and backend are on separate hosts, says which steps are theirs to do and what they would change before agreeing to it. It passes when they say that they register the app with the provider themselves, which gives them a client ID and a client secret; give the provider a redirect URL for localhost and another for the live app; put the client secret into the backend host's settings themselves rather than hand it to the agent, while the client ID may go in the frontend; catch a plan that asks the provider for more of the user's account than the app needs, such as their repositories when the app only shows their name; and go along with a plan in which the backend trades the code the provider sends back for who the user is, and keeps the provider's id for that user rather than a password. And, told that the client secret has been pushed to a public repository, they say to get a new one from the provider and put it where the old one was, and that deleting it from the repository does not fix it. |
+| `c-review-permissions` | work with an agent to give an app levels of who may do what, and confirm that the server enforces them | Given a table of who may do what in a described app and an agent's plan for enforcing it, says what they would change before agreeing to it, and how they would confirm afterwards that the rules hold. It passes when they catch a table that leaves out something one of its levels could try to do, such as deleting, or leaves out someone who isn't signed in at all; catch a plan that enforces a rule only in React, such as hiding the Edit button from everyone but the owner; catch a plan that checks sign-in on most routes but leaves one that changes data unchecked; catch a plan in which the server takes the user's word for who they are, such as a user id the frontend sends with the request, rather than the session; go along with a plan that checks every rule on the server against the signed-in user and keeps only the provider's id for each user and perhaps an email; and say which requests would confirm the rules, rather than what the page shows, and what each should get back: a request to a protected path with no sign-in is refused with 401, and a second account, signed in, is refused the owner's actions with 403. |
 
 ## Coverage
 
-<!--
-  DERIVED. Every cell here is computed from the `checks` fields of the activities below and
-  the rubric `goal:` lines of their banks; this table declares nothing. If the two disagree,
-  the activities win and this table is stale.
-
-  Regenerate it whenever activities are added, dropped, or re-tagged. It exists to restore
-  the coverage view that was lost when activities became one flat list, and it's the first
-  thing to read when deciding what's missing.
-
-  ONE ROW PER GOAL IN THE TABLE ABOVE, in the same order. `a-words` doesn't appear here and
-  neither do the words it serves; nothing is ever missing for those.
-
-  checks  live activities whose `checks` names this goal, or whose bank holds a question
-          whose rubric `goal:` names it
-  notes   authored by curation/critique, placed by the orchestrator. Usually empty. For deficiencies an empty cell can't
-          express — most often that every check for this goal shares the same
-          `doesn't show`, so the coverage is only apparent.
-
-  Dropped activities don't appear. An empty `checks` cell is a gap, and that's the whole
-  point of the table. A goal with cases has a second kind of gap the table can't show, a case
-  no question exercises; curation/verify looks for that one.
-
-  A cell may instead read `blocked — <why>`, meaning curation tried and couldn't: no
-  verifiable artifact exists, or the criterion can't be examined by anything constructible.
-  That's a defect in goals.md rather than here, and it needs the learner to resolve.
-
-  THE ORIENTATION GOAL is an ordinary row and always first, because it is first in goals.md.
-  It is a goal like any other, with a criterion, an adjudicator and a bar — a row naming no
-  goal could never finish. Its `checks` cell is filled like any other, with the activity whose
-  `checks` names it: the one that gives the learner the shape of the thing before any
-  particular part is in play.
-
-  If `goals.md` says the learner is already oriented, its entry there will have been deleted
-  and this row won't exist. If the entry is there but `what I already have` settles it, write
-  `n/a: already oriented` in `checks` and leave it. That's a complete row too.
--->
-
-| goal                    | checks | notes |
-| ----------------------- | ------ | ----- |
-| `o-orientation`         |        |       |
-| `c-read-unseen-diagram` |        |       |
+| goal | checks | notes |
+| ---- | ------ | ----- |
+| `o-orientation` | `a-read-mdn-sign-in`, `a-read-github-oauth-flow` | |
+| `c-set-up-sign-in` | `a-critique-sign-in-plan`, `a-reply-to-sign-in-agent` | |
+| `c-review-permissions` | `a-critique-permissions-plan`, `a-contrast-permission-plans` | |
 
 ---
 
 ## Activities
 
-<!--
-  One heading per activity, one bullet per field, not a table row. Several values run to a
-  sentence or more, which table cells can't hold. The Goals block above is a table for the
-  opposite reason: short values, same shape every row.
+### `a-read-mdn-sign-in`
 
-  FIELDS. Every activity has `serves` through `offer as`, and the block at the end, `checks`
-  through `doesn't show`; one that sets questions has a `generator`. `status` appears only once
-  the activity is dead, and `origin` only on a legacy stamp, which nothing writes now.
+- **serves:** `all`
+- **supports:** orient
+- **checks:** `o-orientation`
+- **artifact:** three free pages, no account, read in this order as one sitting. All three opened
+  2026-10-07.
+  1. **Read first:** MDN Web Docs, "Authentication" (last modified May 11, 2026),
+     https://developer.mozilla.org/en-US/docs/Web/Security/Authentication. Read the opening
+     paragraphs and Session management. Skim Authentication methods. About 500 words. What it
+     gives: authentication as verifying that someone "is who they claim to be"; why signed-in
+     users are a target; and a session as the website keeping a user signed in "by setting a
+     cookie that contains a secret session identifier".
+  2. **Then:** MDN Web Docs, "Federated identity" (last modified June 22, 2026),
+     https://developer.mozilla.org/en-US/docs/Web/Security/Authentication/Federated_identity. Read
+     the opening (before OpenID Connect), the one paragraph under OpenID Connect, and
+     Authentication flow. In Authentication flow, skip the `code_challenge` and `code_verifier`
+     bullets and the hashing check, and skim the last step's signature check: how tokens are built
+     and signed is past this topic's depth. Skip everything from Security features on. About 1,000
+     words. What it gives: the identity provider (IdP) and the website relying on it; OIDC as
+     "built on top of the OAuth 2.0 authorization framework"; the client ID and client secret the
+     site must have before anything starts; `redirect_uri` as "the URL to which the IdP will
+     deliver the authorization code"; `scope` as "which sets of user data the RP wishes to
+     access"; and the site's server trading the code, with its client secret, for who the user is.
+  3. **Last:** OWASP Top 10:2025, "A01:2025 Broken Access Control",
+     https://top10.owasp.org/2025/A01_2025-Broken_Access_Control. Read Description, and from How to
+     prevent only its opening sentence and the next three bullets. Skip the rest. About 400 words.
+     What it gives: access control as keeping users from acting "outside of their intended
+     permissions"; the common failures (editing someone else's record by its id, an API "with
+     missing access controls for POST, PUT, and DELETE", acting "without being logged in"); and
+     that access control "is only effective when implemented in trusted server-side code".
+  About 1,900 words: 12 minutes of reading, 20 with the stops and the close. Words in place:
+  authentication, session, identity provider, OAuth, client secret, redirect URL (as
+  `redirect_uri`), scope, and authorization (OWASP's "access control" and "permissions"; MDN calls
+  OAuth an "authorization framework"). Role appears in OWASP's list as "roles". Not in the three
+  pages: 401, 403 and rotate; the tutor brings them in at the stops. MDN describes OpenID Connect,
+  which is what Google sign-in uses; GitHub sign-in is plain OAuth, so there is no ID token, and the
+  backend instead uses the access token to ask GitHub's API who the user is. The tutor says so at
+  stop 1.
+- **learner does:** reads the three pages in order with Part B of Problem Set 3 in mind (an app
+  whose single basic-auth password gives way to sign-in through Google or GitHub). Stops twice and
+  answers before reading on; "I don't know yet" is an honest answer:
+  1. After MDN's two pages: **sketches sign-in as four boxes, the browser, the React frontend on
+     its static host, the Express backend on its server host, and the provider**, and draws the
+     trips between them in order, marking where the client ID, the client secret, the redirect URL
+     and the code each travel, and which box ends up remembering that the user is signed in.
+  2. After OWASP: writes a three-row who-may-do-what table for a made-up app the tutor names (for
+     example, a club events board), with a column for someone not signed in, and marks which
+     OWASP failure would break each row if the server didn't check it.
+  Then the close, about 5 minutes, with the sketch, the table and the reading still beside them:
+  two quick rehearsals, neither judged, each answered in a sentence or two (see the generator).
+  Then answers the question the tutor puts: with your sketch and the reading beside you, could you
+  now attempt these two things for real: reviewing your agent's plan for sign-in through Google or
+  GitHub and saying what you would do yourself and change, and reviewing its plan for who may do
+  what and saying which requests would show the rules hold?
+- **tutor role:** explainer
+- **tutor does:** stays quiet through the reading except at the stops and when asked. At each
+  stop, takes the learner's answer first and replies with one near-miss question rather than a
+  verdict ("you put the client secret in the browser box; who could read it there?"). At stop 1,
+  says what the GitHub difference is (no ID token; the backend calls GitHub's API for the user),
+  that the user's provider id is what the backend keeps, not a password, and that registering the
+  app with the provider is the learner's own job, done in the provider's developer settings, which
+  is where the client ID and client secret come from. At stop 2, brings in 401 and 403 from MDN's
+  status pages, https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/401 and
+  https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/403, quoting the 401 page: "a
+  403 is returned when a request contains valid credentials, but the client does not have
+  permissions to perform a certain action"; and brings in rotate from GitHub's "About removing
+  sensitive data from a repository",
+  https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository:
+  for a leaked secret, "as a first step you need to revoke and/or rotate that secret". Says how
+  tokens are signed, and defending a live app against abuse (session 14), are out of scope. At the
+  close, sets the two rehearsals from the generator below and grades neither; if an answer shows a
+  misunderstanding (a hidden button counting as a rule; deleting a pushed secret from the
+  repository as the fix), explains it once and moves on. Then puts the readiness question as
+  written above and rules on the answer.
+- **done when:** criterion met. The bar for this goal is did it once and help is expected
+  throughout, so the ruling is on the learner's answer to the readiness question, not on the stops,
+  the rehearsals, or whether the tutor thinks they are ready. A plain yes to both parts is
+  `criterion: met`. A hedge on either part, with no plain no, is `criterion: unclear`: explain the
+  hedged part once more and put the question again; a second hedge stays `unclear`, and the tutor
+  offers an activity on that capability, or the session 13 class. A plain no to either part is
+  `criterion: not met`: record it, ask what is missing, and offer to go back over the stop that
+  bears on it; don't put the question again in the same sitting. This goal isn't required, so a no
+  never blocks anything else the learner wants to try.
+- **generator:** vary the two rehearsal items; hold the rest fixed. Rehearsal one is one question
+  from `a-critique-sign-in-plan`'s generator at Medium, case `secret-placement`. Rehearsal two is
+  one question from `a-critique-permissions-plan`'s generator at Medium, case `react-only`. Both on
+  a made-up app. Fixed: the reading and its two stops, then the two rehearsals in that order,
+  neither graded, then the readiness question word for word. Difficulty doesn't vary: this settles
+  an indication, not a capability.
+- **worked example:** if the learner freezes on a rehearsal, the tutor answers a different made-up
+  one aloud in two or three sentences, then hands the original back.
+- **doesn't show:** an indication of readiness is all this goal asks for and all this shows. The
+  stops and rehearsals are helped and ungraded, and only two of the thirteen cases across the two
+  capabilities are rehearsed, so it shows nothing about either capability. It shows nothing about
+  the twelve words, which have their own supply.
+- **offer as:** the explanation first: why sign-in through another service works the way it does
+  (MDN), then what goes wrong with who may do what (OWASP), then a short close. Vendor-neutral, and
+  told from the Google side; about 20 minutes.
 
-  serves        goal ids from the table above, or `all`: which goals this helps with. An item
-                may also be `group <name>`, which stands for every goal in that group, those
-                added later included. A group no goal is in is reported by survey.
-  supports      one or more of:
-                  orient   first pass; get the shape of the thing
-                  deepen   build up a specific part, or connect it to what's known
-                  attempt  do the real thing, with help available if asked for
+### `a-read-github-oauth-flow`
 
-                There is no separate "check" value. Every attempt is made the same way, with
-                the tutor helping on request; whether an attempt turns out to have been
-                unaided is an outcome, not a setting. What an unaided pass can *finish* is
-                the `checks` field below.
-  artifact      what it is and where, and roughly how long it takes
-  verified      the date curation/verify confirmed this artifact is real and
-                is what the entry says it is. `NOT VERIFIED — <what couldn't be confirmed>`
-                if it couldn't. Absent means nobody has looked yet.
+- **serves:** `all`
+- **supports:** orient
+- **checks:** `o-orientation`
+- **artifact:** four free pages, no account, read in this order as one sitting. All four opened
+  2026-10-07.
+  1. **Read first:** GitHub Docs, "Authorizing OAuth apps",
+     https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps. Read the
+     opening and Web application flow through its step 3, "Use the access token to access the
+     API". In the parameter tables, read only `client_id`, `redirect_uri`, `scope`,
+     `client_secret` and `code`; skip `state`, `code_challenge` and the rest. Skip everything from
+     Device flow on. About 900 words read. What it gives: the three steps as GitHub states them
+     (users "redirected to request their GitHub identity", "redirected back to your site by
+     GitHub" with "a temporary `code`", and "your app accesses the API with the user's access
+     token"); the client secret sent with the code to get the token; and step 3's example request,
+     `GET https://api.github.com/user`, which is the backend asking who the user is.
+  2. **Then:** GitHub Docs, "Scopes for OAuth apps",
+     https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/scopes-for-oauth-apps. Read the
+     opening and, in the table, only the rows for no scope, `repo`, `read:user` and `user:email`.
+     About 250 words. What it gives: no scope "grants read-only access to public information
+     (including user profile info...)", against `repo`, "full access to public and private
+     repositories".
+  3. **Then:** MDN Web Docs, the status pages for 401,
+     https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/401, and 403,
+     https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/403. Read the first
+     paragraph of each and the 401 page's sentence comparing it with 403. About 200 words.
+  4. **Last:** OWASP Top 10:2025, "A01:2025 Broken Access Control",
+     https://top10.owasp.org/2025/A01_2025-Broken_Access_Control. Read Description, and from How to
+     prevent only its opening sentence and the next three bullets. About 400 words.
+  About 1,750 words: 11 minutes of reading, 20 with the stops and the close. Words in place: OAuth,
+  client secret, redirect URL (as `redirect_uri` and "callback URL"), scope, 401, 403, and
+  authorization and role from OWASP. Not in the pages: authentication as a word, identity provider,
+  session and rotate; the tutor brings them in at the stops. GitHub is one of the two providers; the
+  tutor says Google works the same way except that it hands back an ID token naming the user, so
+  the backend need not call an API to ask.
+- **learner does:** reads the four pages in order with Part B of Problem Set 3 in mind. Stops twice
+  and answers before reading on; "I don't know yet" is an honest answer:
+  1. After the two GitHub pages: **sketches sign-in as four boxes, the browser, the React frontend
+     on its static host, the Express backend on its server host, and GitHub**, draws GitHub's three
+     steps as trips between them, marks where the client ID, the client secret, the redirect URL
+     and the code each travel, and says which scope an app that only shows the user's name needs.
+  2. After MDN and OWASP: writes a three-row who-may-do-what table for a made-up app the tutor
+     names (for example, a club events board), with a column for someone not signed in, and says
+     for one row which status code the server should send back to someone not signed in and to a
+     signed-in user who isn't allowed.
+  Then the same close as `a-read-mdn-sign-in`: two ungraded rehearsals, then the readiness question
+  word for word as written there.
+- **tutor role:** explainer
+- **tutor does:** stays quiet through the reading except at the stops and when asked. At each
+  stop, takes the learner's answer first and replies with one near-miss question rather than a
+  verdict ("you had React send the code to GitHub; what else does that request need, and could
+  React keep it?"). At stop 1, names identity provider (GitHub here, Google the other) and
+  authentication, says registering the app with GitHub is the learner's own job, in GitHub's
+  developer settings, which is where the client ID and client secret come from, and that the
+  backend keeps the user's GitHub id, not a password, then remembers the browser with a session (a
+  cookie holding a secret session identifier). At stop 2, brings in rotate from GitHub's "About
+  removing sensitive data from a repository",
+  https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository:
+  for a leaked secret, "as a first step you need to revoke and/or rotate that secret". Says how
+  tokens are signed, and defending a live app against abuse (session 14), are out of scope. At the
+  close, as in `a-read-mdn-sign-in`.
+- **done when:** as in `a-read-mdn-sign-in`: the ruling is on the learner's answer to the readiness
+  question, with the same rules for a yes, a hedge and a no.
+- **generator:** as in `a-read-mdn-sign-in`: rehearsal one from `a-critique-sign-in-plan` at
+  Medium, case `secret-placement`; rehearsal two from `a-critique-permissions-plan` at Medium, case
+  `react-only`; fixed reading, stops, order and readiness question; difficulty doesn't vary.
+- **worked example:** if the learner freezes on a rehearsal, the tutor answers a different made-up
+  one aloud in two or three sentences, then hands the original back.
+- **doesn't show:** an indication of readiness is all this goal asks for and all this shows. The
+  stops and rehearsals are helped and ungraded, and only two of the thirteen cases are rehearsed.
+  The pages show GitHub's side only, so a pass says nothing about Google's console. It shows
+  nothing about the twelve words.
+- **offer as:** the concrete version: GitHub's own pages on the steps your app will actually take,
+  then the two status codes, then what goes wrong with who may do what. Less of the why than the MDN
+  reading, and closest to Part B if you are using GitHub. About 20 minutes.
 
-                Anyone editing the artifact clears this — a marker attached to a different
-                source than the one it was granted for is worse than none.
-  learner does  the obligation, not just the resource — this is the field that makes it an
-                activity rather than a reading list
-  tutor role    the stance to take while this runs: explainer, socratic questioner,
-                critique target, critic, role-play partner, examiner (sets a question cold and
-                leaves the judging to the adjudicator), or none (the learner works
-                alone and you wait)
-  tutor does    during, and afterwards
-  done when     the criterion of a goal in `checks` met with no help. For the orientation,
-                that is the learner able to attempt the real thing with the artifact still
-                beside them.
-  offer as      what makes this one different from its neighbors — fastest, most thorough,
-                assumes more background, hands-on rather than expository. This is what you
-                say when presenting a choice, so make it a real distinction.
-  check note    authored by curation/critique, placed by the orchestrator. Present only when there is
-                something the tutor should know that the entry itself doesn't say — a
-                generator whose difficulty is underspecified, an artifact that's real but
-                harder going than it looks, a task that works but only once.
+### `a-critique-sign-in-plan`
 
-                Only for what survived the revision round; anything fixed leaves no note.
-                curation/generate may delete a note whose cause it has fixed, and must not
-                otherwise edit one. Each check pass rewrites them.
+- **serves:** `c-set-up-sign-in`
+- **supports:** attempt
+- **checks:** `c-set-up-sign-in`
+- **artifact:** no external source. A made-up app and short excerpts of an agent's plan for adding
+  sign-in to it, from this activity's bank or written live per the generator below. 2 to 4 minutes
+  a question.
+- **learner does:** reads the scenario's setup and the one excerpt served, and answers in two to
+  four sentences the question every excerpt ends with: "Would you agree to this as it stands? If
+  not, what would you change, and who does it, you or your agent?"
+- **tutor role:** examiner
+- **tutor does:** sets the question as served, without rewording it or hinting, and never says
+  whether an excerpt has anything wrong with it. When the generator is run live, writes the key
+  into the record before showing anything. Gives help whenever it is asked for, and records the
+  attempt as helped. Labels the attempt with the question's path, or
+  `a-critique-sign-in-plan/<case>-<level>` when run live, and records the case with `--cases`.
+- **done when:** full credit on the question, with no help. The goal is met once each of its six
+  cases has been passed.
+- **generator:** a scenario is one made-up app shaped like Problem Set 3, Part B: a React frontend
+  built to static files on one made-up host, an Express backend on another made-up host, and a
+  Postgres database, with a line on what the app does (a club events board, a study-room finder, a
+  recipe box). It is protected now by one shared basic-auth password, which sign-in will replace.
+  The setup names the provider (Google or GitHub, one per scenario), what the app shows about a
+  signed-in user (their name and picture; their email only if the scenario says the app uses it),
+  the two live addresses (such as `https://roomfinder.<statichost>.app` and
+  `https://roomfinder-api.<serverhost>.com`) and the two localhost ports (5173 and 3001). Host
+  names are invented and never a real vendor's. **Each question is a separate excerpt** of the
+  agent's plan, and the setup says the questions are independent. An excerpt is 4 to 8 numbered
+  steps written as a coding agent writes a plan, with file names, environment variable names and
+  route paths where an agent would give them, followed by the fixed question quoted under
+  `learner does`, except for `leaked-secret`, which ends with the question given there.
 
-  generator     the instruction for producing a fresh question: what varies, what is held
-                fixed, how hard, and which of the goals in `checks` a question bears on. For
-                a goal with cases, it also says which cases each shape of question carries,
-                so the tutor can record them, and between its shapes every case is carried.
-                Every activity that sets questions has one. Precise enough to run, or to
-                draft a bank from, without asking the curator anything. Where there is no
-                bank the tutor runs it live, so every attempt is a new question.
+  **Every question carries exactly one case**, named on its rubric `cases:` line. Every step but
+  the one the case fixes is sound, and each case fixes what the excerpt contains and what the key
+  says:
+  - `register-yourself`: a step where the agent takes on registering the app with the provider:
+    it will create the OAuth app itself (through a command-line tool signed in to the learner's
+    account, or by asking for the learner's Google or GitHub password). Key: the learner registers
+    the app with the provider themselves, in the provider's developer settings, and that gives
+    them a client ID and a client secret. Full credit needs both: that it is theirs to do, and the
+    two values it gives them. Half credit for one. Don't require any console's button names.
+  - `two-redirects`: the plan registers one redirect URL only, either the localhost one
+    (`http://localhost:3001/auth/<provider>/callback`) or the live one. Key: the provider needs a
+    redirect URL for localhost and another for the live app (the backend's live address with the
+    same path). For Google, both go on the one registration. For GitHub, the goal's criterion says
+    to register the app twice, since a registered app allowed only one; GitHub's changelog of
+    2026-08-14 ("Multiple redirect URIs and token refresh for OAuth apps") and its "Creating an
+    OAuth app" page now allow up to 10 callback URLs on one OAuth app, so the key accepts either a
+    second registration or a second callback URL on the same one. Full credit needs both URLs named
+    and a way to give the provider both. Half credit for naming the missing one with no way to
+    register it.
+  - `secret-placement`: the client secret is going somewhere other than the backend host's
+    settings by the learner's own hand. Variants: the plan puts the client ID and client secret
+    both in the frontend's environment (`VITE_GITHUB_CLIENT_ID`, `VITE_GITHUB_CLIENT_SECRET`);
+    the plan asks the learner to paste the client ID and client secret into the chat so the agent
+    can set them on the host; the plan writes both into a committed config file. Key: the learner
+    puts the client secret into the backend host's settings themselves (and into the local `.env`
+    that `.gitignore` keeps out of the repository), never into the chat or the frontend; the client
+    ID may go in the frontend. Full credit needs both: where the secret goes and who puts it there,
+    and that the client ID is fine where it is (or may go in the frontend). Half credit for the
+    secret alone.
+  - `too-much-scope`: the plan asks the provider for more of the user's account than the app uses.
+    GitHub: `repo`, or `user` (which can change profile data), when the app shows only the user's
+    name and picture. Google: Drive, Gmail, Calendar or Contacts access on top of `openid profile`.
+    Key: ask only for what the app shows: for GitHub no scope or `read:user` (with `user:email` if
+    the app uses email); for Google `openid profile` (with `email` if it uses email). Full credit
+    needs the excess caught and a smaller request named in the learner's words; the exact scope
+    string is not required. Half credit for catching it with no replacement, or with a replacement
+    that still asks for more than the app uses.
+  - `sound-plan`: every step is sound: the Sign in button sends the browser to the provider; the
+    provider sends it back to the backend's redirect URL with a code; the backend sends the code
+    with the client ID and client secret (read from its environment) to the provider and learns who
+    the user is (for GitHub by asking its API for the user, for Google from the ID token it gets
+    back); it finds or creates a `users` row keyed by the provider's id (`github_id`, or Google's
+    `sub`), with name and perhaps email, and no password column; it starts a session with a cookie.
+    Key: agree as it stands. Full credit when they agree and ask for no change that would break it
+    (moving the code exchange or the client secret into React, adding a password, keying users by
+    email instead of the provider's id). A harmless suggestion (a sign-out route, a nicer error
+    page) costs nothing. None otherwise.
+  - `leaked-secret`: the question's own line says the learner's `.env`, holding the client secret,
+    was in a commit pushed to the public repository. The excerpt is the agent's proposed fix:
+    delete `.env` in a new commit, add it to `.gitignore`, push (Hard: also rewrite history to
+    remove it). It ends: "What do you do now, and does your agent's fix settle it?" Key: get a new
+    client secret from the provider and put it where the old one was (the backend host's settings
+    and the local `.env`), so the old one stops working; deleting it from the repository doesn't
+    fix it, because it was already public. Full credit needs both. Half credit for one.
 
-  origin        omit. `generated` marks a legacy stamp from before `a-words`; see the note
-                at the head of this file. Nothing serves from one and nothing new carries it.
+  How hard, by how the excerpt is worded:
+  - Medium: the step the case fixes says what it does in plain words ("I'll put the client
+    secret in `frontend/.env` as `VITE_GITHUB_CLIENT_SECRET`"; "I'll request the `repo` scope").
+  - Hard: Medium, plus one of: the step is justified in plausible words ("so we can show their
+    projects later"; "to save you a trip to the dashboard, paste them here"); the step shows only
+    as a config or code line among others, with no prose about it; or the plan ends by calling
+    itself secure. A Hard `sound-plan` uses agent jargon throughout (`passport-github2`,
+    `findOrCreate`, `express-session`) and includes one sound step that looks alarming to a novice
+    (the client ID in the frontend's environment).
+  A scenario carries all six cases, one question each, every one at Medium or Hard and at least two
+  at Hard. No question's text gives away another's answer. A scenario's setup states the task and
+  how long an answer should be, never the scoring.
+- **worked example:** shown only as help when the learner asks for it, which records the attempt
+  as helped. Work a different excerpt aloud: for each step, ask whether it happens in the browser,
+  on the backend or at the provider, and who has to be there to do it. Cite MDN's "Federated
+  identity", https://developer.mozilla.org/en-US/docs/Web/Security/Authentication/Federated_identity,
+  under Authentication flow (the client ID and client secret as the prerequisite, `redirect_uri`,
+  `scope`, and the token request from the site's server); for scopes, GitHub's "Scopes for OAuth
+  apps", https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/scopes-for-oauth-apps; for a
+  leaked secret, GitHub's "About removing sensitive data from a repository",
+  https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository.
+  At the first level of help on a real attempt, ask only "which of these steps happens on your
+  backend, and which in the browser?"
+- **doesn't show:** each excerpt holds at most one thing wrong, so a pass doesn't show the learner
+  would catch two at once, or keep looking after finding one. Excerpts are short and read with a
+  check known to be on; a real plan is longer and arrives mid-task. Nothing is registered, so a pass
+  says nothing about finding their way around Google's or GitHub's console. The `two-redirects` key
+  for GitHub departs from the criterion's "register the app twice" (see the generator); a learner
+  who says only "register twice" passes, as does one who adds a second callback URL.
+- **offer as:** plan review: your agent shows you a short plan before it writes any code, and you
+  say what you'd change. One question per thing that could be wrong, 2 to 4 minutes each.
 
-  status        omit while the activity is live — that's the default and needs no saying.
-                When it stops being a candidate, `dropped — <why, and who>`: the curator
-                writing it off as unworkable before anyone tried, or the tutor after it
-                failed in practice — a source that oriented nobody, a task that turned out
-                to test the wrong thing.
+### `a-reply-to-sign-in-agent`
 
-                Not progress. What's been attempted and how it went lives in
-                evidence/attempts.jsonl; this field is only about whether the candidate is
-                still worth offering, and it is the only place that question is answered.
+- **serves:** `c-set-up-sign-in`
+- **supports:** attempt
+- **checks:** `c-set-up-sign-in`
+- **artifact:** no external source. A made-up app and single messages an agent sends partway
+  through adding sign-in to it, from this activity's bank or written live per the generator below.
+  2 to 3 minutes a question.
+- **learner does:** reads the scenario's setup and the one agent message served, and writes the
+  reply they would send the agent, in two to four sentences, as they would type it: what they say
+  yes or no to, what they will do themselves, and what they want changed.
+- **tutor role:** examiner
+- **tutor does:** sets the message as served, without rewording it or hinting, and never says
+  whether anything in it is wrong. When run live, writes the key into the record before showing
+  anything. Gives help whenever it is asked for, and records the attempt as helped. Credits what the
+  reply commits the learner to, not its tone. Labels the attempt with the question's path, or
+  `a-reply-to-sign-in-agent/<case>-<level>` when run live, and records the case with `--cases`.
+- **done when:** full credit on the question, with no help. The goal is met once each of its six
+  cases has been passed.
+- **generator:** a scenario's setup is the same shape as in `a-critique-sign-in-plan`: a made-up
+  Problem Set 3 app, React on one made-up static host, Express on another, Postgres, one provider,
+  what the app shows about a user, the live addresses and localhost ports, and a line saying the
+  learner and their agent are partway through replacing basic auth with sign-in. **Each question is
+  one agent message**, 2 to 6 lines, written as a coding agent writes in chat (a status line, a
+  question or a request, sometimes a short code or config snippet), and the setup says the
+  questions are independent moments in the work. The fixed instruction under each: "Write the
+  reply you would send."
 
-                Dropped entries stay in the file. Deleting one means it gets regenerated
-                next time curation runs, and this field is the only feedback curation
-                receives. Trim a dead entry to its id, a line saying what it was, and this
-                field; the rest is dead weight in the tutor's context.
+  **Every question carries exactly one case.** The keys and credit rules are those of
+  `a-critique-sign-in-plan`, case for case; what changes is what the message holds:
+  - `register-yourself`: the agent asks to do the registration ("I can create the OAuth app with
+    the GitHub CLI you're signed in to, OK?") or asks for the learner's provider password to do it.
+  - `two-redirects`: the agent asks "What redirect URL should I tell you to register?", or reports
+    that it has hard-coded one (localhost or live) and asks the learner to register that one.
+  - `secret-placement`: the agent asks the learner to paste the client ID and client secret into the
+    chat, or reports that it has put both in the frontend's environment and asks to push.
+  - `too-much-scope`: the agent reports sign-in working, with a scope request larger than the app
+    uses, and asks to push.
+  - `sound-plan`: the agent reports what it built, all of it sound (as `sound-plan` in
+    `a-critique-sign-in-plan`), and asks to push.
+  - `leaked-secret`: the agent reports that the `.env` holding the client secret went out in a
+    commit pushed to the public repository, says it has deleted the file in a new commit and added
+    it to `.gitignore`, and asks if anything else is needed.
+  How hard: Medium, the message says plainly what it did or wants; Hard, the message wraps it in a
+  correct and reassuring status report ("Sign-in works on localhost and live, tests pass") or
+  presents it as already handled securely, or, for `sound-plan`, is in agent jargon with one sound
+  detail that looks alarming. A scenario carries all six cases, one question each, at least two at
+  Hard. No question gives away another's answer.
+- **worked example:** shown only as help when asked for, which records the attempt as helped: the
+  tutor writes a reply to a different message aloud, saying first what the agent is about to do and
+  where (browser, backend, provider, chat), then what the reply commits to. Same citations as in
+  `a-critique-sign-in-plan`. First level of help on a real attempt: "if you say yes to this, what
+  happens next, and where?"
+- **doesn't show:** each message carries at most one thing wrong. A reply on paper is not the
+  learner's behaviour with a real agent; a pass doesn't show they would stop to read a message this
+  carefully mid-task. As in `a-critique-sign-in-plan`, nothing is registered, and the GitHub
+  `two-redirects` key accepts a second callback URL on one registration.
+- **offer as:** the same six things as plan review, met the way they really arrive: one message from
+  your agent partway through, and you write the reply. Shorter questions, and closer to the moment
+  you'll actually face.
 
-  WHAT AN ACTIVITY CAN FINISH, on every activity
+### `a-critique-permissions-plan`
 
-  checks          the goals an unaided attempt at this activity's questions can establish:
-                  one id or several, comma-separated, and always a subset of `serves`. An
-                  activity can help with several goals while settling fewer. This is the
-                  generator's declaration of what its questions bear on; in a bank, each
-                  question's rubric `goal:` line narrows it to the ones that question bears
-                  on, and `checks` includes every goal its rubrics name. A live activity has
-                  no rubrics, so this is its only declaration. The pass condition is each
-                  goal's criterion from the table above, applied as written; don't restate it
-                  here or the two will drift.
+- **serves:** `c-review-permissions`
+- **supports:** attempt
+- **checks:** `c-review-permissions`
+- **artifact:** no external source. A made-up app with its routes, and a who-may-do-what table and
+  short excerpts of an agent's plan for enforcing it, from this activity's bank or written live per
+  the generator below. 2 to 4 minutes a question.
+- **learner does:** reads the scenario's setup and the one question served, and answers in two to
+  four sentences. A table or plan question ends: "Would you agree to this as it stands? If not, what
+  would you change?" A confirming question ends: "Which request would you make to show this rule
+  holds, and what should it get back?"
+- **tutor role:** examiner
+- **tutor does:** sets the question as served, without rewording it or hinting, and never says
+  whether a table or plan has anything wrong with it. When run live, writes the key into the record
+  before showing anything. Gives help whenever it is asked for, and records the attempt as helped.
+  Labels the attempt with the question's path, or `a-critique-permissions-plan/<case>-<level>` when
+  run live, and records the case with `--cases`.
+- **done when:** full credit on the question, with no help. The goal is met once each of its seven
+  cases has been passed.
+- **generator:** a scenario is one made-up app shaped like Problem Set 3, Part B: React on a made-up
+  static host, Express on a made-up server host, Postgres, sign-in through Google or GitHub already
+  working, with a line on what the app does (a club events board, a lost-and-found board, a shared
+  reading list). The setup lists the backend's routes, 5 to 7 lines such as `GET /api/events`,
+  `POST /api/events`, `PATCH /api/events/:id`, `DELETE /api/events/:id`, `GET /api/me`, with one
+  line each on what they do, and names the levels the app has: someone not signed in, a signed-in
+  user, the owner of a record, and one admin level (such as the club's officers). It says the
+  questions are independent. **Each question is a separate piece of the work**: a who-may-do-what
+  table as it would appear in `DEPLOY.md` (rows are actions, columns are levels, cells yes or no),
+  or a table with an excerpt of the agent's plan for enforcing it (4 to 8 numbered steps, with route
+  and middleware names and short code lines where an agent would give them), or, for the confirming
+  cases, a line saying the agent reports the rules are in place.
 
-                  Never omit it (`a-words` aside: its questions name their words, and it
-                  serves them through their group). Something whose unaided attempt still
-                  wouldn't establish a criterion, because it does part of the work itself
-                  (completing a partial instance doesn't show they could produce one from
-                  nothing), is not an activity: it is help on some activity's questions. An
-                  older entry with no `checks` stays as it is until it is converted: on a
-                  course topic at curation's next course-path run, on a student's own topic
-                  when its learner next curates it.
+  **Every question carries exactly one case**, named on its rubric `cases:` line. Every table row
+  and plan step but the one the case fixes is sound, and every table but the `incomplete-table` one
+  is complete for the setup's routes:
+  - `incomplete-table`: the table alone, missing a row for an action the setup's routes allow (most
+    often delete, or editing someone else's record), or missing the column for someone not signed
+    in. Key: names what's missing and what it should say (who may delete; that someone not signed in
+    may only read, or may do nothing). Full credit needs both. Half credit for naming what's missing
+    with no rule for it.
+  - `react-only`: the plan enforces an owner-only rule by hiding a button in React
+    (`{user.id === event.ownerId && <EditButton />}`), while the route that does the change checks
+    only that someone is signed in. Key: the server must check the rule on that route too, because
+    anyone signed in can send the request without the page. Full credit needs the route named (or
+    the action) and the server check. Half credit for saying the button isn't enough with no fix.
+  - `unchecked-route`: the plan puts the sign-in check on every route that changes data but one
+    (most often `DELETE`, or a `PATCH` added late). Key: names that route and that it needs the
+    check. Full credit needs the route; half credit for "check all routes" with none named.
+  - `trusts-frontend`: the server decides who is asking from something the frontend sends: a
+    `userId` in the request body, a `?user=` query, or an `x-user-id` header the React code sets.
+    Key: the server must take the user from the session, since anyone can send any id. Full credit
+    needs both: what's wrong and that the session is where the user comes from. Half credit for one.
+  - `sound-plan`: every route that changes data checks sign-in on the server, every owner or admin
+    rule is checked on the server against the session's user, React hides buttons as well, and the
+    `users` table keeps the provider's id, a name, perhaps an email, and a role column. Key: agree as
+    it stands. Full credit when they agree and ask for no change that would break it (moving checks
+    into React, taking the user id from the request, storing passwords). A harmless suggestion costs
+    nothing. None otherwise.
+  - `confirm-401`: the agent reports the rules are in place; the question asks how to show that
+    someone not signed in is turned away from one action the scenario names. Key: send that request
+    (method and path) with no sign-in, for example from a terminal with no session cookie, and it
+    should get 401. What the page shows signed out (a missing button, a redirect to sign-in) doesn't
+    count. Full credit needs the request and 401. Half credit for one.
+  - `confirm-403`: as `confirm-401`, for showing that a signed-in user who isn't the owner is
+    refused the owner's action. Key: sign in as a second account and send that request (for
+    example, `DELETE` on the owner's record) and it should get 403. Full credit needs a second,
+    signed-in account, the request, and 403. Half credit when one is off (signed out instead, or 401,
+    or what the page shows).
 
-                  THE ORIENTATION'S ENTRY CARRIES `checks: o-orientation`. It sets no
-                  questions, so it has no bank, no rubric and no generator: the tutor rules
-                  the orientation's `did it once` bar from the learner saying they could now
-                  attempt the real thing. Its `worked example` and `doesn't show` may read
-                  `n/a`. An older orientation entry with no `checks` converts by gaining that
-                  line, and nothing else about it changes.
+  How hard: Medium, the table or step the case fixes is stated in plain words, or the confirming
+  question just asks. Hard, Medium plus one of: the flaw shows only in a route or code line among
+  sound ones (`router.delete('/api/events/:id', deleteEvent)` beside lines carrying
+  `requireAuth`); the agent justifies it ("React already hides the button, so the route stays
+  simple"); or, for the confirming cases, the agent offers its own check, of what the page shows
+  ("I signed out and the Delete button is gone"), and the question asks whether that confirms it and
+  what they would do instead. A scenario carries all seven cases, one question each, every one at
+  Medium or Hard and at least two at Hard. Write the scenario with `incomplete-table` first, since
+  later questions show complete tables. No question's text gives away another's answer.
+- **worked example:** shown only as help when asked for, which records the attempt as helped. Work a
+  different question aloud: for each row of the table, ask "who could send this request, from
+  where, without the page?" and "what does the server look at to decide?" Cite OWASP's "A01:2025
+  Broken Access Control", https://top10.owasp.org/2025/A01_2025-Broken_Access_Control, Description
+  and the opening of How to prevent ("only effective when implemented in trusted server-side
+  code"); for the status codes, MDN's 401 and 403 pages,
+  https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/401 and
+  https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/403. First level of help on a
+  real attempt: "could someone do this without using your page at all?"
+- **doesn't show:** each question holds at most one thing wrong, and the setup's route list makes
+  `incomplete-table` a matter of checking against a list the learner is handed; writing a table for
+  their own app from nothing is Part B's job. Naming a confirming request is not making it, so a pass
+  doesn't show they could send a request with no session cookie, or sign in a second account, on a
+  live app.
+- **offer as:** plan review for who may do what: a table or a short plan, and you say what you'd
+  change, or which request would prove it. One question per thing that could be wrong, 2 to 4
+  minutes each.
 
-  worked example  what to show at the first level of help: a solved instance, or an
-                  instruction to work one live and narrate the decisions. It may cite a
-                  reading or a video, named as precisely as an `artifact` is; that is where
-                  readings and walkthroughs live now that they are not activities.
-  doesn't show    what a pass here still leaves open, stated as a claim the checker can
-                  contest. Both kinds belong: part of the criterion this activity doesn't
-                  exercise, and what the criterion can't settle even when fully met: "only
-                  one instance exists, so this doesn't show they could do it again."
+### `a-contrast-permission-plans`
 
-                  "Nothing" is a legitimate entry. It's also a strong claim, so expect
-                  curation/critique to test it.
-
-  BANKS. An activity has a bank when tasks/<activity-id>/ and rubrics/<activity-id>/ exist (a
-  tasks folder alone is an older study artifact, and is not read as a bank); the folders are the
-  whole declaration, and the entry says nothing about them. Course topics have them, drafted
-  from the generator and reviewed by the instructor at curation; a student's own topic runs its
-  generators live. On a course topic any question activity may be banked, except one whose
-  generator picks from real items or the learner's own work, and an orientation rehearsal: those
-  stay live, since the picker serves a bank whenever one exists. One file per scenario, with a
-  twin under rubrics/:
-
-      tasks/<activity-id>/<scenario-id>.md     the setup, then one `### <question-id>` per question
-      rubrics/<activity-id>/<scenario-id>.md   the key, then one `### <question-id>` per question
-
-  A file's top part, before its first `###`, is shared by that scenario's questions; nothing is
-  shared across files. `main-bank` is the reserved scenario name for questions with no shared
-  setup. Scenario files are named for their content (`crumbs.md`), question ids are unique
-  within their scenario, and a question's label everywhere is its path,
-  `<activity-id>/<scenario-id>/<question-id>`. workflows/learn/tools/next-item.mjs serves from
-  banks, unseen questions first; workflows/learn/tools/survey.mjs reports a malformed bank, and
-  a bank folder with no entry here.
-
-  WRITE A SCENARIO IN STUDY ORDER. Study serves its questions in file order, skipping one no
-  longer needed, so a later question may give away an earlier one's answer, never the reverse.
-
-  Each rubric question section carries:
-
-      goal:        ids from `checks`, comma-separated; at least one, always
-      cases:       for each goal named that has cases, the ones this question exercises:
-                   `x, y` when it names one goal, `c-a: x, y; c-b: z` per goal otherwise. A
-                   pass passes every case listed and a miss none, so cases a learner could
-                   get one right and one wrong on belong in separate questions
-      answer:      what a complete answer says
-      credit:      what full and half credit mean. A question naming two or more goals lists
-                   one statement per goal, each starting `<goal-id>`: with the id in backticks
-      type:        free (the default) or mcq; an mcq's question ends in a numbered list and
-                   `answer` is the 1-based choice
-      move:        for a word's question, its move
-      tutor note:  optional; follow-ups for this one question, for the tutor only
-
-  What holds for every question stays in the entry here. A note about one scenario goes in its
-  key, and a note about one question in its `tutor note`.
-
-  RETIRED: `kind` and `bank`. An older entry may still carry `kind: generator | bank | single
-  instance` or a `bank:` line; ignore both. When curation converts the entry, any substance in a
-  `bank:` line (where the items live, how they are named, how to pick) moves into `generator`,
-  and a bare path or a `kind:` line is simply deleted. What was a single authored instance is a
-  bank with one scenario, and if that is all a check has, say so in `doesn't show`.
--->
-
-### `<activity-id>`
-
-- **serves:**
-- **supports:**
-- **artifact:**
-- **learner does:**
-- **tutor role:**
-- **tutor does:**
-- **done when:**
-- **offer as:**
-- **checks:**
-- **worked example:**
-- **doesn't show:**
+- **serves:** `c-review-permissions`
+- **supports:** attempt
+- **checks:** `c-review-permissions`
+- **artifact:** no external source. A made-up app and pairs of versions of one piece of the work, A
+  and B, from this activity's bank or written live per the generator below. 2 to 3 minutes a
+  question.
+- **learner does:** reads the setup and the one pair served, and answers: "Would you agree to A, B,
+  or both? What gives it away?" For the confirming pairs, also says what the request they chose
+  should get back.
+- **tutor role:** examiner
+- **tutor does:** sets the pair as served, without rewording it or hinting, and never says how many
+  of the two are sound. When run live, writes the key into the record before showing anything.
+  Gives help whenever it is asked for, and records the attempt as helped. Labels the attempt with
+  the question's path, or `a-contrast-permission-plans/<case>-<level>` when run live, and records the
+  case with `--cases`.
+- **done when:** full credit on the question, with no help. The goal is met once each of its seven
+  cases has been passed.
+- **generator:** a scenario's setup is the same shape as in `a-critique-permissions-plan`: a made-up
+  Problem Set 3 app with its routes and levels. **Each question is one pair**, A and B, two versions
+  of the same piece, the same length and wording except where they differ, with the sound one at A
+  or B at random. Every question carries exactly one case:
+  - `incomplete-table`: two tables, one complete, one missing a delete row or the not-signed-in
+    column. Key: the complete one, and what the other leaves out.
+  - `react-only`: two plan steps for an owner-only rule: one hides the button in React only, the
+    other hides it and checks ownership on the route. Key: the one with the server check, because
+    the request can be sent without the page.
+  - `unchecked-route`: two route lists, identical except that one leaves a data-changing route
+    without the sign-in middleware. Key: the complete one, and the route the other leaves open.
+  - `trusts-frontend`: two versions of one route handler, one taking the user from the session
+    (`req.session.userId`), the other from the request (`req.body.userId`, or a header). Key: the
+    session one, and that the other believes whatever id it is sent.
+  - `sound-plan`: two sound plans that differ harmlessly (a middleware against a check inside each
+    handler; keeping the email or not; one admin role column against an admins table). Key: both.
+    Full credit for "both" with any reason that doesn't call either broken; none for rejecting one.
+  - `confirm-401`: two ways to confirm someone not signed in is turned away: one looks at the page
+    signed out (the button is gone), the other sends the request with no sign-in, with its expected
+    status left out. Key: the request, and that it should get 401.
+  - `confirm-403`: two ways to confirm a non-owner is refused: one sends the owner's action while
+    signed out, the other sends it signed in as a second account, status left out. Key: the second
+    account, and that it should get 403 (the signed-out version would show 401, which proves a
+    different rule).
+  Credit: full when the choice is right and what gives it away (or the status code, for the
+  confirming cases) matches the key; half when the choice is right with no reason or a wrong one;
+  none otherwise. How hard: Medium, the difference between A and B sits in a plain-words line; Hard,
+  it sits in one code or route line in otherwise identical blocks, or the unsound version carries the
+  agent's reassuring comment. A scenario carries all seven cases, one question each, at least two at
+  Hard. No question gives away another's answer.
+- **worked example:** shown only as help when asked for, which records the attempt as helped: the
+  tutor works a different pair aloud, finding the one line where A and B differ and asking who could
+  exploit it. Same citations as in `a-critique-permissions-plan`. First level of help: "where exactly
+  do A and B differ?"
+- **doesn't show:** the pair points the learner at the one place that matters, and a sound version
+  sits beside every unsound one, so a pass shows recognition, not that they would catch the flaw in a
+  plan on its own; `a-critique-permissions-plan` is the stronger check. A choice between two is
+  guessable; the "what gives it away" half of the credit is what guards against that, and only
+  partly.
+- **offer as:** the gentler check: two versions side by side, pick the one you'd agree to and say
+  why. Quicker than plan review, and a good first try; plan review shows more.
 
 ### `a-words`
 
