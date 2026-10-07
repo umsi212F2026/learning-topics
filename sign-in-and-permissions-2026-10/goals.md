@@ -289,6 +289,7 @@ debug-deployed. Defending a live app against abuse belongs to session 14.
   - `too-much-scope`: a plan that asks for more of the user's account than the app needs
   - `sound-plan`: a plan whose backend trades the code for the user's identity and keeps their
     provider id
+- **taught elsewhere:** session 13
 
 ### `c-review-permissions`
 
@@ -313,6 +314,7 @@ debug-deployed. Defending a live app against abuse belongs to session 14.
   - `sound-plan`: a plan that checks every rule on the server against the signed-in user
   - `confirm-401`: the request that would show someone not signed in is turned away
   - `confirm-403`: the request that would show a second account is refused the owner's actions
+- **taught elsewhere:** session 13
 
 ### `o-orientation`
 
