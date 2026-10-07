@@ -82,10 +82,11 @@ Name any others you have._
 
 **Get sign-in and permissions into your app with your agent, and check that they hold.** Not
 writing the sign-in code yourself, and not building a password system of your own. Your agent
-can register your app with Google or GitHub and write the code that signs people in. This topic
-is enough to follow what happens when someone signs in, to decide who may do what in your app and
-catch a plan that wouldn't really enforce it, to keep the sign-in secret out of places it can
-leak, and to know which requests would show that the rules hold.
+can write the code that signs people in, but registering your app with Google or GitHub is yours
+to do. This topic gives you the outline of what happens when someone signs in, and is enough to
+judge your agent's plan for sign-in, to decide who may do what in your app and catch a plan that
+wouldn't really enforce it, to know what to do if the sign-in secret leaks, and to know which
+requests would show that the rules hold.
 
 What sits past that line: how tokens are built and signed, and cryptography. Sign-in that works on
 localhost and fails on the live app is a job for your agent with the host's logs, as in
@@ -280,7 +281,9 @@ debug-deployed. Defending a live app against abuse belongs to session 14.
   in the frontend; catch a plan that asks the provider for more of the user's account than the
   app needs, such as their repositories when the app only shows their name; and go along with a
   plan in which the backend trades the code the provider sends back for who the user is, and
-  keeps the provider's id for that user rather than a password.
+  keeps the provider's id for that user rather than a password. And, told that the client secret
+  has been pushed to a public repository, they say to get a new one from the provider and put it
+  where the old one was, and that deleting it from the repository does not fix it.
 - **cases:**
   - `register-yourself`: who registers the app with the provider, and what that gives them
   - `two-redirects`: redirect URLs for localhost and the live app, including GitHub's one-per-app
@@ -289,6 +292,7 @@ debug-deployed. Defending a live app against abuse belongs to session 14.
   - `too-much-scope`: a plan that asks for more of the user's account than the app needs
   - `sound-plan`: a plan whose backend trades the code for the user's identity and keeps their
     provider id
+  - `leaked-secret`: the client secret has been pushed to a public repository
 - **taught elsewhere:** session 13
 
 ### `c-review-permissions`
@@ -297,10 +301,11 @@ debug-deployed. Defending a live app against abuse belongs to session 14.
   server enforces them
 - **criterion:** Given a table of who may do what in a described app and an agent's plan for
   enforcing it, says what they would change before agreeing to it, and how they would confirm
-  afterwards that the rules hold. It passes when they catch a table that leaves out something one of its levels
-  could try to do, such as deleting, or leaves out someone who isn't signed in at all; catch a
-  plan that enforces a rule only in React, such as hiding the Edit button from everyone but the
-  owner; catch a plan in which the server takes the user's word for who they are, such as a user
+  afterwards that the rules hold. It passes when they catch a table that leaves out something one
+  of its levels could try to do, such as deleting, or leaves out someone who isn't signed in at
+  all; catch a plan that enforces a rule only in React, such as hiding the Edit button from
+  everyone but the owner; catch a plan that checks sign-in on most routes but leaves one that
+  changes data unchecked; catch a plan in which the server takes the user's word for who they are, such as a user
   id the frontend sends with the request, rather than the session; go along with a plan that
   checks every rule on the server against the signed-in user and keeps only the provider's id
   for each user and perhaps an email; and say which requests would confirm the rules, rather
@@ -310,6 +315,7 @@ debug-deployed. Defending a live app against abuse belongs to session 14.
 - **cases:**
   - `incomplete-table`: a table missing an action, or missing someone who isn't signed in
   - `react-only`: a plan that enforces a rule only in the frontend
+  - `unchecked-route`: a plan that leaves one route that changes data without a check
   - `trusts-frontend`: a plan whose server believes a user id the frontend sends
   - `sound-plan`: a plan that checks every rule on the server against the signed-in user
   - `confirm-401`: the request that would show someone not signed in is turned away
