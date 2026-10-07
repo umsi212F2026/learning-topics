@@ -8,9 +8,7 @@ vendors, Pinecart and Ropewalk, and each name stands for one vendor with the one
 below, everywhere in the topic. A scenario never changes these behaviors and never invents another
 vendor; the database is "on a database host outside this plan", unnamed. A scenario's setup quotes
 the parts of this roster it needs, word for word. The only real hosts in the topic are in the
-orientation's reading and in `a-review-own-pipeline-plan`, where anything a question depends on
-about a real host is checked against that host's current docs. Learner-facing text states the
-task, never the scoring.
+orientation's reading. Learner-facing text states the task, never the scoring.
 
 - **Pinecart** hosts a built frontend and serves it through its CDN.
   - Linked to a GitHub repository, a branch and a folder, it builds and deploys the frontend on
@@ -71,7 +69,7 @@ task, never the scoring.
 | goal | checks | notes |
 | ---- | ------ | ----- |
 | `o-orientation` | `a-read-deploy-pipeline` | |
-| `c-set-up-auto-deploy` | `a-judge-pipeline-plan`, `a-review-own-pipeline-plan` | Only `a-judge-pipeline-plan` can carry every case; `a-review-own-pipeline-plan` usually carries only `sound-plan` and the two confirmations, so it adds to this goal rather than meeting it alone. |
+| `c-set-up-auto-deploy` | `a-judge-pipeline-plan` | Every scenario carries all seven cases. The two confirmations are answered in words here; the session 12 lab is where they are carried out. |
 | `c-find-missing-change` | `a-trace-missing-change`, `a-diagnose-from-evidence` | |
 | `c-showcase-pr` | `a-route-showcase-change`, `a-critique-pr-attempt` | A sound proposal (`a-route-showcase-change`'s Hard forms) or a `sound` account (`a-critique-pr-attempt`) carries the same case as the faulty ones, so one agreement can pass a case. Treat a case whose only unaided pass came from agreeing as thin, and serve it again in an open or faulty form before calling the goal met. |
 
@@ -343,68 +341,20 @@ task, never the scoring.
   doesn't show they would recognize one (`deploy-config`'s `c-spot-secret` covers that). Vendors
   are made up, with their behavior stated, so a pass says nothing about reading a real host's
   docs to learn whether it can wait for checks. The confirmation questions are answered in words:
-  they don't show the learner carrying the confirmation out.
+  they don't show the learner carrying the confirmation out. No activity in this topic does; the
+  session 12 lab is where the two confirmations are carried out on the learner's own app.
 - **offer as:** invented plans for one app, five questions one at a time, about 25 to 30 minutes
   for a scenario, nothing to run; works the same alone with the tutor or at a table in class.
 - **note:** On an `ungated-watch` plan, the credit rules don't cover an answer that asks only for the tests to be run (a workflow running `npm test`) with nothing made to wait for them. Rule it half: it supplies one of the two things full credit needs, as turning on "Wait for GitHub checks" with no tests running supplies the other. It is the same misunderstanding `tests-beside` is built to catch.
 
 ### `a-review-own-pipeline-plan`
 
-- **serves:** `c-set-up-auto-deploy`
-- **supports:** attempt
-- **checks:** `c-set-up-auto-deploy`
-- **artifact:** no external source. The learner's own Problem Set 3 app, the plan their own agent
-  writes when asked to make it deploy itself on each push to `main` (in the session 12 lab or on
-  Problem Set 3), the real hosts that plan uses, and the live app afterwards. 20 to 30 minutes,
-  most of it waiting for pushes to deploy.
-- **verified:** 2026-10-05
-- **learner does:** asks their agent for a plan to make the app's frontend and backend deploy
-  themselves on every push to `main`, without telling it what to watch for. Before the agent does
-  anything, says in writing what they would change in the plan, or that they would agree to it as
-  it stands. Once a plan they agree to has been carried out, says how they will confirm that a
-  push reaches both the frontend and the backend of the live app, does it, then says how they will
-  confirm that a push whose tests fail goes live in neither, and does that, showing the tutor the
-  live page beside the pushed commit each time (a screenshot or a shared screen).
-- **tutor role:** examiner
-- **tutor does:** reads the plan before the learner answers and writes a key: each fault the plan
-  has and its case (`secret-in-repo`, `frontend-secret`, `deploy-token`, `no-test-gate`), or
-  `sound-plan` if it has none. When the plan deploys through GitHub Actions with a host token but
-  leaves the token's place open, the key also holds `deploy-token`, and once the learner has
-  answered on the plan the tutor puts the token question as `a-judge-pipeline-plan` words it. A
-  plan that already keeps the token in the repository's GitHub secrets carries no `deploy-token`
-  attempt, since agreeing to it says nothing about the token. Anything the key depends on about
-  a real host (whether it can wait for GitHub checks, whether a frontend setting is copied into the
-  build, what its deploy token is called) is checked on that host's current docs before keying,
-  never taken from the agent or from memory. Records one question per case in the key, then the
-  two confirmation questions (`confirm-live`, `confirm-gate`) once the plan is carried out. Labels
-  each attempt `a-review-own-pipeline-plan/<case>`. Credits each as `a-judge-pipeline-plan`'s
-  generator credits that case. Those credit rules are written in Pinecart and Ropewalk terms, so
-  the tutor applies each to the real host feature that does the same job (whatever makes a deploy
-  wait for checks, whatever switches off a host's own deploys, wherever a host keeps its settings),
-  as checked on that host's docs when keying. A real fault in the plan outside the keyed cases
-  (the wrong branch, a CORS setting, a misnamed build variable) is not keyed and not recorded; the
-  tutor mentions it after recording. The tutor can't see the live app, so for each confirmation
-  asks the learner to show the live page beside the pushed commit (a screenshot or a shared
-  screen) and rules on what is shown, not on the learner's report of it. If the learner's agreed
-  plan still has a fault the learner missed, says so after recording, before the agent goes ahead. At a table in class, the instructor or a
-  teaching assistant keys and credits it; a tablemate does not.
-- **done when:** the criterion met with no help, case by case, on the cases this plan carries.
-- **generator:** picks rather than invents: the plan is whatever the learner's own agent writes for
-  their own app, so it stays live and is never banked. What varies: the plan, its hosts and its
-  faults, and so the cases it carries. Fixed: the plan is asked for without hints; the learner
-  answers before the agent acts; the two confirmation questions are asked, in that order, only
-  after a plan the learner agreed to has been carried out, and are passed by what the learner does,
-  not only by what they say. Difficulty is whatever the plan brings. A plan that carries only
-  `sound-plan` and the two confirmations is still a full attempt; the other cases are met in
-  `a-judge-pipeline-plan`.
-- **worked example:** as in `a-judge-pipeline-plan`, worked aloud on a made-up plan, never on the
-  learner's own.
-- **doesn't show:** it carries only the cases the agent's plan happens to have, and a capable
-  agent's plan often has no fault, so this alone rarely shows the learner catching one. It is the
-  one check that shows the confirmations done, not just described. A plan that already keeps the token in GitHub secrets shows nothing about the token.
-- **offer as:** your own app and your own agent's real plan, checked as you set the pipeline up;
-  slower and less predictable than the invented plans, and the only one where you see it work.
-- **note:** The 20 to 30 minutes counts reading the plan, the two confirmations and the waits for deploys, not the agent carrying the plan out on real hosts (linking accounts, entering secrets), so run this alongside the session 12 lab or Problem Set 3 rather than as a study slot of its own. Key `sound-plan` for a plan with no fault as written, but if the plan says nothing about a local `.env` file, agreeing to it shows nothing about the `.env` half of that case; treat that pass as thin and let `a-judge-pipeline-plan`'s `sound` plan supply it.
+- **was:** a check on `c-set-up-auto-deploy`: the learner judged the plan their own agent wrote
+  for making their Problem Set 3 app deploy itself, before it ran, then carried out the two
+  confirmations on the live app.
+- **status:** dropped (curator, 2026-10-07): a capable agent's own plan usually has no fault, so
+  the learner mostly agreed to it and learned little. `a-judge-pipeline-plan` carries every case;
+  the session 12 lab is where the confirmations are carried out.
 
 ### `a-trace-missing-change`
 
