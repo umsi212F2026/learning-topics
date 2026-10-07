@@ -283,8 +283,9 @@ debug-deployed. Defending a live app against abuse belongs to session 14.
   app needs, such as their repositories when the app only shows their name; and go along with a
   plan in which the backend trades the code the provider sends back for who the user is, and
   keeps the provider's id for that user rather than a password. And, told that the client secret
-  has been pushed to a public repository, they say to get a new one from the provider and put it
-  where the old one was, and that deleting it from the repository does not fix it.
+  has been pushed to a public repository, they say to get a new one from the provider, put it
+  where the old one was, and delete or disable the old one at the provider, and that deleting it
+  from the repository does not fix it.
 - **cases:**
   - `register-yourself`: who registers the app with the provider, and what that gives them
   - `two-redirects`: redirect URLs for localhost and for the live app
@@ -313,7 +314,8 @@ debug-deployed. Defending a live app against abuse belongs to session 14.
   sign-in is refused with 401, and a second account, signed in, is refused the owner's actions
   with 403.
 - **cases:**
-  - `incomplete-table`: a table missing an action, or missing someone who isn't signed in
+  - `missing-action`: a table missing something one of its levels could try to do
+  - `missing-signed-out`: a table that leaves out someone who isn't signed in
   - `react-only`: a plan that enforces a rule only in the frontend
   - `unchecked-route`: a plan that leaves one route that changes data without a check
   - `trusts-frontend`: a plan whose server believes a user id the frontend sends
