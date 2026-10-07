@@ -351,7 +351,7 @@ debug-deployed, and what to do about a secret that has already leaked to session
   confirm afterwards that a push leaves production's data in place. It passes when they catch a
   plan whose backend, every time it starts, deletes and recreates its tables or inserts its
   starting rows again, so each deploy or restart wipes or duplicates what users added; catch a
-  plan that ships code needing a new table or column while nothing changes production's tables,
+  plan that ships code needing a new column on a table production already has while nothing changes production's tables,
   or that changes them by dropping and recreating the tables, and ask for the change to be
   applied to production's tables, keeping their rows, when that version deploys; go along with a
   plan whose backend creates any missing tables when it starts, whose starting rows go in once,
@@ -361,7 +361,7 @@ debug-deployed, and what to do about a secret that has already leaked to session
 - **cases:**
   - `seed-every-start`: the backend deletes and recreates its tables, or inserts its starting rows
     again, every time it deploys or starts
-  - `schema-not-applied`: code needing a new table or column ships with nothing changing
+  - `schema-not-applied`: code needing a new column on a table production already has ships with nothing changing
     production's tables, or with the tables dropped and recreated
   - `sound-plan`: missing tables created on start, starting rows put in once, table changes
     applied as a deploy step
