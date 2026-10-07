@@ -357,7 +357,7 @@ debug-deployed, and what to do about a secret that has already leaked to session
   plan whose backend creates any missing tables when it starts, whose starting rows go in once,
   and whose table changes are applied as a deploy step; and would confirm it by adding something
   through the live app, pushing a change that redeploys the backend, and seeing, once that deploy
-  is live, that the thing is still there, once and not twice.
+  is live, that the thing is still there.
 - **cases:**
   - `seed-every-start`: the backend deletes and recreates its tables, or inserts its starting rows
     again, every time it starts
