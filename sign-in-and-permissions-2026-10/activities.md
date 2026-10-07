@@ -1,4 +1,4 @@
-# Activities — sign in and permissions
+# Activities: sign in and permissions
 
 Candidate activities for the study phase. More than will be used; the tutor chooses among them
 with the learner.
@@ -348,3 +348,12 @@ with the learner.
 - **checks:**
 - **worked example:**
 - **doesn't show:**
+
+### `a-words`
+
+- **serves:** group vocabulary
+- **generator:** the five moves in `workflows/learn/skills/goal-setting/references/vocabulary-moves.md`, set for one word at a time from its `what it names`, `nearest confusable` and `synonyms`. Each question names that word's goal and carries its move.
+- **learner does:** answers one short question about one word
+- **tutor role:** examiner
+- **tutor does:** sets the question as served, without rewording it or hinting; when the bank has nothing for the word, sets one move live, as vocabulary-moves.md describes
+- **offer as:** not offered as a choice; a word's question is set when that word is studied or due

@@ -1,4 +1,6 @@
-# Learning goals — sign in and permissions
+# Learning goals: sign in and permissions
+
+**origin:** course
 
 **What I want to be able to do, and what would count as having got there.**
 
