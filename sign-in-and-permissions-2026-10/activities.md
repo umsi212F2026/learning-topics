@@ -255,10 +255,15 @@ with the learner.
   - `two-redirects`: the plan tells the learner to register one redirect URL only, either the
     localhost one (`http://localhost:3001/auth/<provider>/callback`) or the live one, and names
     that single URL. Key: the provider needs a redirect URL for localhost and another for the live
-    app (the backend's live address with the same path). The key accepts either a second redirect
-    URL on the one registration or a second registration. Full credit needs both URLs named and a
-    way to give the provider both. Half credit for naming the missing one with no way to give it to
-    the provider.
+    app (the backend's live address with the same path). A GitHub OAuth app holds up to 10
+    callback URLs (GitHub changelog, 2026-08-14,
+    https://github.blog/changelog/2026-08-14-multiple-redirect-uris-and-token-refresh-for-oauth-apps;
+    GitHub Docs, "Creating an OAuth app": "You can enter up to 10 callback URLs"), and a Google
+    client holds several redirect URIs, so for either provider the ordinary answer is to add the
+    second redirect URL to the one registration; a second registration is also acceptable, and the
+    key accepts either. Never write, in an excerpt, a key or a rubric, that GitHub allows only one
+    callback URL: that is out of date. Full credit needs both URLs named and a way to give the
+    provider both. Half credit for naming the missing one with no way to give it to the provider.
   - `secret-placement`: the client secret is going somewhere other than the backend host's
     settings by the learner's own hand, and the same excerpt says where the client ID goes, always
     the frontend's environment (`VITE_GITHUB_CLIENT_ID` or `VITE_GOOGLE_CLIENT_ID`), so the learner
@@ -375,7 +380,10 @@ with the learner.
     do" with any reason or none.
   - `two-redirects`: the agent asks "Which redirect URL do you want me to set in the code, and will
     you register it?", or reports that it has hard-coded one (localhost or live) and asks the
-    learner to register that one.
+    learner to register that one. As in `a-critique-sign-in-plan`, a GitHub OAuth app holds up to
+    10 callback URLs and a Google client holds several redirect URIs, so the ordinary reply adds
+    the second URL to the one registration, and a second registration is also acceptable. Never
+    write, in a message, a key or a rubric, that GitHub allows only one callback URL.
   - `secret-placement`: the agent asks the learner to paste the client ID and client secret into the
     chat, saying it will put the ID in `frontend/.env` and set the secret on the backend host; or it
     reports that it has put both in the frontend's environment and asks to push. Either way the
@@ -453,7 +461,10 @@ with the learner.
     ("Register `http://localhost:3001/auth/github/callback` as the redirect URL"). Key: change it
     first: register a redirect URL for localhost and another for the live app (the backend's live
     address with the same path), as a second URL on the one registration or as a second
-    registration; yours to do. Full credit needs both URLs named and that the learner gives the
+    registration; yours to do. As in `a-critique-sign-in-plan`, a GitHub OAuth app holds up to 10
+    callback URLs and a Google client holds several redirect URIs, so adding the second URL to the
+    one registration is the ordinary answer for either provider. Never write, on a card, a key or a
+    rubric, that GitHub allows only one callback URL. Full credit needs both URLs named and that the learner gives the
     provider both. Half credit for naming the missing one with no way to give it to the provider,
     or for "yours" with only the one URL.
   - `secret-placement`: the card says where the client secret and the client ID go. Variants: both
@@ -493,7 +504,8 @@ with the learner.
   with a short agent comment, or justifies itself in plausible words ("so we can show their
   projects later"; "to save you a trip to the dashboard"), or, for a sound card, carries one detail
   that looks alarming to a novice (the client ID in `VITE_GITHUB_CLIENT_ID`). At least two cards at
-  Hard. No card's text gives away another's answer.
+  Hard. Cards are studied in file order, so a later card may give away an earlier card's answer,
+  never the reverse: no card's text gives away the answer to a card after it.
 - **worked example:** shown only as help when asked for, which records the attempt as helped: the
   tutor sorts a different card aloud, asking where the step happens (browser, backend, provider,
   host settings, chat), whose hands it needs, and what would go wrong if the agent did it as
@@ -534,9 +546,10 @@ with the learner.
   working, with a line on what the app does (a club events board, a lost-and-found board, a shared
   reading list). The setup lists the backend's routes, 5 to 7 lines such as `GET /api/events`,
   `POST /api/events`, `PATCH /api/events/:id`, `DELETE /api/events/:id`, `GET /api/me`, with one
-  line each on what they do, and names the levels the app has: someone not signed in, a signed-in
-  user, the owner of a record, and one admin level (such as the club's officers). It says the
-  questions are independent. **Each question is a separate piece of the work**: a who-may-do-what
+  line each on what they do, and names the app's signed-in levels only: a signed-in user, the owner
+  of a record, and one admin level (such as the club's officers). It never names, lists or hints
+  at someone not signed in as a level, so `missing-signed-out` tests whether the learner thinks of
+  the signed-out visitor unprompted. It says the questions are independent. **Each question is a separate piece of the work**: a who-may-do-what
   table as it would appear in `DEPLOY.md` (rows are actions, columns are levels, cells yes or no),
   or a table with an excerpt of the agent's plan for enforcing it (4 to 8 numbered steps, with route
   and middleware names and short code lines where an agent would give them), or, for the confirming
@@ -544,7 +557,8 @@ with the learner.
 
   **Every question carries exactly one case**, named on its rubric `cases:` line. Every table row
   and plan step but the one the case fixes is sound, and every table but the `missing-action` and
-  `missing-signed-out` ones is complete for the setup's routes and levels:
+  `missing-signed-out` ones is complete: a row for every action the setup's routes allow, and a
+  column for each signed-in level and for someone not signed in:
   - `missing-action`: the table alone, with every level's column, missing a row for an action the
     setup's routes allow (most often delete, or editing someone else's record). Key: names the
     missing action and what the row should say (for example, who may delete). Full credit needs
@@ -588,10 +602,15 @@ with the learner.
   `requireAuth`); the agent justifies it ("React already hides the button, so the route stays
   simple"); or, for the confirming cases, the agent offers its own check, of what the page shows
   ("I signed out and the Delete button is gone"), and the question asks whether that confirms it and
-  what they would do instead. A scenario carries all eight cases, one question each, every one at
-  Medium or Hard and at least two at Hard. Write the scenario with `missing-action` and
-  `missing-signed-out` first, since later questions show complete tables. No question's text gives
-  away another's answer.
+  what they would do instead. **`missing-action` and `missing-signed-out` never share a scenario**:
+  each table is complete in the other's respect, so either one beside the other gives the other's
+  answer away. A scenario carries one of the two, plus each of the other six cases, one question
+  each, every one at Medium or Hard and at least two at Hard; the bank as a whole carries all eight,
+  so it holds at least two scenarios, one for each table case. Questions are studied in file order,
+  so a later question may give away an earlier one's answer, never the reverse: write the
+  scenario's table case first, since later questions show complete tables (a column for someone
+  not signed in, a row for every action). No question's text gives away the answer to a question
+  after it.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. Work a
   different question aloud: for each row of the table, ask "who could send this request, from
   where, without the page?" and "what does the server look at to decide?" Cite OWASP's "A01:2025
@@ -603,13 +622,14 @@ with the learner.
   real attempt: "could someone do this without using your page at all?"
 - **doesn't show:** each question holds at most one thing wrong, and the setup's route list makes
   `missing-action` a matter of checking against a list the learner is handed; writing a table for
-  their own app from nothing is Part B's job. Naming a confirming request is not making it, so a pass
+  their own app from nothing is Part B's job. The setup names only the signed-in levels, so
+  `missing-signed-out` does show the learner thinking of the signed-out visitor unprompted, but
+  only for a table question set first in its scenario, before any complete table. Naming a confirming request is not making it, so a pass
   doesn't show they could send a request with no session cookie, or sign in a second account, on a
   live app.
 - **offer as:** plan review for who may do what: a table or a short plan, and you say what you'd
   change, or which request would prove it. One question per thing that could be wrong, 2 to 4
   minutes each.
-- **note:** The setup names "someone not signed in" among the app's levels. A pass on `missing-signed-out` therefore shows that the learner checked the table's columns against a list they were given. It does not show that they would think of the signed-out visitor unprompted. When writing a setup live, it is fair to list only the signed-in levels.
 
 ### `a-contrast-permission-plans`
 
@@ -649,7 +669,8 @@ with the learner.
     session one, and that the other believes whatever id it is sent.
   - `sound-plan`: two sound plans that differ harmlessly (a middleware against a check inside each
     handler; keeping the email or not; one admin role column against an admins table). Key: both.
-    Full credit for "both" with any reason that doesn't call either broken; none for rejecting one.
+    No reason is required: full credit for "both" with no reason at all, or with any reason that
+    doesn't call either broken; none for rejecting one.
   - `confirm-401`: two ways to confirm someone not signed in is turned away: one looks at the page
     signed out (the button is gone), the other sends the request with no sign-in, with its expected
     status left out. Key: the request, and that it should get 401.
@@ -659,7 +680,8 @@ with the learner.
     different rule).
   Credit: full when the choice is right and what gives it away (or the status code, for the
   confirming cases) matches the key; half when the choice is right with no reason or a wrong one;
-  none otherwise. How hard: Medium, the difference between A and B sits in a plain-words line; Hard,
+  none otherwise. `sound-plan` is the exception: its own credit line above holds, and "both" with
+  no reason is full credit. How hard: Medium, the difference between A and B sits in a plain-words line; Hard,
   it sits in one code or route line in otherwise identical blocks, or the unsound version carries the
   agent's reassuring comment. A scenario carries all eight cases, one question each, at least two at
   Hard. No question gives away another's answer.
