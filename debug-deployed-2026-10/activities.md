@@ -31,7 +31,7 @@ text states the task, never the scoring.
 | ---- | ------ | ----- |
 | `o-orientation` | `a-read-odin-debugging` | |
 | `c-connect-agent-host` | `a-connect-own-host` | |
-| `c-locate-failure` | `a-locate-described-failure`, `a-locate-own-failure` | |
+| `c-locate-failure` | `a-locate-described-failure` | |
 
 ---
 
@@ -368,54 +368,11 @@ text states the task, never the scoring.
 
 ### `a-locate-own-failure`
 
-- **serves:** `c-locate-failure`
-- **supports:** attempt
-- **checks:** `c-locate-failure`
-- **artifact:** no external source. The learner's own deployed app when it actually misbehaves, in
-  the session 12 lab or while working on Problem Set 3, and their agent's account of why. It can
-  run before `c-connect-agent-host` is met: an agent not yet connected to the host can only answer
-  from the code or a laptop run, which is the `local-only` case. 5 to 10 minutes, whenever it
-  happens.
-- **verified:** 2026-10-05
-- **learner does:** asks their agent why the deployed app isn't working, and gets its account. Before
-  the tutor says anything, says in two or three sentences what kind of failure the account
-  describes, if any, and what someone visiting the app right now sees; or, if the agent answered
-  from the code or a laptop run, that this isn't evidence about the deployed app.
-- **tutor role:** none
-- **tutor does:** reads the agent's account and the log or status lines it quotes, and writes the key
-  into the record before hearing the learner: the case (one of the seven named in
-  `a-locate-described-failure`'s generator) and what a visitor sees. If the quoted lines don't
-  settle it, or the agent's reading of them disagrees with what they show, says "not judged" and
-  records no attempt, rather than guessing; after the learner has answered, says where the reading
-  and the lines part, and a learner who spotted it is told so. Also notes whether the account names
-  the stage in plain words (as the Easy level in `a-locate-described-failure` describes, or for
-  `local-only`, says plainly it read the code or ran on the laptop). Waits, writing down any help
-  word for word. Rules and labels the attempt `a-locate-own-failure/<case>`; records the case with
-  `--cases` only when the account didn't name the stage plainly, and otherwise records the attempt
-  without it, since it handed over the kind. Does not help fix the failure as part of this; that comes after.
-- **done when:** criterion met with no help, on the one case this incident carries.
-- **generator:** the material is whatever goes wrong with the learner's own app, so this stays live
-  and nobody sets the case or the difficulty. Fixed: the account is the learner's own agent's, word
-  for word, and the key comes from the lines it quotes from the host, or their absence. An agent
-  that guessed from the code is the `local-only` case, and the only one possible before the agent
-  is connected. On review visits, use the next real incident; until all seven cases have passed, offer
-  `a-locate-described-failure` for the ones that haven't come up.
-- **worked example:** none during the attempt. If the learner stalls, the first level of help is
-  "did that line come from the build log or from the running app's log?", and the attempt is
-  recorded as helped.
-- **doesn't show:** which cases come up is luck, and `waking`, `wrong-address` or `cors-blocked`
-  may never come up on a learner's own app. The learner usually knows what they last changed, which can stand
-  in for reading the account. The key rests on the tutor's reading of what the agent quoted. A real
-  agent usually names the stage plainly, and such an incident credits no case, so many incidents
-  here end as practice.
-- **offer as:** the real thing: your own app, your own agent's account, the first time something
-  breaks. Any time from the session 12 lab on; `a-locate-described-failure` covers the cases your
-  app hasn't had.
-- **check note:** When the agent's account names the stage plainly (as the Easy level in
-  `a-locate-described-failure` describes), don't record a ruled attempt. Record it as `criterion:
-  unchecked` and treat the incident as practice. The recording tool refuses a ruled attempt on
-  this goal without `--cases`, and an attempt with no cases would count toward all seven. Rule, and
-  pass `--cases`, only when the account left the kind for the learner to work out.
+- **was:** a check on `c-locate-failure`: the learner said what kind of failure their own agent's
+  account of a real incident on their deployed app described, and what a visitor saw.
+- **status:** dropped (curator, 2026-10-07): a capable agent usually names the stage plainly, so
+  the learner mostly agreed with it and most incidents ended as practice.
+  `a-locate-described-failure` carries every case.
 
 ### `a-words`
 
