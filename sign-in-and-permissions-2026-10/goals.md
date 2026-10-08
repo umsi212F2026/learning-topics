@@ -308,8 +308,8 @@ debug-deployed. Defending a live app against abuse belongs to session 14.
   everyone but the owner; catch a plan that checks sign-in on most routes but leaves one that
   changes data unchecked; catch a plan in which the server takes the user's word for who they are, such as a user
   id the frontend sends with the request, rather than the session; go along with a plan that
-  checks every rule on the server against the signed-in user and keeps only the provider's id
-  for each user and perhaps an email; and say which requests would confirm the rules, rather
+  checks every rule on the server against the signed-in user and keeps the provider's id for
+  each user, not a password; and say which requests would confirm the rules, rather
   than what the page shows, and what each should get back: a request to a protected path with no
   sign-in is refused with 401, and a second account, signed in, is refused the owner's actions
   with 403.
