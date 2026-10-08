@@ -8,7 +8,7 @@ Eight questions, one per case, in this order: `missing-signed-out`, `missing-act
 `unchecked-route`, `trusts-frontend`, `sound-plan`, `confirm-401`, `confirm-403`. The sound version
 is at A, B, B, A, A, both, B, A. Hard: q1 (the unsound table carries the agent's reassuring line),
 q4 (one route line in otherwise identical lists), q5 (one code line in otherwise identical handlers)
-and q6 (one schema line in otherwise identical plans). The rest are Medium. No question before q8
+and q6 (the difference sits only in the schemas, in otherwise identical plans). The rest are Medium. No question before q8
 names a refusal status code, and none before q5 says where the server gets the signed-in user from.
 
 The two table questions show each other's answer (each complete table has every row and the
@@ -75,15 +75,15 @@ signed-out column); each pair already shows its own difference, so this is accep
 
 - **goal:** `c-review-permissions`
 - **cases:** sound-plan
-- **answer:** Both. They differ only in whether the `users` table keeps the member's email, which
-  Huddle uses for trip reminders; each keeps `google_sub` with no password and checks every rule on
-  the server against the session's user.
+- **answer:** Both. They differ only in where officers are recorded: A in a `role` column on
+  `users`, B in a separate `officers` table. Either way the server checks every rule against the
+  session's user, and `requireLeaderOrOfficer` can tell an officer from anyone else.
 - **credit:** full for "both", with no reason at all or with any reason that doesn't call either
   broken. None for rejecting one.
-- **tutor note:** a learner who prefers one (A for the reminders, B for keeping less personal
-  data) while agreeing to both has it. One who rejects A over the email has called a sound plan
-  broken; ask what the setup says Huddle emails. One who rejects B because the reminders need the
-  email is judging a feature, not who may do what; ask what B lets anyone do that the rules forbid.
+- **tutor note:** a learner who prefers one (A for one fewer table, B for keeping officers apart)
+  while agreeing to both has it. One who rejects B because its `users` table has no role has missed
+  the `officers` table; ask where B says who is an officer. Either way, ask what the rejected
+  version lets anyone do that the rules forbid.
 
 ### q7
 

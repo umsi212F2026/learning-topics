@@ -1,6 +1,5 @@
 Huddle is your Problem Set 3 app: the trip board for a college hiking club. Members post the day
-trips they're leading, with a date and a meeting point, and other members sign up. The day before
-a trip, Huddle emails each member signed up for it a reminder with the meeting point. Its React
+trips they're leading, with a date and a meeting point, and other members sign up. Its React
 frontend is built to static files on Leafhost, at `https://huddle.leafhost.app`, and its Express
 backend runs on Dockyard, at `https://huddle-api.dockyard.run`, with a Postgres database. Sign-in
 through Google already works.
@@ -164,8 +163,8 @@ Would you agree to A, B, or both? What gives it away?
 
 ### q6
 
-Your agent offers two versions of its plan for enforcing the rules. Each starts with the `users`
-table, then gives the same three lines.
+Your agent offers two versions of its plan for enforcing the rules. Each starts with the tables
+that record who is who, then gives the same three lines.
 
 **A**
 
@@ -174,7 +173,6 @@ CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   google_sub TEXT UNIQUE NOT NULL,
   name TEXT NOT NULL,
-  email TEXT NOT NULL,
   picture TEXT,
   role TEXT NOT NULL DEFAULT 'member'
 );
@@ -187,8 +185,11 @@ CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   google_sub TEXT UNIQUE NOT NULL,
   name TEXT NOT NULL,
-  picture TEXT,
-  role TEXT NOT NULL DEFAULT 'member'
+  picture TEXT
+);
+
+CREATE TABLE officers (
+  user_id INTEGER PRIMARY KEY REFERENCES users(id)
 );
 ```
 
@@ -196,7 +197,7 @@ CREATE TABLE users (
 
 > 1. `requireAuth` runs on every route, and refuses a request with no signed-in member.
 > 2. On `PATCH` and `DELETE /api/trips/:id`, `requireLeaderOrOfficer` loads the trip and refuses
->    the request unless the session's user leads it or has the `officer` role.
+>    the request unless the session's user leads it or is recorded as an officer.
 > 3. Every handler takes the user from `req.session.userId`.
 
 Would you agree to A, B, or both? What gives it away?
