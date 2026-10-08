@@ -9,8 +9,6 @@ with the learner.
 - **All four plan cases here:** about 65 minutes. That is the orientation in `a-read-database-survives` (about 20), one passing `a-judge-described-plan` question per case with the 4-minute worked example first (about 25), and the seven words (about 20). This assumes every first counting question passes. Each retry adds about 5 minutes.
 - **Plan questions deferred to the session 11 table activity:** about 40 minutes.
 
-`a-judge-own-deploy-plan` belongs with Problem Set 3 (Oct 8 to 14), not before session 11.
-
 ## Goals
 
 | id | Goal | Criterion: what gets examined, and what counts |
@@ -23,7 +21,7 @@ with the learner.
 | goal | checks | notes |
 | ---- | ------ | ----- |
 | `o-orientation` | `a-read-database-survives` | |
-| `c-plan-first-deploy` | `a-judge-described-plan`, `a-judge-own-deploy-plan` | In practice the two catch cases come from `a-judge-described-plan`: a competent agent's real plan usually yields only the clear cases. Both checks give the learner the host's storage rule and name the question to ask, so neither shows the learner would ask both questions unprompted or doubt a plan's own claim about storage. A learner who did the session 11 table activity may meet this goal as `elsewhere` without either check. |
+| `c-plan-first-deploy` | `a-judge-described-plan` | Every case is served by its bank. It gives the learner the host's storage rule and names the question to ask, so it doesn't show the learner would ask both questions unprompted or doubt a plan's own claim about storage. A learner who did the session 11 table activity may meet this goal as `elsewhere` without it. |
 
 ---
 
@@ -65,8 +63,7 @@ with the learner.
   lesson, read in cloud-hosting; its "see database-hosting" boxes are what this fills.
 - **verified:** 2026-10-04
 - **learner does:** reads, and stops twice to answer in a sentence or two before reading on. Neither
-  stop needs their code open; their own app's plan is judged in `a-judge-own-deploy-plan`, during
-  Problem Set 3. "I don't know yet" is an honest answer:
+  stop needs their code open. "I don't know yet" is an honest answer:
   1. After Render: says what their Problem Set 2 restart test would show if their app's SQLite file
      sat on an ephemeral disk and the host redeployed between adding something and checking for it.
   2. After Odin: says which lines of Odin's script build the production database, and what would be
@@ -165,8 +162,7 @@ with the learner.
   SQLite file lives, whether the code makes the tables and seed rows, and whether the file is
   tracked by git.
 - **status:** dropped (curator, 2026-10-04): outside orientation, every activity in a course topic
-  is a question activity with a rubric, and this one had no checks. What it found is read by the
-  tutor in `a-judge-own-deploy-plan`.
+  is a question activity with a rubric, and this one had no checks.
 
 ### `a-contrast-plan-pairs`
 
@@ -373,94 +369,19 @@ with the learner.
   reaching it the tutor offers: do it here, with this; already done elsewhere (recorded as
   `elsewhere`, which counts as met, all cases included, and comes back for review); learn it
   there later (deferred, then recorded as done elsewhere after the table activity); or remove it.
-  This is the one to take in the learn tool before session 11: one short made-up plan and one
+  In the learn tool it is one short made-up plan and one
   question at a time, about 5 minutes each, nothing to run, with a 4-minute worked example the
   first time, about 25 minutes for one passing question per case. With the orientation, `a-read-database-survives` (about 20 minutes), and
   the seven words in `a-words` (about 20), the route is about 65 minutes for a student who takes
   all four plan questions here, a little past the topic's 60-minute budget, and well under an
   hour for one who defers them to the table activity. Questions from it also serve review.
-  `a-judge-own-deploy-plan` is the same goal on your own agent's plan, for Problem Set 3.
 
 ### `a-judge-own-deploy-plan`
 
-- **serves:** `c-plan-first-deploy`
-- **supports:** attempt
-- **checks:** `c-plan-first-deploy`
-- **artifact:** no external source. The plan the learner's own agent writes in Problem Set 3 for
-  deploying their Problem Set 2 app's database, taken before it is carried out; on a review visit, a
-  tablemate's plan or a fresh run of the same request. It is asked the two questions of
-  `a-judge-described-plan` as two separate questions. About 10 minutes for the two, plus the
-  tutor's preparation, done before the sitting.
-- **verified:** 2026-10-04
-- **learner does:** before telling the agent to go ahead, answers alone the first question the
-  tutor puts on the real plan, "Will this plan's data survive a redeploy?", with yes or no and the
-  plan step that decides it, and for a no, what the plan would have to say instead; hands it in;
-  then does the same for the second, "Does production get a database of its own, built by the code
-  rather than copied from the laptop or shared with development?" What the plan would have to say
-  instead is for the learner's agent, and is neither credited nor faulted unless it gives a
-  different verdict on the asked question.
-- **tutor role:** examiner
-- **tutor does:** before the sitting, reads the app the plan is for (the learner's own, or the
-  tablemate's when it is a tablemate's plan): where the SQLite file's path is set, whether the code
-  creates tables and inserts rows, whether the file is tracked by git. Reads the chosen host's own
-  current pages on its storage and writes the host's storage rule in one line, as
-  `a-judge-described-plan` gives it, with the page address and date, never from the agent's
-  description. Writes a key for each of the two questions from the plan, the code and that rule:
-  the verdict, the step that decides it, and so the one case of `c-plan-first-deploy` that
-  question carries, by `a-judge-described-plan`'s mapping (survival: no is `catch-data-loss`,
-  yes is `clear-survives`; own database: copied or shared is `catch-copied`, built by the code is
-  `clear-own-database`), with its one-time-script rule; on the own-database question
-  a seed step run once against production and the step that creates the tables each decide it, so
-  the key lists both and naming either earns full credit. A plan that never says where
-  the database will live is keyed no on survival: an answer of no, or "can't tell, the plan doesn't
-  say", with that omission named, counts as catching it, and yes does not. In the sitting, shows the
-  real plan and the storage line, and puts the survival question; takes the answer in before
-  putting the own-database question, and gives no verdict on either until both are in. Waits,
-  writing down any help word for word. Sends the adjudicator each question as its own attempt: the
-  plan, the storage line with its source, that question, its key, the goal and its case, the
-  learner's answer to it and any help given during it. Records each on `c-plan-first-deploy`
-  with the case its key gives (record-attempt `--cases <case>`), labelled
-  `a-judge-own-deploy-plan/<host>/survival` and `a-judge-own-deploy-plan/<host>/own-database`.
-  Disregards remarks off the asked question (the other question, connection strings, passwords,
-  backups, migrations and cost), as `a-judge-described-plan` does, and tells the adjudicator that
-  the learner's "what the plan would have to say instead" is neither credited nor faulted unless
-  it gives a different verdict on the asked question. Afterwards, if the real plan
-  got a no on either question, the learner takes their corrected line back to their agent.
-- **done when:** `c-plan-first-deploy` is met when every one of its four cases has an unaided
-  pass. Each of the two questions, passed with no help, passes only the case its key gives: one
-  survival case and one own-database case. The two are recorded separately, so one can pass and
-  the other not. If the tutor can't
-  settle a key for the real plan (the host's pages don't say how it stores files), that question
-  is practice, and the tutor says so and offers `a-judge-described-plan`.
-- **generator:** the real plan is whatever the agent proposed, so nobody sets its shape, its
-  difficulty or which cases its questions carry; its truth on each question decides that. The
-  survival question carries `catch-data-loss` or `clear-survives`, and the own-database question
-  carries `catch-copied` or `clear-own-database`, as the key gives. Fixed: the two
-  questions, worded as in `a-judge-described-plan`, put one at a time, survival first; the storage
-  line comes from the host's own pages on the day; each key comes from that line, the plan and the
-  app's code. Across visits use a different real plan each time, a tablemate's or a fresh run,
-  preferring one whose verdicts would carry cases the learner has not yet passed.
-- **worked example:** none during the attempt. If the learner stalls, the first level of help is,
-  on the survival question, "where does the data live, and what does this host do to that place on
-  a redeploy?", or, on the own-database question, "which step makes production's tables and rows,
-  and where do they come from?", and that question's attempt is recorded `unaided: no`.
-- **doesn't show:** one real plan's two questions can pass at most two of the goal's four cases,
-  one per question, and which two is up to the agent; the other two come from
-  `a-judge-described-plan` or another plan, so this rarely meets the goal alone. Across visits
-  with different real plans it could reach all four cases, but a competent agent's plan usually
-  yields the two clear cases, so the catch cases usually come from `a-judge-described-plan`. The
-  learner is handed the two questions, while in Problem Set 3 itself they must think to ask them.
-  The tutor writes the storage line, while in Problem Set 3 itself the learner has only the
-  agent's plan, which may assert how the host stores files; so a pass doesn't show they would
-  doubt that claim or read the rule off the host's pages. The key rests on the tutor's reading of
-  the app and of the host's pages.
-- **offer as:** the real thing: your own agent's plan for your own Problem Set 3 deploy, judged on
-  the two questions before you let it run. For Problem Set 3: about 10 minutes, any time Oct 8 to
-  14. Before session 11, the goal is taken in the learn tool with `a-judge-described-plan`,
-  or deferred to the session 11 table activity and recorded as done elsewhere after it.
-- **check note:** If you can't read the code the plan is for (a tablemate's repository you don't
-  have), you can't settle the key: treat the sitting as practice, as when the host's pages are
-  silent, and offer `a-judge-described-plan`.
+- **was:** a check on `c-plan-first-deploy`: the learner put the two questions to the plan their
+  own agent wrote in Problem Set 3 for deploying their app's database, before it ran.
+- **status:** dropped (curator, 2026-10-07): a capable agent's own plan usually has no fault, so
+  the learner mostly agreed to it and learned little. `a-judge-described-plan` carries every case.
 
 ### `a-words`
 
