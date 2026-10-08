@@ -32,9 +32,11 @@ change being "I do this myself" is the same answer as "yours": credit it as the 
 - **credit:** full for catching that the calendar scope asks for more than Shelfmates uses and
   naming, in their own words, a smaller request (their name, picture and email, or `openid profile
   email`); the exact scope string is not required, and keeping `email` is right here. Half for
-  catching the excess with no replacement, or with a replacement that still asks for more than the
-  app uses.
-- **tutor note:** a learner who drops `email` as well has cut something the app uses; ask what
+  catching the excess with no replacement, with a replacement that still asks for more than the
+  app uses, or with one that asks for less than the app uses (such as dropping `email`, which the
+  member list shows).
+- **tutor note:** a learner who drops `email` as well has cut something the app uses, which is
+  half; ask what
   the member list shows.
 
 ### card-3

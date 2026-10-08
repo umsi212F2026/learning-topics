@@ -34,9 +34,11 @@ change being "I do this myself" is the same answer as "yours": credit it as the 
 - **credit:** full for catching that `user` asks for more than Findit uses (it can change their
   profile, not just read it) and naming, in their own words, a smaller request (read-only access to
   their profile and email); the exact scope strings are not required. Half for catching the excess
-  with no replacement, or with a replacement that still asks for more than the app uses (such as
-  `repo`).
-- **tutor note:** a learner who drops email entirely has cut something the app uses; ask what the
+  with no replacement, with a replacement that still asks for more than the app uses (such as
+  `repo`), or with one that asks for less than the app uses (such as dropping email, which Findit
+  uses).
+- **tutor note:** a learner who drops email entirely has cut something the app uses, which is
+  half; ask what the
   person claiming an item sees.
 
 ### card-3

@@ -25,13 +25,16 @@ both questions are CATCH.
 
 - **goal:** `w-authentication`
 - **move:** CATCH
-- **answer:** Authentication is finding out who someone is, and Pantry does that: it signs users in
-  through GitHub, which vouches for who they are, and Pantry keeps their GitHub id. Checking a
-  password yourself is only one way to authenticate; handing that part to GitHub is still
-  authentication.
+- **answer:** Pantry does know who each member is, without a password of its own: signing in
+  through GitHub is authentication, since GitHub vouches for who the user is and Pantry keeps their
+  GitHub id, so it can record that id on each recipe they post. Checking a password yourself is
+  only one way to authenticate.
 - **credit:** full for naming that authentication means establishing who the user is, which
-  sign-in through GitHub does for Pantry, so it doesn't need a password of Pantry's own. Half for
-  "signing in with GitHub is authentication" without saying why a password isn't needed for it.
-  None for a different quibble alone, such as that Pantry should store passwords as a fallback.
-- **tutor note:** a learner who says "GitHub does the authentication, not Pantry" has the idea
-  nearly right; ask whether Pantry ends up knowing who the user is, and how.
+  sign-in through GitHub does for Pantry without a password of Pantry's own, so Pantry does know
+  who posted each recipe. Half for "GitHub sign-in tells Pantry who they are" without connecting
+  it to authentication not needing Pantry's own password, or for "that's authentication through
+  GitHub" without saying Pantry then knows the member. None for a different quibble alone, such as
+  that Pantry should store passwords as a fallback.
+- **tutor note:** a learner who agrees, thinking an app knows who someone is only by checking a
+  password, has the error this question targets; ask what Pantry gets back from GitHub after a
+  member signs in.

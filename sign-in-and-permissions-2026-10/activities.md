@@ -286,8 +286,9 @@ with the learner.
     nothing to judge it by. Key: ask only for what the app shows: for GitHub no scope or
     `read:user` (with `user:email` if the app uses email); for Google `openid profile` (with `email` if it uses email). Full credit
     needs the excess caught and a smaller request named in the learner's words; the exact scope
-    string is not required. Half credit for catching it with no replacement, or with a replacement
-    that still asks for more than the app uses.
+    string is not required. Half credit for catching it with no replacement, with a replacement
+    that still asks for more than the app uses, or with one that asks for less than the app uses
+    (for example, dropping email when the app sends mail).
   - `sound-plan`: every step is sound: the Sign in button sends the browser to the provider; the
     provider sends it back to the backend's redirect URL with a code; the backend sends the code
     with the client ID and client secret (read from its environment) to the provider and learns who

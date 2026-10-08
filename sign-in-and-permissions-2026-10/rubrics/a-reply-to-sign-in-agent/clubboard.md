@@ -68,10 +68,11 @@ tone; a reply that says "you" or "I" loosely is read for who it plainly means do
   picture and email we use.
 - **credit:** full for catching `user` as more than the app uses (it includes write access) and
   naming a smaller request in their own words (read-only profile plus email, or just `user:email`);
-  the exact scope string is not required. Half for catching it with no replacement, or with a
-  replacement that still asks for more than the app uses (such as `repo`).
-- **tutor note:** a reply that drops email altogether has broken the reminders; ask what the app
-  sends the day before a hike. If they accept because one scope sounds simpler, ask what "write"
+  the exact scope string is not required. Half for catching it with no replacement, with a
+  replacement that still asks for more than the app uses (such as `repo`), or with one that asks
+  for less than the app uses (such as dropping email, which the reminders need).
+- **tutor note:** a reply that drops email altogether has broken the reminders, which is half;
+  ask what the app sends the day before a hike. If they accept because one scope sounds simpler, ask what "write"
   lets the app do to a member's GitHub account.
 
 ### history-cleaned

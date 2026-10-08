@@ -108,14 +108,15 @@ And its plan for enforcing it:
 1. Add a `role` column to `users`, `'resident'` by default. You set `'desk'` by hand for the front
    desk staff.
 2. `requireAuth` refuses the request unless `req.session.userId` is set.
-3. `requireOwnerOrDesk`, in `backend/middleware/auth.js`:
+3. `requireOwnerOrDesk`, in `backend/middleware/auth.js`, where `refuse(res, message)` is the
+   file's helper that turns the request away with that message:
 
    ```js
    async function requireOwnerOrDesk(req, res, next) {
      const item = await db.getItem(req.params.id);
      const user = await db.getUser(req.body.userId);
      if (item.owner_id === user.id || user.role === 'desk') return next();
-     res.status(403).json({ error: 'Not your post' });
+     refuse(res, 'Not your post');
    }
    ```
 
@@ -167,8 +168,8 @@ And its plan for enforcing it:
 
 4. `updateItem`, `markClaimed` and `deleteItem` each start by loading the item and calling
    `canChange(item, req.session.userId)`, which loads that user and returns true only if they
-   posted the item or their role is `'desk'`. When it returns false, the handler sends 403 and
-   stops.
+   posted the item or their role is `'desk'`. When it returns false, the handler refuses the
+   request.
 5. `createItem` records `req.session.userId` as the new post's owner.
 6. In React, show the Edit, Mark claimed and Delete buttons only to the post's owner and to desk
    workers.

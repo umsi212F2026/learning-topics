@@ -66,9 +66,10 @@ plainly means does each thing.
   only for `openid profile email`, which covers the name, picture and email the app does use.
 - **credit:** full for catching the Contacts scope as more than the app uses and naming the smaller
   request in their own words (name, picture and email, or `openid profile email`); the exact scope
-  string is not required. Half for catching it with no replacement, or with a replacement that
-  still asks for more than the app uses.
-- **tutor note:** a reply that drops `email` too has broken the reminders; ask what the app sends
+  string is not required. Half for catching it with no replacement, with a replacement that still
+  asks for more than the app uses, or with one that asks for less than the app uses (such as
+  dropping `email`, which the reminders need).
+- **tutor note:** a reply that drops `email` too has broken the reminders, which is half; ask what the app sends
   when a drill is due back. If they accept because it is read-only, ask what a member is agreeing
   to on the consent screen.
 
