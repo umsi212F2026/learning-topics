@@ -280,8 +280,11 @@ with the learner.
   - `too-much-scope`: the plan asks the provider for more of the user's account than the app uses.
     GitHub: `repo`, or `user` (which can change profile data), when the app shows only the user's
     name and picture. Google: Drive, Gmail, Calendar or Contacts access on top of `openid profile`.
-    Key: ask only for what the app shows: for GitHub no scope or `read:user` (with `user:email` if
-    the app uses email); for Google `openid profile` (with `email` if it uses email). Full credit
+    A `user` variant must say in the excerpt itself, in plain words, that the scope can change the
+    user's profile (for example, quoting GitHub's description, "read and write access to profile
+    info"), since neither orientation reading covers that row; a bare `user` gives the learner
+    nothing to judge it by. Key: ask only for what the app shows: for GitHub no scope or
+    `read:user` (with `user:email` if the app uses email); for Google `openid profile` (with `email` if it uses email). Full credit
     needs the excess caught and a smaller request named in the learner's words; the exact scope
     string is not required. Half credit for catching it with no replacement, or with a replacement
     that still asks for more than the app uses.
@@ -480,8 +483,10 @@ with the learner.
     ID may be in the frontend. Half credit for the secret alone.
   - `too-much-scope`: the card is the scope line in the sign-in code, asking for more than the app
     shows (GitHub `repo` or `user`; Google Drive, Gmail, Calendar or Contacts on top of
-    `openid profile`). Key: change it first, to only what the app shows (for GitHub no scope or
-    `read:user`, with `user:email` if it uses email; for Google `openid profile`, with `email` if
+    `openid profile`). A `user` card must say on the card itself, in plain words, that the scope
+    can change the user's profile (for example, quoting GitHub's description, "read and write
+    access to profile info"), since neither orientation reading covers that row. Key: change it
+    first, to only what the app shows (for GitHub no scope or `read:user`, with `user:email` if it uses email; for Google `openid profile`, with `email` if
     it uses email); your agent can make the change. Full credit needs the excess caught and a
     smaller request named in the learner's words. Half credit as in `a-critique-sign-in-plan`.
   - `sound-plan`: the card is the backend's sign-in step, all of it sound: "The backend sends the
@@ -668,7 +673,10 @@ with the learner.
     (`req.session.userId`), the other from the request (`req.body.userId`, or a header). Key: the
     session one, and that the other believes whatever id it is sent.
   - `sound-plan`: two sound plans that differ harmlessly (a middleware against a check inside each
-    handler; keeping the email or not; one admin role column against an admins table). Key: both.
+    handler; keeping the email or not; one admin role column against an admins table). Whenever
+    the difference is keeping the email or not, the setup gives the app a use for email (reminders,
+    or a contact line on a record), so the version keeping it isn't asking for data the app doesn't
+    use, which this topic marks down elsewhere. Key: both.
     No reason is required: full credit for "both" with no reason at all, or with any reason that
     doesn't call either broken; none for rejecting one.
   - `confirm-401`: two ways to confirm someone not signed in is turned away: one looks at the page
@@ -684,7 +692,10 @@ with the learner.
   no reason is full credit. How hard: Medium, the difference between A and B sits in a plain-words line; Hard,
   it sits in one code or route line in otherwise identical blocks, or the unsound version carries the
   agent's reassuring comment. A scenario carries all eight cases, one question each, at least two at
-  Hard. No question gives away another's answer.
+  Hard. No question gives away another's answer, with one accepted exception: the
+  `missing-action` and `missing-signed-out` pairs share the scenario, and the complete tables in
+  whichever comes first may show what the later one's incomplete table leaves out. That is
+  accepted because each pair shows its own difference beside its complete table anyway.
 - **worked example:** shown only as help when asked for, which records the attempt as helped: the
   tutor works a different pair aloud, finding the one line where A and B differ and asking who could
   exploit it. Same citations as in `a-critique-permissions-plan`. First level of help: "where exactly
