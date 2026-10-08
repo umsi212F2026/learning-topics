@@ -673,10 +673,7 @@ with the learner.
     (`req.session.userId`), the other from the request (`req.body.userId`, or a header). Key: the
     session one, and that the other believes whatever id it is sent.
   - `sound-plan`: two sound plans that differ harmlessly (a middleware against a check inside each
-    handler; keeping the email or not; one admin role column against an admins table). Whenever
-    the difference is keeping the email or not, the setup gives the app a use for email (reminders,
-    or a contact line on a record), so the version keeping it isn't asking for data the app doesn't
-    use, which this topic marks down elsewhere. Key: both.
+    handler; one admin role column against an admins table). Key: both.
     No reason is required: full credit for "both" with no reason at all, or with any reason that
     doesn't call either broken; none for rejecting one.
   - `confirm-401`: two ways to confirm someone not signed in is turned away: one looks at the page
