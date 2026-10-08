@@ -7,10 +7,6 @@ is on Pagecove, a static host, at `https://pantry.pagecove.app`, and its Express
 Rivetbox, a server host, at `https://pantry-api.rivetbox.com`. On a laptop, the backend runs at
 `http://localhost:3001`.
 
-### q1
-
-What is the difference between Pantry's redirect URL and Pantry's own URL?
-
 ### q2
 
 A student says:
@@ -31,3 +27,7 @@ need to do is set it to `https://pantry-api.rivetbox.com/auth/github/callback` i
 settings."
 
 What is wrong with that?
+
+### q1
+
+What is the difference between Pantry's redirect URL and Pantry's own URL?

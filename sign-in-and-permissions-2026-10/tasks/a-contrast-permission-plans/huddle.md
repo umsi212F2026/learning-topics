@@ -1,5 +1,6 @@
 Huddle is your Problem Set 3 app: the trip board for a college hiking club. Members post the day
-trips they're leading, with a date and a meeting point, and other members sign up. Its React
+trips they're leading, with a date and a meeting point, and other members sign up. The day before
+a trip, Huddle emails each member signed up for it a reminder with the meeting point. Its React
 frontend is built to static files on Leafhost, at `https://huddle.leafhost.app`, and its Express
 backend runs on Dockyard, at `https://huddle-api.dockyard.run`, with a Postgres database. Sign-in
 through Google already works.

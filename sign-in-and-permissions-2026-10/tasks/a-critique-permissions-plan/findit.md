@@ -1,6 +1,6 @@
 Findit is your Problem Set 3 app: a lost-and-found board for a residence hall, where residents post
-things they've found, and an item is marked claimed once its owner picks it up. Its React frontend
-is built to static files on Slatebay, at `https://findit.slatebay.app`, and its Express backend runs
+things they've found. Once the person who lost an item picks it up, the resident who posted it, or
+one of the hall's front desk staff, marks it claimed. Its React frontend is built to static files on Slatebay, at `https://findit.slatebay.app`, and its Express backend runs
 on Hearthbox, at `https://findit-api.hearthbox.com`, with a Postgres database. Sign-in through
 Google already works: once someone signs in, the backend keeps them signed in with a session
 cookie. Now you and your coding agent are deciding who may do what.

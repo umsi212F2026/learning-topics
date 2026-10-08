@@ -1,6 +1,7 @@
 Ridepool is your Problem Set 3 app: a carpool board for a university hiking club, where members who
-are driving out to a hike offer the seats in their car, and other members join a ride. Riders see
-the driver's email so they can arrange the pickup. Its React frontend is built to static files on
+are driving out to a hike offer the seats in their car, and other members join a ride. The ride
+list shows no one's email: a member sees a driver's email only once they have joined that driver's
+ride, so they can arrange the pickup. Its React frontend is built to static files on
 Glasspost, at `https://ridepool.glasspost.app`, and its Express backend runs on Burrowhost, at
 `https://ridepool-api.burrowhost.com`, with a Postgres database. Sign-in through Google already
 works: once someone signs in, the backend keeps them signed in with a session cookie. Now you and
@@ -8,11 +9,12 @@ your coding agent are deciding who may do what.
 
 The backend's routes:
 
-- `GET /api/rides`: lists every upcoming ride.
+- `GET /api/rides`: lists every upcoming ride, with no emails.
 - `POST /api/rides`: offers a ride; whoever offers it is its driver.
 - `PATCH /api/rides/:id`: edits a ride's departure time, meeting spot or number of seats.
 - `DELETE /api/rides/:id`: cancels a ride.
-- `POST /api/rides/:id/riders`: adds the signed-in user to a ride's riders.
+- `POST /api/rides/:id/riders`: adds the signed-in user to a ride's riders, and sends back the
+  driver's email.
 - `GET /api/me`: returns the signed-in user's id, Google name and picture.
 
 The app's levels: a **signed-in member**; the **driver** of a ride, the member who offered it; and

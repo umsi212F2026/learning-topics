@@ -6,10 +6,6 @@ Pantry is a recipe box for a campus cooking club, with sign-in through GitHub. O
 post recipes and edit or delete their own. Priya, Sam and Lee run the club and need to delete any
 recipe.
 
-### q1
-
-In Pantry, what is the difference between a role and an account?
-
 ### q2
 
 A student says:
@@ -26,3 +22,7 @@ A student says:
 "We don't need to store anyone's role. GitHub tells us each user's role when they sign in."
 
 What is wrong with that?
+
+### q1
+
+In Pantry, what is the difference between a role and an account?

@@ -1,7 +1,8 @@
 Pantry is your Problem Set 3 app: a recipe box where members of a campus cooking club post recipes
 and save the ones they want to try. Its React frontend is built to static files on Pagecove, a
 static host, at `https://pantry.pagecove.app`. Its Express backend runs on Rivetbox, a server host,
-at `https://pantry-api.rivetbox.com`, with a Postgres database. On your laptop the frontend runs on
+at `https://pantry-api.rivetbox.com`, with a Postgres database. Its code is in a public repository
+on GitHub. On your laptop the frontend runs on
 `http://localhost:5173` and the backend on `http://localhost:3001`.
 
 Right now the whole app sits behind one shared basic-auth password. You and your coding agent are

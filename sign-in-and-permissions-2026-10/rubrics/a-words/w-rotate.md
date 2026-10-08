@@ -9,20 +9,6 @@ the old one at the provider. The confusable is deleting the secret from the repo
 leaves the leaked value working for anyone who already copied it, and leaves it in the history
 besides.
 
-### q1
-
-- **goal:** `w-rotate`
-- **move:** DISTINGUISH
-- **answer:** Deleting it from the repository only stops it being in the latest files; it is still
-  in the history, and anyone who copied it can still use it, because GitHub still accepts it.
-  Rotating means getting a new secret from GitHub, putting it in Rivetbox's settings where the old
-  one was, and deleting the old one at GitHub, so the leaked value stops working.
-- **credit:** full for naming that rotating makes the leaked secret stop working by replacing it,
-  while deleting it from the repository leaves it working. Half for "rotating means getting a new
-  one" without saying that the old one must stop working, or for "deleting it doesn't help" without
-  saying what rotating does. None for an incidental difference alone, such as that one is done in
-  git and the other on a website.
-
 ### q2
 
 - **goal:** `w-rotate`
@@ -46,3 +32,17 @@ besides.
   and that the backend, still using the deleted one, will now fail to sign anyone in. Half for "put
   the new one in Rivetbox" without saying what goes wrong meanwhile, or the reverse. None for a
   different quibble alone, such as that the new secret should be stronger.
+
+### q1
+
+- **goal:** `w-rotate`
+- **move:** DISTINGUISH
+- **answer:** Deleting it from the repository only stops it being in the latest files; it is still
+  in the history, and anyone who copied it can still use it, because GitHub still accepts it.
+  Rotating means getting a new secret from GitHub, putting it in Rivetbox's settings where the old
+  one was, and deleting the old one at GitHub, so the leaked value stops working.
+- **credit:** full for naming that rotating makes the leaked secret stop working by replacing it,
+  while deleting it from the repository leaves it working. Half for "rotating means getting a new
+  one" without saying that the old one must stop working, or for "deleting it doesn't help" without
+  saying what rotating does. None for an incidental difference alone, such as that one is done in
+  git and the other on a website.

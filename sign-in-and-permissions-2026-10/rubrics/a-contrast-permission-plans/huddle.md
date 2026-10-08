@@ -75,13 +75,15 @@ signed-out column); each pair already shows its own difference, so this is accep
 
 - **goal:** `c-review-permissions`
 - **cases:** sound-plan
-- **answer:** Both. They differ only in whether the `users` table keeps the member's email; each
-  keeps `google_sub` with no password and checks every rule on the server against the session's
-  user.
+- **answer:** Both. They differ only in whether the `users` table keeps the member's email, which
+  Huddle uses for trip reminders; each keeps `google_sub` with no password and checks every rule on
+  the server against the session's user.
 - **credit:** full for "both", with no reason at all or with any reason that doesn't call either
   broken. None for rejecting one.
-- **tutor note:** a learner who says B is better because it keeps less personal data, while agreeing
-  to both, has it; one who rejects A over the email has called a sound plan broken.
+- **tutor note:** a learner who prefers one (A for the reminders, B for keeping less personal
+  data) while agreeing to both has it. One who rejects A over the email has called a sound plan
+  broken; ask what the setup says Huddle emails. One who rejects B because the reminders need the
+  email is judging a feature, not who may do what; ask what B lets anyone do that the rules forbid.
 
 ### q7
 

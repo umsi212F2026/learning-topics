@@ -79,9 +79,9 @@ about who does it (an unattributed step reads as the agent's) is not a mistake a
   address); the exact scope string is not required. Half for catching it with no replacement, or
   with a replacement that still asks for more than the app uses (such as adding `repo`), or one
   that drops the email Nook sends confirmations to (such as no scope, or `read:user` alone).
-- **tutor note:** "covers each user's profile" is true, and leaves out that it covers writing to
-  it. If they agree because the app needs the email, ask whether reading an email address needs
-  permission to change a profile. If they offer `read:user` alone, ask where Nook would then send
+- **tutor note:** the step says plainly that `user` can write to the profile, then frames it by
+  what the app reads. If they agree because the app needs the email, ask whether reading an email
+  address needs permission to change a profile. If they offer `read:user` alone, ask where Nook would then send
   the confirmation.
 
 ### force-push

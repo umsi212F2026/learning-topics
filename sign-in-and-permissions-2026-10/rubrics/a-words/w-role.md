@@ -9,18 +9,6 @@ confusable is an account, which is one user's own identity in the app, here keye
 id; an account has a role, but is not one. "Permission level" is another name for a role, not a
 confusable.
 
-### q1
-
-- **goal:** `w-role`
-- **move:** DISTINGUISH
-- **answer:** An account is one person's identity in Pantry, such as Priya's, tied to her GitHub id.
-  A role is a level of what a group of users may do, such as member or organizer; many accounts
-  share one role, and each account has a role.
-- **credit:** full for naming that an account is one user and a role is a level of what a group of
-  users may do, shared across accounts. Half for one side right with the other vague, such as "a
-  role is admin or member" with nothing on what an account is. None for an incidental difference
-  alone, such as that accounts have pictures and roles don't.
-
 ### q2
 
 - **goal:** `w-role`
@@ -46,3 +34,15 @@ confusable.
   since the provider only says who the user is. Half for "Pantry has to store it" without saying why
   GitHub can't supply it. None for a different quibble alone, such as that roles should be
   hard-coded.
+
+### q1
+
+- **goal:** `w-role`
+- **move:** DISTINGUISH
+- **answer:** An account is one person's identity in Pantry, such as Priya's, tied to her GitHub id.
+  A role is a level of what a group of users may do, such as member or organizer; many accounts
+  share one role, and each account has a role.
+- **credit:** full for naming that an account is one user and a role is a level of what a group of
+  users may do, shared across accounts. Half for one side right with the other vague, such as "a
+  role is admin or member" with nothing on what an account is. None for an incidental difference
+  alone, such as that accounts have pictures and roles don't.

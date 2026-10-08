@@ -6,10 +6,6 @@ Pantry is a recipe box with sign-in through GitHub. Its Express backend runs on 
 host, and reads Pantry's GitHub client secret from Rivetbox's settings. A student has found that
 the client secret also went out in a commit pushed to Pantry's public repository.
 
-### q1
-
-What is the difference between rotating the client secret and deleting it from the repository?
-
 ### q2
 
 The student says:
@@ -27,3 +23,7 @@ A second student, with the same leak, says:
 the old value in its settings, but that doesn't matter, because rotating happens at GitHub."
 
 What is wrong with that?
+
+### q1
+
+What is the difference between rotating the client secret and deleting it from the repository?

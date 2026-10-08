@@ -9,6 +9,20 @@ back who you are, and only what you agreed to share, and never sees your passwor
 confusables are basic auth, where the app itself takes and checks a username and password it
 holds, and simply giving the app your Google password, which hands it your whole account.
 
+### q3
+
+- **goal:** `w-oauth`
+- **move:** CATCH
+- **answer:** With OAuth the app doesn't hold users' passwords at all. Users sign in at the
+  provider, which tells the app who they are, and the app keeps the provider's id for each user,
+  not a password, hashed or otherwise.
+- **credit:** full for naming that under OAuth there is no password for the app to store, because
+  the provider checks it, and the app keeps the provider's id instead. Half for "OAuth doesn't use
+  passwords" without saying who checks the password or what the app keeps. None for a different
+  quibble alone, such as which hashing method to use.
+- **tutor note:** a learner who says "the app stores a token instead" is close; ask what the app
+  needs to remember about a user to recognize them next time.
+
 ### q1
 
 - **goal:** `w-oauth`
@@ -35,17 +49,3 @@ holds, and simply giving the app your Google password, which hands it your whole
   Half for "the form is a phishing risk" or "the second one is unsafe" without saying what the app
   gets in each case. None for an incidental difference alone, such as which looks more
   professional or which takes fewer clicks.
-
-### q3
-
-- **goal:** `w-oauth`
-- **move:** CATCH
-- **answer:** With OAuth the app doesn't hold users' passwords at all. Users sign in at the
-  provider, which tells the app who they are, and the app keeps the provider's id for each user,
-  not a password, hashed or otherwise.
-- **credit:** full for naming that under OAuth there is no password for the app to store, because
-  the provider checks it, and the app keeps the provider's id instead. Half for "OAuth doesn't use
-  passwords" without saying who checks the password or what the app keeps. None for a different
-  quibble alone, such as which hashing method to use.
-- **tutor note:** a learner who says "the app stores a token instead" is close; ask what the app
-  needs to remember about a user to recognize them next time.

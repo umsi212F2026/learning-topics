@@ -9,6 +9,20 @@ never in the frontend or the repository. The confusables are the client ID, whic
 to the provider and is public, so it may sit in the frontend; and a user's password, which belongs
 to one user, proves who that person is to the provider, and is never seen by your app.
 
+### q3
+
+- **goal:** `w-client-secret`
+- **move:** CATCH
+- **answer:** There is one client secret for the whole app, issued when the app is registered with
+  GitHub, not one per user. It proves requests come from the app's server, so it lives in the
+  backend host's settings, not in a table of users.
+- **credit:** full for naming that the client secret belongs to the app, one for all users, and
+  proves the app's server rather than anything about a user. Half for "there's only one client
+  secret" without saying whose it is or what it proves. None for a different quibble alone, such
+  as that the column should be encrypted.
+- **tutor note:** a learner who says "they mean the token" may be right about what the student
+  meant to store; ask what the client secret is, then, and where it does belong.
+
 ### q1
 
 - **goal:** `w-client-secret`
@@ -34,17 +48,3 @@ to one user, proves who that person is to the provider, and is never seen by you
   for "one is the app's, one is the user's" without saying what each proves. None for an
   incidental difference alone, such as that a password is chosen by a person and a secret is
   generated.
-
-### q3
-
-- **goal:** `w-client-secret`
-- **move:** CATCH
-- **answer:** There is one client secret for the whole app, issued when the app is registered with
-  GitHub, not one per user. It proves requests come from the app's server, so it lives in the
-  backend host's settings, not in a table of users.
-- **credit:** full for naming that the client secret belongs to the app, one for all users, and
-  proves the app's server rather than anything about a user. Half for "there's only one client
-  secret" without saying whose it is or what it proves. None for a different quibble alone, such
-  as that the column should be encrypted.
-- **tutor note:** a learner who says "they mean the token" may be right about what the student
-  meant to store; ask what the client secret is, then, and where it does belong.

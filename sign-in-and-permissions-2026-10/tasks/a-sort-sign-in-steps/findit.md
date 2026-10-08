@@ -27,8 +27,8 @@ Which pile, and why? If you'd change it, say to what and who does it.
 
 ### card-2
 
-When someone signs in, ask GitHub for the `user` scope, so the backend can read their name,
-picture and email.
+When someone signs in, ask GitHub for the `user` scope, which GitHub describes as "read and write
+access to profile info", so the backend can read their name, picture and email.
 
 Which pile, and why? If you'd change it, say to what and who does it.
 

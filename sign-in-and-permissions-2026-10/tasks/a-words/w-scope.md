@@ -2,11 +2,6 @@
 
 Answer in two or three sentences, in your own words, with nothing open in front of you.
 
-### q1
-
-An app lets people sign in through GitHub, and inside the app some users are members and some are
-admins. In that app, what is the difference between a scope and a role?
-
 ### q2
 
 Pantry, a recipe box for a cooking club, signs members in through GitHub. Club organizers need to
@@ -26,3 +21,8 @@ says:
 doesn't change anything our app can do."
 
 What is wrong with that?
+
+### q1
+
+An app lets people sign in through GitHub, and inside the app some users are members and some are
+admins. In that app, what is the difference between a scope and a role?

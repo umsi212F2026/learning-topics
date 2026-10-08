@@ -76,14 +76,15 @@ sound costs nothing unless the change they ask for would break the plan.
 - **answer:** Yes, as it stands. Every route that changes data checks sign-in on the server; edit
   and cancel check driver-or-trip-leader against the session's user; offering and joining take the
   user from the session; React hides the buttons as well; and `users` keeps Google's id and the
-  email the riders need, not a password.
+  email a ride's riders get once they join, not a password.
 - **credit:** full when they agree and ask for no change that would break it (moving a check into
   React only, taking the user id from the request, adding a password column). A harmless
   suggestion (an index on `google_id`, a test for each rule, checking `role` in a middleware of its
   own) costs nothing. None otherwise.
 - **tutor note:** a learner who refuses because `GET /api/rides` has no `requireAuth` has misread
-  the table, which lets someone not signed in see the rides; ask them to find that row. One who
-  refuses because the email is stored should be asked what the setup says riders see.
+  the table, which lets someone not signed in see the rides; ask them to find that row. If they
+  worry that this exposes drivers' emails, ask what the setup says the ride list shows. One who
+  refuses because the email is stored should be asked who the setup says sees a driver's email.
 
 ### confirm-cancel
 

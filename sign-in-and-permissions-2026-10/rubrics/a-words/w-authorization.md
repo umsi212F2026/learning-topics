@@ -9,23 +9,6 @@ this topic is what signing in through Google or GitHub does. Authentication come
 authorization uses its answer, which is why the two get run together. "Permissions" and "access
 control" mean the same as authorization here and are not confusables.
 
-### q1
-
-- **goal:** `w-authorization`
-- **move:** DISTINGUISH
-- **answer:** Authentication is finding out who someone is, as signing in does. Authorization is
-  deciding what that person may do, such as whether they may edit or delete a particular thing.
-  Authentication answers "who are you?" and authorization answers "are you allowed to do this?",
-  using the answer to the first.
-- **credit:** full for the difference that matters: authentication establishes who someone is,
-  and authorization decides what they may do. Half for one side right with the other missing or
-  vague, such as "authorization is about permissions" with nothing on what authentication is.
-  None for an incidental difference alone, such as which comes first, or that one uses a password,
-  or the spelling.
-- **tutor note:** a learner who says the two are the same thing because both happen "at sign-in"
-  has run them together; ask whether two people who have both signed in may always do the same
-  things.
-
 ### q2
 
 - **goal:** `w-authorization`
@@ -42,3 +25,20 @@ control" mean the same as authorization here and are not confusables.
 - **tutor note:** a learner who says the fix is to hide the Edit button from non-authors has named
   the right decision but put it where it isn't enforced; that still earns full here, since the
   word is used correctly, but it is worth a question about where the check runs.
+
+### q1
+
+- **goal:** `w-authorization`
+- **move:** DISTINGUISH
+- **answer:** Authentication is finding out who someone is, as signing in does. Authorization is
+  deciding what that person may do, such as whether they may edit or delete a particular thing.
+  Authentication answers "who are you?" and authorization answers "are you allowed to do this?",
+  using the answer to the first.
+- **credit:** full for the difference that matters: authentication establishes who someone is,
+  and authorization decides what they may do. Half for one side right with the other missing or
+  vague, such as "authorization is about permissions" with nothing on what authentication is.
+  None for an incidental difference alone, such as which comes first, or that one uses a password,
+  or the spelling.
+- **tutor note:** a learner who says the two are the same thing because both happen "at sign-in"
+  has run them together; ask whether two people who have both signed in may always do the same
+  things.

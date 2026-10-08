@@ -9,20 +9,6 @@ provider. The confusable is a role, a named level in your own app of what a grou
 there, such as member or admin; it limits users, in your app, and the provider knows nothing of
 it.
 
-### q1
-
-- **goal:** `w-scope`
-- **move:** DISTINGUISH
-- **answer:** A scope is what the app asks GitHub to let it see or do with the user's GitHub
-  account, such as reading their name. A role is a level inside the app itself, such as member or
-  admin, saying what a group of users may do in the app. A scope limits the app at GitHub; a role
-  limits users in the app.
-- **credit:** full for naming that a scope is about what the app may see or do with the user's
-  account at the provider, and a role is about what users may do in the app. Half for one side
-  right with the other vague, such as "a role is member or admin" with nothing on what a scope
-  covers. None for an incidental difference alone, such as that scopes are set in code and roles in
-  the database.
-
 ### q2
 
 - **goal:** `w-scope`
@@ -47,3 +33,17 @@ it.
   account, so `repo` gives Pantry access to repositories it doesn't need. Half for "ask for less"
   or "users won't approve it" without saying that the scope changes what the app can do. None for
   a different quibble alone, such as the exact name of a smaller scope.
+
+### q1
+
+- **goal:** `w-scope`
+- **move:** DISTINGUISH
+- **answer:** A scope is what the app asks GitHub to let it see or do with the user's GitHub
+  account, such as reading their name. A role is a level inside the app itself, such as member or
+  admin, saying what a group of users may do in the app. A scope limits the app at GitHub; a role
+  limits users in the app.
+- **credit:** full for naming that a scope is about what the app may see or do with the user's
+  account at the provider, and a role is about what users may do in the app. Half for one side
+  right with the other vague, such as "a role is member or admin" with nothing on what a scope
+  covers. None for an incidental difference alone, such as that scopes are set in code and roles in
+  the database.

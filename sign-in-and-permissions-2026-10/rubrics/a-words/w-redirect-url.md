@@ -12,19 +12,6 @@ localhost one, not swapped for it. The confusable is the app's own URL, the addr
 in order to use the app. "Callback URL" and "redirect URI" are other names for the same thing, not
 confusables.
 
-### q1
-
-- **goal:** `w-redirect-url`
-- **move:** DISTINGUISH
-- **answer:** Pantry's own URL, `https://pantry.pagecove.app`, is where people go to use the app.
-  The redirect URL is the particular address in the app, such as the backend's
-  `/auth/github/callback`, that GitHub sends the user back to after they sign in, and it has to be
-  registered with GitHub in advance.
-- **credit:** full for naming that the redirect URL is where the provider sends the user back after
-  sign-in, while the app's URL is where users go to use it. Half for "the redirect URL is the
-  callback" or "it's on the backend" without saying who sends the user there or when. None for an
-  incidental difference alone, such as that one is longer or ends in `/callback`.
-
 ### q2
 
 - **goal:** `w-redirect-url`
@@ -48,9 +35,23 @@ confusables.
   redirect URL registered with it. The live one has to be added at GitHub too, beside the
   localhost one, or GitHub will refuse to send users back to the live app.
 - **credit:** full for naming that the live redirect URL must also be registered with the provider,
-  since the provider sends users back only to a registered one. Half for "GitHub needs to know
-  about it" without saying that the provider refuses an unregistered one. None for a different
-  quibble alone, such as the spelling of the path or that the setting should be an environment
-  variable.
-- **tutor note:** a learner who says to replace the localhost one at GitHub has the word right and
-  earns full; ask what happens next time they work on their laptop, since GitHub can hold both.
+  beside the localhost one, since the provider sends users back only to a registered one. Half for
+  saying to replace the localhost one with the live one at the provider, which breaks sign-in on
+  localhost. Half for "GitHub needs to know about it" without saying that the provider refuses an
+  unregistered one. None for a different quibble alone, such as the spelling of the path or that
+  the setting should be an environment variable.
+- **tutor note:** a learner who says to replace the localhost one at GitHub earns half; ask what
+  happens next time they work on their laptop, since GitHub can hold both.
+
+### q1
+
+- **goal:** `w-redirect-url`
+- **move:** DISTINGUISH
+- **answer:** Pantry's own URL, `https://pantry.pagecove.app`, is where people go to use the app.
+  The redirect URL is the particular address in the app, such as the backend's
+  `/auth/github/callback`, that GitHub sends the user back to after they sign in, and it has to be
+  registered with GitHub in advance.
+- **credit:** full for naming that the redirect URL is where the provider sends the user back after
+  sign-in, while the app's URL is where users go to use it. Half for "the redirect URL is the
+  callback" or "it's on the backend" without saying who sends the user there or when. None for an
+  incidental difference alone, such as that one is longer or ends in `/callback`.

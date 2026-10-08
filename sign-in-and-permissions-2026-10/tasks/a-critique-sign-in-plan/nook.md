@@ -70,7 +70,8 @@ agent?
 
 1. In `backend/auth.js`, set up the GitHub strategy with `clientID`, `clientSecret` and
    `callbackURL` read from `process.env`.
-2. I'll request the `user` scope, which covers each user's profile and their email address.
+2. I'll request the `user` scope, which GitHub describes as "read and write access to profile
+   info", so it covers each user's profile and their email address.
 3. In `verify`, take the user's GitHub id, name, avatar URL and primary email from what GitHub
    returns.
 4. In `backend/mail.js`, send the booking confirmation to that email address when a room is

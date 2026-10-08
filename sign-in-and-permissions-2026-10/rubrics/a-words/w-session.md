@@ -9,18 +9,6 @@ recognized without signing in again. The confusable is signing in, the one-time 
 you are, which starts a session but isn't one. A session belongs to one app's server: being signed
 in at GitHub is GitHub's own session, not the app's.
 
-### q1
-
-- **goal:** `w-session`
-- **move:** DISTINGUISH
-- **answer:** Signing in is the one-time act of proving who you are, here through GitHub. The
-  session is what comes after: Pantry's server remembering that this browser is signed in, so later
-  requests are recognized without signing in again, until sign-out or expiry.
-- **credit:** full for naming that signing in is a single event, and a session is the server
-  remembering the result across later requests. Half for "the session is how long you stay signed
-  in" without saying it is the server doing the remembering. None for an incidental difference
-  alone, such as that signing in has a button and a session has a cookie.
-
 ### q2
 
 - **goal:** `w-session`
@@ -48,3 +36,15 @@ in at GitHub is GitHub's own session, not the app's.
   should also sign out of GitHub.
 - **tutor note:** a learner who adds that signing in to Pantry again will be quick, since GitHub
   still remembers them, is right; that is GitHub's session at work, not Pantry's.
+
+### q1
+
+- **goal:** `w-session`
+- **move:** DISTINGUISH
+- **answer:** Signing in is the one-time act of proving who you are, here through GitHub. The
+  session is what comes after: Pantry's server remembering that this browser is signed in, so later
+  requests are recognized without signing in again, until sign-out or expiry.
+- **credit:** full for naming that signing in is a single event, and a session is the server
+  remembering the result across later requests. Half for "the session is how long you stay signed
+  in" without saying it is the server doing the remembering. None for an incidental difference
+  alone, such as that signing in has a button and a session has a cookie.
