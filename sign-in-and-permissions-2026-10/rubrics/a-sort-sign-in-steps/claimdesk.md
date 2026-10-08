@@ -1,6 +1,6 @@
-Findit signs in through GitHub and uses the user's GitHub name, picture and email, so email is a
-scope it may ask for. The frontend is on Brightdock (`https://findit.brightdock.app`), the backend
-on Railspur (`https://findit-api.railspur.com`), locally ports 5173 and 3001. The deck is seven
+Claimdesk signs in through GitHub and uses the user's GitHub name, picture and email, so email is a
+scope it may ask for. The frontend is on Brightdock (`https://claimdesk.brightdock.app`), the backend
+on Railspur (`https://claimdesk-api.railspur.com`), locally ports 5173 and 3001. The deck is seven
 cards, one per case plus a second `secret-placement` card. Piles: yours, card 5; your agent's,
 card 7; change it first, cards 1, 2, 3, 4 and 6. Hard cards: 1 (a plausible justification), 3 (a
 plausible justification), 5 (config lines, with a client ID value in a `VITE_` variable, which
@@ -29,13 +29,13 @@ change being "I do this myself" is the same answer as "yours": credit it as the 
 - **goal:** `c-set-up-sign-in`
 - **cases:** too-much-scope
 - **answer:** Change it first. The `user` scope lets the app change the user's GitHub profile as
-  well as read it, and Findit only reads their name, picture and email. Ask for `read:user` and
+  well as read it, and Claimdesk only reads their name, picture and email. Ask for `read:user` and
   `user:email` instead; your agent can make the change.
-- **credit:** full for catching that `user` asks for more than Findit uses (it can change their
+- **credit:** full for catching that `user` asks for more than Claimdesk uses (it can change their
   profile, not just read it) and naming, in their own words, a smaller request (read-only access to
   their profile and email); the exact scope strings are not required. Half for catching the excess
   with no replacement, with a replacement that still asks for more than the app uses (such as
-  `repo`), or with one that asks for less than the app uses (such as dropping email, which Findit
+  `repo`), or with one that asks for less than the app uses (such as dropping email, which Claimdesk
   uses).
 - **tutor note:** a learner who drops email entirely has cut something the app uses, which is
   half; ask what the
@@ -46,14 +46,14 @@ change being "I do this myself" is the same answer as "yours": credit it as the 
 - **goal:** `c-set-up-sign-in`
 - **cases:** two-redirects
 - **answer:** Change it first. GitHub also needs the live app's callback URL,
-  `https://findit-api.railspur.com/auth/github/callback`, added as a second callback URL on the one
+  `https://claimdesk-api.railspur.com/auth/github/callback`, added as a second callback URL on the one
   OAuth app or through a second OAuth app. Yours to do, at GitHub.
 - **credit:** full for naming both the localhost URL and the live backend's URL with the same path,
   and that the learner gives GitHub both (a second URL on the app, or a second app). Half for
   naming the missing live URL with no way to give it to GitHub, or for "yours" with only the one
   URL.
 - **tutor note:** the agent's "sends everyone back" is the trap; ask where GitHub would send
-  someone signing in on the live app. A learner who names `findit.brightdock.app` has the right
+  someone signing in on the live app. A learner who names `claimdesk.brightdock.app` has the right
   idea but the frontend's host.
 
 ### card-4

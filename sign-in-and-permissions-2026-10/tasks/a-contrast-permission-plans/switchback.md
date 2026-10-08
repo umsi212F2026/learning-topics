@@ -1,7 +1,7 @@
-Huddle is your Problem Set 3 app: the trip board for a college hiking club. Members post the day
+Switchback is your Problem Set 3 app: the trip board for a college hiking club. Members post the day
 trips they're leading, with a date and a meeting point, and other members sign up. Its React
-frontend is built to static files on Leafhost, at `https://huddle.leafhost.app`, and its Express
-backend runs on Dockyard, at `https://huddle-api.dockyard.run`, with a Postgres database. Sign-in
+frontend is built to static files on Leafhost, at `https://switchback.leafhost.app`, and its Express
+backend runs on Dockyard, at `https://switchback-api.dockyard.run`, with a Postgres database. Sign-in
 through Google already works.
 
 The backend's routes:
@@ -18,7 +18,7 @@ The app has three levels: a signed-in member, who may see the trips, post one an
 leader of a trip, the member who posted it, who may change or cancel it; and the club's officers,
 who may change or cancel any trip.
 
-You and your coding agent are giving Huddle its rules for who may do what. Each question below
+You and your coding agent are giving Switchback its rules for who may do what. Each question below
 shows two versions, A and B, of one piece of that work. The questions are independent: treat each
 one as if it were the only one you had seen. For each, answer in two or three sentences: would you
 agree to A, B, or both? What gives it away?
@@ -49,7 +49,7 @@ Your agent offers two versions of the who-may-do-what table for `DEPLOY.md`.
 | Change a trip | no | yes | yes |
 | Cancel a trip | no | yes | yes |
 
-> This covers everyone who uses Huddle.
+> This covers everyone who uses Switchback.
 
 Would you agree to A, B, or both? What gives it away?
 
@@ -209,12 +209,12 @@ isn't signed in can't see the trips and their meeting points.
 
 **A**
 
-> Sign out, open `https://huddle.leafhost.app` in the browser, and check that it shows the sign-in
+> Sign out, open `https://switchback.leafhost.app` in the browser, and check that it shows the sign-in
 > button instead of the list of trips.
 
 **B**
 
-> From a terminal, with no session cookie, send `GET https://huddle-api.dockyard.run/api/trips`.
+> From a terminal, with no session cookie, send `GET https://switchback-api.dockyard.run/api/trips`.
 
 Would you agree to A, B, or both? What gives it away, and what should the request you chose get
 back?

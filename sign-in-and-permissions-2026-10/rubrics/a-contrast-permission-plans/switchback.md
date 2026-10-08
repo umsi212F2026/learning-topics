@@ -1,4 +1,4 @@
-Huddle is a hiking club's trip board, and its trips are for members only. Its rules: any signed-in
+Switchback is a hiking club's trip board, and its trips are for members only. Its rules: any signed-in
 member may see the trips, post one, sign up and leave; only a trip's leader or an officer may change
 or cancel it; someone not signed in may do nothing at all, not even see the trips. Every route,
 `GET /api/trips` included, should check sign-in. The setup names the three signed-in levels only,
