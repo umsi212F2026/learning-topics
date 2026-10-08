@@ -183,15 +183,15 @@ Would you agree to A, B, or both? What gives it away?
 ### q7
 
 Your agent reports that the rules are in place. It offers two ways to confirm that someone who
-isn't signed in can't remove an item from the board.
+isn't signed in can't post a found item.
 
 **A**
 
-> From a terminal, with no session cookie, send `DELETE /api/items/12`.
+> From a terminal, with no session cookie, send `POST /api/items` with a short description.
 
 **B**
 
-> Sign out, open the board in the browser, and check that no item shows a Delete button.
+> Sign out, open the board in the browser, and check that the Post an Item button is gone.
 
 Would you agree to A, B, or both? What gives it away, and what should the request you chose get
 back?

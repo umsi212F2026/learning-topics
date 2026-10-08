@@ -86,8 +86,8 @@ it is not a flaw any question turns on.
 
 - **goal:** `c-review-permissions`
 - **cases:** confirm-401
-- **answer:** A, and it should get 401. B only shows what the page displays; the request is what
-  the server actually decides on.
+- **answer:** A, and it should get 401. B only shows what the page displays; the `POST` with no
+  session cookie is what the server actually decides on.
 - **credit:** full for A and 401. Half for A with no status code or a wrong one. None for B or
   both.
 - **tutor note:** 403 here is the common slip; ask whether the server knows who is asking at all.
