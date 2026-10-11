@@ -45,7 +45,8 @@ Which pile, and why? If you'd change it, say to what and who does it.
 ### card-4
 
 Put the client ID and the client secret in `frontend/.env`, as `VITE_GOOGLE_CLIENT_ID` and
-`VITE_GOOGLE_CLIENT_SECRET`, so the Sign in button has both.
+`VITE_GOOGLE_CLIENT_SECRET`, so the React code behind the Sign in button can send both to Google
+when someone clicks it.
 
 Which pile, and why? If you'd change it, say to what and who does it.
 
