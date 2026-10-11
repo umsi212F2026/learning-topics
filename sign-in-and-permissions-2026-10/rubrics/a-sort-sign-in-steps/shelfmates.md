@@ -16,9 +16,9 @@ change being "I do this myself" is the same answer as "yours": credit it as the 
   client yourself, in Google's developer console, and that gives you a client ID and a client
   secret, which the later steps use.
 - **credit:** full for change it first, to the learner creating the OAuth client themselves
-  ("yours, not the agent's" is the same answer), and naming the client ID and the client secret as
-  what it gives; any reason, or none, counts for the pile. Half for the right pile with only one
-  of the two values or neither, or for both values in the wrong pile.
+  ("yours, not the agent's" is the same answer); any reason, or none, counts for the pile. Naming
+  the client ID and client secret is not required, since the question doesn't ask what it gives.
+  None for any other pile.
 - **tutor note:** don't require the console's button or menu names. A learner who would let the
   agent do it if it promised to forget the password is in the wrong pile.
 

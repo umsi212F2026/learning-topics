@@ -249,9 +249,9 @@ with the learner.
     offers to create the OAuth app in the learner's browser, where they are already signed in to
     the provider. Key: the learner registers the app with the provider themselves, in the
     provider's developer settings, and that gives them a client ID and a client secret. Full credit
-    needs both: that it is theirs to do, and the two values it gives them. Half credit for one. Any
-    reason, or none, counts for "theirs to do"; the learner need not say whether the agent could
-    manage it. Don't require any console's button names.
+    needs that it is theirs to do; the fixed question doesn't ask what registering gives, so the
+    two values are not required. Any reason, or none, counts for "theirs to do"; the learner need
+    not say whether the agent could manage it. Don't require any console's button names.
   - `two-redirects`: the plan tells the learner to register one redirect URL only, either the
     localhost one (`http://localhost:3001/auth/<provider>/callback`) or the live one, and names
     that single URL. Key: the provider needs a redirect URL for localhost and another for the live
@@ -412,8 +412,8 @@ with the learner.
 - **doesn't show:** each message carries at most one thing wrong. A reply on paper is not the
   learner's behaviour with a real agent; a pass doesn't show they would stop to read a message this
   carefully mid-task. As in `a-critique-sign-in-plan`, nothing is registered. The
-  `register-yourself` message asks what the registration yields, so it prompts the half of that
-  case a plan review leaves the learner to volunteer.
+  `register-yourself` message asks what the registration yields, which makes this the only
+  activity that checks the learner knows registering gives a client ID and a client secret.
 - **offer as:** the same six things as plan review, met the way they really arrive: one message from
   your agent partway through, and you write the reply. Shorter questions, and closer to the moment
   you'll actually face.
@@ -459,8 +459,8 @@ with the learner.
     as actor ("Your agent signs in to GitHub with your password and creates the OAuth app", or "...
     creates it in your browser, where you're already signed in"). Key: yours (for the agent
     version, change it first, to yours), and it gives a client ID and a client secret. Full credit
-    needs the right pile and the two values. Half credit for one. Any reason, or none, counts for
-    "yours".
+    needs the right pile; the fixed question doesn't ask what registering gives, so the two values
+    are not required. Any reason, or none, counts for "yours".
   - `two-redirects`: the card gives the provider one redirect URL, localhost or live
     ("Register `http://localhost:3001/auth/github/callback` as the redirect URL"). Key: change it
     first: register a redirect URL for localhost and another for the live app (the backend's live

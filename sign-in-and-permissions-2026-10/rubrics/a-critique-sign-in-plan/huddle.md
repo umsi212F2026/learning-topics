@@ -17,14 +17,13 @@ commits the learner to, not its tone. A flag on a step the excerpt left unclear 
 - **answer:** Not as it stands: I won't give the agent my Google password, however many screens the
   console has. I'll create the OAuth client in the Google Cloud console myself, and it gives me a
   client ID and a client secret for the later steps. The rest can stay.
-- **credit:** full for saying the registration is theirs to do (with any reason, or none) and
-  naming both the client ID and the client secret as what it gives them; half for one of the two.
-  Don't require any console's page or button names, and don't require a view on whether the agent
+- **credit:** full for saying the registration is theirs to do (with any reason, or none); none
+  otherwise. Naming the client ID and client secret is not required, since the question doesn't
+  ask what it gives. Don't require any console's page or button names, and don't require a view on whether the agent
   could manage it.
 - **tutor note:** the trap is the reason in step 2. An answer that refuses the password but has the
   agent drive the console in their browser instead hasn't said it is theirs to do; ask who is at the
-  keyboard in Google's console. If they name only "credentials" or "keys", ask what the two values
-  are called and whether they differ.
+  keyboard in Google's console.
 
 ### redirect
 

@@ -17,9 +17,9 @@ change being "I do this myself" is the same answer as "yours": credit it as the 
   settings, rather than letting your agent act in your signed-in browser; it gives you a client ID
   and a client secret, which the later steps use.
 - **credit:** full for change it first, to the learner creating the OAuth app themselves ("yours,
-  not the agent's" is the same answer), and naming the client ID and the client secret as what it
-  gives; any reason, or none, counts for the pile. Half for the right pile with only one of the
-  two values or neither, or for both values in the wrong pile.
+  not the agent's" is the same answer); any reason, or none, counts for the pile. Naming the
+  client ID and client secret is not required, since the question doesn't ask what it gives. None
+  for any other pile.
 - **tutor note:** don't require GitHub's button or menu names. A learner who accepts because it
   saves a trip has taken the justification at its word; ask whose account the agent would be
   acting in.

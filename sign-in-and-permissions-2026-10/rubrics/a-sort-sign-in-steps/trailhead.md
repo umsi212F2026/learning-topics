@@ -15,10 +15,9 @@ the change being "I do this myself" is the same answer as "yours": credit it as 
 - **cases:** register-yourself
 - **answer:** Yours. You register Trailhead with GitHub yourself, in your own developer settings,
   and that gives you a client ID and a client secret, which the later steps use.
-- **credit:** full for the right pile (yours, or change it first to "I do it myself") and naming
-  the client ID and the client secret as what it gives; any reason, or none, counts for the pile.
-  Half for the right pile with only one of the two values or neither, or for both values in the
-  wrong pile.
+- **credit:** full for the right pile (yours, or change it first to "I do it myself"); any reason,
+  or none, counts for the pile. Naming the client ID and client secret is not required, since the
+  question doesn't ask what it gives. None for any other pile.
 - **tutor note:** don't require GitHub's button or menu names.
 
 ### card-2

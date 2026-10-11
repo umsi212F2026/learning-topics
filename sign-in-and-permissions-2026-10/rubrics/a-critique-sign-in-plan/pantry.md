@@ -18,13 +18,12 @@ nothing.
 - **answer:** Not as it stands: I won't give the agent my GitHub password. I'll create the OAuth app
   in GitHub's developer settings myself, and it gives me a client ID and a client secret for the
   later steps. The rest can stay.
-- **credit:** full for saying the registration is theirs to do (with any reason, or none) and
-  naming both the client ID and the client secret as what it gives them; half for one of the two.
-  Don't require any console's page or button names, and don't require a view on whether the agent
+- **credit:** full for saying the registration is theirs to do (with any reason, or none); none
+  otherwise. Naming the client ID and client secret is not required, since the question doesn't
+  ask what it gives. Don't require any console's page or button names, and don't require a view on whether the agent
   could manage it.
 - **tutor note:** an answer that refuses the password but lets the agent do it in the browser
-  instead hasn't said it is theirs to do; ask who is at the keyboard at GitHub. If they name only
-  "credentials" or "a key", ask what the two values are called and whether they differ.
+  instead hasn't said it is theirs to do; ask who is at the keyboard at GitHub.
 
 ### callback
 
