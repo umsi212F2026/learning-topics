@@ -3,7 +3,7 @@ email. The frontend is on Pagewell (`https://trailhead.pagewell.app`), the backe
 (`https://trailhead-api.moorbolt.dev`), locally ports 5173 and 3001. The deck is seven cards, one
 per case plus a second `secret-placement` card. Piles: yours, cards 1 and 5; your agent's, card 6;
 change it first, cards 2, 3, 4 and 7. Hard cards: 2 (a code line with a plausible justification),
-3 (a plausible justification) and 5 (a sound card with the client ID in a `VITE_` variable, which
+3 and 4 (each a plausible justification) and 5 (a sound card with the client ID in a `VITE_` variable, which
 looks alarming). The rest are Medium.
 
 For a card with no actor named that belongs to the learner (cards 1 and 5), "change it first" with

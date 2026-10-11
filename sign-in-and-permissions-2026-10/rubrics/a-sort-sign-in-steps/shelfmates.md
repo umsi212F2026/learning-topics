@@ -3,7 +3,7 @@ is a scope it may ask for. The frontend is on Leafhost (`https://shelfmates.leaf
 backend on Corvane (`https://shelfmates-api.corvane.io`), locally ports 5173 and 3001. The deck is
 seven cards, one per case plus a second `secret-placement` card. Piles: yours, card 5; your
 agent's, card 7; change it first, cards 1, 2, 3, 4 and 6. Hard cards: 2 (a code line with a
-plausible justification) and 6 (a plausible justification). The rest are Medium.
+plausible justification), 3 and 6 (each a plausible justification). The rest are Medium.
 
 For a card with no actor named that belongs to the learner (card 5), "change it first" with the
 change being "I do this myself" is the same answer as "yours": credit it as the right pile.

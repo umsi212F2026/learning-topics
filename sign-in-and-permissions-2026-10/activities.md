@@ -462,7 +462,11 @@ with the learner.
     needs the right pile; the fixed question doesn't ask what registering gives, so the two values
     are not required. Any reason, or none, counts for "yours".
   - `two-redirects`: the card gives the provider one redirect URL, localhost or live
-    ("Register `http://localhost:3001/auth/github/callback` as the redirect URL"). Key: change it
+    ("Register `http://localhost:3001/auth/github/callback` as the redirect URL"), and says, in
+    the card's words or the agent's, that this one URL is all the app needs ("It's the only one
+    the app needs: once it's live, GitHub can still send people back here"). A card that only
+    leaves the other URL out asks the learner to notice an absence on a step that is right as far
+    as it goes, which no answer to the fixed question has to reach. Key: change it
     first: register a redirect URL for localhost and another for the live app (the backend's live
     address with the same path), as a second URL on the one registration or as a second
     registration; yours to do. As in `a-critique-sign-in-plan`, a GitHub OAuth app holds up to 10

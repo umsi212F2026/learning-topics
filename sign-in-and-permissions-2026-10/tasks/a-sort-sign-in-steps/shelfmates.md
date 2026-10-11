@@ -37,7 +37,8 @@ Which pile, and why? If you'd change it, say to what and who does it.
 ### card-3
 
 In the OAuth client's settings at Google, add `https://shelfmates-api.corvane.io/auth/google/callback`
-as the authorized redirect URI.
+as the authorized redirect URI. It's the only one Shelfmates needs: when you test sign-in on your
+laptop, Google can send you back to this same address.
 
 Which pile, and why? If you'd change it, say to what and who does it.
 

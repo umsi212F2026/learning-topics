@@ -45,7 +45,8 @@ Which pile, and why? If you'd change it, say to what and who does it.
 ### card-4
 
 In the OAuth app's settings at GitHub, set the callback URL to
-`http://localhost:3001/auth/github/callback`.
+`http://localhost:3001/auth/github/callback`. It's the only one Trailhead needs: once the app is
+live, GitHub can still send people back to this same address.
 
 Which pile, and why? If you'd change it, say to what and who does it.
 
