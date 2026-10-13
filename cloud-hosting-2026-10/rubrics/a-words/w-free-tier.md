@@ -25,9 +25,11 @@ plan" mean the same as free tier and are not confusables. Driftwell is made up.
 - **move:** CATCH
 - **answer:** A free tier is free only up to a limit. With enough visitors the app passes it, and
   then the vendor pauses it, stops it, or starts charging, as its terms say.
-- **credit:** full for naming that a free tier covers use only up to a limit, so many visitors can
-  pass it. Half for "there will be limits" without saying that the number of visitors is what
-  would pass them. None for a different quibble alone, such as that the app might sleep or that
-  Driftwell might end its free tier.
+- **credit:** full for naming that a free tier covers use only up to a limit, and either saying
+  what kind of thing is limited (such as usage, bandwidth, storage or running time) or that many
+  visitors can pass it. That more visitors or more use is what reaches the limit may be left
+  implied. Half for a bare "there will be limits" that says neither what is limited nor what would
+  pass it. None for a different quibble alone, such as that the app might sleep or that Driftwell
+  might end its free tier.
 - **tutor note:** if the learner says Driftwell might withdraw the free tier, agree that it could, and
   ask what the tier's own terms would say about a great many visitors.
