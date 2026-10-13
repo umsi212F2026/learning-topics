@@ -10,8 +10,9 @@ backend, and a database. It is being deployed on three made-up vendors:
   dashboard's Connect page shows the connection string, login included.
 
 The questions follow the deploy in order. Some show an exchange in which the agent asked for a
-setting, a student asked about it, and the agent answered. Others show a message from the agent.
-Answer in two or three sentences.
+setting, a student asked about it, and the agent answered. Others show a message from the agent;
+for those, judge whether going ahead would put a secret somewhere it shouldn't go. Answer in two
+or three sentences.
 
 ### q1
 

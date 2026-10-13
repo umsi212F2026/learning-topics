@@ -10,9 +10,10 @@ an Express backend, and a database. It is being deployed on two made-up vendors:
   Connect panel shows the connection string, login included, as one line.
 
 The questions follow the deploy in order. Some show an exchange in which the agent asked for a
-setting, a student asked about it, and the agent answered. Others show a message from the agent.
-Answer in two or three sentences, except where a question asks for the reply you would send: then
-write the reply, and after it a sentence or two on why.
+setting, a student asked about it, and the agent answered. Others show a message from the agent;
+for those, judge whether going ahead would put a secret somewhere it shouldn't go. Answer in two
+or three sentences, except where a question asks for the reply you would send: then write the
+reply, and after it a sentence or two on why.
 
 ### q1
 
