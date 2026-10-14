@@ -1,2 +1,6 @@
 {"at":"2026-10-13T01:53:15.134Z","kind":"created"}
 {"at":"2026-10-13T01:53:15.137Z","kind":"goal-added","goal":"o-orientation","needs":"curation"}
+{"at":"2026-10-14T12:31:08.761Z","kind":"goal-added","goal":"w-rate-limit","needs":"curation"}
+{"at":"2026-10-14T12:31:15.649Z","kind":"goal-added","goal":"w-input-validation","needs":"curation"}
+{"at":"2026-10-14T12:31:15.878Z","kind":"goal-added","goal":"w-alert","needs":"curation"}
+{"at":"2026-10-14T12:31:16.095Z","kind":"goal-added","goal":"w-backup","needs":"curation"}

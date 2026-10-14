@@ -1,4 +1,6 @@
-# Learning goals — defensive measures
+# Learning goals: defensive measures
+
+**capabilities:** none
 
 **What I want to be able to do, and what would count as having got there.**
 
@@ -52,9 +54,13 @@
 
 ## Where this came from
 
+_Yours to fill in. Nobody can answer this one for you._
+
 <!-- Which of A / B / C / D, and the answer to the follow-up. -->
 
 ## What I already have
+
+_Yours to fill in. Say where your knowledge stops, not what you have heard of._
 
 <!--
   The nearest thing already known well, and where it stops.
@@ -64,6 +70,10 @@
 
 ## What I'll use it for
 
+_Yours to fill in. The course supplies one occasion: your Problem Set 3 app is live, and your
+agent will start proposing ways to protect it, or you will want to ask it to. Name any others you
+have._
+
 <!--
   The use, and a concrete occasion.
   If several uses apply, rank them: the top one sets the depth, the rest are cut first
@@ -71,6 +81,16 @@
 -->
 
 ## Depth
+
+**Know the words well enough to talk about them with your agent or a classmate.** Not setting any
+of these up yourself, and not choosing the numbers. Once an app is live, a few things protect it
+that never mattered on localhost, and agents raise them by name. This topic is enough to follow
+what an agent means when it proposes one, to ask for one by name, and to notice when two of them
+are being mixed up.
+
+What sits past that line: keeping secrets out of the repository belongs to deploy-config, who
+may do what to sign-in-and-permissions, reading a deployed app's logs and putting the last
+working deploy back to debug-deployed.
 
 <!--
   Which of: recognize it / read it / modify something existing / author from scratch /
@@ -114,7 +134,6 @@
 
 1. orientation
 2. vocabulary
-3. capabilities
 
 ## Goals
 
@@ -256,3 +275,43 @@
 - **recurrence:** never
 - **is_required:** no
 - **group:** orientation
+
+### `w-rate-limit`
+
+- **goal:** rate limit
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** how often one visitor may ask before your app stops answering them for a while
+- **nearest confusable:** overage
+- **synonyms:** throttling
+
+### `w-input-validation`
+
+- **goal:** input validation
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the server refusing what arrives before it acts on it, when it isn't what was expected
+- **nearest confusable:** a check in the browser's form
+- **synonyms:** server-side validation
+
+### `w-alert`
+
+- **goal:** alert
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a message that comes to you when something about the live app crosses a line you set
+- **nearest confusable:** server log; health check
+- **synonyms:** alerting
+
+### `w-backup`
+
+- **goal:** backup
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a copy of the app's data, kept apart from it, that can be put back after the data is lost
+- **nearest confusable:** rollback; git history
+- **synonyms:** snapshot
