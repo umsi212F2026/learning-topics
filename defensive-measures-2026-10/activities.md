@@ -46,6 +46,7 @@ about 3 a word.
   goals.md lists (throttling, server-side validation, alerting, snapshot) and every nearest
   confusable (overage, the check in the browser's form, the server log, a host's health check,
   rollback, git history). The reading names no real host or service.
+- **verified:** 2026-10-14
 - **learner does:** reads the page once, top to bottom, and stops twice, answering before reading
   on; "I don't know yet" is an honest answer.
   1. After Input validation: says what Tuesday's trouble and Wednesday's trouble each looked like
@@ -113,6 +114,14 @@ about 3 a word.
   the course wrote, following one made-up app through a week in which each day's trouble
   introduces one of the four defences, with two short stops and a one-question close. About 13
   minutes, a few more if a section is gone over again at the close.
+- **check note:** Make the remark about depth at the close, just before you put the readiness
+  question: setting any of these up and choosing the numbers are past this topic, the two
+  defences in Before and after belong to deploy-config and sign-in-and-permissions, and reading
+  a deployed app's logs and putting the last working deploy back belong to debug-deployed. The
+  reading itself gives a number only as an example (twenty a minute, three errors in an hour), so
+  if the learner asks what the right number is, say that choosing it is past this topic rather
+  than answering. At Stop 2 a learner may argue that input validation could have kept out
+  Thursday's crash; that doesn't change the sort, so let it stand and go on.
 
 ### `a-words`
 
