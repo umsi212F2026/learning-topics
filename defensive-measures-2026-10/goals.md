@@ -314,4 +314,4 @@ working deploy back to debug-deployed.
 - **group:** vocabulary
 - **what it names:** a copy of the app's data, kept apart from it, that can be put back after the data is lost
 - **nearest confusable:** rollback; git history
-- **synonyms:** snapshot
+- **synonyms:** snapshot, database backup

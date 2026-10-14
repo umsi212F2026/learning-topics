@@ -44,9 +44,10 @@ On Friday an agent changes how Swapboard stores its trades, and a mistake in tha
 the table of books. Rolling back to the last working deploy brings back the old code, but the books
 are gone: a rollback restores code, not data. Git history doesn't help either, because the books
 were never in the repository; they were only in the database. A **backup** is a copy of the
-app's data, kept apart from it, that can be put back after the data is lost. Many database hosts
-make one every day on their own, and call it a **snapshot**. A backup you've never tried putting
-back is a guess, not a backup.
+app's data, kept apart from it, that can be put back after the data is lost; putting it back is
+called **restoring** it. For apps like Swapboard the data is the database, so you'll often hear
+**database backup**. Many database hosts make one every day on their own, and call it a
+**snapshot**. A backup you've never tried restoring is a guess, not a backup.
 
 ## Before and after
 

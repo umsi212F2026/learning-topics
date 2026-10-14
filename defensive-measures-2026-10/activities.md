@@ -46,7 +46,6 @@ about 3 a word.
   goals.md lists (throttling, server-side validation, alerting, snapshot) and every nearest
   confusable (overage, the check in the browser's form, the server log, a host's health check,
   rollback, git history). The reading names no real host or service.
-- **verified:** 2026-10-14
 - **learner does:** reads the page once, top to bottom, and stops twice, answering before reading
   on; "I don't know yet" is an honest answer.
   1. After Input validation: says what Tuesday's trouble and Wednesday's trouble each looked like
