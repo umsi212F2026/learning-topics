@@ -32,7 +32,7 @@ about 3 a word.
 - **supports:** orient
 - **checks:** `o-orientation`
 - **artifact:** a reading the course wrote for this topic, `tasks/read-defensive-measures.md` in
-  this folder, "After it's live: four defences" (about 650 words, 4 to 5 minutes). No external
+  this folder, "After it's live: four defences" (about 670 words, 4 to 5 minutes). No external
   reading is used: the instructor looked and none fitted. It follows one made-up app, Swapboard, a
   textbook-swap app, through its first week live: it goes live on Monday, and on each day from
   Tuesday to Friday a different thing goes wrong. It gives one short section to each defence: a sign-up flood on Tuesday (rate
@@ -43,7 +43,8 @@ about 3 a word.
   the deploy-config and sign-in-and-permissions topics cover them. About 5 minutes of reading, 11
   or 12 with the two stops, 12 or 13 with the close (up to 17 if a section is gone over again at
   the close). Words in place: all four words, each in bold where it is introduced, with every synonym
-  goals.md lists (throttling, server-side validation, alerting, snapshot) and every nearest
+  goals.md lists (throttling, server-side validation, alerting, snapshot, database backup), the
+  name for putting a backup back (restoring, also in bold) and every nearest
   confusable (overage, the check in the browser's form, the server log, a host's health check,
   rollback, git history). The reading names no real host or service.
 - **learner does:** reads the page once, top to bottom, and stops twice, answering before reading
@@ -108,7 +109,7 @@ about 3 a word.
   The reading is
   one course-written page about one made-up app, so it shows nothing of how a real host or
   library names or offers these defences, or how an agent's own words for them may differ; it
-  carries one synonym for each word and no more.
+  carries only the synonyms goals.md lists (one each for three of the words, two for backup) and no more.
 - **offer as:** this topic's orientation, and its only activity besides the words: one short page
   the course wrote, following one made-up app through a week in which each day's trouble
   introduces one of the four defences, with two short stops and a one-question close. About 13
