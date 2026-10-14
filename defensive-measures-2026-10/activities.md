@@ -38,7 +38,7 @@ about 3 a word.
   says that its visitors are now strangers, some of them programs and some malicious, and that
   what follows are defenses an agent working on a live app might bring up (or might not), which
   the learner should be prepared to make decisions about. Then it gives one short section to each
-  defense, each its own "suppose" scenario: a script flooding the sign-up address (rate limit), a
+  defense, each its own scenario: a script flooding the sign-up address (rate limit), a
   five-megabyte "title" sent straight to the server by a bot that skipped the form (input
   validation), an error recorded in a log nobody read (alert), and a table of books emptied by a
   bad code update (backup). A closing section, Before and after, names two defenses that come before going
@@ -50,6 +50,7 @@ about 3 a word.
   name for putting a backup back (restoring, also in bold) and every nearest
   confusable (overage, the check in the browser's form, the server log, a host's health check,
   rollback, git history). The reading names no real host or service.
+- **verified:** 2026-10-14
 - **learner does:** reads the page once, top to bottom, and stops twice, answering before reading
   on; "I don't know yet" is an honest answer.
   1. After Input validation: says what the sign-up flood and the five-megabyte title each looked
