@@ -15,10 +15,10 @@ made up, and appear nowhere else in this topic.
 - **goal:** `w-rate-limit`
 - **move:** CATCH
 - **answer:** A rate limit counts each visitor's own requests, not the number of people using the
-  app. Thirty-one neighbours each looking at a page or two are all served; only a single visitor
+  app. Thirty-one neighbors each looking at a page or two are all served; only a single visitor
   who makes more than thirty requests in a minute is refused, and only until that minute is over.
 - **credit:** full for naming that the limit is per visitor, so it counts one visitor's requests
-  rather than how many neighbours use Ringbell at once. Half for "that's not how a rate limit
+  rather than how many neighbors use Ringbell at once. Half for "that's not how a rate limit
   works" or "it doesn't count people" without saying what it does count. None for a different
   quibble alone, such as that thirty is too low, that a minute is too short, or that pages make
   more than one request each.
@@ -36,7 +36,7 @@ made up, and appear nowhere else in this topic.
   she is let back in without anyone doing anything. Half for "she isn't really blocked" or "it's
   not a ban" without saying that it ends by itself after a while. None for a different quibble
   alone, such as that the limit is set too low, that her account isn't involved, or that the
-  builder should apologise less.
+  builder should apologize less.
 - **tutor note:** a learner who says the rate limit counts the visitor rather than the account is
   not wrong, but has not named the error; ask what she would see if she tried again in a few
   minutes.

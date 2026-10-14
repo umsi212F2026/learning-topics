@@ -192,7 +192,7 @@ working deploy back to debug-deployed.
   DEFINE rejects one as an answer, because "an AI agent is a bot" names the thing again rather
   than saying what it is. DISTINGUISH is never aimed at one: there is no difference to name,
   so a learner who says exactly that would be right and would fail anyway. And INTERPRET may
-  set its unseen sentence using one, so the word has to be recognised under a name the lecture
+  set its unseen sentence using one, so the word has to be recognized under a name the lecture
   never used.
 
   Put only names here. A phrase that reads like a definition rather than a label is not a
@@ -262,7 +262,7 @@ working deploy back to debug-deployed.
   THE ABSENCE OF ANY CAPABILITY ENTRY IS LOAD-BEARING. "This file has no goal in the default
   group" is what the rest of the workflow reads as *goal setting hasn't happened* — it's the
   state add-topic leaves, and it's what routes a topic to goal setting. Words and the
-  orientation entry are in their own groups and don't count towards it. So never write a
+  orientation entry are in their own groups and don't count toward it. So never write a
   placeholder capability entry; an empty section is the honest signal.
 -->
 
