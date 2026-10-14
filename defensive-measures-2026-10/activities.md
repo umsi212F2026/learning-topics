@@ -5,7 +5,7 @@ with the learner.
 
 This topic is words and an orientation by decision (`**capabilities:** none` in goals.md), so
 it holds only these two entries. The minimum route, the orientation and one passed question for
-each of the four words, comes to about 30 minutes: about 18 for `a-read-defensive-measures` and
+each of the four words, comes to about 25 minutes: about 13 for `a-read-defensive-measures` and
 about 3 a word.
 
 ## Check notes
@@ -34,14 +34,15 @@ about 3 a word.
 - **artifact:** a reading the course wrote for this topic, `tasks/read-defensive-measures.md` in
   this folder, "After it's live: four defences" (about 650 words, 4 to 5 minutes). No external
   reading is used: the instructor looked and none fitted. It follows one made-up app, Swapboard, a
-  textbook-swap app that has just gone live, through one week in which a different thing goes
-  wrong each day, and gives one short section to each defence: a sign-up flood on Tuesday (rate
+  textbook-swap app, through its first week live: it goes live on Monday, and on each day from
+  Tuesday to Friday a different thing goes wrong. It gives one short section to each defence: a sign-up flood on Tuesday (rate
   limit), a five-megabyte "title" sent straight to the server on Wednesday (input validation), an
   error in a log nobody read on Thursday (alert), and a table of books emptied by a bad change on
   Friday (backup). A closing section, Before and after, names two defences that come before going
-  live (secrets out of the repository, and what a visitor who isn't signed in may do) and leaves
-  them to other topics. About 5 minutes of reading, 11 or 12 with the two stops, 17 or 18 with the
-  close. Words in place: all four words, each in bold where it is introduced, with every synonym
+  live (secrets out of the repository, and what a visitor who isn't signed in may do) and says
+  the deploy-config and sign-in-and-permissions topics cover them. About 5 minutes of reading, 11
+  or 12 with the two stops, 12 or 13 with the close (up to 17 if a section is gone over again at
+  the close). Words in place: all four words, each in bold where it is introduced, with every synonym
   goals.md lists (throttling, server-side validation, alerting, snapshot) and every nearest
   confusable (overage, the check in the browser's form, the server log, a host's health check,
   rollback, git history). The reading names no real host or service.
@@ -54,11 +55,12 @@ about 3 a word.
      keeping the trouble out before it does damage, telling someone while it is going on, or
      getting the app back afterwards; and says which day's trouble, in the reading, nothing but
      the last of these could have undone.
-  Then the close, about 5 minutes, with the reading still beside them: answers the question the
-  tutor puts: with this page beside you, could you now follow a conversation with your agent or a
-  classmate about these four defences (rate limit, input validation, alert and backup): know
-  which one is meant when it is proposed, ask for one by name, and notice when two of them are
-  being mixed up?
+  Then the close, about 1 minute (up to 5 if a section is gone over again), with the reading
+  still beside them: answers the question the tutor puts: with this page beside you, could you
+  now follow a conversation with your agent or a classmate about these four defences (rate limit,
+  input validation, alert and backup): know which one is meant when it is proposed, ask for one
+  by name, and notice when one is being mixed up with something nearby, such as a rollback taken
+  for a backup?
 - **tutor role:** explainer
 - **tutor does:** stays quiet through the reading except at the stops and when asked. At each
   stop, takes the learner's answer first and replies with one near-miss question rather than a
@@ -66,7 +68,7 @@ about 3 a word.
   Wednesday's visitor send?"). Stop 2's intended sort is rate limit and input validation keeping
   trouble out, alert telling someone, and backup getting the app back, with Friday's emptied table
   as the day only a backup undoes; a learner who puts the alert with the defences that keep
-  trouble out gets one near-miss question ("on Thursday, did the alert stop the page crashing?")
+  trouble out gets one near-miss question ("if Swapboard had had an alert on Thursday, would it have stopped the page crashing?")
   and the sort is not ruled on. Does not set or rehearse any word question from `a-words`: does
   not ask the learner to define a word, does not put a word against one of its confusables
   (overage, the browser's form check, the server log, a health check, rollback, git history), and
@@ -83,21 +85,34 @@ about 3 a word.
   or on whether the tutor thinks they are ready. A plain yes is `criterion: met`. A hedge on one or
   more of the four defences, with no plain no, is `criterion: unclear`: go over that defence's
   section of the reading once more and put the question again; a second hedge stays `unclear`,
-  and the tutor offers that word's question from `a-words`. A plain no is `criterion: not met`:
+  and the tutor offers that word's question from `a-words`. A hedge on one of the three abilities
+  rather than on a defence ("I'd know them, but I'm not sure I'd catch a mix-up"), with no plain
+  no, is also `criterion: unclear`. The tutor asks which defence the doubt is about; if it names
+  one, that defence's section is gone over once more, as above. If it doesn't, then for knowing
+  which is meant or asking by name the learner rereads the four bolded definitions, and for
+  noticing a mix-up the tutor points to the paragraphs where the reading sets each defence beside
+  its neighbour (the overage, the form's check, the log and the health check, the rollback and git
+  history) without quizzing on them; then the question is put again. A second hedge stays
+  `unclear`, and the tutor offers the questions from `a-words`, since telling a word from its
+  nearest confusable is what those check. A plain no is `criterion: not met`:
   record it, ask what is missing, and offer to go back over the stop or the section that bears on
   it; don't put the question again in the same sitting. This goal isn't required, so a no never
   blocks anything else the learner wants to try.
 - **worked example:** n/a
 - **doesn't show:** an indication of readiness is all this goal asks for and all this shows. It
   shows nothing about the four words, which have their own supply in `a-words`: there is no
-  rehearsal of their questions, by design, and the stops are helped and ungraded. The reading is
+  rehearsal of their questions, by design, and the stops are helped and ungraded. In particular
+  it doesn't show that the learner can notice a mix-up, whether between two of the defences or
+  between a defence and something nearby: the readiness question asks only whether they think
+  they could, and noticing a word mixed up with its nearest confusable is what `a-words` checks.
+  The reading is
   one course-written page about one made-up app, so it shows nothing of how a real host or
   library names or offers these defences, or how an agent's own words for them may differ; it
   carries one synonym for each word and no more.
 - **offer as:** this topic's orientation, and its only activity besides the words: one short page
   the course wrote, following one made-up app through a week in which each day's trouble
-  introduces one of the four defences, with two short stops and a one-question close. About 18
-  minutes.
+  introduces one of the four defences, with two short stops and a one-question close. About 13
+  minutes, a few more if a section is gone over again at the close.
 
 ### `a-words`
 
