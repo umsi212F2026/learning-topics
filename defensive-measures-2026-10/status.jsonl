@@ -4,3 +4,8 @@
 {"at":"2026-10-14T12:31:15.649Z","kind":"goal-added","goal":"w-input-validation","needs":"curation"}
 {"at":"2026-10-14T12:31:15.878Z","kind":"goal-added","goal":"w-alert","needs":"curation"}
 {"at":"2026-10-14T12:31:16.095Z","kind":"goal-added","goal":"w-backup","needs":"curation"}
+{"at":"2026-10-14T15:01:31.907Z","kind":"curated","goal":"o-orientation"}
+{"at":"2026-10-14T15:01:32.141Z","kind":"curated","goal":"w-rate-limit"}
+{"at":"2026-10-14T15:01:32.346Z","kind":"curated","goal":"w-input-validation"}
+{"at":"2026-10-14T15:01:32.563Z","kind":"curated","goal":"w-alert"}
+{"at":"2026-10-14T15:01:32.757Z","kind":"curated","goal":"w-backup"}
