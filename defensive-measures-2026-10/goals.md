@@ -85,8 +85,8 @@ have._
 **Know the words well enough to talk about them with your agent or a classmate.** Not setting any
 of these up yourself, and not choosing the numbers. Once an app is live, a few things protect it
 that never mattered on localhost, and agents raise them by name. This topic is enough to follow
-what an agent means when it proposes one, to ask for one by name, and to notice when two of them
-are being mixed up.
+what an agent means when it proposes one, to ask for one by name, and to notice when one is being
+mixed up with something nearby, such as a rollback taken for a backup.
 
 What sits past that line: keeping secrets out of the repository belongs to deploy-config, who
 may do what to sign-in-and-permissions, reading a deployed app's logs and putting the last

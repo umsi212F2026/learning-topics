@@ -33,7 +33,7 @@ form, which is there to help honest visitors fill it in and which anyone can byp
 Swapboard's server log has been recording an error every few minutes since Thursday morning: a
 book page that crashes when its photo is missing. The log has it all. Nobody has read the log. An
 **alert** is a message that comes to you, by email or text or chat, when something about the live
-app crosses a line you set: more than ten errors in five minutes, say, or no answer at all. The
+app crosses a line you set: more than three errors in an hour, say, or no answer at all. The
 log is the record; the alert is what tells you to go and look at it. A host's health check is a
 neighbour here, and a different thing: it is the host asking your app whether it still answers,
 so the host can act. An alert is for you. Setting one up is often called **alerting**.
@@ -51,5 +51,5 @@ back is a guess, not a backup.
 ## Before and after
 
 Two other defences come before an app goes live: keeping secrets out of the repository, and
-deciding what a visitor who isn't signed in may do. You've met both. These four are the ones that
-matter once it's live and strangers are using it.
+deciding what a visitor who isn't signed in may do. The deploy-config and sign-in-and-permissions
+topics cover those. These four are the ones that matter once it's live and strangers are using it.
