@@ -2,7 +2,7 @@
 
 **capabilities:** none
 
-**What I want to be able to do, and what would count as having got there.**
+**What I want to be able to do, and what would count as having gotten there.**
 
 <!--
   Everything in HTML comments is guidance, not content. It doesn't appear in a rendered
