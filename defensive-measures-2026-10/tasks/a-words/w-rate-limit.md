@@ -12,7 +12,7 @@ Ringbell's builder asked their agent to protect the server, and the agent added 
 thirty requests a minute. The builder writes in their notes:
 
 "Ringbell has a rate limit now. If more than thirty neighbors open Ringbell in the same minute,
-the thirty-first will be turned away until the minute is over."
+the thirty-first will be turned away."
 
 What is wrong with that?
 

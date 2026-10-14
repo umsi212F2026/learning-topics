@@ -302,7 +302,7 @@ working deploy back to debug-deployed.
 - **criterion:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
-- **what it names:** a message that comes to you when something about the live app crosses a line you set
+- **what it names:** a message that comes to you when something about the live app crosses a threshold you set
 - **nearest confusable:** server log; health check
 - **synonyms:** alerting
 

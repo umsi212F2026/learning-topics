@@ -5,7 +5,7 @@ as help (it is recorded as helped and doesn't count), then come back to a produc
 
 Input validation is the server checking what arrives, before it saves or acts on it, and refusing
 what isn't what it expected. The confusable is a check in the browser's form, which runs in the
-visitor's browser to help honest visitors fill the form in, and which anyone who sends the server
+visitor's browser to help honest visitors fill the form out, and which anyone who sends the server
 a request without using the form skips. "Server-side validation" is another name for input
 validation and is not a confusable. Lanetide is made up, and appears nowhere else in this topic.
 No host is named; nothing turns on one.
@@ -49,11 +49,11 @@ No host is named; nothing turns on one.
 - **goal:** `w-input-validation`
 - **move:** DISTINGUISH
 - **answer:** The form's check runs in the swimmer's browser before anything is sent, and helps
-  an honest swimmer fill the form in, but anyone who sends Lanetide's server a booking without
+  an honest swimmer fill the form out, but anyone who sends Lanetide's server a booking without
   the form skips it. Input validation runs on the server, on every booking that arrives however
   it was sent, and refuses a bad one before it is saved.
 - **credit:** full for naming where each check runs and what follows from it: the form's check
-  is in the browser and can be got around by not using the form, while input validation is on
+  is in the browser and can be skipped by not using the form, while input validation is on
   the server and applies to every request. Half for only one half, such as "the form's check can
   be skipped" with nothing on what input validation does. None for an incidental difference
   alone, such as which shows a friendlier message or which answers faster.

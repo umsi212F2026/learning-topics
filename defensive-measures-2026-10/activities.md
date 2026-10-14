@@ -47,10 +47,10 @@ about 3 a word.
   or 12 with the two stops, 12 or 13 with the close (up to 17 if a section is gone over again at
   the close). Words in place: all four words, each in bold where it is introduced, with every synonym
   goals.md lists (throttling, server-side validation, alerting, snapshot, database backup), the
-  name for putting a backup back (restoring, also in bold) and every nearest
+  name for putting a backup back (restoring, also in bold), the name for the line an alert
+  watches (threshold, also in bold) and every nearest
   confusable (overage, the check in the browser's form, the server log, a host's health check,
   rollback, git history). The reading names no real host or service.
-- **verified:** 2026-10-14
 - **learner does:** reads the page once, top to bottom, and stops twice, answering before reading
   on; "I don't know yet" is an honest answer.
   1. After Input validation: says what the sign-up flood and the five-megabyte title each looked

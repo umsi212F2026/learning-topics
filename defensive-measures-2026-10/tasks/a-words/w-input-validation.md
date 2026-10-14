@@ -3,7 +3,7 @@
 Answer in two or three sentences, in your own words, with nothing open in front of you.
 
 Lanetide is a community swimming pool's app where swimmers book a lane for a swim. A swimmer
-books a lane by filling in a form on Lanetide's page, and the form's length box won't let anyone
+books a lane by filling out a form on Lanetide's page, and the form's length box won't let anyone
 choose a booking longer than two hours. The form sends the booking to Lanetide's server, which
 saves it in the database. As soon as a booking is saved, the lane shows as taken for that time to
 every other swimmer.

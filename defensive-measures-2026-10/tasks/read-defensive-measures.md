@@ -28,7 +28,8 @@ five megabytes long. The form's check, which would run in the browser using Java
 Suppose Swapboard's server log has been recording an error every few minutes for two days: a
 book page that crashes when its photo is missing. The log has it all. But nobody has read the log. An
 **alert** is a message that comes to you, by email or text or chat, when something about the live
-app crosses a line you set: more than three errors in an hour, say, or no answer at all. The
+app crosses a **threshold** you set, a line you choose ahead of time: more than three errors in an
+hour, say, or no answer at all. The
 log is the record; the alert is what tells you to go and look at it. A host's health check is a
 neighboring idea, but different: it is the host asking your app whether it still answers,
 so the host can act. An alert is for you. Setting one up is often called **alerting**.

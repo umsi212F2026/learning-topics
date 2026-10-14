@@ -20,10 +20,11 @@ nothing turns on reading any database code.
   Brindlecloud loses the database, `plots_copy` is lost along with it, so there is nothing left to
   put back. A backup has to be kept somewhere the loss can't reach.
 - **credit:** full for naming that the copy lives inside the very database it is meant to
-  protect, so losing the database loses the copy too. Half for "that isn't a real backup" or "it
+  protect, so losing the database loses the copy too; "it's on the same host, where the same loss
+  reaches it" makes the same point and also earns full. Half for "that isn't a real backup" or "it
   should be stored somewhere else" without saying why it matters here. None for a different
-  quibble alone, such as that it has never been tried, that nightly is too rarely, or that it
-  wastes space.
+  quibble alone, such as that it has never been tried, that nightly is not often enough, or that
+  it wastes space.
 - **tutor note:** a learner who says the copy would help if a few sign-ups were deleted by
   mistake is right about that; ask what happens to `plots_copy` if the whole database is lost.
 
