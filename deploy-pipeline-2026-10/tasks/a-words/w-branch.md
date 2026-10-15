@@ -1,6 +1,6 @@
 # branch
 
-Answer in two or three sentences, in your own words, with nothing open in front of you.
+Answer in two or three sentences, in your own words.
 
 ### q-branch-vs-fork
 

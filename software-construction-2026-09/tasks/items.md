@@ -4,7 +4,7 @@
 `w-spec-review`, `w-root-cause`, `w-test-suite` and `w-test-coverage`, with four questions on
 `c-ask-tested` and `c-judge-manual-test` at the end.
 
-Answer each question in one to three sentences, in your own words, with nothing open. Where a
+Answer each question in one to three sentences, in your own words. Where a
 question quotes an AI coding agent, imagine it is the agent working on your own laptop, running
 under Superpowers, which has its agents write the tests, run them and review each other's work
 between themselves. Several questions are about a small Notes app your agent built: the page is a

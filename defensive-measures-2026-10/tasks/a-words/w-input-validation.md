@@ -1,6 +1,6 @@
 # input validation
 
-Answer in two or three sentences, in your own words, with nothing open in front of you.
+Answer in two or three sentences, in your own words.
 
 Lanetide is a community swimming pool's app where swimmers book a lane for a swim. A swimmer
 books a lane by filling out a form on Lanetide's page, and the form's length box won't let anyone

@@ -5,7 +5,7 @@
 `w-fixture`, with five questions on `c-check-persistence`, `c-review-schema` and `c-trace-action`
 at the end.
 
-Answer each question in one to three sentences, in your own words, with nothing open. Where a
+Answer each question in one to three sentences, in your own words. Where a
 question quotes an AI coding agent, imagine it is working on an app on your own laptop. Several
 questions name a small app your agent built: Shelf, a reading list; Streaks, a habit tracker;
 Potluck, an app for planning shared dinners. Every question says what you need to know about the

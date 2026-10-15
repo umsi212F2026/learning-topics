@@ -1,6 +1,6 @@
 # Role
 
-Answer in two or three sentences, in your own words, with nothing open in front of you.
+Answer in two or three sentences, in your own words.
 
 Pantry is a recipe box for a campus cooking club, with sign-in through GitHub. Ordinary members may
 post recipes and edit or delete their own. Priya, Sam and Lee run the club and need to delete any

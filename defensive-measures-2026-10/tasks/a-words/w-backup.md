@@ -1,6 +1,6 @@
 # backup
 
-Answer in two or three sentences, in your own words, with nothing open in front of you.
+Answer in two or three sentences, in your own words.
 
 Plotkeep is a community garden's app where members sign up for a garden plot. Its server and its
 database both run on a host called Brindlecloud, and its code is in a repository on GitHub. The

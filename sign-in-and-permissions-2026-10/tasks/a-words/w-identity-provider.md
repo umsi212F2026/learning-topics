@@ -1,6 +1,6 @@
 # Identity provider
 
-Answer in two or three sentences, in your own words, with nothing open in front of you.
+Answer in two or three sentences, in your own words.
 
 Ladle is a recipe box for a campus cooking club. Its Express backend runs on Rivetbox, a server
 host, and members sign in with their Google accounts. Members may edit or delete only the recipes

@@ -4,7 +4,7 @@
 `w-spike`, `w-architecture` and `w-tech-stack`, with four questions on `c-write-success-criteria`
 and `c-choose-approach` at the end.
 
-Answer each question in one to three sentences, in your own words, with nothing open. The last
+Answer each question in one to three sentences, in your own words. The last
 four ask for a little more and say so. Where a question quotes an AI coding agent, imagine it is
 designing an app with you before it builds anything: it asks you about the app one question at a
 time, offers you two or three approaches with their trade-offs and usually recommends one, shows

@@ -1,6 +1,6 @@
 # alert
 
-Answer in two or three sentences, in your own words, with nothing open in front of you.
+Answer in two or three sentences, in your own words.
 
 Choirsheet is a community choir's app where members mark which rehearsals they will come to. Its
 server and its database both run on a host called Lanternwell, and Lanternwell keeps Choirsheet's

@@ -1,6 +1,6 @@
 # rate limit
 
-Answer in two or three sentences, in your own words, with nothing open in front of you.
+Answer in two or three sentences, in your own words.
 
 Ringbell is a neighborhood app where neighbors lend each other tools: a ladder, a drill, a
 lawnmower. Its page, its server and its database all run on a host called Marrowlight. A visitor

@@ -1,6 +1,6 @@
 # Rotate
 
-Answer in two or three sentences, in your own words, with nothing open in front of you.
+Answer in two or three sentences, in your own words.
 
 Pantry is a recipe box with sign-in through GitHub. Its Express backend runs on Rivetbox, a server
 host, and reads Pantry's GitHub client secret from Rivetbox's settings. A student has found that

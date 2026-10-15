@@ -1,6 +1,6 @@
 # Redirect URL
 
-Answer in two or three sentences, in your own words, with nothing open in front of you.
+Answer in two or three sentences, in your own words.
 
 Pantry is a recipe box for a campus cooking club, with sign-in through GitHub. Its React frontend
 is on Pagecove, a static host, at `https://pantry.pagecove.app`, and its Express backend is on

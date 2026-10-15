@@ -1,6 +1,6 @@
 # Authentication
 
-Answer in two or three sentences, in your own words, with nothing open in front of you.
+Answer in two or three sentences, in your own words.
 
 Pantry is a recipe box for a campus cooking club. Members sign in through GitHub, post recipes, and
 may edit or delete only the recipes they posted.

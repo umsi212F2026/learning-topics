@@ -5,7 +5,7 @@
 `w-headless-browser`, with four questions on `c-describe-app-bug` and `c-run-browser-check` at the
 end.
 
-Answer each question in one to three sentences, in your own words, with nothing open. Where a
+Answer each question in one to three sentences, in your own words. Where a
 question quotes an AI coding agent, imagine it is working on a React app on your own laptop: the
 Vite starter you already have running, or one your agent built for you. Several questions are
 about a small Tasks app your agent built. It runs at http://localhost:5173, it lists your tasks,

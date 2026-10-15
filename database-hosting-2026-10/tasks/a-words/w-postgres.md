@@ -1,6 +1,6 @@
 # Postgres
 
-Answer in two or three sentences, with nothing open in front of you.
+Answer in two or three sentences.
 
 ### q-postgres-vs-sql
 
