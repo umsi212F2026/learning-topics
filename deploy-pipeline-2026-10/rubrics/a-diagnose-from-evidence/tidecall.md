@@ -36,7 +36,8 @@ another. Difficulty: q1 `unpushed` Easy, q2 `stale-browser` Easy, q3 `unmerged-p
   and a reload skipping the browser's cache shows the new line, so the browser is showing its own
   old copy. Reload without the browser's cache; nothing on the hosts needs doing.
 - **credit:** full for naming the browser's own old copy as the reason, and reloading without its
-  cache as the next step. Half for the right reason with the next step missing or wrong (such as
+  cache as the next step (the browser block already shows that reload bringing up the new line,
+  so saying the change is live and nothing on the hosts needs doing is full as well). Half for the right reason with the next step missing or wrong (such as
   clicking Rebuild, or clearing the CDN's cache). None for a wrong reason, such as a setting saved
   after the last build, or the CDN's cache.
 - **tutor note:** if they say the frontend needs rebuilding, ask them to compare the setting's save
@@ -49,8 +50,9 @@ another. Difficulty: q1 `unpushed` Easy, q2 `stale-browser` Easy, q3 `unmerged-p
 - **answer:** The change, `6c2d1a8`, was pushed to the branch `count-me-in` and is waiting in pull
   request #14, which nobody has merged, so it is not on `main` and the workflow never deployed it.
   Merge pull request #14 into `main`.
-- **credit:** full for naming the unmerged pull request as the reason, and merging it as the next
-  step. Half for the right reason with the next step missing or wrong (such as opening another pull
+- **credit:** full for naming the unmerged pull request as the reason, and getting the commit onto
+  `main` as the next step: merging pull request #14, or merging `count-me-in` into `main` directly
+  and pushing. Half for the right reason with the next step missing or wrong (such as opening another pull
   request, pushing the branch again, or calling the deploy hook). None for a wrong reason, such as
   missing checks blocking the deploy, or a cache.
 - **tutor note:** if they say the commit has no checks so nothing deployed it, ask which branch the
