@@ -9,8 +9,9 @@
   committed state, with its message, that can be looked back through, compared, and returned to.
 - **credit:** full credit for saying it is the repository's commits taken together (the sequence or
   record of committed states). Full credit for "a record of past versions" even if it does not tie those
-  versions to commits. No credit for "the log" alone, which is another name for it, and no credit
-  for "a record of every change you have made", which would include edits that were never committed.
+  versions to commits. Half credit for "a record of every change you have made", which has the
+  right idea but would include edits that were never committed. No credit for "the log" alone,
+  which is another name for it.
 
 ### q-history-vs-undo
 

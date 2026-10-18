@@ -20,4 +20,4 @@ with the files in it, and the commits are only kept on GitHub." What is wrong wi
 
 You ask your agent to commit your work, and it replies: "I can't include ps1-notes.txt in the
 commit: it's in your Documents folder, outside the assignments repo." What is the agent telling
-you, and what is the effect does not having it in the commit?
+you, and what does leaving it out of the commit mean for that file?

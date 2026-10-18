@@ -13,8 +13,8 @@
 - **credit:** full credit for saying that a repository comes with a record or history of what is
   inside it (or that git keeps track of changes to what is inside it), so earlier versions can be
   seen or got back. Also full credit for "git tracks the files in a repository" with no mention of a
-  record, a history, or getting anything back; full credit also for "a repository has a hidden .git
-  folder". Do not accept incidental differences: that a repository is on GitHub, that it holds code
+  record, a history, or getting anything back. Half credit for "a repository has a hidden .git
+  folder" with nothing on what git keeps there or does with it. Do not accept incidental differences: that a repository is on GitHub, that it holds code
   rather than documents, that it is shared, or that it is bigger.
 
 ### q-scratch-folder-tracked
