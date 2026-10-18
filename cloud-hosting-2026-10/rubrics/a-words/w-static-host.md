@@ -30,8 +30,9 @@ confusable is a server host, which keeps your backend running so it can answer e
   they are, and the React code runs in each visitor's browser. Uploading `server.js` would only make
   it one more file to download; nothing would run it.
 - **credit:** full for naming that the static host runs none of the code, the React code runs in the
-  browser, so it cannot run Express. Half for "a static host can't run a server" without
-  correcting the claim that it runs the React code. None for a different quibble alone, such as
+  browser, so it cannot run Express. "It only hands out files and runs none of your code" corrects
+  the claim, with or without the React code named. Half for "a static host can't run a server"
+  with nothing on why, which leaves the claim that it runs the React code standing. None for a different quibble alone, such as
   that Express needs a database, or that `server.js` should be in another folder.
 - **tutor note:** if the learner says only "it can't run Express", ask where the React code runs
   when someone opens the page.
