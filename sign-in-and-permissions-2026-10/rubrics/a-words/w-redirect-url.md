@@ -35,10 +35,9 @@ confusables.
   redirect URL registered with it. The live one has to be added at GitHub too, beside the
   localhost one, or GitHub will refuse to send users back to the live app.
 - **credit:** full for naming that the live redirect URL must also be registered with the provider,
-  beside the localhost one, since the provider sends users back only to a registered one. Half for
-  saying to replace the localhost one with the live one at the provider, which breaks sign-in on
-  localhost. Half for "GitHub needs to know about it" without saying that the provider refuses an
-  unregistered one. None for a different quibble alone, such as the spelling of the path or that
+  not only set in the code. Saying it goes beside the localhost one, or that the provider refuses
+  an unregistered one, is welcome and is not required. Half for saying to replace the localhost one
+  with the live one at the provider, which breaks sign-in on localhost. None for a different quibble alone, such as the spelling of the path or that
   the setting should be an environment variable.
 - **tutor note:** a learner who says to replace the localhost one at GitHub earns half; ask what
   happens next time they work on their laptop, since GitHub can hold both.

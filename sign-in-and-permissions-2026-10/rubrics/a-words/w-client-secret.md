@@ -16,8 +16,9 @@ to one user, proves who that person is to the provider, and is never seen by you
 - **answer:** There is one client secret for the whole app, issued when the app is registered with
   GitHub, not one per user. It proves requests come from the app's server, so it lives in the
   backend host's settings, not in a table of users.
-- **credit:** full for naming that the client secret belongs to the app, one for all users, and
-  proves the app's server rather than anything about a user. Half for "there's only one client
+- **credit:** full for naming that the client secret belongs to the app, one for all users, not one
+  per user, with either what it proves (the app's server, nothing about a user) or where it lives
+  (issued at registration, kept in the backend host's settings). Half for "there's only one client
   secret" without saying whose it is or what it proves. None for a different quibble alone, such
   as that the column should be encrypted.
 - **tutor note:** a learner who says "they mean the token" may be right about what the student
@@ -44,7 +45,8 @@ to one user, proves who that person is to the provider, and is never seen by you
   to GitHub that a request comes from your server. A user's password belongs to that user and
   proves who they are to GitHub; your app never sees it.
 - **credit:** full for naming that the client secret proves your app's server to the provider,
-  while a password proves a user's identity, and the app never handles the user's password. Half
+  while a password proves a user's identity. Saying the app never handles the user's password is
+  welcome and is not required. Half
   for "one is the app's, one is the user's" without saying what each proves. None for an
   incidental difference alone, such as that a password is chosen by a person and a secret is
   generated.

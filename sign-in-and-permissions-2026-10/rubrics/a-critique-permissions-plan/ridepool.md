@@ -19,8 +19,11 @@ sound costs nothing unless the change they ask for would break the plan.
   yes; a ride's driver, yes; a trip leader, yes.
 - **credit:** full for naming the missing action (joining a ride) and what its row should say:
   that signed-in members may and someone not signed in may not. A rule that also keeps a driver
-  from joining their own ride is fine. Half for naming the action with no rule for it, or with a
-  rule that lets someone not signed in join. None for agreeing to the table.
+  from joining their own ride is fine. Naming the gap as getting a driver's email once you have
+  joined their ride names the same action, since `POST /api/rides/:id/riders` is what returns the
+  email: full when it is tied to joining, with the rule above. Half for naming the action with no
+  rule for it, or with a rule that lets someone not signed in join, and half for naming the
+  driver's email with nothing about joining. None for agreeing to the table.
 - **tutor note:** if they go looking for a missing delete or edit row, ask them to go down the
   route list and find each route's row. If they tinker with a row that is there (say, members
   shouldn't offer rides), ask the same.

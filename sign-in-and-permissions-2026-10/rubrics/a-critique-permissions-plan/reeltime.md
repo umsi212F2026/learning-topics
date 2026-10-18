@@ -19,7 +19,8 @@ something sound costs nothing unless the change they ask for would break the pla
   going, or `GET /api/me`).
 - **credit:** full for naming the missing level (someone not signed in, a visitor, a signed-out
   user) and what its column should say: that they may only see the screenings, or may do nothing.
-  Half for naming the level with no rule for it. None for agreeing to the table.
+  Half for naming the level with no rule for it, or with a rule that lets them change anything.
+  None for agreeing to the table.
 - **tutor note:** a learner who says "only members should see anything" has given a rule; accept
   it. If they instead tinker with a member's row (say, members shouldn't post), ask who else could
   send a request to this backend.
