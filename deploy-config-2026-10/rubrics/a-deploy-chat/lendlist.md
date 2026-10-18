@@ -80,8 +80,9 @@ the next two can be answered by rote. Weigh the first repair served most.
   requests go), so it can go in the chat.
 - **credit:**
   - `c-judge-secret-request`: full for going along with it. None for declining.
-  - `c-spot-secret`: full for saying the address isn't a secret (or is public), with or without a
-    reason. None for saying nothing about the value, or calling it a secret.
+  - `c-spot-secret`: full for a reason that treats the address as public: saying it isn't a secret,
+    that it unlocks nothing, or that every visitor's browser has it anyway. Half for going along
+    with no reason. None for treating it as a secret.
 
 ### q5
 
@@ -91,8 +92,10 @@ the next two can be answered by rote. Weigh the first repair served most.
   secret; a screenshot of it puts it in the chat, whatever the agent means to check.
 - **credit:**
   - `c-judge-secret-request`: full for declining. None for going along with it.
-  - `c-spot-secret`: full for saying what's on the panel is a secret (or sensitive), with or
-    without a reason. None for saying nothing about it, or calling it not a secret.
+  - `c-spot-secret`: full for a reason that treats what's on the panel as a secret: calling it one
+    (or sensitive), or keeping it out of the chat, away from the agent or out of a file, such as
+    doing it themselves so it isn't revealed. Half for declining, or saying they will do it
+    themselves, with no reason. None for treating it as not a secret.
 - **tutor note:** "check the host name" is the lure: the agent asks for one harmless piece and the
   screenshot carries the whole string.
 
@@ -114,8 +117,10 @@ the next two can be answered by rote. Weigh the first repair served most.
   `server/db.js`, a file that gets committed, even though nothing is pasted into the chat.
 - **credit:**
   - `c-judge-secret-request`: full for declining. None for going along with it.
-  - `c-spot-secret`: full for saying the connection string is a secret (or sensitive), with or
-    without a reason. None for saying nothing about the value, or calling it not a secret.
+  - `c-spot-secret`: full for a reason that treats the connection string as a secret: calling it one
+    (or sensitive), or keeping it out of the chat, away from the agent or out of a file, such as
+    doing it themselves so it isn't revealed. Half for declining, or saying they will do it
+    themselves, with no reason. None for treating it as not a secret.
 - **tutor note:** "a fallback" and "to save you a step" are the lure, and so is not being asked to
   paste anything. The near-miss is going along with it because the secret never enters the chat.
 

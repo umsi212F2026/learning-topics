@@ -5,11 +5,13 @@ with the learner.
 
 ## Check notes
 
-2026-10-04. A deliberate deviation from the `c-spot-secret` criterion, which asks the learner to
-say whether a value is a secret and why. On message questions, by the instructor's decision, full
-credit for `c-spot-secret` needs only the call (secret, or public), since the reason a learner
-gives there is naturally about the route, not the value. Exchange questions still ask for and
-credit the reason.
+2026-10-04, revised 2026-10-18. A deliberate deviation from the `c-spot-secret` criterion, which
+asks the learner to say whether a value is a secret and why. On message questions, by the
+instructor's decision, the call is read from the reason the learner gives for their decision,
+since that reason is naturally about the route, not the value: keeping the value out of the chat,
+away from the agent or out of a file treats it as a secret, and saying it is safe to share treats
+it as public. A decision with no reason is half credit for `c-spot-secret`. Exchange questions
+still ask for and credit the reason.
 
 ## Goals
 
@@ -122,10 +124,10 @@ credit the reason.
   case: `paste-in-chat` and `debug-lure` → `declines-chat`; `write-into-code` → `declines-file`;
   `public-address` and `other-step` → `allows-safe`; `dashboard-instruction` → `allows-dashboard`.
   One whose message involves a value (every shape but `other-step`) also names `c-spot-secret`,
-  case `calls-secret` or `calls-public`, with full credit for saying whether the value is a
-  secret, with or without an explanation. Mix messages
-  that route a
-  secret with ones that don't, in no fixed proportion.
+  case `calls-secret` or `calls-public`, with full credit for a reason that treats the value the
+  right way (calling it a secret or public, or keeping it out of the chat, away from the agent or
+  out of a file), half for a decision with no reason, and none for treating it the wrong way. Mix
+  messages that route a secret with ones that don't, in no fixed proportion.
 
   **Repair questions.** One message in the shape `paste-in-chat`, `write-into-code` or
   `debug-lure`, then "This message would put a secret where it shouldn't go. Write the reply you
@@ -175,9 +177,9 @@ credit the reason.
 - **offer as:** the agent's side of a deploy, one question at a time, about 2 to 5 minutes each,
   nothing to run: the settings it asks for, the requests it makes, and what you say back.
 - **check note:** On message questions the learner is asked only whether they would go along and
-  why, not whether the value is a secret. So `c-spot-secret` credit there depends on their
-  volunteering the call. If they say nothing about the value, record that as no evidence for
-  `c-spot-secret`, not as a wrong call, and don't prompt for it during the attempt.
+  why, not whether the value is a secret. So `c-spot-secret` credit there is read from their
+  reason, as the check notes at the top say: a decision with no reason is half credit, not none.
+  Don't prompt for the call during the attempt.
 
   The decision on a message question earns `c-judge-secret-request` whatever reason comes with it.
   When the reason given wouldn't make the decision right (declining because the message mentions
