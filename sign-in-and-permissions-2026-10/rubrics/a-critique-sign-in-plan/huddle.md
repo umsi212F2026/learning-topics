@@ -51,8 +51,9 @@ commits the learner to, not its tone. A flag on a step the excerpt left unclear 
   from `process.env`. The client ID can go in `frontend/.env` as planned.
 - **credit:** full for both: the client secret goes into the backend host's settings (and the
   local, git-ignored `.env`) by the learner's own hand, not into the chat, a committed file or the
-  frontend; and the client ID may stay in the frontend (saying step 2 can stay as it is counts).
-  Half for the secret alone.
+  frontend; and the client ID may stay in the frontend (saying step 2 can stay as it is counts, and so does
+  objecting only to the secret and agreeing to the rest, which leaves the ID where the plan puts
+  it). Half for the secret alone.
 - **tutor note:** the agent's destination for the secret is right; the route there, through the
   chat, is what is wrong. An answer that keeps the paste but says "as long as it ends up on
   Kettleworks" hasn't said who puts it there; ask who has then seen the secret. Pasting the client

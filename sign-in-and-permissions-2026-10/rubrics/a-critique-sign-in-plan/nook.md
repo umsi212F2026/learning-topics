@@ -58,8 +58,9 @@ about who does it (an unattributed step reads as the agent's) is not a mistake a
   `backend/.env`, set by me. The client ID can stay in the frontend.
 - **credit:** full for both: the client secret goes only into the backend host's settings (and the
   local, git-ignored `.env`) by the learner's own hand, not into the frontend (saying step 2 can
-  stay and the secret line in step 1 must go counts); and the client ID may stay in the frontend.
-  Half for the secret alone.
+  stay and the secret line in step 1 must go counts); and the client ID may stay in the frontend
+  (objecting only to the secret and agreeing to the rest counts, since it leaves the ID where the
+  plan puts it). Half for the secret alone.
 - **tutor note:** step 2 is right, which makes it easy to agree to the whole. If they agree, ask
   what each line in step 1's block is for and who can read the frontend's built files. An answer
   that moves the client ID out of the frontend too has the secret right; ask whether the ID is

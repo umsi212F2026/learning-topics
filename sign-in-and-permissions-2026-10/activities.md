@@ -276,7 +276,8 @@ with the learner.
     `.gitignore` keeps out of the repository), never into the chat, the frontend or a committed
     file; the client ID in the frontend is fine. Full credit needs both: where the secret goes and
     who puts it there, and that the client ID may stay in the frontend (saying the ID step can stay
-    as it is counts). Half credit for the secret alone.
+    as it is counts, and so does objecting only to the secret and agreeing to the rest, which
+    leaves the ID where the plan puts it). Half credit for the secret alone.
   - `too-much-scope`: the plan asks the provider for more of the user's account than the app uses.
     GitHub: `repo`, or `user` (which can change profile data), when the app shows only the user's
     name and picture. Google: Drive, Gmail, Calendar or Contacts access on top of `openid profile`.

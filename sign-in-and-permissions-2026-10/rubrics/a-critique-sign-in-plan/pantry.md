@@ -52,8 +52,9 @@ nothing.
   reads it from the environment instead of `config.js`. The client ID in `frontend/.env` is fine.
 - **credit:** full for both: the client secret goes into the backend host's settings (and the
   local, git-ignored `.env`) by the learner's own hand, not into a committed file, the chat or the
-  frontend; and the client ID may stay in the frontend (saying step 1 can stay as it is counts).
-  Half for the secret alone.
+  frontend; and the client ID may stay in the frontend (saying step 1 can stay as it is counts, and
+  so does objecting only to the secret and agreeing to the rest, which leaves the ID where the
+  plan puts it). Half for the secret alone.
 - **tutor note:** "it never reaches the browser" is the trap: true, and beside the point, since a
   committed file on a public repository is readable by anyone. An answer that moves the client ID
   out of the frontend too has the secret right; ask whether the ID is secret before ruling on the
