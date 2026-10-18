@@ -4,7 +4,8 @@ backend, and a database. It is being deployed on two made-up vendors:
 - **Harbor** hosts both the frontend and the backend. It offers two things under one account: a
   static site, which sends a folder of files to anyone who asks, and a web service, which runs one
   program of yours all the time. Each gets its own address: the static site at
-  `https://crumbs.harbor.app`, and the web service at `https://crumbs-k3x9.harbor.app`.
+  `https://crumbs.harbor.app`, and the web service at `https://crumbs-k3x9.harbor.app`. Each has a
+  settings page on Harbor's dashboard.
 - **Larder** hosts the database. It keeps a Postgres database running for you, and its dashboard
   shows the connection string, login included.
 
