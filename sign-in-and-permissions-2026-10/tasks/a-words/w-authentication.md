@@ -19,7 +19,7 @@ What is wrong with that?
 Pantry keeps no passwords: its `users` table holds each member's GitHub id, name and picture, and
 nothing else. A student says:
 
-"Since we never check a password ourselves, Pantry has no way to know which member posted a
-recipe."
+"Since we never check a password ourselves, Pantry does no authentication, so it has no way to know
+which member posted a recipe."
 
 What is wrong with that?
