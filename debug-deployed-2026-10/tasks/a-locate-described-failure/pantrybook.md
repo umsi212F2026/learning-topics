@@ -36,8 +36,9 @@ There are no lines between 12:23 and 13:41. Your `GET /api/recipes` at 13:41:05 
 and it was 44 seconds before the listener bound and that request returned. Every request since
 has returned 200.
 
-From your agent's account, where did things go wrong, if they did, and what does someone visiting
-the app right now see? If the account can't tell you, say why.
+From your agent's account, where did things go wrong, if they did, and what does someone who opens
+the app right now get: which version of it, if any, and what happens when they try to use it? If
+the account can't tell you, say why.
 
 ### q2
 
@@ -68,8 +69,9 @@ Its runtime log:
 which Fernlatch sets to 8080. So `#61` listened on a port nothing was sent to, and it took no
 traffic before Fernlatch stopped it.
 
-From your agent's account, where did things go wrong, if they did, and what does someone visiting
-the app right now see? If the account can't tell you, say why.
+From your agent's account, where did things go wrong, if they did, and what does someone who opens
+the app right now get: which version of it, if any, and what happens when they try to use it? If
+the account can't tell you, say why.
 
 ### q3
 
@@ -99,8 +101,9 @@ Access to fetch at 'https://pantry-api.fernlatch.io/api/recipes' from origin 'ht
 `https://pantry-web.fernlatch.app`, ending in `.app` where the page is served from `.io`. The 200
 leaves `pantry-api` carrying that header, and the page's `fetch` rejects it.
 
-From your agent's account, where did things go wrong, if they did, and what does someone visiting
-the app right now see? If the account can't tell you, say why.
+From your agent's account, where did things go wrong, if they did, and what does someone who opens
+the app right now get: which version of it, if any, and what happens when they try to use it? If
+the account can't tell you, say why.
 
 ### q4
 
@@ -122,8 +125,9 @@ Line 42 deletes from `recipes`, not from `recipe_tags`, and it ignores `:tag` en
 deployed app every tag removal takes the whole recipe with it, which is what your housemate is
 seeing on Pantrybook.
 
-From your agent's account, where did things go wrong, if they did, and what does someone visiting
-the app right now see? If the account can't tell you, say why.
+From your agent's account, where did things go wrong, if they did, and what does someone who opens
+the app right now get: which version of it, if any, and what happens when they try to use it? If
+the account can't tell you, say why.
 
 ### q5
 
@@ -146,8 +150,9 @@ npm ERR! Missing: fuse.js@7.0.0 from lock file
 `c3d8f15` adds `fuse.js` to `package.json` but doesn't include an updated `package-lock.json`, so
 `npm ci` stopped before installing anything. Fernlatch ran nothing after that step for `#64`.
 
-From your agent's account, where did things go wrong, if they did, and what does someone visiting
-the app right now see? If the account can't tell you, say why.
+From your agent's account, where did things go wrong, if they did, and what does someone who opens
+the app right now get: which version of it, if any, and what happens when they try to use it? If
+the account can't tell you, say why.
 
 ### q6
 
@@ -182,8 +187,9 @@ edit set off baked it into the bundle, and that host name doesn't resolve. `pant
 nothing since Oct 03, including during my page load just now. The Oct 03 `duplicate key` line is
 one recipe saved twice under the same name, answered with a 409.
 
-From your agent's account, where did things go wrong, if they did, and what does someone visiting
-the app right now see? If the account can't tell you, say why.
+From your agent's account, where did things go wrong, if they did, and what does someone who opens
+the app right now get: which version of it, if any, and what happens when they try to use it? If
+the account can't tell you, say why.
 
 ### q7
 
@@ -216,5 +222,6 @@ returns a `plan` with no `dinners`. Every `GET /api/plans/week/...` in the hour 
 that line; the recipe routes return 200. The `inflight` line is a deprecation notice for a package
 another dependency pulls in.
 
-From your agent's account, where did things go wrong, if they did, and what does someone visiting
-the app right now see? If the account can't tell you, say why.
+From your agent's account, where did things go wrong, if they did, and what does someone who opens
+the app right now get: which version of it, if any, and what happens when they try to use it? If
+the account can't tell you, say why.

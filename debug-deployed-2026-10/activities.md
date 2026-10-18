@@ -233,8 +233,9 @@ text states the task, never the scoring.
 - **verified:** 2026-10-05
 - **learner does:** reads the scenario's setup and the one account served, and answers in two or
   three sentences the question every account ends with: "From your agent's account, where did
-  things go wrong, if they did, and what does someone visiting the app right now see? If the
-  account can't tell you, say why."
+  things go wrong, if they did, and what does someone who opens the app right now get: which
+  version of it, if any, and what happens when they try to use it? If the account can't tell you,
+  say why."
 - **tutor role:** examiner
 - **tutor does:** sets the question as served, without rewording it or hinting, and never names the
   kinds of failure or says which ones a scenario holds. When the generator is run live, writes the

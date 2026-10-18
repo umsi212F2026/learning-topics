@@ -35,8 +35,9 @@ commit `4c6e0b8`) has been `serving` since Monday.
 deleted last week, so the lookup gives `null` there. Every request for trip 48's seats in the hour
 returns 500 at that line; the trip list and other trips' seats return 200.
 
-From your agent's account, where did things go wrong, if they did, and what does someone visiting
-the app right now see? If the account can't tell you, say why.
+From your agent's account, where did things go wrong, if they did, and what does someone who opens
+the app right now get: which version of it, if any, and what happens when they try to use it? If
+the account can't tell you, say why.
 
 ### q2
 
@@ -74,8 +75,9 @@ The tidy-up in `91fd2a3` moved the middleware that sets `Access-Control-Allow-Or
 without an `Access-Control-Allow-Origin` header, and the page's `fetch` rejects it. The `rimraf` line is a
 deprecation notice for a package the build tools pull in.
 
-From your agent's account, where did things go wrong, if they did, and what does someone visiting
-the app right now see? If the account can't tell you, say why.
+From your agent's account, where did things go wrong, if they did, and what does someone who opens
+the app right now get: which version of it, if any, and what happens when they try to use it? If
+the account can't tell you, say why.
 
 ### q3
 
@@ -100,8 +102,9 @@ Since 09:02, requests to `rosterpin-api.moorbolt.dev` get Moorbolt's own `502 Ba
 `0e7c5d9` requires `nodemailer` in `server/reminders.js`, but `package.json` lists it under
 `devDependencies`, and Moorbolt installs production dependencies only.
 
-From your agent's account, where did things go wrong, if they did, and what does someone visiting
-the app right now see? If the account can't tell you, say why.
+From your agent's account, where did things go wrong, if they did, and what does someone who opens
+the app right now get: which version of it, if any, and what happens when they try to use it? If
+the account can't tell you, say why.
 
 ### q4
 
@@ -127,8 +130,9 @@ From 18:22 to 19:47 there were no instances. The request at 19:47:02 brought one
 seconds passed before the listener bound and that first `/api/trips` returned. Every request
 since has returned 200 in under 60ms.
 
-From your agent's account, where did things go wrong, if they did, and what does someone visiting
-the app right now see? If the account can't tell you, say why.
+From your agent's account, where did things go wrong, if they did, and what does someone who opens
+the app right now get: which version of it, if any, and what happens when they try to use it? If
+the account can't tell you, say why.
 
 ### q5
 
@@ -150,8 +154,9 @@ I've confirmed what is happening with sign-ups on the live site. `server/routes/
 Line 54 uses `>` where it needs `>=`, so a car with all four seats taken still accepts a fifth.
 Rosterpin is taking one sign-up past capacity on every car, and that is what your member saw.
 
-From your agent's account, where did things go wrong, if they did, and what does someone visiting
-the app right now see? If the account can't tell you, say why.
+From your agent's account, where did things go wrong, if they did, and what does someone who opens
+the app right now get: which version of it, if any, and what happens when they try to use it? If
+the account can't tell you, say why.
 
 ### q6
 
@@ -176,8 +181,9 @@ Error: Process exited with code 1
 `src/pages/Trips.jsx` opens a `<section>` at line 12 and closes it with `</div>` at line 27.
 Glintpage stopped `a07d3be` at that step, and its log has nothing after it.
 
-From your agent's account, where did things go wrong, if they did, and what does someone visiting
-the app right now see? If the account can't tell you, say why.
+From your agent's account, where did things go wrong, if they did, and what does someone who opens
+the app right now get: which version of it, if any, and what happens when they try to use it? If
+the account can't tell you, say why.
 
 ### q7
 
@@ -208,5 +214,6 @@ you renamed it to `rosterpin-api` last Tuesday; Moorbolt released the old name, 
 resolves. `VITE_API_URL` on Glintpage still holds it. Nothing has arrived at `rosterpin-api` since
 12:31, including during my page load just now.
 
-From your agent's account, where did things go wrong, if they did, and what does someone visiting
-the app right now see? If the account can't tell you, say why.
+From your agent's account, where did things go wrong, if they did, and what does someone who opens
+the app right now get: which version of it, if any, and what happens when they try to use it? If
+the account can't tell you, say why.

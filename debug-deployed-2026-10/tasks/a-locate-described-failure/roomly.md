@@ -34,8 +34,9 @@ Error: Process exited with code 1
 `src/components/BuildingFilter.jsx`, so the relative path points at a file that isn't in the
 commit. Pagewell stopped `3e7b0d4` at that step, and its log has nothing after it.
 
-From your agent's account, where did things go wrong, if they did, and what does someone visiting
-the app right now see? If the account can't tell you, say why.
+From your agent's account, where did things go wrong, if they did, and what does someone who opens
+the app right now get: which version of it, if any, and what happens when they try to use it? If
+the account can't tell you, say why.
 
 ### q2
 
@@ -58,8 +59,9 @@ The handler at `routes/bookings.js:27` dereferences `req.body.slot.roomId`, and 
 undefined on these requests. Every `POST /api/bookings` in the window throws there; every other
 route returns 200.
 
-From your agent's account, where did things go wrong, if they did, and what does someone visiting
-the app right now see? If the account can't tell you, say why.
+From your agent's account, where did things go wrong, if they did, and what does someone who opens
+the app right now get: which version of it, if any, and what happens when they try to use it? If
+the account can't tell you, say why.
 
 ### q3
 
@@ -89,8 +91,9 @@ The bundle Pagewell is serving has `http://localhost:3001` as its API base: `VIT
 set in the Pagewell site's environment, so `src/api.js` fell back to its default. The only hits on
 `roomly-api` in that window are Kettlerun's own health checks; no `/api/rooms`.
 
-From your agent's account, where did things go wrong, if they did, and what does someone visiting
-the app right now see? If the account can't tell you, say why.
+From your agent's account, where did things go wrong, if they did, and what does someone who opens
+the app right now get: which version of it, if any, and what happens when they try to use it? If
+the account can't tell you, say why.
 
 ### q4
 
@@ -117,8 +120,9 @@ hours before you opened the app. This morning, your first `/api/rooms` hit trigg
 08:51:37, and the 42 seconds until the listener bound is the delay you saw. Everything since has
 returned 200.
 
-From your agent's account, where did things go wrong, if they did, and what does someone visiting
-the app right now see? If the account can't tell you, say why.
+From your agent's account, where did things go wrong, if they did, and what does someone who opens
+the app right now get: which version of it, if any, and what happens when they try to use it? If
+the account can't tell you, say why.
 
 ### q5
 
@@ -147,8 +151,9 @@ Meanwhile Kettlerun's edge answers requests to `roomly-api.kettlerun.net` with
 `503 Service Unavailable`. `server/db.js` throws at line 4 when `DB_URL` is missing, and that runs
 before `app.listen`.
 
-From your agent's account, where did things go wrong, if they did, and what does someone visiting
-the app right now see? If the account can't tell you, say why.
+From your agent's account, where did things go wrong, if they did, and what does someone who opens
+the app right now get: which version of it, if any, and what happens when they try to use it? If
+the account can't tell you, say why.
 
 ### q6
 
@@ -171,8 +176,9 @@ I reproduced it. A booking for 9:00:
 which `new Date` rejects; two-digit hours parse fine. That's what is throwing on the deployed
 `/api/bookings` for your friend.
 
-From your agent's account, where did things go wrong, if they did, and what does someone visiting
-the app right now see? If the account can't tell you, say why.
+From your agent's account, where did things go wrong, if they did, and what does someone who opens
+the app right now get: which version of it, if any, and what happens when they try to use it? If
+the account can't tell you, say why.
 
 ### q7
 
@@ -201,5 +207,6 @@ GET https://roomly-api.kettlerun.net/api/rooms net::ERR_FAILED 200 (OK)
 `b52e11a` removed the middleware line in `server/index.js` that set `Access-Control-Allow-Origin`
 to `FRONTEND_ORIGIN`, so the 200 goes out without that header and the page's `fetch` rejects.
 
-From your agent's account, where did things go wrong, if they did, and what does someone visiting
-the app right now see? If the account can't tell you, say why.
+From your agent's account, where did things go wrong, if they did, and what does someone who opens
+the app right now get: which version of it, if any, and what happens when they try to use it? If
+the account can't tell you, say why.

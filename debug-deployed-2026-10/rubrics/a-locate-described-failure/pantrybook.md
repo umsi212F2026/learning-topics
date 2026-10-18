@@ -39,7 +39,9 @@ nor counted against the learner.
   the push, working, with recipes in the old order; to them it looks like nothing happened.
 - **credit:** full when they say the new backend deploy didn't start (it never answered its health
   check, after a build that succeeded) and that visitors still get the previous version, working,
-  without the change. Half when one of the two is right: for example, the kind right but saying the
+  without the change. "It started, but on the wrong port, so the health check got no answer and
+  Fernlatch stopped it" counts as the app failing to start, as does saying Fernlatch could never
+  reach the new backend. Half when one of the two is right: for example, the kind right but saying the
   site or its data is down, which the account rules out, or the visitor half right but placing it
   at the build. None otherwise.
 - **tutor note:** if they say visitors get errors, ask which deploy the account says Fernlatch was
