@@ -51,7 +51,7 @@ confusable. Choirsheet and Lanternwell are made up, and appear nowhere else in t
 - **goal:** `w-alert`
 - **move:** DISTINGUISH
 - **answer:** The health check is Lanternwell asking Choirsheet whether it still answers, so that
-  Lanternwell can act on its own, by restarting the app; no person is told. The alert is a message
+  Lanternwell can act on its own, by restarting the app; no person needs to hear of it. The alert is a message
   that comes to the builder when Choirsheet stops answering, so a person finds out and can look
   into it. The health check is for the host; the alert is for the builder.
 - **credit:** full for naming that the health check is the host asking the app so the host can

@@ -26,6 +26,6 @@ difference between Choirsheet's server log and an alert?
 ### q-alert-vs-health-check
 
 Lanternwell runs a health check on Choirsheet: every minute it asks one of Choirsheet's addresses
-whether the app still answers, and if it doesn't, restarts the app without telling anyone. The agent also offers to set up
+whether the app still answers, and if it doesn't, restarts the app. The agent also offers to set up
 an alert for when Choirsheet stops answering. What is the difference between the health check and
 that alert?
