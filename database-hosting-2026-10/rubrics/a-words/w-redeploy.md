@@ -15,8 +15,9 @@ confusable: restart; deploy.
   version, while a restart starts the same version again. No credit for "a redeploy happens on the
   host and a restart on your laptop", an incidental difference with nothing about a new version.
   Do not accept "a redeploy loses
-  your data and a restart doesn't": on some hosts a restart wipes an ephemeral disk too, and data on
-  a volume survives both.
+  your data and a restart doesn't" as the whole answer: on some hosts a restart wipes an ephemeral
+  disk too, and data on a volume survives both. Beside the new-version difference, a remark about
+  what a particular host does to its disk on each is not counted against them.
 
 ### q-redeploy-vs-first-deploy
 

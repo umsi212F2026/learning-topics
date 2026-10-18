@@ -12,8 +12,8 @@ Postgres; SQL.
   which the backend opens and works on itself, through a library, and asks things in SQL. Postgres
   is asked in SQL too, so SQL is not what makes the app a SQLite app; the file is.
 - **credit:** full for the difference that matters: SQL is the language queries are written in,
-  and SQLite is a database, the file holding the data that the backend opens itself and asks in
-  that language. Half for "SQL is a language" with nothing said about what SQLite is, or for
+  and SQLite is a database that is asked questions in the SQL language. Saying it is a file the backend opens itself
+  is welcome and is not required, since that is not what separates it from SQL. Half for "SQL is a language" with nothing said about what SQLite is, or for
   "SQLite is a database" with nothing about SQL being the language it is asked in. Do not accept
   "SQLite is a small or lite version of SQL" or "SQLite is a kind of SQL", which are the confusion
   itself, and do not accept a difference of size or speed.

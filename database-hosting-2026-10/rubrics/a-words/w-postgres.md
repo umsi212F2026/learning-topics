@@ -11,8 +11,9 @@ Nearest confusable: SQL. Synonym: PostgreSQL.
   database: a program that runs on its own, holds the data, and is asked things in SQL by the
   backend, which connects to it. SQLite is asked in SQL too, which is why the queries mostly carry
   over; what changes is the thing being asked.
-- **credit:** full for the difference that matters: SQL is the language, and Postgres is a database,
-  a running program that is asked in that language. Half for "Postgres uses SQL" with nothing about
+- **credit:** full for the difference that matters: SQL is the language, and Postgres is a database
+  that is asked questions in the SQL language. Saying it is a running program the backend connects to is
+  welcome and is not required, since that is not what separates it from SQL. Half for "Postgres uses SQL" with nothing about
   Postgres being the database that holds the data. Do not accept "Postgres is a kind of SQL" or
   "Postgres is a newer version of SQL", which are the confusion itself, and do not accept a
   difference of size or speed.
