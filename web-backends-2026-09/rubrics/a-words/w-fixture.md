@@ -9,11 +9,12 @@
   time: three books, say, one of them finished, and nothing else. Each run sets it up afresh, so what
   the test reports depends on the thing being tested rather than on whatever happened to be in the
   database.
-- **credit:** full credit for saying it is a known starting state, put in place the same way every
-  time. Mentioning tests is natural here but not required: "what gets loaded to start a fresh
-  database, the same every time" also earns full credit. Half credit for "sample data" or "data the
-  tests use" with nothing about its being put in place the same way every time. Do not accept "test
-  fixture", which names it again, and do not accept "the test itself".
+- **credit:** full credit for saying it is a known starting state a test puts in place before it
+  runs, the same way every time. Half credit for either part alone: "data the tests use" with
+  nothing about its being put in place the same way every time, or "what gets loaded to start a
+  fresh database, the same every time" with nothing about tests, which describes sample data as
+  well. Half credit for "sample data" alone. Do not accept "test fixture", which names it again,
+  and do not accept "the test itself".
 
 ### q-fixture-vs-sample-data
 

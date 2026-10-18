@@ -32,8 +32,9 @@
   to the browser, and the backend answers the running page's requests for data. Half credit for
   "they are on different ports", "one is Vite and one is my agent's code", or "the dev server goes
   away when you deploy", which are true and incidental. Do not accept "they are the same thing under
-  two names", and do not accept an answer in which the dev server's job is to pass the page's
-  requests on to the backend.
+  two names", and do not accept an answer in which the dev server answers the page's requests for
+  data. An answer that says the dev server may pass those requests on to the backend (Vite's proxy,
+  a common setup) is right about that, and still needs the backend to be what answers them.
 
 ### q-backend-in-the-browser
 

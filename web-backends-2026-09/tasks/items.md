@@ -1,9 +1,6 @@
-# The words of web backends
+# Web backends
 
-**Intended goals:** `w-backend`, `w-request`, `w-endpoint`, `w-api`, `w-status-code`,
-`w-localhost`, `w-server-log`, `w-database`, `w-sql`, `w-table`, `w-schema`, `w-migration` and
-`w-fixture`, with five questions on `c-check-persistence`, `c-review-schema` and `c-trace-action`
-at the end.
+**Intended goals:** `c-check-persistence`, `c-review-schema` and `c-trace-action`.
 
 Answer each question in one to three sentences, in your own words. Where a
 question quotes an AI coding agent, imagine it is working on an app on your own laptop. Several

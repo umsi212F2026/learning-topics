@@ -11,8 +11,8 @@
   you are the only one who can open it.
 - **credit:** full credit for saying localhost means this computer, the one you are on, so the
   address reaches only your own machine. Full credit for "it means the app is running on my laptop
-  and is not on the internet". Full credit for "127.0.0.1", the address every machine uses for
-  itself. Do not accept "the port the app is running on", which is the number after the colon, and do
+  and is not on the internet". No credit for "127.0.0.1" alone, which is another name for it. Do
+  not accept "the port the app is running on", which is the number after the colon, and do
   not accept "the address of a local server" with nothing about whose machine it is.
 
 ### q-localhost-sent-to-sister

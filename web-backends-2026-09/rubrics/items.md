@@ -1,4 +1,4 @@
-# Rubrics: The words of web backends
+# Rubrics: Web backends
 
 Answers for `tasks/items.md`. **Do not read this before attempting the questions.**
 
@@ -72,6 +72,9 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
 - **type:** mcq
 - **goal:** c-trace-action
 - **answer:** 3
-- **credit:** 1 has the page asking for books before the browser has the page at all. 2 gives the dev
-  server a job it does not have: it sends the page's files and takes no part in fetching the books. 4
-  has the browser reaching the database, which only the server does.
+- **credit:** 1 has the page asking for books before the browser has the page at all. 2 has the dev
+  server fetching the books while it hands out the page, and the server sending back the page and
+  the books together; the page's files come first, and the books come back only when the running
+  page asks for them. (With Vite's proxy, a common setup, that request may pass through the dev
+  server on its way to the server, which doesn't change the order in 3.) 4 has the browser reaching
+  the database, which only the server does.

@@ -2,8 +2,8 @@
 
 ### q-define-fixture
 
-Your agent says: "All of Shelf's tests start from the same fixture." Say what a fixture is, in your
-own words.
+Your agent, working on Shelf, says: "I'll add a fixture first." Say what a fixture is, in your own
+words.
 
 ### q-fixture-vs-sample-data
 
