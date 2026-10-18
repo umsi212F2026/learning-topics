@@ -56,7 +56,8 @@ someone do, so a secret may be one and a public value may be one too.
   anything of yours; it is where anyone, including every visitor's browser, sends requests, so it
   is public.
 - **credit:** full for naming that the address doesn't let whoever holds it into anything, so it
-  isn't a secret however random it looks. Half for saying it is public or not a secret without
+  isn't a secret however random it looks. "It's public, because every visitor's browser already
+  has it" is also full: it gives the reason. Half for saying it is public or not a secret without
   saying why. None for a different quibble, such as that `w7mz` could in fact be guessed.
 - **tutor note:** if they say "it's public because the frontend sends it to the browser", that is
   true; ask whether it would be a secret if it weren't, and what it would let someone do.

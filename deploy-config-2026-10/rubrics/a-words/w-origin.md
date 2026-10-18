@@ -14,10 +14,10 @@ addresses with the same domain but different ports, such as `http://localhost:51
   page was loaded from, down to the port (with the `http` or `https` in front), so
   `http://localhost:5173` and `http://localhost:3000` share a domain but are two different
   origins.
-- **credit:** full for naming that the origin goes down to the port (and the scheme) while the
-  domain is only the name, so the same domain can be more than one origin. Half for saying the
-  origin is "more of the address" or "the full address" without saying the port is what makes the
-  difference. None for an incidental difference, such as that a domain is bought, or that one has
+- **credit:** full for naming that the origin also includes the port, or the scheme (`http` or
+  `https`), or both, while the domain is only the name, so the same domain can be more than one
+  origin. Half for saying the origin is "more of the address" without saying
+  that the port or the scheme is what makes the difference. None for an incidental difference, such as that a domain is bought, or that one has
   `www` in it.
 
 ### q4
