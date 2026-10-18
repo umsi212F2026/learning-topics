@@ -69,9 +69,10 @@ nothing.
   `read:user`; the agent can change that line.
 - **credit:** full for catching `repo` as more than the app uses and naming a smaller request in
   their own words (only their profile, or just name and picture); the exact scope string is not
-  required. Half for catching it with no replacement, or with a replacement that still asks for
-  more than the app uses (such as `user`, which can change profile data, or adding `user:email`,
-  since Pantry doesn't use email).
+  required. Dropping `repo` counts as naming the smaller request, since what is left, no scope at
+  all, is the right one. Half for catching it with no replacement, or with a replacement that still
+  asks for more than the app uses (such as `user`, which can change profile data, or adding
+  `user:email`, since Pantry doesn't use email).
 - **tutor note:** if they agree because "later" sounds reasonable, ask what a Pantry user is
   agreeing to on GitHub's approval screen today.
 
@@ -86,10 +87,13 @@ nothing.
 - **credit:** full for all three: a new secret put where the old one was (the backend host's
   settings and the local `.env`; "replace it" with the backend host named counts), the old one
   deleted or disabled at GitHub, and that deleting the file from the repository doesn't fix it
-  because it was already public; half for some but not all.
+  because it was already public; half for some but not all. "Rotating" the secret covers both
+  getting a new one and the old one disabled, since that is what rotating means; where the new one
+  goes still needs saying.
 - **tutor note:** rewriting history is fine as an extra, but if it is offered as the fix, ask
-  whether anyone could have copied the secret before then. "Rotate" alone needs unpacking: ask what
-  happens to the old secret, since an OAuth app can hold two at once.
+  whether anyone could have copied the secret before then. "Rotate" covers the old secret, since
+  rotating means making it stop working. Ask about the old one only if they get a new secret and say
+  nothing of the old, since an OAuth app can hold two at once.
 
 ### exchange
 
@@ -101,6 +105,7 @@ nothing.
 - **credit:** full when they agree and ask for no change that would break it (moving the code
   exchange or the client secret into React, adding a password, keying users by email instead of
   `github_id`). A harmless suggestion (a sign-out route, a nicer error page) costs nothing, and so
-  does raising whether the session cookie works across the two hosts. None otherwise.
+  does raising whether the session cookie works across the two hosts (asking about the cookie
+  settings, or suggesting both parts under one domain). None otherwise.
 - **tutor note:** an answer that holds off only to ask what `sameSite: 'none'` does is not a
   refusal; ask whether, with the answer, they would agree.

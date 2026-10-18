@@ -287,7 +287,8 @@ with the learner.
     nothing to judge it by. Key: ask only for what the app shows: for GitHub no scope or
     `read:user` (with `user:email` if the app uses email); for Google `openid profile` (with `email` if it uses email). Full credit
     needs the excess caught and a smaller request named in the learner's words; the exact scope
-    string is not required. Half credit for catching it with no replacement, with a replacement
+    string is not required. Dropping the extra scope counts as naming the smaller request when
+    what is left is the right one. Half credit for catching it with no replacement, with a replacement
     that still asks for more than the app uses, or with one that asks for less than the app uses
     (for example, dropping email when the app sends mail).
   - `sound-plan`: every step is sound: the Sign in button sends the browser to the provider; the
@@ -315,6 +316,8 @@ with the learner.
     removed; and deleting it from the repository doesn't fix it, because it was already public.
     Full credit needs all three: the new secret in place, the old one deleted or disabled at the
     provider, and that the repository fix doesn't settle it. Half credit for some but not all.
+    "Rotating" the secret covers both the new secret and the old one disabled, since that is what
+    rotating means; where the new one goes still needs saying.
 
   How hard, by how the excerpt is worded:
   - Medium: the step the case fixes says what it does in plain words ("I'll put the client

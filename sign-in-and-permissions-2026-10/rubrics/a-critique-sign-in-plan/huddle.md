@@ -68,9 +68,10 @@ commits the learner to, not its tone. A flag on a step the excerpt left unclear 
   for `openid profile` only; the agent can change it.
 - **credit:** full for catching the Calendar scope as more than the app uses and naming a smaller
   request in their own words (only their profile, or just name and picture); the exact scope string
-  is not required. Half for catching it with no replacement, or with a replacement that still asks
-  for more than the app uses (such as read-only Calendar access, or adding `email`, since Huddle
-  doesn't use email).
+  is not required. Dropping the Calendar line counts as naming the smaller request, since what is
+  left, `openid profile`, is the right one. Half for catching it with no replacement, or with a
+  replacement that still asks for more than the app uses (such as read-only Calendar access, or
+  adding `email`, since Huddle doesn't use email).
 - **tutor note:** if they agree because adding events to a calendar sounds useful for an events
   board, ask what a Huddle member is agreeing to on Google's approval screen today, before any such
   feature exists.
@@ -86,11 +87,13 @@ commits the learner to, not its tone. A flag on a step the excerpt left unclear 
 - **credit:** full for all three: a new secret put where the old one was (the backend host's
   settings and the local `.env`; "replace it" with the backend host named counts), the old one
   deleted or disabled at Google, and that untracking the file doesn't fix it because it was already
-  public; half for some but not all.
+  public; half for some but not all. "Rotating" the secret covers both getting a new one and the old
+  one disabled, since that is what rotating means; where the new one goes still needs saying.
 - **tutor note:** step 4 is the trap: the file is gone from the file list but not from the history.
   Rewriting history is fine as an extra, but if it is offered as the fix, ask whether anyone could
-  have copied the secret before then. "Rotate" alone needs unpacking: ask what happens to the old
-  secret, since a Google client can hold two at once.
+  have copied the secret before then. "Rotate" covers the old secret, since rotating means making it
+  stop working. Ask about the old one only if they get a new secret and say nothing of the old,
+  since a Google client can hold two at once.
 
 ### id-token
 
@@ -102,6 +105,7 @@ commits the learner to, not its tone. A flag on a step the excerpt left unclear 
 - **credit:** full when they agree and ask for no change that would break it (moving the code
   exchange or the client secret into React, adding a password, keying users by email instead of
   `google_sub`). A harmless suggestion (a sign-out route, a nicer error page) costs nothing, and so
-  does raising whether the session cookie works across the two hosts. None otherwise.
+  does raising whether the session cookie works across the two hosts (asking about the cookie
+  settings, or suggesting both parts under one domain). None otherwise.
 - **tutor note:** an answer that holds off only to ask what an ID token is, or what
   `sameSite: 'none'` does, is not a refusal; ask whether, with the answer, they would agree.

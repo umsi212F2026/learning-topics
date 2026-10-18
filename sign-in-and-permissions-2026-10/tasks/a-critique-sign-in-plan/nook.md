@@ -105,9 +105,9 @@ What do you do now, and does your agent's fix settle it?
    three from `process.env`; you set `GITHUB_CLIENT_SECRET` in Forgeline's settings. On
    `GET /auth/github/callback`, `passport.authenticate('github')` swaps the code for an access token
    and fetches the user's profile and email from GitHub's API.
-4. In `verify`, call `findOrCreateUser({ githubId: profile.id })` in `backend/db/users.js`, which
-   upserts into a `users` table with a unique `github_id` column, `name`, `avatar_url` and `email`.
-   No password column.
+4. In `verify`, call `findOrCreateUser(profile)` in `backend/db/users.js`, which takes the user's
+   GitHub id, name, avatar and email from the profile and upserts them into a `users` table with a
+   unique `github_id` column. No password column.
 5. `express-session` with `connect-pg-simple` keeps sessions in Postgres;
    `passport.serializeUser` stores the user's row id. The cookie is
    `{ sameSite: 'none', secure: true, httpOnly: true }`, since Paperkite and Forgeline are different
