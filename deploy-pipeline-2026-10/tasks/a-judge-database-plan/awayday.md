@@ -96,9 +96,10 @@ and changing it is all in the code. The agent proposes:
 
 1. Each time the backend starts, it will run `CREATE TABLE IF NOT EXISTS` for `games` and `rides`,
    which creates each table only if it isn't there yet.
-2. Then it will insert each game from `server/db/games.json`, every one with its own id, using
-   `ON CONFLICT DO NOTHING`, which skips any game whose id is already in `games`. So each game
-   goes in once, and a game added to the file later goes in on the next start.
+2. Then it will insert each game from `server/db/games.json`, every one with its own id (the same
+   ids production's games already have), using `ON CONFLICT DO NOTHING`, which skips any game
+   whose id is already in `games`. So each game goes in once, and a game added to the file later
+   goes in on the next start.
 3. A change to the tables will be written as a migration file in `server/db/migrations/`,
    numbered in order (`001-...sql`, `002-...sql`) and kept in the repository.
 4. I'll add a migration script, `server/db/migrate.js`, and set `node db/migrate.js` as
@@ -108,11 +109,13 @@ and changing it is all in the code. The agent proposes:
 5. The backend and the migration script both read the connection string from `AWAYDAY_DB` on
    Ropewalk's Settings page.
 
-Would you go along with this plan?
+Would you agree to this plan as it stands? If not, say what you would change before agreeing.
 
 ### q4
 
-Suppose the agent has carried out plan 3, says everything is set up, and Ropewalk's deploy list
-shows the latest deploy as Live.
+Suppose the agent has reworked the backend so that it creates any missing tables when it starts,
+puts its starting rows in only once, and applies changes to the tables through a migration run
+before each deploy. It says everything is set up, and Ropewalk's deploy list shows the latest
+deploy as Live.
 
 How would you make sure that a push to `main` now leaves production's data in place?

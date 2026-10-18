@@ -94,11 +94,12 @@ such a change cancels the question's credit.
   shows that push's deploy as Live, open the live app and see the ride still listed for that game.
 - **credit:** full for adding something through the live app (in the browser, or through the
   backend's own HTTP API), pushing a change to `main`, and once Ropewalk shows that push's deploy
-  Live, looking in the live app and seeing the thing still there. Half for adding the thing and
-  then only restarting the backend (saving a setting) rather than pushing, which never runs the
-  pre-deploy command; for checking in Cellarstone's query console rather than through the app; for
-  checking before the push's deploy is Live; or for pushing and looking without having added
-  anything of their own (seeing the games listed shows nothing about what users added). None for
-  taking the agent's word or the Live status, or for reading the plan or the settings again.
+  Live, looking in the live app and seeing the thing still there. Looking in Cellarstone's query
+  console for the row they added through the app is as good as looking in the live app. Half for
+  adding the thing and then only restarting the backend (saving a setting) rather than pushing,
+  which never runs the pre-deploy command; for checking before the push's deploy is Live; or for
+  pushing and looking without having added anything of their own (seeing the games listed shows
+  nothing about what users added). None for taking the agent's word or the Live status, or for
+  reading the plan or the settings again.
 - **tutor note:** if they only look at the schedule after a push, ask which rows a parent added
   and how they would know those survived.

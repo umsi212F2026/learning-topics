@@ -288,13 +288,17 @@ orientation's reading. Learner-facing text states the task, never the scoring.
     hook once the tests pass, the hook's URL's place unsaid); Pinecart's link off and the workflow
     deploying the frontend once the tests pass. The plan ends with the agent's message: "I'll need
     a Pinecart deploy token for the workflow. Where should I keep it?" The token's place is a
-    question about the plan, not a fault in it, so the plan still has no fault. Asks: "Would you
-    go along with this plan? And what would you tell the agent about where to keep the token?"
+    question about the plan, not a fault in it, so the plan still has no fault. Asks the same
+    closing question as every other plan, so nothing marks it as the sound one: "Would you agree
+    to this plan as it stands? If not, say what you would change before agreeing. And what would
+    you tell the agent about where to keep the token?"
 
   **Confirmation question** (Hard; `confirm-live` and `confirm-gate`), about the scenario's
-  `sound` plan, which the question's setup says the agent has carried out ("Suppose the agent has
-  carried out plan 4, keeping the token in the repository's GitHub secrets, says everything is set up, and both
-  hosts' deploy lists show the latest deploy as Live"). Asks: "How would you make sure that a
+  `sound` plan, which the question's setup says the agent has carried out, in its own words and
+  never by number, since a student may be served it alone: "Suppose the agent has set up both
+  parts to deploy themselves only once the tests on a push to `main` pass, keeping the Pinecart
+  token in the repository's GitHub secrets. It says everything is set up, and both hosts' deploy
+  lists show the latest deploy as Live." Asks: "How would you make sure that a
   push to `main` now reaches the live app, both its frontend and its backend, and that a push
   whose tests fail goes live in neither?"
 
@@ -770,11 +774,16 @@ orientation's reading. Learner-facing text states the task, never the scoring.
     database, or from an insert that skips rows already there; a change to the tables is written
     as a migration file in the repository, and a migration script, run as Ropewalk's pre-deploy
     command, first creates any tables that are missing and then applies each migration file not
-    yet applied, and records it. Asks: "Would you go along with this plan?"
+    yet applied, and records it. Asks the same closing question as every other plan, so nothing
+    marks it as the sound one: "Would you agree to this plan as it stands? If not, say what you
+    would change before agreeing."
 
   **Confirmation question** (Hard; `confirm-data`), about the scenario's `sound` plan, which the
-  question's setup says the agent has carried out ("Suppose the agent has carried out plan 3, says
-  everything is set up, and Ropewalk's deploy list shows the latest deploy as Live"). Asks: "How
+  question's setup says the agent has carried out, in its own words and never by number, since a
+  student may be served it alone: "Suppose the agent has reworked the backend so that it creates
+  any missing tables when it starts, puts its starting rows in only once, and applies changes to
+  the tables through a migration run before each deploy. It says everything is set up, and
+  Ropewalk's deploy list shows the latest deploy as Live." Asks: "How
   would you make sure that a push to `main` now leaves production's data in place?"
 
   Credit. Plan questions on a faulty plan: full for naming the faulty step and asking for a change
@@ -814,9 +823,10 @@ orientation's reading. Learner-facing text states the task, never the scoring.
   meets `sound-plan` in full. On the
   confirmation question: full for adding something through the live app (in the browser, or
   through the backend's own HTTP API), pushing a change to `main`, and once Ropewalk shows that
-  push's deploy Live, looking in the live app and seeing the thing still there. Half for adding the thing and then only restarting
-  the backend (saving a setting) rather than pushing; for checking in Cellarstone's query console
-  rather than through the app; for checking before the push's deploy is Live; or for pushing and
+  push's deploy Live, looking in the live app and seeing the thing still there; looking in
+  Cellarstone's query console for the row they added through the app is as good. Half for adding
+  the thing and then only restarting the backend (saving a setting) rather than pushing; for
+  checking before the push's deploy is Live; or for pushing and
   looking without having added anything of their own. None for taking the agent's word or the Live
   status, or for reading the plan or the settings again.
 

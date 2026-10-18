@@ -112,13 +112,14 @@ The agent proposes:
 
 I'll need a Pinecart deploy token for the workflow. Where should I keep it?
 
-Would you go along with this plan? And what would you tell the agent about where to keep the
-token?
+Would you agree to this plan as it stands? If not, say what you would change before agreeing.
+And what would you tell the agent about where to keep the token?
 
 ### q5
 
-Suppose the agent has carried out plan 4, keeping the token in the repository's GitHub secrets,
-says everything is set up, and both hosts' deploy lists show the latest deploy as Live.
+Suppose the agent has set up both parts to deploy themselves only once the tests on a push to
+`main` pass, keeping the Pinecart token in the repository's GitHub secrets. It says everything is
+set up, and both hosts' deploy lists show the latest deploy as Live.
 
 How would you make sure that a push to `main` now reaches the live app, both its frontend and its
 backend, and that a push whose tests fail goes live in neither?

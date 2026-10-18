@@ -102,11 +102,13 @@ and changing it is all in the code. The agent proposes:
 5. The backend and the migration script both read the connection string from `CLUBHOP_DB` on
    Ropewalk's Settings page.
 
-Would you go along with this plan?
+Would you agree to this plan as it stands? If not, say what you would change before agreeing.
 
 ### q4
 
-Suppose the agent has carried out plan 3, says everything is set up, and Ropewalk's deploy list
-shows the latest deploy as Live.
+Suppose the agent has reworked the backend so that it creates any missing tables when it starts,
+puts its starting rows in only once, and applies changes to the tables through a migration run
+before each deploy. It says everything is set up, and Ropewalk's deploy list shows the latest
+deploy as Live.
 
 How would you make sure that a push to `main` now leaves production's data in place?
