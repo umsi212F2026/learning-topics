@@ -36,7 +36,9 @@ confusable. Choirsheet and Lanternwell are made up, and appear nowhere else in t
   crosses a threshold they set, such as more than five errors in an hour, telling them to go and look.
   The log holds what happened; the alert is what makes someone find out.
 - **credit:** full for naming that the log is a record someone has to go and read, while an alert
-  comes to a person, unasked, when a threshold they set is crossed. Half for only one half, such as
+  comes to a person, unasked. Saying it comes when a threshold they set is crossed is welcome and
+  is not required: "an alert messages you when something goes wrong" is enough. Half for only one
+  half, such as
   "the log just stores errors" with nothing on what an alert does. None for an incidental
   difference alone, such as that the log is kept for thirty days, that alerts arrive by email, or
   that the log has more detail.
