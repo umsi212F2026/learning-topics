@@ -15,4 +15,4 @@ mock and those three notes?
 
 You asked your agent whether saving a note works. It answers: "The save test never touches the
 real database. It stands a test double in for it, and checks that the double was asked to store
-the note." What does that confirm is working if the test passes, and what still not be working?
+the note." What does that confirm is working if the test passes, and what might still not be working?
