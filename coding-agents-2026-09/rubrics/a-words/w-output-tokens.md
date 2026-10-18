@@ -5,15 +5,15 @@
 - **type:** free
 - **goal:** w-output-tokens
 - **move:** INTERPRET
-- **answer:** the model wrote 24,000 tokens across that chat, and the thinking it did before
-  answering is part of that figure rather than a charge on top of it, so the output side is 24,000
-  and not 33,000. The 380,000 is the other side of the count, what was sent to the model over all the
-  chat's turns. The two are priced separately.
-- **credit:** full credit for both halves: the model produced 24,000 tokens of output for the chat,
-  and the reasoning tokens sit inside that number so they must not be added to it. Full credit for
-  also naming the 380,000 prompt tokens as the input side. Half credit for either half alone. No
-  credit for adding the 9,000 on top to get 33,000, or for reading completion tokens as what the
-  learner typed.
+- **answer:** completion tokens are output tokens: the model wrote 24,000 tokens across that chat,
+  including any thinking it did before answering. Prompt tokens are input tokens: 380,000 is what
+  was sent to the model over all the chat's turns. The two are priced separately, with output
+  costing more per token.
+- **credit:** full credit for both halves: the 24,000 completion tokens are what the model wrote
+  (the output side), and the 380,000 prompt tokens are what was sent to it (the input side).
+  Saying the reasoning is part of the 24,000, or that the two sides are priced apart, is welcome
+  and is not required. Half credit for either half alone. No credit for reading completion tokens
+  as what the learner typed, or as the tokens left to finish the task.
 
 ### q-thinking-is-free
 

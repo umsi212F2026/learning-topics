@@ -25,9 +25,10 @@
   compacted or restarted. It is a statement about how full this one chat is: it is not about what you
   have spent or are allowed to spend, not a limit on your account, and it says nothing about whether
   the work so far is any good.
-- **credit:** full credit for saying the chat's context is close to the ceiling on what fits in one
-  turn, so something has to give soon, by compaction, a new chat, or dropping material. Half credit
-  for "the chat is nearly full" with nothing about a ceiling on what fits on a turn. For the second
-  half, accept any one correct exclusion: not a spending limit, not an account quota, not a time
-  limit, not a claim about the quality of the work, not about other chats. No credit for reading it as
-  a budget warning, or as the model being about to stop working for good.
+- **credit:** full credit needs both halves: (a) the chat's context is close to the ceiling on what
+  fits in one turn, so something has to give soon, by compaction, a new chat, or dropping material;
+  and (b) any one correct thing it does not tell you: not a spending limit, not an account quota,
+  not a time limit, not a claim about the quality of the work, not about other chats. Half credit
+  for either half alone, or for both with (a) given only as "the chat is nearly full" with nothing
+  about a ceiling on what fits on a turn. No credit for reading it as a budget warning, or as the
+  model being about to stop working for good.

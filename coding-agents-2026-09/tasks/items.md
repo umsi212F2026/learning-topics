@@ -1,8 +1,6 @@
-# The words of coding agents
+# Coding agents
 
-**Intended goals:** `w-token`, `w-input-tokens`, `w-output-tokens`, `w-prompt-caching`, `w-model`,
-`w-reasoning-effort`, `w-context`, `w-context-window`, `w-compaction` and `w-system-prompt`, with
-three questions on `c-choose-model`, `c-split-chats` and `c-ask-cost-estimate` at the end.
+**Intended goals:** `c-choose-model`, `c-split-chats` and `c-ask-cost-estimate`.
 
 Answer each question in one to three sentences, in your own words. Where a
 question quotes a coding agent, imagine it is Codex working on one of your own course projects,

@@ -1,6 +1,6 @@
-# Rubrics: The words of coding agents
+# Rubrics: Coding agents
 
-Answers for `tasks/words.md`. **Do not read this before attempting the questions.**
+Answers for `tasks/items.md`. **Do not read this before attempting the questions.**
 
 ### q-worth-switching-plan-has-code
 
