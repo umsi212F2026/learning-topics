@@ -503,7 +503,10 @@ part of this.
   real attempt, ask only the case's first question (for free limits, "what happens on each plan
   when nobody has visited for an hour?").
 - **doesn't show:** one question carries one case, so a pass shows that case only; the goal is met
-  only when all three cases have passed. The terms are stated plainly in a few
+  only when all three cases have passed. Several questions ask about only part of the case they
+  list: `v3`, `v5`, `v6` and `v8` each ask for one or two of sleep, limits and card, and `v4` asks
+  what the extra vendor adds but not how hard each plan is to move, so a pass on one of them
+  records its whole case on part of it. The terms are stated plainly in a few
   bullets each, so a pass doesn't show the learner could find them on real vendors' pages, where
   they are spread over pricing, docs and billing pages.
   Vendors are made up, so a pass says nothing about real ones. The two plans are always one vendor

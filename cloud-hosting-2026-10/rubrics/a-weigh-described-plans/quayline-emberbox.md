@@ -50,8 +50,11 @@ either way. Remarks about where the database goes are neither credited nor count
   second dashboard and place to look when something breaks. Moving is easy from both: ordinary `npm` builds on Quayline;
   plain files on Lanternhost, which any static host can take; ordinary Node on Emberbox, plus its small
   `emberbox.toml`.
-- **credit:** full for accounts, secrets (the second login) and places to look, and how hard each plan is to move, each as the terms give it, with nothing
-  unsupported. Half for the extra vendor's cost without moving, or moving without the cost.
+- **credit:** full for accounts, secrets (a second login or credential, including a token the
+  agent uses) and places to look, and how hard each plan is to move, each as the terms give it,
+  with nothing unsupported. Half for the extra vendor's cost without moving, for moving without
+  the cost, or for moving with only part of the cost (one or two of accounts, secrets and places
+  to look).
 
 ### v1
 
@@ -75,8 +78,9 @@ either way. Remarks about where the database goes are neither credited nor count
   "Free forever": nothing in the terms says how long the free tier lasts. The two-accounts
   point is right.
 - **credit:** full for both claims named as unsupported, each with what the terms say instead
-  (a card on file lets Quayline bill, and without one it suspends; nothing in the terms
-  promises the free tier lasts). Half for one of the two.
+  (a card on file lets Quayline bill, and without one it suspends; and for "free forever",
+  either reading: nothing in the terms promises how long the free tier lasts, or the free tier
+  has limits, since past 750 hours the web service is suspended). Half for one of the two.
 
 ### v5
 
@@ -95,8 +99,8 @@ either way. Remarks about where the database goes are neither credited nor count
 - **answer:** no vendor needs a card to sign up; the terms say so in their first line. A card on
   file is a risk, not a requirement: on Quayline it lets bandwidth past 100 GB be billed, on Emberbox it
   keeps the server running past the credit and bills; Lanternhost can't bill at all.
-- **credit:** full for the terms' first line named as contradicting the claim, and the risk of a
-  card on file stated for Quayline and Emberbox. Half for one of the two.
+- **credit:** full for the claim named as wrong (no vendor needs a card to sign up), and the risk
+  of a card on file stated for Quayline and Emberbox. Half for one of the two.
 - **tutor note:** if `v3` was served before, ask what each said about a card.
 
 ### v7
@@ -117,8 +121,10 @@ either way. Remarks about where the database goes are neither credited nor count
   awake all month is up to 744 hours, under Quayline's 750, so nothing is suspended. It would cost
   nothing: with no card on file nothing is billed, though it leaves only a few hours' margin.
 - **credit:** full for "it would work", with both reasons (ten minutes is under 15, and the hours
-  stay under 750), and "it costs nothing". Half for "it would work" with one reason, or with no
-  cost said. None for "it wouldn't work", which the terms contradict.
+  stay under 750), and its cost: either "no money", since with no card on file nothing is billed,
+  or "nearly all of the 750 free hours", which leaves no room for a second web service. Half for
+  "it would work" with one reason, or with no cost said. None for "it wouldn't work", which the
+  terms contradict.
 
 ### v2
 

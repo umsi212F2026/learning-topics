@@ -56,15 +56,14 @@ risk on each vendor?
 
 ### v7
 
-A student wrote: "Plan Q. Quayline's server sleeps after 15 minutes, but that's fine for a class
-project. Plan S is just worse for this project."
+A student wrote: "Plan Q. One vendor is plenty for a class project, and Plan S is just worse."
 They give no case for the plan they didn't choose. Write the strongest case the terms give for
 Plan S.
 
 ### v8
 
-A student wrote: "Plan Q. The sleep matters most: a grader shouldn't wait a minute. I'll ask the
-agent to ping it every ten minutes so it never sleeps." Would that workaround work under these
+A student wrote: "Plan Q. The sleep matters most: a grader shouldn't wait a minute. I'll set up a
+scheduled ping every ten minutes so it never sleeps." Would that workaround work under these
 terms, and what would it cost?
 
 ### v2
