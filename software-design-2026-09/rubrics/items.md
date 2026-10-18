@@ -1,4 +1,4 @@
-# Rubrics: The words of software design
+# Rubrics: Software design
 
 Answers for `tasks/items.md`. **Do not read this before attempting the questions.**
 

@@ -18,6 +18,6 @@ officers have to be able to open this on their phones without installing anythin
 those approaches need an app installed." Which of these does that tell you?
 
 1. The agent prefers the one approach that is left and is arguing for it.
-2. If you relax the no-installation constraint, more options will be available.
-3. Those two approaches would not work, for any app.
-4. The agent has made a mistake: the no-installation constraint should have been weighed against the benefits of the two approaches, not used to rule them out.
+2. The no-installation limit leaves one of the three approaches standing.
+3. Those two approaches would not work, for any app at all.
+4. The agent should have weighed that limit against the two approaches' benefits.

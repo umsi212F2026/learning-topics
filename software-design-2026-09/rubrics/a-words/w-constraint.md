@@ -38,10 +38,9 @@
 - **goal:** w-constraint
 - **move:** INTERPRET
 - **answer:** 2
-- **credit:** the no-installation constraint is what removes the two approaches, so it has a price
-  you can now see, and relaxing it would bring them back. Whether to relax it is a separate
-  decision that the agent's report does not make for you. 1 reads it as the agent arguing rather
-  than as a limit that removes options. 3 overreaches: those approaches are fine for an app that
+- **credit:** the no-installation constraint rules out any approach that needs an app installed.
+  Two of the three approaches need one, so only one is left, which is what choice 2 says. 1 reads
+  it as the agent arguing rather than as a limit that removes options. 3 overreaches: those approaches are fine for an app that
   may install something, just not for this one. 4 treats the constraint as a requirement, one
   more thing to trade against the benefits; a constraint rules out whatever does not fit inside
   it, and the agent is right to apply it that way.

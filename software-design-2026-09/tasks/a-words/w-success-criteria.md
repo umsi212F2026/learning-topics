@@ -13,6 +13,7 @@ What is the difference between them?
 
 ### q-criteria-are-features
 
-A classmate says, about the YAGNI app from lab: "My success criteria are that it shows the five
-letters, that there's a text box next to each letter, and that there's a Check button." What is
-wrong with what they said?
+The app from lab shows the five letters of YAGNI and asks the user to type the word each letter
+stands for. A classmate says about it: "My success criteria are that it shows the five letters,
+that there's a text box next to each letter, and that there's a Check button." What is wrong with
+what they said?

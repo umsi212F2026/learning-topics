@@ -23,8 +23,8 @@
 - **move:** INTERPRET
 - **answer:** 4
 - **credit:** the plan cuts the work into pieces that can each be finished and checked, and the
-  agent is reporting where the work stands: the first three pieces are done and checked, and the
-  last four have not been started. 1 and 2 read a part-built app as a finished one. 3 reads the
+  agent is reporting where the work stands: it has got through step 3, whose checks pass, and the
+  last four steps have not been started. 1 and 2 read a part-built app as a finished one. 3 reads the
   steps as features: a step is a piece of the building, and one feature can take several steps
   while one step may touch no feature you would name.
 

@@ -13,7 +13,7 @@ step 4." Which of these does that tell you?
 1. The app is finished, and three of the seven things you asked for work.
 2. The app has been built, and the last four steps are yours to test.
 3. The plan's seven steps are seven separate features you asked for.
-4. Three of the plan's pieces are built and checked; the rest have not been started.
+4. The work is three steps into the plan, and four steps remain.
 
 ### q-plan-first-then-decide
 

@@ -1,11 +1,9 @@
-# The words of software design
+# Software design
 
-**Intended goals:** `w-spec`, `w-plan`, `w-success-criteria`, `w-constraint`, `w-mvp`, `w-yagni`,
-`w-spike`, `w-architecture` and `w-tech-stack`, with four questions on `c-write-success-criteria`
-and `c-choose-approach` at the end.
+**Intended goals:** `c-write-success-criteria` and `c-choose-approach`.
 
-Answer each question in one to three sentences, in your own words. The last
-four ask for a little more and say so. Where a question quotes an AI coding agent, imagine it is
+Answer each question in one to three sentences, in your own words. Some ask for a
+little more and say so. Where a question quotes an AI coding agent, imagine it is
 designing an app with you before it builds anything: it asks you about the app one question at a
 time, offers you two or three approaches with their trade-offs and usually recommends one, shows
 you its design a section at a time for approval, writes a spec you are asked to review, and only
