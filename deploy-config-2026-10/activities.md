@@ -135,10 +135,11 @@ still ask for and credit the reason.
   repair question names `c-secret-instead`. A full-credit answer says the learner will put (or has
   put) the secret into the host's settings themselves and tells the agent it is there, and gives
   both reasons: the chat is kept and can be shared, and an agent holding the secret can write it
-  into a file that gets committed. Naming the setting or the host is welcome but not required. A
-  reply that keeps the secret out some other way, such as pasting it with the password blanked
-  out or checking it themselves, is safer than complying but is not the criterion's answer: on its
-  own it does not earn full credit. Half credit is the right reply with only one of the two
+  into a file that gets committed. Naming the setting or the host is welcome but not required.
+  Checking or re-entering the secret in the host's settings themselves, and telling the agent, is
+  putting it there, and meets it. A reply that keeps the secret out some other way, such as pasting
+  it with the password blanked out or checking it somewhere other than the host's settings, is
+  safer than complying but is not the criterion's answer: on its own it does not earn full credit. Half credit is the right reply with only one of the two
   reasons, or both reasons with a reply that keeps the secret out some other way. Complying earns
   none. A repair may use a shape a message question in the same scenario also used, with a
   different file, command or lure.
@@ -195,8 +196,9 @@ still ask for and credit the reason.
   may be answerable by elimination. Weigh the first one served most.
 
   A repair built on a `debug-lure` message invites replies the criterion doesn't name, such as
-  offering to paste the page with the password blanked out, or to check the format themselves.
-  These are safer than complying but are not the criterion's answer. Unless the question's rubric
+  offering to paste the page with the password blanked out, or to check the format somewhere other
+  than the host's settings. These are safer than complying but are not the criterion's answer.
+  Checking or fixing the value in the host's settings themselves, and telling the agent, is. Unless the question's rubric
   says otherwise, such a reply alone does not meet `c-secret-instead`.
 
 ### `a-words`

@@ -6,20 +6,22 @@ setting is for is in the agent's answer; accept any wording that says the same t
 secret when someone holding it could get into something of yours; an address the app's users see
 is not.
 
-The one secret in this scenario is Silo's connection string (`SILO_URI`), which holds the
-database's password. A message should be declined when it would put that string in the chat or let
-the agent write it into a file, and gone along with otherwise. On a message question, the decision
-is credited to `c-judge-secret-request`, and saying whether the value is a secret (or public) to
-`c-spot-secret`, with no reason needed; saying what to do instead is welcome but credited to
-neither.
+The one secret in this scenario is Silo's connection string (`SILO_URI`), which holds the database's
+password. A message should be declined when it would put that string in the chat or let the agent
+write it into a file, and gone along with otherwise. On a message question, the decision is credited
+to `c-judge-secret-request`, and saying whether the value is a secret (or public) to
+`c-spot-secret`, read from the reason they give (keeping it out of the chat, away from the agent or
+out of a file treats it as a secret), with half for a decision with no reason; saying what to do
+instead is welcome but credited to neither.
 
-On a repair question, the criterion's answer is a reply saying the learner will put (or has put)
-the connection string into the web service's settings on Dockyard themselves and telling the agent
-it is there, with both reasons: the chat is kept and can be shared, and an agent holding the secret
-can write it into a file that gets committed. Naming `SILO_URI` or Dockyard is welcome but not
-required. A reply that keeps the secret out some other way (blanking the password, checking the
-string themselves, refusing with nothing offered) is safer than complying but does not earn full
-credit on its own.
+On a repair question, the criterion's answer is a reply saying the learner will put (or has put) the
+connection string into the web service's settings on Dockyard themselves and telling the agent it is
+there, with both reasons: the chat is kept and can be shared, and an agent holding the secret can
+write it into a file that gets committed. Naming `SILO_URI` or Dockyard is welcome but not required.
+Checking or re-entering the string in the host's settings themselves, and telling the agent, is
+putting it there and earns full credit. A reply that keeps the secret out some other way (blanking
+the password, checking the string somewhere other than the host's settings, refusing with nothing
+offered) is safer than complying but does not earn full credit on its own.
 
 The three repair questions (q8 to q10) share one answer pattern, so after feedback on the first,
 the next two can be answered by rote. Weigh the first repair served most.

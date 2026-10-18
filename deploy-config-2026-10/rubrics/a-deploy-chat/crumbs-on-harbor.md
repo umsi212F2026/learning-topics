@@ -5,21 +5,24 @@ a secret when someone holding it could get into something of yours; an address t
 see is not. The static site (`https://crumbs.harbor.app`) is the frontend's address; the web
 service (`https://crumbs-k3x9.harbor.app`) is the backend's. Larder hosts only the database.
 
-The one secret in this scenario is Larder's connection string (`LARDER_LINK`), which holds what
-the server uses to get into the database. A message should be declined when it would put that
-string in the chat or let the agent write it into a file, and gone along with otherwise. On a
-message question, the decision is credited to `c-judge-secret-request`, and saying whether the
-value is a secret (or public) to `c-spot-secret`, with no reason needed; saying what to do instead
-is welcome but credited to neither.
+The one secret in this scenario is Larder's connection string (`LARDER_LINK`), which holds what the
+server uses to get into the database. A message should be declined when it would put that string in
+the chat or let the agent write it into a file, and gone along with otherwise. On a message
+question, the decision is credited to `c-judge-secret-request`, and saying whether the value is a
+secret (or public) to `c-spot-secret`, read from the reason they give (keeping it out of the chat,
+away from the agent or out of a file treats it as a secret), with half for a decision with no
+reason; saying what to do instead is welcome but credited to neither.
 
-On a repair question, the criterion's answer is a reply saying the learner will put (or has put)
-the connection string into the web service's settings on Harbor themselves and telling the agent
-it is there, with both reasons: the chat is kept and can be shared, and an agent holding the secret
-can write it into a file that gets committed. Naming `LARDER_LINK` or Harbor is welcome but not
-required. A reply that keeps the secret out some other way (blanking the password, checking the
-string themselves, refusing with nothing offered) is safer than complying but does not earn full
-credit on its own: half credit is the right reply with one of the two reasons, or both reasons
-with a reply that keeps the secret out some other way. Complying earns none.
+On a repair question, the criterion's answer is a reply saying the learner will put (or has put) the
+connection string into the web service's settings on Harbor themselves and telling the agent it is
+there, with both reasons: the chat is kept and can be shared, and an agent holding the secret can
+write it into a file that gets committed. Naming `LARDER_LINK` or Harbor is welcome but not
+required. Checking or re-entering the string in the host's settings themselves, and telling the
+agent, is putting it there and earns full credit. A reply that keeps the secret out some other way
+(blanking the password, checking the string somewhere other than the host's settings, refusing with
+nothing offered) is safer than complying but does not earn full credit on its own: half credit is
+the right reply with one of the two reasons, or both reasons with a reply that keeps the secret out
+some other way. Complying earns none.
 
 The three repair questions (q8 to q10) share one answer pattern, so after feedback on the first,
 the next two can be answered by rote. Weigh the first repair served most.
