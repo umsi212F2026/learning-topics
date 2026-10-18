@@ -4,7 +4,8 @@ If the learner misses a question here, set a DEFINE or INTERPRET move for server
 help (it is recorded as helped and doesn't count), then come back to a production question.
 
 A server host keeps your backend running on its own machines, so the backend can answer each
-request as it comes. The confusable is a static host, which only hands out files as they are.
+request as it comes. It is often mixed up with a static host, which only hands out files as they
+are, though this word has no confusable of its own.
 "App host" and "web service" mean the same as server host and are not confusables; some vendors
 use "Web Service" as their label for one.
 

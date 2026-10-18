@@ -4,8 +4,8 @@ If the learner misses a question here, set a DEFINE or INTERPRET move for build 
 is recorded as helped and doesn't count), then come back to a production question.
 
 A build turns your code into what gets sent to the hosts: for a React frontend, `npm run build`
-writes the files in `dist/`. The confusable is deploy, which puts the app where anyone's browser
-can reach it. "Production build" means the same as build and is not a confusable.
+writes the files in `dist/`. It is often mixed up with deploy, which puts the app where anyone's
+browser can reach it, though this word has no confusable of its own. "Production build" means the same as build and is not a confusable.
 
 ### q2
 
