@@ -8,12 +8,11 @@
 - **answer:** combining two lines of work that went separate ways (your commits and the instructor's)
   into one record, so that the files end up with both sets of changes, and the history keeps both
   lines of commits, joined together.
-- **credit:** full credit for saying two lines of work that went separate ways are combined into one,
-  with both sides' changes kept. Mentioning the commit that joins them is good and is not required.
-  No penalty if they don't mention explicitly that both lines of work are kept, with neither replaced.
-No credit for
-  "pulling" or "updating", which name the occasion rather than the thing, or for any answer in which
-  one side's work replaces the other's.
+- **credit:** full credit for saying two lines of work that went separate ways are combined into one.
+  Mentioning the commit that joins them is good and is not required, and so is saying explicitly
+  that both sides' changes are kept, with neither replaced. No credit for "pulling" or "updating",
+  which name the occasion rather than the thing, or for any answer in which one side's work
+  replaces the other's.
 
 ### q-merge-drops-mine
 
