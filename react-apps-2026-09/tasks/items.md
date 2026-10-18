@@ -1,9 +1,6 @@
-# The words of react apps
+# React apps
 
-**Intended goals:** `w-component`, `w-state`, `w-render`, `w-event-handler`, `w-dev-server`,
-`w-dependency`, `w-build`, `w-hot-reload`, `w-browser-console`, `w-hard-reload`, `w-routing` and
-`w-headless-browser`, with four questions on `c-describe-app-bug` and `c-run-browser-check` at the
-end.
+**Intended goals:** `c-describe-app-bug` and `c-run-browser-check`.
 
 Answer each question in one to three sentences, in your own words. Where a
 question quotes an AI coding agent, imagine it is working on a React app on your own laptop: the

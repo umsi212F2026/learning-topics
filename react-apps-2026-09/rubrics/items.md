@@ -1,4 +1,4 @@
-# Rubrics: The words of react apps
+# Rubrics: React apps
 
 Answers for `tasks/items.md`. **Do not read this before attempting the questions.**
 

@@ -36,7 +36,7 @@
 - **type:** mcq
 - **goal:** w-headless-browser
 - **move:** INTERPRET
-- **answer:** 1
-- **credit:** 2 makes it a problem only a human could see; the agent simply cannot open the page in
+- **answer:** 2
+- **credit:** 1 makes it a problem only a human could see; the agent simply cannot open the page in
   this session. 3 blames the dev server, which the message says nothing about. 4 has the agent
   seeing your tab, which is the thing a headless browser is not.

@@ -16,7 +16,7 @@ Your agent says: "I don't have a headless browser in this session, so I can't lo
 myself. Could you open http://localhost:5173, click Add, and tell me what you see?" Which of these
 does that tell you?
 
-1. The agent cannot open your app for itself here, so what it knows about the problem is whatever you report back.
-2. The app is broken in a way that only a person could see.
-3. Your dev server is not running, which is why the agent cannot reach the page.
-4. The agent can see your browser tab already and wants you to confirm what is in it.
+1. The app is broken in a way that only a person could see.
+2. The agent can't open your app here, so it's relying on your report.
+3. Your dev server isn't running, so the agent can't reach the page.
+4. The agent can already see your browser tab and wants you to confirm it.

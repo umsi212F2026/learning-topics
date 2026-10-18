@@ -2,8 +2,8 @@
 
 ### q-define-component
 
-Your agent says it is going to pull the task list out into its own React component. Say what a component
-is, in your own words.
+Your agent says: "I'll add a new React component for that." Say what a component is, in your own
+words.
 
 ### q-component-vs-page
 

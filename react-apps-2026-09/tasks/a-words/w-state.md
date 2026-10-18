@@ -14,7 +14,7 @@ database?
 Your agent says: "The tasks you add are only in the component's state. Nothing is written to a file
 or a database." Which of these is true?
 
-1. The tasks you add are safe, because state is where an app keeps things permanently.
-2. The tasks you add are on the dev server, so they last for as long as it keeps running.
-3. The tasks you add are being held by the app while it runs, and a page reload starts it over without them.
+1. The tasks you add are kept for good, since state is permanent storage.
+2. The tasks you add are kept on the dev server while it runs.
+3. The tasks you add are gone once the page is reloaded.
 4. The tasks you add have already been thrown away.

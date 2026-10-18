@@ -34,8 +34,8 @@
 - **type:** free
 - **goal:** w-dev-server
 - **move:** INTERPRET
-- **answer:** another dev server was already running on 5173, from an earlier run or another copy
-  of the project, so this one took the next free port. The address for the project the agent just
+- **answer:** something else was already using 5173, most likely another dev server from an earlier
+  run or another copy of the project, so this one took the next free port. The address for the project the agent just
   started is 5174, and whatever is at 5173 is a different server, so anything you check in a tab
   still pointing at 5173 tells you nothing about this app.
 - **credit:** full credit for both: this project is now at 5174, and 5173 is something else already

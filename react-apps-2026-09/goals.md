@@ -292,7 +292,6 @@ job too, with you approving what it proposes.
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the page changing by itself when a file is saved
-- **nearest confusable:** refreshing the page
 - **synonyms:** hot module replacement, HMR
 
 ### `w-browser-console`
