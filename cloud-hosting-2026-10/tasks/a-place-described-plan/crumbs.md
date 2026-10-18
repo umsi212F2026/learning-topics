@@ -78,10 +78,10 @@ service chosen for the Express server? Say why.
 ### q13
 
 Flintlet runs the Express server, and the server also sends the frontend's built files itself
-(`express.static('dist')`).
+(`express.static('dist')`). Nothing is put in Flintlet's file hosting.
 
 ### q14
 
 Flintlet runs the Express server, and the server also sends the frontend's built files itself
-(`express.static('dist')`). For this plan, answer only this: do the frontend's built files reach
-the visitor's browser, and why or why not?
+(`express.static('dist')`). Nothing is put in Flintlet's file hosting. For this plan, answer only
+this: do the frontend's built files reach the visitor's browser, and why or why not?
