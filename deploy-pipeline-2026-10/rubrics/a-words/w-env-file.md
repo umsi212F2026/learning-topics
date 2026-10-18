@@ -13,9 +13,10 @@ and says nothing.
   when it runs on Ropewalk. The `.env` file never reaches Ropewalk (it is kept out of the
   repository), so a value the deployed app needs has to be entered on Ropewalk as well.
 - **credit:** full for the difference that matters: the `.env` file is where the app gets its
-  values when it runs on your machine, the host's settings are where it gets them when deployed,
-  and the file doesn't reach the host. Half for "one is local and one is on the host" with nothing
-  on which running copy of the app each one feeds, or on the file not reaching the host. None for
+  values when it runs on your machine, and the host's settings are where it gets them when
+  deployed. Saying the file doesn't reach the host is welcome and is not required, since the setup
+  never says the file is kept out of the repository. Half for "one is local and one is on the host"
+  with nothing on which running copy of the app each one feeds. None for
   an incidental difference, such as that one is a file and the other a web page.
 
 ### q-catch-env-file-hides-secrets
