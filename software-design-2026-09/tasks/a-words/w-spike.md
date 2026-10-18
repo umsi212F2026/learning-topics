@@ -12,6 +12,5 @@ prototype?
 
 ### q-spike-twenty-minutes
 
-Your agent says: "Before I put this in the plan, give me twenty minutes on a spike. I want to know
-whether a browser can read a file straight out of Google Drive with no server. I'll throw away
-whatever I write." What is it telling you?
+You are designing a club sign-up app with your agent, and it says: "Before I put event reminders in
+the plan, give me twenty minutes on a spike with phone notifications." What is it telling you?

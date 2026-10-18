@@ -46,10 +46,14 @@
 - **type:** free
 - **goal:** w-history
 - **move:** INTERPRET
-- **answer:** Probably not deleted, though you'd have to check separately for that. None of the work since Thursday is in the history; the latest point that can be
-  returned to is Thursday's "Add rating filter to task 1" commit. That rules out getting back any
-  in-between version of task1.py from the history, and it means a restore to Thursday's commit would
-  lose the work since. The work may still be in the files, uncommitted, but no commit holds it.
-- **credit:** full credit for saying it's not necessarily deleted but that if it does get deleted it can't be recovered. No credit for reading the message as
-  saying the work since Thursday is already lost or deleted: it says only that none has been
-  committed.
+- **answer:** no, or at least the message does not say so. It says only that nothing has been
+  committed since Thursday, so none of the work since then is in the history: the latest point that
+  can be returned to is Thursday's "Add rating filter to task 1" commit. The work may well still be
+  in task1.py, uncommitted, but if it were lost now the history could not bring it back.
+- **credit:** full credit for "no" (or "not necessarily") because the message is only about
+  commits: the work since Thursday is uncommitted, so it is not in the history, and it may still be
+  in the files. "No, it's only uncommitted" earns full credit. Saying that the history could not
+  bring the work back if it were lost is welcome and is not required. Half credit for "no" with no
+  reason, or with a reason that is not about commits, such as "the agent would have said so". No
+  credit for reading the message as saying the work since Thursday is already lost or deleted: it
+  says only that none has been committed.

@@ -35,8 +35,8 @@
 - **type:** mcq
 - **goal:** w-compaction
 - **move:** INTERPRET
-- **answer:** 1
-- **credit:** 2 confuses compaction with starting a new chat: the same chat carries on. 3 is the
+- **answer:** 3
+- **credit:** 1 confuses compaction with starting a new chat: the same chat carries on. 2 is the
   tempting one, since the chat still reads normally on screen, but compaction is lossy and detail the
   summary did not keep is gone from the model's view. 4 reads it as something happening to the
   project; compaction touches the conversation, not your files.

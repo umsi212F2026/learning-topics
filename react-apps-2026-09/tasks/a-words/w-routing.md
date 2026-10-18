@@ -15,6 +15,6 @@ Your agent says: "The dev server hands back the same page for every address. The
 address and decides which screen to show." Which of these is true?
 
 1. The dev server keeps a separate page saved for each address.
-2. Which screen you see is worked out by the running app from the address, so an address only shows the right screen if the app knows what to do with it.
-3. Every address shows the same screen, so the address bar means nothing in this app.
-4. Any address you type will show the right screen, because the server always answers.
+2. Every address shows the same screen, so the address bar means nothing here.
+3. Any address you type shows a real screen, because the server always answers.
+4. The running app picks which screen to show from the address.

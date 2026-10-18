@@ -37,11 +37,13 @@
 - **type:** free
 - **goal:** w-spike
 - **move:** INTERPRET
-- **answer:** there is something the design depends on that it cannot answer by thinking, so it
-  will write a quick, rough piece of code purely to find out, and what it brings back is the
-  answer rather than any code that stays in the app. The plan waits on that answer, because what
-  goes in the plan depends on which way the answer falls.
-- **credit:** full credit needs both halves: there is an open question it has to try something to
-  answer, and the output is the answer, not code that is kept. Half credit for either half alone.
-  No credit for reading it as the agent starting to build the file-reading feature, as the agent
-  asking permission to spend twenty minutes of budget, or as a sign the agent cannot do the job.
+- **answer:** it does not yet know something about phone notifications that the reminders depend
+  on, such as whether the app can send them at all or how hard that would be, and it cannot settle
+  that by thinking. So it will write a quick, rough piece of code purely to find out, and what it
+  brings back is the answer, not code that stays in the app. The plan waits on that answer, because
+  what goes in it depends on which way the answer falls.
+- **credit:** full credit needs both halves: there is an open question about notifications it has
+  to try something to answer, and the output is the answer, not code that is kept. Half credit for
+  either half alone. No credit for reading it as the agent starting to build the reminders feature,
+  as the agent asking permission to spend twenty minutes of budget, or as a sign the agent cannot
+  do the job.

@@ -39,8 +39,9 @@
 - **type:** mcq
 - **goal:** w-input-tokens
 - **move:** DEFINE
-- **answer:** 1
-- **credit:** 2 is the common mistake, and the one the count punishes: everything already in the chat
-  is sent again on each turn. 3 puts the reply on the wrong side, since what the model writes is
+- **answer:** 2
+- **credit:** 1 is the common mistake, and the one the count punishes: everything already in the chat
+  (the earlier messages, the system prompt, any file the agent has read in) is sent again on each
+  turn. 3 puts the reply on the wrong side, since what the model writes is
   counted as output. 4 treats separate chats as one thing: another chat is not in this one's context
   and is not sent.

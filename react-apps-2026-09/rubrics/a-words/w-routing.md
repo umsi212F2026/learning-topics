@@ -33,9 +33,9 @@
 - **type:** mcq
 - **goal:** w-routing
 - **move:** INTERPRET
-- **answer:** 2
+- **answer:** 4
 - **credit:** 1 describes a plain server with a file per address, which is what client-side routing
-  replaces. 3 goes too far: the server does send the same page for every address, and the app then
-  picks a screen from the address, which is the whole point. 4 confuses the server answering with
-  the app recognising the address: the page loads either way, and an address the app knows nothing
+  replaces. 2 goes too far: the server does send the same page for every address, and the app then
+  picks a screen from the address, which is the whole point. 3 confuses the server answering with
+  the app recognizing the address: the page loads either way, and an address the app knows nothing
   about shows you nothing useful.

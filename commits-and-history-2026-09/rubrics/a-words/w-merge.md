@@ -45,8 +45,8 @@ No credit for
 - **type:** mcq
 - **goal:** w-merge
 - **move:** INTERPRET
-- **answer:** 1
-- **credit:** 2 and 3 describe a merge throwing away or setting aside one side's work, which a merge
+- **answer:** 3
+- **credit:** 1 and 2 describe a merge throwing away or setting aside one side's work, which a merge
   does not do. 4 claims too much: "no conflicts" rules out git having to stop over the same lines,
   not the two of you having changed the same file, since changes to different parts of one file
   combine without a conflict.

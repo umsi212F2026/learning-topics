@@ -21,7 +21,7 @@ wrong with what they said?
 Your agent says: "I pulled the instructor's updates and merged them with your two commits from this
 week. No conflicts." Which of these does that tell you?
 
-1. Your two commits and the instructor's updates are now combined, and git did not have to stop anywhere for lines you both changed.
-2. The instructor's updates replaced your two commits.
-3. Your two commits were set aside so that the instructor's updates could go in cleanly.
-4. The instructor did not change any file that you changed.
+1. The instructor's updates replaced your two commits from this week.
+2. Your two commits were set aside to let the updates in.
+3. Both sides' work is combined, with nothing for you to settle.
+4. The instructor changed none of the files that you changed.

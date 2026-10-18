@@ -33,27 +33,35 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
 
 - **type:** free
 - **goal:** c-judge-manual-test
-- **answer:** yes. The agent can run the check in a headless browser, a real browser with no window
-  that a program controls. The test adds the notes through the page, reloads, and reads the order
-  off the list.
-- **credit:** full credit for "yes" plus a headless browser or a browser a program controls. A
-  description of the test is welcome and is not required. No credit for "no, someone has to look at
-  the list", no credit for "yes, automate it" with no browser, and no credit for a test that calls
-  the server or the database directly, since that skips the page the request is about.
+- **answer:** yes. The agent can write a test that works the page itself, for example in a headless
+  browser, a real browser with no window that a program controls. The test types and saves a few
+  notes, reloads the page, and checks that every one of them is in the list with the last one saved
+  at the top.
+- **credit:** full credit for "yes" plus a test that goes through the page and says what it checks:
+  it adds notes, reloads, and checks that they are all still listed with the newest first. Naming a
+  headless browser, or any other way for a program to work the page, is welcome and is not
+  required. Half credit for "yes" with a test that leaves out the reload or the order, and half
+  credit for "yes, in a headless browser" with nothing about what the test does or checks. No
+  credit for "no, someone has to look at the list", for "yes, automate it" with no account of the
+  test, or for a test that calls the server or the database directly, since that skips the page the
+  request is about.
 
 ### q-manual-make-sure-notes-work
 
 - **type:** free
 - **goal:** c-judge-manual-test
-- **answer:** first, the agent does not need you to click around: it can drive a headless browser,
-  a real browser with no window that a program controls, and do the clicking itself. Second,
-  "working properly" names nothing in particular, so the agent should say what it will click on
-  and what it expects to happen, for instance: save a note, reload, and the note is still in the
-  list; delete a note, reload, and it is still gone; click Save with the box empty, and no note is
-  added and a message shows.
-- **credit:** full credit needs both pushbacks: that the agent can do the checks itself in a
-  headless browser or a browser a program controls, and that it should spell out what gets clicked
-  and what effect it expects. A plain "be more specific" counts as the second pushback; naming the
-  action and the expected effect, or giving an example, is welcome and is not required. Half credit
-  for either pushback alone, so "be more specific" by itself gets half credit. No credit for
-  "automate it" with no browser, or for agreeing to click around and report back.
+- **answer:** that the agent can do this check itself, with a test that works the page the way a
+  person would, for example in a headless browser, a real browser with no window that a program
+  controls. And that "working properly" names nothing in particular, so the test should say what it
+  does and what it expects, for instance: save a note, reload, and the note is still in the list;
+  delete a note, reload, and it is still gone; click Save with the box empty, and no note is added
+  and a message shows.
+- **credit:** full credit needs both: (a) that a program can do the check instead of you, by working
+  the page itself or by tests that already do; and (b) at least one thing the check should do in
+  the Notes app and what it should expect to see, well enough that the agent could write it.
+  Naming a headless browser is welcome and is not required. Half credit for either alone: "do it
+  yourself" or "automate it" with nothing about what to check, or a list of things to check that
+  still leaves you to click through them. A plain "be more specific" with no example counts toward
+  neither. Other sound replies, such as asking what changed or which tests already cover saving
+  and deleting, are welcome and do not stand in for (a) or (b) unless they amount to them. No
+  credit for agreeing to click around and report back.
