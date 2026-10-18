@@ -211,8 +211,9 @@ release r-219  serving  instances: 0  last request: 12:31:07
 
 The bundle Glintpage is serving calls `rosterpin-server.moorbolt.dev`, the backend's name before
 you renamed it to `rosterpin-api` last Tuesday; Moorbolt released the old name, so it no longer
-resolves. `VITE_API_URL` on Glintpage still holds it. Nothing has arrived at `rosterpin-api` since
-12:31, including during my page load just now.
+resolves. `VITE_API_URL` on Glintpage still holds it. The request at 12:31 was my own `curl` to
+`rosterpin-api`'s new address; nothing else has arrived since, including during my page load just
+now.
 
 From your agent's account, where did things go wrong, if they did, and what does someone who opens
 the app right now get: which version of it, if any, and what happens when they try to use it? If
