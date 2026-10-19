@@ -278,7 +278,8 @@ topic: that is the problem set.
   question actually asks rather than one its wording suggests: a process with chance in it whose
   question is not about likely outcomes, a "what if" about a choice still to be made rather than
   about the past, and a question that mentions the worst case but asks something other than how
-  bad things can get.
+  bad things can get; and when they name both of the kinds no wording trap points at, a question
+  asking whether something can happen at all and one asking where a tipping point lies.
 - **cases:**
   - `chance-in-it`: a process with chance in it, asking something other than which outcomes are
     likely
@@ -286,6 +287,8 @@ topic: that is the problem set.
     past
   - `worst-case-mention`: a question that mentions the worst case but asks something other than
     how bad things can get
+  - `can-happen`: a question asking whether something can happen at all
+  - `tipping-point`: a question asking where a tipping point lies
 - **taught elsewhere:** session 16 class
 
 ### `o-orientation`
