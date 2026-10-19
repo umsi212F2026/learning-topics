@@ -273,13 +273,14 @@ topic: that is the problem set.
 - **goal:** say which kind of question a simulation is being asked to answer
 - **criterion:** Given a short scenario in which someone wants a simulation to answer one
   question, says which kind of question it is: what outcomes are likely, whether something can
-  happen at all, which option is better, where a tipping point lies, how bad things can get, or
+  happen at all, which option is better, what setting reaches a target, how bad things can get, or
   what would have happened if things had gone differently. It passes when they pick the kind the
   question actually asks rather than one its wording suggests: a process with chance in it whose
   question is not about likely outcomes, a "what if" about a choice still to be made rather than
   about the past, and a question that mentions the worst case but asks something other than how
   bad things can get; and when they name both of the kinds no wording trap points at, a question
-  asking whether something can happen at all and one asking where a tipping point lies.
+  asking whether something can happen at all and one asking what setting of a model parameter
+  makes an outcome reach a target.
 - **cases:**
   - `chance-in-it`: a process with chance in it, asking something other than which outcomes are
     likely
@@ -288,7 +289,8 @@ topic: that is the problem set.
   - `worst-case-mention`: a question that mentions the worst case but asks something other than
     how bad things can get
   - `can-happen`: a question asking whether something can happen at all
-  - `tipping-point`: a question asking where a tipping point lies
+  - `target-setting`: a question asking what setting of a model parameter makes an outcome reach
+    a target
 - **taught elsewhere:** session 16 class
 
 ### `o-orientation`

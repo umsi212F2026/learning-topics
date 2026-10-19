@@ -23,7 +23,7 @@ task, never the scoring.
 | id | Goal | Criterion: what gets examined, and what counts |
 | -- | ---- | ---------------------------------------------- |
 | `o-orientation` | get the shape of this area before working on any particular part of it | `orientation` |
-| `c-name-question-kind` | say which kind of question a simulation is being asked to answer | Given a short scenario in which someone wants a simulation to answer one question, says which kind of question it is: what outcomes are likely, whether something can happen at all, which option is better, where a tipping point lies, how bad things can get, or what would have happened if things had gone differently. It passes when they pick the kind the question actually asks rather than one its wording suggests: a process with chance in it whose question is not about likely outcomes, a "what if" about a choice still to be made rather than about the past, and a question that mentions the worst case but asks something other than how bad things can get; and when they name both of the kinds no wording trap points at, a question asking whether something can happen at all and one asking where a tipping point lies. Cases: `chance-in-it`, `what-if-ahead`, `worst-case-mention`, `can-happen`, `tipping-point`. |
+| `c-name-question-kind` | say which kind of question a simulation is being asked to answer | Given a short scenario in which someone wants a simulation to answer one question, says which kind of question it is: what outcomes are likely, whether something can happen at all, which option is better, what setting reaches a target, how bad things can get, or what would have happened if things had gone differently. It passes when they pick the kind the question actually asks rather than one its wording suggests: a process with chance in it whose question is not about likely outcomes, a "what if" about a choice still to be made rather than about the past, and a question that mentions the worst case but asks something other than how bad things can get; and when they name both of the kinds no wording trap points at, a question asking whether something can happen at all and one asking what setting of a model parameter makes an outcome reach a target. Cases: `chance-in-it`, `what-if-ahead`, `worst-case-mention`, `can-happen`, `target-setting`. |
 
 ## Coverage
 
@@ -42,22 +42,26 @@ task, never the scoring.
 - **supports:** orient
 - **checks:** `o-orientation`
 - **artifact:** a reading the course wrote for this topic, `tasks/read-simulation.md` in this
-  folder, "Simulations, and the questions they answer" (about 1,550 words, about 7 minutes). No
+  folder, "Simulations, and the questions they answer" (about 1,620 words, about 7 minutes). No
   external reading is used: the instructor expected none to be aimed the right way. It follows one
   made-up tennis model throughout (on each point the server wins with a fixed chance, scored by
   tennis's rules), which is not the course's session 16 simulator and claims nothing about it, and
   adds a savings account (a deterministic model), a highway jam with no accident and a river's
-  100-year flood. Sections: What a simulation is; The model, and what it leaves out; Chance, and why
-  one run isn't enough; When to simulate (an experiment, existing data or a formula instead, and
-  one sentence on simulation for test data); Six kinds of question, one example each, then a
-  paragraph on wording that points at the wrong kind; When your agent builds one (no answer key to
-  compare against, so understand the model well enough to predict what it should do). About 7
+  100-year flood. Sections: What a simulation is; The model (including what it leaves out); Chance,
+  and why one run isn't enough (report at least the average and something about the spread, such
+  as the standard deviation); When to simulate (an experiment, existing data or a formula instead,
+  and one sentence on simulation for test data); Six kinds of question, one example each, then a
+  paragraph on wording that can mislead about the kind; When your agent builds one (tests the
+  agent writes, for example with Superpowers, can rule out some implementation mistakes, but there
+  is no answer key for the question itself, so understand the model well enough to predict what it
+  should do). About 7
   minutes of reading, 12 with the two stops, 14 with the close. Words in place: all seven words,
   each in bold where it is introduced, with every synonym goals.md lists (output measure,
   probabilistic, run, replication, iteration, also in bold) and every nearest confusable: an
   experiment, the real process the model describes, a simulation outcome set against a model
   parameter, deterministic (also in bold), a run with a changed parameter, the answer to the
   question, and the average outcome. The reading names no real simulation tool or library.
+- **verified:** 2026-10-19
 - **learner does:** reads the page once, top to bottom, and stops twice, answering before reading
   on; "I don't know yet" is an honest answer.
   1. After Chance, and why one run isn't enough: the coach's model treats every point as a
@@ -100,7 +104,7 @@ task, never the scoring.
   throughout, so the ruling is on the learner's answer to the readiness question, not on the stops
   or on whether the tutor thinks they are ready. A plain yes to both parts is `criterion: met`. A
   hedge on either part, with no plain no, is `criterion: unclear`: for the first part go over The
-  model, and what it leaves out and Chance, and why one run isn't enough once more, for the second
+  model and Chance, and why one run isn't enough once more, for the second
   Six kinds of question, and put the question again. A second hedge stays `unclear`: on the first
   part the tutor offers the questions from `a-words`, and on the second says the kinds are taught
   in the session 16 class and offers `a-classify-simulation-question` after it. Before session 16,
@@ -116,7 +120,7 @@ task, never the scoring.
   `c-name-question-kind`: the six kinds appear with one example each, the readiness question asks
   only whether the learner thinks they could name them, and the stops are helped, ungraded and
   about other things. The reading is one course-written page built on a made-up tennis model and
-  three textbook examples, so it shows nothing of what a simulation an agent builds actually looks
+  a few short examples beside it, so it shows nothing of what a simulation an agent builds actually looks
   like, or of the session 16 simulator. When to simulate rather than experiment, use data or use a
   formula is in the reading and checked nowhere, by design.
 - **offer as:** this topic's orientation: one short page the course wrote, following one made-up
@@ -165,7 +169,7 @@ task, never the scoring.
   1. What outcomes are likely
   2. Whether something can happen at all
   3. Which option is better
-  4. Where a tipping point lies
+  4. What setting reaches a target
   5. How bad things can get
   6. What would have happened if things had gone differently
 
@@ -173,11 +177,11 @@ task, never the scoring.
   fillers to make four, taken only from the fillers its shape allows below, numbered 1 to 4 in list
   order. The lures are the common misreadings: for `chance-in-it`, What outcomes are likely; for
   `what-if-ahead`, What would have happened if things had gone differently; for
-  `worst-case-mention`, How bad things can get. `can-happen` and `tipping-point` have no lure: they
+  `worst-case-mention`, How bad things can get. `can-happen` and `target-setting` have no lure: they
   are carried by the questions whose right kind they name. Each question asks exactly one kind, and
   none of the other choices it offers is defensible. A question never uses the key words of its
-  right choice ("likely", "at all", "better", "tipping point", "how bad", "would have happened");
-  plain words for the same thing are allowed ("possible", "come out ahead", "the point where", "how
+  right choice ("likely", "at all", "better", "target", "how bad", "would have happened");
+  plain words for the same thing are allowed ("possible", "come out ahead", "how many would it take", "how
   high").
 
   **Chance words.** A question carries `chance-in-it` only when its wording uses a chance or
@@ -188,17 +192,17 @@ task, never the scoring.
 
   **No reading examples.** The reading, `tasks/read-simulation.md`, gives one example per kind: a
   player's chances of reaching a final (likely outcomes), a highway jam forming with no accident or
-  other cause (can it happen), serve coaching against a sports psychologist (which option), the serve edge that makes
-  tie-breaks the norm (tipping point), the 100-year flood (how bad), and last season under
+  other cause (can it happen), serve coaching against a sports psychologist (which option), the serving edge needed
+  for most sets to go to a tie-break (what setting reaches a target), the 100-year flood (how bad), and last season under
   different scoring (what would have happened). No question restates one of these under the kind
   the reading gave it, so that none can be answered from memory of the page. A domain the reading
   uses may still carry a different kind of question.
 
   To keep the kinds apart: a which-option
   question names two or three options and asks which comes out ahead; a likely-outcomes question
-  asks about one setting, with no other option named or implied; a tipping-point question asks for
-  the value of one parameter at which an outcome changes sharply, never for a choice between named
-  values; a how-bad question asks for the most extreme outcomes at fixed settings, over a long
+  asks about one setting, with no other option named or implied; a what-setting question asks for
+  the setting of one parameter at which an outcome reaches a target the question names or plainly
+  implies, never for a choice between named options; a how-bad question asks for the most extreme outcomes at fixed settings, over a long
   stretch or many trials, never for a parameter's value; a can-it-happen question asks whether an
   outcome comes about under the model at all, never how often; a would-have-happened question is
   about a stretch of the past replayed with one thing changed.
@@ -214,15 +218,15 @@ task, never the scoring.
     Names a worst case someone fears and asks whether it could come about under the model at all.
     "The worst case people keep raising is every bus on the route running half an hour late by
     noon. With this timetable, could that even occur?"
-  - `threshold-ahead` (Hard; `tipping-point`, `what-if-ahead`, `chance-in-it`; fillers 2, 5): right
+  - `threshold-ahead` (Hard; `target-setting`, `what-if-ahead`, `chance-in-it`; fillers 2, 5): right
     kind 4. Opens "What if" about a change someone is thinking of making, and asks, with a chance
-    word, how far a parameter must move before an outcome changes sharply. "What if the school
-    runs a flu-shot drive? How many students would need the shot before most outbreaks die out
+    word, what setting of a parameter would make an outcome reach a target. "What if the school
+    runs a flu-shot drive? How many students would need the shot for most outbreaks to die out
     within a week?"
-  - `threshold-worst` (Hard; `tipping-point`, `worst-case-mention`; fillers 1, 6): right kind 4.
-    Names a worst case and asks at what value of a parameter it starts to come about. "The worst
-    case is patients still waiting when the clinic closes. At how many arrivals an hour does that
-    start to happen?"
+  - `threshold-worst` (Hard; `target-setting`, `worst-case-mention`; fillers 1, 6): right kind 4.
+    Names a worst case and asks what setting of a parameter would keep it from coming about, the
+    target. "The worst case is patients still waiting when the clinic closes. How many nurses would
+    the clinic need on shift for the last patient to be seen by closing time?"
   - `better-ahead` (Medium; `what-if-ahead`; fillers 2, 5): right kind 3. Opens "What if" about a
     choice among two or three named options still to be made, and asks which comes out ahead on an
     outcome. "What if the clinic hires a second nurse next month, or opens an hour earlier instead?
@@ -236,8 +240,9 @@ task, never the scoring.
     option named or implied. "What if the league adds two teams next season? How often would the
     top team finish more than five points clear?"
   - `how-bad-chance` (Medium; `chance-in-it`; fillers 2, 3, 6): right kind 5. Asks, with a chance
-    word, for the most extreme outcome at the current settings over a long stretch. "In a typical
-    year, how late does the last bus get on the route's worst day?" It may say "worst", since it
+    word, for the most extreme outcome at the current settings over a long stretch. The chance word
+    marks rarity over that long stretch, never a typical or usual value of the extreme. "Over ten
+    years, on the rarest worst days, how late does the last bus get?" It may say "worst", since it
     does ask how bad, so it carries no `worst-case-mention`.
   - `past-chance` (Medium; `chance-in-it`; fillers 2, 4, 5): right kind 6. Asks, with a chance word,
     about a stretch of the past replayed with one thing changed. "If the clinic had kept its old
@@ -245,7 +250,7 @@ task, never the scoring.
 
   The fillers are the kinds a shape may offer beside its right kind and lures; the kinds left off a
   shape's list are ones its wording could make defensible (which option beside a one-change
-  "What if", can it happen beside a threshold that "starts to happen"), and are never offered with
+  "What if", which option beside a count of nurses or students to reach a target), and are never offered with
   it. Outside `possible-worst`, `threshold-worst`, `better-worst` and `how-bad-chance`, no question
   mentions a worst case, a worst outcome or a disaster.
 
@@ -256,7 +261,7 @@ task, never the scoring.
   appears two or three times, `better-worst` at least as often as each of `possible-worst` and
   `threshold-worst`, so the right answers cover all six kinds and a mention of the worst case goes
   with three different right answers. No shape sits in the same slot in two scenarios in a row,
-  and across the bank can-it-happen and tipping-point questions each appear in every one of the
+  and across the bank can-it-happen and target-setting questions each appear in every one of the
   four slots. When the generator is run live, the tutor picks each next shape to carry a case the
   learner hasn't passed.
 
@@ -307,8 +312,8 @@ task, never the scoring.
   or `threshold-worst` three times or more. A question carries the same cases as its shape does
   in `a-classify-simulation-question`; with no choices, the lure is whatever its wording pulls
   toward. The rubric's key gives, for the right kind, the label and phrasings that count (for can it
-  happen at all: "whether it's possible", "if it can ever occur"; for a tipping point: "the
-  setting where things flip", "how many before it changes"; for which option: "which plan wins";
+  happen at all: "whether it's possible", "if it can ever occur"; for what setting reaches a
+  target: "the setting that gets it there", "how many it would take to hit that"; for which option: "which plan wins";
   for likely outcomes: "how often, under that change"; for how bad: "the extreme", "the worst it
   gets"; for what would have happened: "a replay of last winter with the old system"), and the
   lure's phrasings that don't. Credit: full when the answer names the right kind, by its label or by
@@ -325,7 +330,7 @@ task, never the scoring.
 - **offer as:** the harder check, after session 16: the same kind of question with no choices, so
   you have to come up with the kind yourself, as you will when you pose your own for Problem Set 4.
   About 2 minutes a question.
-- **check note:** A correct answer to several shapes mentions a frequency: a replayed past ("how often would patients have waited"), a choice among options ("which makes it rarer"), a tipping point ("before most outbreaks die out"). The rubric's phrasing for likely outcomes, "how often, under that change", must not catch these. Rule on what the learner says the answer is about: a different past is what would have happened, a pick among named options is which option is better, the value of one setting is a tipping point, the extreme over a long stretch is how bad things can get. A frequency in the answer settles nothing by itself. Label a live run `a-name-kind-unprompted/<shape>`, not with the other activity's id.
+- **check note:** A correct answer to several shapes mentions a frequency: a replayed past ("how often would patients have waited"), a choice among options ("which makes it rarer"), a setting that reaches a target ("for most outbreaks to die out"). The rubric's phrasing for likely outcomes, "how often, under that change", must not catch these. Rule on what the learner says the answer is about: a different past is what would have happened, a pick among named options is which option is better, the value of one setting is what setting reaches a target, the extreme over a long stretch is how bad things can get. A frequency in the answer settles nothing by itself. Label a live run `a-name-kind-unprompted/<shape>`, not with the other activity's id.
 
 ### `a-contrast-question-pairs`
 
