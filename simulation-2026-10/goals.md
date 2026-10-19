@@ -1,5 +1,7 @@
 # Learning goals: simulation
 
+**origin:** course
+
 **What I want to be able to do, and what would count as having gotten there.**
 
 <!--
@@ -52,9 +54,13 @@
 
 ## Where this came from
 
+_Yours to fill in. Nobody can answer this one for you._
+
 <!-- Which of A / B / C / D, and the answer to the follow-up. -->
 
 ## What I already have
+
+_Yours to fill in. Say where your knowledge stops, not what you have heard of._
 
 <!--
   The nearest thing already known well, and where it stops.
@@ -64,6 +70,10 @@
 
 ## What I'll use it for
 
+_Yours to fill in. The course supplies one occasion: Problem Set 4, where you pose a question of
+your own, have your agent build a simulation that answers it, and then predict what it will do
+when a classmate changes one of its settings at the demo. Name any others you have._
+
 <!--
   The use, and a concrete occasion.
   If several uses apply, rank them: the top one sets the depth, the rest are cut first
@@ -71,6 +81,11 @@
 -->
 
 ## Depth
+
+**Know what a simulation is and what goes into one, and say which kind of question one is being
+asked to answer.** Enough to pose your own question for Problem Set 4 and to understand what your
+agent builds well enough to know what it should do. Building a simulation is not part of this
+topic: that is the problem set.
 
 <!--
   Which of: recognize it / read it / modify something existing / author from scratch /
@@ -253,6 +268,26 @@
   beside a capability entry.
 -->
 
+### `c-name-question-kind`
+
+- **goal:** say which kind of question a simulation is being asked to answer
+- **criterion:** Given a short scenario in which someone wants a simulation to answer one
+  question, says which kind of question it is: what outcomes are likely, whether something can
+  happen at all, which option is better, where a tipping point lies, how bad things can get, or
+  what would have happened if things had gone differently. It passes when they pick the kind the
+  question actually asks rather than one its wording suggests: a process with chance in it whose
+  question is not about likely outcomes, a "what if" about a choice still to be made rather than
+  about the past, and a question that mentions the worst case but asks something other than how
+  bad things can get.
+- **cases:**
+  - `chance-in-it`: a process with chance in it, asking something other than which outcomes are
+    likely
+  - `what-if-ahead`: a "what if" about a choice still to be made, not a counterfactual about the
+    past
+  - `worst-case-mention`: a question that mentions the worst case but asks something other than
+    how bad things can get
+- **taught elsewhere:** session 16 class
+
 ### `o-orientation`
 
 - **goal:** get the shape of this area before working on any particular part of it
@@ -262,3 +297,75 @@
 - **recurrence:** never
 - **is_required:** no
 - **group:** orientation
+
+### `w-simulation`
+
+- **goal:** simulation
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** running a model of a process on a computer to see what the process would
+  produce
+- **nearest confusable:** an experiment
+
+### `w-simulation-model`
+
+- **goal:** simulation model
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a simplified description of how a process works, precise enough for a
+  computer to run
+- **nearest confusable:** the real process it describes
+
+### `w-model-parameter`
+
+- **goal:** model parameter
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a value chosen before a simulation runs that the model's rules use
+- **nearest confusable:** a simulation outcome
+
+### `w-stochastic`
+
+- **goal:** stochastic
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a model with chance built into its rules, so the same settings can give
+  different results
+- **nearest confusable:** deterministic
+- **synonyms:** probabilistic
+
+### `w-simulation-trial`
+
+- **goal:** simulation trial
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** one run of the model from start to finish, with its chance events drawn
+  afresh
+- **nearest confusable:** a run with different model parameters
+- **synonyms:** replication, run, iteration
+
+### `w-simulation-outcome`
+
+- **goal:** simulation outcome
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** what a simulation trial produces that the question cares about, such as who
+  won or how high the water rose
+- **nearest confusable:** the answer to the question
+- **synonyms:** output measure
+
+### `w-outcome-distribution`
+
+- **goal:** outcome distribution
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** how often each simulation outcome turns up across many trials with the same
+  model parameters
+- **nearest confusable:** the average outcome
