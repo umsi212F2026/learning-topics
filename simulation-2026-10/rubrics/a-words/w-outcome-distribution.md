@@ -32,10 +32,10 @@ not one; and it is about what comes out of the trials, not the chance put into t
   summer by month doesn't make a distribution. An outcome distribution is how often each number of
   empty days turns up across many trials with the same settings, such as 0 days in a third of the
   summers and 7 or more in one summer in ten.
-- **credit:** full for naming that this is one trial's result, and that an outcome distribution
-  needs many trials with the same parameters, showing how often each outcome turns up. Half for
-  "you need to run it more times" without saying what the distribution would then show, or for
-  saying the monthly breakdown isn't a distribution without saying why. None for a different
+- **credit:** full for naming that this is one trial's result, while an outcome distribution
+  comes from many trials with the same parameters, such as "you need to run it more times";
+  saying what the distribution would then show is welcome but not required. Half for saying the
+  monthly breakdown isn't a distribution without saying why. None for a different
   quibble alone, such as that the model's rain is too simple.
 
 ### catch-pick

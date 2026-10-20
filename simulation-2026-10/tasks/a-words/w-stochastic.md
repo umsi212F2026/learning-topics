@@ -28,7 +28,7 @@ student takes exactly 30 seconds to serve. The model reports the longest the lin
 
 Which of these statements uses the word "stochastic" correctly?
 
-1. The model would be stochastic if its rates came from a real lunch hour, when students arrive at random.
+1. The model would be stochastic if it replayed the arrival times recorded at a real lunch hour, when students do arrive at random.
 2. The model is stochastic, since its line grows during the noon rush and shrinks after it.
 3. The model would be stochastic if each student's serving time were drawn at random.
 4. The model is stochastic, since each student's wait depends on how long everyone ahead takes.

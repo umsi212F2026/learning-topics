@@ -28,6 +28,6 @@ of agents answer them, and the model records the longest anyone was on hold.
 Which of these statements uses the words "simulation trial" correctly?
 
 1. Running the model 500 times with 8 agents is one simulation trial of the 8-agent setting.
-2. After 500 simulated days with 8 agents, a day with 9 agents is a 501st simulation trial.
+2. After 500 simulated days with 8 agents, a day with 9 agents is a 501st simulation trial of the 8-agent setting.
 3. One simulated weekday with 8 agents, its calls drawn at random afresh, is a simulation trial.
 4. Putting 9 agents on the real phones for a week to test the change is a simulation trial.

@@ -32,9 +32,9 @@ way.
   simulation outcome. A simulation outcome is what one simulated trial produces, such as one
   simulated week in which the toy sold out on a Tuesday; the real week is not one of the model's
   trials.
-- **credit:** full for naming that the Thursday sell-out happened in the real store, while a
-  simulation outcome is what a simulated trial produces. Half for saying the manager has mixed up
-  the real week with the model, without saying what a simulation outcome is. None for a different
+- **credit:** full for naming that the Thursday sell-out happened in the real store, not in a
+  simulated trial, including saying the manager has mixed up the real week with the model; saying
+  what a simulation outcome is instead is welcome but not required. None for a different
   quibble alone, such as that one real week can't show whether the model was right.
 - **tutor note:** a learner who says "you can't tell from one week whether the model was right"
   is answering a claim the manager didn't make; ask where the Thursday sell-out came from, the

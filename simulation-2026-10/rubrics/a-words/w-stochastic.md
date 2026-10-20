@@ -51,8 +51,9 @@ complicated it is, and not whether it is accurate.
 - **credit:** full for 3 only. The model as described has no chance in its rules: the rates are
   fixed and every student takes exactly 30 seconds, so it gives the same longest line every time.
   Drawing serving times at random would put chance into its rules and make it stochastic, which is
-  choice 3. Choice 1 confuses the real process with the model: rates taken from a real, random
-  lunch hour are still fixed numbers once they are in the rules. Choice 2 mistakes change during
+  choice 3. Choice 1 confuses the real process with the model: replaying arrival times recorded
+  at a real, random lunch hour gives the model the same arrivals on every run, so there is still
+  no chance in its rules. Choice 2 mistakes change during
   one run for chance; the line rises and falls the same way on every run. Choice 4 mistakes a
   chain of dependent steps for chance; each wait is still fixed by the ones before it.
 - **tutor note:** a learner who picks 1 is thinking of the lunch line, not the model; ask what the

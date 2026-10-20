@@ -18,10 +18,9 @@ rules never use, however much it matters in the real world.
   rules use, such as the number of plows or how fast the snow falls; change one and the model
   plays out the storm differently.
 - **credit:** full for naming that the limits are what the model covers or leaves out, not
-  parameters, and that a parameter is a value set before a run that the rules use (an example from
-  the setup is enough to show this). Half for only one of the two: that the limits are the model's
-  scope, with nothing on what a parameter is, or a correct parameter named without saying why the
-  limits aren't parameters. None for a different quibble alone, such as that the model ought to
+  parameters; saying what a parameter is (a value set before a run that the rules use) is welcome
+  but not required. Half for a correct parameter named without saying why the limits aren't
+  parameters. None for a different quibble alone, such as that the model ought to
   cover ice.
 - **tutor note:** "within these parameters" means "within these limits" in everyday speech, which
   is where this comes from; if the learner defends it on those grounds, ask what the plow model's

@@ -34,10 +34,11 @@ physical mock-up, not a rule the real thing must obey, and not a loose remark to
   computer to run. The real process is the actual elevators and people, with everything the model
   leaves out: someone holding a door, a car out for repair, a crowd arriving after a meeting. The
   model keeps only what its builders decided matters, so it can differ from what really happens.
-- **credit:** full for naming that the model is a description of the process, precise enough to
-  run, and that it is simplified, leaving parts of the real process out. Half for only one of
-  those, such as "the model is a computer version of it" with nothing on what it leaves out, or
-  "the model is simpler" without saying it is a description rather than the thing. None for an
+- **credit:** full for naming that the model is a description of the process rather than the
+  thing itself, and that it is simplified, leaving parts of the real process out; saying it is
+  precise enough to run is welcome but not required. Half for only one of those, such as "the
+  model is a computer version of it" with nothing on what it leaves out, or "the model is
+  simpler" without saying it is a description rather than the thing. None for an
   incidental difference alone, such as that the model is cheaper or quicker to try changes on.
 
 ### catch-pick

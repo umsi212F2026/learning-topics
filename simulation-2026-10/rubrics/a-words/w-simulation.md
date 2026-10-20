@@ -18,9 +18,9 @@ past records, working out a formula, or asking people for their guesses runs not
   precisely enough for a computer, and run that description to see how crowded the first room
   gets.
 - **credit:** full for naming that the plan runs the real process with real visitors, which makes
-  it an experiment, while a simulation runs a model of the process on a computer. Half for calling
-  it an experiment or a real-world test without saying what a simulation would do instead, or for
-  saying a simulation runs on a computer without saying why this plan isn't one. None for a
+  it an experiment or a real-world test, not a simulation; saying what a simulation would do
+  instead is welcome but not required. Half for saying a simulation runs on a computer without
+  saying why this plan isn't one. None for a
   different quibble alone, such as one Saturday being too few or the ropes annoying visitors.
 - **tutor note:** a learner who objects that one Saturday isn't enough has found a real weakness
   of the plan but not the misuse; ask whether anything in it would run on a computer. In everyday

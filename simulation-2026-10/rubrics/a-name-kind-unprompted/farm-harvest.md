@@ -8,15 +8,15 @@ Rule on what the learner says the answer would be about, not on the words they u
 - **cases:** chance-in-it
 - **answer:** How bad things can get: Anika wants the smallest harvests in the most extreme years over fifty seasons, at the current settings. Phrasings that count: "the extreme", "the worst it gets", "the smallest harvest in the rarest years", "how low the harvest goes in the tail". Lure phrasings that don't count: "how often the harvest is small", "the usual harvest in a dry year", "the chance of a dry year" (likely outcomes, pulled by "rarest").
 - **credit:** full when the answer says Anika wants the most extreme outcome at fixed settings over a long stretch, by that label or by saying the answer would be the smallest harvests in the rarest years; none when it names another kind, or names this kind and another without settling on this one.
-- **tutor note:** if they say "how often harvests are small", ask whether Anika wants a frequency back, or a number of tonnes.
+- **tutor note:** if they say "how often harvests are small", ask whether Anika wants a frequency back, or a number of tons.
 
 ### q2
 
 - **goal:** `c-name-question-kind`
 - **cases:** target-setting, what-if-ahead, chance-in-it
-- **answer:** What setting reaches a target: Bjorn wants the amount of water on each dry day at which the harvest reaches at least 40 tonnes in 9 seasons out of 10. Phrasings that count: "the setting that gets it there", "how much water it would take to hit that", "the irrigation amount needed for 40 tonnes often enough". Lure phrasings that don't count: "how often the harvest reaches 40 tonnes with drip irrigation", "what harvests to expect with the new system" (likely outcomes, pulled by "9 seasons out of 10"); and "what would have happened with drip irrigation" (a counterfactual past, pulled by "What if").
+- **answer:** What setting reaches a target: Bjorn wants the amount of water on each dry day at which the harvest reaches at least 40 tons in 9 seasons out of 10. Phrasings that count: "the setting that gets it there", "how much water it would take to hit that", "the irrigation amount needed for 40 tons often enough". Lure phrasings that don't count: "how often the harvest reaches 40 tons with drip irrigation", "what harvests to expect with the new system" (likely outcomes, pulled by "9 seasons out of 10"); and "what would have happened with drip irrigation" (a counterfactual past, pulled by "What if").
 - **credit:** full when the answer says Bjorn wants a value for one setting (the water given on each dry day) that makes the harvest reach the stated level often enough, by that label or by saying the answer would be an amount of water; none when it names another kind, or names this kind and another without settling on this one.
-- **tutor note:** if they say "how often the harvest reaches 40 tonnes", ask what Bjorn would be handed back as the answer: a percentage, or an amount of water?
+- **tutor note:** if they say "how often the harvest reaches 40 tons", ask what Bjorn would be handed back as the answer: a percentage, or an amount of water?
 
 ### q3
 
