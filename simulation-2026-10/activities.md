@@ -153,19 +153,27 @@ task, never the scoring.
   no half credit.
 - **generator:** **A scenario** is one made-up simulation model, set out in a setup of three to
   five sentences: the process it models; one sentence on something it leaves out; two to four named
-  model parameters, each with an example value; what one simulation trial produces; and how chance
-  is built into its rules ("on each point the server wins with the chance set by the first
-  parameter"). Every model in this activity is stochastic, so every question's process has chance
+  model parameters, each said in words with no value ("the number of docks at each station"); what
+  one simulation trial produces; and how chance is built into its rules ("on each point the server
+  wins with the chance set by the first parameter"). The setup gives no parameter values, since a
+  learner needs none to say what kind of question is asked and a stated value makes a question's
+  own value read as a step from it; questions may still state values. The sentence on what the
+  model leaves out never contradicts the premise of any of the scenario's questions: nothing a
+  question asks about, or an option it names, is something the setup says the model leaves out.
+  Every model in this activity is stochastic, so every question's process has chance
   in it. Domains vary by scenario, and none repeats within a bank except tennis, which may appear
-  twice: a tennis match or tournament, a river town's floods, a bus route's delays, a flu outbreak at a school, a clinic's waiting room, a league's
-  season, a food truck's lunch line. A tennis model is presented as a made-up one and never as the
+  twice. This activity's domains are its own: a tennis match or tournament, a river town's floods,
+  a bus route's delays, a flu outbreak at a school, a clinic's waiting room, a league's season, a
+  city's bike-share docks. `a-name-kind-unprompted` has a separate list, and neither activity uses
+  a domain from the other's. A tennis model is presented as a made-up one and never as the
   course's session 16 simulator. The setup ends: "Each question below comes from a different
   person who wants this simulation to answer one question. Each question is about this simulation
   alone."
 
   **A question** is one to three sentences in a named person's voice saying what they want to
   know, then "Which kind of question is <name> asking?" and four numbered choices, `type: mcq`. The
-  choices are taken word for word from this list, and keep its order:
+  choices are taken word for word from this list, whose numbers name the kinds below and are not
+  positions:
   1. What outcomes are likely
   2. Whether something can happen at all
   3. Which option is better
@@ -174,8 +182,11 @@ task, never the scoring.
   6. What would have happened if things had gone differently
 
   The four are the right kind, the lure for each wording-trap case the question carries, and
-  fillers to make four, taken only from the fillers its shape allows below, numbered 1 to 4 in list
-  order. The lures are the common misreadings: for `chance-in-it`, What outcomes are likely; for
+  fillers to make four, taken only from the fillers its shape allows below. Their wording stays
+  word for word, but their order is shuffled for each question, and across a bank the right
+  answer's position varies within each shape: no shape has its right answer in the same position
+  in two of its questions, and within one scenario no two questions have their right answer in the
+  same position. The lures are the common misreadings: for `chance-in-it`, What outcomes are likely; for
   `what-if-ahead`, What would have happened if things had gone differently; for
   `worst-case-mention`, How bad things can get. `can-happen` and `target-setting` have no lure: they
   are carried by the questions whose right kind they name. Each question asks exactly one kind, and
@@ -185,9 +196,11 @@ task, never the scoring.
   high").
 
   **Chance words.** A question carries `chance-in-it` only when its wording uses a chance or
-  frequency word ("chance", "odds", "how often", "most", "rare", "usually", "typical") while asking
+  frequency word while asking
   something other than likely outcomes, so that the pull toward likely outcomes is in the question
-  and not only in the model. A shape that doesn't carry `chance-in-it` uses none of these words,
+  and not only in the model. Any frequency word counts, on its own or in a phrase: "chance",
+  "odds", "often", "how often", "most", "rare", "usual", "usually", "typical", "1 day in 20" and
+  the like. A shape that doesn't carry `chance-in-it` uses none of them,
   except `likely-ahead`, whose right kind is likely outcomes.
 
   **No reading examples.** The reading, `tasks/read-simulation.md`, gives one example per kind: a
@@ -212,32 +225,39 @@ task, never the scoring.
   illustrations of the shape, not bank items; a bank uses its own.
   - `possible-chance` (Medium; `can-happen`, `chance-in-it`; fillers 3, 4, 6): right kind 2. Asks,
     with a chance word, whether an outcome the rules don't aim at could come about under the model
-    at all. "Is there any chance the truck sells out before 12:15 on a day when only the usual
-    lunch crowd turns up?"
+    at all. It signals possibility with a light phrase such as "even once" or "ever", and never
+    says outright that it is not asking how often. "With teams this evenly matched, is there any
+    chance a team goes a whole season unbeaten, even once?"
   - `possible-worst` (Hard; `can-happen`, `worst-case-mention`; fillers 1, 3, 4, 6): right kind 2.
     Names a worst case someone fears and asks whether it could come about under the model at all.
     "The worst case people keep raising is every bus on the route running half an hour late by
     noon. With this timetable, could that even occur?"
   - `threshold-ahead` (Hard; `target-setting`, `what-if-ahead`, `chance-in-it`; fillers 2, 5): right
     kind 4. Opens "What if" about a change someone is thinking of making, and asks, with a chance
-    word, what setting of a parameter would make an outcome reach a target. "What if the school
-    runs a flu-shot drive? How many students would need the shot for most outbreaks to die out
-    within a week?"
-  - `threshold-worst` (Hard; `target-setting`, `worst-case-mention`; fillers 1, 6): right kind 4.
-    Names a worst case and asks what setting of a parameter would keep it from coming about, the
-    target. "The worst case is patients still waiting when the clinic closes. How many nurses would
-    the clinic need on shift for the last patient to be seen by closing time?"
+    word, what setting of a parameter would make an outcome reach a target, saying how often the
+    target must hold. "What if the school runs a flu-shot drive? How many students would need the
+    shot for at least 9 outbreaks in 10 to die out within a week?"
+  - `threshold-worst` (Hard; `target-setting`, `worst-case-mention`, `chance-in-it`; filler 6):
+    right kind 4. Names a worst case and asks what setting of a parameter would keep it rare enough,
+    the target, saying how often it may still happen. "The worst case is patients still waiting
+    when the clinic closes. How many nurses would the clinic need on shift for that to happen on no
+    more than 1 day in 20?"
   - `better-ahead` (Medium; `what-if-ahead`; fillers 2, 5): right kind 3. Opens "What if" about a
     choice among two or three named options still to be made, and asks which comes out ahead on an
-    outcome. "What if the clinic hires a second nurse next month, or opens an hour earlier instead?
+    outcome. Each option is a change to one or more of the parameters the setup names (here, the
+    number of nurses and the opening hour), so the model can run and compare them. "What if the clinic hires a second nurse next month, or opens an hour earlier instead?
     Which would get patients seen sooner?"
   - `better-worst` (Hard; `worst-case-mention`, `chance-in-it`; fillers 2, 6): right kind 3. Names a
-    worst case and asks which of two or three named options makes it rarer. "The worst case is the
+    worst case and asks which of two or three named options makes it rarer. Each option is a change
+    to one or more of the parameters the setup names (here, the wall's height and the channel's
+    width), so the model can run and compare them. "The worst case is the
     river flooding the school. Of the two plans, raising the wall or widening the channel, which
     makes that rarer?"
   - `likely-ahead` (Medium; `what-if-ahead`; fillers 2, 5): right kind 1. Opens "What if" about one
-    change still to be made, and asks how often an outcome comes about under it, with no other
-    option named or implied. "What if the league adds two teams next season? How often would the
+    change still to be made, naming the new setting as a plain value, and asks how often an outcome
+    comes about at that setting alone. It never names the current setting or words the change as a
+    step from it ("adds", "another", "a third", "more", "instead"), so no comparison is implied.
+    "What if next season's league has fourteen teams? In a season like that, how often would the
     top team finish more than five points clear?"
   - `how-bad-chance` (Medium; `chance-in-it`; fillers 2, 3, 6): right kind 5. Asks, with a chance
     word, for the most extreme outcome at the current settings over a long stretch. The chance word
@@ -248,14 +268,20 @@ task, never the scoring.
     about a stretch of the past replayed with one thing changed. "If the clinic had kept its old
     booking system last winter, how often would patients have waited more than an hour?"
 
+  Every target-setting question says how often its target must hold ("on at least 9 days in 10",
+  "in most trials", "no more than 1 day in 20"), since under chance a target with no such words
+  leaves open whether it must hold always or only usually. That frequency phrase is a chance word,
+  so both target-setting shapes carry `chance-in-it`.
+
   The fillers are the kinds a shape may offer beside its right kind and lures; the kinds left off a
   shape's list are ones its wording could make defensible (which option beside a one-change
   "What if", which option beside a count of nurses or students to reach a target), and are never offered with
   it. Outside `possible-worst`, `threshold-worst`, `better-worst` and `how-bad-chance`, no question
   mentions a worst case, a worst outcome or a disaster.
 
-  **A scenario holds four questions** of four different shapes, in no fixed order, carrying at
-  least three of the five cases between them. No question's text gives away another's answer.
+  **A scenario holds four questions** of four different shapes, carrying at least three of the five
+  cases between them. No question's text gives away another's answer. Their order is chosen at
+  random and never follows the order of the shape list above.
 
   **Spread across the bank.** A bank is six scenarios, 24 questions. Every one of the nine shapes
   appears two or three times, `better-worst` at least as often as each of `possible-worst` and
@@ -265,7 +291,8 @@ task, never the scoring.
   four slots. When the generator is run live, the tutor picks each next shape to carry a case the
   learner hasn't passed.
 
-  Credit: full for the right choice, whose number is the rubric's `answer`; none for any other.
+  Credit: full for the right choice, whose position in the shuffled list is the rubric's `answer`;
+  none for any other.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. The
   tutor works a different made-up question aloud: what would the answer to this person's question
   look like, a percentage at one setting, a yes or no, one of the options, a value for a setting,
@@ -275,13 +302,12 @@ task, never the scoring.
   think of the six kinds unprompted, as posing their own question for Problem Set 4 asks; a guess
   is right one time in four. Every model here is stochastic and every question asks one kind, so a
   pass says nothing about deterministic models or about a question that mixes two kinds. A shape's
-  fillers are fixed, so for a few shapes the four choices offered are always the same four; a
-  learner who works many questions could come to recognize a set of choices rather than read the
-  question. `a-name-kind-unprompted` checks the same goal with no choices.
+  fillers are fixed, so for a few shapes the four choices offered are always the same four, in a
+  shuffled order; a learner who works many questions could come to recognize a set of choices
+  rather than read the question. `a-name-kind-unprompted` checks the same goal with no choices.
 - **offer as:** the quick check, after session 16: one described simulation and four people's
   questions about it, one at a time, each answered by picking the kind from four choices. 1 to 2
   minutes a question. Easier than `a-name-kind-unprompted`, since the kinds are in front of you.
-- **check note:** Two shapes can make their lure close to defensible, and these need a careful reading before a banked question is set or a live one is written. On `how-bad-chance`, a chance word such as "typical" or "usually" that frames the extreme itself ("in a typical year, how late on the worst day") turns the question toward likely outcomes; when writing live, put the chance word on rarity over a long stretch instead ("over ten years, on the rarest worst days"), and if a banked question reads the other way, a learner who picks What outcomes are likely and says why has a point, so record the ruling as `unclear` rather than a miss. On `possible-chance`, "is there any chance" is often heard as a request for a probability; when writing live, make plain that the ask is whether it ever happens at all, not how often.
 
 ### `a-name-kind-unprompted`
 
@@ -302,12 +328,18 @@ task, never the scoring.
   ruled on what it says the answer would be.
 - **done when:** as `a-classify-simulation-question`'s: the criterion met with no help, case by
   case, a full-credit answer passing every case its question carries.
-- **generator:** as `a-classify-simulation-question`'s for the setup, the shapes with their right
-  kinds, difficulty and cases, the chance-word rule, the rule against reading examples, the rules
-  keeping the kinds apart and the key words a question avoids, except that there are no choices and
+- **generator:** as `a-classify-simulation-question`'s for the setup (no parameter values, and a
+  leaves-out sentence that contradicts no question), the shapes with their right kinds,
+  difficulty and cases, the chance-word rule, the rule against reading examples, the rules keeping
+  the kinds apart and the key words a question avoids, and the question-order rules (random order
+  that never follows the shape list, and no shape in the same slot in two scenarios in a row),
+  except that there are no choices and
   no fillers. The question ends: "What kind of question is <name> asking? Say it in a sentence, in
   your own words." Its scenarios are its own, not shared with `a-classify-simulation-question`'s
-  bank. A bank is four scenarios of four questions, 16 in all; every one of the nine shapes appears
+  bank, and so are its domains: a food truck's lunch line, a library's study-room bookings, a ski
+  lift's line, a ferry crossing, a pharmacy's prescription counter, a farm's harvest under
+  changing weather. None repeats within its bank, and it never uses a domain from
+  `a-classify-simulation-question`'s list, including the domains of the shape examples there. A bank is four scenarios of four questions, 16 in all; every one of the nine shapes appears
   at least once, `possible-chance` or `possible-worst` three times or more, and `threshold-ahead`
   or `threshold-worst` three times or more. A question carries the same cases as its shape does
   in `a-classify-simulation-question`; with no choices, the lure is whatever its wording pulls
