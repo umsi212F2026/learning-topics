@@ -8,3 +8,12 @@
 {"at":"2026-10-19T21:10:04.900Z","kind":"goal-added","goal":"w-simulation-outcome","needs":"curation"}
 {"at":"2026-10-19T21:10:05.086Z","kind":"goal-added","goal":"w-outcome-distribution","needs":"curation"}
 {"at":"2026-10-19T21:10:41.193Z","kind":"goal-added","goal":"c-name-question-kind","needs":"curation"}
+{"at":"2026-10-20T01:01:29.017Z","kind":"curated","goal":"o-orientation"}
+{"at":"2026-10-20T01:01:29.090Z","kind":"curated","goal":"c-name-question-kind"}
+{"at":"2026-10-20T01:01:29.165Z","kind":"curated","goal":"w-simulation"}
+{"at":"2026-10-20T01:01:29.239Z","kind":"curated","goal":"w-simulation-model"}
+{"at":"2026-10-20T01:01:29.317Z","kind":"curated","goal":"w-model-parameter"}
+{"at":"2026-10-20T01:01:29.386Z","kind":"curated","goal":"w-stochastic"}
+{"at":"2026-10-20T01:01:29.460Z","kind":"curated","goal":"w-simulation-trial"}
+{"at":"2026-10-20T01:01:29.540Z","kind":"curated","goal":"w-simulation-outcome"}
+{"at":"2026-10-20T01:01:29.622Z","kind":"curated","goal":"w-outcome-distribution"}
