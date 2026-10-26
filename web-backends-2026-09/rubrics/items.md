@@ -14,9 +14,10 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
   habit, say, and afterwards look for that same habit: that catches an app that throws its table away
   and builds it again empty whenever the shape changes. The reload showed only that the habit was not
   being kept in the open page.
-- **credit:** full credit for two of the three, each with what it catches: another browser or a
+- **credit:** full credit for two of these four, each with what it catches: another browser or a
   private window for the browser's own storage; a server restart for the server's memory; something
-  saved before a change to the tables and looked for after it, for a table that gets rebuilt. Half
+  saved before a change to the tables and looked for after it, for a table that gets rebuilt;
+  looking in the database itself for the saved habit, for an app that never wrote it there. Half
   credit for two steps with no account of what each one catches, or for one step with its account. No
   credit for asking the agent whether it is really saved, and no credit for two forms of the same
   check, such as a reload and a new tab in the same browser, which is a reload with extra steps.
