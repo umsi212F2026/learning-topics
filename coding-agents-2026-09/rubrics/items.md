@@ -44,5 +44,8 @@ Answers for `tasks/items.md`. **Do not read this before attempting the questions
   from the log) and whose prices (U-M's, for that model); and one specific reason the bill could
   differ, such as a model switch partway, subagent work in another log file, cached input the
   published rates do not cover, rates having changed, or the counts having been read wrongly from the
-  log's running totals. Half credit for the basis alone. No credit for "it is only an estimate", for
-  "AI can make mistakes", or for any reason with nothing specific to this chat or this key in it.
+  log's running totals. Full credit also for naming U-M's rates as the basis with the reason that the
+  student is no longer billed at them: they no longer go through the U-M gateway (a personal or
+  student ChatGPT account, say), or they pay for a subscription rather than by the token. On that
+  route the token counts are not required. Half credit for the basis alone. No credit for "it is only
+  an estimate", for "AI can make mistakes", or for any reason with nothing specific to this chat or this key in it.
