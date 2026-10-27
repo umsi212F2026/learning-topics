@@ -36,6 +36,8 @@
   habits table, and adding a habit adds a row. How many tables a database has follows from how many
   kinds of thing the app keeps, not from how many things there are.
 - **credit:** full credit for saying each habit is a row in one table, so adding habits adds rows
-  rather than tables. Do not accept a different quibble as the error: that forty tables would be
+  rather than tables. Half credit for one habits table with a new column for each habit rather
+  than a new row: that gets the number of tables right but not what a table is a row of. Do not
+  accept a different quibble as the error: that forty tables would be
   slow, that the agent should have arranged it differently, or that each one would need a migration.
   What is wrong is what a table is, not how well the database is organized.
