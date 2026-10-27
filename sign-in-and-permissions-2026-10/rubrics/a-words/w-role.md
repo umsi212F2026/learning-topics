@@ -30,8 +30,9 @@ confusable.
 - **answer:** A role is a level in Pantry itself, so Pantry decides it and stores it, for instance in
   its `users` table. GitHub only tells Pantry who the user is; it knows nothing of who runs the
   cooking club.
-- **credit:** full for naming that a role belongs to the app, which has to assign and store it,
-  since the provider only says who the user is. Half for "Pantry has to store it" without saying why
+- **credit:** full for explaining that GitHub only says who the user is and does not supply roles,
+  which already implies that Pantry has to assign and store them; the answer need not go on to say
+  so. Half for "Pantry has to store it" without saying why
   GitHub can't supply it. None for a different quibble alone, such as that roles should be
   hard-coded.
 
