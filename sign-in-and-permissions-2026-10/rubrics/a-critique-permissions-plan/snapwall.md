@@ -110,9 +110,12 @@ change they ask for would break the plan.
   `PATCH https://snapwall-api.ironloft.com/api/photos/<its id>` with a new caption, using that
   account's session. It should get 403.
 - **credit:** full for all three: a second account, signed in, that isn't the owner; the request
-  (editing that photo's caption, method and path or plainly that request); and 403. Half when one
-  is off: signed out instead of a second account, 401 instead of 403, or checking what the page
-  shows instead of sending the request. None for accepting the agent's check with nothing else.
+  (editing that photo's caption, method and path or plainly that request) sent to the server
+  directly, with that account's session and without the page; and 403, or in plain words that the
+  server refuses or rejects the edit. Half when one is off: signed out instead of a second account,
+  401 instead of 403, or going through the page instead of sending the request to the server
+  (trying the edit in the page, or checking that the Edit button is hidden). None for accepting the
+  agent's check with nothing else.
   Don't require a verdict on the agent's check stated separately: a reply that goes straight to the
   right request has answered it.
 - **tutor note:** the agent's account is right and its method is wrong; a learner who objects only
