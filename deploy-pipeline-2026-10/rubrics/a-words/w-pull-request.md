@@ -51,8 +51,8 @@ one names the thing again and says nothing.
 - **answer:** A pull request asks for a branch to be merged, and it follows that branch. Pushing
   the fix to `fix-footer` adds it to the open pull request, and its checks run again on the new
   commit. There is no need to close it and open another.
-- **credit:** full for naming the actual error: a pull request is for a branch, not a frozen set of
-  commits, so pushing the fix to the same branch updates it and the checks run again. Half for
-  "just push to the same branch" with nothing on the pull request taking in what is pushed to its
-  branch. None for a different quibble, such as that the check might be wrong, or that they
-  should ask a reviewer first.
+- **credit:** full for naming the actual error: a pull request can be updated once it is open, by
+  pushing to the same branch. "Just push to the same branch" earns full too, since it says the
+  same thing. Saying it is also fine, or cleaner, to close the pull request and open a new one
+  costs nothing. None for a different quibble, such as that the check might be wrong, or that
+  they should ask a reviewer first.
