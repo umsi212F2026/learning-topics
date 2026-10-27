@@ -27,14 +27,14 @@
   checking that the pieces behave the way the code expects. An app can pass every test and still
   fail its success criteria, because the tests only check what somebody thought to write down as
   code.
-- **credit:** full credit for the difference between words and code: success criteria are stated
-  in ordinary words, agreed with you, about what the finished app must do, while tests are code
-  the agent writes and runs against the build. Saying that passing tests need not mean the
-  criteria are met is welcome and is not required, and calling criteria vaguer or looser tests is
-  fine when the words-versus-code contrast is there. Half credit for one side of that contrast
-  alone: that criteria are in ordinary words, or that tests are code run against the build, with
-  no contrast drawn. Do not accept that they are the same thing, or an answer that draws no
-  contrast between words and code.
+- **credit:** full credit for any real difference in what each one is for: success criteria say
+  what the finished app must achieve, the standard agreed up front and usually in ordinary words,
+  while tests are code that checks the build against expectations, the instrument. Any one of
+  these routes earns full credit: the standard against the check, words against code, criteria
+  agreed before building against tests written along with the build, or that passing the tests
+  need not mean the criteria are met. Half credit for describing only one of the two, with nothing
+  about the other. Do not accept that they are the same thing, or an answer that names no
+  difference.
 
 ### q-criteria-are-features
 
