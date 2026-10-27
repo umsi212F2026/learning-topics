@@ -39,8 +39,10 @@
   they survive a reload, and another browser sees them, and they go the moment the server restarts.
   Reaching the server is not the same as being in a database, and only the database keeps them past a
   restart of the server.
-- **credit:** full credit for saying the server may be holding them in memory, so reaching the server
-  does not mean they are in a database, and they would go when it restarts. Full credit for naming
-  the restart as the check that tells the two apart. Do not accept a different quibble as the error:
-  that they should look at the database file, that they should ask the agent, or that their app might
-  not have a database at all, which is not what the sentence gets wrong.
+- **credit:** full credit for identifying the confusion in the sentence: the server is not the
+  database, and the database is where an app's data persists, so being on the server does not by
+  itself mean being in a database. Saying the server may be holding them in its own memory, or naming
+  a restart as the check that tells the two apart, is welcome but not required. Do not accept a
+  different quibble as the error: that they should look at the database file, that they should ask
+  the agent, or that their app might not have a database at all, which is not what the sentence gets
+  wrong. Do not accept agreeing with the classmate.
