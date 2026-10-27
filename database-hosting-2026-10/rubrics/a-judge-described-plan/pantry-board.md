@@ -22,10 +22,12 @@ question, connection strings, passwords, backups, cost) are neither credited nor
   no managed Postgres. Nothing shows the data anywhere Larkspan keeps it, and left as it is, the
   backend's SQLite file stays at `server/data/pantry.sqlite` on the ephemeral disk and is gone after
   a redeploy. What decides it is that omission.
-- **credit:** full for no or "can't tell", with the omission named: the plan never says where the
-  database lives, or, equally, no step attaches a volume or uses managed Postgres, so the file stays
-  on the ephemeral disk. Not met for yes, for no or "can't tell" with no reason, or for no tied only
-  to step 2's table creation or to step 1, 3 or 4 without the omission.
+- **credit:** full for no, with the reason the data is lost given in any of three equal forms:
+  where the file is (the SQLite file stays on the server's ephemeral disk); what the plan lacks (no
+  step attaches a volume or moves the data to managed Postgres); or step 2 creating empty tables in
+  its place after a redeploy has taken the file. Not met for yes, for "can't tell", for no with no
+  reason, or for no blamed on step 2 alone, as if creating the tables erased data that was still
+  there.
 - **tutor note:** a learner who answers yes because step 2 creates the tables has confused the
   tables existing with the rows lasting. The first level of help is "where does the data live, and
   what does this host do to that place on a redeploy?"
