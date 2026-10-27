@@ -16,10 +16,12 @@ name for it and is not a confusable. Mossharbor is a made-up host.
 - **answer:** With the CLI, the agent types commands into a terminal, as you could, and reads the
   text they print. The MCP server plugs Mossharbor into the agent itself, so its actions show up
   as tools the agent calls directly, with no commands typed.
-- **credit:** full for naming how the agent reaches each: typing commands in a terminal for the
-  CLI, calling tools the MCP server adds to the agent for the MCP server. Half for only one half,
-  such as "the CLI is commands" with nothing on what the MCP server gives the agent. None for an
-  incidental difference alone, such as which is newer, or which is easier to set up.
+- **credit:** full for any accurate difference between them, such as: the agent types CLI
+  commands in a terminal, while the MCP server adds tools the agent calls; MCP is a standard
+  protocol any agent can use, while the CLI is Mossharbor's own; the CLI needs a terminal the
+  agent is able to use. Both expose only what Mossharbor chose to offer, so no difference in what
+  the agent can do is required. None for speed, newness or ease of setup alone, or for a
+  difference that is wrong.
 
 ### q2
 
