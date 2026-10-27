@@ -16,10 +16,11 @@ holds, and simply giving the app your Google password, which hands it your whole
 - **answer:** With OAuth the app doesn't hold users' passwords at all. Users sign in at the
   provider, which tells the app who they are, and the app keeps the provider's id for each user,
   not a password, hashed or otherwise.
-- **credit:** full for naming that under OAuth there is no password for the app to store, because
-  the provider checks it, and the app keeps the provider's id instead. Half for "OAuth doesn't use
-  passwords" without saying who checks the password or what the app keeps. None for a different
-  quibble alone, such as which hashing method to use.
+- **credit:** full for naming that under OAuth the password is handled entirely by the outside
+  provider, which checks it, so there is no password for the app to store; an answer that says the
+  sign-in happens only at the provider has said this, and need not also say that the app keeps the
+  provider's id. Half for "OAuth doesn't use passwords" without saying who checks the password.
+  None for a different quibble alone, such as which hashing method to use.
 - **tutor note:** a learner who says "the app stores a token instead" is close; ask what the app
   needs to remember about a user to recognize them next time.
 
