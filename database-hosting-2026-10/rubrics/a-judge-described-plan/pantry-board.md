@@ -25,9 +25,9 @@ question, connection strings, passwords, backups, cost) are neither credited nor
 - **credit:** full for no, with the reason the data is lost given in any of three equal forms:
   where the file is (the SQLite file stays on the server's ephemeral disk); what the plan lacks (no
   step attaches a volume or moves the data to managed Postgres); or step 2 creating empty tables in
-  its place after a redeploy has taken the file. Not met for yes, for "can't tell", for no with no
-  reason, or for no blamed on step 2 alone, as if creating the tables erased data that was still
-  there.
+  its place after a redeploy has taken the file. Half for no with no reason given, or with only a
+  step named and nothing about why the data is lost. Not met for yes, for "can't tell", or for no
+  blamed on step 2 alone, as if creating the tables erased data that was still there.
 - **tutor note:** a learner who answers yes because step 2 creates the tables has confused the
   tables existing with the rows lasting. The first level of help is "where does the data live, and
   what does this host do to that place on a redeploy?"
