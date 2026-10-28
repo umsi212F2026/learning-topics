@@ -6,9 +6,10 @@ with the learner.
 The minimum route, the orientation, one passed question for the one word and enough questions to
 meet both capabilities and both cases of `c-divide-into-steps`, comes to about 30 minutes: about
 12 for `a-read-workflow-design`, about 3 for the word, one scenario's two questions of
-`a-split-a-lumped-step` at about 4 minutes each (the two carry both cases), and one question of
-`a-defend-a-lane-choice` at about 4 minutes. With the two pick-one checks instead
-(`a-contrast-step-splits` and `a-pick-sound-defense`, about 2 minutes a question) it is about 22.
+`a-split-a-lumped-step` at about 5 minutes each (the two carry both cases), and one question of
+`a-defend-a-lane-choice` at about 5 minutes. With the two pick-one checks instead
+(`a-contrast-step-splits` at about 3 minutes a question and `a-pick-sound-defense` at about 2) it
+is about 23.
 Both capabilities carry `taught elsewhere` (the session 18 class), so their four activities are
 offered after that class, as practice and review.
 
@@ -141,9 +142,8 @@ never the scoring.
 - **supports:** attempt
 - **checks:** `c-divide-into-steps`
 - **artifact:** no external source. A described workflow with two steps that each do too much, from
-  this activity's bank or written live per the generator below. About 4 minutes a question, 8 a
+  this activity's bank or written live per the generator below. About 5 minutes a question, 10 a
   scenario.
-- **verified:** 2026-10-28
 - **learner does:** reads the scenario's setup, a workflow laid out as numbered steps with who does
   each, and the one question served, which names one step that does too much; says in a few
   sentences where inside that step a boundary should go, why there, and what would be saved at it.
@@ -167,37 +167,53 @@ never the scoring.
   separate steps; the others are single acts, one executor doing one thing checked one way. The
   setup ends: "Some of these steps do more than one step's work."
 
+  **Every lumped step has three parts, and so two joins.** At one join the shape's change happens;
+  the other join has no change at all: the same executor on both sides, both results checked the
+  same way. The boundary belongs only at the join with the change, so where it goes is never given
+  away by the step having just one join. Which of the two joins comes first varies across the
+  bank.
+
   **A question** names one lumped step and asks: "Step <n> does too much for one step. Where inside
   it should a step boundary go, and why there? What would be saved at that boundary?" Free response,
   `type: free`.
 
-  **Shapes**, each with how hard and the case it carries, which its rubric `cases:` line lists. The
-  examples are illustrations of the shape, not bank items, and their domains (a youth orchestra, a
-  running club) are used by no bank in this topic.
-  - `check-split` (Medium; `check-changes`): the lumped step is done by one executor throughout,
-    named alone in its parentheses, and its sentence mentions no other. It does two parts, in
-    order, whose results are different kinds of thing checked in different ways, and the second
-    part uses the first's result. One part's result can be checked against something fixed (the
-    requests it came from, a count, a total, a rule such as no double bookings) and the other's
-    needs a person's judgment (is it clear, polite, fair, well chosen), in either order. "3. Read
-    the week's practice-room requests, settle who gets which room at which hour, and write each
-    player a short friendly note with their slot. (an AI agent)" Key: the boundary goes after the
-    rooms are settled; the room list is checked against the requests and for clashes, while the
-    notes are checked by a person reading them for tone and clarity; save the room list, one line
-    per player with room and hour, so it can be checked before any note is written.
-  - `handoff-split` (Medium; `executor-changes`): the lumped step names two executors, the second
-    revising what the first made, in its parentheses ("(an AI agent, then the club captain)"). Both
-    parts produce the same kind of thing, checked the same way (a schedule checked for coverage and
-    clashes, a set of groups checked against members' times, a price list checked against costs),
-    so the boundary earns its place because the executor changes, not the check. "2. Draft the
-    pace groups from each runner's recent times, then move runners between groups by hand for
-    those coming back from injury. (an AI agent, then the club captain)" Key: the boundary goes at
-    the handoff from the agent to the captain; save the agent's draft groups before the captain's
-    changes, so a runner in the wrong group can be traced to the draft or to the hand changes.
-  - **Hard**, for either shape: the lumped step has three parts, and one of its two joins has no
-    change at all: the same executor on both sides, both results checked the same way (looking up
-    each member's address and then printing it on a label, both checked against the member list).
-    The boundary belongs only at the other join. The question's wording is unchanged.
+  **Shapes**, each with the case it carries, which its rubric `cases:` line lists. The examples are
+  illustrations of the shape, not bank items, and their domains (a youth orchestra, a running club)
+  are used by no bank in this topic.
+  - `check-split` (`check-changes`): the lumped step is done by one executor throughout, named alone
+    in its parentheses, and its sentence mentions no other. At the change join, the parts on either
+    side produce different kinds of thing checked in different ways, and the later part uses the
+    earlier one's result. One side's result can be checked against something fixed (the requests
+    it came from, a count, a total, a rule such as no double bookings) and the other's needs a
+    person's judgment (is it clear, polite, fair, well chosen), in either order. "3. Read the
+    week's practice-room requests, settle who gets which room at which hour, list the bookings by
+    day, and write each player a short friendly note with their slot. (an AI agent)" Key: no
+    boundary between settling the rooms and listing them by day, since the same agent does both and
+    both are checked the same way, against the requests and for clashes; the boundary goes before
+    the notes, which are checked by a person reading them for tone and clarity; save the bookings
+    list, one line per player with day, room and hour, so it can be checked before any note is
+    written.
+  - `handoff-split` (`executor-changes`): the lumped step names two executors, the second revising
+    what the first made, in its parentheses ("(an AI agent, then the club captain)"). Every part
+    produces the same kind of thing, checked by the same standard (a schedule checked for coverage
+    and clashes, a set of groups checked against members' times, a price list checked against
+    costs): the second executor's revision is held to the very standard the first's work is, and
+    never calls for a judgment the first's work doesn't face. So the boundary earns its place
+    because the executor changes, not the check. "2. Sort the runners by their recent times, draft
+    pace groups of similar speed, then move runners between groups by hand so no group has more
+    than twelve, keeping each runner within a minute of their group's pace. (an AI agent, then the
+    club captain)" Key: no boundary between sorting and drafting, since the agent does both and
+    both are checked against the recent times; the boundary goes at the handoff from the agent to
+    the captain; save the agent's draft groups before the captain's changes, so a runner in the
+    wrong group can be traced to the draft or to the hand changes.
+
+  **How hard** depends on the join with no change:
+  - Medium: the parts on either side of it are plainly one kind of act (settling the rooms and then
+    listing them by day; sorting runners by time and then grouping them by time).
+  - Hard: the parts on either side of it produce things that look different, though both are
+    checked the same way by the same executor (looking up each member's address and then printing
+    it on a label, both checked against the member list), so that join looks like a place for a
+    boundary and isn't. The question's wording is unchanged.
 
   **A scenario holds two questions**, one on a `check-split` step and one on a `handoff-split`
   step, so one scenario carries both cases. Which comes first is chosen at random, and the second
@@ -217,27 +233,30 @@ never the scoring.
   Credit: full when the answer does all three: puts the boundary at the join where the shape's
   change happens; gives the reason of the shape's kind, naming what changes there (the two kinds of
   check, each said even briefly, such as "compare with the requests" and "read for tone"; or the two
-  executors); and names as the saved result the first part's output, concretely enough to say what
-  it is ("the room list"), not "save everything" or the step's final output. Half when the boundary
-  is at the right join with only one of the other two: a reason that is missing, generic ("smaller
-  steps are easier") or of the other kind (an executor change in a `check-split` step, where there
-  is none; a check change alone in a `handoff-split` step), or a saved result that is missing or is
-  not the first part's output. A Hard answer that also puts a boundary at the join with no change
-  gets at most half. None when the boundary is at the wrong join or no boundary is placed.
+  executors); and names as the saved result the output just before that boundary, concretely enough
+  to say what it is ("the bookings list"), not "save everything" or the step's final output. A
+  reason that names both kinds of change gets full credit, provided the shape's own kind is among
+  them. Half when the boundary is at the right join with only one of the other two: a reason that
+  is missing, generic ("smaller steps are easier") or only of the other kind (an executor change
+  alone in a `check-split` step, such as proposing that a person check the notes; a check change
+  alone in a `handoff-split` step), or a saved result that is missing or is not the output just
+  before the boundary. An answer that also puts a boundary at the join with no change gets at most
+  half. None when the boundary is only at the join with no change, or no boundary is placed.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. The
   tutor works one of the two illustrations above aloud, the one of the same shape as the question:
   says what comes out of each part, how each would be checked and by whom, where those differ, and
   what to keep at the boundary so the first part can be looked at on its own. It may point to
   Dividing a workflow into steps in `tasks/read-workflow-design.md`.
-- **doesn't show:** the question points at the step that does too much, so a pass doesn't show the
-  learner would spot it in a workflow of their own, as planning for Problem Set 5 asks. In a Medium
-  question the step has only two parts, so where the boundary goes is given away and the question
-  tests the reason and the saved result. The scenarios keep a check change and an executor change
+- **doesn't show:** the question names the step that does too much, so a pass doesn't show the
+  learner would find it in a described workflow, or in a workflow of their own, as planning for
+  Problem Set 5 asks. `a-contrast-step-splits` names the step too, so if the criterion's "given a
+  described workflow with too few steps" is meant to include finding the overloaded step, that part
+  is checked by nothing in this topic. The scenarios keep a check change and an executor change
   apart; in a real workflow they often come together, and a pass doesn't show the learner would
   name both. It shows nothing about when a boundary costs more than it earns, which the reading
   mentions and nothing here checks.
 - **offer as:** the write-it-yourself check, after session 18: a short workflow and one step that
-  does too much, and you say where to split it, why, and what to keep at the split. About 4
+  does too much, and you say where to split it, why, and what to keep at the split. About 5
   minutes a question. Harder than `a-contrast-step-splits`, since nothing is proposed for you.
 
 ### `a-contrast-step-splits`
@@ -245,44 +264,46 @@ never the scoring.
 - **serves:** `c-divide-into-steps`
 - **supports:** attempt
 - **checks:** `c-divide-into-steps`
-- **artifact:** no external source. A described workflow and two people's proposals for splitting
-  one of its steps, from this activity's bank or written live per the generator below. About 2
-  minutes a question, 5 a scenario.
-- **verified:** 2026-10-28
-- **learner does:** reads the scenario's setup and the one question served, two proposals for
-  splitting the same step, and picks the better division.
+- **artifact:** no external source. A described workflow and three people's proposals for splitting
+  one of its steps, from this activity's bank or written live per the generator below. About 3
+  minutes a question, 7 a scenario.
+- **learner does:** reads the scenario's setup and the one question served, three proposals for
+  splitting the same step, and picks the best division.
 - **tutor role:** examiner
 - **tutor does:** as `a-split-a-lumped-step`'s, including the offer to wait for session 18, except
-  that it labels a live run `a-contrast-step-splits/<shape>`. Never says what the weaker proposal
+  that it labels a live run `a-contrast-step-splits/<shape>`. Never says what a weaker proposal
   gets wrong before the learner has chosen.
 - **done when:** as `a-split-a-lumped-step`'s: the criterion met with no help, case by case. Each
   question gets one ruling: the sound proposal passes the case the question carries, and the other
-  passes none. There is no half credit.
+  two pass none. There is no half credit. Since every question sets the sound proposal beside both
+  a split at the wrong join and a split that saves the wrong thing, one pick bears on both where
+  the boundary goes and what is saved there.
 - **generator:** **A scenario** is set up as in `a-split-a-lumped-step` (a made-up workflow of four
-  or five numbered steps with executors in parentheses, two of them lumped, nothing described with
-  code, a command, a file format or a query), except that every lumped step has three parts and
-  so two joins: one join where the shape's change happens, and one with no change at all (the same
-  executor on both sides, both results checked the same way). The shapes are the same two,
+  or five numbered steps with executors in parentheses, two of them lumped, each lumped step with
+  three parts and so two joins, one where the shape's change happens and one with no change at all,
+  nothing described with code, a command, a file format or a query). The shapes are the same two,
   `check-split` carrying `check-changes` and `handoff-split` carrying `executor-changes`, with the
   same illustrations. A scenario holds two questions, one per shape, in random order.
 
-  **A question** reads: "<Name1> and <Name2> each propose splitting step <n> into two steps." Then
-  two numbered proposals, each one or two sentences in the same frame: where the split goes (after
-  which part) and what, if anything, is kept between the two new steps. Neither proposal gives a
-  reason. Then "Which proposal is the better division of step <n>?" with the choices "1. <Name1>'s"
-  and "2. <Name2>'s", `type: mcq`. The two proposals are within ten words of each other in length.
-  One is sound: it splits at the join where the shape's change happens and keeps the first part's
-  output, named concretely. The other is a near-miss, of one of two variants:
-  - `wrong-join` (Medium): splits at the join with no change, and keeps that join's output, named
-    just as concretely, so it sounds as careful as the sound one.
-  - `nothing-saved` (Medium or Hard): splits at the right join, but keeps nothing between the two new
-    steps. Medium says so plainly ("hands the list straight on to the next step"). Hard keeps only
-    the step's final output ("and keeps the finished notes"), so something is saved, but not the
+  **A question** reads: "<Name1>, <Name2> and <Name3> each propose splitting step <n> into two
+  steps." Then three numbered proposals, each one or two sentences in the same frame: where the
+  split goes (after which part) and what, if anything, is kept between the two new steps. No
+  proposal gives a reason. Then "Which proposal is the best division of step <n>?" with the choices
+  "1. <Name1>'s", "2. <Name2>'s" and "3. <Name3>'s", `type: mcq`. The three proposals are within
+  ten words of each other in length. Every question has all three of these:
+  - the sound proposal: splits at the join where the shape's change happens and keeps the output
+    just before that join, named concretely;
+  - a `wrong-join` near-miss: splits at the join with no change, and keeps that join's output,
+    named just as concretely, so it sounds as careful as the sound one;
+  - a `nothing-saved` near-miss: splits at the right join, but keeps nothing the boundary needed.
+    Here this near-miss alone sets how hard a question is; the join with no change may be of
+    either kind `a-split-a-lumped-step` describes. Medium says so plainly ("hands the list straight on to the next step"). Hard keeps only the
+    step's final output ("and keeps the finished notes"), so something is saved, but not the
     result the boundary needed.
 
-  **Spread across the bank.** A bank is six scenarios, 12 questions: each shape six times, each
-  variant three times with each shape, two of each shape's `nothing-saved` questions Hard, and the
-  sound proposal first in six questions. Names vary and are never reused within a scenario.
+  **Spread across the bank.** A bank is six scenarios, 12 questions: each shape six times, three of
+  each shape's questions Hard, and the sound proposal in each of the three positions four times.
+  Names vary and are never reused within a scenario.
 
   **Domains** are this activity's own, none repeating within the bank: a landlord's repair requests,
   a student club's event-room requests, a dental office's appointment reminders, a used-bike shop's
@@ -291,19 +312,22 @@ never the scoring.
   lists, no homework or grading workflow, and no step that downloads files or turns documents into
   text.
 
-  Credit: full for the sound proposal, whose position is the rubric's `answer`; none for the other.
+  Credit: full for the sound proposal, whose position is the rubric's `answer`; none for either
+  other.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. As
-  `a-split-a-lumped-step`'s, and then the tutor sets a weaker split of the same illustration beside
-  the worked one (the split at a join with no change, or the right split with nothing kept) and
-  says what the worked one lets someone check that the weaker one doesn't.
+  `a-split-a-lumped-step`'s, and then the tutor sets the two weaker splits of the same illustration
+  beside the worked one (the split at the join with no change, and the right split with nothing
+  kept) and says what the worked one lets someone check that each weaker one doesn't.
 - **doesn't show:** the proposals are given and the learner picks, so a pass doesn't show they
-  would place a boundary, give its reason or name what to save on their own; with two choices a
-  guess is right half the time. The proposals give no reasons, so the learner's reason for a
-  boundary is never seen. The rest of `a-split-a-lumped-step`'s `doesn't show` applies, except the
-  part about Medium questions giving away the join. `a-split-a-lumped-step` checks the same goal
-  with nothing proposed.
-- **offer as:** the quick check, after session 18: a short workflow and two people's ways of
-  splitting one of its steps, and you pick the better one. About 2 minutes a question. Easier than
+  would place a boundary, give its reason or name what to save on their own; with three choices a
+  guess is right a third of the time. The proposals give no reasons, so the learner's reason for a
+  boundary is never seen, and the criterion's "and why" is not checked here. The question names
+  the step that does too much, as `a-split-a-lumped-step`'s does, so if the criterion's "given a
+  described workflow with too few steps" is meant to include finding that step, nothing in this
+  topic checks it. The rest of `a-split-a-lumped-step`'s `doesn't show` applies.
+  `a-split-a-lumped-step` checks the same goal with nothing proposed.
+- **offer as:** the quick check, after session 18: a short workflow and three people's ways of
+  splitting one of its steps, and you pick the best one. About 3 minutes a question. Easier than
   `a-split-a-lumped-step`, since the splits are in front of you.
 
 ### `a-defend-a-lane-choice`
@@ -312,9 +336,8 @@ never the scoring.
 - **supports:** attempt
 - **checks:** `c-assign-a-lane`
 - **artifact:** no external source. A described workflow with two steps whose executor is left
-  open, and three facts about each, from this activity's bank or written live per the generator
-  below. About 4 minutes a question, 8 a scenario.
-- **verified:** 2026-10-28
+  open, and three facts about each told in running prose, from this activity's bank or written live
+  per the generator below. About 5 minutes a question, 10 a scenario.
 - **learner does:** reads the scenario's setup and the one question served, which names one open
   step; says who should do it, compares that with one other choice, and names one goal the choice
   helps and one it hurts, saying what about the step makes it so.
@@ -333,18 +356,23 @@ never the scoring.
   out in a setup of who runs it, what it is for and roughly how much passes through it (one or two
   sentences), then four or five numbered steps, one sentence each, with the executor in parentheses
   as the reading lays them out: a person named by role, an AI agent, or a script. Two steps are open:
-  their parentheses read "(who?)". Below the steps, for each open step, a short paragraph headed
-  "About step <n>:" gives three facts, one sentence each, in plain words (a fourth where the shape
-  below adds one):
+  their parentheses read "(who?)". Each open step has three facts (a fourth where the shape below
+  adds one):
   - its input: what comes in, in what form (typed free text, a list someone has already approved,
     short form answers, photos) and how many a week;
   - what a mistake there would cost: who is hurt and how much, and whether a later step would catch
     it or it goes out unchecked;
   - what data it handles: whose, and whether any of it is private (health details, home addresses,
     payment details, children's names) or none is.
-  The facts are stated plainly, never as a hint about who should do the step, and never using the
-  words person, agent or script. Nothing is described with code, a command, a file format or a
-  query.
+  These facts are not set out under a heading or one to a line. Below the steps comes one paragraph
+  of running prose, six to nine sentences, in the voice of the person who runs the workflow, that
+  tells both open steps' facts in no fixed order, mixed with each other: a sentence may carry two
+  facts, and a fact is tied to its step by what it is about ("the refund requests", "the
+  receipts"), not by a step number or a label naming the kind of fact. The paragraph also carries
+  one irrelevant detail for each open step, said as plainly as the facts but bearing on no goal
+  (how long the workflow has run, which day the team meets, what the form's heading says). The
+  facts are stated plainly, never as a hint about who should do the step, and never using the words
+  person, agent or script. Nothing is described with code, a command, a file format or a query.
 
   **A question** reads: "Who should do step <n>: a person, an AI agent or a script? Compare your
   choice with one of the other two: name one goal your choice helps and one it hurts, and say what
@@ -391,10 +419,16 @@ never the scoring.
   **Spread across the bank.** A bank is six scenarios, 12 questions, each shape four times. When the
   generator is run live, the tutor picks a shape the learner hasn't seen yet.
 
-  The key gives the natural choice and alternative, the helped and hurt goals each fact supports for
-  each of the two, and two or three generic reasons that would fail because they hold for any step
-  given that executor ("scripts don't make mistakes", "an agent is cheaper", "a person has better
-  judgment", "agents can be wrong in ways that look right"). Credit: full when the answer chooses an
+  The facts are chosen so that each of the three pairings of executors (the natural choice against
+  the alternative, the natural choice against the third executor, and the alternative against the
+  third) has a goal each side helps and one it hurts, traceable to a fact; the third pairing may
+  rest on the same facts as the other two. The key gives the natural choice and alternative; for
+  each of the three pairings, the helped and hurt goals each fact supports for each side; which
+  sentences of the paragraph carry each open step's facts; the irrelevant detail for each open
+  step; and two or three generic reasons that would fail because they hold for any step given that
+  executor ("scripts don't make mistakes", "an agent is cheaper", "a person has better judgment",
+  "agents can be wrong in ways that look right"). A reason resting on the irrelevant detail is not
+  tied. Credit: full when the answer chooses an
   executor, names one alternative, and names a goal the choice helps and a goal it hurts compared
   with that alternative, each with a reason tied to a fact about this step (its input, what a
   mistake would cost, or its data). A reason is tied when it would not hold for that executor on a
@@ -412,15 +446,18 @@ never the scoring.
   up on Monday waits until Sunday. Then the tutor shows a generic version ("a person has better
   judgment") and says why it would hold for any step. It may point to Trade-offs and Who does each
   step in `tasks/read-workflow-design.md`.
-- **doesn't show:** the step's facts are laid out under a heading, so a pass doesn't show the learner
-  would find what matters about a step in a looser description, or in their own Problem Set 5
-  workflow. One step is defended at a time, so a pass shows nothing about how the choices for
+- **doesn't show:** the step's facts are all present in one short paragraph with only one
+  irrelevant detail beside them, so a pass shows the learner can pick what matters out of a loose
+  description, but not that they would find it in a longer one, or notice that a fact they need is
+  missing and ask, as their own Problem Set 5 workflow would make them. One step is defended at a
+  time, so a pass shows nothing about how the choices for
   neighboring steps fit together (an agent's step followed by a person's review, as in the
   reading). Ruling on whether a reason is tied is a judgment; the key's generic reasons narrow it
   without removing it.
 - **offer as:** the write-it-yourself check, after session 18: a short workflow, a step with who
-  does it left open and three facts about it, and you choose and argue the choice. About 4 minutes
-  a question. Harder than `a-pick-sound-defense`, since you write the argument.
+  does it left open and a short description of it, and you choose and argue the choice. About 5
+  minutes a question. Harder than `a-pick-sound-defense`, since you write the argument and pick the
+  facts out yourself.
 
 ### `a-pick-sound-defense`
 
@@ -440,10 +477,12 @@ never the scoring.
 - **done when:** the criterion met with no help. Each question gets one ruling: the sound defense
   passes and the other doesn't. There is no half credit.
 - **generator:** **A scenario** is set up as in `a-defend-a-lane-choice` (a made-up workflow, two open
-  steps, an "About step <n>:" paragraph of three facts for each, nothing described with code, a
-  command, a file format or a query), with the same three shapes, two different shapes per
-  scenario, and the same rule that no two open steps in a bank share the pair of facts behind their
-  reasons.
+  steps with the same three facts each, nothing described with code, a command, a file format or a
+  query), with the same three shapes, two different shapes per scenario, and the same rule that no
+  two open steps in a bank share the pair of facts behind their reasons, except in one respect: the
+  facts are not running prose. For each open step, a short paragraph headed "About step <n>:" gives
+  its facts, one sentence each, and nothing else, so the learner can check a defense's clause
+  against exactly what the step's paragraph says.
 
   **A question** reads: "<Name1> and <Name2> both think step <n> should be done by <executor>
   rather than <alternative>. Here is how each puts it." Then two numbered defenses, each two
@@ -451,18 +490,28 @@ never the scoring.
   hurts <goal>, because ...". Both choose the shape's natural choice over its alternative and name
   the same two goals. Then "Which defense is sound?" with the choices "1. <Name1>'s" and
   "2. <Name2>'s", `type: mcq`. In the sound defense both because-clauses point at facts in the
-  step's paragraph. The near-miss is identical except for one because-clause, which is generic: it
-  would hold for any step given that executor. The two defenses are within ten words of each other
-  in length.
-  - Which clause is generic varies: the helped clause in half the bank, the hurt clause in the
-    other half.
-  - Medium: the generic clause is plainly general ("because scripts cost almost nothing to run").
-  - Hard: the generic clause borrows the step's nouns while its reason doesn't depend on them
-    ("because running a script over these refunds costs almost nothing"), so it reads as tied.
+  step's paragraph and draw from them the direction the fact supports. The near-miss is identical
+  except for one because-clause, which is not tied to the step. That clause always uses the step's
+  own nouns (the refunds, the receipts, the members), so neither defense can be picked for
+  mentioning the step and the other not. The two defenses are within ten words of each other in
+  length.
+  - Which clause is the untied one varies: the helped clause in half the bank, the hurt clause in
+    the other half.
+  - Medium, of two kinds, used equally:
+    - `fact-not-given`: the clause rests on a fact that sounds particular to the step but that the
+      step's paragraph doesn't contain ("because these refunds are all under ten dollars", when
+      the paragraph says nothing about amounts).
+    - `wrong-direction`: the clause rests on a fact that is in the paragraph but draws from it a
+      direction it doesn't support ("helps correctness, because a few entries arrive with a note
+      typed where a number should be", a fact that makes a script stop, not one that makes it
+      right).
+  - Hard, `generic-with-nouns`: the clause borrows the step's nouns while its reason doesn't depend
+    on them and would hold for any step given that executor ("because running a script over these
+    refunds costs almost nothing"), so it reads as tied.
 
   **Spread across the bank.** A bank is six scenarios, 12 questions: each shape four times, half the
-  questions Hard, and the sound defense first in six. Names vary and are never reused within a
-  scenario.
+  questions Hard, three questions of each Medium kind, and the sound defense first in six. Names
+  vary and are never reused within a scenario.
 
   **Domains** are this activity's own, none repeating within the bank: a gym's membership
   cancellations, a recipe site's reader comments, a summer camp's pickup list, a band's merch
@@ -477,10 +526,15 @@ never the scoring.
   side, with the tutor saying which fact each tied clause rests on.
 - **doesn't show:** the choice, the alternative and the goals are given, and the learner picks
   between two defenses, so a pass doesn't show they would choose an executor or find a step's
-  reasons on their own; with two choices a guess is right half the time. Every defense here argues
-  for the natural choice, so a pass says nothing about defending a less obvious one. The rest of
-  `a-defend-a-lane-choice`'s `doesn't show` applies. `a-defend-a-lane-choice` checks the same goal
-  with the argument written by the learner.
+  reasons on their own; with two choices a guess is right half the time. Only the Hard questions
+  set a reason that would hold for any step beside a tied one; the Medium ones test whether a
+  clause rests on a fact the step has, in the direction it supports. Every defense here argues for
+  the natural choice, so a pass says nothing about defending a less obvious one. Each step's facts
+  are laid out under a heading, one to a line, so a pass doesn't show the learner would find what
+  matters about a step in a looser description; `a-defend-a-lane-choice` gives them as running
+  prose. One step is defended at a time, so a pass shows nothing about how the choices for
+  neighboring steps fit together. `a-defend-a-lane-choice` checks the same goal with the argument
+  written by the learner.
 - **offer as:** the quick check, after session 18: a short workflow, a step and two people's
   defenses of the same choice for it, and you pick the one whose reasons are about the step. About
   2 minutes a question. Easier than `a-defend-a-lane-choice`, since the arguments are written for
