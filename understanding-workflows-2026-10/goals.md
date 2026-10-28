@@ -52,9 +52,13 @@
 
 ## Where this came from
 
+_Yours to fill in. Nobody can answer this one for you._
+
 <!-- Which of A / B / C / D, and the answer to the follow-up. -->
 
 ## What I already have
+
+_Yours to fill in. Say where your knowledge stops, not what you have heard of._
 
 <!--
   The nearest thing already known well, and where it stops.
@@ -64,6 +68,9 @@
 
 ## What I'll use it for
 
+_Yours to fill in. The course supplies one occasion: reading the workflow diagrams in sessions 18
+to 21, where the design questions are asked of them. Name any others you have._
+
 <!--
   The use, and a concrete occasion.
   If several uses apply, rank them: the top one sets the depth, the rest are cut first
@@ -71,6 +78,10 @@
 -->
 
 ## Depth
+
+**Read it.** Enough to say what a workflow diagram claims: where a run starts and ends, who does
+each step, and where the flow splits and merges. Drawing a diagram, and arguing about who should
+do a step, are not part of this topic.
 
 <!--
   Which of: recognize it / read it / modify something existing / author from scratch /
@@ -253,6 +264,23 @@
   beside a capability entry.
 -->
 
+### `c-read-diagram`
+
+- **goal:** read a workflow diagram and say what it claims
+- **criterion:** given a workflow diagram they haven't seen, says what it claims: what each
+  shape marks, who does each step, what each kind of arrow means, and where the flow splits
+  and merges.
+- **cases:**
+  - `shapes`: the state a run starts or ends in, a step, a gateway, a collapsed subprocess
+  - `lanes`: who does a step, from its lane, including a step that spans two lanes, and
+    where work passes from one lane to another
+  - `arrows`: tells apart a next-step arrow, a branch label, and a document read by a step,
+    and doesn't read every arrow as a handoff
+  - `split-merge`: where flow splits (a named gateway) and where it merges (an unnamed one)
+  - `trace-run`: given a trigger and the answer at each named gateway, says which steps run
+    and which outcome the run reaches
+- **taught elsewhere:** session 18 class
+
 ### `o-orientation`
 
 - **goal:** get the shape of this area before working on any particular part of it
@@ -262,3 +290,130 @@
 - **recurrence:** never
 - **is_required:** no
 - **group:** orientation
+
+### `w-workflow`
+
+- **goal:** workflow
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a repeatable arrangement of steps, potentially executed by more than one
+  actor, with the order of steps and the handoffs settled before the run starts
+- **nearest confusable:** project, checklist, habit, algorithm
+
+### `w-run`
+
+- **goal:** run
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** one execution of the thing, not the thing itself
+- **nearest confusable:** workflow
+- **synonyms:** instance
+
+### `w-trigger`
+
+- **goal:** trigger
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the condition a run starts from, not the first thing done in it
+- **nearest confusable:** workflow step
+- **synonyms:** start state, start event
+
+### `w-workflow-outcome`
+
+- **goal:** workflow outcome
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the condition that holds once a run is over
+- **nearest confusable:** trigger
+- **synonyms:** end state, end event
+
+### `w-workflow-state`
+
+- **goal:** workflow state
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a condition that holds, rather than an action that happens
+- **nearest confusable:** workflow step
+- **synonyms:** event
+
+### `w-workflow-step`
+
+- **goal:** workflow step
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** one action, at whatever grain the diagram chose to show
+- **nearest confusable:** subprocess
+- **synonyms:** action, task
+
+### `w-subprocess`
+
+- **goal:** subprocess
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a step with a diagram of its own underneath it
+- **nearest confusable:** a child process that a running program starts
+- **synonyms:** sub-workflow
+
+### `w-gateway`
+
+- **goal:** gateway
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the place where flow divides, or comes back together
+- **nearest confusable:** workflow step
+
+### `w-lane`
+
+- **goal:** lane
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the band that says whose job a step is, not the job
+- **synonyms:** swimlane
+
+### `w-handoff`
+
+- **goal:** handoff
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the point where work, or a file, passes from one actor to another
+- **nearest confusable:** workflow step
+
+### `w-executor`
+
+- **goal:** executor
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** whatever carries out a step, as opposed to the instructions it follows
+- **nearest confusable:** the instructions (script, skill or guide)
+- **synonyms:** actor
+
+### `w-ai-agent`
+
+- **goal:** AI agent
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the kind of executor that brings judgment to a step
+- **nearest confusable:** skill
+- **synonyms:** bot
+
+### `w-script`
+
+- **goal:** script
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** instructions a computer follows exactly, with no judgment
+- **nearest confusable:** AI agent
+- **synonyms:** program, code, executable

@@ -1,2 +1,16 @@
 {"at":"2026-10-28T16:21:39.557Z","kind":"created"}
 {"at":"2026-10-28T16:21:39.559Z","kind":"goal-added","goal":"o-orientation","needs":"curation"}
+{"at":"2026-10-28T16:56:16.070Z","kind":"goal-added","goal":"w-workflow","needs":"curation"}
+{"at":"2026-10-28T16:56:16.149Z","kind":"goal-added","goal":"w-run","needs":"curation"}
+{"at":"2026-10-28T16:56:16.197Z","kind":"goal-added","goal":"w-trigger","needs":"curation"}
+{"at":"2026-10-28T16:56:16.265Z","kind":"goal-added","goal":"w-workflow-outcome","needs":"curation"}
+{"at":"2026-10-28T16:56:16.371Z","kind":"goal-added","goal":"w-workflow-state","needs":"curation"}
+{"at":"2026-10-28T16:56:16.428Z","kind":"goal-added","goal":"w-workflow-step","needs":"curation"}
+{"at":"2026-10-28T16:56:16.479Z","kind":"goal-added","goal":"w-subprocess","needs":"curation"}
+{"at":"2026-10-28T16:56:16.550Z","kind":"goal-added","goal":"w-gateway","needs":"curation"}
+{"at":"2026-10-28T16:56:16.599Z","kind":"goal-added","goal":"w-lane","needs":"curation"}
+{"at":"2026-10-28T16:56:16.647Z","kind":"goal-added","goal":"w-handoff","needs":"curation"}
+{"at":"2026-10-28T16:56:16.698Z","kind":"goal-added","goal":"w-executor","needs":"curation"}
+{"at":"2026-10-28T16:56:16.752Z","kind":"goal-added","goal":"w-ai-agent","needs":"curation"}
+{"at":"2026-10-28T16:56:16.801Z","kind":"goal-added","goal":"w-script","needs":"curation"}
+{"at":"2026-10-28T16:56:58.018Z","kind":"goal-added","goal":"c-read-diagram","needs":"curation"}
