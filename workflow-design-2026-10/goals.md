@@ -303,5 +303,4 @@ stored, how failures are handled, what each part can touch) come in later topics
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** a named set of design choices that are often made together
-- **nearest confusable:** best practice
 - **synonyms:** pattern
