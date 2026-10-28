@@ -1,5 +1,7 @@
 # Learning goals: understanding workflows
 
+**origin:** course
+
 **What I want to be able to do, and what would count as having gotten there.**
 
 <!--
@@ -267,9 +269,8 @@ do a step, are not part of this topic.
 ### `c-read-diagram`
 
 - **goal:** read a workflow diagram and say what it claims
-- **criterion:** given a workflow diagram they haven't seen, says what it claims: what each
-  shape marks, who does each step, what each kind of arrow means, and where the flow splits
-  and merges.
+- **criterion:** given a workflow diagram, says what it claims: what each shape marks, who
+  does each step, what each kind of arrow means, and where the flow splits and merges.
 - **cases:**
   - `shapes`: the state a run starts or ends in, a step, a gateway, a collapsed subprocess
   - `lanes`: who does a step, from its lane, including a step that spans two lanes, and
