@@ -68,6 +68,7 @@ never the scoring.
   in the words goals.md uses, with its synonym, pattern, used unbolded in the same section. Also in
   bold, though none is a word of this topic: final goals, design decisions, options, intermediate
   goals, trade-off. The reading names no real workflow tool, agent or provider.
+- **verified:** 2026-10-28
 - **learner does:** reads the page once, top to bottom, and stops twice, answering before reading
   on; "I don't know yet" is an honest answer.
   1. After Trade-offs: names one final goal from the first section and one intermediate goal that
@@ -142,6 +143,7 @@ never the scoring.
 - **artifact:** no external source. A described workflow with two steps that each do too much, from
   this activity's bank or written live per the generator below. About 4 minutes a question, 8 a
   scenario.
+- **verified:** 2026-10-28
 - **learner does:** reads the scenario's setup, a workflow laid out as numbered steps with who does
   each, and the one question served, which names one step that does too much; says in a few
   sentences where inside that step a boundary should go, why there, and what would be saved at it.
@@ -246,6 +248,7 @@ never the scoring.
 - **artifact:** no external source. A described workflow and two people's proposals for splitting
   one of its steps, from this activity's bank or written live per the generator below. About 2
   minutes a question, 5 a scenario.
+- **verified:** 2026-10-28
 - **learner does:** reads the scenario's setup and the one question served, two proposals for
   splitting the same step, and picks the better division.
 - **tutor role:** examiner
@@ -311,6 +314,7 @@ never the scoring.
 - **artifact:** no external source. A described workflow with two steps whose executor is left
   open, and three facts about each, from this activity's bank or written live per the generator
   below. About 4 minutes a question, 8 a scenario.
+- **verified:** 2026-10-28
 - **learner does:** reads the scenario's setup and the one question served, which names one open
   step; says who should do it, compares that with one other choice, and names one goal the choice
   helps and one it hurts, saying what about the step makes it so.
@@ -426,6 +430,7 @@ never the scoring.
 - **artifact:** no external source. A described workflow, facts about two of its steps and two
   people's defenses of who should do each, from this activity's bank or written live per the
   generator below. About 2 minutes a question, 5 a scenario.
+- **verified:** 2026-10-28
 - **learner does:** reads the scenario's setup and the one question served, two defenses of the same
   choice for the same step, and picks the sound one.
 - **tutor role:** examiner
