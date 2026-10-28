@@ -52,9 +52,13 @@
 
 ## Where this came from
 
+_Yours to fill in. Nobody can answer this one for you._
+
 <!-- Which of A / B / C / D, and the answer to the follow-up. -->
 
 ## What I already have
+
+_Yours to fill in. Say where your knowledge stops, not what you have heard of._
 
 <!--
   The nearest thing already known well, and where it stops.
@@ -64,6 +68,9 @@
 
 ## What I'll use it for
 
+_Yours to fill in. The course supplies one occasion: Problem Set 5, where you build a small
+workflow that runs on your own machine. Name any others you have._
+
 <!--
   The use, and a concrete occasion.
   If several uses apply, rank them: the top one sets the depth, the rest are cut first
@@ -71,6 +78,11 @@
 -->
 
 ## Depth
+
+**Make and defend two design decisions: where a workflow divides into steps, and who does each
+step.** Enough to plan the workflow you build for Problem Set 5
+and to tell your agent what you want. The other decisions (what triggers a run, how state is
+stored, how failures are handled, what each part can touch) come in later topics.
 
 <!--
   Which of: recognize it / read it / modify something existing / author from scratch /
@@ -253,6 +265,27 @@
   beside a capability entry.
 -->
 
+### `c-divide-into-steps`
+
+- **goal:** divide a workflow into steps that can each be checked on their own
+- **criterion:** given a described workflow with too few steps, says where a step boundary
+  belongs and why: because the kind of check changes there, or because the executor does. Says
+  what intermediate result is saved at that boundary, so the step before it can be checked on
+  its own. A boundary with no reason, or with no saved result, does not meet it.
+- **cases:**
+  - `check-changes`: a boundary where the kind of check changes
+  - `executor-changes`: a boundary where the executor changes
+- **taught elsewhere:** session 18 class
+
+### `c-defend-a-lane`
+
+- **goal:** say who should do a step, and defend the choice by its trade-offs
+- **criterion:** given a step in a described workflow and who does it (a person, an AI agent or
+  a script), compares that choice with one alternative executor. Names one goal the choice
+  helps and one it hurts, such as correctness, cost, timeliness or privacy, and says what about
+  each executor causes it. "It would be more accurate" names no cause and does not meet it.
+- **taught elsewhere:** session 18 class
+
 ### `o-orientation`
 
 - **goal:** get the shape of this area before working on any particular part of it
@@ -262,3 +295,13 @@
 - **recurrence:** never
 - **is_required:** no
 - **group:** orientation
+
+### `w-design-pattern`
+
+- **goal:** design pattern
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a named set of design choices that are often made together
+- **nearest confusable:** best practice
+- **synonyms:** pattern
