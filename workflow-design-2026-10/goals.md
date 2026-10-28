@@ -277,13 +277,14 @@ stored, how failures are handled, what each part can touch) come in later topics
   - `executor-changes`: a boundary where the executor changes
 - **taught elsewhere:** session 18 class
 
-### `c-defend-a-lane`
+### `c-assign-a-lane`
 
-- **goal:** say who should do a step, and defend the choice by its trade-offs
-- **criterion:** given a step in a described workflow and who does it (a person, an AI agent or
-  a script), compares that choice with one alternative executor. Names one goal the choice
-  helps and one it hurts, such as correctness, cost, timeliness or privacy, and says what about
-  each executor causes it. "It would be more accurate" names no cause and does not meet it.
+- **goal:** choose who should do a step, and defend the choice by its trade-offs
+- **criterion:** given a step in a described workflow, says who should do it (a person, an AI
+  agent or a script) and compares that choice with one alternative. Names one goal the choice
+  helps and one it hurts, such as correctness, cost, timeliness or privacy, and ties each to
+  something about this step: what its input is, what a mistake there would cost, or what data
+  it handles. A reason that would hold for any step given to that executor does not meet it.
 - **taught elsewhere:** session 18 class
 
 ### `o-orientation`
