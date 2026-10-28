@@ -118,10 +118,11 @@ with the learner.
   here doesn't match one there, this file is the one that's wrong.
 -->
 
-| id                      | Goal | Criterion: what gets examined, and what counts  |
-| ----------------------- | ---- | ----------------------------------------------- |
-| `o-orientation`         |      | `orientation`                                   |
-| `c-read-unseen-diagram` |      |                                                 |
+| id | Goal | Criterion: what gets examined, and what counts |
+| -- | ---- | ---------------------------------------------- |
+| `o-orientation` | get the shape of this area before working on any particular part of it | `orientation` |
+| `c-divide-into-steps` | divide a workflow into steps that can each be checked on their own | given a described workflow with too few steps, says where a step boundary belongs and why: because the kind of check changes there, or because the executor does. Says what intermediate result is saved at that boundary, so the step before it can be checked on its own. A boundary with no reason, or with no saved result, does not meet it. Cases: `check-changes`, `executor-changes`. |
+| `c-assign-a-lane` | choose who should do a step, and defend the choice by its trade-offs | given a step in a described workflow, says who should do it (a person, an AI agent or a script) and compares that choice with one alternative. Names one goal the choice helps and one it hurts, such as correctness, cost, timeliness or privacy, and ties each to something about this step: what its input is, what a mistake there would cost, or what data it handles. A reason that would hold for any step given to that executor does not meet it. |
 
 ## Coverage
 
@@ -162,10 +163,11 @@ with the learner.
   `n/a: already oriented` in `checks` and leave it. That's a complete row too.
 -->
 
-| goal                    | checks | notes |
-| ----------------------- | ------ | ----- |
-| `o-orientation`         |        |       |
-| `c-read-unseen-diagram` |        |       |
+| goal | checks | notes |
+| ---- | ------ | ----- |
+| `o-orientation` | | |
+| `c-divide-into-steps` | | |
+| `c-assign-a-lane` | | |
 
 ---
 
@@ -335,16 +337,11 @@ with the learner.
   bank with one scenario, and if that is all a check has, say so in `doesn't show`.
 -->
 
-### `<activity-id>`
+### `a-words`
 
-- **serves:**
-- **supports:**
-- **artifact:**
-- **learner does:**
-- **tutor role:**
-- **tutor does:**
-- **done when:**
-- **offer as:**
-- **checks:**
-- **worked example:**
-- **doesn't show:**
+- **serves:** group vocabulary
+- **generator:** the five moves in `workflows/learn/skills/goal-setting/references/vocabulary-moves.md`, set for one word at a time from its `what it names`, `nearest confusable` and `synonyms`. Each question names that word's goal and carries its move.
+- **learner does:** answers one short question about one word
+- **tutor role:** examiner
+- **tutor does:** sets the question as served, without rewording it or hinting; when the bank has nothing for the word, sets one move live, as vocabulary-moves.md describes
+- **offer as:** not offered as a choice; a word's question is set when that word is studied or due
