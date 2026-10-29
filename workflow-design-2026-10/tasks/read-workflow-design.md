@@ -80,9 +80,13 @@ Some combinations of options turn up again and again, because they work well tog
 meet in this topic:
 
 - **Each step reads from a store and writes to one.** Instead of passing results straight from
-  one step to the next, each step saves its output, and the next step reads it from there.
+  one step to the next, each step saves its output, and the next step reads it from there. In the
+  TA's workflow, the testing step saves its results to a file and the feedback step reads them
+  from there. When a student complains, the TA can open that file and see whether the tests or the
+  feedback went wrong.
 - **The agent proposes, a program applies.** An agent decides what should change, and writes that
-  down. It invokes a program to execute the change, which behaves the same way every time.
+  down. A program, which behaves the same way every time, makes the change, either when the agent
+  invokes it or after a person has approved the proposal.
 
 Named patterns are useful as conversational shorthand. Telling your agent "use the propose-and-apply
 pattern for the gradebook step" says a lot in a few words.
@@ -99,46 +103,46 @@ Here is a better division, with who does each step:
 
 1. Collect the submissions into a folder. (a program)
 2. Run the tests on each one, and save the results. (a program)
-3. Draft written feedback based the code and its test results. (an AI agent)
+3. Draft written feedback based on the code and its test results. (an AI agent)
 4. Review the drafts and settle each grade. (the TA)
 5. Post the grades to the gradebook. (a program)
 
 Two rules of thumb produced those boundaries.
 
 **Put a step boundary wherever the kind of check changes.** 
-The output of the testing step can be checked mechanically: does every submission have a results file, with a pass or fail for every test? Written feedback can't be checked that way. A person has to read some of it and ask whether it is fair and accurate. Or perhaps several agents, each with slightly different instructions, all need to read it and assess whether its understandable by students. When two parts of the work need different kinds of checks, make them different steps, so each can get its own check.
+The output of the testing step can be checked mechanically: does every submission have a results file, with a pass or fail for every test? Written feedback can't be checked that way. A person has to read some of it and ask whether it is fair and accurate. Or perhaps several agents, each with slightly different instructions, all need to read it and assess it. When two parts of the work need different kinds of checks, make them different steps, so each can get its own check.
 
 **Put a step boundary wherever the executor changes.** The executor is whatever carries out a step: a
 program, an agent or a person. Where the work passes from one to another, there is a handoff, and
 a handoff is a natural place to stop and look.
 
-**Then save what each step produces.** A boundary helps only if the result at that boundary is
-kept. Because step 2 saves the test results, the TA can open them when a student complains and
-see whether the tests or the feedback went wrong. Each step can now be checked on its own.
-
 More steps are not always better. Every boundary adds something to save, to name and to keep in
-sync. A boundary earns its place when it lets you check something you otherwise couldn't.
+sync. A boundary earns its place when it lets you check something you otherwise couldn't, or lets you assign different parts of the step to different actors.
 
 ## Who does each step
 
-Each step can be done by a person, an AI agent or a program. None is best everywhere. A program
-gives the same answer every time and costs almost nothing to run, but it can't use judgment. An
-agent can use judgment on messy input, but it can be wrong in ways that look right. A person has
-the best judgment and the least time.
+Each step can be done by a person, an AI agent or a program. None is best everywhere. 
 
-The choice for a step comes from the step itself. Take step 3, drafting feedback:
+A program
+gives the same answer every time and costs almost nothing to run. It is also clear what information, if any, it is leaking, by looking at its outputs and changes it makes to storage. But a program can't use judgment. 
+
+An agent can use judgment on messy input. But it can be wrong in ways that look right and can be more expensive to run. And if the agent runs on cloud providers like OpenAI or Anthropic or Google, information can leak: transcripts of the interaction are saved and may be accessed by the provider for training future models or by hackers in a data breach.
+
+A person may have ultimate accountability for any problems that occur, and thus be unwilling to delegate authority to take risky actions to agents (or programs). They may also have access to information that can't be shared with agents. But their time may be scarce. And they may not reliably make the same judgments time after time, especially if they get exhausted making lots of them.
+
+The choice for a step will depend on characteristics of the step itself. Take step 3, drafting feedback:
 
 - Its input is code, which an agent can read quickly. For 200 submissions, an agent helps
   timeliness and cost a great deal compared with the TA.
 - A mistake there could tell a student about a bug that isn't in their code. That hurts
-  correctness, and it is why step 4 has a person review the drafts.
-- The data is student work with names attached. Sending it to an agent's provider is a privacy
-  question the course has to have settled.
+  correctness. That motivates step 4, where a person reviews the drafts.
+- The input data for the drafter includes a student's submission. If that submission contains sensitive information (e.g., a business plan for a startup company the student is developing) sending it to an agent's cloud provider may be an undesirable privacy risk.
 
 Compare step 5, posting grades. Its input is a list of names and numbers that the TA has
 already approved. Nothing about it needs judgment, and a mistake there changes someone's grade.
-A program is the clear choice: it applies exactly what was approved, the same way every time.
-That is the agent-proposes, program-applies pattern again, with the TA in the middle.
+A program is the clear choice: it applies exactly what was approved.
+
+Steps 3-5 are the agent-proposes, program-applies pattern again, with the TA in the middle at step 4 as a check on step 3.
 
 ## Putting it to use
 
