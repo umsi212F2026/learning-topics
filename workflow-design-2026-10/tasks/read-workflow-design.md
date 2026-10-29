@@ -50,6 +50,8 @@ Final goals are hard to aim at directly. "Make every grade correct" doesn't tell
 build. So designers aim at properties that past designers have found reliably help with the final
 goals. These are **intermediate goals**. A few you will meet in this course:
 
+- **Steps that can be checked:** a person or a program can confirm that a step's output is right
+  before anything else relies on it.
 - **Inspectable intermediate results:** what each step produced is saved where a person or a
   program can look at it.
 - **Steps that are safe to rerun:** running a step twice does no harm.
@@ -57,8 +59,7 @@ goals. These are **intermediate goals**. A few you will meet in this course:
 - **Least privilege:** each part can touch only what it needs.
 - **Failing loudly:** when something goes wrong, someone finds out.
 
-Checking that results are right is an intermediate goal too. Nobody wants checking for its own
-sake. They want correct grades, and checking is one way to get them.
+Intermediate goals often serve each other, as well as serving final goals. For example, saving intermediate results helps make a step checkable.
 
 ## Trade-offs
 
