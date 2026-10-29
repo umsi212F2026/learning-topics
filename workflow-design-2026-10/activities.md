@@ -4,12 +4,12 @@ Candidate activities for the study phase. More than will be used; the tutor choo
 with the learner.
 
 The minimum route, the orientation, one passed question for the one word and enough questions to
-meet both capabilities and both cases of `c-divide-into-steps`, comes to about 30 minutes: about
-12 for `a-read-workflow-design`, about 3 for the word, one scenario's two questions of
-`a-split-a-lumped-step` at about 5 minutes each (the two carry both cases), and one question of
-`a-defend-a-lane-choice` at about 5 minutes. With the two pick-one checks instead
-(`a-contrast-step-splits` at about 3 minutes a question and `a-pick-sound-defense` at about 2) it
-is about 23.
+meet both capabilities and both cases of `c-divide-into-steps`, comes to about 32 minutes: about
+14 for `a-read-workflow-design` (the reading is now about 8 minutes on its own), about 3 for the
+word, one scenario's two questions of `a-split-a-lumped-step` at about 5 minutes each (the two
+carry both cases), and one question of `a-defend-a-lane-choice` at about 5 minutes. With the two
+pick-one checks instead (`a-contrast-step-splits` at about 3 minutes a question and
+`a-pick-sound-defense` at about 2) it is about 25.
 Both capabilities carry `taught elsewhere` (the session 18 class), so their four activities are
 offered after that class, as practice and review.
 
@@ -49,33 +49,42 @@ never the scoring.
 - **supports:** orient
 - **checks:** `o-orientation`
 - **artifact:** a reading the course wrote for this topic, `tasks/read-workflow-design.md` in this
-  folder, "Designing a workflow" (about 1,480 words, about 6 minutes). No external reading is
+  folder, "Designing a workflow" (about 1,890 words, about 8 minutes). No external reading is
   used: the instructor wanted a course-written one. It follows one made-up example throughout, a
   teaching assistant who grades about 200 homework submissions a week with a workflow run partly
   by programs and partly by an AI agent. Sections: What people want from a workflow (eight final
-  goals: correctness, cost, timeliness, security, privacy, maintainability, access, scale); Design
-  decisions, and their options (seven decisions, of which this topic covers the first two);
-  Intermediate goals (inspectable intermediate results, steps that are safe to rerun, a single
-  source of truth, least privilege, failing loudly, and checking itself); Trade-offs (a good reason
-  points at something particular to the step: its input, what a mistake there would cost, what
-  data it handles); Design patterns (two named ones: each step reads from a store and writes to
-  one, and the agent proposes, a program applies); Dividing a workflow into steps (the TA's
-  one-step design, a five-step division with who does each step, the two rules of thumb, a
-  boundary where the kind of check changes and a boundary where the executor changes, then saving
-  what each step produces, and the cost of more steps); Who does each step (step 3 and step 5 of
-  the TA's workflow, each choice argued from that step's input, the cost of a mistake and its
-  data); Putting it to use. About 6 minutes of reading, 10 with the two stops, 12 with the close.
-  Words in place: the topic's one word, design pattern, in bold where it is introduced and defined
-  in the words goals.md uses, with its synonym, pattern, used unbolded in the same section. Also in
-  bold, though none is a word of this topic: final goals, design decisions, options, intermediate
-  goals, trade-off. The reading names no real workflow tool, agent or provider.
-- **verified:** 2026-10-28
+  goals: correctness, cost, timeliness, security, privacy, maintainability, access, scale, each
+  statable as value produced or value lost); Design decisions, and their options (seven decisions,
+  of which this topic covers the first two, the second being who does each step: a person, an AI
+  agent or a program); Intermediate goals (steps that can be checked, inspectable intermediate
+  results, steps that are safe to rerun, a single source of truth, least privilege, failing
+  loudly, and a note that intermediate goals serve each other); Trade-offs (a good reason points
+  at something particular to the step: its input, what a mistake there would cost, what data it
+  handles); Design patterns (three named ones: Checkpoints, where each step saves its output and
+  the next reads it from there; Propose-apply, where an agent writes down what should change and
+  a program makes the change; Maker-checker, where a separate step, usually a different executor,
+  checks an unreliable step's output; then patterns as shorthand for telling an agent what you
+  want, and a pattern is not a rule); Dividing a workflow into steps (the TA's one-step design, a
+  five-step division with who does each step, the two rules of thumb, a boundary where the kind of
+  check changes and a boundary where the executor changes, then "More steps are not always
+  better": every boundary adds something to save, name and keep in sync); Who does each step (a
+  paragraph each on what a program, an agent and a person are good and bad at; step 3 argued from
+  its input, the cost of a mistake and its data; step 5 compared; steps 3 and 4 as maker-checker
+  and steps 3 and 5 as propose-apply; then a closing paragraph on checking a step while building
+  the workflow versus checking it on every run); Putting it to use. About 8 minutes of reading,
+  12 with the two stops, 14 with the close. Words in place: the topic's one word, design pattern,
+  in bold where it is introduced and defined in the words goals.md uses, with its synonym,
+  pattern, used unbolded in the same section. Also in bold, though none is a word of this topic:
+  final goals, design decisions, options, intermediate goals, trade-off, and each named final
+  goal, intermediate goal, pattern and rule of thumb. The reading names no real workflow tool; it
+  names three real AI providers (OpenAI, Anthropic, Google) once, as examples of where an agent's
+  transcripts may be kept.
 - **learner does:** reads the page once, top to bottom, and stops twice, answering before reading
   on; "I don't know yet" is an honest answer.
   1. After Trade-offs: names one final goal from the first section and one intermediate goal that
      would help it in the TA's workflow, and says how.
-  2. After Design patterns: names one thing the pattern "each step reads from a store and writes
-     to one" costs, compared with passing results straight from one step to the next.
+  2. After Design patterns: names one thing the Checkpoints pattern costs, compared with passing
+     results straight from one step to the next.
   Then the close, about 2 minutes (up to 5 if a section is gone over again), with the reading still
   beside them: answers the question the tutor puts: with this page beside you, could you now take
   a short description of a workflow and say where a step boundary belongs and what would be saved
@@ -87,16 +96,18 @@ never the scoring.
   agent shows it formatted in a sidebar; does not paste it into the chat. Stays quiet through the
   reading except at the stops and when asked. At each stop, takes the learner's answer first and
   replies with one near-miss question rather than a verdict. Stop 1's intended answer is any
-  sensible pairing with a how: inspectable intermediate results helping correctness (the TA can
-  see whether the tests or the feedback went wrong), failing loudly helping timeliness (a crashed
+  sensible pairing with a how: steps that can be checked helping correctness (a program can
+  confirm every submission has a pass or fail for every test), inspectable intermediate results
+  helping correctness (the TA can see whether the tests or the feedback went wrong), failing loudly helping timeliness (a crashed
   test run is noticed before grades are due), least privilege helping security (the feedback step
   can't touch the gradebook), a single source of truth helping correctness (two copies of a grade
   can't disagree), steps safe to rerun helping correctness (running the posting twice doesn't post
   a grade twice). A pairing with no how gets one near-miss question ("if the test results were
   saved, what could the TA do when a student complains that they couldn't do now?"). Stop 2's
-  intended answer is anything the store costs: more to save, name and keep in sync, room to store
-  it, a slower run, or a next step reading an old saved result by mistake. A learner who says it
-  costs nothing gets one near-miss question ("if the step before changes what it writes, what
+  intended answer is anything saving each step's output costs: more to save, name and keep in sync
+  (the reading says so in the next section, under "More steps are not always better"), room to
+  store it, a slower run, or a next step reading an old saved result by mistake. A learner who says
+  it costs nothing gets one near-miss question ("if the step before changes what it writes, what
   happens to the step that reads it?"). Does not set or rehearse any word question from `a-words`:
   does not ask the learner to define design pattern, does not ask for an example of one, and does
   not offer a misused sentence to correct. Does not set or rehearse a question from this topic's
@@ -105,8 +116,8 @@ never the scoring.
   workflow, says that is what the session 18 class and the practice after it are for. Says that
   building a workflow is Problem Set 5's work, not this topic's; that the other five decisions
   (triggers, state, failures, what each part may touch, where it runs) come in later topics and
-  are checked nowhere here; and that the lists of final and intermediate goals are there for the
-  shape of the area and are not checked by name, though the lane questions ask for one goal a
+  are checked nowhere here; and that the lists of final and intermediate goals, and the three
+  named patterns, are there for the shape of the area and are not checked by name, though the lane questions ask for one goal a
   choice helps and one it hurts. At the close, puts the readiness question as written above and
   rules on the answer.
 - **done when:** criterion met. The bar for this goal is did it once and help is expected
@@ -130,11 +141,12 @@ never the scoring.
   about other things. The reading is one course-written page built on one made-up grading
   workflow, so it shows nothing of a workflow in a different domain, or of the case worked in the
   session 18 class. The other five design decisions are in the reading and checked nowhere, by
-  design.
+  design, and so is its closing choice between checking a step while building and checking it on
+  every run.
 - **offer as:** this topic's orientation: one short page the course wrote, following one made-up
   grading workflow from what people want from it, through design decisions, trade-offs and
   patterns, to where its steps divide and who does each, with two short stops and a one-question
-  close. About 12 minutes.
+  close. About 14 minutes.
 
 ### `a-split-a-lumped-step`
 
@@ -161,7 +173,7 @@ never the scoring.
   out in a setup of six to nine sentences. One or two sentences say who runs it, what it is for and
   roughly how much passes through it ("about 60 orders a week"). Then come four or five numbered
   steps, one sentence each, with the executor in parentheses after it as the reading lays out the
-  TA's steps: a person named by role ("the shop owner"), an AI agent, or a script. Every step's
+  TA's steps: a person named by role ("the shop owner"), an AI agent, or a program. Every step's
   sentence says in plain words what it takes in and what it produces; none is described with code,
   a command, a file format or a query. Two of the steps are lumped, each doing work that belongs in
   separate steps; the others are single acts, one executor doing one thing checked one way. The
@@ -180,7 +192,7 @@ never the scoring.
   **Shapes**, each with the case it carries, which its rubric `cases:` line lists. The examples are
   illustrations of the shape, not bank items, and their domains (a youth orchestra, a running club)
   are used by no bank in this topic.
-  - `check-split` (`check-changes`): the lumped step is done by one executor throughout, named alone
+  - `check-split` (`same-executor`): the lumped step is done by one executor throughout, named alone
     in its parentheses, and its sentence mentions no other. At the change join, the parts on either
     side produce different kinds of thing checked in different ways, and the later part uses the
     earlier one's result. One side's result can be checked against something fixed (the requests
@@ -193,19 +205,22 @@ never the scoring.
     the notes, which are checked by a person reading them for tone and clarity; save the bookings
     list, one line per player with day, room and hour, so it can be checked before any note is
     written.
-  - `handoff-split` (`executor-changes`): the lumped step names two executors, the second revising
-    what the first made, in its parentheses ("(an AI agent, then the club captain)"). Every part
-    produces the same kind of thing, checked by the same standard (a schedule checked for coverage
-    and clashes, a set of groups checked against members' times, a price list checked against
-    costs): the second executor's revision is held to the very standard the first's work is, and
-    never calls for a judgment the first's work doesn't face. So the boundary earns its place
-    because the executor changes, not the check. "2. Sort the runners by their recent times, draft
-    pace groups of similar speed, then move runners between groups by hand so no group has more
-    than twelve, keeping each runner within a minute of their group's pace. (an AI agent, then the
-    club captain)" Key: no boundary between sorting and drafting, since the agent does both and
-    both are checked against the recent times; the boundary goes at the handoff from the agent to
-    the captain; save the agent's draft groups before the captain's changes, so a runner in the
-    wrong group can be traced to the draft or to the hand changes.
+  - `handoff-split` (`executor-changes`): the lumped step names two executors in its parentheses,
+    the second taking over from the first ("(an AI agent, then the club captain)"). The change join
+    is the handoff; the join with no change lies inside one executor's two parts, before or after
+    the handoff. At the handoff the
+    kind of check changes too, as it naturally does when the work passes to a different executor
+    (the first's result checked against something fixed, the second's needing a person's judgment,
+    or the other way round), so the scenario never has to hold the check constant across a handoff
+    and either reason is there to be named. "2. Sort the runners by their recent times, draft pace
+    groups of similar speed, then move runners between groups by hand so that friends who carpool
+    run together and nobody new is left in a group of strangers. (an AI agent, then the club
+    captain)" Key: no boundary between sorting and drafting, since the agent does both and both
+    are checked against the recent times; the boundary goes at the handoff from the agent to the
+    captain, where the executor changes and the check changes with it (the draft is checked
+    against the times, the captain's moves by someone who knows the members); save the agent's
+    draft groups before the captain's changes, so a runner in the wrong group can be traced to the
+    draft or to the hand changes.
 
   **How hard** depends on the join with no change:
   - Medium: the parts on either side of it are plainly one kind of act (settling the rooms and then
@@ -231,27 +246,28 @@ never the scoring.
   picks each next shape to carry a case the learner hasn't passed.
 
   Credit: full when the answer does all three: puts the boundary at the join where the shape's
-  change happens; gives the reason of the shape's kind, naming what changes there (the two kinds of
-  check, each said even briefly, such as "compare with the requests" and "read for tone"; or the two
-  executors); and names as the saved result the output just before that boundary, concretely enough
-  to say what it is ("the bookings list"), not "save everything" or the step's final output. A
-  reason that names both kinds of change gets full credit, provided the shape's own kind is among
-  them. Half when the boundary is at the right join with only one of the other two: a reason that
-  is missing, generic ("smaller steps are easier") or only of the other kind (an executor change
-  alone in a `check-split` step, such as proposing that a person check the notes; a check change
-  alone in a `handoff-split` step), or a saved result that is missing or is not the output just
-  before the boundary. An answer that also puts a boundary at the join with no change gets at most
+  change happens; gives a reason naming what changes there; and names as the saved result the
+  output just before that boundary, concretely enough to say what it is ("the bookings list"), not
+  "save everything" or the step's final output. In a `check-split` step the reason must name the
+  two kinds of check, each said even briefly, such as "compare with the requests" and "read for
+  tone"; an executor change there is not in the step, so a reason resting only on one (proposing
+  that a person check the notes) is not enough. In a `handoff-split` step either reason earns
+  credit: the two executors, or the two kinds of check, or both. Half when the boundary is at the
+  right join with only one of the other two: a reason that is missing, generic ("smaller steps are
+  easier") or, in a `check-split` step, only an executor change the answer proposes; or a saved
+  result that is missing or is not the output just before the boundary. An answer that also puts a boundary at the join with no change gets at most
   half. None when the boundary is only at the join with no change, or no boundary is placed.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. The
   tutor works one of the two illustrations above aloud, the one of the same shape as the question:
   says what comes out of each part, how each would be checked and by whom, where those differ, and
   what to keep at the boundary so the first part can be looked at on its own. It may point to
   Dividing a workflow into steps in `tasks/read-workflow-design.md`.
-- **doesn't show:** the question names the step that does too much, so a pass doesn't show the
-  learner would find it in a described workflow, or in a workflow of their own, as planning for
-  Problem Set 5 asks. The scenarios keep a check change and an executor change
-  apart; in a real workflow they often come together, and a pass doesn't show the learner would
-  name both. It shows nothing about when a boundary costs more than it earns, which the reading
+- **doesn't show:** the question names the step that does too much, as the criterion allows, so a
+  pass doesn't show the learner would find it in a described workflow, or in a workflow of their
+  own, as planning for Problem Set 5 asks. At every handoff in these scenarios the kind of check
+  changes too, and either reason earns credit there, so no question requires the executor reason
+  on its own: a pass on `executor-changes` may rest on the check alone, and doesn't show the
+  learner would put a boundary at a handoff where the check stays the same. It shows nothing about when a boundary costs more than it earns, which the reading
   mentions and nothing here checks.
 - **offer as:** the write-it-yourself check, after session 18: a short workflow and one step that
   does too much, and you say where to split it, why, and what to keep at the split. About 5
@@ -280,8 +296,10 @@ never the scoring.
   or five numbered steps with executors in parentheses, two of them lumped, each lumped step with
   three parts and so two joins, one where the shape's change happens and one with no change at all,
   nothing described with code, a command, a file format or a query). The shapes are the same two,
-  `check-split` carrying `check-changes` and `handoff-split` carrying `executor-changes`, with the
-  same illustrations. A scenario holds two questions, one per shape, in random order.
+  `check-split` carrying `same-executor` (one executor throughout, a boundary where only the kind
+  of check changes) and `handoff-split` carrying `executor-changes` (a boundary at the handoff
+  between two executors, where the kind of check changes too), with the same illustrations. A
+  scenario holds two questions, one per shape, in random order.
 
   **A question** reads: "<Name1>, <Name2> and <Name3> each propose splitting step <n> into two
   steps." Then three numbered proposals, each one or two sentences in the same frame: where the
@@ -319,7 +337,10 @@ never the scoring.
 - **doesn't show:** the proposals are given and the learner picks, so a pass doesn't show they
   would place a boundary, give its reason or name what to save on their own; with three choices a
   guess is right a third of the time. The proposals give no reasons, so the learner's reason for a
-  boundary is never seen, and the criterion's "and why" is not checked here. The rest of `a-split-a-lumped-step`'s `doesn't show` applies.
+  boundary is never seen, and the criterion's "and why" is not checked here. The rest of
+  `a-split-a-lumped-step`'s `doesn't show` applies, including that every handoff here also
+  changes the check, so no question asks for a boundary at a handoff where the check stays the
+  same.
   `a-split-a-lumped-step` checks the same goal with nothing proposed.
 - **offer as:** the quick check, after session 18: a short workflow and three people's ways of
   splitting one of its steps, and you pick the best one. About 3 minutes a question. Easier than
@@ -350,7 +371,7 @@ never the scoring.
 - **generator:** **A scenario** is one made-up workflow that someone runs on a regular cycle, set
   out in a setup of who runs it, what it is for and roughly how much passes through it (one or two
   sentences), then four or five numbered steps, one sentence each, with the executor in parentheses
-  as the reading lays them out: a person named by role, an AI agent, or a script. Two steps are open:
+  as the reading lays them out: a person named by role, an AI agent, or a program. Two steps are open:
   their parentheses read "(who?)". Each open step has three facts (a fourth where the shape below
   adds one):
   - its input: what comes in, in what form (typed free text, a list someone has already approved,
@@ -367,9 +388,9 @@ never the scoring.
   one irrelevant detail for each open step, said as plainly as the facts but bearing on no goal
   (how long the workflow has run, which day the team meets, what the form's heading says). The
   facts are stated plainly, never as a hint about who should do the step, and never using the words
-  person, agent or script. Nothing is described with code, a command, a file format or a query.
+  person, agent or program. Nothing is described with code, a command, a file format or a query.
 
-  **A question** reads: "Who should do step <n>: a person, an AI agent or a script? Compare your
+  **A question** reads: "Who should do step <n>: a person, an AI agent or a program? Compare your
   choice with one of the other two: name one goal your choice helps and one it hurts, and say what
   about step <n> makes it so." Free response, `type: free`.
 
@@ -377,12 +398,12 @@ never the scoring.
   key compares it with. In every shape the facts give the natural choice one goal it helps and one
   it hurts against that alternative, each traceable to a fact, and give the alternative the same,
   so a learner who picks the alternative can also pass. All are Medium.
-  - `structured-irreversible`: natural choice a script, alternative an AI agent. The input is a list
+  - `structured-irreversible`: natural choice a program, alternative an AI agent. The input is a list
     someone has already approved, in a fixed form; a mistake moves money, changes a booking or
-    changes a record, and nothing later catches it; and one more fact gives the script a cost, such
+    changes a record, and nothing later catches it; and one more fact gives the program a cost, such
     as a few entries a week arriving with a note typed where a number should be. Helped: correctness,
     tied to applying exactly the approved list every time. Hurt: timeliness, or someone's time, tied
-    to the odd entries the script will stop on.
+    to the odd entries the program will stop on.
   - `messy-volume-checked`: natural choice an AI agent, alternative a person. The input is typed
     free text in volume (a hundred or more a week, in mixed styles); a mistake is caught at a later
     step where a person reviews; the data includes something private. Helped: timeliness or cost,
@@ -401,7 +422,7 @@ never the scoring.
   **Reasons differ across the bank.** No two open steps in a bank have the same pair of facts behind
   the key's helped and hurt goals: vary the kind of input, the volume, the private data (health
   details in one, a home address in another, a child's name in a third), what a mistake costs and
-  to whom, the odd entries a script stops on, and when the person is free. A learner who memorizes
+  to whom, the odd entries a program stops on, and when the person is free. A learner who memorizes
   one key's reasons has nothing to reuse on the next step.
 
   **Domains** are this activity's own, none repeating within the bank: a veterinary clinic's
@@ -421,14 +442,14 @@ never the scoring.
   each of the three pairings, the helped and hurt goals each fact supports for each side; which
   sentences of the paragraph carry each open step's facts; the irrelevant detail for each open
   step; and two or three generic reasons that would fail because they hold for any step given that
-  executor ("scripts don't make mistakes", "an agent is cheaper", "a person has better judgment",
+  executor ("programs don't make mistakes", "an agent is cheaper", "a person has better judgment",
   "agents can be wrong in ways that look right"). A reason resting on the irrelevant detail is not
   tied. Credit: full when the answer chooses an
   executor, names one alternative, and names a goal the choice helps and a goal it hurts compared
   with that alternative, each with a reason tied to a fact about this step (its input, what a
   mistake would cost, or its data). A reason is tied when it would not hold for that executor on a
-  step with different facts; a generic reason that mentions the step's nouns ("a script is cheaper
-  for these refunds because scripts cost almost nothing to run") is still generic. Half when one
+  step with different facts; a generic reason that mentions the step's nouns ("a program is cheaper
+  for these refunds because programs cost almost nothing to run") is still generic. Half when one
   of the two is tied and the other is generic or missing, or when both are tied but no alternative
   is named. None when neither is tied, or no executor is chosen.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. The
@@ -462,7 +483,6 @@ never the scoring.
 - **artifact:** no external source. A described workflow, facts about two of its steps and two
   people's defenses of who should do each, from this activity's bank or written live per the
   generator below. About 2 minutes a question, 5 a scenario.
-- **verified:** 2026-10-28
 - **learner does:** reads the scenario's setup and the one question served, two defenses of the same
   choice for the same step, and picks the sound one.
 - **tutor role:** examiner
@@ -498,10 +518,10 @@ never the scoring.
       the paragraph says nothing about amounts).
     - `wrong-direction`: the clause rests on a fact that is in the paragraph but draws from it a
       direction it doesn't support ("helps correctness, because a few entries arrive with a note
-      typed where a number should be", a fact that makes a script stop, not one that makes it
+      typed where a number should be", a fact that makes a program stop, not one that makes it
       right).
   - Hard, `generic-with-nouns`: the clause borrows the step's nouns while its reason doesn't depend
-    on them and would hold for any step given that executor ("because running a script over these
+    on them and would hold for any step given that executor ("because running a program over these
     refunds costs almost nothing"), so it reads as tied.
 
   **Spread across the bank.** A bank is six scenarios, 12 questions: each shape four times, half the
