@@ -272,14 +272,23 @@ do a step, are not part of this topic.
 - **criterion:** given a workflow diagram, says what it claims: what each shape marks, who
   does each step, what each kind of arrow means, and where the flow splits and merges.
 - **cases:**
-  - `shapes`: the state a run starts or ends in, a step, a gateway, a collapsed subprocess
-  - `lanes`: who does a step, from its lane, including a step that spans two lanes, and
-    where work passes from one lane to another
-  - `arrows`: tells apart a next-step arrow, a branch label, and a document read by a step,
-    and doesn't read every arrow as a handoff
-  - `split-merge`: where flow splits (a named gateway) and where it merges (an unnamed one)
-  - `trace-run`: given a trigger and the answer at each named gateway, says which steps run
-    and which outcome the run reaches
+  - `states`: the shape marking the state a run starts or ends in
+  - `step-box`: the shape marking a step
+  - `gateway-shape`: the shape marking a gateway
+  - `subprocess-box`: the shape marking a collapsed subprocess
+  - `lane-owner`: who does a step, from its lane
+  - `spans-lanes`: who does a step drawn across two lanes
+  - `handoff`: where control, or data a later step uses, passes to a step done by a different
+    actor
+  - `control-arrow`: what a solid arrow between two steps says (which step runs next)
+  - `branch-label`: what a label on an arrow leaving a gateway says
+  - `data-line`: what a dotted line between a step and a file says (data written or read, not
+    the run moving to the file)
+  - `splits`: where flow splits (a named gateway)
+  - `merges`: where flow merges (an unnamed gateway)
+  - `trace-steps`: given a trigger and the answer at each named gateway, which steps run, in
+    order
+  - `trace-end`: given the same, which outcome the run reaches
 - **taught elsewhere:** session 18 class
 
 ### `o-orientation`
@@ -386,8 +395,9 @@ do a step, are not part of this topic.
 - **criterion:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
-- **what it names:** the point where work, or a file, passes from one actor to another
-- **nearest confusable:** workflow step
+- **what it names:** the point where control, or data a later step will pick up, passes from a
+  step done by one actor to a step done by another
+- **nearest confusable:** control flow
 
 ### `w-executor`
 
@@ -418,3 +428,25 @@ do a step, are not part of this topic.
 - **what it names:** instructions a computer follows exactly, with no judgment
 - **nearest confusable:** AI agent
 - **synonyms:** program, code, executable
+
+### `w-control-flow`
+
+- **goal:** control flow
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** which step runs next, the order a run moves through, shown by the solid
+  arrows
+- **nearest confusable:** workflow step
+- **synonyms:** sequence flow
+
+### `w-data-flow`
+
+- **goal:** data flow
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** data one step writes and another step reads, possibly later, shown by the
+  dotted lines to and from files
+- **nearest confusable:** control flow
+- **synonyms:** data association
