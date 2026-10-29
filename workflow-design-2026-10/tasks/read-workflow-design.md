@@ -70,8 +70,8 @@ what you see when one option helps some goals and hurts others.
 
 Most of design is arguing about trade-offs, and an argument is only as good as its reasons. "An
 agent is cheaper" is true of almost every step, so it doesn't say anything about this step. A
-good reason points at something particular to the step: what its input is, what a mistake there
-would cost, what data it handles.
+good reason points at something particular to the step. For example, what its input is, what a mistake there
+would cost, or what data it handles.
 
 ## Design patterns
 
@@ -82,11 +82,12 @@ meet in this topic:
 - **Each step reads from a store and writes to one.** Instead of passing results straight from
   one step to the next, each step saves its output, and the next step reads it from there.
 - **The agent proposes, a program applies.** An agent decides what should change, and writes that
-  down; a program, which behaves the same way every time, makes the change.
+  down. It invokes a program to execute the change, which behaves the same way every time.
 
-A pattern is not a rule. It brings its own trade-offs, and part of using one well is knowing what
-it costs. Patterns are also useful as names. Telling your agent "use the propose-and-apply
+Named patterns are useful as conversational shorthand. Telling your agent "use the propose-and-apply
 pattern for the gradebook step" says a lot in a few words.
+
+A pattern is not a rule. It became a pattern because it suited many past workflows. It may not suit yours, so check that the reasons it worked there hold here. Maybe you'll only want some of the elements of a pattern but you'll want to modify it in some way.
 
 ## Dividing a workflow into steps
 
@@ -98,18 +99,16 @@ Here is a better division, with who does each step:
 
 1. Collect the submissions into a folder. (a program)
 2. Run the tests on each one, and save the results. (a program)
-3. Draft written feedback from the code and its test results. (an AI agent)
+3. Draft written feedback based the code and its test results. (an AI agent)
 4. Review the drafts and settle each grade. (the TA)
 5. Post the grades to the gradebook. (a program)
 
 Two rules of thumb produced those boundaries.
 
-**Put a boundary wherever the kind of check changes.** Test results are checked one way: did the
-same code get the same results every time? Written feedback is checked another way: a person
-reads some of it and asks whether it is fair and accurate. When two parts of the work need
-different checks, make them different steps, so each can get its own.
+**Put a step boundary wherever the kind of check changes.** 
+The output of the testing step can be checked mechanically: does every submission have a results file, with a pass or fail for every test? Written feedback can't be checked that way. A person has to read some of it and ask whether it is fair and accurate. Or perhaps several agents, each with slightly different instructions, all need to read it and assess whether its understandable by students. When two parts of the work need different kinds of checks, make them different steps, so each can get its own check.
 
-**Put a boundary wherever the executor changes.** The executor is whatever carries out a step: a
+**Put a step boundary wherever the executor changes.** The executor is whatever carries out a step: a
 program, an agent or a person. Where the work passes from one to another, there is a handoff, and
 a handoff is a natural place to stop and look.
 
