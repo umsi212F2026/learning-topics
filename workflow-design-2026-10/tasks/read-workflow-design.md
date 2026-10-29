@@ -1,7 +1,6 @@
 # Designing a workflow
 
-This page is about the choices you make when you design a workflow: what you are trying to
-achieve, which decisions you face, and how to argue that one option is better than another. It
+This page is about the choices you make when you design a workflow. It
 gives the whole layout and then looks closely at two decisions, how to divide a workflow into
 steps and who should do each step. Later topics take up the others.
 
@@ -17,13 +16,13 @@ goals**. Most workflows answer to some mix of these:
 
 - **Correctness:** the results are right. Every student gets the grade their work earned.
 - **Cost:** the work takes little of people's time, and little compute or money.
-- **Timeliness:** results arrive when they're needed, before the next assignment is due.
-- **Security:** nobody can tamper with it. A student can't change their own grade.
+- **Timeliness:** results arrive quickly, at a minimum before the next assignment is due.
+- **Security:** nobody can tamper with it. Students can't change grades.
 - **Privacy:** information goes only where it should. One student's code and grade aren't seen
   by another student, or sent somewhere the course didn't agree to.
-- **Maintainability:** someone can change it next term without breaking it.
+- **Maintainability:** someone can change the workflow next term without breaking it.
 - **Access:** the people who need to use it can.
-- **Scale:** it still works when the class doubles.
+- **Scale:** it still works when the class size doubles.
 
 You can state a goal positively, as value the workflow produces, or negatively, as value lost
 when something goes wrong: a wrong grade, a leaked submission, feedback that arrives after the
