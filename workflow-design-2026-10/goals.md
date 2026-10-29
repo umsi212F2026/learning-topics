@@ -270,21 +270,22 @@ stored, how failures are handled, what each part can touch) come in later topics
 ### `c-divide-into-steps`
 
 - **goal:** divide a workflow into steps that can each be checked on their own
-- **criterion:** given a described workflow with too few steps, says where a step boundary
-  belongs and why: because the kind of check changes there, or because the executor does. Says
+- **criterion:** given a step in a described workflow that does too much, says where a step
+  boundary belongs inside it and why: because the kind of check changes there, or because the executor does. Says
   what intermediate result is saved at that boundary, so the step before it can be checked on
   its own. A boundary with no reason, or with no saved result, does not meet it.
 - **cases:**
-  - `check-changes`: a boundary where the kind of check changes
-  - `executor-changes`: a boundary where the executor changes
+  - `same-executor`: a boundary inside one executor's work, where only the kind of check changes
+  - `executor-changes`: a boundary where the executor changes; the kind of check may change there
+    too, and either reason meets the criterion
 - **taught elsewhere:** session 18 class
 
 ### `c-assign-a-lane`
 
 - **goal:** choose who should do a step, and defend the choice by its trade-offs
 - **criterion:** given a step in a described workflow, says who should do it (a person, an AI
-  agent or a script) and compares that choice with one alternative. Names one goal the choice
-  helps and one it hurts, such as correctness, cost, timeliness or privacy, and ties each to
+  agent or a program) and compares that choice with one alternative. Names one goal the choice
+  helps and one it hurts, compared with that alternative, such as correctness, cost, timeliness or privacy, and ties each to
   something about this step: what its input is, what a mistake there would cost, or what data
   it handles. A reason that would hold for any step given to that executor does not meet it.
 - **taught elsewhere:** session 18 class

@@ -28,8 +28,8 @@ never the scoring.
 | id | Goal | Criterion: what gets examined, and what counts |
 | -- | ---- | ---------------------------------------------- |
 | `o-orientation` | get the shape of this area before working on any particular part of it | `orientation` |
-| `c-divide-into-steps` | divide a workflow into steps that can each be checked on their own | given a described workflow with too few steps, says where a step boundary belongs and why: because the kind of check changes there, or because the executor does. Says what intermediate result is saved at that boundary, so the step before it can be checked on its own. A boundary with no reason, or with no saved result, does not meet it. Cases: `check-changes`, `executor-changes`. |
-| `c-assign-a-lane` | choose who should do a step, and defend the choice by its trade-offs | given a step in a described workflow, says who should do it (a person, an AI agent or a script) and compares that choice with one alternative. Names one goal the choice helps and one it hurts, such as correctness, cost, timeliness or privacy, and ties each to something about this step: what its input is, what a mistake there would cost, or what data it handles. A reason that would hold for any step given to that executor does not meet it. |
+| `c-divide-into-steps` | divide a workflow into steps that can each be checked on their own | given a step in a described workflow that does too much, says where a step boundary belongs inside it and why: because the kind of check changes there, or because the executor does. Says what intermediate result is saved at that boundary, so the step before it can be checked on its own. A boundary with no reason, or with no saved result, does not meet it. Cases: `same-executor`, `executor-changes`. |
+| `c-assign-a-lane` | choose who should do a step, and defend the choice by its trade-offs | given a step in a described workflow, says who should do it (a person, an AI agent or a program) and compares that choice with one alternative. Names one goal the choice helps and one it hurts, compared with that alternative, such as correctness, cost, timeliness or privacy, and ties each to something about this step: what its input is, what a mistake there would cost, or what data it handles. A reason that would hold for any step given to that executor does not meet it. |
 
 ## Coverage
 
@@ -249,9 +249,7 @@ never the scoring.
   Dividing a workflow into steps in `tasks/read-workflow-design.md`.
 - **doesn't show:** the question names the step that does too much, so a pass doesn't show the
   learner would find it in a described workflow, or in a workflow of their own, as planning for
-  Problem Set 5 asks. `a-contrast-step-splits` names the step too, so if the criterion's "given a
-  described workflow with too few steps" is meant to include finding the overloaded step, that part
-  is checked by nothing in this topic. The scenarios keep a check change and an executor change
+  Problem Set 5 asks. The scenarios keep a check change and an executor change
   apart; in a real workflow they often come together, and a pass doesn't show the learner would
   name both. It shows nothing about when a boundary costs more than it earns, which the reading
   mentions and nothing here checks.
@@ -321,10 +319,7 @@ never the scoring.
 - **doesn't show:** the proposals are given and the learner picks, so a pass doesn't show they
   would place a boundary, give its reason or name what to save on their own; with three choices a
   guess is right a third of the time. The proposals give no reasons, so the learner's reason for a
-  boundary is never seen, and the criterion's "and why" is not checked here. The question names
-  the step that does too much, as `a-split-a-lumped-step`'s does, so if the criterion's "given a
-  described workflow with too few steps" is meant to include finding that step, nothing in this
-  topic checks it. The rest of `a-split-a-lumped-step`'s `doesn't show` applies.
+  boundary is never seen, and the criterion's "and why" is not checked here. The rest of `a-split-a-lumped-step`'s `doesn't show` applies.
   `a-split-a-lumped-step` checks the same goal with nothing proposed.
 - **offer as:** the quick check, after session 18: a short workflow and three people's ways of
   splitting one of its steps, and you pick the best one. About 3 minutes a question. Easier than
