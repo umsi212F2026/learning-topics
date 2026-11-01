@@ -34,10 +34,10 @@ that runs exactly.
   every Monday, each time it drafts. The owner's typed message is a prompt: a one-off, sent in the
   moment for this Monday only, so next week's draft won't mention the signing unless someone sends
   it again or puts it in the file.
-- **credit:** full for naming that the skill is standing instructions the agent reads on every run
-  and the prompt is a one-off message for this run only. Half for naming only that the skill is
-  saved in a file and the prompt is typed, with nothing on the skill applying every run and the
-  prompt to just this one. None for an incidental difference alone, such as that the skill is
+- **credit:** full for naming either difference: that the skill is standing instructions the agent
+  reads on every run and the prompt is a one-off message for this run only, or that the skill is
+  kept in a file the agent reads and the prompt is a message typed to it. None for an incidental
+  difference alone, such as that the skill is
   longer or more general, or that the owner wrote one and not the other (she may have written
   both).
 

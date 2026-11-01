@@ -458,5 +458,5 @@ do a step, are not part of this topic.
 - **bar:** one production pass
 - **group:** vocabulary
 - **what it names:** the written instructions an AI agent follows for a step, kept in a file the
-  agent reads
+  agent reads each time the step runs
 - **nearest confusable:** script, prompt
