@@ -1,124 +1,123 @@
 This is the course's setup workflow, as drawn for Installations 1 to 3. Open
 `workflows/bootstrap/bootstrap.bpmn` in your `course-materials` folder. It opens in Camunda
-Modeler, at the top level of the diagram. Read this top level only, without opening the diagrams
-underneath its boxes.
+Modeler. Read this top level only, without opening the diagram under any box that has one.
 
 ## Framing
 
 An AI agent was asked to say in plain words what this plane of the diagram claims. Each question
 below gives sentences from its summary about one element of the plane.
 
-### end-circle
+### start-circle
 
-The agent's summary says several things about the circle `workspace ready`. Which one does the
-diagram support?
+The agent's summary says several things about the circle `opens the Day 1 page in Canvas`. Which
+one does the diagram support?
 
-1. It marks what starts a run of the workflow, its trigger.
-2. It is a step: the human checks that the workspace is ready.
-3. It marks an outcome a run ends in.
-4. It is the last step the workflow does, in the human's lane.
+1. It is the first step: the human opens the Day 1 page.
+2. It marks the outcome of `Get Codex running`.
+3. It marks what starts a run of the workflow, its trigger.
+4. It marks a gateway, where the flow splits or merges.
 
 ### plain-step
 
-The agent's summary says several things about the rounded box `Report being stuck`. Which one does
-the diagram support?
+The agent's summary says several things about the rounded box `Submit each session's report`.
+Which one does the diagram support?
 
-1. It marks one step, work the workflow does.
-2. It has a diagram of its own underneath it.
-3. It marks an outcome a run ends in.
-4. It marks what starts a run, its trigger.
+1. It marks the outcome a run of the workflow ends in.
+2. It marks one step, work the workflow does.
+3. It is a subprocess, with the reports drawn underneath it.
+4. It marks where a run of the workflow starts.
 
 ### gateway
 
-The agent's summary says several things about the diamond just before `Set up the workspace`.
-Which one does the diagram support?
+The agent's summary says several things about the diamond just before the rounded box `Report
+being stuck`. Which one does the diagram support?
 
-1. It is a step the AI agent does just before `Set up the workspace`.
-2. It marks what starts a run of the workflow, its trigger.
-3. It marks an outcome a run of the workflow ends in.
-4. It is a gateway, where the flow splits or merges.
+1. It is a step where the human checks how setup went.
+2. It is an end circle, for a run that cannot go on.
+3. It marks a file that the workflow uses.
+4. It marks a gateway in the flow of the run.
 
 ### subprocess
 
-The agent's summary says several things about `Get Codex running`. Which one does the diagram
-support?
+The agent's summary says several things about the rounded box `Set up the workspace`. Which one
+does the diagram support?
 
-1. It is a single step, one action with nothing more to it.
-2. It is a step with a diagram of its own underneath it.
-3. It marks what starts a run of the workflow, its trigger.
-4. It is a gateway, where the flow splits or merges.
+1. It is a step with a diagram of its own underneath it.
+2. It is a single step, one the AI agent does.
+3. The diagram underneath it is the one for `Get Codex running`.
+4. It marks where a run of the workflow begins.
 
 ### lane-span
 
-The agent's summary says these things about `Set up the workspace`. Is each sentence true or
-false?
+The agent's summary says these things about the rounded box `Get Codex running`. Is each sentence
+true or false of what the diagram shows?
 
 #### a
-
-"Only the AI agent does it."
-
-1. True
-2. False
-
-#### b
 
 "The human takes part in it."
 
 1. True
 2. False
 
+#### b
+
+"A program takes part in it."
+
+1. True
+2. False
+
 #### c
 
-"A program has no part in it."
+"The AI agent takes part in it."
 
 1. True
 2. False
 
 ### one-split
 
-The agent's summary says several things about the diamond just after `Set up the workspace`.
-Which one does the diagram support?
+The agent's summary says several things about the diamond just after the rounded box `Set up the
+workspace`. Which one does the diagram support?
 
-1. Two paths come back together here, and one leaves it.
-2. It is a step the AI agent does after `Set up the workspace`.
-3. The flow splits here, one way or the other by its answer.
-4. A run goes both ways from here at the same time.
+1. Paths come back together here, and one path goes on.
+2. The run takes both paths from here at the same time.
+3. The flow splits here, on whether the install is correct.
+4. The flow splits here: a run takes one path or the other.
 
 ### one-merge
 
-The agent's summary says several things about the diamond just before `Report being stuck`. Which
-one does the diagram support?
+The agent's summary says several things about the diamond just before the rounded box `Set up the
+workspace`. Which one does the diagram support?
 
-1. Paths come back together here, and one path goes on.
-2. The flow splits here: a run goes one way or the other.
-3. Here the human decides whether to report being stuck.
-4. It is a step in which the human gives up on setup.
+1. It is a decision: the run goes one way or the other here.
+2. Paths come back together here, and one path goes on.
+3. Only one path arrives here, and one path goes on.
+4. The `stuck` path meets the others here.
 
 ### after-loop
 
-The agent's summary says these things about `Check the install`. Is each sentence
-true or false?
+The agent's summary says these things about the rounded box `Check the install`. Is each sentence
+true or false of what the diagram shows?
 
 #### a
 
-"After `Check the install`, on `success`, the next step is `Submit each session's report`."
+"After `Check the install`, on `success`, the flow goes back to `Set up the workspace`."
 
 1. True
 2. False
 
 #### b
 
-"After `Check the install`, on `not yet`, the run ends at `blocked`."
+"After `Check the install`, on `not yet`, the flow goes back to `Set up the workspace`."
 
 1. True
 2. False
 
 ### after-last
 
-The agent's summary says several things about `Submit each session's report`. Which
-one does the diagram support?
+The agent's summary says several things about the rounded box `Report being stuck`. Which one does
+the diagram support?
 
-1. After it, the run ends at `blocked`.
-2. After it, the next step is `Check the install`.
-3. After it, the flow goes back to `Set up the workspace`.
-4. After it, the run ends at `workspace ready`.
+1. The run ends at `Report being stuck` itself, with nothing after it.
+2. After it, the run ends in the circle `workspace ready`.
+3. After it, the run ends in the circle `blocked`.
+4. After it, the flow goes back to `Get Codex running`.
