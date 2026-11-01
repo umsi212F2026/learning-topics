@@ -542,7 +542,9 @@ activity has recognized right readings without producing one.
   here, on whether the install is correct" when it splits on another question). **Most must be
   errors an AI agent summarizing this diagram would plausibly make**, not blatant ones a careless
   reader would never write: a step given to the actor its label or skill name suggests rather
-  than its lane; a loop branch sent back to the wrong step; two branch labels swapped; a merge
+  than its lane; a branch read as looping back when it doesn't (the False part on a non-looping
+  branch of a `trace-loop` compound, such as "on `give up`, the next step is `Open U-M GPT`",
+  reading giving up as starting over; the looping branch itself is always True); two branch labels swapped; a merge
   described as a decision, or a split as a merge; a step drawn across lanes read as one actor's; a
   split's branch skipped (the run goes straight to a later step); an end circle confused with the
   step before it; the next step named as the one two steps on (worded "the next step is
@@ -613,8 +615,9 @@ activity has recognized right readings without producing one.
     next step is `Install the editors`", a branch's step skipped).
   - `trace-loop` (after `Check the install` or `Provide explanations and suggestions`): one part per
     branch; the looping branch's part is True in every `trace-loop` question; the other branch's
-    part may be True or False, False naming the wrong step ("on `success`, the next step is `Set up
-    the workspace`"; "on `give up`, the next step is `Do the next step on the checklist`").
+    part may be True or False, False naming the wrong step, often read as looping back ("on
+    `success`, the next step is `Set up the workspace`"; "on `give up`, the next step is `Open
+    U-M GPT`").
   - `trace-end` (after a named last step): "the run ends at `<the step>` itself" (an end circle
     confused with the step before it); "the run ends in `<the other end circle>`"; "the next step
     is `<an earlier step>`" (a loop read in).
@@ -706,11 +709,6 @@ activity has recognized right readings without producing one.
   workflow does. No
   single plane meets the goal: it takes one question per case, eighteen in all across the three
   planes, about 28 minutes, with `setup-top` first.
-- **check note:** Treat this point as part of running it.
-  - **`setup-top` `after-loop` is one judgment, not two.** Its parts are the same sentence with the
-    labels swapped, so exactly one is True. It shows the learner can tell which label loops back,
-    not where `success` goes. In a live or review `trace-loop` question, give one part per branch,
-    as the generator describes.
 
 ### `a-words`
 
