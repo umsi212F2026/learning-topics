@@ -287,7 +287,9 @@ do a step, are not part of this topic.
     the run moving to the file)
   - `splits`: where flow splits (a named gateway)
   - `merges`: where flow merges (an unnamed gateway)
-  - `trace-steps`: what happens after a given step, including when the flow loops back
+  - `trace-steps`: what happens after a given step
+  - `trace-branches`: where each branch goes after a step followed by a split
+  - `trace-loop`: where a branch that loops back goes
   - `trace-end`: which end state follows a given last step
 - **taught elsewhere:** session 18 class
 
