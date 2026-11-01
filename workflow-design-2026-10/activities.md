@@ -551,7 +551,7 @@ Each capability has one write-it check and one pick-one check, and either alone 
   except for one because-clause, which also rests on a fact in the step's paragraph, so neither
   defense can be picked for citing the scenario and the other not, or for a fact the paragraph
   lacks; its fault is in the reasoning. That fact is one neither the other clause nor the sound
-  version of this clause uses, so the near-miss never cites one fact twice: a `wrong-direction`
+  version of this clause uses, so the near-miss never cites one fact twice: a `does-not-support`
   clause uses the step's fact that neither sound clause uses, and a `not-a-difference` clause uses
   the timing sentence. The two defenses are within ten words of each other in
   length, and the differing clause matches the one it replaces in form: one fact or claim, said as
@@ -559,8 +559,9 @@ Each capability has one write-it check and one pick-one check, and either alone 
   defense is longer varies, the sound one in half the bank.
   - Which clause is the faulty one varies: the helped clause in half the bank, the hurt clause in
     the other half.
-  - Medium, `wrong-direction`: the clause draws from its fact a direction the fact doesn't
-    support. In a `messy-volume-checked` step whose sound defense ties timeliness to the
+  - Medium, `does-not-support`: the clause draws from its fact a conclusion the fact doesn't
+    support, either the opposite direction or a goal the fact doesn't bear on ("helps correctness,
+    because it handles each child's name", a privacy fact). In a `messy-volume-checked` step whose sound defense ties timeliness to the
     hundred-plus requests a week and privacy to the health details: "helps timeliness, because a
     person reviews these requests at a later step", a fact that bears on catching mistakes and if
     anything slows the work, not one that makes it faster.
@@ -585,15 +586,16 @@ Each capability has one write-it check and one pick-one check, and either alone 
 
   Credit: full for the sound defense, whose position is the rubric's `answer`; none for the other.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. As
-  `a-defend-a-lane-choice`'s: the dog-walking step, the tied defense beside a `wrong-direction`
+  `a-defend-a-lane-choice`'s: the dog-walking step, the tied defense beside a `does-not-support`
   version of it, with the tutor saying which fact each clause rests on and why the changed clause
   doesn't support its goal.
 - **doesn't show:** the choice, the alternative and the goals are given, and the learner picks
   between two defenses, so a pass doesn't show they would choose an executor or find a step's
   reasons on their own; with two choices a guess is right half the time. Every near-miss rests on a
   fact the step has, so no question sets a generic reason beside a tied one; the questions test
-  whether a fact supports the goal in the direction claimed, and whether it separates the choice
-  from the alternative. Every defense here argues for
+  whether a fact supports the goal claimed, and whether it separates the choice
+  from the alternative. A Hard near-miss can only be a timeliness clause citing when the input is
+  ready, so a learner who notices that can pick the Hard questions without the reasoning. Every defense here argues for
   the natural choice, so a pass says nothing about defending a less obvious one. Each step's facts
   are laid out under a heading, one to a line, so a pass doesn't show the learner would find what
   matters about a step in a looser description; `a-defend-a-lane-choice` gives them as running

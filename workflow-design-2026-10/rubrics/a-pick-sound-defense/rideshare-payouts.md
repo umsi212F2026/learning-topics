@@ -37,7 +37,7 @@ Each near-miss rests on a fact neither sound clause uses: step 3's Monday noon t
 - **type:** mcq
 - **answer:** 2
 - **credit:** full for 2 only.
-- **tutor note:** Medium, `wrong-direction`, faulty clause the helped one. Grace's helped clause
+- **tutor note:** Medium, `does-not-support`, faulty clause the helped one. Grace's helped clause
   rests on the co-op's rules not saying which reasons qualify, a fact that calls for judgment and
   bears on getting the decision right, but says nothing about who sees the drivers' debts; Mateo's
   rests on the debts staying out of the agent's provider. Both hurt clauses rest on the treasurer's

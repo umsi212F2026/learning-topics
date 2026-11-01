@@ -37,7 +37,7 @@ step 5's count of about three reports a week.
 - **type:** mcq
 - **answer:** 1
 - **credit:** full for 1 only.
-- **tutor note:** Medium, `wrong-direction`, faulty clause the hurt one. Victor's hurt clause rests
+- **tutor note:** Medium, `does-not-support`, faulty clause the hurt one. Victor's hurt clause rests
   on there being only about three reports a week, but so few reports are no backlog for a person
   and if anything make it easier to keep up; what delays the answer is the founder handling them
   only on Saturday mornings, which is Hana's reason. Both helped clauses rest on the illness

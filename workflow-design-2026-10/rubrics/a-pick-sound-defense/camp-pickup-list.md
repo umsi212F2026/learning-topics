@@ -25,7 +25,7 @@ phone numbers, and step 4's Friday timing.
 - **type:** mcq
 - **answer:** 1
 - **credit:** full for 1 only.
-- **tutor note:** Medium, `wrong-direction`, faulty clause the helped one. Jamal's helped clause
+- **tutor note:** Medium, `does-not-support`, faulty clause the helped one. Jamal's helped clause
   rests on the step handling children's names and adults' phone numbers, a fact about what data is
   at stake, which bears on privacy and does nothing to make a program apply the list more exactly
   than an agent; Ruth's rests on the program entering exactly the adults on the approved list. Both

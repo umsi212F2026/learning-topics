@@ -26,7 +26,7 @@ data, the names in the complaints.
 - **type:** mcq
 - **answer:** 2
 - **credit:** full for 2 only.
-- **tutor note:** Medium, `wrong-direction`, faulty clause the hurt one. Nadia's hurt clause rests
+- **tutor note:** Medium, `does-not-support`, faulty clause the hurt one. Nadia's hurt clause rests
   on the bookings coordinator checking every pulled-out request at step 3, which catches an agent's
   mistakes and so protects correctness rather than hurting it; Ben's rests on the requests that ask
   only for "the usual". Both helped clauses rest on the 150 requests a week. If the learner picks
@@ -38,7 +38,7 @@ data, the names in the complaints.
 - **type:** mcq
 - **answer:** 1
 - **credit:** full for 1 only.
-- **tutor note:** Medium, `wrong-direction`, faulty clause the helped one. Felix's helped clause
+- **tutor note:** Medium, `does-not-support`, faulty clause the helped one. Felix's helped clause
   rests on the complaints naming the guide and the students, a fact about whose data the step
   handles, which bears on privacy and does nothing to make a person judge fault better than an
   agent; Carmen's rests on fault being a judgment no form settles. Both hurt clauses rest on the

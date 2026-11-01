@@ -22,7 +22,7 @@ step 4's Friday timing.
 - **type:** mcq
 - **answer:** 2
 - **credit:** full for 2 only.
-- **tutor note:** Medium, `wrong-direction`, faulty clause the helped one. Keiko's helped clause
+- **tutor note:** Medium, `does-not-support`, faulty clause the helped one. Keiko's helped clause
   rests on the front-desk manager reviewing every sorted message at step 3, which makes a mistake
   here cheap but does nothing to make the sorting faster; Omar's rests on the 120 messages a week
   in every style. Both hurt clauses rest on the health reasons. If the learner picks Keiko's, ask
