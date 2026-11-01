@@ -17,7 +17,7 @@ file at the learner's current commit.
 | id | Goal | Criterion: what gets examined, and what counts |
 | -- | ---- | ---------------------------------------------- |
 | `o-orientation` | get the shape of this area before working on any particular part of it | `orientation` |
-| `c-read-diagram` | read a workflow diagram and say what it claims | given a workflow diagram, says what it claims: what each shape marks, who does each step, what each kind of arrow means, and where the flow splits and merges. Cases: `states` (the shape marking the state a run starts or ends in), `step-box` (the shape marking a step), `gateway-shape` (the shape marking a gateway), `subprocess-box` (the shape marking a collapsed subprocess), `lane-owner` (who does a step, from its lane), `spans-lanes` (who does a step drawn across two lanes), `handoff` (where control, or data a later step uses, passes to a step done by a different actor), `not-handoff` (that a step followed by another step of the same actor is not a handoff), `control-arrow` (what a solid arrow between two steps says [which step runs next]), `branch-label` (what a label on an arrow leaving a gateway says), `data-line` (what a dotted line between a step and a file says [data written or read, not the run moving to the file]), `splits` (where flow splits [a named gateway]), `merges` (where flow merges [an unnamed gateway]), `trace-steps` (what happens after a given step, including when the flow loops back), `trace-end` (which end state follows a given last step). Taught elsewhere: session 18 class. |
+| `c-read-diagram` | read a workflow diagram and say what it claims | given a workflow diagram, says what it claims: what each shape marks, who does each step, what each kind of arrow means, and where the flow splits and merges. Cases: `states` (the shape marking where a run starts or ends [not a step]), `step-box` (the shape marking a step), `gateway-shape` (the shape marking a gateway), `subprocess-box` (the shape marking a collapsed subprocess), `lane-owner` (who does a step, from its lane), `spans-lanes` (who does a step drawn across two lanes), `handoff` (where control, or data a later step uses, passes to a step done by a different actor), `not-handoff` (that a step followed by another step of the same actor is not a handoff), `control-arrow` (what a solid arrow between two steps says [which step runs next]), `branch-label` (what a label on an arrow leaving a gateway says), `data-line` (what a dotted line between a step and a file says [data written or read, not the run moving to the file]), `splits` (where flow splits [a named gateway]), `merges` (where flow merges [an unnamed gateway]), `trace-steps` (what happens after a given step, including when the flow loops back), `trace-end` (which end state follows a given last step). Taught elsewhere: session 18 class. |
 
 ## Coverage
 
@@ -43,9 +43,9 @@ file at the learner's current commit.
   vocabulary slide lists skill beside AI agent and whose glossary labels its arrow "Handoff".
   Only slides 4 to 7 are read: 4, the definition of a workflow and a two-row table of what
   dropping a part leaves (repeatable, or you have a project; a settled order, or you have a
-  checklist); 5, the vocabulary list (run, step, trigger, outcome, AI agent (bot), skill, script,
-  handoff, with synonyms); 6, an xkcd flowchart; 7, the symbol glossary: states ("the condition
-  that starts or ends a run"), step, file ("data a step reads or writes, joined to it by a dotted
+  checklist); 5, the vocabulary list (run, step, trigger (start event), outcome, AI agent (bot),
+  skill, script, handoff, with synonyms); 6, an xkcd flowchart; 7, the symbol glossary: start and
+  end ("where a run starts (its trigger) or ends (its outcome)"), step, file ("data a step reads or writes, joined to it by a dotted
   line"), control flow ("which step runs next; when the next step belongs to another actor, it is
   a handoff"), and gateway, split or merge. Slides 1 to 3 and 8 to 10 are class logistics,
   discussion norms, table questions about `bootstrap.bpmn` and lab instructions, and are skipped.
@@ -54,11 +54,10 @@ file at the learner's current commit.
   (the repository is public and the page answers, but GitHub shows the file's source rather than
   the slides, and the repository has no GitHub Pages site, so the local copy is the one to open).
   About 4 minutes for the four slides, about 10 with the stop, the tutor's additions and the close.
-- **verified:** 2026-11-01
 - **learner does:** reads slides 4 to 7 once, then stops at slide 7 and answers before going on;
   "I'm not sure" is an honest answer. At the stop, writes one line in their own words for each of
-  the glossary's five symbols, saying what it marks in a diagram: a state, a step, a file, a
-  control-flow arrow (including when it is a handoff), and a gateway (both what a split is and
+  the glossary's five symbols, saying what it marks in a diagram: a start or end circle, a step, a
+  file, a control-flow arrow (including when it is a handoff), and a gateway (both what a split is and
   what a merge is). Then hears the tutor's additions (below), and answers the close: with this
   deck beside you, could you now open one of the course's workflow diagrams in Camunda Modeler
   and say where a run starts and ends, who does each step, what each kind of arrow means, where
@@ -75,8 +74,9 @@ file at the learner's current commit.
   reading except at the stop and when asked. At the stop, takes the learner's lines first and
   replies to a wrong or vague one with one near-miss question rather than a verdict ("you said a
   gateway is where a decision is made; what about a diamond with two arrows in and one out?").
-  Intended lines: a state is a condition that starts or ends a run, not something done; a step is
-  one action someone or something takes; a file is data a step reads or writes, joined by a dotted
+  Intended lines: a start circle marks what starts a run, its trigger (which may be a person's
+  action, a time arriving or a message), and an end circle marks an outcome a run ends in; neither
+  is a step the workflow does; a step is one action someone or something takes; a file is data a step reads or writes, joined by a dotted
   line; a control-flow arrow says which step runs next, and it is a handoff only when that next
   step belongs to another actor (a line saying every arrow is a handoff gets the near-miss "even
   one between two steps the same actor does?"); a gateway with a question splits the flow by the
@@ -107,9 +107,9 @@ file at the learner's current commit.
 - **worked example:** n/a
 - **doesn't show:** an indication of readiness is all this goal asks for and all this shows. The
   stop is helped, ungraded and about the symbols in general, with no diagram open, so it shows
-  nothing about `c-read-diagram`. It shows nothing about the sixteen words, which have their own
-  supply in `a-words`; slides 4 to 7 name only some of them (they never say lane,
-  subprocess, executor, workflow state or data flow), and lane, subprocess and data flow reach the learner
+  nothing about `c-read-diagram`. It shows nothing about the fifteen live words (a sixteenth,
+  workflow state, is retired), which have their own supply in `a-words`; slides 4 to 7 name only
+  some of them (they never say lane, subprocess, executor or data flow), and lane, subprocess and data flow reach the learner
   only through the tutor's spoken additions. The revised slide 7 states the handoff rule for
   control flow only; that a file passed between actors is also a handoff rests on the tutor's
   sentence. Until the revision is merged, a learner opening their own clone reads the session 2
@@ -196,7 +196,7 @@ file at the learner's current commit.
     suggestions` to `Write a status report` (AI AGENT); handoffs `Do the next step on the
     checklist` to `Provide explanations and suggestions` and back. It has no subprocess and no step
     across two lanes, so it carries neither `subprocess-box`
-    nor `spans-lanes`. Its states, steps and gateways could carry `states`, `step-box` and
+    nor `spans-lanes`. Its start and end circles, steps and gateways could carry `states`, `step-box` and
     `gateway-shape`; the bank asks those on `setup-top` only, and live or review runs may ask them
     here, in the same form.
   - `set-up-workspace`: the plane under `Set up the workspace`. Carries `control-arrow` (the only
@@ -278,22 +278,24 @@ file at the learner's current commit.
   full for the right step or end state, none otherwise.
 
   **`setup-top`: eleven questions, about 15 minutes if all are answered.**
-  1. `start-state` (`states`, Easy, mcq): "Which of these is the state a run of this workflow
-     starts in?" Choices: the start event's label, one end state, `Get Codex running`, and "the
+  1. `start-circle` (`states`, Easy, mcq): "Which of these marks what starts a run of this
+     workflow?" Choices: the start event's label, one end state, `Get Codex running`, and "the
      diamond just after `Get Codex running`".
-  2. `end-state` (`states`, Easy, mcq): "What does the circle `<end state>` mark?" (`workspace
-     ready` or `blocked`.) Choices, word for word: "a state a run starts in"; "a state a run ends
-     in"; "one step, an action someone takes"; "a gateway". Right: the second.
+  2. `end-circle` (`states`, Easy, mcq): "What does the circle `<end circle>` mark?" (`workspace
+     ready` or `blocked`.) Choices, word for word: "what starts a run, its trigger"; "an outcome a
+     run ends in"; "one step, work the workflow does"; "a gateway". Right: the second. A circle is
+     never called a state, and the start circle's being a person's action is never treated as a
+     misreading: the misreadings are calling a circle a step, or the start an end and the reverse.
   3. `plain-step` (`step-box`, Easy, mcq): "What does the rounded box `Report being stuck` mark?"
-     Choices, word for word: "a state a run starts or ends in"; "one step, an action someone
-     takes"; "a gateway, where the flow splits or comes back together"; "a step with a diagram of
-     its own underneath it". Right: the second.
+     Choices, word for word: "where a run starts or ends"; "one step, work the workflow does"; "a
+     gateway, where the flow splits or comes back together"; "a step with a diagram of its own
+     underneath it". Right: the second.
   4. `subprocess` (`subprocess-box`, Easy, mcq): "Which of these steps has a diagram of its own
      underneath it?" Choices: `Set up the workspace`; `Check the install`; `Report being stuck`;
      `Submit each session's report`. Live runs may ask it with `Get Codex running` as the right
      choice and three other plain steps.
   5. `gateway` (`gateway-shape`, Easy, mcq): "What kind of shape is the diamond just before `Set
-     up the workspace`?" Choices: a state; a step; a gateway; a file. Right: a gateway. It asks
+     up the workspace`?" Choices: a start or end circle; a step; a gateway; a file. Right: a gateway. It asks
      the kind only, never whether this one splits or merges, so it gives nothing away to
      questions 8 and 9.
   6. `lane-span` (`spans-lanes`, Medium, mcq): "Who does `Get Codex running`?" Choices: the human
@@ -410,7 +412,7 @@ file at the learner's current commit.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. The
   tutor works the same kind of question aloud on a different diagram, saying what it looks at:
   `workflows/tour/tour.bpmn` (the tour at the end of setup, a single plane with no gateways) for
-  start and end states, steps, lanes, handoffs and data flow (`Explain the four parts of
+  start and end circles, steps, lanes, handoffs and data flow (`Explain the four parts of
   the tour` reads the guide; `Write the record`, in PROGRAM, writes `tour.md`, which `Open the file
   in the editor`, in the human's lane, reads later: a data handoff); the plane under `Execute the
   plan, task by task` in `workflows/develop/superpowers.bpmn` (revised copy on the
@@ -472,21 +474,21 @@ file at the learner's current commit.
   below. About 2 to 3 minutes a question, 5 to 10 a scenario.
 - **verified:** 2026-11-01
 - **learner does:** opens the plane the scenario names in Camunda Modeler and reads the question
-  served: sentences from an AI agent's summary about one named element. For each sentence, picks
-  True or False. A compound question has one lettered part per sentence, answered part by part; a
-  single question has one sentence.
+  served: sentences from an AI agent's summary about one named element. In a compound question,
+  picks True or False for each sentence, part by part; in a four-choice question, picks the one
+  sentence the diagram supports.
 - **tutor role:** examiner
 - **tutor does:** as `a-read-course-diagram`'s (the session 18 offer, the commit check against
   `eb7b655` on the learner's merged `course-materials`, opening the diagram, never describing it,
   help recorded as helped), and also: shows a compound's stem and its parts lettered `(a)`, `(b)`
   in one message and takes the learner's answers to every part in one reply; settles each part
   from the key; never says which sentences are wrong or how many; doesn't ask the learner to
-  explain a False. A learner who adds what the diagram does say is welcome to and gains nothing
+  explain a False or a choice. A learner who adds what the diagram does say is welcome to and gains nothing
   for it. Labels a live run `a-judge-diagram-summary/<case>`. Says when offering it that no one
   plane carries every case: meeting the goal takes one question per case, fifteen over the three
-  scenarios, about 20 minutes, splittable over sittings.
-- **done when:** the criterion met with no help, case by case. A single question passes its case
-  when its one answer is right. A compound passes its case only when every part is right (study
+  scenarios, about 25 minutes, splittable over sittings.
+- **done when:** the criterion met with no help, case by case. A four-choice question passes its
+  case when its one answer is right. A compound passes its case only when every part is right (study
   records `met` only then; quiz grading scores the mean of the parts).
 - **generator:** **The material** is as `a-read-course-diagram`'s: `workflows/bootstrap/bootstrap.bpmn`
   in its revised layout, `diagram commit: eb7b655` recorded in each rubric key's top part and
@@ -516,44 +518,51 @@ file at the learner's current commit.
     c-read-diagram`, the one case, and `type: compound`; each `####` rubric part carries `type:
     mcq`, `answer: 1` or `2`, and an optional `tutor note`, never `goal` or `cases`. No image or
     image link inside a part.
-  - **Single** (`type: mcq`): the stem gives one quoted sentence about the element, "The agent's
-    summary says: '...'. Is this true or false?", then `1. True` and `2. False`. The rubric carries
-    goal, the one case, `type: mcq` and `answer`.
+  - **Four-choice** (`type: mcq`): "The agent's summary says several things about `<element>`.
+    Which one does the diagram support?" then four numbered sentences from the summary, exactly one
+    right; the wrong three are misreadings for that case (below), each stated as plainly as the
+    right one. The rubric carries goal, the one case, `type: mcq` and `answer`. The right
+    sentence's position varies across the bank and within a scenario, with no fixed pattern.
 
   **How to choose, per case.** Compound when the element supports two or three claims that are
-  not simply each other's opposite, so that each part is a separate reading; single when the two
-  sentences would be opposites, or one sentence settles the case.
-  - `states`, `step-box`, `gateway-shape`, `subprocess-box`: single. What kind of shape an element
-    is makes one claim; a second sentence would only deny the first.
+  not simply each other's opposite, so that each part is a separate reading; four-choice when two
+  sentences would be opposites, or one right sentence settles the case.
+  - `states`, `step-box`, `gateway-shape`, `subprocess-box`: four-choice. What kind of shape an
+    element is makes one claim; the four sentences offer it and three misreadings.
   - `lane-owner`: compound. Sentences about who does one step ("the AI agent does it", "a program
     does it, since its label names `setup-addressing`", "the human does it"): any of them can be
     false, so both can be.
   - `spans-lanes`: compound. One sentence per actor or about all of them ("the human takes part",
     "a program takes part", "only the AI agent does it").
-  - `handoff`: single. One sentence about one step pair done by different actors, true ("is a
-    handoff") or false ("is not a handoff").
-  - `not-handoff`: single. One sentence about one same-actor pair, true ("is not a handoff") or
-    false ("is a handoff").
+  - `handoff`: four-choice, about one step pair done by different actors (the element is the
+    pair): the right sentence says it is a handoff; the others say it is not, or misplace an actor.
+  - `not-handoff`: four-choice, about one same-actor pair: the right sentence says it is not a
+    handoff, since the same actor does both; the others call it one, or misplace an actor.
   - `control-arrow`: compound. Claims about one solid arrow between two steps ("the second step
     runs next", "both steps run at the same time", "the first step reads a file").
   - `branch-label`: compound. Claims about one label ("a run goes this way when the gateway's
     answer is `no`", "a step called `no` runs next", "the run ends here").
   - `data-line`: compound. Claims about the one dotted line ("`Open U-M GPT` reads the file",
     "after `Open U-M GPT`, the run moves on to the file", "the file is the next step").
-  - `splits`, `merges`: single. Whether a diamond splits or merges is one claim; its opposite adds
-    nothing. A `splits` sentence points at a named split; a `merges` sentence at an unnamed one;
-    either may be true or false.
+  - `splits`, `merges`: four-choice, about one diamond pointed at by its neighbors (a named split
+    for `splits`, an unnamed merge for `merges`): the right sentence says what happens there; the
+    others are misreadings.
   - `trace-steps`: compound when the named step is followed by a split, one part per branch
     ("after `Check the install`, on `success`, comes `Submit each session's report`"; "on `not
-    yet`, the flow goes back to `Set up the workspace`"); single when one step comes next.
-  - `trace-end`: single. One sentence naming the end state after a named last step.
+    yet`, the flow goes back to `Set up the workspace`"); four-choice when one step comes next
+    (four sentences each naming a different next step).
+  - `trace-end`: four-choice, about a named last step: four sentences naming what follows, one the
+    right end circle.
 
-  **The misreadings** a False sentence states, as plainly as a True one; no sentence is half right
-  or turns on a word:
-  - `states`: calls the start state the first step, or an end state a step.
-  - `step-box`: calls a plain step a state, or a step with a diagram underneath it.
-  - `gateway-shape`: calls a gateway a step someone does, or a state; never says whether it splits
-    or merges.
+  **The misreadings** a False part or a wrong choice states, as plainly as a right one; no sentence
+  is half right or turns on a word. A circle is never called a state, and the start circle's being
+  a person's action is never a misreading; the right sentence says the start circle marks what
+  starts a run (its trigger) and an end circle an outcome a run ends in.
+  - `states`: calls a circle a step the workflow does, or calls the start circle an end or an end
+    circle the start.
+  - `step-box`: calls a plain step a start or end circle, or a step with a diagram underneath it.
+  - `gateway-shape`: calls a gateway a step someone does, or a start or end circle; never says
+    whether it splits or merges.
   - `subprocess-box`: calls a collapsed subprocess a single action with nothing more to it.
   - `lane-owner`: gives the step to the actor its label suggests rather than the one its lane
     names.
@@ -571,14 +580,15 @@ file at the learner's current commit.
   - `trace-steps`: names the wrong step after a named one, or gets a loop's branch wrong.
   - `trace-end`: names the wrong end state.
 
-  **True and False.** Across a scenario, counting every part and every single question, True and
-  False each make up between a third and two thirds of the answers. No fixed pattern: not every
-  compound is one True and one False (each scenario has at least one compound with two Trues or two
-  Falses), and the True part is not always in the same position.
+  **True and False** (compound parts only). Across a scenario's compound parts, True and False
+  each make up between a third and two thirds of the answers. No fixed pattern: not every compound
+  is one True and one False (each scenario with two or more compounds has at least one with two
+  Trues or two Falses), and the True part is not always in the same position. For four-choice
+  questions, the right choice's position varies instead.
 
   **Planes, cases and order.** One question per case, in this order, so that no question reveals a
   later one's answer:
-  - `setup-top`: nine questions, about 11 minutes. `states` (a circle), `step-box` (`Report being
+  - `setup-top`: nine questions (seven four-choice, two compound), about 14 minutes. `states` (a circle), `step-box` (`Report being
     stuck`), `gateway-shape` (the diamond just before `Set up the workspace`, said to be a gateway
     only), `subprocess-box` (`Set up the workspace` or `Get Codex running`), `spans-lanes`
     (`Set up the workspace`, all three actors; live runs `Get Codex running`, two), `splits` (the
@@ -586,13 +596,13 @@ file at the learner's current commit.
     before `Set up the workspace` or `Report being stuck`), `trace-steps` (compound, after `Check
     the install`, whose `not yet` branch loops back), `trace-end` (after `Submit each session's
     report` or `Report being stuck`). No handoff question here; those are on `set-up-workspace`.
-  - `get-codex-running`: six questions, about 9 minutes. `splits` first (`stuck?` or `checklist
+  - `get-codex-running`: six questions (three four-choice, three compound), about 11 minutes. `splits` first (`stuck?` or `checklist
     done?`, by neighbors), then `branch-label` (only labels on arrows that stay in one lane: `no`
     at `stuck?`, either at `checklist done?`, `try suggestion` at `worth trying?` only in live runs
     where `trace-steps` doesn't follow), `data-line`, `merges` (the one unnamed diamond),
     `trace-steps` (compound, after `Provide explanations and suggestions`, whose `try suggestion`
     branch loops back), `trace-end` (after `Write a status report on where it stalled`).
-  - `set-up-workspace`: eight questions, about 10 minutes. `control-arrow` (`Write the receipt` to
+  - `set-up-workspace`: eight questions (six four-choice, two compound), about 13 minutes. `control-arrow` (`Write the receipt` to
     `Check the receipt landed`), `not-handoff` (a same-actor pair from `a-read-course-diagram`'s
     list for this plane), `handoff` (a pair done by different actors, not one that includes
     `Record where things live`), `lane-owner` (`Record where things live` or `Install tools`),
@@ -605,17 +615,19 @@ file at the learner's current commit.
 - **worked example:** as `a-read-course-diagram`'s, on `tour.bpmn` or superpowers.bpmn and never
   on a bootstrap plane, with the tutor judging two sentences of its own aloud, one right and one a
   misreading ("the AI agent writes the record": false, `Write the record` is in the PROGRAM lane).
-- **doesn't show:** a single question is one True or False, so a guess passes it half the time;
-  nine cases are carried by single questions. A compound passes only when every part is right. The
+- **doesn't show:** a four-choice question passes on a guess one time in four; ten cases are
+  carried by four-choice questions. A compound passes only when every part is right, so a guess
+  passes a two-part one a quarter of the time and a three-part one an eighth. The
   misreadings are the ones listed, so a pass shows the learner can reject those, not every way a
   diagram can be misread, and it shows recognizing a right reading rather than producing one,
   which `a-read-course-diagram` asks for. The rest of `a-read-course-diagram`'s `doesn't show`
   applies, including that the diagram is a familiar one, here met again after that activity if
   both are done.
 - **offer as:** the check against someone else's reading: an AI agent's summary of a plane of the
-  setup diagram, judged sentence by sentence, each sentence True or False. Closest to the course's
-  use, checking what an agent says a workflow does. No single plane meets the goal: it takes one
-  question per case, fifteen in all across the three planes, about 20 minutes.
+  setup diagram, judged sentence by sentence (True or False) or by picking the one sentence the
+  diagram supports. Closest to the course's use, checking what an agent says a workflow does. No
+  single plane meets the goal: it takes one question per case, fifteen in all across the three
+  planes, about 25 minutes.
 - **check note:** This activity is on hold. If it is served anyway, note four things.
   - **Only `setup-top` is drafted.** Its key records `6b578e9`, so it passes the commit check on a
     clone that predates the merge and fails on a merged one. Its key also describes `Set up the
