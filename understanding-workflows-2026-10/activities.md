@@ -5,7 +5,7 @@ with the learner.
 
 ## Check notes
 
-2026-11-01: `c-read-diagram` has two checks, and either can finish it: each carries all seventeen
+2026-11-01: `c-read-diagram` has two checks, and either can finish it: each carries all eighteen
 cases. A case passed in either one counts toward the goal, so the learner may switch between them
 part way through. `a-judge-diagram-summary` mostly uses different elements from
 `a-read-course-diagram` for the same case, so a retry in the other activity usually meets a new
@@ -26,7 +26,7 @@ activity has recognized right readings without producing one.
 | goal | checks | notes |
 | ---- | ------ | ----- |
 | `o-orientation` | `a-read-workflow-deck` | |
-| `c-read-diagram` | `a-read-course-diagram`, `a-judge-diagram-summary` | Both checks ask about the same three planes of `bootstrap.bpmn`. The learner met that diagram in Installation 2 and at their session 2 table, whose questions asked about `Get Codex running`'s plus and lanes, where the flow splits and merges, and where `Set up the workspace` sits. The diagram has exclusive gateways only, and every question points at the element to read. Meeting the goal therefore shows the learner can read this diagram when asked about its parts. It does not show they can read an unfamiliar one, notice what a diagram leaves out, or handle parallel paths, and the sessions 18 to 21 use is on other diagrams. No question checks a data handoff, since no step in `bootstrap.bpmn` writes a file that another actor's step reads. No question asks what the file shape itself marks. Three cases can be passed on a two-choice question in `a-read-course-diagram`: `not-handoff`, and `splits` and `merges` on `set-up-workspace`. |
+| `c-read-diagram` | `a-read-course-diagram`, `a-judge-diagram-summary` | Both checks ask about the same three planes of `bootstrap.bpmn`. The learner met that diagram in Installation 2 and at their session 2 table, whose questions asked about `Get Codex running`'s plus and lanes, where the flow splits and merges, and where `Set up the workspace` sits. The diagram has exclusive gateways only, and every question points at the element to read. Meeting the goal therefore shows the learner can read this diagram when asked about its parts. It does not show they can read an unfamiliar one, notice what a diagram leaves out, or handle parallel paths, and the sessions 18 to 21 use is on other diagrams. No question checks a data handoff, since no step in `bootstrap.bpmn` writes a file that another actor's step reads. Three cases can be passed on a two-choice question in `a-read-course-diagram`: `not-handoff`, and `splits` and `merges` on `set-up-workspace`. |
 
 ---
 
@@ -125,7 +125,7 @@ activity has recognized right readings without producing one.
   in the learner's `course-materials` clone, which they opened in Camunda Modeler in Installation
   2 and discussed at their table in session 2. Questions from this activity's bank or set live per
   the generator below. A scenario is one plane: `setup-top` eleven questions (about 14 minutes),
-  `get-codex-running` six (about 9), `set-up-workspace` ten (about 12), each one sitting.
+  `get-codex-running` six (about 9), `set-up-workspace` ten (about 13), each one sitting.
 - **learner does:** opens the diagram in Camunda Modeler, goes to the plane the scenario names, and
   answers the one question served in their own words, pointing at elements by the first words of
   their labels or by the steps or gateways on either side of them.
@@ -302,7 +302,7 @@ activity has recognized right readings without producing one.
      up the workspace`?" Choices: a start or end circle; a step; a gateway; a file. Right: a gateway. It asks
      the kind only, never whether this one splits or merges, so it gives nothing away to
      questions 8 and 9.
-  6. `file-shape` (`file-shape`, Easy, mcq): "What does the shape `U-M API key` mark?" Choices,
+  6. `file-shape` (`file-shape`, Easy, mcq): "What does the folded-corner page `U-M API key` mark?" Choices,
      word for word: "a file"; "one step, work the workflow does"; "where a run starts or ends"; "a
      gateway". Right: "a file". It says nothing about which step uses the file, and no later
      question on this plane asks.
@@ -357,7 +357,7 @@ activity has recognized right readings without producing one.
      it stalled`?" Choices: the end state `stuck` (right); the end state `Codex answers with the
      U-M key`; `Do the next step on the checklist`; `Provide explanations and suggestions`.
 
-  **`set-up-workspace`: ten questions, about 12 minutes.** The plane is long, so its gateway
+  **`set-up-workspace`: ten questions, about 13 minutes.** The plane is long, so its gateway
   questions take one diamond at a time.
   1. `next-arrow` (`control-arrow`, Easy, mcq): "What does the solid arrow from `Write the receipt`
      to `Check the receipt landed` tell you?" Choices: "`Check the receipt landed` runs next"
@@ -436,8 +436,9 @@ activity has recognized right readings without producing one.
   on a bootstrap plane, since all three are check material.
 - **doesn't show:** every question is on one diagram the learner has seen before, so a pass doesn't
   show they could read a brand-new diagram, drawn by someone else or in another style, and later
-  attempts may draw on memory of this one rather than reading. `subprocess-box`, `spans-lanes`,
-  `not-handoff`, `control-arrow`, `branch-label` and `data-line` are each asked on only one plane
+  attempts may draw on memory of this one rather than reading. `subprocess-box`, `file-shape`, `spans-lanes` (on `setup-top`),
+  `lane-owner`, `not-handoff`, `control-arrow` (on `set-up-workspace`), `branch-label` and
+  `data-line` (on `get-codex-running`) are each asked on only one plane in the bank
   (`data-line` about one file), so they have little room to vary. `data-line` asks only about a
   file being read, since no step on bootstrap.bpmn writes a file, and `Open U-M GPT`'s second
   label line names `bootstrap-prompt.md`, so the step's own label points at the file. The deck calls its arrow symbol control flow and a
@@ -508,16 +509,18 @@ activity has recognized right readings without producing one.
   part or the framing.
 
   **Two question forms, one case each, one element each.**
-  - **Compound** (`type: compound` on the rubric's `###` entry): the `###` body is the stem, "The
-    agent's summary says these things about `<element>`. Is each sentence true or false of what the
-    diagram shows?" The standard is stated in every compound's stem, since a draw shows no
+  - **Compound** (`type: compound` on the rubric's `###` entry): the `###` body is the stem, "An AI
+    agent's summary of this plane says these things about `<element>`. Is each sentence true or
+    false of what the diagram shows?" The standard is stated in every compound's stem, since a draw shows no
     framing. Then two or three parts, `#### a`, `#### b`, `#### c`, lettered in order. Each part is one quoted
     sentence followed by `1. True` and `2. False`. The rubric's `###` entry carries `goal:
     c-read-diagram`, the one case, and `type: compound`; each `####` rubric part carries `type:
     mcq`, `answer: 1` or `2`, and an optional `tutor note`, never `goal` or `cases`. No image or
     image link inside a part.
-  - **Four-choice** (`type: mcq`): "The agent's summary says several things about `<element>`.
-    Which one does the diagram support?" then four numbered sentences from the summary, exactly one
+  - **Four-choice** (`type: mcq`): "An AI agent's summary of this plane says several things about
+    `<element>`. Which one does the diagram support?" A stem names the shape it points at, as for
+    circles, boxes and diamonds (`file-shape`: "the folded-corner page `U-M API key`"). Stems never
+    lean on the framing, since a quiz draw does not show it. then four numbered sentences from the summary, exactly one
     right; the wrong three are misreadings for that case (below). The rubric carries goal, the one case, `type: mcq` and `answer`. The right
     sentence's position varies across the bank and within a scenario, with no fixed pattern and
     no repeating cycle (not 1, 2, 3, 4, 1, 2, ...).
@@ -563,8 +566,9 @@ activity has recognized right readings without producing one.
   - `step-box` (`Submit each session's report`): "it marks the outcome the run ends in" (an end
     circle confused with the step before it); "it is a subprocess, with the reports underneath it".
     The third may be blatant ("it marks where a run starts").
-  - `gateway-shape` (a merge, said to be a gateway only): "it is a step where the human checks the
-    result" (a gateway read as its lane's step); "it is an end circle for runs that are blocked".
+  - `gateway-shape` (the diamond just after `Check the install`, said to be a gateway only, never
+    whether it splits or merges): "it is a step where the program checks the install" (a gateway
+    read as its lane's step); "it is an end circle for runs whose install is correct".
     The third may be blatant ("it is a file").
   - `subprocess-box` (`Set up the workspace`): "it is a single step the AI agent does"; "the
     diagram underneath it is the one for `Get Codex running`". The third may be blatant ("it is a
@@ -605,7 +609,11 @@ activity has recognized right readings without producing one.
     here, on `<another gateway's question>`" (half right).
   - `merges` (an unnamed merge): right "the paths from `<a>` and `<b>` come back together here"; "it
     is a decision: the run goes one way or the other here"; "only one path arrives here"; "the
-    `<wrong>` path meets the others here".
+    `<wrong>` path meets the others here". Neither the right sentence, a wrong one, nor the tutor
+    note names a split or a branch that a later trace question in the same scenario asks about
+    (on `setup-top` not `install correct?` or `not yet`; on `get-codex-running` not `worth
+    trying?`, `try suggestion` or `give up`; on `set-up-workspace` not `receipt landed?`). Where a
+    merge has three or more inputs, the right sentence may name two of them that are safe.
   - `trace-steps` (after `Submit Installation 2`): right `Publish the repositories`; wrong: the
     step two on (`Check the remote`), a later step (`Submit Installation 3`), an earlier one
     (`Install the editors`), each worded "the next step is ...".
@@ -633,14 +641,15 @@ activity has recognized right readings without producing one.
   later one's answer. **Prefer a different element from `a-read-course-diagram`:** for each case,
   the bank uses an element of the plane that `a-read-course-diagram`'s bank does not ask about for
   the same case, so a learner who retries a case in the other activity meets a different element.
-  Where the plane offers no alternative, the entry says so and keeps the same element. The bank's
-  elements (read activity's element in brackets):
+  Where the plane offers no alternative, the entry says so and keeps the same element. Times
+  assume about 1.5 minutes a four-choice question and 2 a compound. The bank's elements (read
+  activity's element in brackets):
   - `setup-top`, served first: ten questions (eight four-choice, two compound), about 16 minutes.
     - `states`: the start circle, `opens the Day 1 page in Canvas` (read: the start circle among
       choices, and the end circle `workspace ready`; the end circle `blocked` is the unused one,
       but `trace-end` here leads to it, so the start circle is used).
     - `step-box`: `Submit each session's report` (read: `Report being stuck`).
-    - `gateway-shape`: the diamond just before `Report being stuck`, said to be a gateway only
+    - `gateway-shape`: the diamond just after `Check the install`, said to be a gateway only
       (read: the diamond just before `Set up the workspace`).
     - `subprocess-box`: `Set up the workspace` (read: `Get Codex running` as the right choice).
     - `file-shape`: `U-M API key` (read: the same; the plane's only file). Nothing about which
@@ -649,7 +658,10 @@ activity has recognized right readings without producing one.
       workspace`). The subprocess question comes first and says nothing about lanes, so it gives
       nothing away.
     - `splits`: the diamond just after `Set up the workspace` (read: a free "name one").
-    - `merges`: the diamond just before `Set up the workspace` (read: a free "name one").
+    - `merges`: the diamond just before `Report being stuck`, where the `stuck` path from `Codex
+      running?` and the `no` path from `Able to complete?` meet (read: a free "name one"). Not the
+      merge before `Set up the workspace`: its other input is `install correct?`'s `not yet`, which
+      the later `trace-loop` asks about.
     - `trace-loop`: compound, after `Check the install`, whose `not yet` branch loops back (read:
       the same; the plane has no other loop).
     - `trace-end`: after `Report being stuck` (read: after `Submit each session's report`).
@@ -661,7 +673,9 @@ activity has recognized right readings without producing one.
       Only labels on arrows that stay in one lane.
     - `data-line`: the dotted line between `bootstrap-prompt.md` and `Open U-M GPT` (read: the
       same; the plane has no other file).
-    - `merges`: the one unnamed diamond (read: the same; the plane has no other merge).
+    - `merges`: the one unnamed diamond (read: the same; the plane has no other merge). The right
+      sentence names the paths from `Open U-M GPT` and from `checklist done?`, never `worth
+      trying?`.
     - `trace-loop`: compound, after `Provide explanations and suggestions`, whose `try suggestion`
       branch loops back (read: the same; no other loop).
     - `trace-end`: after `Write a status report on where it stalled` (read: the same; no other
@@ -677,9 +691,10 @@ activity has recognized right readings without producing one.
       install step, so it gives nothing away to `lane-owner` (`Install tools`).
     - `lane-owner`: `Install tools` (read: `Record where things live`).
     - `splits`: the diamond just after `Check the remote` (read: the diamonds just after `Check the
-      receipt landed` and the one the read bank's split-or-merge questions use).
+      repositories` and `Check the receipt landed`).
     - `merges`: the diamond just before `stopped at a checkpoint` (read: the one just after
-      `Submit Installation 2`).
+      `Submit Installation 2`). The right sentence names the `no` paths from `repos installed?`
+      and `Address good?`, never `receipt landed?`.
     - `trace-branches`: compound, after `Check the receipt landed` (if `yes`, `Submit Installation
       1`; if `no`, `stopped at a checkpoint`) (read: after `Check the editors`).
     - `trace-steps`: four-choice, after `Submit Installation 2`, whose next step is `Publish the
