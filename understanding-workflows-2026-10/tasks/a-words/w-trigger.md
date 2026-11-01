@@ -2,9 +2,10 @@
 
 ### vs-step
 
-A college help desk has a workflow for resetting forgotten passwords. Its diagram starts from
-"Reset request received". The first thing done after that is "Verify the caller's identity", by
-the help desk technician, followed by "Send a reset link".
+A college help desk has a workflow for resetting forgotten passwords. A student who has forgotten
+a password fills in the help desk's reset form, and the diagram starts from "Reset request
+received". The first thing done after that is "Verify the caller's identity", by the help desk
+technician, followed by "Send a reset link".
 
 In this workflow, what is the difference between a trigger and a workflow step? Answer in two or
 three sentences, in your own words.
@@ -17,9 +18,9 @@ catalogs, the book is shipped in, and the patron is emailed to pick it up.
 
 Which of these statements uses the word "trigger" correctly?
 
-1. The trigger is the librarian searching partner catalogs, since that is the first thing done.
-2. The trigger is a patron's request landing in the loan queue, before anyone has acted on it.
-3. The trigger is the patron picking up the book, the condition the whole loan is aiming at.
+1. The trigger is the librarian searching partner catalogs, the first thing done on a request.
+2. The trigger is the patron sending in the request form, which starts each loan's run.
+3. The trigger is the patron picking up the book, the point the whole loan is aiming at.
 4. The trigger is the librarian on duty, since no request moves until she logs in to the queue.
 
 ### catch-payroll

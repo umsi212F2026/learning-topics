@@ -42,6 +42,6 @@ diagram, not the size of the job. "Action" and "task" are other names for a step
 - **type:** mcq
 - **answer:** 3
 - **credit:** full for 3 only. A subprocess is still a step, one action shown at this diagram's
-  grain, with its detail drawn underneath. Choice 1 is the trigger, a condition, not an action.
-  Choice 2 is a gateway, where the flow divides; the deciding was done in the step before it.
+  grain, with its detail drawn underneath. Choice 1 is the trigger, what starts a run, not
+  something done in it. Choice 2 is a gateway, where the flow divides; the deciding was done in the step before it.
   Choice 4 is a lane, which says whose job a step is.
