@@ -127,7 +127,7 @@ file at the learner's current commit.
 - **artifact:** one plane of the course's own setup diagram, `workflows/bootstrap/bootstrap.bpmn`
   in the learner's `course-materials` clone, which they opened in Camunda Modeler in Installation
   2 and discussed at their table in session 2. Questions from this activity's bank or set live per
-  the generator below. A scenario is one plane: `setup-top` twelve questions (about 16 minutes),
+  the generator below. A scenario is one plane: `setup-top` eleven questions (about 15 minutes),
   `get-codex-running` six (about 9), `set-up-workspace` nine (about 11), each one sitting.
 - **verified:** 2026-11-01
 - **learner does:** opens the diagram in Camunda Modeler, goes to the plane the scenario names, and
@@ -153,9 +153,9 @@ file at the learner's current commit.
   helped. Labels the attempt with the question's path, or `a-read-course-diagram/<case>` when run
   live, and records the cases with `--cases`. Says when offering it that no one plane carries every
   case: meeting the goal takes one question per case, fifteen in all over the three scenarios
-  (`setup-top` for states, step-box, gateway-shape, subprocess-box, lane-owner, spans-lanes,
-  handoff, splits, merges, trace-steps and trace-end; `get-codex-running` for branch-label and
-  data-line; `set-up-workspace` for control-arrow and not-handoff), eleven of them one-minute
+  (`setup-top` for states, step-box, gateway-shape, subprocess-box, spans-lanes, handoff,
+  splits, merges, trace-steps and trace-end; `get-codex-running` for branch-label and data-line;
+  `set-up-workspace` for control-arrow, not-handoff and lane-owner), eleven of them one-minute
   multiple choice and four free answers, about 20 minutes, which can be split over sittings.
 - **done when:** the criterion met with no help, case by case: a full-credit answer passes the case
   its question carries; half credit or none passes none.
@@ -173,9 +173,10 @@ file at the learner's current commit.
   `tasks/a-read-course-diagram/<scenario-id>.md` with its key in
   `rubrics/a-read-course-diagram/<scenario-id>.md`:
   - `setup-top`: the top level, "opens the Day 1 page in Canvas" to its two end states. Carries
-    `states`, `step-box`, `gateway-shape`, `subprocess-box`, `lane-owner`, `spans-lanes`,
+    `states`, `step-box`, `gateway-shape`, `subprocess-box`, `spans-lanes`,
     `handoff`, `splits`, `merges`, `trace-steps` and `trace-end`, the only plane that carries
-    `subprocess-box` or `spans-lanes`, and the weaker `lane-owner` form. Its only handoff pair (step to step,
+    `subprocess-box` or `spans-lanes`. It does not carry `lane-owner`: its step labels give each
+    step's actor away (`check-setup.mjs`, "on Canvas"). Its only handoff pair (step to step,
     gateways between ignored, steps drawn across lanes left out) is `Check the install` to
     `Submit each session's report`. It has no same-actor pair, so it carries no `not-handoff`
     question. It has two collapsed subprocesses (`Get Codex running`, `Set up the workspace`), both
@@ -201,7 +202,7 @@ file at the learner's current commit.
   - `set-up-workspace`: the plane under `Set up the workspace`. Carries `control-arrow` (the only
     plane with solid arrows joining two steps directly: `Write the receipt` to `Check the receipt
     landed`, both in PROGRAM; also `Install tools` to `Check the repositories` and the other
-    install-then-check pairs, which cross lanes), `lane-owner` (the stronger form: see question
+    install-then-check pairs, which cross lanes), `lane-owner` (the only plane that does: see question
     4 below), `not-handoff` and `handoff` (same-actor pairs for `not-handoff`:
     `Write the receipt` to `Check the receipt landed`, `Check the repositories` to `Write the
     receipt` and `Check the addressing` to `Write the receipt`, all PROGRAM; handoff pairs for `handoff`: `Install
@@ -241,7 +242,7 @@ file at the learner's current commit.
   **Order:** questions come in the order listed, and no question's text or choices may reveal the
   answer to a later one (a later one may reveal an earlier one's, which study has already
   ruled on). On `setup-top` the shape questions come first and point at the merge before `Set up
-  the workspace` only as "a gateway", the lane questions come before the handoff question, and the
+  the workspace` only as "a gateway", the lane question comes before the handoff question, and the
   split, merge and "what happens after" questions come last. On `get-codex-running` the split
   question comes before `branch-label`, since a diamond with labeled arrows shows it is a split,
   and the bank's `branch-label` avoids `worth trying?`, whose labels the later `after-loop`
@@ -273,7 +274,7 @@ file at the learner's current commit.
   next step is given with no condition, or more than one part is wrong. For a single next step:
   full for the right step or end state, none otherwise.
 
-  **`setup-top`: twelve questions, about 16 minutes if all are answered.**
+  **`setup-top`: eleven questions, about 15 minutes if all are answered.**
   1. `start-state` (`states`, Easy, mcq): "Which of these is the state a run of this workflow
      starts in?" Choices: the start event's label, one end state, `Get Codex running`, and "the
      diamond just after `Get Codex running`".
@@ -291,19 +292,12 @@ file at the learner's current commit.
   5. `gateway` (`gateway-shape`, Easy, mcq): "What kind of shape is the diamond just before `Set
      up the workspace`?" Choices: a state; a step; a gateway; a file. Right: a gateway. It asks
      the kind only, never whether this one splits or merges, so it gives nothing away to
-     questions 9 and 10.
-  6. `lane-step` (`lane-owner`, Easy, mcq): "Who does `<step A>`?" Step A is a step with no plane
-     below it: `Check the install` (PROGRAM), `Report being stuck` or `Submit each session's
-     report` (both HUMAN operator), varying between the bank and live runs; never `Set up the
-     workspace`, which is drawn across all three lanes. Choices: the human; the AI agent; a
-     program; more than one of them. This is the weaker `lane-owner` form: on this plane the
-     labels give the answer away (`Check the install`'s second line names `check-setup.mjs`, and
-     the human steps say "on Canvas"). The stronger form is on `set-up-workspace`.
-  7. `lane-span` (`spans-lanes`, Medium, mcq): "Who does `Get Codex running`?" Choices: the human
+     questions 8 and 9.
+  6. `lane-span` (`spans-lanes`, Medium, mcq): "Who does `Get Codex running`?" Choices: the human
      only; the AI agent only; the human and the AI agent both take part; the human, the AI agent
      and a program all take part. Right: the third. Live runs may ask the same about `Set up the
      workspace`, where the fourth is right.
-  8. `handoff` (`handoff`, Medium, free): "Name one handoff in this plane: a place where the run
+  7. `handoff` (`handoff`, Medium, free): "Name one handoff in this plane: a place where the run
      goes from a step done by one actor to the next step, done by a different actor (gateways
      between them don't matter). Name the two steps." Accepted: the plane's one handoff pair,
      `Check the install` to `Submit each session's report`. A pair with `Get Codex running` or
@@ -320,20 +314,20 @@ file at the learner's current commit.
      control-or-data definition. In a free answer, a learner who names an arrow ending at a
      gateway is not marked wrong: credit it when the steps on either side of that gateway make a
      qualifying pair, and otherwise ask which steps they mean.
-  9. `one-split` (`splits`, Medium, free): "Name one place where the flow splits. Point to it by
+  8. `one-split` (`splits`, Medium, free): "Name one place where the flow splits. Point to it by
      the steps or gateways just before and after it." Answer: any of the three named gateways.
      Credit: full for one; none for an unnamed merge or a step. (The "what happens after" form is
      not used for `splits` here: the only steps on this plane followed by a split without a
      loop-back are drawn across lanes.)
-  10. `one-merge` (`merges`, Medium, free): "Name one place where paths come back together. Point
+  9. `one-merge` (`merges`, Medium, free): "Name one place where paths come back together. Point
       to it by the steps or gateways just before and after it." Answer: either unnamed gateway
       (the one before `Set up the workspace`, or the one before `Report being stuck`). Credit:
       full for either; none for a named gateway or a step.
-  11. `after-loop` (`trace-steps`, Medium, free): "What happens after `Check the install`?"
+  10. `after-loop` (`trace-steps`, Medium, free): "What happens after `Check the install`?"
       Answer: if `success`, `Submit each session's report`; if `not yet`, back to `Set up the
       workspace`. The `not yet` branch loops back, so it is tagged `trace-steps`. Credit as for a
       conditional above.
-  12. `after-last` (`trace-end`, Easy, mcq): "What happens after `<last step>`?" Bank: `Submit
+  11. `after-last` (`trace-end`, Easy, mcq): "What happens after `<last step>`?" Bank: `Submit
       each session's report` (right: `workspace ready`); live: `Report being stuck` (right: the end
       state `blocked`). Choices: both end states and two steps from this plane.
 
@@ -382,13 +376,13 @@ file at the learner's current commit.
   3. `handoff` (`handoff`, Medium, free): "Name one handoff in this plane: a place where the run
      goes from a step done by one actor to the next step, done by a different actor (gateways
      between them don't matter). Name the two steps." Accepted: any of this plane's handoff pairs
-     listed above, under the pair rule given at `setup-top`'s question 8. Credit: full for an
+     listed above, under the pair rule given at `setup-top`'s question 7. Credit: full for an
      accepted pair; none otherwise.
   4. `lane-step` (`lane-owner`, Easy, mcq): "Who does `<step>`?" An AI AGENT step whose label
      names a skill, not an actor: `Record where things live` in the bank (its second line is
      `setup-addressing`), `Install tools` (`setup-repos`) in live runs. Choices: the human; the AI
-     agent; a program; more than one of them. Right: the AI agent. This is the stronger
-     `lane-owner` form, since nothing in the label says who does it.
+     agent; a program; more than one of them. Right: the AI agent. This is the only `lane-owner`
+     question: nothing in the label says who does it.
   5. to 7. `split-or-merge` (`splits` or `merges`, whichever the diamond is; Easy, mcq, two
      choices): "At the diamond just after `<step or gateway>`, does the flow split, or do paths
      come back together?" Choices: "it splits"; "paths come back together". Three questions, at
@@ -403,7 +397,7 @@ file at the learner's current commit.
      `set up, checked and submitted` (right); `stopped at a checkpoint`; `Publish the
      repositories`; `Check the remote`.
 
-  **The bank** is the three scenarios, 27 questions. Study skips a question whose case is already
+  **The bank** is the three scenarios, 26 questions. Study skips a question whose case is already
   met, so a learner rarely answers them all. Live runs, and later review, vary the pointed-at
   elements within the same planes (a different split and answer for
   `branch-label`, a different step A, a different diamond, a different step to ask what follows), keyed by reading the
@@ -443,20 +437,14 @@ file at the learner's current commit.
   so a pass doesn't show the learner would notice, unasked, what a diagram leaves out, or could say
   whether a step is in the right lane, which this topic leaves to sessions 18 to 21. Each case is
   now spread over several one-thing questions, but a pass on any one question tagged with a case
-  records that case, so where a case has more than one question (`states`, start and end;
-  `lane-owner`, the weaker form on `setup-top` and the stronger on `set-up-workspace`), the
+  records that case, so where a case has more than one question (`states`, start and end), the
   easier can stand for both, and a guess
   on a two-choice question (`not-handoff`, `split-or-merge`) can stand for a case.
 - **offer as:** the fuller check: planes of the setup diagram, one thing asked per question,
   each with one answer, mostly multiple choice, with short free answers such as "what happens
   after this step?" and "name one handoff". No single plane meets the goal: it takes one question
   per case, fifteen in all across the three planes, about 20 minutes.
-- **check note:** Treat these five points as part of running it.
-  - **`lane-owner`:** the case is usually met on `setup-top`, where each step's label names its
-    actor (`check-setup.mjs`, "on Canvas"). A pass there may come from the label rather than the
-    lane. If that is the learner's only `lane-owner` pass and you doubt it, `set-up-workspace`'s
-    `lane-step` is the better evidence. Even there, a learner who knows that a second line like
-    `setup-addressing` names a skill can infer the AI agent without the lane.
+- **check note:** Treat these four points as part of running it.
   - **`setup-top` handoff:** the question doesn't say that steps drawn across lanes are left out. A
     learner who names `Set up the workspace` to `Check the install` has made a reasonable reading,
     not an error. Say the exclusion is a rule of the question. Note in the attempt that you said it,
@@ -529,7 +517,7 @@ file at the learner's current commit.
     same-actor pair (`Write the receipt` to `Check the receipt landed`, both PROGRAM) a handoff,
     which is where reading every arrow as a handoff gets caught, whatever the slide says; or says
     a pair done by different actors is not one. Sentences name two steps under the pair rule at
-    `a-read-course-diagram`'s `setup-top` question 8: no sentence mentions data, gateways between them are ignored, no
+    `a-read-course-diagram`'s `setup-top` question 7: no sentence mentions data, gateways between them are ignored, no
     sentence points at an arrow ending at a gateway or asks who a gateway belongs to, and `Get
     Codex running` is in no pair. A learner who volunteers a view on a gateway arrow is not marked
     down for it.

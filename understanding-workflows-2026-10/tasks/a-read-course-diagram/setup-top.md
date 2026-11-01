@@ -48,15 +48,6 @@ What kind of shape is the diamond just before `Set up the workspace`?
 3. a step
 4. a file
 
-### lane-step
-
-Who does `Check the install`?
-
-1. the AI agent
-2. the human
-3. more than one of them
-4. a program
-
 ### lane-span
 
 Who does `Get Codex running`?

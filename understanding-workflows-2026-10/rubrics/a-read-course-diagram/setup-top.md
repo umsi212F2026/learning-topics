@@ -57,19 +57,6 @@ running` or `Set up the workspace`, since both are drawn across lanes.
 - **answer:** 1
 - **credit:** full for 1 only.
 
-### lane-step
-
-- **goal:** `c-read-diagram`
-- **cases:** lane-owner
-- **type:** mcq
-- **answer:** 4
-- **credit:** full for 4 only.
-- **tutor note:** `Check the install` sits in the PROGRAM lane. A learner who picks the human may
-  be going by the word "check" rather than the lane. This is the weaker `lane-owner` form: on
-  this plane the labels give the answer away (`Check the install`'s second line names
-  `check-setup.mjs`, and the human steps say "on Canvas"). The stronger form is `lane-step` on
-  `set-up-workspace`.
-
 ### lane-span
 
 - **goal:** `c-read-diagram`
