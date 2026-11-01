@@ -272,7 +272,7 @@ do a step, are not part of this topic.
 - **criterion:** given a workflow diagram, says what it claims: what each shape marks, who
   does each step, what each kind of arrow means, and where the flow splits and merges.
 - **cases:**
-  - `states`: the shape marking the state a run starts or ends in
+  - `states`: the shape marking where a run starts or ends (not a step)
   - `step-box`: the shape marking a step
   - `gateway-shape`: the shape marking a gateway
   - `subprocess-box`: the shape marking a collapsed subprocess
@@ -327,9 +327,10 @@ do a step, are not part of this topic.
 - **criterion:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
-- **what it names:** the condition a run starts from, not the first thing done in it
+- **what it names:** what starts a run, such as a person's action, a time arriving or a message;
+  not a step done in the run
 - **nearest confusable:** workflow step
-- **synonyms:** start state, start event
+- **synonyms:** start event
 
 ### `w-workflow-outcome`
 

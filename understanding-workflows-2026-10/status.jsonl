@@ -35,3 +35,4 @@
 {"at":"2026-11-01T21:20:57.350Z","kind":"curated","goal":"w-control-flow"}
 {"at":"2026-11-01T21:20:57.440Z","kind":"curated","goal":"w-data-flow"}
 {"at":"2026-11-01T21:20:57.520Z","kind":"curated","goal":"w-skill"}
+{"at":"2026-11-01T22:18:37.675Z","kind":"retired","goal":"w-workflow-state","reason":"Instructor: the start circle shows a trigger, which can be a person's action, so calling it a state teaches against session 19; and session 20 uses 'state' for stored data. Trigger and outcome name both ends."}
