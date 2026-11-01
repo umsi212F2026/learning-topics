@@ -286,9 +286,8 @@ do a step, are not part of this topic.
     the run moving to the file)
   - `splits`: where flow splits (a named gateway)
   - `merges`: where flow merges (an unnamed gateway)
-  - `trace-steps`: given a trigger and the answer at each named gateway, which steps run, in
-    order
-  - `trace-end`: given the same, which outcome the run reaches
+  - `trace-steps`: what happens after a given step, including when the flow loops back
+  - `trace-end`: which end state follows a given last step
 - **taught elsewhere:** session 18 class
 
 ### `o-orientation`

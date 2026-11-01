@@ -12,7 +12,7 @@ with the learner.
 | id | Goal | Criterion: what gets examined, and what counts |
 | -- | ---- | ---------------------------------------------- |
 | `o-orientation` | get the shape of this area before working on any particular part of it | `orientation` |
-| `c-read-diagram` | read a workflow diagram and say what it claims | given a workflow diagram, says what it claims: what each shape marks, who does each step, what each kind of arrow means, and where the flow splits and merges. Cases: `states` (the shape marking the state a run starts or ends in), `step-box` (the shape marking a step), `gateway-shape` (the shape marking a gateway), `subprocess-box` (the shape marking a collapsed subprocess), `lane-owner` (who does a step, from its lane), `spans-lanes` (who does a step drawn across two lanes), `handoff` (where control, or data a later step uses, passes to a step done by a different actor), `control-arrow` (what a solid arrow between two steps says [which step runs next]), `branch-label` (what a label on an arrow leaving a gateway says), `data-line` (what a dotted line between a step and a file says [data written or read, not the run moving to the file]), `splits` (where flow splits [a named gateway]), `merges` (where flow merges [an unnamed gateway]), `trace-steps` (given a trigger and the answer at each named gateway, which steps run, in order), `trace-end` (given the same, which outcome the run reaches). Taught elsewhere: session 18 class. |
+| `c-read-diagram` | read a workflow diagram and say what it claims | given a workflow diagram, says what it claims: what each shape marks, who does each step, what each kind of arrow means, and where the flow splits and merges. Cases: `states` (the shape marking the state a run starts or ends in), `step-box` (the shape marking a step), `gateway-shape` (the shape marking a gateway), `subprocess-box` (the shape marking a collapsed subprocess), `lane-owner` (who does a step, from its lane), `spans-lanes` (who does a step drawn across two lanes), `handoff` (where control, or data a later step uses, passes to a step done by a different actor), `control-arrow` (what a solid arrow between two steps says [which step runs next]), `branch-label` (what a label on an arrow leaving a gateway says), `data-line` (what a dotted line between a step and a file says [data written or read, not the run moving to the file]), `splits` (where flow splits [a named gateway]), `merges` (where flow merges [an unnamed gateway]), `trace-steps` (what happens after a given step, including when the flow loops back), `trace-end` (which end state follows a given last step). Taught elsewhere: session 18 class. |
 
 ## Coverage
 
@@ -119,8 +119,8 @@ with the learner.
 - **artifact:** one plane of the course's own setup diagram, `workflows/bootstrap/bootstrap.bpmn`
   in the learner's `course-materials` clone, which they opened in Camunda Modeler in Installation
   2 and discussed at their table in session 2. Questions from this activity's bank or set live per
-  the generator below. A scenario is one plane: `setup-top` twelve questions (about 17 minutes),
-  `get-codex-running` six (about 10), `set-up-workspace` eight (about 12), each one sitting.
+  the generator below. A scenario is one plane: `setup-top` twelve questions (about 16 minutes),
+  `get-codex-running` six (about 9), `set-up-workspace` eight (about 9), each one sitting.
 - **verified:** 2026-10-28
 - **learner does:** opens the diagram in Camunda Modeler, goes to the plane the scenario names, and
   answers the one question served in their own words, pointing at elements by the first line of
@@ -145,7 +145,7 @@ with the learner.
   (`setup-top` for states, step-box, gateway-shape, subprocess-box, lane-owner, spans-lanes,
   handoff, splits, merges, trace-steps and trace-end; `get-codex-running` for branch-label and data-line;
   `set-up-workspace` for control-arrow), ten of them one-minute multiple choice and
-  four free answers, about 15 to 25 minutes, which can be split over sittings.
+  four free answers, about 18 minutes, which can be split over sittings.
 - **done when:** the criterion met with no help, case by case: a full-credit answer passes the case
   its question carries; half credit or none passes none.
 - **generator:** **The material is fixed and real**: the generator picks elements from
@@ -216,46 +216,71 @@ with the learner.
   of its own, `diagram commit: <hash>`, the commit of `bootstrap.bpmn` it was written against. The
   line goes in the key, not in the task file the learner sees.
 
-  **Questions ask one thing each.** Multiple choice (`type: mcq`, four numbered choices unless
-  said otherwise, shuffled so the right answer's position varies across the bank) wherever
-  picking shows the reading; free answer where producing it is the point (finding the splits and
-  merges, naming a handoff, listing a run's steps). Each question's rubric tags the one case it
-  bears on. Elements are named by the first line of their label; an end state whose label holds a
-  long dash is named by its first words (`blocked`, `stuck`). A diamond is pointed at by its
+  **Questions ask one thing each, with one answer.** No question asks for several answers ("where
+  does the flow split?", "name every end state", "which steps run, in order?"). Each either asks
+  for exactly one instance ("name one place where...") or identifies one element and asks one
+  thing about it. Multiple choice (`type: mcq`, four numbered choices unless said otherwise,
+  shuffled so the right answer's position varies across the bank) wherever picking shows the
+  reading; free answer where producing it is the point. Each question's rubric tags the one case
+  it bears on. Elements are named by the first line of their label; an end state whose label holds
+  a long dash is named by its first words (`blocked`, `stuck`). A diamond is pointed at by its
   neighbors, never by its label. Questions come in the order listed (study order: a later question
   may name something an earlier one asked the learner to find, never the reverse). Mcq credit is
-  full for the right choice and none otherwise. About 1 minute a multiple-choice question, 2 to 3
-  a free one. The examples show the shape, not bank items.
+  full for the right choice and none otherwise. About 1 minute a multiple-choice question, 2 a
+  free one. The examples show the shape, not bank items; a case may carry several such questions
+  across the bank and live runs.
 
-  **`setup-top`: twelve questions, about 17 minutes if all are answered.**
+  **"What happens after `<step>`?"** is the preferred free shape. Its answer is one thing: the
+  next step (or end state), passing through any merge; or, when a named split comes next, a
+  conditional built from the branch labels ("if `success`, `Submit each session's report`; if
+  `not yet`, back to `Set up the workspace`"). Pick only steps whose split, if any, leads on every
+  branch (through merges only) straight to a step or an end state, never to a second split, and
+  never a step drawn across two lanes. **Which case it carries:** the one the answer most depends
+  on. When a single step comes next, `trace-steps`. When an end state comes next, `trace-end`
+  (the step is a last step). When a named split comes next and one of its branches loops back to
+  an earlier step, `trace-steps`, since following the loop back is what that case now asks.
+  When a named split comes next and no branch loops back, `splits`, since the answer's shape
+  rests on seeing that the flow divides there. No question states a whole run ("a run starts
+  when...", "in this run..."). bootstrap.bpmn has no step whose single next step loops back:
+  every loop leaves from a split, so the loop-back `trace-steps` questions are conditionals. `branch-label`
+  keeps its own multiple-choice question and is not tagged on this shape. **Credit for a
+  conditional:** full when every branch is there with its label and the right step or end state;
+  half when one branch is missing, or one label or one destination is wrong; none when only one
+  next step is given with no condition, or more than one part is wrong. For a single next step:
+  full for the right step or end state, none otherwise.
+
+  **`setup-top`: twelve questions, about 16 minutes if all are answered.**
   1. `start-state` (`states`, Easy, mcq): "Which of these is the state a run of this workflow
-     starts in?" Choices: the start event's label, one end state, `Get Codex running`, and the
-     split just after it described as "the diamond just after `Get Codex running`".
-  2. `end-states` (`states`, Easy, mcq): "Which of these lists every state a run of this workflow
-     can end in?" Choices: the two end states; one end state alone; one end state with the start
-     state; one end state with `Submit each session's report`.
+     starts in?" Choices: the start event's label, one end state, `Get Codex running`, and "the
+     diamond just after `Get Codex running`".
+  2. `end-state` (`states`, Easy, mcq): "What does the circle `<end state>` mark?" (`workspace
+     ready` or `blocked`.) Choices, word for word: "a state a run starts in"; "a state a run ends
+     in"; "one step, an action someone takes"; "a gateway". Right: the second.
   3. `plain-step` (`step-box`, Easy, mcq): "What does the rounded box `Report being stuck` mark?"
      Choices, word for word: "a state a run starts or ends in"; "one step, an action someone
      takes"; "a gateway, where the flow splits or comes back together"; "a step with a diagram of
      its own underneath it". Right: the second.
-  4. `subprocess` (`subprocess-box`, Easy, mcq): "Which steps have a diagram of their own underneath
-     them?" Choices: `Get Codex running` and `Set up the workspace`; `Get Codex running` only;
-     `Set up the workspace` and `Check the install`; none of them.
-  5. `gateway` (`gateway-shape`, Easy, mcq): "What kind of shape is the diamond just before `Set up the
-     workspace`?" Choices: a state; a step; a gateway; a file. Right: a gateway. It asks the kind
-     only, never whether this one splits or merges, so it gives nothing away to questions 9 and 10.
-  6. `lane-step` (`lane-owner`, Easy, mcq): "Who does `<step A>`?" Step A is a step with no plane below
-     it: `Check the install` (PROGRAM), `Report being stuck` or `Submit each session's report`
-     (both HUMAN operator), varying between the bank and live runs; never `Set up the workspace`,
-     whose own plane has steps in other lanes. Choices: the human; the AI agent; a program; more
-     than one of them.
-  7. `lane-span` (`spans-lanes`, Medium, mcq): "Who does `Get Codex running`?" Choices: the human only;
-     the AI agent only; the human and the AI agent both take part; a program. Right: the third.
+  4. `subprocess` (`subprocess-box`, Easy, mcq): "Which of these steps has a diagram of its own
+     underneath it?" Choices: `Set up the workspace`; `Check the install`; `Report being stuck`;
+     `Submit each session's report`. Live runs may ask it with `Get Codex running` as the right
+     choice and three other plain steps.
+  5. `gateway` (`gateway-shape`, Easy, mcq): "What kind of shape is the diamond just before `Set
+     up the workspace`?" Choices: a state; a step; a gateway; a file. Right: a gateway. It asks
+     the kind only, never whether this one splits or merges, so it gives nothing away to
+     questions 9 and 10.
+  6. `lane-step` (`lane-owner`, Easy, mcq): "Who does `<step A>`?" Step A is a step with no plane
+     below it: `Check the install` (PROGRAM), `Report being stuck` or `Submit each session's
+     report` (both HUMAN operator), varying between the bank and live runs; never `Set up the
+     workspace`, whose own plane has steps in other lanes. Choices: the human; the AI agent; a
+     program; more than one of them.
+  7. `lane-span` (`spans-lanes`, Medium, mcq): "Who does `Get Codex running`?" Choices: the human
+     only; the AI agent only; the human and the AI agent both take part; a program. Right: the
+     third.
   8. `handoff` (`handoff`, Medium, free): "Name one handoff in this plane: a place where the run
      goes from a step done by one actor to the next step, done by a different actor (gateways
-     between them don't matter). Name the two steps." Accepted: any of this plane's
-     four handoff pairs listed above. A pair with `Get Codex running` in it is not accepted, since
-     that step is drawn across two lanes; the tutor says so and asks for another.
+     between them don't matter). Name the two steps." Accepted: any of this plane's four handoff
+     pairs listed above. A pair with `Get Codex running` in it is not accepted, since that step is
+     drawn across two lanes; the tutor says so and asks for another.
      **Pairs, not arrows.** A handoff question names two steps, A and B, such that the run can go
      from A to B with no other step between them (only gateways, or nothing). The pair is a
      handoff exactly when A and B are done by different actors, a not-handoff when the same actor
@@ -264,45 +289,51 @@ with the learner.
      pair. No diagram question mentions data: bootstrap.bpmn has no data handoff (no step writes
      a file another actor's step reads), so the questions narrow handoff to control passing from
      one actor's step to the next step, done by a different actor; the words bank keeps the broad
-     control-or-data definition. In a free answer, a learner who names an arrow ending
-     at a gateway is not marked wrong: credit it when the steps on either side of that gateway
-     make a qualifying pair, and otherwise ask which steps they mean.
-  9. `splits` (`splits`, Medium, free): "Where does the flow split? Point to each place by the
-     steps or gateways just before and after it." Answer: the three named gateways. Credit: full
-     when all three are found and no merge is given as a split; half when one is missed or one
-     merge is added; none otherwise.
-  10. `merges` (`merges`, Medium, free): "Where do paths come back together? For each place,
-      say which paths meet there." Answer: the two unnamed gateways, with the paths meeting at each
-      (by the answer they leave a split on, such as `not yet`, or the step they come from). Credit:
-      full when both are found with their paths; half when one is missed, or its paths are
-      missing; none otherwise.
-  11. `trace-steps` (`trace-steps`, Hard, free): "A run starts when `<trigger>`. At `<split 1>` the
-      answer is `<x>`; at `<split 2>` it is `<y>`; at `<split 3>` it is `<z>` the first time and
-      `<w>` the second. Which steps run, in order?" The answers take the run once around the loop,
-      so a step runs twice; a subprocess counts as one step; merges and gateways are not listed.
-      Credit: full when every step is there in order; half when one is missing, extra or out of
-      order; none otherwise.
-  12. `trace-end` (`trace-end`, Medium, mcq, two choices): "In the same run, which end state does
-      it reach?" Choices: the two end states. The bank's runs reach each end state at least once
-      across its trace questions.
+     control-or-data definition. In a free answer, a learner who names an arrow ending at a
+     gateway is not marked wrong: credit it when the steps on either side of that gateway make a
+     qualifying pair, and otherwise ask which steps they mean.
+  9. `after-split` (`splits`, Medium, free): "What happens after `Set up the workspace`?" Answer:
+     if `yes`, `Check the install`; if `no`, `Report being stuck`. No branch loops back, so it is
+     tagged `splits`. Credit as for a conditional above.
+  10. `one-merge` (`merges`, Medium, free): "Name one place where paths come back together. Point
+      to it by the steps or gateways just before and after it." Answer: either unnamed gateway
+      (the one before `Set up the workspace`, or the one before `Report being stuck`). Credit:
+      full for either; none for a named gateway or a step.
+  11. `after-loop` (`trace-steps`, Medium, free): "What happens after `Check the install`?"
+      Answer: if `success`, `Submit each session's report`; if `not yet`, back to `Set up the
+      workspace`. The `not yet` branch loops back, so it is tagged `trace-steps`. Credit as for a
+      conditional above.
+  12. `after-last` (`trace-end`, Easy, mcq): "What happens after `<last step>`?" Bank: `Submit
+      each session's report` (right: `workspace ready`); live: `Report being stuck` (right: the end
+      state `blocked`). Choices: both end states and two steps from this plane.
 
-  **`get-codex-running`: six questions, about 10 minutes.**
-  1. `branch-label` (`branch-label`, Medium, mcq): "What does the label `<answer>` on the arrow leaving
-     `<named split>` tell you?" Choices: "a run goes this way when the answer to that gateway's
-     question is `<answer>`" (right); "a step called `<answer>` runs next"; "the run ends with the
-     outcome `<answer>`"; "the work passes to another lane". The split and answer vary across the
-     bank and live runs.
-  2. `file-line` (`data-line`, Medium, mcq): "What does the dotted line between `bootstrap-prompt.md`
-     and `Open U-M GPT` tell you?" Choices: "that step reads, or uses, that file" (right); "after
-     that step, the run moves on to the file"; "the file is the next step"; "the run ends at the
-     file". No choice turns on whether the line is a handoff: no step in this diagram writes the
-     file, so the diagram doesn't show whether another actor's step supplies it.
-  3. `splits` (`splits`) and 4. `merges` (`merges`): as on `setup-top`, for this plane's three named
-     splits and its one merge with three arrows in.
-  5. `trace-steps` (`trace-steps`) and 6. `trace-end` (`trace-end`): as on `setup-top`, with a run that goes once
-     around a loop; `trace-end` has the plane's two end states as its choices.
+  **`get-codex-running`: six questions, about 9 minutes.**
+  1. `branch-label` (`branch-label`, Medium, mcq): "What does the label `<answer>` on the arrow
+     leaving the diamond just after `<step>` tell you?" Choices: "a run goes this way when the
+     answer to that gateway's question is `<answer>`" (right); "a step called `<answer>` runs
+     next"; "the run ends with the outcome `<answer>`"; "the work passes to another lane". The
+     split and answer vary across the bank and live runs.
+  2. `file-line` (`data-line`, Medium, mcq): "What does the dotted line between
+     `bootstrap-prompt.md` and `Open U-M GPT` tell you?" Choices: "that step reads, or uses, that
+     file" (right); "after that step, the run moves on to the file"; "the file is the next step";
+     "the run ends at the file". No choice turns on whether the line is a handoff.
+  3. `one-split` (`splits`, Medium, free): "Name one place where the flow splits. Point to it by
+     the steps or gateways just before and after it." Answer: any of the three named gateways.
+     Credit: full for one; none for the unnamed merge or a step.
+  4. `one-merge` (`merges`, Medium, free): "Name one place where paths come back together. Point
+     to it by the steps or gateways just before and after it." Answer: the one unnamed gateway,
+     between `Open U-M GPT` and `Do the next step on the checklist`.
+  5. `after-loop` (`trace-steps`, Medium, free): "What happens after `Provide explanations and
+     suggestions`?" Answer: if `try suggestion`, back to `Do the next step on the checklist`; if
+     `give up`, `Write a status report on where it stalled`. The `try suggestion` branch loops
+     back, so it is tagged `trace-steps`. Live runs may ask "What happens after `Open U-M GPT`?"
+     (answer: `Do the next step on the checklist`, through the merge), also `trace-steps`. Not `Do
+     the next step on the checklist`, whose split leads to a second split.
+  6. `after-last` (`trace-end`, Easy, mcq): "What happens after `Write a status report on where
+     it stalled`?" Choices: the end state `stuck` (right); the end state `Codex answers with the
+     U-M key`; `Do the next step on the checklist`; `Provide explanations and suggestions`.
 
-  **`set-up-workspace`: eight questions, about 12 minutes.** The plane is long, so its gateway
+  **`set-up-workspace`: eight questions, about 9 minutes.** The plane is long, so its gateway
   questions take one diamond at a time.
   1. `next-arrow` (`control-arrow`, Easy, mcq): "What does the solid arrow from `Write the receipt`
      to `Check the receipt landed` tell you?" Choices: "`Check the receipt landed` runs next"
@@ -316,21 +347,27 @@ with the learner.
      (the program) does both. This is where reading every arrow as a handoff gets caught.
   3. `handoff` (`handoff`, Medium, free): "Name one handoff in this plane: a place where the run
      goes from a step done by one actor to the next step, done by a different actor (gateways
-     between them don't matter). Name the two steps." Accepted: any of this plane's
-     handoff pairs listed above, under the pair rule given at `setup-top`'s question 8. Credit:
-     full for an accepted pair; none otherwise.
-  4. to 6. `split-or-merge` (`splits` or `merges`, whichever the diamond is; Easy, mcq, two choices): "At the diamond just after
-     `<step or gateway>`, does the flow split, or do paths come back together?" Choices: "it
-     splits"; "paths come back together". Three questions, at least one about a split and one
-     about a merge, each pointing at a different diamond and tagged with the case its right answer
-     names.
-  7. `trace-steps` (`trace-steps`) and 8. `trace-end` (`trace-end`): as on `setup-top`; the answer at `how far
-     did I get previously?` is not `first time`, so some steps are skipped.
+     between them don't matter). Name the two steps." Accepted: any of this plane's handoff pairs
+     listed above, under the pair rule given at `setup-top`'s question 8. Credit: full for an
+     accepted pair; none otherwise.
+  4. to 6. `split-or-merge` (`splits` or `merges`, whichever the diamond is; Easy, mcq, two
+     choices): "At the diamond just after `<step or gateway>`, does the flow split, or do paths
+     come back together?" Choices: "it splits"; "paths come back together". Three questions, at
+     least one about a split and one about a merge, each pointing at a different diamond and
+     tagged with the case its right answer names. Live runs may instead ask "What happens after
+     `Check the receipt landed`?" (if `yes`, `Submit Installation 1`; if `no`, `stopped at a
+     checkpoint`), tagged `splits`.
+  7. `after-step` (`trace-steps`, Easy, free): "What happens after `<step>`?" with `Submit
+     Installation 1` (answer: `Install the editors`, through the merge) in the bank and `Submit
+     Installation 2` (`Publish the repositories`) in live runs.
+  8. `after-last` (`trace-end`, Easy, mcq): "What happens after `Submit Installation 3`?" Choices:
+     `set up, checked and submitted` (right); `stopped at a checkpoint`; `Publish the
+     repositories`; `Check the remote`.
 
   **The bank** is the three scenarios, 26 questions. Study skips a question whose case is already
   met, so a learner rarely answers them all. Live runs, and later review, vary the pointed-at
-  elements and the traced answers within the same planes (a different split and answer for
-  `branch-label`, a different step A, a different diamond, a different run), keyed by reading the
+  elements within the same planes (a different split and answer for
+  `branch-label`, a different step A, a different diamond, a different step to ask what follows), keyed by reading the
   file at its current commit.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. The
   tutor works the same kind of question aloud on a different diagram, saying what it looks at:
@@ -343,7 +380,7 @@ with the learner.
   AI AGENT lanes, for a subprocess and a step across two lanes (pointing at the drawing only, with
   no claim about how Superpowers runs today); and, for splits, merges, branch
   labels and traces, whichever of the three bootstrap planes the question is not on, working only
-  the one element or one short run needed.
+  the one element or one step's successor needed.
 - **doesn't show:** every question is on one diagram the learner has seen before, so a pass doesn't
   show they could read a brand-new diagram, drawn by someone else or in another style, and later
   attempts may draw on memory of this one rather than reading. `subprocess-box`, `lane-owner`, `spans-lanes`, `handoff`,
@@ -358,11 +395,11 @@ with the learner.
   now spread over several one-thing questions, but a pass on any one question tagged with a case
   records that case, so where a case has more than one question on a plane (`states`, start and
   end; `handoff`, the same-lane arrow and the named handoff), one can stand for both, and a guess
-  on a two-choice question (`not-handoff`, `trace-end`, `split-or-merge`) can stand for a case.
+  on a two-choice question (`not-handoff`, `split-or-merge`) can stand for a case.
 - **offer as:** the fuller check: planes of the setup diagram, one thing asked per question,
-  mostly multiple choice, with free answers for finding splits and merges, naming a handoff and
-  listing a run's steps. No single plane meets the goal: it takes one question per case,
-  fourteen in all across the three planes, about 15 to 25 minutes.
+  each with one answer, mostly multiple choice, with short free answers such as "what happens
+  after this step?" and "name one handoff". No single plane meets the goal: it takes one question
+  per case, fourteen in all across the three planes, about 15 to 20 minutes.
 - **check note:** On the `get-codex-running` plane, the step `Open U-M GPT` carries the path of
   `bootstrap-prompt.md` as the second line of its own label. In Camunda, the learner can therefore
   see which file the step uses without reading the dotted line at all. Part (c) of the `arrows`
@@ -400,8 +437,7 @@ with the learner.
   Each question below gives sentences from its summary. For each sentence, say whether the diagram
   says that: yes or no."
 
-  **A question** asks about one case: a stated element, or for the trace cases a stated run, then
-  two numbered sentences (one for `trace-end`), and "Does the diagram say this? Answer yes or no
+  **A question** asks about one case: a stated element, then two numbered sentences, and "Does the diagram say this? Answer yes or no
   for each." Each sentence is plainly what the diagram says or one of the misreadings below,
   stated as plainly; none is half right or turns on a word. Across a scenario, yeses and noes
   each make up between a third and two thirds of the sentences, and no position in a question is
@@ -439,12 +475,19 @@ with the learner.
     `bootstrap-prompt.md`, so the diagram doesn't show whether another actor's step supplies it. A
     learner who adds "and it's a data handoff" to a right yes or no is not marked down for it.
   - `splits` (every plane, Medium): says the flow splits at an unnamed gateway, or misses that it
-    splits at a named one.
+    splits at a named one; or, in the "after `<step>`" form, a conditional with one branch's label
+    or destination wrong ("after `Check the install`: if `not yet`, `Submit each session's
+    report`").
   - `merges` (every plane, Medium): calls an unnamed merge a decision, or says two paths never
     come back together when they do.
-  - `trace-steps` (every plane, Hard): for a stated run, a step list that skips a step or adds one
-    from the other branch.
-  - `trace-end` (every plane, Medium): for a stated run, the wrong end state.
+  - `trace-steps` (every plane, Medium): names the wrong step as coming right after a named one
+    ("after `Open U-M GPT` comes `Provide explanations and suggestions`"), or gets a loop wrong
+    ("after `Check the install`, on `not yet`, the flow goes on to `Submit each session's
+    report`"). Each sentence makes one claim about what follows one named step; no sentence
+    states a whole run. At least one `trace-steps` sentence per scenario that has a loop is about
+    a branch that loops back.
+  - `trace-end` (every plane, Easy): names the wrong end state after a named last step ("after
+    `Submit each session's report`, the run ends in `blocked`").
 
   Credit: full when every sentence in the question is judged right; none otherwise. The rubric's
   `answer` is the yes/no list in order. A scenario carries one question per case its plane
