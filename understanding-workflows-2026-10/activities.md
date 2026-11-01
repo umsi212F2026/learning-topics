@@ -471,103 +471,151 @@ file at the learner's current commit.
   summary of it that an AI agent wrote, from this activity's bank or written live per the generator
   below. About 2 to 3 minutes a question, 5 to 10 a scenario.
 - **verified:** 2026-11-01
-- **learner does:** opens the plane the scenario names in Camunda Modeler and, for each sentence in
-  the question served, says whether the diagram says that: yes or no.
+- **learner does:** opens the plane the scenario names in Camunda Modeler and reads the question
+  served: sentences from an AI agent's summary about one named element. For each sentence, picks
+  True or False. A compound question has one lettered part per sentence, answered part by part; a
+  single question has one sentence.
 - **tutor role:** examiner
-- **tutor does:** as `a-read-course-diagram`'s (the session 18 offer, the commit check, opening the
-  diagram, never describing it, help recorded as helped), and also: never says which sentences are
-  wrong or how many, and doesn't ask the learner to explain a no. A learner who adds what the
-  diagram does say is welcome to and gains nothing for it. Labels a live run
-  `a-judge-diagram-summary/<case>`. Says when offering it, as for `a-read-course-diagram`, that
-  meeting the goal takes one question per case, fourteen over the three scenarios, about 20
-  minutes, splittable over sittings.
-- **done when:** as `a-read-course-diagram`'s: the criterion met with no help, case by case.
-- **note:** on hold. Its drafted sample (`setup-top`) was keyed to `bootstrap.bpmn` at `6b578e9`,
-  before `Set up the workspace` was redrawn across all three lanes, so it needs rekeying to
-  `eb7b655` when this activity comes off hold.
-- **generator:** **The material** is as `a-read-course-diagram`'s: the same three planes, the
-  same cases per plane, the same `diagram commit:` line in each key (never in the task file),
-  and nothing drawn or invented. Its
-  scenario files are its own, `tasks/a-judge-diagram-summary/<scenario-id>.md` and its key under
-  `rubrics/`, named `setup-top`, `get-codex-running` and `set-up-workspace`. The setup is as
-  there, then: "An AI agent was asked to say in plain words what this plane of the diagram
-  claims." Then a `## Framing` line, under it "Each question gives sentences from the agent's
-  summary." The yes-or-no instruction is in each question, never in the setup.
+- **tutor does:** as `a-read-course-diagram`'s (the session 18 offer, the commit check against
+  `eb7b655` on the learner's merged `course-materials`, opening the diagram, never describing it,
+  help recorded as helped), and also: shows a compound's stem and its parts lettered `(a)`, `(b)`
+  in one message and takes the learner's answers to every part in one reply; settles each part
+  from the key; never says which sentences are wrong or how many; doesn't ask the learner to
+  explain a False. A learner who adds what the diagram does say is welcome to and gains nothing
+  for it. Labels a live run `a-judge-diagram-summary/<case>`. Says when offering it that no one
+  plane carries every case: meeting the goal takes one question per case, fifteen over the three
+  scenarios, about 20 minutes, splittable over sittings.
+- **done when:** the criterion met with no help, case by case. A single question passes its case
+  when its one answer is right. A compound passes its case only when every part is right (study
+  records `met` only then; quiz grading scores the mean of the parts).
+- **generator:** **The material** is as `a-read-course-diagram`'s: `workflows/bootstrap/bootstrap.bpmn`
+  in its revised layout, `diagram commit: eb7b655` recorded in each rubric key's top part and
+  never in the task file, the same three planes, and nothing drawn or invented. `Set up the
+  workspace` is drawn across all three lanes and `Get Codex running` across two. All of that
+  entry's reading rules hold here: elements named by the first words of their label, diamonds
+  pointed at by their neighbors, the plane under a subprocess opened from the small arrow button
+  at the box's bottom-right corner, handoff pairs named step to step with gateways between them
+  ignored and never a box drawn across lanes (named in the question as excluded whenever the plane
+  has one), no mention of data in a handoff sentence, and trace sentences that claim what follows
+  one named step, never a stated run. Scenario files are this activity's own:
+  `tasks/a-judge-diagram-summary/<scenario-id>.md` and `rubrics/a-judge-diagram-summary/<scenario-id>.md`,
+  named `setup-top`, `get-codex-running` and `set-up-workspace`.
 
-  **A question** asks about one case: a stated element, then two numbered sentences, and "Does the diagram say this? Answer yes or no
-  for each." Each sentence is plainly what the diagram says or one of the misreadings below,
-  stated as plainly; none is half right or turns on a word. Across a scenario, yeses and noes
-  each make up between a third and two thirds of the sentences, and no position in a question is
-  always the yes. Where a sentence restates something `a-read-course-diagram`'s key for the same
-  plane gives, it is allowed: the planes are few. Elements are named and pointed at as there; a
-  diamond is pointed at by its neighbors, and a `gateway-shape` sentence never says whether it
-  splits or merges.
+  **A scenario file.** Its top part says only what the diagram is ("the course's setup workflow,
+  as drawn for Installations 1 to 3", with the same caution as `a-read-course-diagram`'s setup),
+  the file's path, and how to reach the plane. Under `## Framing`: "An AI agent was asked to say in
+  plain words what this plane of the diagram claims. Each question below gives sentences from its
+  summary about one element of the plane." How to answer goes in each question, never in the top
+  part or the framing.
 
-  The misreadings, by case, with where each case is asked:
-  - `states` (`setup-top`, Easy): calls the start state the first step, or an end state a step.
-  - `step-box` (`setup-top`, Easy): calls a plain step a state, or a step with a diagram
-    underneath it.
-  - `gateway-shape` (`setup-top`, Easy): calls a gateway a step someone does, or a state.
-  - `subprocess-box` (`setup-top`, Easy): calls a collapsed subprocess a single action with
-    nothing more to it.
-  - `lane-owner` (`setup-top`, Easy): gives a step with no plane below it to the actor its label
-    suggests rather than the one its lane names ("the human checks the install").
-  - `spans-lanes` (`setup-top`, Easy): gives `Get Codex running` to one actor alone.
-  - `handoff` (`set-up-workspace`, Medium): one sentence about a same-actor pair and one about a
-    handoff pair, from that plane's lists in `a-read-course-diagram`. The misreadings: calls a
-    same-actor pair (`Write the receipt` to `Check the receipt landed`, both PROGRAM) a handoff,
-    which is where reading every arrow as a handoff gets caught, whatever the slide says; or says
-    a pair done by different actors is not one. Sentences name two steps under the pair rule at
-    `a-read-course-diagram`'s `setup-top` question 7: no sentence mentions data, gateways between them are ignored, no
-    sentence points at an arrow ending at a gateway or asks who a gateway belongs to, and `Get
-    Codex running` is in no pair. A learner who volunteers a view on a gateway arrow is not marked
-    down for it.
-  - `control-arrow` (`set-up-workspace`, Easy): reads a solid arrow between two steps as a step
-    reading a file, or as both steps running at once.
-  - `branch-label` (`get-codex-running`, Medium): reads a branch label as a step that runs, or as
-    an end state.
-  - `data-line` (`get-codex-running`, Medium): reads the dotted line between
-    `bootstrap-prompt.md` and its step as the run moving to the file, or as the next step. No
-    sentence turns on whether the line is a handoff: no step in the diagram writes
-    `bootstrap-prompt.md`, so the diagram doesn't show whether another actor's step supplies it. A
-    learner who adds "and it's a data handoff" to a right yes or no is not marked down for it.
-  - `splits` (every plane, Medium): says the flow splits at an unnamed gateway, or misses that it
-    splits at a named one; or, in the "after `<step>`" form, a conditional with one branch's label
-    or destination wrong ("after `Check the install`: if `not yet`, `Submit each session's
-    report`").
-  - `merges` (every plane, Medium): calls an unnamed merge a decision, or says two paths never
-    come back together when they do.
-  - `trace-steps` (every plane, Medium): names the wrong step as coming right after a named one
-    ("after `Open U-M GPT` comes `Provide explanations and suggestions`"), or gets a loop wrong
-    ("after `Check the install`, on `not yet`, the flow goes on to `Submit each session's
-    report`"). Each sentence makes one claim about what follows one named step; no sentence
-    states a whole run. At least one `trace-steps` sentence per scenario that has a loop is about
-    a branch that loops back.
-  - `trace-end` (every plane, Easy): names the wrong end state after a named last step ("after
-    `Submit each session's report`, the run ends in `blocked`").
+  **Two question forms, one case each, one element each.**
+  - **Compound** (`type: compound` on the rubric's `###` entry): the `###` body is the stem, "The
+    agent's summary says these things about `<element>`. Is each sentence true or false?" Then two
+    or three parts, `#### a`, `#### b`, `#### c`, lettered in order. Each part is one quoted
+    sentence followed by `1. True` and `2. False`. The rubric's `###` entry carries `goal:
+    c-read-diagram`, the one case, and `type: compound`; each `####` rubric part carries `type:
+    mcq`, `answer: 1` or `2`, and an optional `tutor note`, never `goal` or `cases`. No image or
+    image link inside a part.
+  - **Single** (`type: mcq`): the stem gives one quoted sentence about the element, "The agent's
+    summary says: '...'. Is this true or false?", then `1. True` and `2. False`. The rubric carries
+    goal, the one case, `type: mcq` and `answer`.
 
-  Credit: full when every sentence in the question is judged right; none otherwise. The rubric's
-  `answer` is the yes/no list in order. A scenario carries one question per case its plane
-  carries, in the order of the list above: `setup-top` ten questions (`states` to `spans-lanes`,
-  then `splits`, `merges`, `trace-steps`, `trace-end`; about 14 minutes), `get-codex-running` six
-  (`branch-label`, `data-line`, `splits`, `merges`, `trace-steps`, `trace-end`; about 9),
-  `set-up-workspace` six (`handoff`, `control-arrow`, `splits`, `merges`, `trace-steps`,
-  `trace-end`; about 9). The bank is the three scenarios, 22 questions, and across it every misreading above appears
-  at least once. Live runs vary the sentences within the same
-  planes, keyed from the file at its current commit.
-- **worked example:** as `a-read-course-diagram`'s, with the tutor judging two sentences of its
-  own aloud on `tour.bpmn`, one right and one a misreading ("the AI agent writes the record": no,
-  `Write the record` is in the PROGRAM lane).
-- **doesn't show:** each sentence is a yes or a no, so a lucky guess is possible on any one, though
-  a question passes only when all its sentences are right. The misreadings are the ones listed, so
-  a pass shows the learner can reject those, not every way a diagram can be misread, and it shows
-  recognizing a right reading rather than producing one, which `a-read-course-diagram` asks for.
-  The rest of `a-read-course-diagram`'s `doesn't show` applies, including that the diagram is a
-  familiar one, here met again after that activity if both are done.
+  **How to choose, per case.** Compound when the element supports two or three claims that are
+  not simply each other's opposite, so that each part is a separate reading; single when the two
+  sentences would be opposites, or one sentence settles the case.
+  - `states`, `step-box`, `gateway-shape`, `subprocess-box`: single. What kind of shape an element
+    is makes one claim; a second sentence would only deny the first.
+  - `lane-owner`: compound. Sentences about who does one step ("the AI agent does it", "a program
+    does it, since its label names `setup-addressing`", "the human does it"): any of them can be
+    false, so both can be.
+  - `spans-lanes`: compound. One sentence per actor or about all of them ("the human takes part",
+    "a program takes part", "only the AI agent does it").
+  - `handoff`: single. One sentence about one step pair done by different actors, true ("is a
+    handoff") or false ("is not a handoff").
+  - `not-handoff`: single. One sentence about one same-actor pair, true ("is not a handoff") or
+    false ("is a handoff").
+  - `control-arrow`: compound. Claims about one solid arrow between two steps ("the second step
+    runs next", "both steps run at the same time", "the first step reads a file").
+  - `branch-label`: compound. Claims about one label ("a run goes this way when the gateway's
+    answer is `no`", "a step called `no` runs next", "the run ends here").
+  - `data-line`: compound. Claims about the one dotted line ("`Open U-M GPT` reads the file",
+    "after `Open U-M GPT`, the run moves on to the file", "the file is the next step").
+  - `splits`, `merges`: single. Whether a diamond splits or merges is one claim; its opposite adds
+    nothing. A `splits` sentence points at a named split; a `merges` sentence at an unnamed one;
+    either may be true or false.
+  - `trace-steps`: compound when the named step is followed by a split, one part per branch
+    ("after `Check the install`, on `success`, comes `Submit each session's report`"; "on `not
+    yet`, the flow goes back to `Set up the workspace`"); single when one step comes next.
+  - `trace-end`: single. One sentence naming the end state after a named last step.
+
+  **The misreadings** a False sentence states, as plainly as a True one; no sentence is half right
+  or turns on a word:
+  - `states`: calls the start state the first step, or an end state a step.
+  - `step-box`: calls a plain step a state, or a step with a diagram underneath it.
+  - `gateway-shape`: calls a gateway a step someone does, or a state; never says whether it splits
+    or merges.
+  - `subprocess-box`: calls a collapsed subprocess a single action with nothing more to it.
+  - `lane-owner`: gives the step to the actor its label suggests rather than the one its lane
+    names.
+  - `spans-lanes`: gives a box drawn across lanes to one actor alone, or leaves out an actor whose
+    lane it crosses.
+  - `handoff`: says a pair done by different actors is not a handoff.
+  - `not-handoff`: calls a same-actor pair a handoff, which is where reading every arrow as a
+    handoff gets caught.
+  - `control-arrow`: reads the arrow as a step reading a file, or as both steps running at once.
+  - `branch-label`: reads the label as a step that runs, or as an end state.
+  - `data-line`: reads the dotted line as the run moving to the file, or as the next step. No
+    sentence turns on whether the line is a handoff.
+  - `splits`: says the flow comes back together at a named split.
+  - `merges`: calls an unnamed merge a decision, a place where the flow splits.
+  - `trace-steps`: names the wrong step after a named one, or gets a loop's branch wrong.
+  - `trace-end`: names the wrong end state.
+
+  **True and False.** Across a scenario, counting every part and every single question, True and
+  False each make up between a third and two thirds of the answers. No fixed pattern: not every
+  compound is one True and one False (each scenario has at least one compound with two Trues or two
+  Falses), and the True part is not always in the same position.
+
+  **Planes, cases and order.** One question per case, in this order, so that no question reveals a
+  later one's answer:
+  - `setup-top`: nine questions, about 11 minutes. `states` (a circle), `step-box` (`Report being
+    stuck`), `gateway-shape` (the diamond just before `Set up the workspace`, said to be a gateway
+    only), `subprocess-box` (`Set up the workspace` or `Get Codex running`), `spans-lanes`
+    (`Set up the workspace`, all three actors; live runs `Get Codex running`, two), `splits` (the
+    diamond just after `Get Codex running` or `Set up the workspace`), `merges` (the diamond just
+    before `Set up the workspace` or `Report being stuck`), `trace-steps` (compound, after `Check
+    the install`, whose `not yet` branch loops back), `trace-end` (after `Submit each session's
+    report` or `Report being stuck`). No handoff question here; those are on `set-up-workspace`.
+  - `get-codex-running`: six questions, about 9 minutes. `splits` first (`stuck?` or `checklist
+    done?`, by neighbors), then `branch-label` (only labels on arrows that stay in one lane: `no`
+    at `stuck?`, either at `checklist done?`, `try suggestion` at `worth trying?` only in live runs
+    where `trace-steps` doesn't follow), `data-line`, `merges` (the one unnamed diamond),
+    `trace-steps` (compound, after `Provide explanations and suggestions`, whose `try suggestion`
+    branch loops back), `trace-end` (after `Write a status report on where it stalled`).
+  - `set-up-workspace`: eight questions, about 10 minutes. `control-arrow` (`Write the receipt` to
+    `Check the receipt landed`), `not-handoff` (a same-actor pair from `a-read-course-diagram`'s
+    list for this plane), `handoff` (a pair done by different actors, not one that includes
+    `Record where things live`), `lane-owner` (`Record where things live` or `Install tools`),
+    `splits`, `merges` (one diamond each, by neighbors), `trace-steps` (single, after `Submit
+    Installation 1`), `trace-end` (after `Submit Installation 3`).
+
+  The bank is the three scenarios, 23 questions, and across it every misreading above appears at
+  least once. Live runs vary the elements and sentences within the same planes, keyed from the
+  file at its current commit.
+- **worked example:** as `a-read-course-diagram`'s, on `tour.bpmn` or superpowers.bpmn and never
+  on a bootstrap plane, with the tutor judging two sentences of its own aloud, one right and one a
+  misreading ("the AI agent writes the record": false, `Write the record` is in the PROGRAM lane).
+- **doesn't show:** a single question is one True or False, so a guess passes it half the time;
+  nine cases are carried by single questions. A compound passes only when every part is right. The
+  misreadings are the ones listed, so a pass shows the learner can reject those, not every way a
+  diagram can be misread, and it shows recognizing a right reading rather than producing one,
+  which `a-read-course-diagram` asks for. The rest of `a-read-course-diagram`'s `doesn't show`
+  applies, including that the diagram is a familiar one, here met again after that activity if
+  both are done.
 - **offer as:** the check against someone else's reading: an AI agent's summary of a plane of the
-  setup diagram, judged sentence by sentence. Closest to the course's use, checking what an agent
-  says a workflow does. No single plane meets the goal: it takes one question per case,
-  fourteen in all across the three planes, about 20 minutes.
+  setup diagram, judged sentence by sentence, each sentence True or False. Closest to the course's
+  use, checking what an agent says a workflow does. No single plane meets the goal: it takes one
+  question per case, fifteen in all across the three planes, about 20 minutes.
 - **check note:** This activity is on hold. If it is served anyway, note four things.
   - **Only `setup-top` is drafted.** Its key records `6b578e9`, so it passes the commit check on a
     clone that predates the merge and fails on a merged one. Its key also describes `Set up the
