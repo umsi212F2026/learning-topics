@@ -41,7 +41,7 @@ files?" The agent labeled it 'bug'.
 
 Which of these statements uses the word "skill" correctly?
 
-1. The skill is instructions; the 'bug' label was the agent's reading of them.
+1. The skill is instructions; the 'bug' label was the agent's judgment about the issue.
 2. The skill will label every issue the same way each time, since it runs exactly as written.
 3. The skill carried out the labeling on its own, with no agent there to follow it.
 4. The skill here is the maintainer's knack for spotting bugs, built over years of triage.
