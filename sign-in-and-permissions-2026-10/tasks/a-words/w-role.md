@@ -1,7 +1,5 @@
 # Role
 
-Answer in two or three sentences, in your own words.
-
 Pantry is a recipe box for a campus cooking club, with sign-in through GitHub. Ordinary members may
 post recipes and edit or delete their own. Priya, Sam and Lee run the club and need to delete any
 recipe.
@@ -15,6 +13,8 @@ delete any recipe."
 
 What is wrong with that?
 
+Answer in two or three sentences, in your own words.
+
 ### q3
 
 A student says:
@@ -23,6 +23,10 @@ A student says:
 
 What is wrong with that?
 
+Answer in two or three sentences, in your own words.
+
 ### q1
 
 In Pantry, what is the difference between a role and an account?
+
+Answer in two or three sentences, in your own words.

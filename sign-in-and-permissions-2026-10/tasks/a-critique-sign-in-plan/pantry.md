@@ -7,10 +7,13 @@ on GitHub. On your laptop the frontend runs on
 
 Right now the whole app sits behind one shared basic-auth password. You and your coding agent are
 replacing that with sign-in through GitHub. Once someone signs in, Pantry shows their GitHub name
-and profile picture beside the recipes they posted. It doesn't use their email.
+and profile picture beside the recipes they posted. It doesn't use their email. Your agent has
+written a plan for the change.
+
+## Framing
 
 Each question below is a separate excerpt from your agent's plan. They are independent: treat each
-one as if it were the only part of the plan you had seen. Answer each in two to four sentences.
+one as if it were the only part of the plan you had seen.
 
 ### register
 
@@ -24,7 +27,7 @@ one as if it were the only part of the plan you had seen. Answer each in two to 
 5. Once sign-in works, remove the basic-auth middleware from `backend/server.js`.
 
 Would you agree to this as it stands? If not, what would you change, and who does it, you or your
-agent?
+agent? Answer in two to four sentences.
 
 ### callback
 
@@ -39,7 +42,7 @@ agent?
    backend's `/auth/github`.
 
 Would you agree to this as it stands? If not, what would you change, and who does it, you or your
-agent?
+agent? Answer in two to four sentences.
 
 ### config-file
 
@@ -61,7 +64,7 @@ Once you've created the OAuth app at GitHub:
 5. The client secret never reaches the browser, so this setup is secure.
 
 Would you agree to this as it stands? If not, what would you change, and who does it, you or your
-agent?
+agent? Answer in two to four sentences.
 
 ### strategy
 
@@ -82,7 +85,7 @@ agent?
 5. Add a "Sign in with GitHub" button to `frontend/src/components/Header.jsx`.
 
 Would you agree to this as it stands? If not, what would you change, and who does it, you or your
-agent?
+agent? Answer in two to four sentences.
 
 ### leaked
 
@@ -94,7 +97,7 @@ Pantry's public repository on GitHub. Your agent proposes this fix:
 3. Push both commits to the public repository.
 4. Run `git status` to check that `.env` no longer shows up as tracked.
 
-What do you do now, and does your agent's fix settle it?
+What do you do now, and does your agent's fix settle it? Answer in two to four sentences.
 
 ### exchange
 
@@ -112,4 +115,4 @@ What do you do now, and does your agent's fix settle it?
    credentials from `https://pantry.pagecove.app`.
 
 Would you agree to this as it stands? If not, what would you change, and who does it, you or your
-agent?
+agent? Answer in two to four sentences.

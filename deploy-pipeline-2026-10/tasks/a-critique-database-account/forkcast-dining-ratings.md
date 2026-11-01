@@ -1,11 +1,8 @@
-Answer each question in two or three sentences.
-
 Forkcast is the dish-rating app for Linden Hall, a university dining hall. The menu page lists the
 dishes the hall serves, and a student rates a dish they ate, from one to five stars, with a short
 comment. The React frontend is in `client/` and the Express backend in `server/`, both in one
 GitHub repository, `linden-dining/forkcast`. The frontend is hosted on Pinecart, the backend on
-Ropewalk, and the Postgres database on Cellarstone. How the frontend deploys is not part of these
-questions.
+Ropewalk, and the Postgres database on Cellarstone. How the frontend deploys plays no part here.
 
 The database has two tables. `dishes` holds the hall's 40 regular dishes, each with its name and
 its station (grill, soup, salad bar and so on); these are the rows the app is meant to open with.
@@ -46,6 +43,8 @@ This is how the backend's host and the database's host behave:
     typed into Cellarstone's query console.
   - Each database has a connection string, which is a secret.
 
+## Framing
+
 Each question below is an account an agent gave, in a different session, of work it did on
 Forkcast's production database. Read each one on its own.
 
@@ -66,7 +65,7 @@ and changing it is all in the code. Here's what it told you:
    all still there. I'll tidy the duplicates by hand in Cellarstone's query console.
 
 Would you have accepted this? If a step goes wrong, which one, and what should have happened
-instead?
+instead? Answer in two or three sentences.
 
 ### q2
 
@@ -83,7 +82,7 @@ asked this agent to fix it. Here's what it told you:
 4. I opened the live app again, and the menu page loads. The error is gone.
 
 Would you have accepted this? If a step goes wrong, which one, and what should have happened
-instead?
+instead? Answer in two or three sentences.
 
 ### q3
 
@@ -108,7 +107,7 @@ what it told you:
    1,212. The data handling is confirmed.
 
 Would you have accepted this? If a step goes wrong, which one, and what should have happened
-instead?
+instead? Answer in two or three sentences.
 
 ### q4
 
@@ -137,4 +136,4 @@ at, and to check afterwards that production's data is kept. Here's what it told 
    lists the 40 dishes, each once, and a new rating can now say which meal it was.
 
 Would you have accepted this? If a step goes wrong, which one, and what should have happened
-instead?
+instead? Answer in two or three sentences.

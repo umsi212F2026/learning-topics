@@ -21,8 +21,8 @@ Pantry Board's coding agent proposes this plan:
 >
 > Your data will be safe.
 
-Will this plan's data survive a redeploy? Say yes or no, and name the step in the plan that decides
-it.
+Will this plan's data survive a redeploy? Say yes or no. Then name the step in the plan that
+decides it, or, if no step does, say what the plan is missing.
 
 ### q2
 

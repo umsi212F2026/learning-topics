@@ -1,11 +1,11 @@
 # free tier
 
-Answer in two or three sentences, in your own words.
-
 ### q1
 
 One vendor's pricing page offers a "free tier"; another offers a "free trial". What is the
 difference between the two?
+
+Answer in two or three sentences, in your own words.
 
 ### q2
 
@@ -15,3 +15,5 @@ A student is putting their app on Driftwell, a hosting vendor, and writes:
 anyone paying."
 
 What is wrong with that?
+
+Answer in two or three sentences, in your own words.

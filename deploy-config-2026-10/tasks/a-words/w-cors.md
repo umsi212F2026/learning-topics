@@ -1,14 +1,16 @@
 # CORS
 
-Answer in two or three sentences, in your own words.
-
 ### q1
 
 Your deployed React page asks your Express backend for the list of budgets, and the request fails. What is the difference between that failure being a CORS error and its being a server error?
 
+Answer in two or three sentences, in your own words.
+
 ### q4
 
 Your Express backend refuses any request that doesn't carry a signed-in user's token. It also lists `https://tally.quay.app` as the one origin allowed under CORS. What is the difference between those two kinds of check?
+
+Answer in two or three sentences, in your own words.
 
 ### q2
 
@@ -18,6 +20,8 @@ A student writes in their team's notes:
 
 What is wrong with that?
 
+Answer in two or three sentences, in your own words.
+
 ### q3
 
 Tally's React page at `https://tally.quay.app` fetches `https://tally.quay.app/budgets.json`, a file served alongside the page. The fetch fails, and a student says:
@@ -25,3 +29,5 @@ Tally's React page at `https://tally.quay.app` fetches `https://tally.quay.app/b
 "CORS must have blocked it."
 
 What is wrong with that?
+
+Answer in two or three sentences, in your own words.

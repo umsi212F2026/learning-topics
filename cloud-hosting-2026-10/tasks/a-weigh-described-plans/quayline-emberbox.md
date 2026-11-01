@@ -19,40 +19,40 @@ to sign up.
   never sleeps. When the credit runs out the server stops until next month, or, with a card on
   file, keeps running and bills. Reads a small `emberbox.toml`; the server is ordinary Node.
 
-Answer from these terms only.
-
 ### v9
 
 For each plan, say whether the app sleeps when nobody has used it for a while, what happens when it
 passes a limit, and whether a credit card is required and what having one on file would risk.
+Answer from these terms only.
 
 ### v11
 
 Say what Plan S's extra vendor adds, and how hard each plan would be to move to another vendor.
+Answer from these terms only.
 
 ### v1
 
 Make the call yourself. Choose Plan Q or Plan S, then state the strongest case the terms give for
-the plan you didn't choose.
+the plan you didn't choose. Answer from these terms only.
 
 ### v3
 
 A student wrote: "Plan Q, because it's free forever and Quayline never charges anything. The other
 plan has two accounts, which is more to manage." Which of their claims do the terms not support,
-and what do the terms say instead?
+and what do the terms say instead? Answer from these terms only.
 
 ### v5
 
 A student wrote: "Plan S, because two specialized vendors will be faster under load and more
 reliable than one that does everything, and Emberbox is more secure since it runs only one program. Quayline
 sleeps." Which of their reasons do the terms not support, and what in the plans' sleep, limit and
-card terms did they miss?
+card terms did they miss? Answer from these terms only.
 
 ### v6
 
 A student wrote: "Plan Q. Plan S needs a credit card on Emberbox just to sign up, and I don't want to
 give one." What have they got wrong about cards, and what would having a card on file actually
-risk on each vendor?
+risk on each vendor? Answer from these terms only.
 
 ### v7
 
@@ -64,7 +64,7 @@ Plan S.
 
 A student wrote: "Plan Q. The sleep matters most: a grader shouldn't wait a minute. I'll set up a
 scheduled ping every ten minutes so it never sleeps." Would that workaround work under these
-terms, and what would it cost?
+terms, and what would it cost? Answer from these terms only.
 
 ### v2
 
@@ -78,3 +78,4 @@ A student wrote: "Plan S. Nothing sleeps, and Lanternhost can't bill me. Quaylin
 after 15 minutes. Emberbox's credit runs out after about three weeks; if I keep a card off it, the
 worst case is the server stopping until next month. Moving is easy from either. The strongest case
 for Q is that it's one account." What does Plan S's extra vendor cost that this student left out?
+Answer from these terms only.

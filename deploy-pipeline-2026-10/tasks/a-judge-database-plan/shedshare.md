@@ -1,5 +1,3 @@
-Answer each question in two to four sentences.
-
 Shedshare is the tool-lending list of the Elm Street neighborhood association, which keeps a shed
 of tools its members can borrow. A member finds a tool in the list and records a loan when they
 take it, and the volunteer who runs the shed sees what is out and who has it. The React frontend
@@ -46,6 +44,8 @@ This is how Ropewalk and Cellarstone behave:
     typed into Cellarstone's query console.
   - Each database has a connection string, which is a secret.
 
+## Framing
+
 The agent proposed each plan below in a different session. Each question is about its own plan
 alone.
 
@@ -66,6 +66,7 @@ and changing it is all in the code. The agent proposes:
    database and checks that every tool in `tools.json` is listed.
 
 Would you agree to this plan as it stands? If not, say what you would change before agreeing.
+Answer in two to four sentences.
 
 ### q2
 
@@ -86,6 +87,7 @@ agent to fix it. The agent proposes:
    the backend.
 
 Would you agree to this plan as it stands? If not, say what you would change before agreeing.
+Answer in two to four sentences.
 
 ### q3
 
@@ -107,6 +109,7 @@ and changing it is all in the code. The agent proposes:
    Ropewalk's Settings page.
 
 Would you agree to this plan as it stands? If not, say what you would change before agreeing.
+Answer in two to four sentences.
 
 ### q4
 
@@ -116,3 +119,4 @@ before each deploy. It says everything is set up, and Ropewalk's deploy list sho
 deploy as Live.
 
 How would you make sure that a push to `main` now leaves production's data in place?
+Answer in two to four sentences.

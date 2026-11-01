@@ -1,7 +1,5 @@
 # Authorization
 
-Answer in two or three sentences, in your own words.
-
 ### q2
 
 A student's recipe app lets people sign in with Google. Anyone signed in can read every recipe,
@@ -12,6 +10,10 @@ app knows what they are allowed to do."
 
 What is wrong with that?
 
+Answer in two or three sentences, in your own words.
+
 ### q1
 
 What separates authorization from authentication?
+
+Answer in two or three sentences, in your own words.

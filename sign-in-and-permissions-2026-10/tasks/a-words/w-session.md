@@ -1,7 +1,5 @@
 # Session
 
-Answer in two or three sentences, in your own words.
-
 Pantry is a recipe box for a campus cooking club. Its React frontend and its Express backend are on
 separate hosts, and members sign in through GitHub.
 
@@ -14,6 +12,8 @@ server doesn't have to keep track of anything."
 
 What is wrong with that?
 
+Answer in two or three sentences, in your own words.
+
 ### q3
 
 A member clicks Sign out in Pantry, but is still signed in to GitHub in another tab. A student
@@ -23,6 +23,10 @@ says:
 
 What is wrong with that?
 
+Answer in two or three sentences, in your own words.
+
 ### q1
 
 What is the difference between signing in to Pantry and having a session with Pantry?
+
+Answer in two or three sentences, in your own words.

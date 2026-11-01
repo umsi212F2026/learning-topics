@@ -8,9 +8,10 @@ and starts it again on the next request, which takes up to about a minute. When 
 either service fails, Fernlatch keeps that service's previous version serving. Pantrybook has
 been live and working for a month.
 
+## Framing
+
 Each question is a separate incident on Pantrybook, independent of the others. Each gives one
-line on what you did or noticed, then your coding agent's account of it, then a question. Answer
-in two or three sentences.
+line on what you did or noticed, then your coding agent's account of it, then a question.
 
 ### q1
 
@@ -38,7 +39,7 @@ has returned 200.
 
 From your agent's account, where did things go wrong, if they did, and what does someone who opens
 the app right now get: which version of it, if any, and what happens when they try to use it? If
-the account can't tell you, say why.
+the account can't tell you, say why. Answer in two or three sentences.
 
 ### q2
 
@@ -71,7 +72,7 @@ traffic before Fernlatch stopped it.
 
 From your agent's account, where did things go wrong, if they did, and what does someone who opens
 the app right now get: which version of it, if any, and what happens when they try to use it? If
-the account can't tell you, say why.
+the account can't tell you, say why. Answer in two or three sentences.
 
 ### q3
 
@@ -103,7 +104,7 @@ leaves `pantry-api` carrying that header, and the page's `fetch` rejects it.
 
 From your agent's account, where did things go wrong, if they did, and what does someone who opens
 the app right now get: which version of it, if any, and what happens when they try to use it? If
-the account can't tell you, say why.
+the account can't tell you, say why. Answer in two or three sentences.
 
 ### q4
 
@@ -127,7 +128,7 @@ seeing on Pantrybook.
 
 From your agent's account, where did things go wrong, if they did, and what does someone who opens
 the app right now get: which version of it, if any, and what happens when they try to use it? If
-the account can't tell you, say why.
+the account can't tell you, say why. Answer in two or three sentences.
 
 ### q5
 
@@ -152,7 +153,7 @@ npm ERR! Missing: fuse.js@7.0.0 from lock file
 
 From your agent's account, where did things go wrong, if they did, and what does someone who opens
 the app right now get: which version of it, if any, and what happens when they try to use it? If
-the account can't tell you, say why.
+the account can't tell you, say why. Answer in two or three sentences.
 
 ### q6
 
@@ -189,7 +190,7 @@ one recipe saved twice under the same name, answered with a 409.
 
 From your agent's account, where did things go wrong, if they did, and what does someone who opens
 the app right now get: which version of it, if any, and what happens when they try to use it? If
-the account can't tell you, say why.
+the account can't tell you, say why. Answer in two or three sentences.
 
 ### q7
 
@@ -224,4 +225,4 @@ another dependency pulls in.
 
 From your agent's account, where did things go wrong, if they did, and what does someone who opens
 the app right now get: which version of it, if any, and what happens when they try to use it? If
-the account can't tell you, say why.
+the account can't tell you, say why. Answer in two or three sentences.

@@ -1,5 +1,7 @@
 This made-up model follows one wheat field on a farm through a growing season: the crop grows a little on each day it has enough water and is set back on each day the soil is too dry. It leaves out pests and plant disease: the only thing that holds the crop back is the water it gets. Its model parameters are the chance of rain on any one day, the amount of water the irrigation system gives the field on each dry day, and the planting date. One simulation trial is one season, from planting to harvest, and records the tons of grain harvested and the number of days the soil was too dry. Each day's weather is drawn at random, with rain falling on that day with the chance set by the first parameter.
 
+## Framing
+
 Each question below comes from a different person who wants this simulation to answer one question. Each question is about this simulation alone.
 
 ### q1

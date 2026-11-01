@@ -1,7 +1,5 @@
 # rate limit
 
-Answer in two or three sentences, in your own words.
-
 Ringbell is a neighborhood app where neighbors lend each other tools: a ladder, a drill, a
 lawnmower. Its page, its server and its database all run on a host called Marrowlight. A visitor
 who looks at a page or two of Ringbell makes a handful of requests to its server.
@@ -16,6 +14,8 @@ the thirty-first will be turned away."
 
 What is wrong with that?
 
+Answer in two or three sentences, in your own words.
+
 ### q-catch-refusal-is-permanent
 
 One evening a neighbor, waiting for a drill to show as available, clicks refresh over and over.
@@ -27,8 +27,12 @@ by hand."
 
 What is wrong with that?
 
+Answer in two or three sentences, in your own words.
+
 ### q-rate-limit-vs-overage
 
 Ringbell's plan on Marrowlight includes a million requests a month, and the plan page lists an
 overage for anything past that. Ringbell also has a rate limit of thirty requests a minute. What
 is the difference between the overage and the rate limit?
+
+Answer in two or three sentences, in your own words.

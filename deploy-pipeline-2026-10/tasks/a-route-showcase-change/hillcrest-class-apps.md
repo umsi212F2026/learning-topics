@@ -1,5 +1,3 @@
-Answer each question in two or three sentences.
-
 Your GitHub username is `sam-tinkers`, and your app lives in your repository
 `sam-tinkers/habit-hop`. Your web development class at Hillcrest keeps a list of everyone's apps
 in the repository `hillcrest-webdev/class-apps`, which belongs to the class's GitHub account. You
@@ -16,14 +14,14 @@ Your agent will do the typing. Your job is to say what should happen.
 
 Your agent proposes: "I'll make a branch called `add-habit-hop` in `hillcrest-webdev/class-apps`,
 add your entry to `apps.json` there, and push the branch." Would you go along with this? If not,
-where should it go?
+where should it go? Answer in two or three sentences.
 
 ### q2
 
 Your change is pushed, on a branch called `add-habit-hop` in `sam-tinkers/class-apps`, your own
 copy of the class list. Your agent reports: "I've opened a pull request from
 `sam-tinkers/class-apps:add-habit-hop` into `hillcrest-webdev/class-apps:main`." Is that right? If
-not, what should it be?
+not, what should it be? Answer in two or three sentences.
 
 ### q3
 
@@ -34,4 +32,4 @@ Your pull request, from `sam-tinkers/class-apps` branch `add-habit-hop` into
 verify-apps: apps.json: entry "Habit Hop" has unknown field "studnet" and is missing required field "student"
 ```
 
-What do you do?
+What do you do? Answer in two or three sentences.

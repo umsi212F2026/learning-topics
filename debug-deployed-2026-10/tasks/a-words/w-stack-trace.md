@@ -1,7 +1,5 @@
 # stack trace
 
-Answer in two or three sentences, in your own words.
-
 ### q1
 
 Your agent pastes these lines from your deployed backend's server log:
@@ -15,6 +13,8 @@ TypeError: Cannot read properties of undefined (reading 'map')
 
 What is the difference between the error message in those lines and the stack trace?
 
+Answer in two or three sentences, in your own words.
+
 ### q2
 
 A student writes in their team's notes:
@@ -23,3 +23,5 @@ A student writes in their team's notes:
 everyone."
 
 What is wrong with that?
+
+Answer in two or three sentences, in your own words.

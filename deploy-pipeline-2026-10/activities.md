@@ -229,10 +229,11 @@ orientation's reading. Learner-facing text states the task, never the scoring.
   service's key"), so the question tests the plan and not spotting a secret; the list always
   includes the Pinecart deploy token, and Ropewalk's deploy hook URL whenever a plan in the
   scenario uses the hook. The setup also says
-  that the agent proposed each plan in a different session, and that each question is about its
-  own plan alone. It also says that neither host is set up yet, so each plan creates the Pinecart
-  site and the Ropewalk service; a fault that rests on a roster default for a new service (such as
-  "Wait for GitHub checks", off for a new service) rests on that sentence. Only the app's own names are invented per scenario (its environment variable
+  that neither host is set up yet, so any plan the agent proposes creates the Pinecart site and
+  the Ropewalk service; a fault that rests on a roster default for a new service (such as
+  "Wait for GitHub checks", off for a new service) rests on that sentence. That the agent
+  proposed each plan in a different session, and that each question is about its own plan alone,
+  goes under `## Framing` at the end of the setup, never in the scenario. Only the app's own names are invented per scenario (its environment variable
   names, its config files, the label on the token); the hosts' settings are named word for word
   as the roster names them.
 
@@ -705,13 +706,13 @@ orientation's reading. Learner-facing text states the task, never the scoring.
   **Fixed setup.** The pipeline is already working and is not in question: Ropewalk is linked to
   `main` with "Wait for GitHub checks" on, and a workflow runs `npm test` in `client/` and in
   `server/` on every push, against a Postgres database started inside the GitHub Actions run for
-  the tests alone (not a Cellarstone database). How the frontend deploys is not part of these
-  questions. The backend reads production's connection string from Ropewalk's settings. The app
+  the tests alone (not a Cellarstone database). How the frontend deploys plays no part
+  here. The backend reads production's connection string from Ropewalk's settings. The app
   has been live for some weeks: production already has its tables and its starting rows, and
   users have added rows of their own. The setup quotes, word for word, the roster bullets this activity rests on:
   Cellarstone's two bullets; Ropewalk's link and wait bullet, its settings bullet (saving a setting
   restarts the server), its deploy-list bullet, its start-afresh bullet and its pre-deploy
-  bullet. It says that the agent
+  bullet. Its `## Framing`, at the end of the setup, says that the agent
   proposed each plan in a different session, and that each question is about its own plan alone.
   Only the app's own names are invented per scenario (its tables, columns, files and scripts); the
   hosts' settings are named word for word as the roster names them.

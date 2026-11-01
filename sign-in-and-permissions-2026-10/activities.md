@@ -236,10 +236,11 @@ with the learner.
   the two live addresses (such as `https://roomfinder.<statichost>.app` and
   `https://roomfinder-api.<serverhost>.com`) and the two localhost ports (5173 and 3001). Host
   names are invented and never a real vendor's. **Each question is a separate excerpt** of the
-  agent's plan, and the setup says the questions are independent. An excerpt is 4 to 8 numbered
-  steps written as a coding agent writes a plan, with file names, environment variable names and
-  route paths where an agent would give them, followed by the fixed question quoted under
-  `learner does`, except for `leaked-secret`, which ends with the question given there.
+  agent's plan, and a `## Framing` at the end of the setup says the questions are independent. An
+  excerpt is 4 to 8 numbered steps written as a coding agent writes a plan, with file names,
+  environment variable names and route paths where an agent would give them, followed by the fixed
+  question quoted under `learner does`, except for `leaked-secret`, which ends with the question
+  given there; either way the question ends "Answer in two to four sentences."
 
   **Every question carries exactly one case**, named on its rubric `cases:` line. Every step but
   the one the case fixes is sound, and each case fixes what the excerpt contains and what the key
@@ -329,8 +330,9 @@ with the learner.
     `findOrCreate`, `express-session`) and includes one sound step that looks alarming to a novice
     (the client ID in the frontend's environment).
   A scenario carries all six cases, one question each, every one at Medium or Hard and at least two
-  at Hard. No question's text gives away another's answer. A scenario's setup states the task and
-  how long an answer should be, never the scoring.
+  at Hard. No question's text gives away another's answer. A scenario's setup describes the
+  situation only; each question states its own task and how long an answer should be, never the
+  scoring.
 - **worked example:** shown only as help when the learner asks for it, which records the attempt
   as helped. Work a different excerpt aloud: for each step, ask whether it happens in the browser,
   on the backend or at the provider, and who has to be there to do it. Cite MDN's "Federated
@@ -375,9 +377,10 @@ with the learner.
   what the app shows about a user, the live addresses and localhost ports, and a line saying the
   learner and their agent are partway through replacing basic auth with sign-in. **Each question is
   one agent message**, 2 to 6 lines, written as a coding agent writes in chat (a status line, a
-  question or a request, sometimes a short code or config snippet), and the setup says the
-  questions are independent moments in the work. The fixed instruction under each: "Write the
-  reply you would send."
+  question or a request, sometimes a short code or config snippet), and a `## Framing` at the end
+  of the setup says the questions are independent moments in the work. The fixed instruction under
+  each: "Write the reply you would send, in two to four sentences, as you would type it to your
+  agent: what you say yes or no to, what you will do yourself, and what you want changed."
 
   **Every question carries exactly one case.** The keys and credit rules are those of
   `a-critique-sign-in-plan`, case for case; what changes is what the message holds:
@@ -451,10 +454,10 @@ with the learner.
   Problem Set 3 app, React on one made-up static host, Express on another, Postgres, one provider
   (Google or GitHub), what the app shows about a user, the live addresses and the localhost ports
   (5173 and 3001), and a line saying basic auth is being replaced with sign-in. It names the three
-  piles as under `learner does` and says the cards are independent and come in no particular
-  order. **Each question is one card**: one step, one to three sentences, sometimes with a
-  config line or a URL, naming who does it only when the case below says so. A deck is 7 or 8
-  cards.
+  piles as under `learner does`, and a `## Framing` at its end says the cards are independent and
+  come in no particular order. **Each question is one card**: one step, one to three sentences,
+  sometimes with a config line or a URL, naming who does it only when the case below says so,
+  followed by the fixed question and "Answer in one to three sentences." A deck is 7 or 8 cards.
 
   **Every card carries exactly one case**, and its key names the pile and what the answer must
   say:
@@ -563,7 +566,7 @@ with the learner.
   line each on what they do, and names the app's signed-in levels only: a signed-in user, the owner
   of a record, and one admin level (such as the club's officers). It never names, lists or hints
   at someone not signed in as a level, so `missing-signed-out` tests whether the learner thinks of
-  the signed-out visitor unprompted. It says the questions are independent. **Each question is a separate piece of the work**: a who-may-do-what
+  the signed-out visitor unprompted. A `## Framing` at its end says the questions are independent, and each question ends "Answer in two to four sentences." **Each question is a separate piece of the work**: a who-may-do-what
   table as it would appear in `DEPLOY.md` (rows are actions, columns are levels, cells yes or no),
   or a table with an excerpt of the agent's plan for enforcing it (4 to 8 numbered steps, with route
   and middleware names and short code lines where an agent would give them), or, for the confirming
@@ -668,7 +671,8 @@ with the learner.
 - **generator:** a scenario's setup is the same shape as in `a-critique-permissions-plan`: a made-up
   Problem Set 3 app with its routes and levels. **Each question is one pair**, A and B, two versions
   of the same piece, the same length and wording except where they differ, with the sound one at A
-  or B at random. Every question carries exactly one case:
+  or B at random, ending with the question quoted under `learner does` and "Answer in two or three
+  sentences." Every question carries exactly one case:
   - `missing-action`: two tables, one complete, one missing the row for an action the routes allow
     (most often delete). Key: the complete one, and the action the other leaves out.
   - `missing-signed-out`: two tables, one complete, one with no column for someone not signed in.

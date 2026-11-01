@@ -1,5 +1,3 @@
-Answer each question in two to four sentences.
-
 Ridgeline is a climbing club's sign-up sheet. Members pick a weekend trip, add their name, and
 press "Packing list" to have an AI service draft what to bring for that trip. The React frontend is in `client/` and the Express backend in
 `server/`, both in one GitHub repository, `ridgeline-club/signup`, and each folder has tests that
@@ -41,9 +39,13 @@ The frontend is hosted on Pinecart and the backend on Ropewalk. This is how they
     time. When a deploy fails, the previous one stays live.
 
 You asked an agent to make Ridgeline deploy itself, frontend and backend, whenever `main` is
-pushed to GitHub. Neither host is set up yet, so each plan creates the Pinecart site and the
-Ropewalk service. The agent proposed each plan below in a different session. Each question is
-about its own plan alone.
+pushed to GitHub. Neither host is set up yet, so any plan the agent proposes creates the Pinecart
+site and the Ropewalk service.
+
+## Framing
+
+The agent proposed each plan below in a different session. Each question is about its own plan
+alone.
 
 ### q1
 
@@ -63,6 +65,7 @@ The agent proposes:
    still starts if the setting is ever missing.
 
 Would you agree to this plan as it stands? If not, say what you would change before agreeing.
+Answer in two to four sentences.
 
 ### q2
 
@@ -79,6 +82,7 @@ The agent proposes:
    straight from the browser without a round trip through the server.
 
 Would you agree to this plan as it stands? If not, say what you would change before agreeing.
+Answer in two to four sentences.
 
 ### q3
 
@@ -93,6 +97,7 @@ The agent proposes:
    to maintain.
 
 Would you agree to this plan as it stands? If not, say what you would change before agreeing.
+Answer in two to four sentences.
 
 ### q4
 
@@ -112,7 +117,7 @@ The agent proposes:
 I'll need a Pinecart deploy token for the workflow. Where should I keep it?
 
 Would you agree to this plan as it stands? If not, say what you would change before agreeing.
-And what would you tell the agent about where to keep the token?
+And what would you tell the agent about where to keep the token? Answer in two to four sentences.
 
 ### q5
 
@@ -121,4 +126,4 @@ Suppose the agent has set up both parts to deploy themselves only once the tests
 set up, and both hosts' deploy lists show the latest deploy as Live.
 
 How would you make sure that a push to `main` now reaches the live app, both its frontend and its
-backend, and that a push whose tests fail goes live in neither?
+backend, and that a push whose tests fail goes live in neither? Answer in two to four sentences.

@@ -1,5 +1,3 @@
-Answer each question in two or three sentences.
-
 Your GitHub username is `kofi-builds`, and your app lives in your repository
 `kofi-builds/bus-times`. The Westbrook student developers group keeps a showcase of its members'
 apps in the repository `westbrook-devs/demo-shelf`, which belongs to the group's GitHub account.
@@ -16,7 +14,7 @@ Your agent will do the typing. Your job is to say what should happen.
 
 Your agent proposes: "I'll fork `westbrook-devs/demo-shelf` into your account, add your entry on
 a new branch there, and push that branch to your fork." Would you go along with this? If not,
-where should it go?
+where should it go? Answer in two or three sentences.
 
 ### q2
 
@@ -24,7 +22,7 @@ Your change is pushed, on a branch called `add-bus-times` in `kofi-builds/demo-s
 copy of the demo shelf. Since you forked it, other members' entries have been merged into
 `westbrook-devs/demo-shelf`. Your agent reports: "I've opened a pull request from
 `westbrook-devs/demo-shelf:main` into `kofi-builds/demo-shelf:add-bus-times`." Is that right? If
-not, what should it be?
+not, what should it be? Answer in two or three sentences.
 
 ### q3
 
@@ -37,3 +35,4 @@ entry-check: apps/bus-times.json is not valid JSON: unexpected end of input at l
 
 Your agent proposes: "I'll fix the entry on the same branch, `add-bus-times` in your fork, and
 push." Would you go along with this? If not, what should happen instead?
+Answer in two or three sentences.

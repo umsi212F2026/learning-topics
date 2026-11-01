@@ -1,7 +1,5 @@
 # backup
 
-Answer in two or three sentences, in your own words.
-
 Plotkeep is a community garden's app where members sign up for a garden plot. Its server and its
 database both run on a host called Brindlecloud, and its code is in a repository on GitHub. The
 plot sign-ups are kept only in the database.
@@ -17,6 +15,8 @@ back from `plots_copy`."
 
 What is wrong with that?
 
+Answer in two or three sentences, in your own words.
+
 ### q-backup-vs-rollback
 
 At noon a deploy made Plotkeep's map of plots show up blank. The sign-ups in the database are all
@@ -24,7 +24,11 @@ still there, and members have added a dozen more since last night. The agent off
 roll back to the last working deploy on Brindlecloud, or restore last night's database backup.
 What is the difference between the two?
 
+Answer in two or three sentences, in your own words.
+
 ### q-backup-vs-git-history
 
 Plotkeep's repository on GitHub holds every commit since the first one. What is the difference
 between that git history and a backup of Plotkeep's database?
+
+Answer in two or three sentences, in your own words.

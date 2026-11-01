@@ -8,21 +8,25 @@ Right now the whole app sits behind one shared basic-auth password. You and your
 replacing that with sign-in through Google. Once someone signs in, Shelfmates shows their Google
 name, profile picture and email on the club's member list, so members can reach each other.
 
-Each card below is one step someone has proposed for adding sign-in. The cards are independent of
-each other and come in no particular order. Put each card in one of three piles:
+You are sorting a deck of cards, each one step someone has proposed for adding sign-in, into three
+piles:
 
 - **yours**: you do it by hand, at Google or in a host's settings.
 - **your agent's, as written**: code or config your agent can do just as the card says.
 - **change it first**: say what you would change it to, and who does the changed step.
 
-Answer each card in one to three sentences.
+## Framing
+
+Each card below is one step from the deck. The cards are independent of each other and come in no
+particular order.
 
 ### card-1
 
 Your agent asks for your Google password, so that it can sign in to Google's developer console as
 you and create the OAuth client for Shelfmates. The later steps use what it gives you.
 
-Which pile, and why? If you'd change it, say to what and who does it.
+Which pile, and why? If you'd change it, say to what and who does it. Answer in one to three
+sentences.
 
 ### card-2
 
@@ -32,7 +36,8 @@ Your agent proposes this line in `backend/auth.js`:
 scope: ['openid', 'profile', 'email', 'https://www.googleapis.com/auth/calendar'], // so members can add meetings to their calendars later
 ```
 
-Which pile, and why? If you'd change it, say to what and who does it.
+Which pile, and why? If you'd change it, say to what and who does it. Answer in one to three
+sentences.
 
 ### card-3
 
@@ -40,7 +45,8 @@ In the OAuth client's settings at Google, add `https://shelfmates-api.corvane.io
 as the authorized redirect URI. It's the only one Shelfmates needs: when you test sign-in on your
 laptop, Google can send you back to this same address.
 
-Which pile, and why? If you'd change it, say to what and who does it.
+Which pile, and why? If you'd change it, say to what and who does it. Answer in one to three
+sentences.
 
 ### card-4
 
@@ -48,14 +54,16 @@ Put the client ID and the client secret in `frontend/.env`, as `VITE_GOOGLE_CLIE
 `VITE_GOOGLE_CLIENT_SECRET`, so the React code behind the Sign in button can send both to Google
 when someone clicks it.
 
-Which pile, and why? If you'd change it, say to what and who does it.
+Which pile, and why? If you'd change it, say to what and who does it. Answer in one to three
+sentences.
 
 ### card-5
 
 Put the client secret in the backend's environment settings on Corvane, and the client ID in the
 frontend's environment settings on Leafhost.
 
-Which pile, and why? If you'd change it, say to what and who does it.
+Which pile, and why? If you'd change it, say to what and who does it. Answer in one to three
+sentences.
 
 ### card-6
 
@@ -64,7 +72,8 @@ Shelfmates' public repository on GitHub. Your agent proposes: "Delete `backend/.
 commit, add it to `.gitignore`, and push. Then nobody who looks at the repository can get the
 secret."
 
-Which pile, and why? If you'd change it, say to what and who does it.
+Which pile, and why? If you'd change it, say to what and who does it. Answer in one to three
+sentences.
 
 ### card-7
 
@@ -73,4 +82,5 @@ the client ID and client secret from its environment, to Google. It learns who t
 ID token Google sends back, and finds or creates a `users` row keyed by Google's `sub`, holding
 their name, picture and email, with no password column.
 
-Which pile, and why? If you'd change it, say to what and who does it.
+Which pile, and why? If you'd change it, say to what and who does it. Answer in one to three
+sentences.

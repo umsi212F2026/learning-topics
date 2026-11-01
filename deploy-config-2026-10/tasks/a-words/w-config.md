@@ -1,10 +1,10 @@
 # config
 
-Answer in two or three sentences, in your own words.
-
 ### q1
 
 What is the difference between an app's config and its code?
+
+Answer in two or three sentences, in your own words.
 
 ### q2
 
@@ -14,6 +14,8 @@ A student working on an app shaped like Problem Set 2 says:
 
 What is wrong with that?
 
+Answer in two or three sentences, in your own words.
+
 ### q3
 
 A teammate writes in the team's notes:
@@ -21,3 +23,5 @@ A teammate writes in the team's notes:
 "The function that formats a budget's date for display belongs in our config, because we might decide to show dates differently next month."
 
 What is wrong with that sentence?
+
+Answer in two or three sentences, in your own words.

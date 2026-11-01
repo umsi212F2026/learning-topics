@@ -1,10 +1,10 @@
 # CDN
 
-Answer in two or three sentences, in your own words.
-
 ### q1
 
 What separates a CDN from a static host?
+
+Answer in two or three sentences, in your own words.
 
 ### q2
 
@@ -15,3 +15,5 @@ host in one region. They write:
 backend running close to wherever they are."
 
 What is wrong with that?
+
+Answer in two or three sentences, in your own words.

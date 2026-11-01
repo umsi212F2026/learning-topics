@@ -9,11 +9,11 @@ backend, and a database. It is being deployed on two made-up vendors:
 - **Larder** hosts the database. It keeps a Postgres database running for you, and its dashboard
   shows the connection string, login included.
 
+## Framing
+
 The questions follow the deploy in order. Some show an exchange in which the agent deploying
 Crumbs asked for a setting, a student asked about it, and the agent answered. Others show a
-message from the agent; for those, judge whether going ahead would put a secret somewhere it
-shouldn't go. Answer in two or three sentences, except where a question asks for the reply you
-would send: then write the reply, and after it a sentence or two on why.
+message from the agent.
 
 ### q1
 
@@ -25,7 +25,7 @@ would send: then write the reply, and after it a sentence or two on why.
 
 What is `REMOTE_URL` for? Whose value does it need: the frontend's address, the backend's address,
 the database's connection details, or nobody's, because a host sets it? And is its value a
-secret? Say why.
+secret? Say why. Answer in two or three sentences.
 
 ### q2
 
@@ -38,7 +38,7 @@ address, so other sites can't use your recipes. Use your Harbor address.
 
 What is `PERMIT_HOST` for? Whose value does it need: the frontend's address, the backend's
 address, the database's connection details, or nobody's, because a host sets it? And is its value
-a secret? Say why.
+a secret? Say why. Answer in two or three sentences.
 
 ### q3
 
@@ -51,14 +51,14 @@ dashboard.
 
 What is `LARDER_LINK` for? Whose value does it need: the frontend's address, the backend's
 address, the database's connection details, or nobody's, because a host sets it? And is its value
-a secret? Say why.
+a secret? Say why. Answer in two or three sentences.
 
 ### q4
 
 **Agent:** Paste the address Harbor gave your static site here, and I'll set `PERMIT_HOST` on the
 web service so it accepts requests from your pages.
 
-Would you go along with this? Say why or why not.
+Would you go along with this? Say why or why not. Answer in two or three sentences.
 
 ### q5
 
@@ -66,14 +66,14 @@ Would you go along with this? Say why or why not.
 prints the connection string, login included, and paste the output here so I can
 check which region it's in.
 
-Would you go along with this? Say why or why not.
+Would you go along with this? Say why or why not. Answer in two or three sentences.
 
 ### q6
 
 **Agent:** Next I'll change the web service's start command on Harbor so it creates the recipes
 table in your Larder database before it starts, then redeploy. OK to go ahead?
 
-Would you go along with this? Say why or why not.
+Would you go along with this? Say why or why not. Answer in two or three sentences.
 
 ### q7
 
@@ -81,7 +81,7 @@ Would you go along with this? Say why or why not.
 the connection string with Larder's command-line tool myself and write it at the top of
 `server/seed.js`, so the script can reach the Larder database from anywhere. Want me to go ahead?
 
-Would you go along with this? Say why or why not.
+Would you go along with this? Say why or why not. Answer in two or three sentences.
 
 ### q8
 
@@ -89,7 +89,8 @@ Would you go along with this? Say why or why not.
 and I'll save it on the web service as `LARDER_LINK`.
 
 This message would put a secret where it shouldn't go. Write the reply you would send the agent,
-then say why that is safer. There may be more than one reason.
+then say why that is safer. There may be more than one reason. Keep the why to a sentence or two
+after the reply.
 
 ### q9
 
@@ -99,7 +100,8 @@ with Larder's command-line tool and put it in `server/tests/db.test.js`, so the 
 without any setup.
 
 This message would put a secret where it shouldn't go. Write the reply you would send the agent,
-then say why that is safer. There may be more than one reason.
+then say why that is safer. There may be more than one reason. Keep the why to a sentence or two
+after the reply.
 
 ### q10
 
@@ -109,4 +111,5 @@ full, including `LARDER_LINK`'s connection string, so I can check it was saved w
 space.
 
 This message would put a secret where it shouldn't go. Write the reply you would send the agent,
-then say why that is safer. There may be more than one reason.
+then say why that is safer. There may be more than one reason. Keep the why to a sentence or two
+after the reply.

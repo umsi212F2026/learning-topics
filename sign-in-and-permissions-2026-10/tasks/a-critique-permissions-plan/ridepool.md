@@ -20,8 +20,10 @@ The backend's routes:
 The app's levels: a **signed-in member**; the **driver** of a ride, the member who offered it; and
 a **trip leader**, one of the club's trip leaders, who look after the whole board.
 
+## Framing
+
 Each question below is a separate piece of the work. They are independent: treat each one as if
-it were the only one you had seen. Answer each in two to four sentences.
+it were the only one you had seen.
 
 ### draft-table
 
@@ -35,7 +37,8 @@ Your agent drafts this table for `DEPLOY.md`:
 | Cancel a ride | no | no | yes | yes |
 | See your own name and picture | no | yes | yes | yes |
 
-Would you agree to this as it stands? If not, what would you change?
+Would you agree to this as it stands? If not, what would you change? Answer in two to four
+sentences.
 
 ### edit-ride
 
@@ -64,7 +67,8 @@ And its plan for enforcing it:
    seat count it is sent.
 6. In React, show the Cancel button only to the ride's driver and to trip leaders.
 
-Would you agree to this as it stands? If not, what would you change?
+Would you agree to this as it stands? If not, what would you change? Answer in two to four
+sentences.
 
 ### who-is-asking
 
@@ -94,7 +98,8 @@ And its plan for enforcing it:
    `req.body.userId` to the ride's riders.
 6. In React, show the Edit and Cancel buttons only to the ride's driver and to trip leaders.
 
-Would you agree to this as it stands? If not, what would you change?
+Would you agree to this as it stands? If not, what would you change? Answer in two to four
+sentences.
 
 ### routes-file
 
@@ -129,7 +134,8 @@ And its plan for enforcing it:
 5. In React, show the Edit and Cancel buttons only to the ride's driver and to trip leaders, and
    the Join button only to someone signed in.
 
-Would you agree to this as it stands? If not, what would you change?
+Would you agree to this as it stands? If not, what would you change? Answer in two to four
+sentences.
 
 ### whole-plan
 
@@ -167,14 +173,15 @@ And its plan for enforcing it:
 6. In React, show the Edit and Cancel buttons only to the ride's driver and to trip leaders, and
    the Join button only to someone signed in.
 
-Would you agree to this as it stands? If not, what would you change?
+Would you agree to this as it stands? If not, what would you change? Answer in two to four
+sentences.
 
 ### confirm-cancel
 
 Your agent reports: "The rules in the table are in place and deployed to Burrowhost."
 
 Take the rule that a member who didn't offer a ride may not cancel it. Which request would you make
-to show this rule holds, and what should it get back?
+to show this rule holds, and what should it get back? Answer in two to four sentences.
 
 ### confirm-join
 
@@ -184,3 +191,4 @@ to the gorge, and the site sent me straight to Google's sign-in page."
 
 Take the rule that someone not signed in may not join a ride. Does the agent's check show that this
 rule holds? Which request would you make to show this rule holds, and what should it get back?
+Answer in two to four sentences.

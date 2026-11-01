@@ -1,11 +1,11 @@
 # deploy status
 
-Answer in two or three sentences, in your own words.
-
 ### q1
 
 Your backend runs on a host called Larkyard, and your agent reports that the deploy status of its
 latest deploy is `live`. What is the difference between that and your app working?
+
+Answer in two or three sentences, in your own words.
 
 ### q2
 
@@ -16,3 +16,5 @@ team chat:
 "Deploy status is failed, so the site is down for everyone until we fix it."
 
 What is wrong with that?
+
+Answer in two or three sentences, in your own words.

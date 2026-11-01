@@ -1,11 +1,11 @@
 # build time
 
-Answer in two or three sentences, in your own words.
-
 ### q-build-time-vs-runtime
 
 What is the difference between a value that is fixed at build time and one that is read at
 runtime?
+
+Answer in two or three sentences, in your own words.
 
 ### q-catch-build-in-browser
 
@@ -20,6 +20,8 @@ frontend setting on Pinecart now, the next person who opens the site gets the ne
 
 What is wrong with what they said?
 
+Answer in two or three sentences, in your own words.
+
 ### q-catch-build-time-secret-safe
 
 A student says:
@@ -28,3 +30,5 @@ A student says:
 host, so it never reaches visitors' browsers."
 
 What is wrong with what they said?
+
+Answer in two or three sentences, in your own words.

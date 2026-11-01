@@ -1,7 +1,5 @@
 # Redirect URL
 
-Answer in two or three sentences, in your own words.
-
 Pantry is a recipe box for a campus cooking club, with sign-in through GitHub. Its React frontend
 is on Pagecove, a static host, at `https://pantry.pagecove.app`, and its Express backend is on
 Rivetbox, a server host, at `https://pantry-api.rivetbox.com`. On a laptop, the backend runs at
@@ -16,6 +14,8 @@ get to the app."
 
 What is wrong with that?
 
+Answer in two or three sentences, in your own words.
+
 ### q3
 
 When the student registered Pantry with GitHub, they entered
@@ -28,6 +28,10 @@ settings."
 
 What is wrong with that?
 
+Answer in two or three sentences, in your own words.
+
 ### q1
 
 What is the difference between Pantry's redirect URL and Pantry's own URL?
+
+Answer in two or three sentences, in your own words.

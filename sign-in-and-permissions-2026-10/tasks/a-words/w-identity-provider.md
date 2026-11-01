@@ -1,7 +1,5 @@
 # Identity provider
 
-Answer in two or three sentences, in your own words.
-
 Ladle is a recipe box for a campus cooking club. Its Express backend runs on Rivetbox, a server
 host, and members sign in with their Google accounts. Members may edit or delete only the recipes
 they posted.
@@ -15,6 +13,8 @@ picture. A student says:
 
 What is wrong with that?
 
+Answer in two or three sentences, in your own words.
+
 ### q3
 
 A student says:
@@ -23,7 +23,11 @@ A student says:
 
 What is wrong with that?
 
+Answer in two or three sentences, in your own words.
+
 ### q1
 
 What is the difference between Google's job as Ladle's identity provider and Rivetbox's job as
 Ladle's host?
+
+Answer in two or three sentences, in your own words.

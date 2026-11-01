@@ -1,11 +1,11 @@
 # cold start
 
-Answer in two or three sentences, in your own words.
-
 ### q1
 
 Two students each say their app is "slow". One has a cold start; the other has a slow server. What
 separates the two, and what would you watch for to tell which one an app has?
+
+Answer in two or three sentences, in your own words.
 
 ### q2
 
@@ -15,3 +15,5 @@ A student writes in their notes:
 class is using it."
 
 What is wrong with that?
+
+Answer in two or three sentences, in your own words.

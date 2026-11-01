@@ -16,10 +16,12 @@ The backend's routes:
 The app has three levels: any signed-in member; the member who added a book, who may edit or
 remove it; and the club's two organizers, who may edit or remove any book.
 
-You and your coding agent are giving Shelfshare its rules for who may do what. Each question below
-shows two versions, A and B, of one piece of that work. The questions are independent: treat each
-one as if it were the only one you had seen. For each, answer in two or three sentences: would you
-agree to A, B, or both? What gives it away?
+You and your coding agent are giving Shelfshare its rules for who may do what.
+
+## Framing
+
+Each question below shows two versions, A and B, of one piece of that work. The questions are
+independent: treat each one as if it were the only one you had seen.
 
 ### q1
 
@@ -46,7 +48,7 @@ Your agent offers two versions of the who-may-do-what table for `DEPLOY.md`.
 
 > This covers everything the backend lets anyone do.
 
-Would you agree to A, B, or both? What gives it away?
+Would you agree to A, B, or both? What gives it away? Answer in two or three sentences.
 
 ### q2
 
@@ -72,7 +74,7 @@ Your agent offers two versions of the who-may-do-what table for `DEPLOY.md`.
 | Edit a book | no | yes | yes | no |
 | Remove a book | no | yes | yes | no |
 
-Would you agree to A, B, or both? What gives it away?
+Would you agree to A, B, or both? What gives it away? Answer in two or three sentences.
 
 ### q3
 
@@ -90,7 +92,7 @@ Your agent offers two versions of one step of its plan.
 > Step 4. In `BookPage.jsx`, show the Edit and Remove buttons only to the member who added the
 > book and to organizers, and have the `/books/:id/edit` page send anyone else back to the list.
 
-Would you agree to A, B, or both? What gives it away?
+Would you agree to A, B, or both? What gives it away? Answer in two or three sentences.
 
 ### q4
 
@@ -120,7 +122,7 @@ router.post('/api/books/:id/vote', requireSignIn, voteForBook);
 router.get('/api/me', requireSignIn, getMe);
 ```
 
-Would you agree to A, B, or both? What gives it away?
+Would you agree to A, B, or both? What gives it away? Answer in two or three sentences.
 
 ### q5
 
@@ -153,7 +155,7 @@ async function voteForBook(req, res) {
 }
 ```
 
-Would you agree to A, B, or both? What gives it away?
+Would you agree to A, B, or both? What gives it away? Answer in two or three sentences.
 
 ### q6
 
@@ -179,7 +181,7 @@ Your agent offers two versions of its plan for enforcing the rules.
 >    refuses the request unless the session's member added it or is an organizer.
 > 4. Every handler takes the member from the session.
 
-Would you agree to A, B, or both? What gives it away?
+Would you agree to A, B, or both? What gives it away? Answer in two or three sentences.
 
 ### q7
 
@@ -195,7 +197,7 @@ isn't signed in can't vote for a book.
 > From a terminal, with no session cookie, send `POST /api/books/7/vote`.
 
 Would you agree to A, B, or both? What gives it away, and what should the request you chose get
-back?
+back? Answer in two or three sentences.
 
 ### q8
 
@@ -213,4 +215,4 @@ an organizer.
 > From a terminal, with no session cookie, send `PATCH /api/books/7` with a new note.
 
 Would you agree to A, B, or both? What gives it away, and what should the request you chose get
-back?
+back? Answer in two or three sentences.

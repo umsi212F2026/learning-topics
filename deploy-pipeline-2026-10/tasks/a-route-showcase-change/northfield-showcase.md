@@ -1,5 +1,3 @@
-Answer each question in two or three sentences.
-
 Your GitHub username is `mara-codes`, and your app lives in your repository
 `mara-codes/study-buddy`. Your class at Northfield keeps a showcase of everyone's apps in the
 repository `northfield-cs/showcase`, which belongs to the class's GitHub account. You can read
@@ -15,12 +13,14 @@ Your agent will do the typing. Your job is to say what should happen.
 ### q1
 
 Before any pull request exists, where does your change get made and pushed?
+Answer in two or three sentences.
 
 ### q2
 
 Your change is pushed, on a branch called `add-study-buddy` in `mara-codes/showcase`, your own
 copy of the showcase. GitHub's page for opening a pull request asks for a base repository and
 branch and a head repository and branch. What do you choose for each?
+Answer in two or three sentences.
 
 ### q3
 
@@ -31,4 +31,4 @@ Your pull request, from `mara-codes/showcase` branch `add-study-buddy` into
 validate-entries: apps/study-buddy.json is missing required field "url"
 ```
 
-What do you do?
+What do you do? Answer in two or three sentences.

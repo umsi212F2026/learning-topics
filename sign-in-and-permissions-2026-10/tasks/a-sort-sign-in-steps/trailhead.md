@@ -8,21 +8,25 @@ Right now the whole app sits behind one shared basic-auth password. You and your
 replacing that with sign-in through GitHub. Once someone signs in, Trailhead shows their GitHub name
 and profile picture beside the trips they signed up for. It doesn't use their email.
 
-Each card below is one step someone has proposed for adding sign-in. The cards are independent of
-each other and come in no particular order. Put each card in one of three piles:
+You are sorting a deck of cards, each one step someone has proposed for adding sign-in, into three
+piles:
 
 - **yours**: you do it by hand, at GitHub or in a host's settings.
 - **your agent's, as written**: code or config your agent can do just as the card says.
 - **change it first**: say what you would change it to, and who does the changed step.
 
-Answer each card in one to three sentences.
+## Framing
+
+Each card below is one step from the deck. The cards are independent of each other and come in no
+particular order.
 
 ### card-1
 
 Create an OAuth app in GitHub's developer settings for Trailhead. The later steps use what it gives
 you.
 
-Which pile, and why? If you'd change it, say to what and who does it.
+Which pile, and why? If you'd change it, say to what and who does it. Answer in one to three
+sentences.
 
 ### card-2
 
@@ -32,7 +36,8 @@ Your agent proposes this line in `backend/auth.js`:
 scope: ['repo'], // so we can show their projects on their trip page later
 ```
 
-Which pile, and why? If you'd change it, say to what and who does it.
+Which pile, and why? If you'd change it, say to what and who does it. Answer in one to three
+sentences.
 
 ### card-3
 
@@ -40,7 +45,8 @@ Which pile, and why? If you'd change it, say to what and who does it.
 in the chat. I'll put the ID in `frontend/.env` as `VITE_GITHUB_CLIENT_ID` and set the secret on
 the backend host for you."
 
-Which pile, and why? If you'd change it, say to what and who does it.
+Which pile, and why? If you'd change it, say to what and who does it. Answer in one to three
+sentences.
 
 ### card-4
 
@@ -48,14 +54,16 @@ In the OAuth app's settings at GitHub, set the callback URL to
 `http://localhost:3001/auth/github/callback`. It's the only one Trailhead needs: once the app is
 live, GitHub can still send people back to this same address.
 
-Which pile, and why? If you'd change it, say to what and who does it.
+Which pile, and why? If you'd change it, say to what and who does it. Answer in one to three
+sentences.
 
 ### card-5
 
 Put the client secret in Moorbolt's settings for the backend as `GITHUB_CLIENT_SECRET`, and the
 client ID in the frontend's environment as `VITE_GITHUB_CLIENT_ID`.
 
-Which pile, and why? If you'd change it, say to what and who does it.
+Which pile, and why? If you'd change it, say to what and who does it. Answer in one to three
+sentences.
 
 ### card-6
 
@@ -64,7 +72,8 @@ the client ID and client secret from its environment, to GitHub. It then asks Gi
 user is, and finds or creates a `users` row keyed by `github_id`, holding their name and picture,
 with no password column.
 
-Which pile, and why? If you'd change it, say to what and who does it.
+Which pile, and why? If you'd change it, say to what and who does it. Answer in one to three
+sentences.
 
 ### card-7
 
@@ -72,4 +81,5 @@ You notice that `backend/.env`, holding the client secret, went out in a commit 
 Trailhead's public repository on GitHub. Your agent proposes: "Delete `backend/.env` in a new
 commit, add it to `.gitignore`, and push."
 
-Which pile, and why? If you'd change it, say to what and who does it.
+Which pile, and why? If you'd change it, say to what and who does it. Answer in one to three
+sentences.

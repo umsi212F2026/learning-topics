@@ -1,7 +1,5 @@
 # server host
 
-Answer in two or three sentences, in your own words.
-
 ### q2
 
 A student writes in their notes:
@@ -11,6 +9,8 @@ browser, which runs it."
 
 What is wrong with that?
 
+Answer in two or three sentences, in your own words.
+
 ### q3
 
 A student has moved their Express backend to a server host. They write in their notes:
@@ -19,3 +19,5 @@ A student has moved their Express backend to a server host. They write in their 
 running in a terminal, or the app stops answering."
 
 What is wrong with that?
+
+Answer in two or three sentences, in your own words.

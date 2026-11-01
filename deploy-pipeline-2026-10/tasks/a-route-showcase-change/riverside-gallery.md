@@ -1,5 +1,3 @@
-Answer each question in two or three sentences, or by choosing one option where options are given.
-
 Your GitHub username is `theo-makes`, and your app lives in your repository
 `theo-makes/recipe-box`. The Riverside hack club keeps a gallery of its members' apps in the
 repository `riverside-hack-club/gallery`, which belongs to the club's GitHub account. You can read
@@ -16,6 +14,7 @@ Your agent will do the typing. Your job is to say what should happen.
 
 Your agent proposes: "I'll add your entry to an `apps.json` file in `theo-makes/recipe-box` and
 push it to `main`." Would you go along with this? If not, where should it go?
+Answer in two or three sentences.
 
 ### q2
 
@@ -40,4 +39,4 @@ lint-gallery: apps.json: entry "Recipe Box": "link" must start with https://
 ```
 
 Your agent proposes: "I'll close this pull request and open a fresh one with the fix." Would you
-go along with this? If not, what should happen instead?
+go along with this? If not, what should happen instead? Answer in two or three sentences.

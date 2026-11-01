@@ -7,6 +7,8 @@ and it records, for each station, how many minutes it sat with no bikes and how 
 sat with no free dock. Chance is built into its rules: riders turn up at random moments, at the
 rate the third parameter sets, and each one picks a destination station at random.
 
+## Framing
+
 Each question below comes from a different person who wants this simulation to answer one
 question. Each question is about this simulation alone.
 

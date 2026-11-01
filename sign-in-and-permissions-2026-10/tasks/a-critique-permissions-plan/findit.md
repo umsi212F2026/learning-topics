@@ -17,8 +17,10 @@ The backend's routes:
 The app's levels: a **signed-in resident**; the **owner** of a post, the resident who posted it;
 and a **desk worker**, one of the hall's front desk staff, who look after the whole board.
 
+## Framing
+
 Each question below is a separate piece of the work. They are independent: treat each one as if
-it were the only one you had seen. Answer each in two to four sentences.
+it were the only one you had seen.
 
 ### draft-table
 
@@ -32,7 +34,8 @@ Your agent drafts this table for `DEPLOY.md`:
 | Mark an item claimed | no | no | yes | yes |
 | See your own name and picture | no | yes | yes | yes |
 
-Would you agree to this as it stands? If not, what would you change?
+Would you agree to this as it stands? If not, what would you change? Answer in two to four
+sentences.
 
 ### edit-button
 
@@ -60,7 +63,8 @@ And its plan for enforcing it:
    that someone is signed in.
 5. In React, show the Mark claimed and Delete buttons only to the post's owner and to desk workers.
 
-Would you agree to this as it stands? If not, what would you change?
+Would you agree to this as it stands? If not, what would you change? Answer in two to four
+sentences.
 
 ### claim-step
 
@@ -88,7 +92,8 @@ And its plan for enforcing it:
 5. In React, show the Edit, Mark claimed and Delete buttons only to the post's owner and to desk
    workers.
 
-Would you agree to this as it stands? If not, what would you change?
+Would you agree to this as it stands? If not, what would you change? Answer in two to four
+sentences.
 
 ### owner-check
 
@@ -135,7 +140,8 @@ And its plan for enforcing it:
 6. In React, show the Edit, Mark claimed and Delete buttons only to the post's owner and to desk
    workers.
 
-Would you agree to this as it stands? If not, what would you change?
+Would you agree to this as it stands? If not, what would you change? Answer in two to four
+sentences.
 
 ### whole-plan
 
@@ -174,7 +180,8 @@ And its plan for enforcing it:
 6. In React, show the Edit, Mark claimed and Delete buttons only to the post's owner and to desk
    workers.
 
-Would you agree to this as it stands? If not, what would you change?
+Would you agree to this as it stands? If not, what would you change? Answer in two to four
+sentences.
 
 ### confirm-claimed
 
@@ -184,11 +191,11 @@ there's no Mark claimed button on any post."
 
 Take the rule that someone not signed in may not mark an item claimed. Does the agent's check show
 that this rule holds? Which request would you make to show this rule holds, and what should it get
-back?
+back? Answer in two to four sentences.
 
 ### confirm-edit
 
 Your agent reports: "The rules in the table are in place and deployed to Hearthbox."
 
 Take the rule that a resident who didn't post an item may not edit its post. Which request would
-you make to show this rule holds, and what should it get back?
+you make to show this rule holds, and what should it get back? Answer in two to four sentences.

@@ -7,10 +7,12 @@ at `https://nook-api.forgeline.com`, with a Postgres database. On your laptop th
 Right now the whole app sits behind one shared basic-auth password. You and your coding agent are
 replacing that with sign-in through GitHub. Once someone signs in, Nook shows their GitHub name and
 profile picture beside each room they have booked, and emails a booking confirmation to the email
-address on their GitHub account.
+address on their GitHub account. Your agent has written a plan for the change.
+
+## Framing
 
 Each question below is a separate excerpt from your agent's plan. They are independent: treat each
-one as if it were the only part of the plan you had seen. Answer each in two to four sentences.
+one as if it were the only part of the plan you had seen.
 
 ### browser
 
@@ -25,7 +27,7 @@ one as if it were the only part of the plan you had seen. Answer each in two to 
    `BASIC_AUTH_PASSWORD` line from `backend/.env.example`.
 
 Would you agree to this as it stands? If not, what would you change, and who does it, you or your
-agent?
+agent? Answer in two to four sentences.
 
 ### one-callback
 
@@ -42,7 +44,7 @@ agent?
    `${import.meta.env.VITE_API_URL}/auth/github`.
 
 Would you agree to this as it stands? If not, what would you change, and who does it, you or your
-agent?
+agent? Answer in two to four sentences.
 
 ### env-lines
 
@@ -64,7 +66,7 @@ Once you've created the OAuth app at GitHub:
    the exchange with GitHub.
 
 Would you agree to this as it stands? If not, what would you change, and who does it, you or your
-agent?
+agent? Answer in two to four sentences.
 
 ### user-scope
 
@@ -79,7 +81,7 @@ agent?
 5. Add `GET /auth/github` and `GET /auth/github/callback` in `backend/routes/auth.js`.
 
 Would you agree to this as it stands? If not, what would you change, and who does it, you or your
-agent?
+agent? Answer in two to four sentences.
 
 ### force-push
 
@@ -93,7 +95,7 @@ Nook's public repository on GitHub forty minutes ago. Your agent proposes this f
 4. The repository has two stars and the commit was up for under an hour, so nobody will have
    copied the secret. The client secret can stay as it is.
 
-What do you do now, and does your agent's fix settle it?
+What do you do now, and does your agent's fix settle it? Answer in two to four sentences.
 
 ### passport-flow
 
@@ -115,4 +117,4 @@ What do you do now, and does your agent's fix settle it?
    `cors({ origin: process.env.FRONTEND_URL, credentials: true })`.
 
 Would you agree to this as it stands? If not, what would you change, and who does it, you or your
-agent?
+agent? Answer in two to four sentences.

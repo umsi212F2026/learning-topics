@@ -6,12 +6,13 @@ database is on Moorbolt too. Moorbolt stops a backend after 10 minutes with no r
 it again on the next request, which takes up to about half a minute. When a new deploy's build
 fails, both hosts leave the previous version serving. When a new backend deploy's build succeeds,
 Moorbolt stops the running version first and then starts the new one, so if the new one doesn't
-start, nothing is serving the backend until a later deploy does. Rosterpin has been live and
-working since the start of term, except in a question whose own line says it is the first deploy.
+start, nothing is serving the backend until a later deploy does. Except on the day it was first
+deployed, Rosterpin has been live and working since the start of term.
+
+## Framing
 
 Each question is a separate incident on Rosterpin, independent of the others. Each gives one line
-on what you did or noticed, then your coding agent's account of it, then a question. Answer in two
-or three sentences.
+on what you did or noticed, then your coding agent's account of it, then a question.
 
 ### q1
 
@@ -37,7 +38,7 @@ returns 500 at that line; the trip list and other trips' seats return 200.
 
 From your agent's account, where did things go wrong, if they did, and what does someone who opens
 the app right now get: which version of it, if any, and what happens when they try to use it? If
-the account can't tell you, say why.
+the account can't tell you, say why. Answer in two or three sentences.
 
 ### q2
 
@@ -77,7 +78,7 @@ deprecation notice for a package the build tools pull in.
 
 From your agent's account, where did things go wrong, if they did, and what does someone who opens
 the app right now get: which version of it, if any, and what happens when they try to use it? If
-the account can't tell you, say why.
+the account can't tell you, say why. Answer in two or three sentences.
 
 ### q3
 
@@ -104,7 +105,7 @@ Since 09:02, requests to `rosterpin-api.moorbolt.dev` get Moorbolt's own `502 Ba
 
 From your agent's account, where did things go wrong, if they did, and what does someone who opens
 the app right now get: which version of it, if any, and what happens when they try to use it? If
-the account can't tell you, say why.
+the account can't tell you, say why. Answer in two or three sentences.
 
 ### q4
 
@@ -132,7 +133,7 @@ since has returned 200 in under 60ms.
 
 From your agent's account, where did things go wrong, if they did, and what does someone who opens
 the app right now get: which version of it, if any, and what happens when they try to use it? If
-the account can't tell you, say why.
+the account can't tell you, say why. Answer in two or three sentences.
 
 ### q5
 
@@ -156,7 +157,7 @@ Rosterpin is taking one sign-up past capacity on every car, and that is what you
 
 From your agent's account, where did things go wrong, if they did, and what does someone who opens
 the app right now get: which version of it, if any, and what happens when they try to use it? If
-the account can't tell you, say why.
+the account can't tell you, say why. Answer in two or three sentences.
 
 ### q6
 
@@ -183,7 +184,7 @@ Glintpage stopped `a07d3be` at that step, and its log has nothing after it.
 
 From your agent's account, where did things go wrong, if they did, and what does someone who opens
 the app right now get: which version of it, if any, and what happens when they try to use it? If
-the account can't tell you, say why.
+the account can't tell you, say why. Answer in two or three sentences.
 
 ### q7
 
@@ -217,4 +218,4 @@ now.
 
 From your agent's account, where did things go wrong, if they did, and what does someone who opens
 the app right now get: which version of it, if any, and what happens when they try to use it? If
-the account can't tell you, say why.
+the account can't tell you, say why. Answer in two or three sentences.

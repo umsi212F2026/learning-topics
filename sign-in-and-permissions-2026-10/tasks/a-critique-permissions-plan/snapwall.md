@@ -19,8 +19,10 @@ The backend's routes:
 The app's levels: a **signed-in member**; the **owner** of a photo, the member who posted it; and
 a **moderator**, one of the club's two moderators, who look after the whole wall.
 
+## Framing
+
 Each question below is a separate piece of the work. They are independent: treat each one as if
-it were the only one you had seen. Answer each in two to four sentences.
+it were the only one you had seen.
 
 ### draft-table
 
@@ -36,7 +38,8 @@ Your agent drafts this table for `DEPLOY.md`:
 | Feature a photo | no | no | yes |
 | See your own name and picture | yes | yes | yes |
 
-Would you agree to this as it stands? If not, what would you change?
+Would you agree to this as it stands? If not, what would you change? Answer in two to four
+sentences.
 
 ### comments-route
 
@@ -66,7 +69,8 @@ And its plan for enforcing it:
 6. In React, show the Edit and Delete buttons only to the photo's owner and to moderators, the
    Feature button only to moderators, and the comment box only to someone signed in.
 
-Would you agree to this as it stands? If not, what would you change?
+Would you agree to this as it stands? If not, what would you change? Answer in two to four
+sentences.
 
 ### delete-button
 
@@ -97,7 +101,8 @@ And its plan for enforcing it:
 6. In React, show the Edit button only to the photo's owner and to moderators, and the Feature
    button only to moderators.
 
-Would you agree to this as it stands? If not, what would you change?
+Would you agree to this as it stands? If not, what would you change? Answer in two to four
+sentences.
 
 ### new-photo
 
@@ -158,7 +163,8 @@ And its plan for enforcing it:
 6. In React, show the Edit and Delete buttons only to the photo's owner and to moderators, and the
    Feature button only to moderators.
 
-Would you agree to this as it stands? If not, what would you change?
+Would you agree to this as it stands? If not, what would you change? Answer in two to four
+sentences.
 
 ### whole-plan
 
@@ -199,14 +205,15 @@ And its plan for enforcing it:
 6. In React, show the Edit and Delete buttons only to the photo's owner and to moderators, the
    Feature button only to moderators, and the comment box only to someone signed in.
 
-Would you agree to this as it stands? If not, what would you change?
+Would you agree to this as it stands? If not, what would you change? Answer in two to four
+sentences.
 
 ### confirm-delete
 
 Your agent reports: "The rules in the table are in place and deployed to Ironloft."
 
 Take the rule that someone not signed in may not delete a photo. Which request would you make to
-show this rule holds, and what should it get back?
+show this rule holds, and what should it get back? Answer in two to four sentences.
 
 ### confirm-caption
 
@@ -216,4 +223,4 @@ there's no Edit button on it."
 
 Take the rule that a member who didn't post a photo may not edit its caption. Does the agent's check
 show that this rule holds? Which request would you make to show this rule holds, and what should it
-get back?
+get back? Answer in two to four sentences.

@@ -6,9 +6,10 @@ Kettlerun stops a backend that has had no requests for 15 minutes and starts it 
 request, which takes up to about a minute. When a new deploy fails on either host, that host keeps
 the previous version serving. Roomly has been live and working for several weeks.
 
+## Framing
+
 Each question is a separate incident on Roomly, independent of the others. Each gives one
-line on what you did or noticed, then your coding agent's account of it, then a question. Answer
-in two or three sentences.
+line on what you did or noticed, then your coding agent's account of it, then a question.
 
 ### q1
 
@@ -36,7 +37,7 @@ commit. Pagewell stopped `3e7b0d4` at that step, and its log has nothing after i
 
 From your agent's account, where did things go wrong, if they did, and what does someone who opens
 the app right now get: which version of it, if any, and what happens when they try to use it? If
-the account can't tell you, say why.
+the account can't tell you, say why. Answer in two or three sentences.
 
 ### q2
 
@@ -61,7 +62,7 @@ route returns 200.
 
 From your agent's account, where did things go wrong, if they did, and what does someone who opens
 the app right now get: which version of it, if any, and what happens when they try to use it? If
-the account can't tell you, say why.
+the account can't tell you, say why. Answer in two or three sentences.
 
 ### q3
 
@@ -93,7 +94,7 @@ set in the Pagewell site's environment, so `src/api.js` fell back to its default
 
 From your agent's account, where did things go wrong, if they did, and what does someone who opens
 the app right now get: which version of it, if any, and what happens when they try to use it? If
-the account can't tell you, say why.
+the account can't tell you, say why. Answer in two or three sentences.
 
 ### q4
 
@@ -122,7 +123,7 @@ returned 200.
 
 From your agent's account, where did things go wrong, if they did, and what does someone who opens
 the app right now get: which version of it, if any, and what happens when they try to use it? If
-the account can't tell you, say why.
+the account can't tell you, say why. Answer in two or three sentences.
 
 ### q5
 
@@ -153,7 +154,7 @@ before `app.listen`.
 
 From your agent's account, where did things go wrong, if they did, and what does someone who opens
 the app right now get: which version of it, if any, and what happens when they try to use it? If
-the account can't tell you, say why.
+the account can't tell you, say why. Answer in two or three sentences.
 
 ### q6
 
@@ -178,7 +179,7 @@ which `new Date` rejects; two-digit hours parse fine. That's what is throwing on
 
 From your agent's account, where did things go wrong, if they did, and what does someone who opens
 the app right now get: which version of it, if any, and what happens when they try to use it? If
-the account can't tell you, say why.
+the account can't tell you, say why. Answer in two or three sentences.
 
 ### q7
 
@@ -209,4 +210,4 @@ to `FRONTEND_ORIGIN`, so the 200 goes out without that header and the page's `fe
 
 From your agent's account, where did things go wrong, if they did, and what does someone who opens
 the app right now get: which version of it, if any, and what happens when they try to use it? If
-the account can't tell you, say why.
+the account can't tell you, say why. Answer in two or three sentences.

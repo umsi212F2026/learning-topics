@@ -1,10 +1,10 @@
 # auto-deploy
 
-Answer in two or three sentences, in your own words.
-
 ### q-auto-deploy-vs-redeploy
 
 What is the difference between auto-deploy and a redeploy?
+
+Answer in two or three sentences, in your own words.
 
 ### q-catch-auto-deploy-on-save
 
@@ -15,6 +15,8 @@ host picks up the change and redeploys my app."
 
 What is wrong with what they said?
 
+Answer in two or three sentences, in your own words.
+
 ### q-catch-auto-deploy-runs-tests
 
 A student says:
@@ -23,3 +25,5 @@ A student says:
 commit can't reach the live app."
 
 What is wrong with what they said?
+
+Answer in two or three sentences, in your own words.

@@ -252,9 +252,11 @@ text states the task, never the scoring.
   in one of three arrangements: frontend and backend on two hosts; one host running them as two
   services; or the backend serving the built frontend itself. It says whether the backend's host
   puts it to sleep when nobody has visited for a while, and that the app has been live and working
-  before, except in any incident a question sets at the app's first deploy, which that question's
-  own line says. Host names are invented per scenario and never a real vendor's. **Each question is a
-  separate incident** on that app, and the setup says the questions are independent. A question
+  before, except on the day of its first deploy (worded as a fact about the app, never as a
+  reference to a question); an incident set at the first deploy says so in its own line. Host
+  names are invented per scenario and never a real vendor's. **Each question is a separate
+  incident** on that app; the scenario never mentions the questions, and a `## Framing` at the end
+  of the setup says they are independent. A question
   gives one line on what the student did or noticed ("I pushed a change that adds a search box",
   "a friend says the sign-up page is broken"), then the agent's account, 3 to 8 lines, written as a
   coding agent writes after reading the host through its CLI or MCP server: what it looked at, a
@@ -328,8 +330,9 @@ text states the task, never the scoring.
   what a visitor sees match the key, or for `local-only` when they say it isn't evidence about the
   deployed app; half when one of the two is right; none otherwise. A scenario carries all seven cases
   across its questions, one each, every one at Medium or Hard and at least one at Hard. No
-  question's text gives away another's answer. A scenario's setup states the task
-  and how long an answer should be, never the scoring.
+  question's text gives away another's answer. Each question states the task and how long an
+  answer should be (the fixed question, then "Answer in two or three sentences."), never the
+  scoring; the setup says neither.
 - **worked example:** shown only as help when the learner asks for it, which records the attempt as
   helped. Work a different account aloud: find the last thing that went right (the build finished;
   the server printed that it was listening; the request reached the server), then the first thing

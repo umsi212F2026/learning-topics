@@ -154,9 +154,11 @@ still ask for and credit the reason.
   learner the repair's answer, and the repairs show them the message's, so whichever comes first
   gives the other away. Across the bank, both `c-judge-secret-request`'s dashboard case and
   `c-secret-instead` still need their questions, so split them between scenarios. The `plain`
-  and `host-sets` shapes are optional, since they credit no goal the others don't. A scenario's
-  setup says how to answer each kind: two or three sentences for exchange and message questions,
-  and for a repair, the reply and then a sentence or two on why.
+  and `host-sets` shapes are optional, since they credit no goal the others don't. Each question
+  says how to answer it, after the wording above, and the setup never does: two or three
+  sentences for exchange and message questions, and for a repair, the reply and then a sentence
+  or two on why. Any line introducing the run (that the questions follow the
+  deploy in order, and which kinds there are) goes under `## Framing` at the end of the setup.
 - **worked example:** shown only as help when the learner asks for it, which records the attempt
   as helped; never before a first question unprompted, since the repair example is close to a
   full-credit answer. For an exchange, say what the agent's answer says the value is used for,

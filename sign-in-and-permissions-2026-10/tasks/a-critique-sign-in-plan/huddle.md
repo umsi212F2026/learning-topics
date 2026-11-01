@@ -7,10 +7,12 @@ at `https://huddle.brightdock.app`. Its Express backend runs on Kettleworks, a s
 Right now the whole app sits behind one shared basic-auth password. You and your coding agent are
 replacing that with sign-in through Google. Once someone signs in, Huddle shows their Google name
 and profile picture beside the events they post and the ones they RSVP to. It doesn't use their
-email.
+email. Your agent has written a plan for the change.
+
+## Framing
 
 Each question below is a separate excerpt from your agent's plan. They are independent: treat each
-one as if it were the only part of the plan you had seen. Answer each in two to four sentences.
+one as if it were the only part of the plan you had seen.
 
 ### register
 
@@ -25,7 +27,7 @@ one as if it were the only part of the plan you had seen. Answer each in two to 
 5. Once sign-in works, remove the basic-auth middleware from `backend/server.js`.
 
 Would you agree to this as it stands? If not, what would you change, and who does it, you or your
-agent?
+agent? Answer in two to four sentences.
 
 ### redirect
 
@@ -41,7 +43,7 @@ agent?
    `${import.meta.env.VITE_API_URL}/auth/google`.
 
 Would you agree to this as it stands? If not, what would you change, and who does it, you or your
-agent?
+agent? Answer in two to four sentences.
 
 ### paste-values
 
@@ -55,7 +57,7 @@ Once you've created the OAuth client in the Google Cloud console:
 4. In `backend/auth.js`, read both values from `process.env` for the exchange with Google.
 
 Would you agree to this as it stands? If not, what would you change, and who does it, you or your
-agent?
+agent? Answer in two to four sentences.
 
 ### calendar
 
@@ -80,7 +82,7 @@ agent?
 5. Add a "Sign in with Google" button to `frontend/src/components/NavBar.jsx`.
 
 Would you agree to this as it stands? If not, what would you change, and who does it, you or your
-agent?
+agent? Answer in two to four sentences.
 
 ### untracked
 
@@ -93,7 +95,7 @@ Huddle's public repository on GitHub. Your agent proposes this fix:
 3. Commit both changes and push to the public repository.
 4. Check on GitHub that `backend/.env` no longer appears in the repository's file list.
 
-What do you do now, and does your agent's fix settle it?
+What do you do now, and does your agent's fix settle it? Answer in two to four sentences.
 
 ### id-token
 
@@ -109,4 +111,4 @@ What do you do now, and does your agent's fix settle it?
    allows credentials from `https://huddle.brightdock.app`.
 
 Would you agree to this as it stands? If not, what would you change, and who does it, you or your
-agent?
+agent? Answer in two to four sentences.

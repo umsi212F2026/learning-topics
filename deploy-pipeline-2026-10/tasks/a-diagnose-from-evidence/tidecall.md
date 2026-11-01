@@ -1,6 +1,3 @@
-Each question is a different change, on a different day, with its own evidence. Answer each in
-two or three sentences.
-
 Tidecall is an app where volunteers sign up for beach cleanups. Its React frontend, in the
 repository's `web` folder, is hosted on Pinecart, and its Express backend, in the `server` folder,
 is hosted on Ropewalk; both come from one GitHub repository. Pinecart's repository link is off,
@@ -47,6 +44,10 @@ What the two hosts do:
     time. When a deploy fails, the previous one stays live.
 
 The live app is at `https://tidecall.pinecart.app`.
+
+## Framing
+
+Each question is a different change, on a different day, with its own evidence.
 
 ### q1
 
@@ -115,7 +116,7 @@ Reload skipping the browser's cache
   Heading: "Join a cleanup"
 ```
 
-Why isn't the change showing, and what would you do next?
+Why isn't the change showing, and what would you do next? Answer in two or three sentences.
 
 ### q2
 
@@ -185,7 +186,7 @@ Reload skipping the browser's cache
   Under each cleanup: "Meet at the boardwalk stairs"
 ```
 
-Why isn't the change showing, and what would you do next?
+Why isn't the change showing, and what would you do next? Answer in two or three sentences.
 
 ### q3
 
@@ -250,7 +251,7 @@ Reload skipping the browser's cache
   Beach card button: "Sign up"
 ```
 
-Why isn't the change showing, and what would you do next?
+Why isn't the change showing, and what would you do next? Answer in two or three sentences.
 
 ### q4
 
@@ -320,4 +321,4 @@ Reload skipping the browser's cache
   Beaches: North Beach, Driftwood Cove, Pier Steps
 ```
 
-Why isn't the change showing, and what would you do next?
+Why isn't the change showing, and what would you do next? Answer in two or three sentences.

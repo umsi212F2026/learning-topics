@@ -1,5 +1,3 @@
-Answer each question in two or three sentences.
-
 Your classmate Priya's GitHub username is `priya-builds`, and her app lives in her repository
 `priya-builds/plant-pal`. The Eastgate coding club keeps a wall of its members' apps in the
 repository `eastgate-coders/app-wall`, which belongs to the club's GitHub account. Priya can read
@@ -10,6 +8,8 @@ The app wall keeps its list in one file, `apps.json`, with an entry per app givi
 `check-app-wall` runs on every pull request to the app wall and fails if an entry is missing a
 field or is badly formed. Her agent did the typing. Other members' entries were merged into
 `eastgate-coders/app-wall` while Priya was working on hers.
+
+## Framing
 
 Each question below is a separate account of how Priya got her entry onto the app wall. Read each
 one on its own.
@@ -27,7 +27,7 @@ Priya tells it like this:
 4. It opened a pull request in `priya-builds/plant-pal`, from `add-plant-pal` into `main`.
 
 Would you have gone along with this? If a step goes wrong, which one, and what should have
-happened instead?
+happened instead? Answer in two or three sentences.
 
 ### q2
 
@@ -40,7 +40,7 @@ Priya's agent summed up what it did like this:
    `priya-builds/app-wall` branch `add-plant-pal`.
 
 Would you have gone along with this? If a step goes wrong, which one, and what should have
-happened instead?
+happened instead? Answer in two or three sentences.
 
 ### q3
 
@@ -59,7 +59,7 @@ Priya tells it like this:
 6. `check-app-wall` passed on the second pull request.
 
 Would you have gone along with this? If a step goes wrong, which one, and what should have
-happened instead?
+happened instead? Answer in two or three sentences.
 
 ### q4
 
@@ -78,4 +78,4 @@ Priya's agent summed up what it did like this:
 6. `check-app-wall` ran again on the same pull request and passed.
 
 Would you have gone along with this? If a step goes wrong, which one, and what should have
-happened instead?
+happened instead? Answer in two or three sentences.

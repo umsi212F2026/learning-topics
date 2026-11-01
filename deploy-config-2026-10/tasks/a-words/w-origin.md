@@ -1,14 +1,16 @@
 # origin
 
-Answer in two or three sentences, in your own words.
-
 ### q1
 
 What is the difference between a page's origin and its domain?
 
+Answer in two or three sentences, in your own words.
+
 ### q4
 
 What is the difference between a page's full URL and its origin? Say what each one names.
+
+Answer in two or three sentences, in your own words.
 
 ### q2
 
@@ -18,6 +20,8 @@ Tally, a budgeting app, serves its React frontend at `https://tally.quay.app`. A
 
 What is wrong with that?
 
+Answer in two or three sentences, in your own words.
+
 ### q3
 
 Tally's budget page is loaded from `https://tally.quay.app`. To show exchange rates, it also fetches data from a currency service at `https://rates.example.org`. A student writes in their notes:
@@ -25,3 +29,5 @@ Tally's budget page is loaded from `https://tally.quay.app`. To show exchange ra
 "A page's origin is where its requests go, so this page's origin is `https://rates.example.org`."
 
 What is wrong with that?
+
+Answer in two or three sentences, in your own words.

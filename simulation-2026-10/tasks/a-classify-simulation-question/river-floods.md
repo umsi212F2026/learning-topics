@@ -7,6 +7,8 @@ simulated year, and it records the river's highest level, the number of days wat
 low streets, and which houses took water. Chance is built into its rules: storms arrive on random
 days, at the rate the second parameter sets, and each storm drops a random amount of rain.
 
+## Framing
+
 Each question below comes from a different person who wants this simulation to answer one
 question. Each question is about this simulation alone.
 

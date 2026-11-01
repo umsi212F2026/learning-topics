@@ -8,6 +8,8 @@ at a stop because the bus was full. Chance is built into its rules: riders turn 
 moments, at the rate the third parameter sets, and the time a bus takes between stops varies at
 random with the traffic.
 
+## Framing
+
 Each question below comes from a different person who wants this simulation to answer one
 question. Each question is about this simulation alone.
 

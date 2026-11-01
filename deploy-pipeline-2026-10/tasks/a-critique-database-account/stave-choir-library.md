@@ -1,11 +1,8 @@
-Answer each question in two or three sentences.
-
 Stave is the music library app for the Northwood Community Choir. The library page lists every
 piece of sheet music the choir owns, and a member checks out a copy of a piece to take home and
 returns it later. The React frontend is in `client/` and the Express backend in `server/`, both in
 one GitHub repository, `northwood-choir/stave`. The frontend is hosted on Pinecart, the backend on
-Ropewalk, and the Postgres database on Cellarstone. How the frontend deploys is not part of these
-questions.
+Ropewalk, and the Postgres database on Cellarstone. How the frontend deploys plays no part here.
 
 The database has two tables. `scores` holds the choir's 64 pieces, each with its title, composer,
 number of copies and a unique `catalog_number`; these are the rows the app is meant to open with.
@@ -45,6 +42,8 @@ This is how the backend's host and the database's host behave:
     typed into Cellarstone's query console.
   - Each database has a connection string, which is a secret.
 
+## Framing
+
 Each question below is an account an agent gave, in a different session, of work it did on Stave's
 production database. Read each one on its own.
 
@@ -64,7 +63,7 @@ and changing it is all in the code. Here's what it told you:
 4. I pushed this to `main`. The checks passed, and Ropewalk's deploy list shows the deploy as Live.
 
 Would you have accepted this? If a step goes wrong, which one, and what should have happened
-instead?
+instead? Answer in two or three sentences.
 
 ### q2
 
@@ -80,7 +79,7 @@ back. Here's what it told you:
 5. The due date feature is done.
 
 Would you have accepted this? If a step goes wrong, which one, and what should have happened
-instead?
+instead? Answer in two or three sentences.
 
 ### q3
 
@@ -103,7 +102,7 @@ what it told you:
    before. The data handling is confirmed.
 
 Would you have accepted this? If a step goes wrong, which one, and what should have happened
-instead?
+instead? Answer in two or three sentences.
 
 ### q4
 
@@ -130,4 +129,4 @@ what it told you:
    lists the 64 pieces, each once.
 
 Would you have accepted this? If a step goes wrong, which one, and what should have happened
-instead?
+instead? Answer in two or three sentences.

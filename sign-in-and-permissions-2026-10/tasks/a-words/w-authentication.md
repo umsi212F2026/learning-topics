@@ -1,7 +1,5 @@
 # Authentication
 
-Answer in two or three sentences, in your own words.
-
 Pantry is a recipe box for a campus cooking club. Members sign in through GitHub, post recipes, and
 may edit or delete only the recipes they posted.
 
@@ -14,6 +12,8 @@ author and refuses if they differ. A student writes in the project notes:
 
 What is wrong with that?
 
+Answer in two or three sentences, in your own words.
+
 ### q2
 
 Pantry keeps no passwords: its `users` table holds each member's GitHub id, name and picture, and
@@ -23,3 +23,5 @@ nothing else. A student says:
 which member posted a recipe."
 
 What is wrong with that?
+
+Answer in two or three sentences, in your own words.
