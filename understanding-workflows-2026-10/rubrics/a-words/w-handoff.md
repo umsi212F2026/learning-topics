@@ -20,18 +20,16 @@ questions are aimed at.
 
 - **goal:** `w-handoff`
 - **move:** DISTINGUISH
-- **answer:** Control flow is the solid arrows, saying which step runs next, whoever does it: the
-  arrow from "Check in the patient" to "Pull up the chart" is control flow inside one lane. A
-  handoff is where work passes from one actor's step to another actor's step. Here that happens at
-  the arrow from "Pull up the chart" to "Examine the patient", and also through the treatment plan,
-  which the dentist writes and the receptionist reads later, with no arrow between those two steps.
-- **credit:** full for naming that a handoff needs the actor to change and control flow does not
-  (it is which step runs next, in one lane or across lanes); also naming that a handoff can be
-  data passed between actors is welcome but not required. Half for the right difference with an
-  in-lane arrow, such as "Check in the patient" to "Pull up the chart", called a handoff. None for
-  an incidental difference alone, such as that a handoff is a longer arrow.
-- **tutor note:** a learner who says "a handoff is a kind of arrow" has the slide's version; ask
-  whether the arrow between the two receptionist steps passes anything to anyone.
+- **answer:** any solid arrow that stays inside one lane: "Check in the patient" to "Pull up the
+  chart" (both Receptionist), or "Examine the patient" to "Write treatment notes" (both Dentist).
+  Each says which step runs next, and the same actor does both steps, so nothing passes to anyone
+  else.
+- **credit:** full for either of those two pairs, named in either order; a paraphrased step name
+  counts when it is clear which step is meant. None for "Pull up the chart" to "Examine the
+  patient", which crosses into the Dentist lane and so is a handoff, or for the treatment plan,
+  which is data flow between actors and also a handoff.
+- **tutor note:** a learner who names the arrow from "Pull up the chart" to "Examine the patient"
+  has missed that it crosses lanes; ask who does each of its two steps.
 
 ### catch-every-arrow
 

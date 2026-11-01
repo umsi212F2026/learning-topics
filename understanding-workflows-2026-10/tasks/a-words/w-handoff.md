@@ -9,8 +9,8 @@ solid arrow across into the Dentist lane to "Examine the patient". That leads by
 dentist steps, the last step, in the Receptionist lane, is "Book the follow-up", which has a dotted
 line from the "Treatment plan" file.
 
-In this diagram, what is the difference between a handoff and control flow? Answer in two or three
-sentences, in your own words.
+Name one place in this diagram where there is control flow but no handoff. Give the two steps at
+its ends.
 
 ### catch-every-arrow
 
