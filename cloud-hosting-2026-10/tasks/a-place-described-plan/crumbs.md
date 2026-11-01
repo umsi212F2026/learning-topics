@@ -25,8 +25,7 @@ all you know about it.
 
 ## Framing
 
-Each question is a different plan for hosting Crumbs. Where two questions in a row give the same
-plan, the second asks one thing about it.
+Each question is a different plan for hosting Crumbs.
 
 ### q1
 
