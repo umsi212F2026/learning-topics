@@ -1,4 +1,4 @@
-diagram commit: 6b578e9
+diagram commit: eb7b655
 
 The plane under `Get Codex running` in `bootstrap.bpmn`. Lanes, top to bottom: HUMAN operator, AI
 AGENT. The run starts at `Day 1 page opened` (HUMAN) and goes to `Open U-M GPT; paste the

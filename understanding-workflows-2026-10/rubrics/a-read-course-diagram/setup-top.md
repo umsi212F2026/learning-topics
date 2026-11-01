@@ -1,20 +1,21 @@
-diagram commit: 6b578e9
+diagram commit: eb7b655
 
 The top plane of `bootstrap.bpmn`. Lanes, top to bottom: HUMAN operator, AI AGENT, PROGRAM. The
 run starts at `opens the Day 1 page in Canvas` (HUMAN) and goes to `Get Codex running`, a
 collapsed subprocess drawn across the HUMAN operator and AI AGENT lanes. Then the split `Codex
 running?`: `success` goes to an unnamed merge and on to `Set up the workspace` (a collapsed
-subprocess in AI AGENT); `stuck` goes to a second unnamed merge and on to `Report being stuck`
-(HUMAN), then the end state `blocked`. After `Set up the workspace`, the split `Able to
-complete?`: `yes` goes to `Check the install` (PROGRAM); `no` goes through the merge before
-`Report being stuck`. After `Check the install`, the split `install correct?`: `success` goes to
-`Submit each session's report` (HUMAN), then the end state `workspace ready`; `not yet` loops back
-through the merge before `Set up the workspace`. The file `U-M API key` is not asked about.
+subprocess drawn across all three lanes, HUMAN operator, AI AGENT and PROGRAM); `stuck` goes to a
+second unnamed merge and on to `Report being stuck` (HUMAN), then the end state `blocked`. After
+`Set up the workspace`, the split `Able to complete?`: `yes` goes to `Check the install`
+(PROGRAM, to the right of `Set up the workspace`); `no` goes through the merge before `Report
+being stuck`. After `Check the install`, the split `install correct?` (also in PROGRAM, to its
+right): `success` goes to `Submit each session's report` (HUMAN), then the end state `workspace
+ready`; `not yet` loops back through the merge before `Set up the workspace`. The file `U-M API
+key` is not asked about.
 
-Handoff pairs on this plane (step to step, gateways between ignored): `Set up the workspace` to
-`Check the install`, `Set up the workspace` to `Report being stuck`, `Check the install` to
-`Submit each session's report`, and `Check the install` back to `Set up the workspace`. No pair
-includes `Get Codex running`, which is drawn across two lanes.
+Handoff pairs on this plane (step to step, gateways between ignored, steps drawn across lanes
+left out): only `Check the install` to `Submit each session's report`. No pair includes `Get Codex
+running` or `Set up the workspace`, since both are drawn across lanes.
 
 ### start-state
 
@@ -81,24 +82,26 @@ includes `Get Codex running`, which is drawn across two lanes.
 
 - **goal:** `c-read-diagram`
 - **cases:** handoff
-- **answer:** any one of the four handoff pairs in the key above, for example `Check the install`
-  to `Submit each session's report`.
-- **credit:** full for one of the four accepted pairs; none otherwise. The two steps may be named
+- **answer:** the plane's one handoff pair, `Check the install` to `Submit each session's report`.
+- **credit:** full for that pair; none otherwise. The two steps may be named
   in either order. A learner who names an arrow ending at a gateway is not marked wrong: credit it
-  when the steps on either side of that gateway make an accepted pair, and otherwise ask which
+  when the steps on either side of that gateway make the accepted pair, and otherwise ask which
   steps they mean. Credit a paraphrased step name when it is clear which step is meant; ask which only when it is not.
-- **tutor note:** a pair with `Get Codex running` in it is not accepted, since that step is drawn
-  across two lanes; say so and ask for another.
+- **tutor note:** a pair with `Get Codex running` or `Set up the workspace` in it is not accepted,
+  since those steps are drawn across lanes; say so and ask for another.
 
-### after-split
+### one-split
 
 - **goal:** `c-read-diagram`
 - **cases:** splits
-- **answer:** if `yes`, `Check the install`; if `no`, `Report being stuck`.
-- **credit:** full when both branches are there with their labels and the right step; half when
-  one branch is missing, or one label or one destination is wrong; none when only one next step is
-  given with no condition, or more than one part is wrong. Credit a paraphrased step name when
-  it is clear which step is meant; ask which only when it is not.
+- **answer:** any one of the three named gateways: `Codex running?` (just after `Get Codex
+  running`, before the merge before `Set up the workspace` and the merge before `Report being
+  stuck`); `Able to complete?` (just after `Set up the workspace`, before `Check the install` and
+  the merge before `Report being stuck`); `install correct?` (just after `Check the install`,
+  before `Submit each session's report` and the merge before `Set up the workspace`).
+- **credit:** full for any one of the three named gateways, pointed at by its neighbors or named
+  by its label; none for an unnamed merge or a step. Credit a paraphrased step or gateway name
+  when it is clear which element is meant; ask which only when it is not.
 
 ### one-merge
 

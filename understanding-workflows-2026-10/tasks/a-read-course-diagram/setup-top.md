@@ -64,16 +64,17 @@ Who does `Get Codex running`?
 1. the human only
 2. the AI agent only
 3. the human and the AI agent both take part
-4. a program
+4. the human, the AI agent and a program all take part
 
 ### handoff
 
 Name one handoff in this plane: a place where the run goes from a step done by one actor to the
 next step, done by a different actor (gateways between them don't matter). Name the two steps.
 
-### after-split
+### one-split
 
-What happens after `Set up the workspace`?
+Name one place where the flow splits. Point to it by the steps or gateways just before and after
+it.
 
 ### one-merge
 

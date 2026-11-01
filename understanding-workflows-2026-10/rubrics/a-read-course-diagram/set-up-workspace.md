@@ -1,4 +1,4 @@
-diagram commit: 6b578e9
+diagram commit: eb7b655
 
 The plane under `Set up the workspace` in `bootstrap.bpmn`. Lanes, top to bottom: HUMAN
 operator, AI AGENT, PROGRAM. The run starts at `setup-workspace skill invoked` (AI AGENT) and goes
