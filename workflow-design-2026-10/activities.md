@@ -85,8 +85,8 @@ Each capability has one write-it check and one pick-one check, and either alone 
   on; "I don't know yet" is an honest answer.
   1. After Trade-offs: names one final goal from the first section and one intermediate goal that
      would help it in the TA's workflow, and says how.
-  2. After Design patterns: names one thing the Checkpoints pattern costs, compared with passing
-     results straight from one step to the next.
+  2. After Dividing a workflow into steps: names one thing the Checkpoints pattern costs, compared
+     with passing results straight from one step to the next.
   Then the close, about 2 minutes (up to 5 if a section is gone over again), with the reading still
   beside them: answers the question the tutor puts: with this page beside you, could you now take
   a short description of a workflow and say where a step boundary belongs and what would be saved
@@ -107,7 +107,7 @@ Each capability has one write-it check and one pick-one check, and either alone 
   a grade twice). A pairing with no how gets one near-miss question ("if the test results were
   saved, what could the TA do when a student complains that they couldn't do now?"). Stop 2's
   intended answer is anything saving each step's output costs: more to save, name and keep in sync
-  (the reading says so in the next section, under "More steps are not always better"), room to
+  (the section just read says so, under "More steps are not always better"), room to
   store it, a slower run, or a next step reading an old saved result by mistake. A learner who says
   it costs nothing gets one near-miss question ("if the step before changes what it writes, what
   happens to the step that reads it?"). Does not set or rehearse any word question from `a-words`:
