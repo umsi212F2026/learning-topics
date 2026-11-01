@@ -14,7 +14,7 @@ every week to handle members who want to cancel, about 120 requests a week.
 **About step 2:** Its input is about 120 typed messages a week, written in every style from one line
 to a long story. A mistake here is caught at step 3, where the front-desk manager reviews every
 sorted message before anything changes. Many of the messages give a health reason for canceling,
-such as an injury or a pregnancy.
+such as an injury or a pregnancy. The week's messages are collected each Monday morning.
 
 **About step 4:** Its input is the list the front-desk manager approved at step 3, one line per
 member with the date billing should stop. A mistake here charges a member who has canceled, or

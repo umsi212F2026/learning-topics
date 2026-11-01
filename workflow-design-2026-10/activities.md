@@ -461,7 +461,9 @@ Each capability has one write-it check and one pick-one check, and either alone 
   question activities' lists, no homework or grading workflow, and no step that downloads files or
   turns documents into text.
 
-  **Spread across the bank.** A bank is six scenarios, 12 questions, each shape four times. When the
+  **Spread across the bank.** A bank is six scenarios, 12 questions, each shape four times. At least
+  two open steps handle nothing private, said plainly in their facts, so a privacy reason given
+  out of habit fails there. When the
   generator is run live, the tutor picks a shape the learner hasn't seen yet.
 
   The facts are chosen so that each of the three pairings of executors (the natural choice against
