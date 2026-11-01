@@ -538,8 +538,9 @@ Each capability has one write-it check and one pick-one check, and either alone 
   the step's paragraph says.
 
   **A question** reads: "<Name1> and <Name2> both think step <n> should be done by <executor>
-  rather than <alternative>. Here is how each puts it." Then two numbered defenses, each two
-  sentences in the same frame: "<Executor> rather than <alternative> helps <goal>, because ... It
+  rather than <alternative>. Here is how each puts it." Then two defenses, each a paragraph
+  starting with a bold label, "**Defense 1, <Name1>'s:**" and "**Defense 2, <Name2>'s:**", and
+  each two sentences in the same frame: "<Executor> rather than <alternative> helps <goal>, because ... It
   hurts <goal>, because ...". Both choose the shape's natural choice over its alternative and name
   the same two goals. Then "Which defense is sound?" with the choices "1. <Name1>'s" and
   "2. <Name2>'s", `type: mcq`. In the sound defense both because-clauses point at facts in the
