@@ -242,21 +242,28 @@ never the scoring.
   turns documents into text.
 
   **Spread across the bank.** A bank is six scenarios, 12 questions: each shape six times, three of
-  them Hard, and `check-split` first in three scenarios. When the generator is run live, the tutor
+  each shape's six Hard, and `check-split` first in three scenarios. When the generator is run live, the tutor
   picks each next shape to carry a case the learner hasn't passed.
 
   Credit: full when the answer does all three: puts the boundary at the join where the shape's
-  change happens; gives a reason naming what changes there; and names as the saved result the
-  output just before that boundary, concretely enough to say what it is ("the bookings list"), not
-  "save everything" or the step's final output. In a `check-split` step the reason must name the
+  change happens; gives a reason naming what changes there; and names a saved result concretely
+  enough to say what it is ("the bookings list"), not "save everything". The test for the saved
+  result is whether it is enough to check the part before the boundary before the next part runs.
+  The output just before the boundary passes. An earlier result that is nearly equivalent passes
+  too, when the work between it and the boundary only rearranges it (the settled room assignments,
+  from which the bookings list by day is only a re-sorting). The step's raw input (the week's
+  requests), a count or summary ("how many bookings"), or the step's final output (the notes) does
+  not. In a `check-split` step the reason must name the
   two kinds of check, each said even briefly, such as "compare with the requests" and "read for
   tone"; an executor change there is not in the step, so a reason resting only on one (proposing
   that a person check the notes) is not enough. In a `handoff-split` step either reason earns
   credit: the two executors, or the two kinds of check, or both. Half when the boundary is at the
   right join with only one of the other two: a reason that is missing, generic ("smaller steps are
   easier") or, in a `check-split` step, only an executor change the answer proposes; or a saved
-  result that is missing or is not the output just before the boundary. An answer that also puts a boundary at the join with no change gets at most
-  half. None when the boundary is only at the join with no change, or no boundary is placed.
+  result that is missing or fails the test above. An answer that also puts a boundary at the join
+  with no change gets at most half, because nothing changes at that join, so that boundary has no
+  reason, and a boundary with no reason does not meet the criterion. This is a ruling on the reason,
+  not on what the extra boundary costs, which is not checked. None when the boundary is only at the join with no change, or no boundary is placed.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. The
   tutor works one of the two illustrations above aloud, the one of the same shape as the question:
   says what comes out of each part, how each would be checked and by whom, where those differ, and
@@ -289,9 +296,9 @@ never the scoring.
   gets wrong before the learner has chosen.
 - **done when:** as `a-split-a-lumped-step`'s: the criterion met with no help, case by case. Each
   question gets one ruling: the sound proposal passes the case the question carries, and the other
-  two pass none. There is no half credit. Since every question sets the sound proposal beside both
-  a split at the wrong join and a split that saves the wrong thing, one pick bears on both where
-  the boundary goes and what is saved there.
+  two pass none. There is no half credit. Every near-miss is wrong on where the boundary goes or on
+  what is saved there, and across the make-ups the sound proposal is set beside both kinds, so a
+  pick bears on both.
 - **generator:** **A scenario** is set up as in `a-split-a-lumped-step` (a made-up workflow of four
   or five numbered steps with executors in parentheses, two of them lumped, each lumped step with
   three parts and so two joins, one where the shape's change happens and one with no change at all,
@@ -306,19 +313,39 @@ never the scoring.
   split goes (after which part) and what, if anything, is kept between the two new steps. No
   proposal gives a reason. Then "Which proposal is the best division of step <n>?" with the choices
   "1. <Name1>'s", "2. <Name2>'s" and "3. <Name3>'s", `type: mcq`. The three proposals are within
-  ten words of each other in length. Every question has all three of these:
-  - the sound proposal: splits at the join where the shape's change happens and keeps the output
-    just before that join, named concretely;
-  - a `wrong-join` near-miss: splits at the join with no change, and keeps that join's output,
-    named just as concretely, so it sounds as careful as the sound one;
-  - a `nothing-saved` near-miss: splits at the right join, but keeps nothing the boundary needed.
-    Here this near-miss alone sets how hard a question is; the join with no change may be of
-    either kind `a-split-a-lumped-step` describes. Medium says so plainly ("hands the list straight on to the next step"). Hard keeps only the
-    step's final output ("and keeps the finished notes"), so something is saved, but not the
-    result the boundary needed.
+  ten words of each other in length. Every question has the sound proposal: it splits at the join
+  where the shape's change happens and keeps the output just before that join, named concretely.
+  Its two near-misses are drawn from these kinds:
+  - `wrong-join`: splits at the join with no change, and keeps that join's output, named just as
+    concretely, so it sounds as careful as the sound one (the make-up `both-wrong-join` below adds a
+    second one that keeps something else, or nothing);
+  - `nothing-saved`: splits at the right join, but keeps nothing that is enough to check the part
+    before it. Medium says so plainly ("hands the list straight on to the next step"). Hard keeps
+    something that does exist at that boundary but can't be used to check the first part: the
+    step's raw input ("and keeps the week's requests") or a count or summary of the first part's
+    output ("and keeps a count of the bookings").
+
+  **Make-up of the near-misses**, so that no layout feature (which join two proposals share, how
+  many proposals split at a join, which ones keep something) predicts the answer. Each question
+  uses one of three make-ups:
+  - `mixed`: one `wrong-join` and one `nothing-saved`. The sound proposal shares its join with the
+    `nothing-saved` one.
+  - `both-wrong-join`: two `wrong-join` proposals at the same join with no change, keeping
+    different things: one keeps that join's output; the other keeps nothing in a Medium question,
+    and in a Hard one the step's raw input. The sound proposal is the only one at its join.
+  - `both-right-join`: two `nothing-saved` proposals, so all three split at the same join and only
+    what is kept tells them apart. In a Medium one, one near-miss keeps nothing and the other keeps
+    the raw input or a count; in a Hard one, one keeps the raw input and the other a count or
+    summary.
+  How hard a question is depends only on whether every proposal keeps something: Medium when one
+  proposal keeps nothing, Hard when all three keep something concrete (in a `mixed` Hard question,
+  the `nothing-saved` one is of the Hard kind; in a `both-wrong-join` Hard question, neither
+  `wrong-join` proposal keeps nothing). The join with no change may be of either kind
+  `a-split-a-lumped-step` describes.
 
   **Spread across the bank.** A bank is six scenarios, 12 questions: each shape six times, three of
-  each shape's questions Hard, and the sound proposal in each of the three positions four times.
+  each shape's six Hard; each make-up four times, once for each pairing of shape and difficulty;
+  and the sound proposal in each of the three positions four times.
   Names vary and are never reused within a scenario.
 
   **Domains** are this activity's own, none repeating within the bank: a landlord's repair requests,
@@ -451,7 +478,11 @@ never the scoring.
   step with different facts; a generic reason that mentions the step's nouns ("a program is cheaper
   for these refunds because programs cost almost nothing to run") is still generic. Half when one
   of the two is tied and the other is generic or missing, or when both are tied but no alternative
-  is named. None when neither is tied, or no executor is chosen.
+  is named. None when neither is tied, or no executor is chosen. An intermediate goal from the
+  reading (a step that can be checked, failing loudly, least privilege) counts as the goal helped or
+  hurt on the same terms as a final goal: it earns credit when its reason is tied to a fact about
+  this step, and need not be traced on to a final goal; one with no such fact ("a program fails
+  loudly") is generic.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. The
   tutor works a made-up step aloud, from a domain no bank uses: a dog-walking business matching
   three or four new clients a week to walkers, from owners' typed notes about their dogs ("pulls
@@ -509,7 +540,9 @@ never the scoring.
   except for one because-clause, which is not tied to the step. That clause always uses the step's
   own nouns (the refunds, the receipts, the members), so neither defense can be picked for
   mentioning the step and the other not. The two defenses are within ten words of each other in
-  length.
+  length, and the differing clause matches the one it replaces in form: one fact or claim, said as
+  concretely, with no hedge or intensifier ("might", "always", "clearly") the other lacks. Which
+  defense is longer varies, the sound one in half the bank.
   - Which clause is the untied one varies: the helped clause in half the bank, the hurt clause in
     the other half.
   - Medium, of two kinds, used equally:
@@ -517,9 +550,12 @@ never the scoring.
       step's paragraph doesn't contain ("because these refunds are all under ten dollars", when
       the paragraph says nothing about amounts).
     - `wrong-direction`: the clause rests on a fact that is in the paragraph but draws from it a
-      direction it doesn't support ("helps correctness, because a few entries arrive with a note
-      typed where a number should be", a fact that makes a program stop, not one that makes it
-      right).
+      direction it doesn't support. That fact is one neither the other clause nor the sound
+      version of this clause uses, so the near-miss never cites one fact twice. In a
+      `messy-volume-checked` step whose sound defense ties timeliness to the hundred-plus requests
+      a week and privacy to the health details: "helps timeliness, because a person reviews these
+      requests at a later step", a fact that bears on catching mistakes and if anything slows the
+      work, not one that makes it faster.
   - Hard, `generic-with-nouns`: the clause borrows the step's nouns while its reason doesn't depend
     on them and would hold for any step given that executor ("because running a program over these
     refunds costs almost nothing"), so it reads as tied.
