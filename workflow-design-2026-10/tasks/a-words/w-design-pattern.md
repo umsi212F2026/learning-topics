@@ -24,5 +24,6 @@ Which of these statements uses the term "design pattern" correctly?
 
 1. Since maker-checker is a design pattern, the library must add a check after every step, even the program's.
 2. Having a program, rather than the agent, send each member's reminder is a design pattern.
-3. The agent writing down the schedule and a program applying it once approved is a design pattern.
+3. The agent writing down the schedule and a program applying it once approved follows the
+   propose-apply design pattern.
 4. Failing loudly, so that someone hears about overdue tools, is a design pattern the library uses.

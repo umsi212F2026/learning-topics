@@ -43,9 +43,12 @@ it!" (sentence 1); for step 4, that refunds went to cards rather than checks two
   names a goal the choice helps and a goal it hurts compared with that alternative, each with a
   reason tied to a fact about this step: the requests being typed free text, their volume, the
   missing nights, the health details, or the step 3 review that catches a wrong pile. A reason is
-  tied when it would not hold for that executor on a step with different facts. Generic reasons,
-  which fail even when they mention the requests: "an agent is faster at sorting these requests",
-  "a person has better judgment", "agents can be wrong in ways that look right". A reason resting
+  tied when it refers to this step: "an agent sorts these typed requests faster than the manager
+  could" is tied; after ruling, the tutor says it would be stronger naming what about the requests makes
+  speed matter, asks for that, and if the learner can't say, points to the volume and the typed
+  free text.
+  Generic reasons, which don't refer to the step at all: "an agent is faster", "a person has
+  better judgment", "agents can be wrong in ways that look right". A reason resting
   on the form's heading is not tied. An intermediate goal from the reading counts as a goal helped
   or hurt when its reason is tied to a fact here. Half when one of the two is tied and the other
   is generic or missing, or when both are tied but no alternative is named. None when neither is
@@ -79,10 +82,9 @@ it!" (sentence 1); for step 4, that refunds went to cards rather than checks two
   names a goal the choice helps and a goal it hurts compared with that alternative, each with a
   reason tied to a fact about this step: the approved list's fixed form, the note lines where an
   amount should be, the card numbers, the volume, or a wrong amount leaving the theater's account
-  with nobody looking again. A reason is tied when it would not hold for that executor on a step
-  with different facts. Generic reasons, which fail even when they mention the refunds: "programs
-  don't make mistakes", "a program costs almost nothing to run for these refunds", "an agent is
-  cheaper than paying the manager". A reason resting on the switch from checks to cards is not
+  with nobody looking again. A reason is tied when it refers to this step. Generic reasons,
+  which don't refer to the step at all: "programs don't make mistakes", "a program costs almost
+  nothing to run", "an agent is cheaper than paying the manager". A reason resting on the switch from checks to cards is not
   tied. An intermediate goal from the reading counts on the same terms: "a program fails loudly on
   the note lines instead of guessing the amount" is tied; "a program fails loudly" alone is
   generic. Half when one of the two is tied and the other is generic or missing, or when both are

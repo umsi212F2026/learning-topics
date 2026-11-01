@@ -20,15 +20,15 @@ such as an injury or a pregnancy.
 member with the date billing should stop. A mistake here charges a member who has canceled, or
 stops billing a member who hasn't, and nothing later catches it. It handles each member's name
 and saved payment card. About three entries a week arrive with a note typed where the date
-belongs, such as "after my last class".
+belongs, such as "after my last class". The approved list is ready each Friday afternoon.
 
 ### q1
 
 Keiko and Omar both think step 2 should be done by an AI agent rather than a person. Here is
 how each puts it.
 
-**Defense 1, Keiko's:** An AI agent rather than a person helps timeliness, because an agent reads
-these cancellation messages faster than a person does. It hurts privacy, because the injuries and
+**Defense 1, Keiko's:** An AI agent rather than a person helps timeliness, because the front-desk
+manager reviews every sorted message at step 3. It hurts privacy, because the injuries and
 pregnancies members mention go to the agent's provider.
 
 **Defense 2, Omar's:** An AI agent rather than a person helps timeliness, because sorting about
@@ -46,12 +46,12 @@ Dana and Luis both think step 4 should be done by a program rather than an AI ag
 each puts it.
 
 **Defense 1, Dana's:** A program rather than an AI agent helps correctness, because it stops
-billing for exactly the cancellations on the approved list. It hurts timeliness, because it will
-stop on the entries with a note where the date belongs.
+billing for exactly the cancellations on the approved list. It hurts timeliness, because it has to
+set aside the entries with a note where the date belongs.
 
 **Defense 2, Luis's:** A program rather than an AI agent helps correctness, because it stops
-billing for exactly the cancellations on the approved list. It hurts timeliness, because it will
-stop on the entries that arrive with the member's number left blank.
+billing for exactly the cancellations on the approved list. It hurts timeliness, because it can't
+stop any billing before Friday afternoon.
 
 Which defense is sound?
 

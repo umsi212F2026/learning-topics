@@ -287,7 +287,8 @@ stored, how failures are handled, what each part can touch) come in later topics
   agent or a program) and compares that choice with one alternative. Names one goal the choice
   helps and one it hurts, compared with that alternative, such as correctness, cost, timeliness or privacy, and ties each to
   something about this step: what its input is, what a mistake there would cost, or what data
-  it handles. A reason that would hold for any step given to that executor does not meet it.
+  it handles. A reason that doesn't refer to this step at all, such as "an agent is
+  cheaper", does not meet it.
 - **taught elsewhere:** session 18 class
 
 ### `o-orientation`

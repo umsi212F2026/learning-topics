@@ -30,7 +30,7 @@ Each capability has one write-it check and one pick-one check, and either alone 
 | -- | ---- | ---------------------------------------------- |
 | `o-orientation` | get the shape of this area before working on any particular part of it | `orientation` |
 | `c-divide-into-steps` | divide a workflow into steps that can each be checked on their own | given a step in a described workflow that does too much, says where a step boundary belongs inside it and why: because the kind of check changes there, or because the executor does. Says what intermediate result is saved at that boundary, so the step before it can be checked on its own. A boundary with no reason, or with no saved result, does not meet it. |
-| `c-assign-a-lane` | choose who should do a step, and defend the choice by its trade-offs | given a step in a described workflow, says who should do it (a person, an AI agent or a program) and compares that choice with one alternative. Names one goal the choice helps and one it hurts, compared with that alternative, such as correctness, cost, timeliness or privacy, and ties each to something about this step: what its input is, what a mistake there would cost, or what data it handles. A reason that would hold for any step given to that executor does not meet it. |
+| `c-assign-a-lane` | choose who should do a step, and defend the choice by its trade-offs | given a step in a described workflow, says who should do it (a person, an AI agent or a program) and compares that choice with one alternative. Names one goal the choice helps and one it hurts, compared with that alternative, such as correctness, cost, timeliness or privacy, and ties each to something about this step: what its input is, what a mistake there would cost, or what data it handles. A reason that doesn't refer to this step at all, such as "an agent is cheaper", does not meet it. |
 
 ## Coverage
 
@@ -38,7 +38,7 @@ Each capability has one write-it check and one pick-one check, and either alone 
 | ---- | ------ | ----- |
 | `o-orientation` | `a-read-workflow-design` | |
 | `c-divide-into-steps` | `a-split-a-lumped-step`, `a-contrast-step-splits` | Every handoff in both activities also changes the kind of check, and either reason earns credit there, so no question needs the executor reason: a learner who knows only the check-change rule can pass both cases. Through `a-contrast-step-splits` the goal can be met with no reason ever stated, though the criterion says a boundary with no reason does not meet it; `a-split-a-lumped-step` is the only check that sees the reason. |
-| `c-assign-a-lane` | `a-defend-a-lane-choice`, `a-pick-sound-defense` | Through `a-pick-sound-defense` the goal can be met without the learner choosing an executor, naming the alternative or finding the step's facts, and every defense there argues for the natural choice. `a-defend-a-lane-choice` is the only check where the learner chooses and writes the argument. |
+| `c-assign-a-lane` | `a-defend-a-lane-choice`, `a-pick-sound-defense` | Through `a-pick-sound-defense` the goal can be met without the learner choosing an executor, naming the alternative or finding the step's facts, and every defense there argues for the natural choice. It never sets a generic reason, so only `a-defend-a-lane-choice` checks the criterion's last sentence. `a-defend-a-lane-choice` is the only check where the learner chooses and writes the argument. |
 
 ---
 
@@ -470,15 +470,18 @@ Each capability has one write-it check and one pick-one check, and either alone 
   rest on the same facts as the other two. The key gives the natural choice and alternative; for
   each of the three pairings, the helped and hurt goals each fact supports for each side; which
   sentences of the paragraph carry each open step's facts; the irrelevant detail for each open
-  step; and two or three generic reasons that would fail because they hold for any step given that
-  executor ("programs don't make mistakes", "an agent is cheaper", "a person has better judgment",
+  step; and two or three generic reasons that would fail because they don't refer to this step
+  at all ("programs don't make mistakes", "an agent is cheaper", "a person has better judgment",
   "agents can be wrong in ways that look right"). A reason resting on the irrelevant detail is not
   tied. Credit: full when the answer chooses an
   executor, names one alternative, and names a goal the choice helps and a goal it hurts compared
   with that alternative, each with a reason tied to a fact about this step (its input, what a
-  mistake would cost, or its data). A reason is tied when it would not hold for that executor on a
-  step with different facts; a generic reason that mentions the step's nouns ("a program is cheaper
-  for these refunds because programs cost almost nothing to run") is still generic. Half when one
+  mistake would cost, or its data). A reason is tied when it refers to this step: "an agent is cheaper
+  for these requests" and "an agent reads these messages faster than a person does" are tied;
+  "an agent is cheaper" is generic. A tied reason that names no feature of the step passes; after the ruling, which the feedback doesn't change, the
+  tutor says the reason would be stronger if it named what about the step makes it hold, asks for
+  that ("what about these messages makes speed matter here?"), and if the learner can't say,
+  names the fact the key ties that goal to. Half when one
   of the two is tied and the other is generic or missing, or when both are tied but no alternative
   is named. None when neither is tied, or no executor is chosen. An intermediate goal from the
   reading (a step that can be checked, failing loudly, least privilege) counts as the goal helped or
@@ -493,7 +496,7 @@ Each capability has one write-it check and one pick-one check, and either alone 
   an agent: it helps correctness, because the notes need judgment about which walker can handle
   which dog and a mistake there can injure someone; it hurts timeliness, because a client who signs
   up on Monday waits until Sunday. Then the tutor shows a generic version ("a person has better
-  judgment") and says why it would hold for any step. It may point to Trade-offs and Who does each
+  judgment") and says why it doesn't refer to this step at all. It may point to Trade-offs and Who does each
   step in `tasks/read-workflow-design.md`.
 - **doesn't show:** the step's facts are all present in one short paragraph with only one
   irrelevant detail beside them, so a pass shows the learner can pick what matters out of a loose
@@ -529,8 +532,10 @@ Each capability has one write-it check and one pick-one check, and either alone 
   query), with the same three shapes, two different shapes per scenario, and the same rule that no
   two open steps in a bank share the pair of facts behind their reasons, except in one respect: the
   facts are not running prose. For each open step, a short paragraph headed "About step <n>:" gives
-  its facts, one sentence each, and nothing else, so the learner can check a defense's clause
-  against exactly what the step's paragraph says.
+  its facts, one sentence each, then one timing sentence that would be true whoever did the step
+  (when its input is ready, or when its output is needed: "The approved list is ready each Friday
+  afternoon"), and nothing else, so the learner can check a defense's clause against exactly what
+  the step's paragraph says.
 
   **A question** reads: "<Name1> and <Name2> both think step <n> should be done by <executor>
   rather than <alternative>. Here is how each puts it." Then two numbered defenses, each two
@@ -539,31 +544,32 @@ Each capability has one write-it check and one pick-one check, and either alone 
   the same two goals. Then "Which defense is sound?" with the choices "1. <Name1>'s" and
   "2. <Name2>'s", `type: mcq`. In the sound defense both because-clauses point at facts in the
   step's paragraph and draw from them the direction the fact supports. The near-miss is identical
-  except for one because-clause, which is not tied to the step. That clause always uses the step's
-  own nouns (the refunds, the receipts, the members), so neither defense can be picked for
-  mentioning the step and the other not. The two defenses are within ten words of each other in
+  except for one because-clause, which also rests on a fact in the step's paragraph, so neither
+  defense can be picked for citing the scenario and the other not, or for a fact the paragraph
+  lacks; its fault is in the reasoning. That fact is one neither the other clause nor the sound
+  version of this clause uses, so the near-miss never cites one fact twice: a `wrong-direction`
+  clause uses the step's fact that neither sound clause uses, and a `not-a-difference` clause uses
+  the timing sentence. The two defenses are within ten words of each other in
   length, and the differing clause matches the one it replaces in form: one fact or claim, said as
   concretely, with no hedge or intensifier ("might", "always", "clearly") the other lacks. Which
   defense is longer varies, the sound one in half the bank.
-  - Which clause is the untied one varies: the helped clause in half the bank, the hurt clause in
+  - Which clause is the faulty one varies: the helped clause in half the bank, the hurt clause in
     the other half.
-  - Medium, of two kinds, used equally:
-    - `fact-not-given`: the clause rests on a fact that sounds particular to the step but that the
-      step's paragraph doesn't contain ("because these refunds are all under ten dollars", when
-      the paragraph says nothing about amounts).
-    - `wrong-direction`: the clause rests on a fact that is in the paragraph but draws from it a
-      direction it doesn't support. That fact is one neither the other clause nor the sound
-      version of this clause uses, so the near-miss never cites one fact twice. In a
-      `messy-volume-checked` step whose sound defense ties timeliness to the hundred-plus requests
-      a week and privacy to the health details: "helps timeliness, because a person reviews these
-      requests at a later step", a fact that bears on catching mistakes and if anything slows the
-      work, not one that makes it faster.
-  - Hard, `generic-with-nouns`: the clause borrows the step's nouns while its reason doesn't depend
-    on them and would hold for any step given that executor ("because running a program over these
-    refunds costs almost nothing"), so it reads as tied.
+  - Medium, `wrong-direction`: the clause draws from its fact a direction the fact doesn't
+    support. In a `messy-volume-checked` step whose sound defense ties timeliness to the
+    hundred-plus requests a week and privacy to the health details: "helps timeliness, because a
+    person reviews these requests at a later step", a fact that bears on catching mistakes and if
+    anything slows the work, not one that makes it faster.
+  - Hard, `not-a-difference`: the clause rests on the timing sentence, which bears on the goal
+    but would hold just as much if the alternative did the step, so it is no help or cost of the
+    choice compared with that alternative. In a `structured-irreversible` step, a program rather
+    than an agent: "hurts timeliness, because it can't stop any billing before Friday afternoon",
+    when an agent would wait for that list too. Never a fact about what a mistake costs: a
+    mistake's cost is what makes a real difference matter, so a clause resting on it reads as
+    sound.
 
-  **Spread across the bank.** A bank is six scenarios, 12 questions: each shape four times, half the
-  questions Hard, three questions of each Medium kind, and the sound defense first in six. Names
+  **Spread across the bank.** A bank is six scenarios, 12 questions: each shape four times, six
+  questions of each kind, and the sound defense first in six. Names
   vary and are never reused within a scenario.
 
   **Domains** are this activity's own, none repeating within the bank: a gym's membership
@@ -575,13 +581,15 @@ Each capability has one write-it check and one pick-one check, and either alone 
 
   Credit: full for the sound defense, whose position is the rubric's `answer`; none for the other.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. As
-  `a-defend-a-lane-choice`'s: the dog-walking step, the tied defense and the generic one side by
-  side, with the tutor saying which fact each tied clause rests on.
+  `a-defend-a-lane-choice`'s: the dog-walking step, the tied defense beside a `wrong-direction`
+  version of it, with the tutor saying which fact each clause rests on and why the changed clause
+  doesn't support its goal.
 - **doesn't show:** the choice, the alternative and the goals are given, and the learner picks
   between two defenses, so a pass doesn't show they would choose an executor or find a step's
-  reasons on their own; with two choices a guess is right half the time. Only the Hard questions
-  set a reason that would hold for any step beside a tied one; the Medium ones test whether a
-  clause rests on a fact the step has, in the direction it supports. Every defense here argues for
+  reasons on their own; with two choices a guess is right half the time. Every near-miss rests on a
+  fact the step has, so no question sets a generic reason beside a tied one; the questions test
+  whether a fact supports the goal in the direction claimed, and whether it separates the choice
+  from the alternative. Every defense here argues for
   the natural choice, so a pass says nothing about defending a less obvious one. Each step's facts
   are laid out under a heading, one to a line, so a pass doesn't show the learner would find what
   matters about a step in a looser description; `a-defend-a-lane-choice` gives them as running
@@ -589,7 +597,8 @@ Each capability has one write-it check and one pick-one check, and either alone 
   neighboring steps fit together. `a-defend-a-lane-choice` checks the same goal with the argument
   written by the learner.
 - **offer as:** the quick check, after session 18: a short workflow, a step and two people's
-  defenses of the same choice for it, and you pick the one whose reasons are about the step. About
+  defenses of the same choice for it, and you pick the one whose reasons actually support the
+  choice. About
   2 minutes a question. Easier than `a-defend-a-lane-choice`, since the arguments are written for
   you.
 

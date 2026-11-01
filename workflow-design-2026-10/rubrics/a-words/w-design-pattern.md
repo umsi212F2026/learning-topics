@@ -8,7 +8,9 @@ worked well together in many past workflows. Three things the word carries: it i
 not one choice; it is a way of arranging the work, not a goal the work aims at (an intermediate goal
 such as failing loudly is what a design aims at, and a pattern is one way of getting there); and it
 recurs, which is why it is worth a name, but it is not a rule: a workflow may use it, use part of
-it, or not use it, depending on whether the reasons it worked elsewhere hold here. "Pattern" alone
+it, or not use it, depending on whether the reasons it worked elsewhere hold here. A pattern is the
+general set of choices; one workflow's choices follow or use it, so a question's sound statement
+says a workflow's choices follow a named pattern, never that they are one. "Pattern" alone
 means the same and is not a confusable. This word has no nearest confusable, so its bank has no
 DISTINGUISH question.
 
@@ -38,8 +40,8 @@ DISTINGUISH question.
 - **type:** mcq
 - **answer:** 3
 - **credit:** full for 3 only. Choice 3 names a set of choices often made together (an agent
-  writes down what should change, a person approves, a program makes the change), which is the
-  propose-apply pattern. Choice 1 treats a pattern as a rule; maker-checker suits an unreliable
+  writes down what should change, a person approves, a program makes the change), which follow
+  the propose-apply pattern. Choice 1 treats a pattern as a rule; maker-checker suits an unreliable
   step, and the program's step behaves the same every time, so nothing obliges a check after it.
   Choice 2 is one choice, who sends the reminders, not a set of choices. Choice 4 names an
   intermediate goal, something the design aims at, not the choices that get there; the program's
