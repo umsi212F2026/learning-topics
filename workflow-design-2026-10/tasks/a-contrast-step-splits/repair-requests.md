@@ -23,7 +23,7 @@ Priya, Marcus and Lena each propose splitting step 2 into two steps.
 2. Marcus: split after the agent labels the requests, and keep the list of requests, each marked
    urgent or routine.
 3. Lena: split after the agent labels the requests, and hand the labels straight to the landlord
-   without keeping them.
+   without storing them.
 
 Which proposal is the best division of step 2?
 

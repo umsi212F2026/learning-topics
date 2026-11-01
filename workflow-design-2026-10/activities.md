@@ -322,7 +322,7 @@ Each capability has one write-it check and one pick-one check, and either alone 
     concretely, so it sounds as careful as the sound one (the make-up `both-wrong-join` below adds a
     second one that keeps something else, or nothing);
   - `nothing-saved`: splits at the right join, but keeps nothing that is enough to check the part
-    before it. Medium says so plainly ("hands the list straight on to the next step"). Hard keeps
+    before it. Medium says so plainly ("hands the list straight on to the next step without storing it"). Hard keeps
     something that does exist at that boundary but can't be used to check the first part: the
     step's raw input ("and keeps the week's requests") or a count or summary of the first part's
     output ("and keeps a count of the bookings").
