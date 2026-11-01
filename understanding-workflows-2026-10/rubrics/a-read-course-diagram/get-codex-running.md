@@ -16,6 +16,19 @@ Three named splits (`stuck?`, `worth trying?`, `checklist done?`), one unnamed m
 `Open U-M GPT; paste the bootstrap prompt` and `Do the next step on the checklist`), two end
 states. No subprocess and no step drawn across two lanes.
 
+### one-split
+
+- **goal:** `c-read-diagram`
+- **cases:** splits
+- **answer:** any one of the three named gateways: `stuck?` (just after `Do the next step on the
+  checklist`, before `Provide explanations and suggestions` and `checklist done?`); `worth
+  trying?` (just after `Provide explanations and suggestions`, before `Write a status report on
+  where it stalled` and the arrow back to the merge); `checklist done?` (after the `no` branch of
+  `stuck?`, before the end state `Codex answers with the U-M key` and the arrow back to the merge).
+- **credit:** full for any one of the three named gateways, pointed at by its neighbors or named
+  by its label; none for the unnamed merge or a step. Credit a paraphrased step or gateway name
+  when it is clear which element is meant; ask which only when it is not.
+
 ### branch-label
 
 - **goal:** `c-read-diagram`
@@ -35,19 +48,6 @@ states. No subprocess and no step drawn across two lanes.
 - **credit:** full for 4 only.
 - **tutor note:** the step's own label names the file, so a right answer here is easier than it
   looks. A learner who adds that the line is a handoff is not marked down for it.
-
-### one-split
-
-- **goal:** `c-read-diagram`
-- **cases:** splits
-- **answer:** any one of the three named gateways: `stuck?` (just after `Do the next step on the
-  checklist`, before `Provide explanations and suggestions` and `checklist done?`); `worth
-  trying?` (just after `Provide explanations and suggestions`, before `Write a status report on
-  where it stalled` and the arrow back to the merge); `checklist done?` (after the `no` branch of
-  `stuck?`, before the end state `Codex answers with the U-M key` and the arrow back to the merge).
-- **credit:** full for any one of the three named gateways, pointed at by its neighbors or named
-  by its label; none for the unnamed merge or a step. Credit a paraphrased step or gateway name
-  when it is clear which element is meant; ask which only when it is not.
 
 ### one-merge
 

@@ -64,7 +64,10 @@ includes `Get Codex running`, which is drawn across two lanes.
 - **answer:** 4
 - **credit:** full for 4 only.
 - **tutor note:** `Check the install` sits in the PROGRAM lane. A learner who picks the human may
-  be going by the word "check" rather than the lane.
+  be going by the word "check" rather than the lane. This is the weaker `lane-owner` form: on
+  this plane the labels give the answer away (`Check the install`'s second line names
+  `check-setup.mjs`, and the human steps say "on Canvas"). The stronger form is `lane-step` on
+  `set-up-workspace`.
 
 ### lane-span
 
@@ -94,7 +97,8 @@ includes `Get Codex running`, which is drawn across two lanes.
 - **answer:** if `yes`, `Check the install`; if `no`, `Report being stuck`.
 - **credit:** full when both branches are there with their labels and the right step; half when
   one branch is missing, or one label or one destination is wrong; none when only one next step is
-  given with no condition, or more than one part is wrong.
+  given with no condition, or more than one part is wrong. Credit a paraphrased step name when
+  it is clear which step is meant; ask which only when it is not.
 
 ### one-merge
 
@@ -103,7 +107,9 @@ includes `Get Codex running`, which is drawn across two lanes.
 - **answer:** either unnamed gateway: the one just before `Set up the workspace` (after `Codex
   running?` and `install correct?`), or the one just before `Report being stuck` (after `Codex
   running?` and `Able to complete?`).
-- **credit:** full for either unnamed gateway; none for a named gateway or a step.
+- **credit:** full for either unnamed gateway; none for a named gateway or a step. Credit a
+  paraphrased step or gateway name when it is clear which element is meant; ask which only when
+  it is not.
 
 ### after-loop
 
@@ -113,7 +119,8 @@ includes `Get Codex running`, which is drawn across two lanes.
   workspace`.
 - **credit:** full when both branches are there with their labels and the right step; half when
   one branch is missing, or one label or one destination is wrong; none when only one next step is
-  given with no condition, or more than one part is wrong.
+  given with no condition, or more than one part is wrong. Credit a paraphrased step name when
+  it is clear which step is meant; ask which only when it is not.
 
 ### after-last
 

@@ -1,7 +1,12 @@
 This is the course's setup workflow, as drawn for Installations 1 to 3. Open
 `workflows/bootstrap/bootstrap.bpmn` in your `course-materials` folder. It opens in Camunda
-Modeler. Click the plus at the bottom of `Get Codex running` to open the diagram underneath it.
-Each question below is about this plane of the diagram alone.
+Modeler. Click the small arrow button at the bottom-right corner of the `Get Codex running` box
+to open the diagram underneath it. Each question below is about this plane of the diagram alone.
+
+### one-split
+
+Name one place where the flow splits. Point to it by the steps or gateways just before and after
+it.
 
 ### branch-label
 
@@ -15,18 +20,12 @@ checklist` tell you?
 
 ### file-line
 
-What does the dotted line between `bootstrap-prompt.md` and `Open U-M GPT; paste the bootstrap
-prompt` tell you?
+What does the dotted line between `bootstrap-prompt.md` and `Open U-M GPT` tell you?
 
 1. the file is the next step
 2. after that step, the run moves on to the file
 3. the run ends at the file
 4. that step reads, or uses, that file
-
-### one-split
-
-Name one place where the flow splits. Point to it by the steps or gateways just before and after
-it.
 
 ### one-merge
 

@@ -43,7 +43,7 @@ remote`; `Check the remote` to `Submit Installation 3`.
 ### not-handoff
 
 - **goal:** `c-read-diagram`
-- **cases:** handoff
+- **cases:** not-handoff
 - **type:** mcq
 - **answer:** 2
 - **credit:** full for 2 only.
@@ -61,8 +61,21 @@ remote`; `Check the remote` to `Submit Installation 3`.
   ending at a gateway is not marked wrong: credit it when the steps on either side of that gateway
   make an accepted pair, and otherwise ask which steps they mean. Credit a paraphrased step name
   when it is clear which step is meant; ask which only when it is not.
-- **tutor note:** a learner who names `Write the receipt` and `Check the receipt landed` has
-  missed that both are in PROGRAM; ask who does each.
+- **tutor note:** `Write the receipt` to `Check the receipt landed` is the pair from the
+  `not-handoff` question, both in PROGRAM, and earns none. Rule it without pointing at the lanes
+  or asking who does each; help, if asked for, is worked on `workflows/tour/tour.bpmn`, never on
+  this plane.
+
+### lane-step
+
+- **goal:** `c-read-diagram`
+- **cases:** lane-owner
+- **type:** mcq
+- **answer:** 2
+- **credit:** full for 2 only.
+- **tutor note:** `Record where things live` sits in the AI AGENT lane. Its second line,
+  `setup-addressing`, names a skill, not an actor, so the lane is the only thing that answers
+  it. This is the stronger `lane-owner` form.
 
 ### split-after-editors
 
