@@ -8,7 +8,7 @@ box to open the diagram underneath it, and read that diagram only.
 What does the solid arrow from `Write the receipt` to `Check the receipt landed` tell you?
 
 1. both steps run at the same time
-2. `Write the receipt` reads a file
+2. a file is drawn between the two steps
 3. `Check the receipt landed` runs next
 4. the run ends here
 
@@ -33,9 +33,9 @@ Who does `Record where things live`?
 3. the human
 4. more than one of them
 
-### split-after-editors
+### split-after-repositories
 
-At the diamond just after `Check the editors`, does the flow split, or do paths come back
+At the diamond just after `Check the repositories`, does the flow split, or do paths come back
 together?
 
 1. it splits
@@ -56,6 +56,10 @@ together?
 
 1. it splits
 2. paths come back together
+
+### after-branches
+
+What happens after `Check the editors`?
 
 ### after-step
 

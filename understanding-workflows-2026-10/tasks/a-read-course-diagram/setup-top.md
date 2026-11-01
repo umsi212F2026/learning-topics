@@ -1,7 +1,7 @@
 This is the course's setup workflow, as drawn for Installations 1 to 3. Open
 `workflows/bootstrap/bootstrap.bpmn` in your `course-materials` folder. It opens in Camunda
-Modeler, at the top level of the diagram. Read this top level only, without opening the diagrams
-underneath its boxes.
+Modeler, at the top level of the diagram. Read this top level only, without opening the diagram
+under any box that has one.
 
 ### start-circle
 
@@ -36,8 +36,8 @@ Which of these steps has a diagram of its own underneath it?
 
 1. `Check the install`
 2. `Report being stuck`
-3. `Submit each session's report`
-4. `Set up the workspace`
+3. `Get Codex running`
+4. `Submit each session's report`
 
 ### gateway
 
@@ -50,18 +50,12 @@ What kind of shape is the diamond just before `Set up the workspace`?
 
 ### lane-span
 
-Who does `Get Codex running`?
+Who does `Set up the workspace`?
 
-1. the human only
-2. the AI agent only
+1. only the human takes part
+2. only the AI agent takes part
 3. the human and the AI agent both take part
 4. the human, the AI agent and a program all take part
-
-### handoff
-
-Name one handoff in this plane: a place where the run goes from a step done by one actor to the
-next step, done by a different actor (gateways between them don't matter). Leave out `Get Codex
-running` and `Set up the workspace`, which are drawn across more than one lane. Name the two steps.
 
 ### one-split
 

@@ -13,9 +13,8 @@ right): `success` goes to `Submit each session's report` (HUMAN), then the end c
 ready`; `not yet` loops back through the merge before `Set up the workspace`. The file `U-M API
 key` is not asked about.
 
-Handoff pairs on this plane (step to step, gateways between ignored, steps drawn across lanes
-left out): only `Check the install` to `Submit each session's report`. No pair includes `Get Codex
-running` or `Set up the workspace`, since both are drawn across lanes.
+The plane carries no handoff question: with the two boxes drawn across lanes left out, its only
+step-to-step pair is `Check the install` to `Submit each session's report`.
 
 ### start-circle
 
@@ -46,8 +45,8 @@ running` or `Set up the workspace`, since both are drawn across lanes.
 - **goal:** `c-read-diagram`
 - **cases:** subprocess-box
 - **type:** mcq
-- **answer:** 4
-- **credit:** full for 4 only.
+- **answer:** 3
+- **credit:** full for 3 only.
 
 ### gateway
 
@@ -62,20 +61,10 @@ running` or `Set up the workspace`, since both are drawn across lanes.
 - **goal:** `c-read-diagram`
 - **cases:** spans-lanes
 - **type:** mcq
-- **answer:** 3
-- **credit:** full for 3 only.
-
-### handoff
-
-- **goal:** `c-read-diagram`
-- **cases:** handoff
-- **answer:** the plane's one handoff pair, `Check the install` to `Submit each session's report`.
-- **credit:** full for that pair; none otherwise. The two steps may be named
-  in either order. A learner who names an arrow ending at a gateway is not marked wrong: credit it
-  when the steps on either side of that gateway make the accepted pair, and otherwise ask which
-  steps they mean. Credit a paraphrased step name when it is clear which step is meant; ask which only when it is not.
-- **tutor note:** a pair with `Get Codex running` or `Set up the workspace` in it is not accepted,
-  since those steps are drawn across lanes; say so and ask for another.
+- **answer:** 4
+- **credit:** full for 4 only.
+- **tutor note:** the box runs from the HUMAN operator lane down into PROGRAM, and the plane
+  under it has steps in all three lanes.
 
 ### one-split
 
@@ -104,7 +93,7 @@ running` or `Set up the workspace`, since both are drawn across lanes.
 ### after-loop
 
 - **goal:** `c-read-diagram`
-- **cases:** trace-steps
+- **cases:** trace-loop
 - **answer:** if `success`, `Submit each session's report`; if `not yet`, back to `Set up the
   workspace`.
 - **credit:** full when both branches are there with their labels and the right step; half when

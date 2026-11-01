@@ -77,13 +77,15 @@ remote`; `Check the remote` to `Submit Installation 3`.
   `setup-addressing`, names a skill, not an actor, so the lane is the only thing that answers
   it. This is the stronger `lane-owner` form.
 
-### split-after-editors
+### split-after-repositories
 
 - **goal:** `c-read-diagram`
 - **cases:** splits
 - **type:** mcq
 - **answer:** 1
 - **credit:** full for 1 only.
+- **tutor note:** the diamond meant is `repos installed?`: `yes` to `how far did I get
+  previously?`, `no` to the merge before `stopped at a checkpoint`.
 
 ### merge-after-submit-2
 
@@ -104,6 +106,20 @@ remote`; `Check the remote` to `Submit Installation 3`.
 - **credit:** full for 1 only.
 - **tutor note:** the diamond meant is `receipt landed?`: `yes` to `Submit Installation 1`, `no`
   to the merge before `stopped at a checkpoint`.
+
+### after-branches
+
+- **goal:** `c-read-diagram`
+- **cases:** trace-branches
+- **answer:** if `yes`, `Submit Installation 2`; if `no`, the end circle `stopped at a
+  checkpoint`, through the merge before it.
+- **credit:** full when both branches are there with their labels and the right step or end
+  circle; half when one branch is missing, or one label or one destination is wrong; none when
+  only one next step is given with no condition, or more than one part is wrong. Mentioning the
+  merge on the `no` branch is fine. Credit a paraphrased step or end-circle name when it is clear
+  which element is meant; ask which only when it is not.
+- **tutor note:** the split just after `Check the editors` is `editors installed?`. A learner who
+  gives `Publish the repositories` for `yes` has skipped `Submit Installation 2`.
 
 ### after-step
 

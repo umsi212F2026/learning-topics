@@ -63,7 +63,7 @@ circles. No subprocess and no step drawn across two lanes.
 ### after-loop
 
 - **goal:** `c-read-diagram`
-- **cases:** trace-steps
+- **cases:** trace-loop
 - **answer:** if `try suggestion`, back to `Do the next step on the checklist`; if `give up`,
   `Write a status report on where it stalled`.
 - **credit:** full when both branches are there with their labels and the right step; half when
