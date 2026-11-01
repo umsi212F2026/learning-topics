@@ -1,4 +1,4 @@
-# Learning goals: workflow design
+# Learning goals: workflow steps design
 
 **origin:** course
 
