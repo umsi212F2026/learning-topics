@@ -244,7 +244,8 @@ Each capability has one write-it check and one pick-one check, and either alone 
   turns documents into text.
 
   **Spread across the bank.** A bank is six scenarios, 12 questions: each shape six times, three of
-  each shape's six Hard, and `check-split` first in three scenarios. When the generator is run live, the tutor
+  each shape's six Hard (one short of that is fine when a kept scenario has no Hard question), and
+  `check-split` first in three scenarios. When the generator is run live, the tutor
   picks each next shape to carry a case the learner hasn't passed.
 
   Credit: full when the answer does all three: puts the boundary at the join where the shape's
