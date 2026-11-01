@@ -9,11 +9,10 @@ an Express backend, and a database. It is being deployed on two made-up vendors:
 - **Silo** hosts the database. It keeps a Postgres database running for you, and its dashboard's
   Connect panel shows the connection string, login included, as one line.
 
+## Framing
+
 The questions follow the deploy in order. Some show an exchange in which the agent asked for a
-setting, a student asked about it, and the agent answered. Others show a message from the agent;
-for those, judge whether going ahead would put a secret somewhere it shouldn't go. Answer in two
-or three sentences, except where a question asks for the reply you would send: then write the
-reply, and after it a sentence or two on why.
+setting, a student asked about it, and the agent answered. Others show a message from the agent.
 
 ### q1
 
@@ -26,7 +25,7 @@ Dockyard address.
 
 What is `FETCH_ROOT` for? Whose value does it need: the frontend's address, the backend's address,
 the database's connection details, or nobody's, because a host sets it? And is its value a
-secret? Say why.
+secret? Say why. Answer in two or three sentences.
 
 ### q2
 
@@ -39,7 +38,7 @@ other sites can't use it. Set it to your Dockyard address.
 
 What is `SERVER_ALLOWS_FROM` for? Whose value does it need: the frontend's address, the backend's
 address, the database's connection details, or nobody's, because a host sets it? And is its value
-a secret? Say why.
+a secret? Say why. Answer in two or three sentences.
 
 ### q3
 
@@ -52,21 +51,21 @@ the login. Copy the line shown on the Connect panel of Silo's dashboard.
 
 What is `SILO_URI` for? Whose value does it need: the frontend's address, the backend's address,
 the database's connection details, or nobody's, because a host sets it? And is its value a
-secret? Say why.
+secret? Say why. Answer in two or three sentences.
 
 ### q4
 
 **Agent:** Paste the address Dockyard gave your web service here, and I'll set `FETCH_ROOT` so the
 frontend knows where to send its requests.
 
-Would you go along with this? Say why or why not.
+Would you go along with this? Say why or why not. Answer in two or three sentences.
 
 ### q5
 
 **Agent:** The web service still can't reach the database. Take a screenshot of the Connect panel
 on Silo's dashboard and drop it here, so I can check the host name is right.
 
-Would you go along with this? Say why or why not.
+Would you go along with this? Say why or why not. Answer in two or three sentences.
 
 ### q6
 
@@ -74,7 +73,7 @@ Would you go along with this? Say why or why not.
 settings, instead of from the database file it used on your laptop. I'll commit that change and
 redeploy the web service on Dockyard. OK to go ahead?
 
-Would you go along with this? Say why or why not.
+Would you go along with this? Say why or why not. Answer in two or three sentences.
 
 ### q7
 
@@ -82,7 +81,7 @@ Would you go along with this? Say why or why not.
 myself and put it in `server/db.js` as the fallback for when `SILO_URI` isn't set, so the app keeps
 working even if a setting goes missing. Want me to go ahead?
 
-Would you go along with this? Say why or why not.
+Would you go along with this? Say why or why not. Answer in two or three sentences.
 
 ### q8
 
@@ -90,7 +89,8 @@ Would you go along with this? Say why or why not.
 it to the web service's settings as `SILO_URI`.
 
 This message would put a secret where it shouldn't go. Write the reply you would send the agent,
-then say why that is safer. There may be more than one reason.
+then say why that is safer. There may be more than one reason. Keep the why to a sentence or two
+after the reply.
 
 ### q9
 
@@ -99,7 +99,8 @@ the connection string with Silo's command-line tool and list it in that file und
 it's set automatically each time you deploy.
 
 This message would put a secret where it shouldn't go. Write the reply you would send the agent,
-then say why that is safer. There may be more than one reason.
+then say why that is safer. There may be more than one reason. Keep the why to a sentence or two
+after the reply.
 
 ### q10
 
@@ -108,4 +109,5 @@ your terminal, which prints every setting on the web service, and paste the outp
 check what `SILO_URI` is set to.
 
 This message would put a secret where it shouldn't go. Write the reply you would send the agent,
-then say why that is safer. There may be more than one reason.
+then say why that is safer. There may be more than one reason. Keep the why to a sentence or two
+after the reply.
