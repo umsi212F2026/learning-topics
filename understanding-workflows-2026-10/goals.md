@@ -276,6 +276,7 @@ do a step, are not part of this topic.
   - `step-box`: the shape marking a step
   - `gateway-shape`: the shape marking a gateway
   - `subprocess-box`: the shape marking a collapsed subprocess
+  - `file-shape`: the shape marking a file
   - `lane-owner`: who does a step, from its lane
   - `spans-lanes`: who does a step drawn across two lanes
   - `handoff`: where control, or data a later step uses, passes to a step done by a different
