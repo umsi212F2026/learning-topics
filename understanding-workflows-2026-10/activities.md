@@ -224,7 +224,10 @@ file at the learner's current commit.
   to reach the plane ("Open
   `workflows/bootstrap/bootstrap.bpmn` in your `course-materials` folder. It opens in Camunda
   Modeler. Click the small arrow button at the bottom-right corner of the `Get Codex running`
-  box to open the diagram underneath it."), and "Each question below is about this plane of the diagram alone." It names no step, lane, gateway or outcome beyond the one needed to reach the plane.
+  box to open the diagram underneath it, and read that diagram only."; on the top level, "Read
+  this top level only, without opening the diagrams underneath its boxes."). It names no step,
+  lane, gateway or outcome beyond the one needed to reach the plane, and says nothing about the
+  questions as a set.
 
   **The key**, `rubrics/a-read-course-diagram/<scenario-id>.md`, records in its top part, on a line
   of its own, `diagram commit: <hash>`, the commit of `bootstrap.bpmn` it was written against. The
@@ -487,9 +490,9 @@ file at the learner's current commit.
   and nothing drawn or invented. Its
   scenario files are its own, `tasks/a-judge-diagram-summary/<scenario-id>.md` and its key under
   `rubrics/`, named `setup-top`, `get-codex-running` and `set-up-workspace`. The setup is as
-  there, then: "An AI agent was asked to say in plain words what this plane of the diagram claims.
-  Each question below gives sentences from its summary. For each sentence, say whether the diagram
-  says that: yes or no."
+  there, then: "An AI agent was asked to say in plain words what this plane of the diagram
+  claims." Then a `## Framing` line, under it "Each question gives sentences from the agent's
+  summary." The yes-or-no instruction is in each question, never in the setup.
 
   **A question** asks about one case: a stated element, then two numbered sentences, and "Does the diagram say this? Answer yes or no
   for each." Each sentence is plainly what the diagram says or one of the misreadings below,

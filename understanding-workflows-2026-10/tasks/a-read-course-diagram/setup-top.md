@@ -1,7 +1,7 @@
 This is the course's setup workflow, as drawn for Installations 1 to 3. Open
 `workflows/bootstrap/bootstrap.bpmn` in your `course-materials` folder. It opens in Camunda
-Modeler, at the top level of the diagram. Each question below is about this plane of the diagram
-alone.
+Modeler, at the top level of the diagram. Read this top level only, without opening the diagrams
+underneath its boxes.
 
 ### start-state
 
