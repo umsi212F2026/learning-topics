@@ -20,7 +20,7 @@ that runs exactly.
   which brings judgment to what the file doesn't settle: the file never said what to do with a
   photo that has no notes, so the scene caption was the agent's call.
 - **credit:** full for naming that a script is followed exactly with no judgment and a skill is
-  followed by an AI agent that brings judgment where the file leaves a case open; the no-notes
+  followed by an AI agent that brings judgment in interpreting the file; the no-notes
   photo as the example is welcome but not required. Half for naming only that a computer follows
   the script and an AI agent follows the skill, with nothing on exactness or judgment. None for an
   incidental difference alone, such as that the skill is written in plain English or the files
@@ -60,8 +60,8 @@ that runs exactly.
 - **move:** CATCH
 - **type:** mcq
 - **answer:** 1
-- **credit:** full for 1 only. The skill is instructions; whether a crash request is a bug report
-  or a feature request is a case it doesn't settle, so the label was the agent's judgment. Choice
+- **credit:** full for 1 only. The skill is instructions, and the agent interprets them; labeling a
+  crash complaint phrased as a request was the agent's reading of triage.md. Choice
   2 reads the skill as a script that runs exactly. Choice 3 treats the skill as the executor,
   though the setup says an AI agent does the sorting. Choice 4 takes the everyday sense of
   "skill", a person's know-how, which is not what the word names here.
