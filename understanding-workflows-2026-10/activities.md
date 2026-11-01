@@ -35,12 +35,10 @@ file at the learner's current commit.
 - **serves:** `all`
 - **supports:** orient
 - **checks:** `o-orientation`
-- **artifact:** the session 2 lecture deck, "What is a workflow?", in its revised form. It is
+- **artifact:** the session 2 lecture deck, "What is a workflow?", as revised for this topic. It is
   `docs/lecture-slides/l-what-is-a-workflow.html` in the learner's `course-materials` clone, a
   self-contained HTML file that opens in any browser with no server (arrow keys move, `Esc` shows
-  every slide). The revision is on the `deck-workflow-fixes` branch of `course-materials` until
-  the instructor merges it; until then a learner's clone has the session 2 version, whose
-  vocabulary slide lists skill beside AI agent and whose glossary labels its arrow "Handoff".
+  every slide). The revised deck reaches learners in the same pull that brings this topic.
   Only slides 4 to 7 are read: 4, the definition of a workflow and a two-row table of what
   dropping a part leaves (repeatable, or you have a project; a settled order, or you have a
   checklist); 5, the vocabulary list (run, step, trigger (start event), outcome, AI agent (bot),
@@ -49,11 +47,12 @@ file at the learner's current commit.
   line"), control flow ("which step runs next; when the next step belongs to another actor, it is
   a handoff"), and gateway, split or merge. Slides 1 to 3 and 8 to 10 are class logistics,
   discussion norms, table questions about `bootstrap.bpmn` and lab instructions, and are skipped.
-  Public copy, once merged:
+  Public copy:
   https://github.com/umsi212F2026/course-materials/blob/main/docs/lecture-slides/l-what-is-a-workflow.html
   (the repository is public and the page answers, but GitHub shows the file's source rather than
   the slides, and the repository has no GitHub Pages site, so the local copy is the one to open).
   About 4 minutes for the four slides, about 10 with the stop, the tutor's additions and the close.
+- **verified:** 2026-11-01
 - **learner does:** reads slides 4 to 7 once, then stops at slide 7 and answers before going on;
   "I'm not sure" is an honest answer. At the stop, writes one line in their own words for each of
   the glossary's five symbols, saying what it marks in a diagram: a start or end circle, a step, a
@@ -66,10 +65,7 @@ file at the learner's current commit.
 - **tutor does:** gives the learner the full path of the deck in their own `course-materials`
   clone and has them open it in a browser (double-click, or the tutor runs `open "<path>"` on
   macOS or `Start-Process "<path>"` on Windows). If the deck is not in the clone, the clone is out
-  of date: bring it up to date first. If the clone has the session 2 version (its glossary arrow
-  is labeled "Handoff" rather than "Control flow"), the revision hasn't been merged yet: the tutor
-  goes ahead, and adds to the arrow addition below that the slide's "Handoff" label covers only
-  the arrows that cross to another actor. Does not paste slides into the chat, and does not open
+  of date: bring it up to date first. Does not paste slides into the chat, and does not open
   any `.bpmn` file: the course's diagrams are this topic's check material. Stays quiet through the
   reading except at the stop and when asked. At the stop, takes the learner's lines first and
   replies to a wrong or vague one with one near-miss question rather than a verdict ("you said a
@@ -112,8 +108,7 @@ file at the learner's current commit.
   some of them (they never say lane, subprocess, executor or data flow), and lane, subprocess and data flow reach the learner
   only through the tutor's spoken additions. The revised slide 7 states the handoff rule for
   control flow only; that a file passed between actors is also a handoff rests on the tutor's
-  sentence. Until the revision is merged, a learner opening their own clone reads the session 2
-  slides, whose "Handoff" arrow label invites reading every arrow as one.
+  sentence.
 - **offer as:** this topic's orientation: four slides of the session 2 deck, with a one-line
   gloss for each symbol on its glossary slide and a few sentences from the tutor on what the deck
   leaves out (lanes, the plus marker, branch labels, data flow and data handoffs). About 10
@@ -139,10 +134,9 @@ file at the learner's current commit.
   ahead if they want. Before serving a scenario, checks that the diagram hasn't changed since the
   key was written: `git -C <course-materials> log -1 --format=%h -- workflows/bootstrap/bootstrap.bpmn`
   must print the commit the scenario's key records (in its rubric file); if it doesn't, the tutor doesn't serve that
-  scenario and records it as a bank defect for the instructor. The keys record `eb7b655`, the
-  revised layout on the `deck-workflow-fixes` branch, and the check runs against the learner's
-  merged `course-materials`; a clone still at the older `6b578e9` fails it, so the bank needs that
-  branch merged before it is released. Gives the full path of the file and
+  scenario and records it as a bank defect for the instructor. The keys must record the diagram's
+  commit on `main`: they now record `eb7b655`, the revised layout's commit on its branch, and are
+  updated to the commit on `main` when this topic's release package lands. Gives the full path of the file and
   has the learner double-click it (it opens in Camunda Modeler on a machine that finished
   Installation 2); if it doesn't open, opens it by path, as `setup-editors` does (`open -a "Camunda
   Modeler" "<path>"` on macOS, `Start-Process "C:\Program Files\Camunda Modeler\Camunda
@@ -165,9 +159,9 @@ file at the learner's current commit.
   depicts. Every answer in a key is read from the `.bpmn` file at the commit the key records,
   checked against the plane in Camunda or a render (`node workflows/diagram/tools/render.mjs`,
   with the subprocess's id for a plane below the top), since a step drawn across lanes shows
-  only in the geometry. Keys are written against the revised layout, commit `eb7b655` (on the
-  `deck-workflow-fixes` branch until it is merged): no flow changed from `6b578e9`, but `Set up the
-  workspace` is now drawn across all three lanes.
+  only in the geometry. Keys are written against the diagram as learners have it, in which `Set up
+  the workspace` is drawn across all three lanes; each key's `diagram commit:` line is the
+  diagram's commit on `main` (now `eb7b655` on its branch, updated when the package lands).
 
   **A scenario is one plane**, and there are three, each a file
   `tasks/a-read-course-diagram/<scenario-id>.md` with its key in
@@ -415,13 +409,11 @@ file at the learner's current commit.
   start and end circles, steps, lanes, handoffs and data flow (`Explain the four parts of
   the tour` reads the guide; `Write the record`, in PROGRAM, writes `tour.md`, which `Open the file
   in the editor`, in the human's lane, reads later: a data handoff); the plane under `Execute the
-  plan, task by task` in `workflows/develop/superpowers.bpmn` (revised copy on the
-  `deck-workflow-fixes` branch) for `control-arrow` and `not-handoff`, using the solid arrow from
+  plan, task by task` in `workflows/develop/superpowers.bpmn` for `control-arrow` and `not-handoff`, using the solid arrow from
   `Open this plan's ledger, or start one` to `Scan the plan for conflicts and rule on each`, two
   AI AGENT steps, so the second runs next and it is not a handoff (tour.bpmn has no same-actor
   step-to-step pair); and the top level of `workflows/develop/superpowers.bpmn`, which is in no bank, for everything
-  else: the box `Brainstorm the design` (a plus, drawn across all three lanes in the revised
-  layout on the `deck-workflow-fixes` branch) for a subprocess and a step drawn across lanes; the diamond `how much process does this
+  else: the box `Brainstorm the design` (a plus, drawn across all three lanes) for a subprocess and a step drawn across lanes; the diamond `how much process does this
   need?` for a split, with its labels `spike`, `bounded` and `architectural` for branch labels;
   the unnamed diamond it follows, where the start and the two `yes` branches from `hidden
   complexity?` meet, for a merge (and for a loop back); "what happens after `Brainstorm the
@@ -435,10 +427,8 @@ file at the learner's current commit.
   `not-handoff`, `control-arrow`, `branch-label` and `data-line` are each asked on only one plane
   (`data-line` about one file), so they have little room to vary. `data-line` asks only about a
   file being read, since no step on bootstrap.bpmn writes a file, and `Open U-M GPT`'s second
-  label line names `bootstrap-prompt.md`, so the step's own label points at the file. The revised session 2 deck calls its arrow symbol control
-  flow and a handoff only between actors, which matches the `not-handoff` ruling; a clone that
-  still has the older slides labels the arrow "Handoff", and a learner who learned that slide well
-  can fail `not-handoff` for it. The plane has no file that
+  label line names `bootstrap-prompt.md`, so the step's own label points at the file. The deck calls its arrow symbol control flow and a
+  handoff only between actors, which matches the `not-handoff` ruling. The plane has no file that
   one actor's step writes and another's reads, so no question checks a data handoff. The diagram uses exclusive gateways only, so a
   pass says nothing about parallel paths or typed events. Questions point at the elements to read,
   so a pass doesn't show the learner would notice, unasked, what a diagram leaves out, or could say
@@ -479,11 +469,13 @@ file at the learner's current commit.
   sentence the diagram supports.
 - **tutor role:** examiner
 - **tutor does:** as `a-read-course-diagram`'s (the session 18 offer, the commit check against
-  `eb7b655` on the learner's merged `course-materials`, opening the diagram, never describing it,
+  the diagram's commit on `main` recorded in each key, opening the diagram, never describing it,
   help recorded as helped), and also: shows a compound's stem and its parts lettered `(a)`, `(b)`
   in one message and takes the learner's answers to every part in one reply; settles each part
-  from the key; never says which sentences are wrong or how many; doesn't ask the learner to
-  explain a False or a choice. A learner who adds what the diagram does say is welcome to and gains nothing
+  from the key. While the learner answers, gives no hint: never says which sentences are wrong or
+  how many, and doesn't ask them to explain a False or a choice. After the ruling, gives feedback
+  by part, as the compound design describes: for each part, the learner's answer, whether it was
+  right, and for a missed part what was expected. A learner who adds what the diagram does say is welcome to and gains nothing
   for it. Labels a live run `a-judge-diagram-summary/<case>`. Says when offering it that no one
   plane carries every case: meeting the goal takes one question per case, fifteen over the three
   scenarios, about 25 minutes, splittable over sittings.
@@ -491,8 +483,8 @@ file at the learner's current commit.
   case when its one answer is right. A compound passes its case only when every part is right (study
   records `met` only then; quiz grading scores the mean of the parts).
 - **generator:** **The material** is as `a-read-course-diagram`'s: `workflows/bootstrap/bootstrap.bpmn`
-  in its revised layout, `diagram commit: eb7b655` recorded in each rubric key's top part and
-  never in the task file, the same three planes, and nothing drawn or invented. `Set up the
+  as learners have it, the diagram's commit on `main` recorded as `diagram commit:` in each rubric
+  key's top part (now `eb7b655`, updated when the package lands) and never in the task file, the same three planes, and nothing drawn or invented. `Set up the
   workspace` is drawn across all three lanes and `Get Codex running` across two. All of that
   entry's reading rules hold here: elements named by the first words of their label, diamonds
   pointed at by their neighbors, the plane under a subprocess opened from the small arrow button
