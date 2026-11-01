@@ -5,12 +5,14 @@ with the learner.
 
 ## Check notes
 
-2026-11-01: The one capability, `c-read-diagram`, has one live check, `a-read-course-diagram`;
-`a-judge-diagram-summary` is on hold for a rewrite. Both use the same three planes of
-`bootstrap.bpmn`. Every key in `a-read-course-diagram`'s bank records `eb7b655`, the revised drawing
-on the unmerged `deck-workflow-fixes` branch. Until that branch is merged, no banked scenario passes
-the commit check on a learner's clone, and the capability can only be served live, keyed from the
-file at the learner's current commit.
+2026-11-01: `c-read-diagram` has two checks, and either can finish it: each carries all seventeen
+cases. A case passed in either one counts toward the goal, so the learner may switch between them
+part way through. `a-judge-diagram-summary` mostly uses different elements from
+`a-read-course-diagram` for the same case, so a retry in the other activity usually meets a new
+element. The two differ in what the learner does. `a-read-course-diagram` asks for six free answers
+(a handoff, a split, a merge and three traces). `a-judge-diagram-summary` asks only for True or
+False on each part, or one choice of four. A learner who meets every case through the judge
+activity has recognized right readings without producing one.
 
 ## Goals
 
@@ -24,7 +26,7 @@ file at the learner's current commit.
 | goal | checks | notes |
 | ---- | ------ | ----- |
 | `o-orientation` | `a-read-workflow-deck` | |
-| `c-read-diagram` | `a-read-course-diagram`, `a-judge-diagram-summary` | Every check uses one diagram the learner has already met in Installation 2 and in session 2. It has exclusive gateways only, and the question points at each element. Meeting the goal therefore shows the learner can read this diagram when asked about specific parts. It does not show they can read an unfamiliar one, notice what a diagram leaves out, or handle parallel paths, and the sessions 18 to 21 use is on other diagrams. No check carries a data handoff, because no step in `bootstrap.bpmn` writes a file that another actor's step reads. `a-judge-diagram-summary` has no `not-handoff` question, so on its own it cannot finish the goal. |
+| `c-read-diagram` | `a-read-course-diagram`, `a-judge-diagram-summary` | Both checks ask about the same three planes of `bootstrap.bpmn`. The learner met that diagram in Installation 2 and at their session 2 table, whose questions asked about `Get Codex running`'s plus and lanes, where the flow splits and merges, and where `Set up the workspace` sits. The diagram has exclusive gateways only, and every question points at the element to read. Meeting the goal therefore shows the learner can read this diagram when asked about its parts. It does not show they can read an unfamiliar one, notice what a diagram leaves out, or handle parallel paths, and the sessions 18 to 21 use is on other diagrams. No question checks a data handoff, since no step in `bootstrap.bpmn` writes a file that another actor's step reads. No question asks what the file shape itself marks. Three cases can be passed on a two-choice question in `a-read-course-diagram`: `not-handoff`, and `splits` and `merges` on `set-up-workspace`. |
 
 ---
 
@@ -444,17 +446,17 @@ file at the learner's current commit.
   after this step?" and "name one handoff". No single plane meets the goal: it takes one question
   per case, seventeen in all across the three planes, about 23 minutes.
 - **check note:** Treat these three points as part of running it.
-  - **`data-line`:** `Open U-M GPT`'s own label names `bootstrap-prompt.md`, so the right choice is
-    easier than it looks.
-  - **Help on `not-handoff` or `control-arrow`:** `tour.bpmn` has no step-to-step arrow inside one
-    lane, and its start arrow leaves a state, not a step. Work the help on the plane under `Execute
-    the plan, task by task` in `superpowers.bpmn` instead. Its pair `Open this plan's ledger, or
-    start one` to `Scan the plan for conflicts and rule on each` is a solid arrow between two AI
-    AGENT steps.
-  - **Commit check:** until `deck-workflow-fixes` is merged, every scenario fails it. Ask the
-    questions live instead, keyed from the learner's commit. Nothing that the bank asks about
-    differs between `6b578e9` and `eb7b655` except that `Set up the workspace` is now drawn across
-    all three lanes.
+  - **Serve `setup-top` first.** The other two scenarios tell the learner to open the diagram under
+    `Get Codex running` or `Set up the workspace`. That answers `setup-top`'s `subprocess` question.
+    The plane under `Set up the workspace` has steps in all three lanes, which answers `lane-span`.
+    If the learner has already done a lower plane while either case is still open, a pass there is
+    weak evidence. The top level has no other subprocess or spanning box to ask about instead.
+  - **The `subprocess` question may be memory.** The session 2 table questions asked what the plus
+    on `Get Codex running` means.
+  - **Read the `not-handoff` tutor note against the revised deck.** The note says the session 2
+    glossary slide invites reading every arrow as a handoff. The revised slide 7 says a control-flow
+    arrow is a handoff only when the next step belongs to another actor. A learner who answers yes
+    has missed that rule; the slide did not lead them there.
 
 ### `a-judge-diagram-summary`
 
@@ -728,16 +730,19 @@ file at the learner's current commit.
   workflow does. No
   single plane meets the goal: it takes one question per case, seventeen in all across the three
   planes, about 27 minutes.
-- **check note:** This activity is on hold. If it is served anyway, note four things.
-  - **Only `setup-top` is drafted.** Its key records `6b578e9`, so it passes the commit check on a
-    clone that predates the merge and fails on a merged one. Its key also describes `Set up the
-    workspace` as sitting in AI AGENT, which is the old drawing; no question turns on that.
-  - **No question carries `not-handoff`.** The learner needs that case from somewhere else. Set it
-    live from `a-read-course-diagram`'s `set-up-workspace` `not-handoff` question.
-  - **Correct the count.** Tell the learner fifteen cases, not fourteen.
-  - **Each question is ruled as one.** A learner who judges one sentence right and the other wrong
-    earns nothing on that case. The `get-codex-running` and `set-up-workspace` questions don't exist
-    yet and would have to be written live from the generator.
+- **check note:** Treat these three points as part of running it.
+  - **Serve `setup-top` first.** Its `subprocess` question is about `Set up the workspace`, and both
+    activities' `set-up-workspace` scenarios tell the learner to open the diagram under that box.
+    Its `lane-span` question is about `Get Codex running`, whose own plane has exactly the HUMAN and
+    AI AGENT lanes. Session 2's table also asked what that box's spanning two lanes means, so a
+    right answer to `lane-span` may be memory even when it comes first.
+  - **`setup-top` `after-loop` is one judgment, not two.** Its parts are the same sentence with the
+    labels swapped, so exactly one is True. It shows the learner can tell which label loops back,
+    not where `success` goes. In a live or review `trace-loop` question, give one part per branch,
+    as the generator describes.
+  - **`get-codex-running` `file-line` part (b) turns on a lane.** It asks which lane `Open U-M GPT`
+    is in, not what the dotted line means. A learner who misses only (b) has read the line
+    correctly and misread the lane; say so in the feedback for that part.
 
 ### `a-words`
 
