@@ -5,8 +5,8 @@ If the learner misses a question here, set a DEFINE or INTERPRET move for workfl
 
 A workflow is a repeatable arrangement of steps, potentially done by more than one actor, with the
 order of the steps and the handoffs settled before a run starts. Drop "repeatable" and it is a
-project, done once. Drop the settled order and it is a checklist. Drop the named outcome, and the
-handoffs between actors, and it is a habit or a routine.
+project, done once. Drop the settled order and it is a checklist. A workflow is the steps, not
+the result they reach.
 
 ### vs-project
 
@@ -33,7 +33,7 @@ handoffs between actors, and it is a habit or a routine.
 - **credit:** full for 3 only. Casting is repeated for every show, its order is settled in advance,
   and it passes between actors (director, then whoever sends offers). Choice 1 is a project: it
   happens once and is planned as it goes. Choice 2 is a checklist: its items have no settled
-  order. Choice 4 is a habit: one person's routine, with no handoffs and no outcome anyone named.
+  order. Choice 4 names an outcome the shows aim for, not an arrangement of steps that gets there.
 
 ### vs-checklist
 
@@ -48,39 +48,6 @@ handoffs between actors, and it is a habit or a routine.
   naming only that the pickup involves several people and the cabin list one, with nothing on
   order, since a checklist can be split among people too. None for an incidental difference
   alone, such as that one is longer, or for "a workflow is repeated", which holds for both here.
-
-### vs-habit
-
-- **goal:** `w-workflow`
-- **move:** DISTINGUISH
-- **answer:** The wholesale orders are a workflow: they pass from actor to actor (café, owner,
-  night baker, driver) toward a named end, the order delivered, all settled in advance. The 4 a.m.
-  routine is a habit: one person's routine that she settled into, with no handoffs and no outcome
-  anyone named. Both are repeated, so repetition is not what separates them.
-- **credit:** full for naming that the workflow passes work between actors or ends in a named
-  outcome, settled in advance, while the habit is one person's routine with neither. Half for
-  naming only that the workflow was arranged on purpose and the habit grew on its own, with
-  nothing on handoffs or outcome. None for an incidental difference alone, such as the time of
-  day, or for "a workflow is repeated", which holds for both here.
-
-### vs-algorithm
-
-- **goal:** `w-workflow`
-- **move:** DISTINGUISH
-- **answer:** The formula the script applies is an algorithm: an exact procedure that computes a
-  result from its inputs, every step spelled out, with no judgment. The workflow is the whole
-  arrangement of steps among actors (student, script, aid officer, director), with the handoffs
-  between them settled in advance, and it includes a step that takes judgment, the officer's.
-  The algorithm sits inside one step of the workflow.
-- **credit:** full for naming that a workflow arranges steps among actors, with handoffs, while an
-  algorithm is an exact procedure for one computation, which can be a single step of a workflow.
-  Half for "an algorithm is done by a computer and a workflow by people", which half-fits this
-  scenario but not in general, since a workflow can include steps a computer does, as this one
-  does. None for an incidental difference alone, such as that an algorithm involves math or is
-  shorter.
-- **tutor note:** this course defines workflow and not algorithm; accept any accurate sense of
-  algorithm as an exact step-by-step procedure, and rule on whether the difference named is the
-  one that matters.
 
 ### catch-garcia
 

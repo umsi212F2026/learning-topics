@@ -309,7 +309,7 @@ do a step, are not part of this topic.
 - **group:** vocabulary
 - **what it names:** a repeatable arrangement of steps, potentially executed by more than one
   actor, with the order of steps and the handoffs settled before the run starts
-- **nearest confusable:** project, checklist, habit, algorithm
+- **nearest confusable:** project, checklist
 
 ### `w-run`
 
@@ -450,3 +450,13 @@ do a step, are not part of this topic.
   dotted lines to and from files
 - **nearest confusable:** control flow
 - **synonyms:** data association
+
+### `w-skill`
+
+- **goal:** skill
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the written instructions an AI agent follows for a step, kept in a file the
+  agent reads
+- **nearest confusable:** script, prompt

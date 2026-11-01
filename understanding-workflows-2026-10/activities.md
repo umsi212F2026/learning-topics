@@ -30,64 +30,67 @@ with the learner.
 - **serves:** `all`
 - **supports:** orient
 - **checks:** `o-orientation`
-- **artifact:** the session 2 lecture deck, "What is a workflow?". It is
+- **artifact:** the session 2 lecture deck, "What is a workflow?", in its revised form. It is
   `docs/lecture-slides/l-what-is-a-workflow.html` in the learner's `course-materials` clone, a
   self-contained HTML file that opens in any browser with no server (arrow keys move, `Esc` shows
-  every slide). Only slides 4 to 7 are read: 4, the definition of a workflow and what dropping each
-  part leaves (a project, a checklist, a habit); 5, the vocabulary list (run, step, trigger,
-  outcome, AI agent, script, handoff, with synonyms); 6, an xkcd flowchart; 7, the symbol glossary
-  (states, step, file, handoff arrows, gateway split or merge). Slides 1 to 3 and 8 to 10 are class
-  logistics, discussion norms, table questions about `bootstrap.bpmn` and lab instructions, and
-  are skipped. Public copy:
+  every slide). The revision is on the `deck-workflow-fixes` branch of `course-materials` until
+  the instructor merges it; until then a learner's clone has the session 2 version, whose
+  vocabulary slide lists skill beside AI agent and whose glossary labels its arrow "Handoff".
+  Only slides 4 to 7 are read: 4, the definition of a workflow and a two-row table of what
+  dropping a part leaves (repeatable, or you have a project; a settled order, or you have a
+  checklist); 5, the vocabulary list (run, step, trigger, outcome, AI agent (bot), skill, script,
+  handoff, with synonyms); 6, an xkcd flowchart; 7, the symbol glossary: states ("the condition
+  that starts or ends a run"), step, file ("data a step reads or writes, joined to it by a dotted
+  line"), control flow ("which step runs next; when the next step belongs to another actor, it is
+  a handoff"), and gateway, split or merge. Slides 1 to 3 and 8 to 10 are class logistics,
+  discussion norms, table questions about `bootstrap.bpmn` and lab instructions, and are skipped.
+  Public copy, once merged:
   https://github.com/umsi212F2026/course-materials/blob/main/docs/lecture-slides/l-what-is-a-workflow.html
   (the repository is public and the page answers, but GitHub shows the file's source rather than
   the slides, and the repository has no GitHub Pages site, so the local copy is the one to open).
   About 4 minutes for the four slides, about 10 with the stop, the tutor's additions and the close.
-- **verified:** 2026-10-28
 - **learner does:** reads slides 4 to 7 once, then stops at slide 7 and answers before going on;
   "I'm not sure" is an honest answer. At the stop, writes one line in their own words for each of
   the glossary's five symbols, saying what it marks in a diagram: a state, a step, a file, a
-  handoff arrow, and a gateway (both what a split is and what a merge is). Then hears the tutor's
-  additions (below), and answers the close: with this deck beside you, could you now open one of
-  the course's workflow diagrams in Camunda Modeler and say where a run starts and ends, who does
-  each step, what each kind of arrow means, where the flow splits and merges, and what happens
-  after a given step?
+  control-flow arrow (including when it is a handoff), and a gateway (both what a split is and
+  what a merge is). Then hears the tutor's additions (below), and answers the close: with this
+  deck beside you, could you now open one of the course's workflow diagrams in Camunda Modeler
+  and say where a run starts and ends, who does each step, what each kind of arrow means, where
+  the flow splits and merges, and what happens after a given step?
 - **tutor role:** explainer
 - **tutor does:** gives the learner the full path of the deck in their own `course-materials`
   clone and has them open it in a browser (double-click, or the tutor runs `open "<path>"` on
   macOS or `Start-Process "<path>"` on Windows). If the deck is not in the clone, the clone is out
-  of date: bring it up to date first (the deck was published after session 2). Does not paste
-  slides into the chat, and does not open any `.bpmn` file: the course's diagrams are this topic's
-  check material. Stays quiet through the reading except at the stop and when asked. At the stop,
-  takes the learner's lines first and replies to a wrong or vague one with one near-miss question
-  rather than a verdict ("you said a gateway is where a decision is made; what about a diamond
-  with two arrows in and one out?"). Intended lines: a state is a condition that starts or ends a
-  run, not something done; a step is one action someone or something takes; a file is a document
-  a step reads or writes; a handoff is where the next step, or data a later step uses, belongs to a
-  different actor, which on a diagram means the arrow or the data's path crosses from one lane into
-  another (this departs from the slide on purpose: the slide labels its one arrow symbol "Handoff",
-  and the tutor's arrow addition below corrects that, so a line copying the slide gets the
-  near-miss "is every arrow a handoff, even one between two steps the same actor does?"); a
-  gateway with a question splits the flow by the answer, and one with no label is where
-  paths come back together. After the stop, adds what the deck doesn't say, a sentence each.
-  **Lane**: each horizontal band in a diagram is a lane, and its name says who does the steps drawn
-  in it; a box drawn across two lanes is a step more than one of them takes part in. The deck's
-  word **script** is the diagrams' `PROGRAM` lane: steps a program carries out exactly. A box with
-  a small **plus** at its bottom edge is a **subprocess**, a step with a diagram of its own
+  of date: bring it up to date first. If the clone has the session 2 version (its glossary arrow
+  is labeled "Handoff" rather than "Control flow"), the revision hasn't been merged yet: the tutor
+  goes ahead, and adds to the arrow addition below that the slide's "Handoff" label covers only
+  the arrows that cross to another actor. Does not paste slides into the chat, and does not open
+  any `.bpmn` file: the course's diagrams are this topic's check material. Stays quiet through the
+  reading except at the stop and when asked. At the stop, takes the learner's lines first and
+  replies to a wrong or vague one with one near-miss question rather than a verdict ("you said a
+  gateway is where a decision is made; what about a diamond with two arrows in and one out?").
+  Intended lines: a state is a condition that starts or ends a run, not something done; a step is
+  one action someone or something takes; a file is data a step reads or writes, joined by a dotted
+  line; a control-flow arrow says which step runs next, and it is a handoff only when that next
+  step belongs to another actor (a line saying every arrow is a handoff gets the near-miss "even
+  one between two steps the same actor does?"); a gateway with a question splits the flow by the
+  answer, and one with no label is where paths come back together. After the stop, adds what the
+  deck doesn't say, a sentence each. **Lane**: each horizontal band in a diagram is a lane, and its
+  name says who does the steps drawn in it, so "another actor" on the slide means another lane; a
+  box drawn across two lanes is a step more than one of them takes part in. The deck's word
+  **script** is the diagrams' `PROGRAM` lane: steps a program carries out exactly. A box with a
+  small **plus** at its bottom edge is a **subprocess**, a step with a diagram of its own
   underneath; the plus only marks it, and Camunda opens that diagram from the small arrow button
-  at the box's bottom-right corner. An arrow labeled with an answer (`yes`,
-  `no`) leaves a gateway and says which way a run goes on that answer. **Arrows**, correcting the
-  slide: the solid arrows are **control flow**, which step runs next; the dotted lines to and from
-  a file are **data flow**, data one step writes and another reads, possibly later. A dotted line
-  is not the run moving to the file. A **handoff** is either kind of flow where the two steps
-  belong to different actors: a solid arrow that crosses into another lane, or a file written by a
-  step in one lane and read by a step in another. A solid arrow, or a file written and read,
-  inside one lane is not a handoff. So not every arrow is a handoff. Does not set or rehearse any
-  word question from `a-words` (no asking for a definition, no word against its confusable, no
-  misused sentence to correct), and does not set a question from this topic's capability
-  activities. Says that reading the course's diagrams is practiced in this topic's other
-  activities and in the session 18 class, and that drawing one is not part of this topic. At the
-  close, puts the readiness question as written above and rules on the answer.
+  at the box's bottom-right corner. An arrow labeled with an answer (`yes`, `no`) leaves a gateway
+  and says which way a run goes on that answer. **Data flow**: the dotted lines are data flow,
+  data one step writes and another reads, possibly later; a dotted line is not the run moving to
+  the file, and a file written by one actor's step and read by another actor's step is a handoff
+  too, while one written and read inside one lane is not. Does not set or rehearse any word
+  question from `a-words` (no asking for a definition, no word against its confusable, no misused
+  sentence to correct), and does not set a question from this topic's capability activities. Says
+  that reading the course's diagrams is practiced in this topic's other activities and in the
+  session 18 class, and that drawing one is not part of this topic. At the close, puts the
+  readiness question as written above and rules on the answer.
 - **done when:** criterion met. The bar is did it once and help is expected throughout, so the
   ruling is on the learner's answer to the readiness question, not on the stop. A plain yes is
   `criterion: met`. A hedge with no plain no is `criterion: unclear`: go back over slide 7 and the
@@ -98,19 +101,17 @@ with the learner.
 - **worked example:** n/a
 - **doesn't show:** an indication of readiness is all this goal asks for and all this shows. The
   stop is helped, ungraded and about the symbols in general, with no diagram open, so it shows
-  nothing about `c-read-diagram`. It shows nothing about the fifteen words, which have their own
-  supply in `a-words`; the deck names only some of them (it never says lane, subprocess, executor
-  or workflow state), and lane and subprocess reach the learner only through the tutor's spoken
-  additions. Slide 7 labels its one arrow symbol a handoff, which invites reading every arrow as one,
-  the misreading `c-read-diagram`'s `handoff` case checks for; the correction (control flow, data
-  flow, and a handoff only where the actor changes) rests on a few spoken sentences from the
-  tutor, so a learner who missed them meets the slide's version first. The deck lists "skill" beside AI agent as another name, while this topic treats the
-  two as different things; the tutor does not raise it.
+  nothing about `c-read-diagram`. It shows nothing about the sixteen words, which have their own
+  supply in `a-words`; the deck names only some of them (it never says lane, subprocess,
+  executor, workflow state or data flow), and lane, subprocess and data flow reach the learner
+  only through the tutor's spoken additions. The revised slide 7 states the handoff rule for
+  control flow only; that a file passed between actors is also a handoff rests on the tutor's
+  sentence. Until the revision is merged, a learner opening their own clone reads the session 2
+  slides, whose "Handoff" arrow label invites reading every arrow as one.
 - **offer as:** this topic's orientation: four slides of the session 2 deck, with a one-line
   gloss for each symbol on its glossary slide and a few sentences from the tutor on what the deck
-  leaves out or gets loose (lanes, the plus marker, branch labels, control flow and data flow,
-  and which of them are handoffs).
-  About 10 minutes.
+  leaves out (lanes, the plus marker, branch labels, data flow and data handoffs). About 10
+  minutes.
 
 ### `a-read-course-diagram`
 
@@ -415,9 +416,10 @@ with the learner.
   `not-handoff`, `control-arrow`, `branch-label` and `data-line` are each asked on only one plane
   (`data-line` about one file), so they have little room to vary. `data-line` asks only about a
   file being read, since no step on bootstrap.bpmn writes a file, and `Open U-M GPT`'s second
-  label line names `bootstrap-prompt.md`, so the step's own label points at the file. The `not-handoff` ruling departs from the session 2 deck,
-  whose glossary labels its one arrow symbol a handoff; a learner who learned the slide well can
-  fail it for that. The plane has no file that
+  label line names `bootstrap-prompt.md`, so the step's own label points at the file. The revised session 2 deck calls its arrow symbol control
+  flow and a handoff only between actors, which matches the `not-handoff` ruling; a clone that
+  still has the older slides labels the arrow "Handoff", and a learner who learned that slide well
+  can fail `not-handoff` for it. The plane has no file that
   one actor's step writes and another's reads, so no question checks a data handoff. The diagram uses exclusive gateways only, so a
   pass says nothing about parallel paths or typed events. Questions point at the elements to read,
   so a pass doesn't show the learner would notice, unasked, what a diagram leaves out, or could say

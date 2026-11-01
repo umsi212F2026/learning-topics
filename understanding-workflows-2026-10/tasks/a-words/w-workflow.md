@@ -20,7 +20,7 @@ Which of these statements uses the word "workflow" correctly?
 1. Its workflow for this spring's show, the one time it stages that play, is planned month by month.
 2. Its workflow for closing up after a show is a list: lights, doors, props, done in any order.
 3. Its workflow for casting is open auditions, then callbacks by the director, then offers by email.
-4. Its workflow is how the lead actor warms up before each show, a routine he settled into long ago.
+4. Its workflow is a full house on opening night, the result every one of its shows works toward.
 
 ### vs-checklist
 
@@ -31,26 +31,6 @@ parent shows ID at the gate, the office checks the ID against the pickup list an
 cabin, and then the counselor walks the camper to the gate.
 
 In this situation, what is the difference between a workflow and a checklist? Answer in two or
-three sentences, in your own words.
-
-### vs-habit
-
-The owner of a small bakery arrives at 4 a.m. every day and, by long habit, makes coffee, turns on
-the radio and looks over yesterday's sales before starting the dough. The bakery also fills
-wholesale orders: a café emails an order by 6 p.m., the owner enters it in the order book, the
-night baker bakes it, and the driver delivers it by 7 a.m., ending with the order delivered.
-
-In this situation, what is the difference between a workflow and a habit? Answer in two or three
-sentences, in your own words.
-
-### vs-algorithm
-
-A college handles financial aid applications this way. A student submits the application. A
-script computes the amount the family is expected to pay, using a fixed formula applied to the
-income figures. An aid officer then reads any note about special circumstances, such as a parent's
-recent job loss, and decides whether to adjust the amount. Finally the aid director signs off.
-
-In this situation, what is the difference between a workflow and an algorithm? Answer in two or
 three sentences, in your own words.
 
 ### catch-garcia
