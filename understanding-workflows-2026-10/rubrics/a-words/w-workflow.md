@@ -15,11 +15,10 @@ the result they reach.
 - **answer:** Saturday intake is a workflow: it runs again and again, once per client, with the
   order and the handoffs (greeter to desk to shopper) settled before any run starts. The move is a
   project: it happens once, and its steps are being worked out during it rather than settled ahead.
-- **credit:** full for naming that a workflow is repeated, run after run, while a project is done
-  once; matching the pantry's two activities is not required, but any match given must be right,
-  and a wrong one makes it half. Half for naming only that a workflow's order is settled in
-  advance and the project's is worked out as it goes, with nothing on once versus many times.
-  None for an incidental difference alone, such as that the move is bigger, harder or more
+- **credit:** full for naming either difference: that a workflow is repeated, run after run, while
+  a project is done once, or that a workflow's order is settled in advance while the project's is
+  worked out as it goes. Matching the pantry's two activities is not required, but any match given
+  must be right, and a wrong one makes it half. None for an incidental difference alone, such as that the move is bigger, harder or more
   important.
 - **tutor note:** a learner who says "a project has a deadline" has named something true but
   incidental; ask how many times the pantry will move, and how many clients it will register.
