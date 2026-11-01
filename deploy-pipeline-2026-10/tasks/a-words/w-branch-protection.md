@@ -1,11 +1,11 @@
 # branch protection
 
-Answer in two or three sentences, in your own words.
-
 ### q-branch-protection-vs-private
 
 What is the difference between turning on branch protection for `main` and making the repository
 private?
+
+Answer in two or three sentences, in your own words.
 
 ### q-catch-protection-hides-code
 
@@ -15,6 +15,8 @@ A student says:
 
 What is wrong with what they said?
 
+Answer in two or three sentences, in your own words.
+
 ### q-catch-protection-freezes-main
 
 A student says:
@@ -23,3 +25,5 @@ A student says:
 turn it off whenever we want to get a change in."
 
 What is wrong with what they said?
+
+Answer in two or three sentences, in your own words.

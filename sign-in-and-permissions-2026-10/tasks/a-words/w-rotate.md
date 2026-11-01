@@ -1,7 +1,5 @@
 # Rotate
 
-Answer in two or three sentences, in your own words.
-
 Pantry is a recipe box with sign-in through GitHub. Its Express backend runs on Rivetbox, a server
 host, and reads Pantry's GitHub client secret from Rivetbox's settings. A student has found that
 the client secret also went out in a commit pushed to Pantry's public repository.
@@ -15,6 +13,8 @@ old one is still listed at GitHub, but nothing of ours uses it any more, so that
 
 What is wrong with that?
 
+Answer in two or three sentences, in your own words.
+
 ### q3
 
 A second student, with the same leak, says:
@@ -24,6 +24,10 @@ the old value in its settings, but that doesn't matter, because rotating happens
 
 What is wrong with that?
 
+Answer in two or three sentences, in your own words.
+
 ### q1
 
 What is the difference between rotating the client secret and deleting it from the repository?
+
+Answer in two or three sentences, in your own words.

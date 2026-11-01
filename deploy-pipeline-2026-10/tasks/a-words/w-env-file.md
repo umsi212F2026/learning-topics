@@ -1,7 +1,5 @@
 # .env file
 
-Answer in two or three sentences, in your own words.
-
 ### q-env-file-vs-host-variables
 
 Your app's backend runs on your machine while you work on it, and on Ropewalk once it is deployed.
@@ -11,6 +9,8 @@ running server and never the browser."
 What is the difference between your backend's `.env` file and the environment variables on
 Ropewalk's Settings page?
 
+Answer in two or three sentences, in your own words.
+
 ### q-catch-env-file-hides-secrets
 
 A student says:
@@ -19,3 +19,5 @@ A student says:
 file is for: keeping secrets hidden."
 
 What is wrong with what they said?
+
+Answer in two or three sentences, in your own words.

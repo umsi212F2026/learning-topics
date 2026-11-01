@@ -1,7 +1,5 @@
 # input validation
 
-Answer in two or three sentences, in your own words.
-
 Lanetide is a community swimming pool's app where swimmers book a lane for a swim. A swimmer
 books a lane by filling out a form on Lanetide's page, and the form's length box won't let anyone
 choose a booking longer than two hours. The form sends the booking to Lanetide's server, which
@@ -17,6 +15,8 @@ for more than two hours."
 
 What is wrong with that?
 
+Answer in two or three sentences, in your own words.
+
 ### q-catch-cleanup-after-saving
 
 The builder asked their agent to keep out bookings that are too long. Now a job runs on
@@ -27,8 +27,12 @@ longer than two hours. The builder writes in their notes:
 
 What is wrong with that?
 
+Answer in two or three sentences, in your own words.
+
 ### q-input-validation-vs-form-check
 
 Lanetide's agent tells the builder: "The booking form already checks the booking's length. I'd
 also add input validation for it." What is the difference between the form's check and input
 validation?
+
+Answer in two or three sentences, in your own words.

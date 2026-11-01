@@ -1,10 +1,10 @@
 # lock-in
 
-Answer in two or three sentences, in your own words.
-
 ### q1
 
 What separates being locked in to a hosting vendor from being under contract with it?
+
+Answer in two or three sentences, in your own words.
 
 ### q2
 
@@ -14,3 +14,5 @@ kept in Copperstack's own storage, which exports only in a Copperstack format. T
 "Lock-in isn't a problem for us: we're on Copperstack's free plan, so moving would cost us nothing."
 
 What is wrong with that?
+
+Answer in two or three sentences, in your own words.

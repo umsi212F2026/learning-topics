@@ -1,10 +1,10 @@
 # check
 
-Answer in two or three sentences, in your own words.
-
 ### q-check-vs-test
 
 What is the difference between a check and a test?
+
+Answer in two or three sentences, in your own words.
 
 ### q-catch-check-means-live
 
@@ -15,6 +15,8 @@ nothing else puts a check on their commits. They say:
 
 What is wrong with what they said?
 
+Answer in two or three sentences, in your own words.
+
 ### q-catch-failed-check-rejects-push
 
 A student pushes a commit to their `fix-footer` branch. A minute later GitHub shows a red cross
@@ -24,3 +26,5 @@ beside it. They say:
 once the tests pass."
 
 What is wrong with what they said?
+
+Answer in two or three sentences, in your own words.

@@ -1,18 +1,22 @@
 # cache invalidation
 
-Answer in two or three sentences, in your own words.
-
 ### q-invalidation-vs-reload
 
 What is the difference between cache invalidation and reloading the page?
+
+Answer in two or three sentences, in your own words.
 
 ### q-invalidation-vs-redeploy
 
 What is the difference between cache invalidation and a redeploy?
 
+Answer in two or three sentences, in your own words.
+
 ### q-invalidation-vs-busting
 
 What is the difference between cache invalidation and cache busting?
+
+Answer in two or three sentences, in your own words.
 
 ### q-catch-new-address-invalidates
 
@@ -34,3 +38,5 @@ The student says:
 "There, I've invalidated the cache, so every visitor sees the new version now."
 
 What is wrong with what they said?
+
+Answer in two or three sentences, in your own words.

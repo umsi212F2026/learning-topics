@@ -1,14 +1,16 @@
 # GitHub Actions
 
-Answer in two or three sentences, in your own words.
-
 ### q-actions-vs-update-skill
 
 What is the difference between a GitHub Actions workflow and the course's `update` skill?
 
+Answer in two or three sentences, in your own words.
+
 ### q-actions-vs-auto-deploy
 
 What is the difference between GitHub Actions and auto-deploy?
+
+Answer in two or three sentences, in your own words.
 
 ### q-catch-actions-is-a-switch
 
@@ -19,6 +21,8 @@ every time I push."
 
 What is wrong with what they said?
 
+Answer in two or three sentences, in your own words.
+
 ### q-catch-actions-on-laptop
 
 A student says:
@@ -27,3 +31,5 @@ A student says:
 them on my computer."
 
 What is wrong with what they said?
+
+Answer in two or three sentences, in your own words.

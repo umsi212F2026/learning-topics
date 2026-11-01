@@ -1,11 +1,11 @@
 # build log
 
-Answer in two or three sentences, in your own words.
-
 ### q1
 
 Your backend runs on a host called Ferncastle. Your agent offers to show you either the build log
 or the server log for it. What is the difference between those two logs?
+
+Answer in two or three sentences, in your own words.
 
 ### q2
 
@@ -16,3 +16,5 @@ agent:
 "Pull up the build log for this morning's deploy and find the stack trace for the 3:12 error."
 
 What is wrong with that?
+
+Answer in two or three sentences, in your own words.

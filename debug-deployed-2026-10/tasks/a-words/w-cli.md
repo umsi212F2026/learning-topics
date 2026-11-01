@@ -1,7 +1,5 @@
 # CLI
 
-Answer in two or three sentences, in your own words.
-
 ### q1
 
 A student's backend runs on a host called Quillbay, which offers a CLI. They write in their notes:
@@ -11,6 +9,8 @@ edits files."
 
 What is wrong with that?
 
+Answer in two or three sentences, in your own words.
+
 ### q2
 
 Another student writes:
@@ -18,3 +18,5 @@ Another student writes:
 "Quillbay's CLI is just the terminal in VS Code, so there's nothing to install."
 
 What is wrong with that?
+
+Answer in two or three sentences, in your own words.

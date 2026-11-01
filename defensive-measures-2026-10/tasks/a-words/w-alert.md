@@ -1,7 +1,5 @@
 # alert
 
-Answer in two or three sentences, in your own words.
-
 Choirsheet is a community choir's app where members mark which rehearsals they will come to. Its
 server and its database both run on a host called Lanternwell, and Lanternwell keeps Choirsheet's
 server log, where the server records each error as it happens.
@@ -17,11 +15,15 @@ goes red, so we'll know."
 
 What is wrong with that?
 
+Answer in two or three sentences, in your own words.
+
 ### q-alert-vs-server-log
 
 Lanternwell keeps thirty days of Choirsheet's server log, and the agent offers to set up an alert
 as well. The builder asks why: the server log already has every error in it. What is the
 difference between Choirsheet's server log and an alert?
+
+Answer in two or three sentences, in your own words.
 
 ### q-alert-vs-health-check
 
@@ -29,3 +31,5 @@ Lanternwell runs a health check on Choirsheet: every minute it asks one of Choir
 whether the app still answers, and if it doesn't, restarts the app. The agent also offers to set up
 an alert for when Choirsheet stops answering. What is the difference between the health check and
 that alert?
+
+Answer in two or three sentences, in your own words.

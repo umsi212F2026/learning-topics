@@ -1,11 +1,11 @@
 # static host
 
-Answer in two or three sentences, in your own words.
-
 ### q1
 
 Your app has a React frontend, built to the files in `dist/`, and an Express backend. What
 separates a static host from a server host, and which part of your app needs which?
+
+Answer in two or three sentences, in your own words.
 
 ### q2
 
@@ -15,3 +15,5 @@ A student has their React frontend on a static host and writes:
 `server.js` alongside it."
 
 What is wrong with that?
+
+Answer in two or three sentences, in your own words.

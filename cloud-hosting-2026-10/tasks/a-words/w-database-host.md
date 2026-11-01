@@ -1,12 +1,12 @@
 # database host
 
-Answer in two or three sentences, in your own words.
-
 ### q1
 
 One vendor's plan for your app lists a "web service" for your Express backend and a "Postgres
 database" as two separate items, each with its own limits. What separates a database host from a
 server host?
+
+Answer in two or three sentences, in your own words.
 
 ### q2
 
@@ -16,3 +16,5 @@ on their laptop, and they write:
 "My database host is my laptop, so the deployed app will keep using the same data."
 
 What is wrong with that?
+
+Answer in two or three sentences, in your own words.

@@ -1,7 +1,5 @@
 # Scope
 
-Answer in two or three sentences, in your own words.
-
 ### q2
 
 Pantry, a recipe box for a cooking club, signs members in through GitHub. Club organizers need to
@@ -10,6 +8,8 @@ be able to delete any recipe in Pantry. A student says:
 "When an organizer signs in, we'll ask GitHub for a bigger scope, so they can delete recipes."
 
 What is wrong with that?
+
+Answer in two or three sentences, in your own words.
 
 ### q3
 
@@ -22,7 +22,11 @@ doesn't change anything our app can do."
 
 What is wrong with that?
 
+Answer in two or three sentences, in your own words.
+
 ### q1
 
 An app lets people sign in through GitHub, and inside the app some users are members and some are
 admins. In that app, what is the difference between a scope and a role?
+
+Answer in two or three sentences, in your own words.

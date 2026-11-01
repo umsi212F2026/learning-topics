@@ -1,10 +1,10 @@
 # fork
 
-Answer in two or three sentences, in your own words.
-
 ### q-fork-vs-clone
 
 What is the difference between forking a repository and cloning it?
+
+Answer in two or three sentences, in your own words.
 
 ### q-catch-fork-pushes-to-original
 
@@ -14,3 +14,5 @@ A student says:
 everyone will see my app there."
 
 What is wrong with what they said?
+
+Answer in two or three sentences, in your own words.

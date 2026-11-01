@@ -1,10 +1,10 @@
 # port
 
-Answer in two or three sentences, in your own words.
-
 ### q1
 
 In `http://localhost:5173`, what is the difference between the port and the host name?
+
+Answer in two or three sentences, in your own words.
 
 ### q2
 
@@ -14,6 +14,8 @@ A student says:
 
 What is wrong with that?
 
+Answer in two or three sentences, in your own words.
+
 ### q3
 
 A student moves their backend from `http://localhost:3000` to `http://localhost:4000` and writes in their notes:
@@ -21,3 +23,5 @@ A student moves their backend from `http://localhost:3000` to `http://localhost:
 "The backend is on a different machine now."
 
 What is wrong with that?
+
+Answer in two or three sentences, in your own words.

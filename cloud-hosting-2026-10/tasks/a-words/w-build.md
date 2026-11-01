@@ -1,7 +1,5 @@
 # build
 
-Answer in two or three sentences, in your own words.
-
 ### q2
 
 A student finds a typo on their sign-up page. They open `dist/assets/index-4f2a.js`, fix the typo
@@ -11,6 +9,8 @@ there, and write in their notes:
 
 What is wrong with that?
 
+Answer in two or three sentences, in your own words.
+
 ### q3
 
 A student's React frontend works on their laptop with `npm run dev`. They write in their notes:
@@ -19,3 +19,5 @@ A student's React frontend works on their laptop with `npm run dev`. They write 
 static host as it is."
 
 What is wrong with that?
+
+Answer in two or three sentences, in your own words.

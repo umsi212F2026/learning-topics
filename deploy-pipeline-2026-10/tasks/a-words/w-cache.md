@@ -1,10 +1,10 @@
 # cache
 
-Answer in two or three sentences, in your own words.
-
 ### q-cache-vs-backup
 
 What is the difference between a cache and a backup?
+
+Answer in two or three sentences, in your own words.
 
 ### q-catch-clearing-loses-pages
 
@@ -18,6 +18,8 @@ take the site down until we deploy again."
 
 What is wrong with what they said?
 
+Answer in two or three sentences, in your own words.
+
 ### q-catch-cache-only-in-browser
 
 A student says:
@@ -26,3 +28,5 @@ A student says:
 our site for the first time always gets the new version."
 
 What is wrong with what they said?
+
+Answer in two or three sentences, in your own words.

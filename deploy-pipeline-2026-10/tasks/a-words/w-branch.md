@@ -1,10 +1,10 @@
 # branch
 
-Answer in two or three sentences, in your own words.
-
 ### q-branch-vs-fork
 
 What is the difference between making a branch and making a fork?
+
+Answer in two or three sentences, in your own words.
 
 ### q-catch-branch-shares-main
 
@@ -14,3 +14,5 @@ A student says:
 another name for the same line of commits."
 
 What is wrong with what they said?
+
+Answer in two or three sentences, in your own words.

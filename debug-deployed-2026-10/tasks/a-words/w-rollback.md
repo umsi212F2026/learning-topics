@@ -1,11 +1,11 @@
 # rollback
 
-Answer in two or three sentences, in your own words.
-
 ### q1
 
 Your latest deploy on a host called Tallowcloud broke the sign-up page. What is the difference
 between doing a rollback and doing a redeploy?
+
+Answer in two or three sentences, in your own words.
 
 ### q2
 
@@ -16,7 +16,11 @@ They write in the team chat:
 
 What is wrong with that?
 
+Answer in two or three sentences, in your own words.
+
 ### q3
 
 What is the difference between rolling back on your host and doing a git revert of the commit
 that broke your app?
+
+Answer in two or three sentences, in your own words.

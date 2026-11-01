@@ -1,14 +1,16 @@
 # CI
 
-Answer in two or three sentences, in your own words.
-
 ### q-ci-vs-auto-deploy
 
 What is the difference between CI and auto-deploy?
 
+Answer in two or three sentences, in your own words.
+
 ### q-ci-vs-test-suite
 
 What is the difference between CI and a test suite?
+
+Answer in two or three sentences, in your own words.
 
 ### q-catch-ci-blocks-deploys
 
@@ -27,3 +29,5 @@ A student says:
 "We have CI, so code that fails its tests can't go live."
 
 What is wrong with what they said?
+
+Answer in two or three sentences, in your own words.
