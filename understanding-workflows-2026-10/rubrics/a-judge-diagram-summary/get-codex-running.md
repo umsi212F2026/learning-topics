@@ -15,7 +15,7 @@ stalled` (AI AGENT), then the end circle `stuck` (its label goes on past the fir
 gateways are exclusive, so a run takes one path out of a split. No question here asks about a
 handoff or a shape's kind.
 
-Compound parts in this scenario: nine, five True and four False.
+Compound parts in this scenario: two, one True and one False.
 
 ### one-split
 
@@ -25,58 +25,31 @@ Compound parts in this scenario: nine, five True and four False.
 - **answer:** 2
 - **credit:** full for 2 only.
 - **tutor note:** the diamond meant is `stuck?`: one arrow in, `yes` to `Provide explanations and
-  suggestions` and `no` to `checklist done?`. Choice 4 names the question of the next diamond.
+  suggestions` and `no` to `checklist done?`. Choice 4 is half right: it names the question of
+  the next diamond.
 
 ### branch-label
 
 - **goal:** `c-read-diagram`
 - **cases:** branch-label
-- **type:** compound
-
-#### a
-
 - **type:** mcq
-- **answer:** 2
-- **tutor note:** the labels are swapped: `yes` ends the run, `no` goes back.
-
-#### b
-
-- **type:** mcq
-- **answer:** 1
-- **tutor note:** the `no` arrow reaches the merge just before `Do the next step on the
-  checklist`, so the run goes back to that step.
-
-#### c
-
-- **type:** mcq
-- **answer:** 1
+- **answer:** 3
+- **credit:** full for 3 only.
+- **tutor note:** the diamond meant is `checklist done?`. Its `no` arrow reaches the merge just
+  before `Do the next step on the checklist`, so the run goes back to that step; its `yes` arrow
+  ends the run in `Codex answers with the U-M key`. Choices 1 and 4 swap the labels; choice 2
+  names the step on the `yes` branch of `stuck?`.
 
 ### file-line
 
 - **goal:** `c-read-diagram`
 - **cases:** data-line
-- **type:** compound
-
-#### a
-
-- **type:** mcq
-- **answer:** 2
-- **tutor note:** the line runs from the file to the step, and no step on this plane writes a
-  file.
-
-#### b
-
-- **type:** mcq
-- **answer:** 2
-- **tutor note:** `Open U-M GPT` sits in the HUMAN lane, and the dotted line touches only that
-  step; U-M GPT being an AI does not put the step in the AI agent's lane.
-
-#### c
-
 - **type:** mcq
 - **answer:** 1
-- **tutor note:** the step's own second line names the file's path, so this part is easier than
-  it looks.
+- **credit:** full for 1 only.
+- **tutor note:** the line runs from the file to `Open U-M GPT`, and touches no other step; no
+  step on this plane writes a file. A dotted line is data, not the run moving to the file. The
+  step's own second line names the file's path, so this is easier than it looks.
 
 ### one-merge
 
@@ -99,18 +72,15 @@ Compound parts in this scenario: nine, five True and four False.
 
 - **type:** mcq
 - **answer:** 1
+- **tutor note:** the merge the `try suggestion` arrow reaches sits just after `Open U-M GPT`, but
+  the step it leads on to is `Do the next step on the checklist`.
 
 #### b
 
 - **type:** mcq
 - **answer:** 2
-- **tutor note:** the merge the `try suggestion` arrow reaches sits just after `Open U-M GPT`, but
-  the step it leads on to is `Do the next step on the checklist`.
-
-#### c
-
-- **type:** mcq
-- **answer:** 1
+- **tutor note:** on `give up` the next step is `Write a status report on where it stalled`; the
+  run does not start over.
 
 ### after-last
 
@@ -120,4 +90,5 @@ Compound parts in this scenario: nine, five True and four False.
 - **answer:** 1
 - **credit:** full for 1 only.
 - **tutor note:** the step is not the end; the circle after it is. `Codex answers with the U-M key`
-  is the other outcome, reached from `checklist done?`.
+  is the other outcome, reached from `checklist done?`. Choice 4 reads a loop in where none is
+  drawn.

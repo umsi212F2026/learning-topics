@@ -12,8 +12,9 @@ to complete?` (AI AGENT): `yes` goes to `Check the install` (PROGRAM); `no` goes
 before `Report being stuck`. After `Check the install`, the split `install correct?` (PROGRAM):
 `success` goes to `Submit each session's report` (HUMAN), then the end circle `workspace ready`;
 `not yet` loops back through the merge before `Set up the workspace`. All gateways are exclusive,
-so a run takes one path out of a split. The file `U-M API key` is not asked about, and no question
-here asks about a handoff.
+so a run takes one path out of a split. The file `U-M API key`, the plane's only file, is joined by
+a dotted line to `Get Codex running`, which reads it; the file-shape question asks nothing about
+which step uses it. No question here asks about a handoff.
 
 Compound parts in this scenario: five, three True and two False.
 
@@ -57,6 +58,16 @@ Compound parts in this scenario: five, three True and two False.
 - **tutor note:** the box carries a plus and the small arrow button; the diagram under it is its
   own, with its own steps, not the one under `Get Codex running`.
 
+### file
+
+- **goal:** `c-read-diagram`
+- **cases:** file-shape
+- **type:** mcq
+- **answer:** 1
+- **credit:** full for 1 only.
+- **tutor note:** the page with a folded corner is the file shape. Choice 2 reads the label as an
+  action; choice 3 confuses it with an end circle. Don't ask which step uses it.
+
 ### lane-span
 
 - **goal:** `c-read-diagram`
@@ -90,8 +101,8 @@ Compound parts in this scenario: five, three True and two False.
 - **answer:** 4
 - **credit:** full for 4 only.
 - **tutor note:** the diamond meant is `Able to complete?`: one arrow in, `yes` to `Check the
-  install` and `no` to the merge before `Report being stuck`. Choice 3 names the question of the
-  diamond after `Check the install`.
+  install` and `no` to the merge before `Report being stuck`. Choice 3 is half right: it names the
+  question of the diamond after `Check the install`.
 
 ### one-merge
 
@@ -114,8 +125,8 @@ Compound parts in this scenario: five, three True and two False.
 
 - **type:** mcq
 - **answer:** 2
-- **tutor note:** on `success` the run goes to `Submit each session's report`; the labels are
-  swapped in this sentence.
+- **tutor note:** on `success` the next step is `Submit each session's report`; this sentence
+  names the plane's other report step, the one on the `stuck` path.
 
 #### b
 
@@ -131,4 +142,5 @@ Compound parts in this scenario: five, three True and two False.
 - **answer:** 3
 - **credit:** full for 3 only.
 - **tutor note:** the step is not the end; the circle after it is. `workspace ready` is the other
-  outcome, reached only after `Submit each session's report`.
+  outcome, reached only after `Submit each session's report`. Choice 4 reads a loop in where
+  none is drawn.

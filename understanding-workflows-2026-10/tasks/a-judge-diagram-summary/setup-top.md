@@ -47,6 +47,16 @@ does the diagram support?
 3. The diagram underneath it is the one for `Get Codex running`.
 4. It marks where a run of the workflow begins.
 
+### file
+
+The agent's summary says several things about the shape `U-M API key`. Which one does the diagram
+support?
+
+1. It marks a file, data that a step uses.
+2. It is a step: the human gets the U-M API key.
+3. It marks an outcome: the run ends with the key.
+4. It marks a gateway, where the flow splits or merges.
+
 ### lane-span
 
 The agent's summary says these things about the rounded box `Get Codex running`. Is each sentence
@@ -80,8 +90,8 @@ workspace`. Which one does the diagram support?
 
 1. Paths come back together here, and one path goes on.
 2. The run takes both paths from here at the same time.
-3. The flow splits here, on whether the install is correct.
-4. The flow splits here: a run takes one path or the other.
+3. The flow splits here, on `install correct?`.
+4. The flow splits here, on `Able to complete?`.
 
 ### one-merge
 
@@ -89,7 +99,7 @@ The agent's summary says several things about the diamond just before the rounde
 workspace`. Which one does the diagram support?
 
 1. It is a decision: the run goes one way or the other here.
-2. Paths come back together here, and one path goes on.
+2. The paths from `Codex running?` and `install correct?` come back together here.
 3. Only one path arrives here, and one path goes on.
 4. The `stuck` path meets the others here.
 
@@ -100,14 +110,14 @@ true or false of what the diagram shows?
 
 #### a
 
-"After `Check the install`, on `success`, the flow goes back to `Set up the workspace`."
+"After `Check the install`, on `success`, the next step is `Report being stuck`."
 
 1. True
 2. False
 
 #### b
 
-"After `Check the install`, on `not yet`, the flow goes back to `Set up the workspace`."
+"After `Check the install`, on `not yet`, the next step is `Set up the workspace`."
 
 1. True
 2. False
@@ -120,4 +130,4 @@ the diagram support?
 1. The run ends at `Report being stuck` itself, with nothing after it.
 2. After it, the run ends in the circle `workspace ready`.
 3. After it, the run ends in the circle `blocked`.
-4. After it, the flow goes back to `Get Codex running`.
+4. After it, the next step is `Get Codex running`.

@@ -14,63 +14,29 @@ The agent's summary says several things about the diamond just after the rounded
 step on the checklist`. Which one does the diagram support?
 
 1. Paths come back together here, and one path goes on.
-2. The flow splits here: a run takes one path or the other.
+2. The flow splits here, on `stuck?`.
 3. The run takes both paths from here at the same time.
-4. The flow splits here, on whether the checklist is done.
+4. The flow splits here, on `checklist done?`.
 
 ### branch-label
 
-The agent's summary says these things about the diamond reached on `no` from the diamond just
-after the rounded box `Do the next step on the checklist`. Is each sentence true or false of what
-the diagram shows?
+The agent's summary says several things about the diamond reached on `no` from the diamond just
+after the rounded box `Do the next step on the checklist`. Which one does the diagram support?
 
-#### a
-
-"On its `yes` arrow, the run goes back to `Do the next step on the checklist`."
-
-1. True
-2. False
-
-#### b
-
-"On its `no` arrow, the run goes back to `Do the next step on the checklist`."
-
-1. True
-2. False
-
-#### c
-
-"On its `yes` arrow, the run ends in the circle `Codex answers with the U-M key`."
-
-1. True
-2. False
+1. On its `yes` arrow, the run goes back to `Do the next step on the checklist`.
+2. On its `no` arrow, the run goes straight to `Provide explanations and suggestions`.
+3. On its `no` arrow, the run goes back to `Do the next step on the checklist`.
+4. On its `no` arrow, the run ends in the circle `Codex answers with the U-M key`.
 
 ### file-line
 
-The agent's summary says these things about the dotted line between the file
-`bootstrap-prompt.md` and the rounded box `Open U-M GPT`. Is each sentence true or false of what
-the diagram shows?
+The agent's summary says several things about the dotted line between the file
+`bootstrap-prompt.md` and the rounded box `Open U-M GPT`. Which one does the diagram support?
 
-#### a
-
-"`Open U-M GPT` writes the file."
-
-1. True
-2. False
-
-#### b
-
-"A step in the AI agent's lane reads the file."
-
-1. True
-2. False
-
-#### c
-
-"`Open U-M GPT` reads the file."
-
-1. True
-2. False
+1. `Open U-M GPT` reads the file.
+2. `Open U-M GPT` writes the file.
+3. `Do the next step on the checklist` reads the file.
+4. After `Open U-M GPT`, the run moves on to the file.
 
 ### one-merge
 
@@ -80,7 +46,7 @@ next step on the checklist`. Which one does the diagram support?
 1. It is a decision: the run goes one way or the other here.
 2. Only one path arrives here, the one from `Open U-M GPT`.
 3. The `give up` path meets the others here.
-4. Paths come back together here, and one path goes on.
+4. The paths from `checklist done?` and `worth trying?` come back together here.
 
 ### after-loop
 
@@ -89,24 +55,15 @@ suggestions`. Is each sentence true or false of what the diagram shows?
 
 #### a
 
-"After `Provide explanations and suggestions`, on `give up`, comes `Write a status report on where
-it stalled`."
+"After `Provide explanations and suggestions`, on `try suggestion`, the next step is `Do the next
+step on the checklist`."
 
 1. True
 2. False
 
 #### b
 
-"After `Provide explanations and suggestions`, on `try suggestion`, the flow goes back to `Open U-M
-GPT`."
-
-1. True
-2. False
-
-#### c
-
-"After `Provide explanations and suggestions`, on `try suggestion`, the flow goes back to `Do the
-next step on the checklist`."
+"After `Provide explanations and suggestions`, on `give up`, the next step is `Open U-M GPT`."
 
 1. True
 2. False
@@ -119,4 +76,4 @@ stalled`. Which one does the diagram support?
 1. After it, the run ends in the circle `stuck`.
 2. The run ends at `Write a status report` itself, with nothing after it.
 3. After it, the run ends in the circle `Codex answers with the U-M key`.
-4. After it, the flow goes back to `Do the next step on the checklist`.
+4. After it, the next step is `Do the next step on the checklist`.
