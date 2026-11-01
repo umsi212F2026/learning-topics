@@ -17,8 +17,10 @@ The backend's routes:
 The app's levels: a **signed-in member**; the **owner** of a screening, the member who posted it;
 and an **officer**, one of the society's three officers, who look after the whole board.
 
+## Framing
+
 Each question below is a separate piece of the work. They are independent: treat each one as if
-it were the only one you had seen. Answer each in two to four sentences.
+it were the only one you had seen.
 
 ### signed-out-table
 
@@ -33,7 +35,8 @@ Your agent drafts this table for `DEPLOY.md`:
 | Say you're going | yes | yes | yes |
 | See your own name and picture | yes | yes | yes |
 
-Would you agree to this as it stands? If not, what would you change?
+Would you agree to this as it stands? If not, what would you change? Answer in two to four
+sentences.
 
 ### edit-button
 
@@ -62,7 +65,8 @@ And its plan for enforcing it:
 5. `PATCH /api/events/:id` saves the fields it is sent. React already hides the Edit button from
    everyone but the owner and officers, so the route stays simple: `requireAuth` and nothing more.
 
-Would you agree to this as it stands? If not, what would you change?
+Would you agree to this as it stands? If not, what would you change? Answer in two to four
+sentences.
 
 ### routes-file
 
@@ -95,7 +99,8 @@ And its plan for enforcing it:
 
 4. In React, show the Edit and Delete buttons only to the screening's owner and to officers.
 
-Would you agree to this as it stands? If not, what would you change?
+Would you agree to this as it stands? If not, what would you change? Answer in two to four
+sentences.
 
 ### who-is-asking
 
@@ -124,7 +129,8 @@ And its plan for enforcing it:
 5. `createEvent` records the user named in the `x-user-id` header as the new screening's owner.
 6. In React, show the Edit and Delete buttons only to the screening's owner and to officers.
 
-Would you agree to this as it stands? If not, what would you change?
+Would you agree to this as it stands? If not, what would you change? Answer in two to four
+sentences.
 
 ### whole-plan
 
@@ -160,14 +166,15 @@ And its plan for enforcing it:
 5. `createEvent` and `markGoing` take the user from `req.session.userId`.
 6. In React, show the Edit and Delete buttons only to the screening's owner and to officers.
 
-Would you agree to this as it stands? If not, what would you change?
+Would you agree to this as it stands? If not, what would you change? Answer in two to four
+sentences.
 
 ### confirm-signed-out
 
 Your agent reports: "The rules in the table are in place and deployed to Kettlerun."
 
 Take the rule that someone not signed in may not post a screening. Which request would you make to
-show this rule holds, and what should it get back?
+show this rule holds, and what should it get back? Answer in two to four sentences.
 
 ### confirm-not-owner
 
@@ -177,4 +184,4 @@ is gone."
 
 Take the rule that a member who didn't post a screening may not delete it. Does the agent's check
 show that this rule holds? Which request would you make to show this rule holds, and what should it
-get back?
+get back? Answer in two to four sentences.

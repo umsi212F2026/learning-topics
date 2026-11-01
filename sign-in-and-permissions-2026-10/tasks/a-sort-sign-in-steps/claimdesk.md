@@ -8,14 +8,17 @@ Right now the whole app sits behind one shared basic-auth password. You and your
 replacing that with sign-in through GitHub. Once someone signs in, Claimdesk shows their GitHub name
 and profile picture on each post, and shows their email to the person who claims their item.
 
-Each card below is one step someone has proposed for adding sign-in. The cards are independent of
-each other and come in no particular order. Put each card in one of three piles:
+You are sorting a deck of cards, each one step someone has proposed for adding sign-in, into three
+piles:
 
 - **yours**: you do it by hand, at GitHub or in a host's settings.
 - **your agent's, as written**: code or config your agent can do just as the card says.
 - **change it first**: say what you would change it to, and who does the changed step.
 
-Answer each card in one to three sentences.
+## Framing
+
+Each card below is one step from the deck. The cards are independent of each other and come in no
+particular order.
 
 ### card-1
 
@@ -23,14 +26,16 @@ Your agent offers: "To save you a trip to GitHub's developer settings, I'll crea
 for Claimdesk in your browser, where you're already signed in to GitHub. The later steps use what it
 gives you."
 
-Which pile, and why? If you'd change it, say to what and who does it.
+Which pile, and why? If you'd change it, say to what and who does it. Answer in one to three
+sentences.
 
 ### card-2
 
 When someone signs in, ask GitHub for the `user` scope, which GitHub describes as "read and write
 access to profile info", so the backend can read their name, picture and email.
 
-Which pile, and why? If you'd change it, say to what and who does it.
+Which pile, and why? If you'd change it, say to what and who does it. Answer in one to three
+sentences.
 
 ### card-3
 
@@ -38,14 +43,16 @@ Your agent writes: "In the OAuth app's settings at GitHub, set the Authorization
 `http://localhost:3001/auth/github/callback`. That's where GitHub sends everyone back after they
 sign in."
 
-Which pile, and why? If you'd change it, say to what and who does it.
+Which pile, and why? If you'd change it, say to what and who does it. Answer in one to three
+sentences.
 
 ### card-4
 
 Paste the client ID and the client secret into the chat. Your agent then puts the client secret in
 Railspur's settings for the backend and the client ID in `frontend/.env`.
 
-Which pile, and why? If you'd change it, say to what and who does it.
+Which pile, and why? If you'd change it, say to what and who does it. Answer in one to three
+sentences.
 
 ### card-5
 
@@ -54,7 +61,8 @@ Railspur, claimdesk-api, Environment:    GITHUB_CLIENT_SECRET = <the client secr
 Brightdock, claimdesk, Build settings:   VITE_GITHUB_CLIENT_ID = Ov23liQ7kXb2mN4pR8sT
 ```
 
-Which pile, and why? If you'd change it, say to what and who does it.
+Which pile, and why? If you'd change it, say to what and who does it. Answer in one to three
+sentences.
 
 ### card-6
 
@@ -62,7 +70,8 @@ A classmate tells you that `backend/.env`, holding the client secret, is in Clai
 repository on GitHub: it went out in a commit you pushed yesterday. Your agent proposes: "Delete
 `backend/.env` in a new commit, add it to `.gitignore`, and push."
 
-Which pile, and why? If you'd change it, say to what and who does it.
+Which pile, and why? If you'd change it, say to what and who does it. Answer in one to three
+sentences.
 
 ### card-7
 
@@ -84,4 +93,5 @@ passport.use(new GitHubStrategy({
 }));
 ```
 
-Which pile, and why? If you'd change it, say to what and who does it.
+Which pile, and why? If you'd change it, say to what and who does it. Answer in one to three
+sentences.

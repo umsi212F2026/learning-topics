@@ -16,10 +16,12 @@ The backend's routes:
 The app has three levels: any signed-in user; the poster of an item, who may edit or remove it;
 and the library's desk staff, who may edit or remove any item.
 
-You and your coding agent are giving Leftbehind its rules for who may do what. Each question below
-shows two versions, A and B, of one piece of that work. The questions are independent: treat each
-one as if it were the only one you had seen. For each, answer in two or three sentences: would you
-agree to A, B, or both? What gives it away?
+You and your coding agent are giving Leftbehind its rules for who may do what.
+
+## Framing
+
+Each question below shows two versions, A and B, of one piece of that work. The questions are
+independent: treat each one as if it were the only one you had seen.
 
 ### q1
 
@@ -45,7 +47,7 @@ Your agent offers two versions of the who-may-do-what table for `DEPLOY.md`.
 | Edit an item | no | yes | yes | no |
 | Delete an item | no | yes | yes | no |
 
-Would you agree to A, B, or both? What gives it away?
+Would you agree to A, B, or both? What gives it away? Answer in two or three sentences.
 
 ### q2
 
@@ -70,7 +72,7 @@ Your agent offers two versions of the who-may-do-what table for `DEPLOY.md`.
 | Claim an item | yes | yes | yes | no |
 | Edit an item | no | yes | yes | no |
 
-Would you agree to A, B, or both? What gives it away?
+Would you agree to A, B, or both? What gives it away? Answer in two or three sentences.
 
 ### q3
 
@@ -90,7 +92,7 @@ Your agent offers two versions of one step of its plan.
 > `DELETE /api/items/:id`, the server also checks that the signed-in user posted the item or is
 > desk staff, and refuses the request if not.
 
-Would you agree to A, B, or both? What gives it away?
+Would you agree to A, B, or both? What gives it away? Answer in two or three sentences.
 
 ### q4
 
@@ -119,7 +121,7 @@ router.post('/api/items/:id/claim', claimItem);
 router.get('/api/me', requireAuth, getMe);
 ```
 
-Would you agree to A, B, or both? What gives it away?
+Would you agree to A, B, or both? What gives it away? Answer in two or three sentences.
 
 ### q5
 
@@ -152,7 +154,7 @@ async function claimItem(req, res) {
 }
 ```
 
-Would you agree to A, B, or both? What gives it away?
+Would you agree to A, B, or both? What gives it away? Answer in two or three sentences.
 
 ### q6
 
@@ -178,7 +180,7 @@ Your agent offers two versions of its plan for enforcing the rules.
 >    unless the session's user posted it or is in `desk_staff`.
 > 4. React also hides the Edit and Delete buttons from everyone else.
 
-Would you agree to A, B, or both? What gives it away?
+Would you agree to A, B, or both? What gives it away? Answer in two or three sentences.
 
 ### q7
 
@@ -194,7 +196,7 @@ isn't signed in can't post a found item.
 > Sign out, open the board in the browser, and check that the Post an Item button is gone.
 
 Would you agree to A, B, or both? What gives it away, and what should the request you chose get
-back?
+back? Answer in two or three sentences.
 
 ### q8
 
@@ -212,4 +214,4 @@ staff.
 > `DELETE /api/items/12`.
 
 Would you agree to A, B, or both? What gives it away, and what should the request you chose get
-back?
+back? Answer in two or three sentences.

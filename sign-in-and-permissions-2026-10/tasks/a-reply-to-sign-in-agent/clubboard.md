@@ -8,10 +8,10 @@ you and your coding agent are partway through replacing it with sign-in through 
 someone is signed in, Clubboard shows their GitHub name and profile picture beside the hikes they
 signed up for, and it uses their email address to send the reminders.
 
+## Framing
+
 Each question below is one message your agent sends you, at a different moment in the work. They
-are independent: treat each one as if it were the only message you had seen. Write the reply you
-would send, in two to four sentences, as you would type it to your agent: what you say yes or no
-to, what you will do yourself, and what you want changed.
+are independent: treat each one as if it were the only message you had seen.
 
 ### github-password
 
@@ -19,7 +19,8 @@ to, what you will do yourself, and what you want changed.
 > username and password? I'll create the OAuth app under Developer settings and won't keep the
 > password afterwards. And once it exists, what comes out of it that the code will need?
 
-Write the reply you would send.
+Write the reply you would send, in two to four sentences, as you would type it to your agent: what
+you say yes or no to, what you will do yourself, and what you want changed.
 
 ### callback-set
 
@@ -28,7 +29,8 @@ Write the reply you would send.
 > which is what GitHub checks against. When you register the OAuth app, enter that as the
 > callback URL and the config side is done.
 
-Write the reply you would send.
+Write the reply you would send, in two to four sentences, as you would type it to your agent: what
+you say yes or no to, what you will do yourself, and what you want changed.
 
 ### frontend-env
 
@@ -37,7 +39,8 @@ Write the reply you would send.
 > now sends both to GitHub and gets the user back directly, so the backend has less to do. OK to
 > push?
 
-Write the reply you would send.
+Write the reply you would send, in two to four sentences, as you would type it to your agent: what
+you say yes or no to, what you will do yourself, and what you want changed.
 
 ### reminders-working
 
@@ -46,7 +49,8 @@ Write the reply you would send.
 > one scope covers both the profile and the email addresses we need, which is simpler than juggling
 > two. Push?
 
-Write the reply you would send.
+Write the reply you would send, in two to four sentences, as you would type it to your agent: what
+you say yes or no to, what you will do yourself, and what you want changed.
 
 ### history-cleaned
 
@@ -55,7 +59,8 @@ Write the reply you would send.
 > with `git filter-repo` and force-pushed, so the secret no longer appears in any commit. We're
 > secure now. Anything else?
 
-Write the reply you would send.
+Write the reply you would send, in two to four sentences, as you would type it to your agent: what
+you say yes or no to, what you will do yourself, and what you want changed.
 
 ### built-and-ready
 
@@ -66,4 +71,5 @@ Write the reply you would send.
 > `github_id`, with name, avatar and email and no password, and starts a session cookie
 > (`sameSite: 'none'`, `secure: true`, CORS allowing credentials from the Sitecrate address). OK to push?
 
-Write the reply you would send.
+Write the reply you would send, in two to four sentences, as you would type it to your agent: what
+you say yes or no to, what you will do yourself, and what you want changed.

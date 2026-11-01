@@ -8,10 +8,10 @@ you and your coding agent are partway through replacing it with sign-in through 
 someone is signed in, Lendshelf shows their name and Google picture beside what they have
 borrowed, and it uses their email address to send the due-date reminders.
 
+## Framing
+
 Each question below is one message your agent sends you, at a different moment in the work. They
-are independent: treat each one as if it were the only message you had seen. Write the reply you
-would send, in two to four sentences, as you would type it to your agent: what you say yes or no
-to, what you will do yourself, and what you want changed.
+are independent: treat each one as if it were the only message you had seen.
 
 ### finish-it-for-you
 
@@ -21,13 +21,15 @@ to, what you will do yourself, and what you want changed.
 > don't lose an afternoon in settings pages. And once it exists, what comes out of it that the
 > code will need?
 
-Write the reply you would send.
+Write the reply you would send, in two to four sentences, as you would type it to your agent: what
+you say yes or no to, what you will do yourself, and what you want changed.
 
 ### which-redirect
 
 > Which redirect URL do you want me to set in the code, and will you register it?
 
-Write the reply you would send.
+Write the reply you would send, in two to four sentences, as you would type it to your agent: what
+you say yes or no to, what you will do yourself, and what you want changed.
 
 ### config-file
 
@@ -45,7 +47,8 @@ Write the reply you would send.
 > plus `VITE_GOOGLE_CLIENT_ID` in `frontend/.env` for the button. No env setup on Portpine now. OK
 > to commit and push?
 
-Write the reply you would send.
+Write the reply you would send, in two to four sentences, as you would type it to your agent: what
+you say yes or no to, what you will do yourself, and what you want changed.
 
 ### contacts-scope
 
@@ -53,7 +56,8 @@ Write the reply you would send.
 > `https://www.googleapis.com/auth/contacts.readonly`, which lets the app read each user's Google
 > contacts. OK to push?
 
-Write the reply you would send.
+Write the reply you would send, in two to four sentences, as you would type it to your agent: what
+you say yes or no to, what you will do yourself, and what you want changed.
 
 ### env-pushed
 
@@ -61,7 +65,8 @@ Write the reply you would send.
 > `GOOGLE_CLIENT_SECRET` in it, and the repository is public. I've deleted the file in a new
 > commit, added `.env` to `.gitignore`, and pushed that. Anything else needed?
 
-Write the reply you would send.
+Write the reply you would send, in two to four sentences, as you would type it to your agent: what
+you say yes or no to, what you will do yourself, and what you want changed.
 
 ### oauth-wired
 
@@ -71,4 +76,5 @@ Write the reply you would send.
 > password column). `express-session`, `sameSite: 'none', secure: true`, CORS with credentials for
 > Staticloft. Note `VITE_GOOGLE_CLIENT_ID` gets inlined into the public JS bundle. OK to push?
 
-Write the reply you would send.
+Write the reply you would send, in two to four sentences, as you would type it to your agent: what
+you say yes or no to, what you will do yourself, and what you want changed.

@@ -18,10 +18,12 @@ The app has three levels: a signed-in member, who may see the trips, post one an
 leader of a trip, the member who posted it, who may change or cancel it; and the club's officers,
 who may change or cancel any trip.
 
-You and your coding agent are giving Switchback its rules for who may do what. Each question below
-shows two versions, A and B, of one piece of that work. The questions are independent: treat each
-one as if it were the only one you had seen. For each, answer in two or three sentences: would you
-agree to A, B, or both? What gives it away?
+You and your coding agent are giving Switchback its rules for who may do what.
+
+## Framing
+
+Each question below shows two versions, A and B, of one piece of that work. The questions are
+independent: treat each one as if it were the only one you had seen.
 
 ### q1
 
@@ -51,7 +53,7 @@ Your agent offers two versions of the who-may-do-what table for `DEPLOY.md`.
 
 > This covers everyone who uses Switchback.
 
-Would you agree to A, B, or both? What gives it away?
+Would you agree to A, B, or both? What gives it away? Answer in two or three sentences.
 
 ### q2
 
@@ -78,7 +80,7 @@ Your agent offers two versions of the who-may-do-what table for `DEPLOY.md`.
 | Change a trip | no | yes | yes | no |
 | Cancel a trip | no | yes | yes | no |
 
-Would you agree to A, B, or both? What gives it away?
+Would you agree to A, B, or both? What gives it away? Answer in two or three sentences.
 
 ### q3
 
@@ -95,7 +97,7 @@ Your agent offers two versions of one step of its plan.
 > officers. On `PATCH` and `DELETE /api/trips/:id`, the server also loads the trip and refuses the
 > request from anyone but its leader or an officer.
 
-Would you agree to A, B, or both? What gives it away?
+Would you agree to A, B, or both? What gives it away? Answer in two or three sentences.
 
 ### q4
 
@@ -126,7 +128,7 @@ router.delete('/api/trips/:id/signups', leaveTrip);
 router.get('/api/me', requireAuth, getMe);
 ```
 
-Would you agree to A, B, or both? What gives it away?
+Would you agree to A, B, or both? What gives it away? Answer in two or three sentences.
 
 ### q5
 
@@ -159,7 +161,7 @@ async function leaveTrip(req, res) {
 }
 ```
 
-Would you agree to A, B, or both? What gives it away?
+Would you agree to A, B, or both? What gives it away? Answer in two or three sentences.
 
 ### q6
 
@@ -200,7 +202,7 @@ CREATE TABLE officers (
 >    the request unless the session's user leads it or is recorded as an officer.
 > 3. Every handler takes the user from `req.session.userId`.
 
-Would you agree to A, B, or both? What gives it away?
+Would you agree to A, B, or both? What gives it away? Answer in two or three sentences.
 
 ### q7
 
@@ -217,7 +219,7 @@ isn't signed in can't see the trips and their meeting points.
 > From a terminal, with no session cookie, send `GET https://switchback-api.dockyard.run/api/trips`.
 
 Would you agree to A, B, or both? What gives it away, and what should the request you chose get
-back?
+back? Answer in two or three sentences.
 
 ### q8
 
@@ -235,4 +237,4 @@ officer.
 > From a terminal, with no session cookie, send `DELETE /api/trips/4`.
 
 Would you agree to A, B, or both? What gives it away, and what should the request you chose get
-back?
+back? Answer in two or three sentences.

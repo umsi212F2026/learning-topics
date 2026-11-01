@@ -7,10 +7,10 @@ behind one shared basic-auth password, and you and your coding agent are partway
 it with sign-in through Google. Once someone is signed in, Roomfinder shows their name and Google
 picture beside their bookings. It does not use their email.
 
+## Framing
+
 Each question below is one message your agent sends you, at a different moment in the work. They
-are independent: treat each one as if it were the only message you had seen. Write the reply you
-would send, in two to four sentences, as you would type it to your agent: what you say yes or no
-to, what you will do yourself, and what you want changed.
+are independent: treat each one as if it were the only message you had seen.
 
 ### register-app
 
@@ -18,7 +18,8 @@ to, what you will do yourself, and what you want changed.
 > already signed in to Google, and create the OAuth client for Roomfinder for you. OK? And once it
 > exists, what comes out of it that the code will need?
 
-Write the reply you would send.
+Write the reply you would send, in two to four sentences, as you would type it to your agent: what
+you say yes or no to, what you will do yourself, and what you want changed.
 
 ### callback-url
 
@@ -26,7 +27,8 @@ Write the reply you would send.
 > the sign-in routes are wired up. When you register the OAuth client, enter that URL as the
 > authorized redirect URI and we're good to go.
 
-Write the reply you would send.
+Write the reply you would send, in two to four sentences, as you would type it to your agent: what
+you say yes or no to, what you will do yourself, and what you want changed.
 
 ### client-values
 
@@ -35,7 +37,8 @@ Write the reply you would send.
 > secret on Kettlerun as `GOOGLE_CLIENT_SECRET` myself. Both `.env` files are already in
 > `.gitignore`, so this keeps everything secure.
 
-Write the reply you would send.
+Write the reply you would send, in two to four sentences, as you would type it to your agent: what
+you say yes or no to, what you will do yourself, and what you want changed.
 
 ### ready-to-push
 
@@ -43,7 +46,8 @@ Write the reply you would send.
 > `openid profile https://www.googleapis.com/auth/calendar` so Roomfinder can add bookings to
 > people's Google Calendar later on; users only see the consent screen once. Ready to push?
 
-Write the reply you would send.
+Write the reply you would send, in two to four sentences, as you would type it to your agent: what
+you say yes or no to, what you will do yourself, and what you want changed.
 
 ### pushed-env
 
@@ -51,7 +55,8 @@ Write the reply you would send.
 > which is pushed to the public repository. I've deleted the file in a new commit, added `.env` to
 > `.gitignore`, and pushed that. Anything else needed?
 
-Write the reply you would send.
+Write the reply you would send, in two to four sentences, as you would type it to your agent: what
+you say yes or no to, what you will do yourself, and what you want changed.
 
 ### auth-done
 
@@ -62,4 +67,5 @@ Write the reply you would send.
 > are different sites); CORS allows credentials from `https://roomfinder.pagebarn.app`. Frontend
 > has `VITE_GOOGLE_CLIENT_ID` in its env for the button. OK to push?
 
-Write the reply you would send.
+Write the reply you would send, in two to four sentences, as you would type it to your agent: what
+you say yes or no to, what you will do yourself, and what you want changed.
