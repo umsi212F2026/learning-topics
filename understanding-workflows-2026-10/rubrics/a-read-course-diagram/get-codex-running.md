@@ -6,15 +6,15 @@ bootstrap prompt` (HUMAN), which reads the file `bootstrap-prompt.md` (a dotted 
 to the step; the step's second line also gives the file's path). Then an unnamed merge, with
 three arrows in, and on to `Do the next step on the checklist` (HUMAN). Then the split `stuck?`:
 `yes` goes to `Provide explanations and suggestions` (AI AGENT); `no` goes to the split
-`checklist done?`, whose `yes` goes to the end state `Codex answers with the U-M key` and whose
+`checklist done?`, whose `yes` goes to the end circle `Codex answers with the U-M key` and whose
 `no` loops back through the merge to `Do the next step on the checklist`. After `Provide
 explanations and suggestions`, the split `worth trying?`: `try suggestion` loops back through the
 merge to `Do the next step on the checklist`; `give up` goes to `Write a status report on where it
-stalled` (AI AGENT), then the end state `stuck` (its label goes on after a long dash).
+stalled` (AI AGENT), then the end circle `stuck` (its label goes on after a long dash).
 
 Three named splits (`stuck?`, `worth trying?`, `checklist done?`), one unnamed merge (between
 `Open U-M GPT; paste the bootstrap prompt` and `Do the next step on the checklist`), two end
-states. No subprocess and no step drawn across two lanes.
+circles. No subprocess and no step drawn across two lanes.
 
 ### one-split
 
@@ -24,7 +24,7 @@ states. No subprocess and no step drawn across two lanes.
   checklist`, before `Provide explanations and suggestions` and `checklist done?`); `worth
   trying?` (just after `Provide explanations and suggestions`, before `Write a status report on
   where it stalled` and the arrow back to the merge); `checklist done?` (after the `no` branch of
-  `stuck?`, before the end state `Codex answers with the U-M key` and the arrow back to the merge).
+  `stuck?`, before the end circle `Codex answers with the U-M key` and the arrow back to the merge).
 - **credit:** full for any one of the three named gateways, pointed at by its neighbors or named
   by its label; none for the unnamed merge or a step. Credit a paraphrased step or gateway name
   when it is clear which element is meant; ask which only when it is not.

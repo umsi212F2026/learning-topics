@@ -14,13 +14,13 @@ landed?`, whose `yes` goes to `Submit Installation 1` (HUMAN), which goes throug
 `Install the editors` (AI AGENT), then `Check the editors` (PROGRAM) and the split `editors
 installed?`, whose `yes` goes to `Submit Installation 2` (HUMAN). That goes through a merge to
 `Publish the repositories` (AI AGENT), then `Check the remote` (PROGRAM) and the split `remote set
-up?`, whose `yes` goes to `Submit Installation 3` (HUMAN), then the end state `set up, checked and
+up?`, whose `yes` goes to `Submit Installation 3` (HUMAN), then the end circle `set up, checked and
 submitted`. Every `no` (from `repos installed?`, `Address good?`, `receipt landed?`, `editors
-installed?` and `remote set up?`) goes to one unnamed merge and on to the end state `stopped at a
+installed?` and `remote set up?`) goes to one unnamed merge and on to the end circle `stopped at a
 checkpoint`.
 
 Six named splits, four unnamed merges (before `Write the receipt`, before `Install the editors`,
-before `Publish the repositories`, and before `stopped at a checkpoint`), two end states, no file.
+before `Publish the repositories`, and before `stopped at a checkpoint`), two end circles, no file.
 
 Step pairs on this plane (step to step, gateways between ignored). Same actor, all PROGRAM: `Write
 the receipt` to `Check the receipt landed`; `Check the repositories` to `Write the receipt`;

@@ -3,30 +3,30 @@ This is the course's setup workflow, as drawn for Installations 1 to 3. Open
 Modeler, at the top level of the diagram. Read this top level only, without opening the diagrams
 underneath its boxes.
 
-### start-state
+### start-circle
 
-Which of these is the state a run of this workflow starts in?
+Which of these marks what starts a run of this workflow?
 
 1. `blocked`
 2. `Get Codex running`
 3. `opens the Day 1 page in Canvas`
 4. the diamond just after `Get Codex running`
 
-### end-state
+### end-circle
 
 What does the circle `workspace ready` mark?
 
-1. a state a run starts in
-2. a state a run ends in
-3. one step, an action someone takes
+1. what starts a run, its trigger
+2. an outcome a run ends in
+3. one step, work the workflow does
 4. a gateway
 
 ### plain-step
 
 What does the rounded box `Report being stuck` mark?
 
-1. a state a run starts or ends in
-2. one step, an action someone takes
+1. where a run starts or ends
+2. one step, work the workflow does
 3. a gateway, where the flow splits or comes back together
 4. a step with a diagram of its own underneath it
 
@@ -44,7 +44,7 @@ Which of these steps has a diagram of its own underneath it?
 What kind of shape is the diamond just before `Set up the workspace`?
 
 1. a gateway
-2. a state
+2. a start or end circle
 3. a step
 4. a file
 

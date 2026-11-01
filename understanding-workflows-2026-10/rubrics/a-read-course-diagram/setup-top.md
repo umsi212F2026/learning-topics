@@ -5,11 +5,11 @@ run starts at `opens the Day 1 page in Canvas` (HUMAN) and goes to `Get Codex ru
 collapsed subprocess drawn across the HUMAN operator and AI AGENT lanes. Then the split `Codex
 running?`: `success` goes to an unnamed merge and on to `Set up the workspace` (a collapsed
 subprocess drawn across all three lanes, HUMAN operator, AI AGENT and PROGRAM); `stuck` goes to a
-second unnamed merge and on to `Report being stuck` (HUMAN), then the end state `blocked`. After
+second unnamed merge and on to `Report being stuck` (HUMAN), then the end circle `blocked`. After
 `Set up the workspace`, the split `Able to complete?`: `yes` goes to `Check the install`
 (PROGRAM, to the right of `Set up the workspace`); `no` goes through the merge before `Report
 being stuck`. After `Check the install`, the split `install correct?` (also in PROGRAM, to its
-right): `success` goes to `Submit each session's report` (HUMAN), then the end state `workspace
+right): `success` goes to `Submit each session's report` (HUMAN), then the end circle `workspace
 ready`; `not yet` loops back through the merge before `Set up the workspace`. The file `U-M API
 key` is not asked about.
 
@@ -17,7 +17,7 @@ Handoff pairs on this plane (step to step, gateways between ignored, steps drawn
 left out): only `Check the install` to `Submit each session's report`. No pair includes `Get Codex
 running` or `Set up the workspace`, since both are drawn across lanes.
 
-### start-state
+### start-circle
 
 - **goal:** `c-read-diagram`
 - **cases:** states
@@ -25,7 +25,7 @@ running` or `Set up the workspace`, since both are drawn across lanes.
 - **answer:** 3
 - **credit:** full for 3 only.
 
-### end-state
+### end-circle
 
 - **goal:** `c-read-diagram`
 - **cases:** states
