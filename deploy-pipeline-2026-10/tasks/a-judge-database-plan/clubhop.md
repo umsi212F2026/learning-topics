@@ -1,5 +1,3 @@
-Answer each question in two to four sentences.
-
 Clubhop is a club sign-up sheet for one university's students. A student picks a club from the
 list and signs up for it, and each club's leader sees who has signed up. The React frontend is in
 `client/` and the Express backend in `server/`, both in one GitHub repository,
@@ -45,6 +43,8 @@ This is how Ropewalk and Cellarstone behave:
     typed into Cellarstone's query console.
   - Each database has a connection string, which is a secret.
 
+## Framing
+
 The agent proposed each plan below in a different session. Each question is about its own plan
 alone.
 
@@ -65,6 +65,7 @@ and changing it is all in the code. The agent proposes:
    backend's routes use.
 
 Would you agree to this plan as it stands? If not, say what you would change before agreeing.
+Answer in two to four sentences.
 
 ### q2
 
@@ -83,6 +84,7 @@ students who signed up. The agent proposes:
 6. I'll push to `main`, and Ropewalk will deploy it once the checks pass.
 
 Would you agree to this plan as it stands? If not, say what you would change before agreeing.
+Answer in two to four sentences.
 
 ### q3
 
@@ -103,6 +105,7 @@ and changing it is all in the code. The agent proposes:
    Ropewalk's Settings page.
 
 Would you agree to this plan as it stands? If not, say what you would change before agreeing.
+Answer in two to four sentences.
 
 ### q4
 
@@ -112,3 +115,4 @@ before each deploy. It says everything is set up, and Ropewalk's deploy list sho
 deploy as Live.
 
 How would you make sure that a push to `main` now leaves production's data in place?
+Answer in two to four sentences.

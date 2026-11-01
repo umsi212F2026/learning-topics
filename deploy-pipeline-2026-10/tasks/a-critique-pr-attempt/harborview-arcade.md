@@ -1,5 +1,3 @@
-Answer each question in two or three sentences.
-
 Your classmate Tomas's GitHub username is `tomas-ships`, and his app lives in his repository
 `tomas-ships/bus-buddy`. The Harborview Makers club keeps an arcade of its members' projects in
 the repository `harborview-makers/arcade`, which belongs to the club's GitHub account. Tomas can
@@ -10,6 +8,8 @@ The arcade keeps its list in one file, `projects.yaml`, with an entry per projec
 `lint-arcade` runs on every pull request to the arcade and fails if an entry is missing a field or
 is badly formed. His agent did the typing. Other members' entries were merged into
 `harborview-makers/arcade` while Tomas was working on his.
+
+## Framing
 
 Each question below is a separate account of how Tomas got his entry into the arcade. Read each
 one on its own.
@@ -25,7 +25,7 @@ Tomas tells it like this:
    `projects.yaml` holding my entry, and pushed it to `main` in `tomas-ships/arcade-entry`.
 
 Would you have gone along with this? If a step goes wrong, which one, and what should have
-happened instead?
+happened instead? Answer in two or three sentences.
 
 ### q2
 
@@ -40,7 +40,7 @@ Tomas's agent summed up what it did like this:
    compare branch `main`, and opened it.
 
 Would you have gone along with this? If a step goes wrong, which one, and what should have
-happened instead?
+happened instead? Answer in two or three sentences.
 
 ### q3
 
@@ -61,4 +61,4 @@ Tomas tells it like this:
 7. `lint-arcade` ran again on the same pull request and passed.
 
 Would you have gone along with this? If a step goes wrong, which one, and what should have
-happened instead?
+happened instead? Answer in two or three sentences.

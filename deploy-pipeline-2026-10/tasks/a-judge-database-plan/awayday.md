@@ -1,5 +1,3 @@
-Answer each question in two to four sentences.
-
 Awayday is a ride board for Northfield FC, a youth soccer club. Parents see the season's away
 games, offer rides to one, and take a seat in someone else's car. The React frontend is in
 `client/` and the Express backend in `server/`, both in one GitHub repository,
@@ -46,6 +44,8 @@ This is how Ropewalk and Cellarstone behave:
     typed into Cellarstone's query console.
   - Each database has a connection string, which is a secret.
 
+## Framing
+
 The agent proposed each plan below in a different session. Each question is about its own plan
 alone.
 
@@ -67,6 +67,7 @@ and changing it is all in the code. The agent proposes:
    from `games.json`.
 
 Would you agree to this plan as it stands? If not, say what you would change before agreeing.
+Answer in two to four sentences.
 
 ### q2
 
@@ -88,6 +89,7 @@ cars still have room. The agent proposes:
    `main`, and Ropewalk will deploy it once the checks pass.
 
 Would you agree to this plan as it stands? If not, say what you would change before agreeing.
+Answer in two to four sentences.
 
 ### q3
 
@@ -110,6 +112,7 @@ and changing it is all in the code. The agent proposes:
    Ropewalk's Settings page.
 
 Would you agree to this plan as it stands? If not, say what you would change before agreeing.
+Answer in two to four sentences.
 
 ### q4
 
@@ -119,3 +122,4 @@ before each deploy. It says everything is set up, and Ropewalk's deploy list sho
 deploy as Live.
 
 How would you make sure that a push to `main` now leaves production's data in place?
+Answer in two to four sentences.
