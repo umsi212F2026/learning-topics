@@ -1,5 +1,3 @@
-Answer each question in a few sentences.
-
 A tutoring center matches children with tutors at the start of every term. In the first weeks of a
 term, about 120 requests a week come in from parents.
 
@@ -30,9 +28,11 @@ the week's sessions are done. Her office is the room at the top of the stairs."
 Who should do step 2: a person, an AI agent or a program? Compare your choice with one of the
 other two: name one goal your choice helps and one it hurts, and say what about step 2 makes it
 so.
+Answer in a few sentences.
 
 ### q2
 
 Who should do step 4: a person, an AI agent or a program? Compare your choice with one of the
 other two: name one goal your choice helps and one it hurts, and say what about step 4 makes it
 so.
+Answer in a few sentences.

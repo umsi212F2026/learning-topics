@@ -1,5 +1,3 @@
-Answer each question in a few sentences.
-
 A city bike-share keeps its 400 bikes safe by acting on riders' damage reports. Riders send about
 200 reports a week through the bike-share's app.
 
@@ -28,9 +26,11 @@ city's bike-share."
 Who should do step 2: a person, an AI agent or a program? Compare your choice with one of the
 other two: name one goal your choice helps and one it hurts, and say what about step 2 makes it
 so.
+Answer in a few sentences.
 
 ### q2
 
 Who should do step 4: a person, an AI agent or a program? Compare your choice with one of the
 other two: name one goal your choice helps and one it hurts, and say what about step 4 makes it
 so.
+Answer in a few sentences.

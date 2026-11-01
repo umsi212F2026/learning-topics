@@ -1,5 +1,3 @@
-Answer each question in a few sentences.
-
 A nonprofit that runs after-school classes sends every donor a tax receipt and answers donors
 who write in about their gifts. About sixty donations come in a normal week, more in December.
 
@@ -31,9 +29,11 @@ replies with the nonprofit's motto, 'Every kid, every afternoon.'"
 Who should do step 3: a person, an AI agent or a program? Compare your choice with one of the
 other two: name one goal your choice helps and one it hurts, and say what about step 3 makes it
 so.
+Answer in a few sentences.
 
 ### q2
 
 Who should do step 4: a person, an AI agent or a program? Compare your choice with one of the
 other two: name one goal your choice helps and one it hurts, and say what about step 4 makes it
 so.
+Answer in a few sentences.

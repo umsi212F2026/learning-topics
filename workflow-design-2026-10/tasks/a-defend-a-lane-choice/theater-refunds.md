@@ -1,5 +1,3 @@
-Answer each question in a few sentences.
-
 The box office manager of a community theater handles ticket refunds every week of the season, for
 patrons who can't come to a show they have paid for. In a busy week, well over a hundred refund
 requests come in.
@@ -29,9 +27,11 @@ seasons ago."
 Who should do step 2: a person, an AI agent or a program? Compare your choice with one of the
 other two: name one goal your choice helps and one it hurts, and say what about step 2 makes it
 so.
+Answer in a few sentences.
 
 ### q2
 
 Who should do step 4: a person, an AI agent or a program? Compare your choice with one of the
 other two: name one goal your choice helps and one it hurts, and say what about step 4 makes it
 so.
+Answer in a few sentences.

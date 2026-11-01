@@ -1,5 +1,3 @@
-Answer each question in a few sentences.
-
 The treasurer of a neighborhood association runs this workflow every January to collect the
 yearly dues of $40. About 150 households belong to the association.
 
@@ -21,8 +19,10 @@ Some of these steps do more than one step's work.
 
 Step 2 does too much for one step. Where inside it should a step boundary go, and why there? What
 would be saved at that boundary?
+Answer in a few sentences.
 
 ### q2
 
 Step 5 does too much for one step. Where inside it should a step boundary go, and why there? What
 would be saved at that boundary?
+Answer in a few sentences.

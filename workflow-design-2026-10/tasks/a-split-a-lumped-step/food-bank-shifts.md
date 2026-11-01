@@ -1,5 +1,3 @@
-Answer each question in a few sentences.
-
 The volunteer coordinator at a neighborhood food bank runs this workflow every week to staff its
 pantry shifts. About 80 volunteers sign up for about 25 shifts a week.
 
@@ -22,8 +20,10 @@ Some of these steps do more than one step's work.
 
 Step 2 does too much for one step. Where inside it should a step boundary go, and why there? What
 would be saved at that boundary?
+Answer in a few sentences.
 
 ### q2
 
 Step 4 does too much for one step. Where inside it should a step boundary go, and why there? What
 would be saved at that boundary?
+Answer in a few sentences.

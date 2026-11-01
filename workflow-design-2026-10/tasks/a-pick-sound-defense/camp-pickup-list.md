@@ -1,5 +1,3 @@
-Each question gives two people's defenses of the same choice for one step. Pick the sound one.
-
 Pine Lake Day Camp has about 150 children each week of the summer. Its office manager runs this
 workflow every week to keep the gate's list of which adults may pick up each child.
 
@@ -23,6 +21,10 @@ decision could send a child home with an adult the family didn't want, and it re
 with no one checking it. The messages often describe a family's custody arrangement or a court
 order. The camp director handles these on Monday mornings. The week's messages are gathered and
 ready each Friday at 5 p.m.
+
+## Framing
+
+Each question gives two people's defenses of the same choice for one step.
 
 ### q1
 

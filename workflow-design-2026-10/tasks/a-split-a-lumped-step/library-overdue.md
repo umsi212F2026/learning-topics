@@ -1,5 +1,3 @@
-Answer each question in a few sentences.
-
 The circulation manager of a small public library runs this workflow every week to follow up on
 overdue books. About 120 books are overdue in a typical week.
 
@@ -23,8 +21,10 @@ Some of these steps do more than one step's work.
 
 Step 2 does too much for one step. Where inside it should a step boundary go, and why there? What
 would be saved at that boundary?
+Answer in a few sentences.
 
 ### q2
 
 Step 4 does too much for one step. Where inside it should a step boundary go, and why there? What
 would be saved at that boundary?
+Answer in a few sentences.

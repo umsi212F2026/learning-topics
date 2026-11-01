@@ -1,5 +1,3 @@
-Each question gives two people's defenses of the same choice for one step. Pick the sound one.
-
 The Low Tides are a band that sells shirts and records from their website, about 200 orders a
 week. The band's manager runs this workflow every week to get the orders packed and shipped.
 
@@ -23,6 +21,10 @@ order with the items and the shipping address. A mistake here sends a package to
 or pays for the wrong label, and nothing later catches it. It handles each fan's name and home
 address. About five lines a week have the whole address typed on the street line, with the city
 and postal code left blank. The approved packing list is ready each Wednesday morning.
+
+## Framing
+
+Each question gives two people's defenses of the same choice for one step.
 
 ### q1
 

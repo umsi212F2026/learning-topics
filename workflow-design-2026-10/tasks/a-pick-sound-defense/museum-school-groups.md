@@ -1,5 +1,3 @@
-Each question gives two people's defenses of the same choice for one step. Pick the sound one.
-
 The Harbor Science Museum hosts school field trips, and most of its schools come back every year.
 Its bookings coordinator runs this workflow every week, for about 150 booking requests a week from
 teachers.
@@ -24,6 +22,10 @@ said or did, and whether the guide was at fault is a judgment no form settles. A
 can cost a guide their job or leave a real problem in place, and it goes to the guide with no one
 checking it. The complaints name the guide and the students involved. The education director
 handles these on Thursday afternoons. Teachers send complaints in the days after their visit.
+
+## Framing
+
+Each question gives two people's defenses of the same choice for one step.
 
 ### q1
 

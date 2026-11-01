@@ -1,5 +1,3 @@
-Answer each question in a few sentences.
-
 The plot coordinator of a community garden runs this workflow at the start of each month to fill
 the plots that gardeners have given up. About 60 households are on the waitlist, and two to six
 plots open up in a month.
@@ -24,8 +22,10 @@ Some of these steps do more than one step's work.
 
 Step 2 does too much for one step. Where inside it should a step boundary go, and why there? What
 would be saved at that boundary?
+Answer in a few sentences.
 
 ### q2
 
 Step 4 does too much for one step. Where inside it should a step boundary go, and why there? What
 would be saved at that boundary?
+Answer in a few sentences.

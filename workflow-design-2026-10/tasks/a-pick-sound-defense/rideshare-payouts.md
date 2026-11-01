@@ -1,5 +1,3 @@
-Each question gives two people's defenses of the same choice for one step. Pick the sound one.
-
 Valley Rides is a ride-share co-op owned by its 80 drivers. Its treasurer runs this workflow every
 week to pay the drivers for the week's rides and to answer drivers who ask for money early.
 
@@ -22,6 +20,10 @@ driver unable to pay rent, or owing more than they will earn, and the reply reac
 no one checking it. The requests often describe a driver's debts, such as rent owed or a loan
 payment. The treasurer handles these on Wednesday evenings. Requests come in on any day of the
 week.
+
+## Framing
+
+Each question gives two people's defenses of the same choice for one step.
 
 ### q1
 

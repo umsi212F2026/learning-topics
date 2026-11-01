@@ -1,5 +1,3 @@
-Answer each question in a few sentences.
-
 A local moving company prices and books moves for households in its town. About forty quote
 requests come in a week, and most are priced straight from the company's rate table.
 
@@ -31,9 +29,11 @@ founder."
 Who should do step 2: a person, an AI agent or a program? Compare your choice with one of the
 other two: name one goal your choice helps and one it hurts, and say what about step 2 makes it
 so.
+Answer in a few sentences.
 
 ### q2
 
 Who should do step 4: a person, an AI agent or a program? Compare your choice with one of the
 other two: name one goal your choice helps and one it hurts, and say what about step 4 makes it
 so.
+Answer in a few sentences.

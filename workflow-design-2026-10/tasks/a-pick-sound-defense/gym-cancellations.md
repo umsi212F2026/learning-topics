@@ -1,5 +1,3 @@
-Each question gives two people's defenses of the same choice for one step. Pick the sound one.
-
 Northside Fitness is a gym with about 2,000 members. Its front-desk manager runs this workflow
 every week to handle members who want to cancel, about 120 requests a week.
 
@@ -21,6 +19,10 @@ member with the date billing should stop. A mistake here charges a member who ha
 stops billing a member who hasn't, and nothing later catches it. It handles each member's name
 and saved payment card. About three entries a week arrive with a note typed where the date
 belongs, such as "after my last class". The approved list is ready each Friday afternoon.
+
+## Framing
+
+Each question gives two people's defenses of the same choice for one step.
 
 ### q1
 

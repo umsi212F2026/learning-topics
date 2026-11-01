@@ -1,5 +1,3 @@
-Answer each question in a few sentences.
-
 The referee coordinator of a youth soccer league runs this workflow every week of the season to
 staff its Saturday games. About 20 games are played each Saturday, and about 35 referees are on
 the league's list.
@@ -23,8 +21,10 @@ Some of these steps do more than one step's work.
 
 Step 2 does too much for one step. Where inside it should a step boundary go, and why there? What
 would be saved at that boundary?
+Answer in a few sentences.
 
 ### q2
 
 Step 4 does too much for one step. Where inside it should a step boundary go, and why there? What
 would be saved at that boundary?
+Answer in a few sentences.

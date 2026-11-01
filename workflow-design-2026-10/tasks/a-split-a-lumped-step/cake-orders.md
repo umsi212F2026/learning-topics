@@ -1,5 +1,3 @@
-Answer each question in a few sentences.
-
 The owner of a small bakery runs this workflow every week for its custom cake orders. About 30
 requests come in a week, most of them for birthdays and weddings.
 
@@ -21,8 +19,10 @@ Some of these steps do more than one step's work.
 
 Step 2 does too much for one step. Where inside it should a step boundary go, and why there? What
 would be saved at that boundary?
+Answer in a few sentences.
 
 ### q2
 
 Step 4 does too much for one step. Where inside it should a step boundary go, and why there? What
 would be saved at that boundary?
+Answer in a few sentences.

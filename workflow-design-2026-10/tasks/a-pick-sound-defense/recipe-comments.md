@@ -1,5 +1,3 @@
-Each question gives two people's defenses of the same choice for one step. Pick the sound one.
-
 Pan and Pantry is a recipe site with about 40,000 readers. Its community editor runs this workflow
 every week to handle what readers send in: about 600 comments a week, and a few reports from
 readers who say a recipe made them ill.
@@ -24,6 +22,10 @@ ill, and whether the recipe itself was unsafe is a judgment no form settles. A w
 up a recipe that makes another reader seriously ill, and no one checks the decision afterward. The
 reports describe the reader's illness, often with what a doctor found. The site's founder handles
 these on Saturday mornings. Reports come in on any day of the week.
+
+## Framing
+
+Each question gives two people's defenses of the same choice for one step.
 
 ### q1
 
