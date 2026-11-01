@@ -110,7 +110,7 @@ Here is a better division, with who does each step:
 
 1. Collect the submissions into a folder. (a program)
 2. Run the tests on each one, and save the results. (a program)
-3. Draft written feedback based on the code and its test results. (an AI agent)
+3. Draft written feedback and a suggested grade, based on the code and its test results. (an AI agent)
 4. Review the drafts and settle each grade. (the TA)
 5. Post the grades to the gradebook. (a program)
 
