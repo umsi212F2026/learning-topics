@@ -22,6 +22,7 @@ never the scoring.
 
 ## Check notes
 
+Each capability has one write-it check and one pick-one check, and either alone can meet the goal. The depth in goals.md is to make and defend both decisions, and only the write-it checks (`a-split-a-lumped-step`, `a-defend-a-lane-choice`) have the learner state a reason or argue a choice; the pick-one checks show that the learner recognizes a sound answer among given ones. The 25-minute route through both pick-one checks therefore meets both capabilities without the learner ever giving a boundary's reason or choosing an executor. Offer the write-it checks first, and keep the pick-one checks for quick practice or review.
 
 ## Goals
 
@@ -36,8 +37,8 @@ never the scoring.
 | goal | checks | notes |
 | ---- | ------ | ----- |
 | `o-orientation` | `a-read-workflow-design` | |
-| `c-divide-into-steps` | `a-split-a-lumped-step`, `a-contrast-step-splits` | |
-| `c-assign-a-lane` | `a-defend-a-lane-choice`, `a-pick-sound-defense` | |
+| `c-divide-into-steps` | `a-split-a-lumped-step`, `a-contrast-step-splits` | Every handoff in both activities also changes the kind of check, and either reason earns credit there, so no question needs the executor reason: a learner who knows only the check-change rule can pass both cases. Through `a-contrast-step-splits` the goal can be met with no reason ever stated, though the criterion says a boundary with no reason does not meet it; `a-split-a-lumped-step` is the only check that sees the reason. |
+| `c-assign-a-lane` | `a-defend-a-lane-choice`, `a-pick-sound-defense` | Through `a-pick-sound-defense` the goal can be met without the learner choosing an executor, naming the alternative or finding the step's facts, and every defense there argues for the natural choice. `a-defend-a-lane-choice` is the only check where the learner chooses and writes the argument. |
 
 ---
 
@@ -79,6 +80,7 @@ never the scoring.
   goal, intermediate goal, pattern and rule of thumb. The reading names no real workflow tool; it
   names three real AI providers (OpenAI, Anthropic, Google) once, as examples of where an agent's
   transcripts may be kept.
+- **verified:** 2026-11-01
 - **learner does:** reads the page once, top to bottom, and stops twice, answering before reading
   on; "I don't know yet" is an honest answer.
   1. After Trade-offs: names one final goal from the first section and one intermediate goal that
