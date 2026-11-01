@@ -11,7 +11,8 @@ second unnamed merge and on to `Report being stuck` (HUMAN), then the end circle
 being stuck`. After `Check the install`, the split `install correct?` (also in PROGRAM, to its
 right): `success` goes to `Submit each session's report` (HUMAN), then the end circle `workspace
 ready`; `not yet` loops back through the merge before `Set up the workspace`. The file `U-M API
-key` is not asked about.
+key` is joined by a dotted line to `Get Codex running`, which reads it; the bank asks only what
+its shape marks, never which step uses it.
 
 The plane carries no handoff question: with the two boxes drawn across lanes left out, its only
 step-to-step pair is `Check the install` to `Submit each session's report`.
@@ -55,6 +56,14 @@ step-to-step pair is `Check the install` to `Submit each session's report`.
 - **type:** mcq
 - **answer:** 1
 - **credit:** full for 1 only.
+
+### file-shape
+
+- **goal:** `c-read-diagram`
+- **cases:** file-shape
+- **type:** mcq
+- **answer:** 4
+- **credit:** full for 4 only.
 
 ### lane-span
 

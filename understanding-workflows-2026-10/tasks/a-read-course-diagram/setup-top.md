@@ -48,6 +48,15 @@ What kind of shape is the diamond just before `Set up the workspace`?
 3. a step
 4. a file
 
+### file-shape
+
+What does the shape `U-M API key` mark?
+
+1. where a run starts or ends
+2. a gateway
+3. one step, work the workflow does
+4. a file
+
 ### lane-span
 
 Who does `Set up the workspace`?

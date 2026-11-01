@@ -48,7 +48,8 @@ remote`; `Check the remote` to `Submit Installation 3`.
 - **answer:** 2
 - **credit:** full for 2 only.
 - **tutor note:** both steps sit in the PROGRAM lane, so the same actor does both. A learner who
-  says yes may be reading every arrow as a handoff, as the session 2 glossary slide invites.
+  says yes may be reading every arrow as a handoff. Slide 7 of the session 2 deck says otherwise:
+  "When the next step belongs to another actor, it is a handoff," and here it does not.
 
 ### handoff
 
