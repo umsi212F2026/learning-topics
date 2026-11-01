@@ -60,7 +60,8 @@ Who does `Get Codex running`?
 ### handoff
 
 Name one handoff in this plane: a place where the run goes from a step done by one actor to the
-next step, done by a different actor (gateways between them don't matter). Name the two steps.
+next step, done by a different actor (gateways between them don't matter). Leave out `Get Codex
+running` and `Set up the workspace`, which are drawn across more than one lane. Name the two steps.
 
 ### one-split
 

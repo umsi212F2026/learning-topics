@@ -299,10 +299,12 @@ file at the learner's current commit.
      workspace`, where the fourth is right.
   7. `handoff` (`handoff`, Medium, free): "Name one handoff in this plane: a place where the run
      goes from a step done by one actor to the next step, done by a different actor (gateways
-     between them don't matter). Name the two steps." Accepted: the plane's one handoff pair,
-     `Check the install` to `Submit each session's report`. A pair with `Get Codex running` or
-     `Set up the workspace` in it is not accepted, since those are drawn across lanes; the tutor
-     says so and asks for another.
+     between them don't matter). Leave out `Get Codex running` and `Set up the workspace`, which
+     are drawn across more than one lane. Name the two steps." Accepted: the plane's one handoff
+     pair, `Check the install` to `Submit each session's report`. A pair with either excluded step
+     in it is not accepted; the tutor points back to the question's exclusion and asks for
+     another. **On any plane**, a `handoff` or `not-handoff` question whose plane has a step drawn
+     across lanes names those steps as excluded in the question's own text, in the same words.
      **Pairs, not arrows.** A handoff question names two steps, A and B, such that the run can go
      from A to B with no other step between them (only gateways, or nothing). The pair is a
      handoff exactly when A and B are done by different actors, a not-handoff when the same actor
@@ -444,11 +446,7 @@ file at the learner's current commit.
   each with one answer, mostly multiple choice, with short free answers such as "what happens
   after this step?" and "name one handoff". No single plane meets the goal: it takes one question
   per case, fifteen in all across the three planes, about 20 minutes.
-- **check note:** Treat these four points as part of running it.
-  - **`setup-top` handoff:** the question doesn't say that steps drawn across lanes are left out. A
-    learner who names `Set up the workspace` to `Check the install` has made a reasonable reading,
-    not an error. Say the exclusion is a rule of the question. Note in the attempt that you said it,
-    since after it only one pair remains.
+- **check note:** Treat these three points as part of running it.
   - **`data-line`:** `Open U-M GPT`'s own label names `bootstrap-prompt.md`, so the right choice is
     easier than it looks.
   - **Help on `not-handoff` or `control-arrow`:** `tour.bpmn` has no step-to-step arrow inside one
