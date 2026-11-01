@@ -1,5 +1,7 @@
 This made-up model follows a car ferry that crosses a river between two towns, loading cars in the order they reach the dock and leaving on a fixed schedule. It leaves out the weather: every crossing runs on schedule, whatever the wind or fog. Its model parameters are the number of ferries on the route, the number of car spaces on each ferry, the time between departures, and the rate at which cars arrive at the dock. One simulation trial is one day of sailings, from the first to the last, and records how long each car waits at the dock and how many are still waiting when the last ferry leaves. In each minute of the day, a car pulls up to the dock with the chance set by the arrival rate.
 
+## Framing
+
 Each question below comes from a different person who wants this simulation to answer one question. Each question is about this simulation alone.
 
 ### q1

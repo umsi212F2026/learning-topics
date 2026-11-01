@@ -7,6 +7,8 @@ closing, and how many minutes each doctor spent with no patient. Chance is built
 patients walk in at random moments, at the rate the third parameter sets, and each visit takes a
 random number of minutes.
 
+## Framing
+
 Each question below comes from a different person who wants this simulation to answer one
 question. Each question is about this simulation alone.
 

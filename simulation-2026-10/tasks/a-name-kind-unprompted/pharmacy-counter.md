@@ -1,5 +1,7 @@
 This made-up model follows the prescription counter at a neighborhood pharmacy: customers hand in prescriptions, pharmacists fill them in the order they came in, and each customer waits until theirs is ready. It leaves out refills ordered ahead by phone or online: every prescription in the model is handed in at the counter. Its model parameters are the number of pharmacists on shift, the average time it takes to fill one prescription, and the rate at which customers arrive. One simulation trial is one day at the counter, from opening to closing, and records how long each customer waits and how many people are in line at each moment. In each minute a customer walks up with the chance set by the arrival rate, and each prescription takes a time to fill drawn at random around the average fill time.
 
+## Framing
+
 Each question below comes from a different person who wants this simulation to answer one question. Each question is about this simulation alone.
 
 ### q1

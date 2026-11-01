@@ -7,6 +7,8 @@ simulated tournament, and it records who won each match, how many games each mat
 many games were played in all. Chance is built into its rules: on each point the server wins with
 the chance set by the first parameter.
 
+## Framing
+
 Each question below comes from a different person who wants this simulation to answer one
 question. Each question is about this simulation alone.
 

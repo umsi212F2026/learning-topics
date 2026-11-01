@@ -8,6 +8,8 @@ and how many days the outbreak lasted. Chance is built into its rules: each scho
 student passes the flu to each student sitting near them with some chance, which is smaller for a
 student who has had the shot.
 
+## Framing
+
 Each question below comes from a different person who wants this simulation to answer one
 question. Each question is about this simulation alone.
 

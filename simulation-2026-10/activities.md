@@ -166,9 +166,10 @@ task, never the scoring.
   a bus route's delays, a flu outbreak at a school, a clinic's waiting room, a league's season, a
   city's bike-share docks. `a-name-kind-unprompted` has a separate list, and neither activity uses
   a domain from the other's. A tennis model is presented as a made-up one and never as the
-  course's session 16 simulator. The setup ends: "Each question below comes from a different
-  person who wants this simulation to answer one question. Each question is about this simulation
-  alone."
+  course's session 16 simulator. The setup describes the model only and never speaks of the
+  questions. After it comes a `## Framing` line and then: "Each question below comes from a
+  different person who wants this simulation to answer one question. Each question is about this
+  simulation alone."
 
   **A question** is one to three sentences in a named person's voice saying what they want to
   know, then "Which kind of question is <name> asking?" and four numbered choices, `type: mcq`. The
