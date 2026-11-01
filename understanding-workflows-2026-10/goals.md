@@ -280,6 +280,7 @@ do a step, are not part of this topic.
   - `spans-lanes`: who does a step drawn across two lanes
   - `handoff`: where control, or data a later step uses, passes to a step done by a different
     actor
+  - `not-handoff`: that a step followed by another step of the same actor is not a handoff
   - `control-arrow`: what a solid arrow between two steps says (which step runs next)
   - `branch-label`: what a label on an arrow leaving a gateway says
   - `data-line`: what a dotted line between a step and a file says (data written or read, not
