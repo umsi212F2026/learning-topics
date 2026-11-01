@@ -108,8 +108,8 @@ file at the learner's current commit.
 - **doesn't show:** an indication of readiness is all this goal asks for and all this shows. The
   stop is helped, ungraded and about the symbols in general, with no diagram open, so it shows
   nothing about `c-read-diagram`. It shows nothing about the sixteen words, which have their own
-  supply in `a-words`; the deck names only some of them (it never says lane, subprocess,
-  executor, workflow state or data flow), and lane, subprocess and data flow reach the learner
+  supply in `a-words`; slides 4 to 7 name only some of them (they never say lane,
+  subprocess, executor, workflow state or data flow), and lane, subprocess and data flow reach the learner
   only through the tutor's spoken additions. The revised slide 7 states the handoff rule for
   control flow only; that a file passed between actors is also a handoff rests on the tutor's
   sentence. Until the revision is merged, a learner opening their own clone reads the session 2
@@ -175,7 +175,7 @@ file at the learner's current commit.
   - `setup-top`: the top level, "opens the Day 1 page in Canvas" to its two end states. Carries
     `states`, `step-box`, `gateway-shape`, `subprocess-box`, `lane-owner`, `spans-lanes`,
     `handoff`, `splits`, `merges`, `trace-steps` and `trace-end`, the only plane that carries
-    `subprocess-box`, `lane-owner` or `spans-lanes`. Its only handoff pair (step to step,
+    `subprocess-box` or `spans-lanes`, and the weaker `lane-owner` form. Its only handoff pair (step to step,
     gateways between ignored, steps drawn across lanes left out) is `Check the install` to
     `Submit each session's report`. It has no same-actor pair, so it carries no `not-handoff`
     question. It has two collapsed subprocesses (`Get Codex running`, `Set up the workspace`), both
@@ -411,10 +411,14 @@ file at the learner's current commit.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. The
   tutor works the same kind of question aloud on a different diagram, saying what it looks at:
   `workflows/tour/tour.bpmn` (the tour at the end of setup, a single plane with no gateways) for
-  start and end states, steps, lanes, handoffs, an arrow inside one lane (`tour skill invoked` to
-  `Ask what they want`, control flow with no handoff) and data flow (`Explain the four parts of
+  start and end states, steps, lanes, handoffs and data flow (`Explain the four parts of
   the tour` reads the guide; `Write the record`, in PROGRAM, writes `tour.md`, which `Open the file
-  in the editor`, in the human's lane, reads later: a data handoff); and the top level of `workflows/develop/superpowers.bpmn`, which is in no bank, for everything
+  in the editor`, in the human's lane, reads later: a data handoff); the plane under `Execute the
+  plan, task by task` in `workflows/develop/superpowers.bpmn` (revised copy on the
+  `deck-workflow-fixes` branch) for `control-arrow` and `not-handoff`, using the solid arrow from
+  `Open this plan's ledger, or start one` to `Scan the plan for conflicts and rule on each`, two
+  AI AGENT steps, so the second runs next and it is not a handoff (tour.bpmn has no same-actor
+  step-to-step pair); and the top level of `workflows/develop/superpowers.bpmn`, which is in no bank, for everything
   else: the box `Brainstorm the design` (a plus, drawn across all three lanes in the revised
   layout on the `deck-workflow-fixes` branch) for a subprocess and a step drawn across lanes; the diamond `how much process does this
   need?` for a split, with its labels `spike`, `bounded` and `architectural` for branch labels;
