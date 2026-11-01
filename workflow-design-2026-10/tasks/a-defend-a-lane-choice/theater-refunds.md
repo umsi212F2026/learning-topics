@@ -17,7 +17,7 @@ In the manager's words: "The request form still carries the heading the old mana
 some a long story, and many name the show without saying which night, though we run each show on
 several nights. Quite a few patrons explain that they had a hospital stay or an illness in the
 family, so the requests carry health details. When a request lands in the wrong pile, I nearly
-always catch it when I go over the sorted list. The approved list has one line per refund, with the
+always catch it when I go over the sorted list. The approved list, about eighty refunds in a busy week, has one line per refund, with the
 patron's name, the card number the tickets were bought with and the amount, though a few lines a
 week have a note where the amount should be, such as 'half, see email'. A refund sent for the
 wrong amount comes straight out of the theater's account, and once it is on a patron's card

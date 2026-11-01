@@ -15,7 +15,7 @@ mistake costs); the director chooses these only on Saturday mornings (sentence 8
 decider is free).
 
 The irrelevant details, one per open step: for step 2, the sign-up page's old orange logo
-(sentence 5); for step 4, that the director is training for a marathon (sentence 9). A reason
+(sentence 5); for step 4, that the director's office is at the top of the stairs (sentence 9). A reason
 resting on either is not tied.
 
 ### q1
@@ -91,7 +91,7 @@ resting on either is not tied.
   makes that knowledge matter, asks for that, and if the learner can't say, points to the requests
   no form settles and the prepaid term a wrong match costs. Generic reasons, which don't refer to
   the step at all: "a person has better judgment", "an agent is faster", "agents can be wrong in
-  ways that look right". A reason resting on the director's marathon training is not tied. An
+  ways that look right". A reason resting on where the director's office is is not tied. An
   intermediate goal from the reading counts on the same terms as a final goal. Half when one of the
   two is tied and the other is generic or missing, or when both are tied but no alternative is
   named. None when neither is tied, or no executor is chosen.

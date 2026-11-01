@@ -23,7 +23,7 @@ center's old orange logo. The set-aside requests often explain the family's cust
 such as which parent the child is with on which days. If one of those children ends up with the
 wrong tutor, the family has usually prepaid a term of about six hundred dollars, and nobody looks
 at a match again once the email goes out. Our director chooses these on Saturday mornings, after
-the week's sessions are done. She is training for a marathon this fall."
+the week's sessions are done. Her office is the room at the top of the stairs."
 
 ### q1
 

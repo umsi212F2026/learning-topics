@@ -3,7 +3,7 @@ Step 2 is `messy-volume-checked`: natural choice an AI agent, alternative a pers
 never on the choice: any executor defended by reasons tied to the step's facts passes.
 
 Where the facts are. The setup's second sentence gives the volume: well over a hundred requests in
-a busy week, which is also roughly how many refunds reach step 4. In the manager's paragraph,
+a busy week. Step 4's volume is in sentence 5: about eighty approved refunds in a busy week. In the manager's paragraph,
 sentences 2 to 4 carry step 2's facts: the requests are typed free text in mixed lengths, many
 name the show but not the night (sentence 2, its input); they carry health details (sentence 3,
 its data); a request in the wrong pile is nearly always caught at step 3 (sentence 4, what a
@@ -68,7 +68,7 @@ it!" (sentence 1); for step 4, that refunds went to cards rather than checks two
   - An agent rather than a program: helps timeliness (it can read a note like "half, see email"
     and keep going); hurts correctness (it may misread a note or an amount, and a wrong refund is
     never caught) or privacy (the card numbers go to the agent's provider).
-  - A program rather than the manager: helps timeliness or the manager's time (over a hundred
+  - A program rather than the manager: helps timeliness or the manager's time (about eighty
     refunds a week keyed in by hand otherwise) or correctness (no typing slip in an amount nobody
     rechecks); hurts timeliness on the note lines it stops on.
   - The manager rather than a program: helps correctness on the note lines (the manager can read
