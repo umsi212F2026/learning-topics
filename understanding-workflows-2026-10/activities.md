@@ -77,7 +77,7 @@ with the learner.
   answer, and one with no label is where paths come back together. After the stop, adds what the
   deck doesn't say, a sentence each. **Lane**: each horizontal band in a diagram is a lane, and its
   name says who does the steps drawn in it, so "another actor" on the slide means another lane; a
-  box drawn across two lanes is a step more than one of them takes part in. The deck's word
+  box drawn across two or more lanes is a step more than one of them takes part in. The deck's word
   **script** is the diagrams' `PROGRAM` lane: steps a program carries out exactly. A box with a
   small **plus** at its bottom edge is a **subprocess**, a step with a diagram of its own
   underneath; the plus only marks it, and Camunda opens that diagram from the small arrow button
@@ -133,7 +133,10 @@ with the learner.
   ahead if they want. Before serving a scenario, checks that the diagram hasn't changed since the
   key was written: `git -C <course-materials> log -1 --format=%h -- workflows/bootstrap/bootstrap.bpmn`
   must print the commit the scenario's key records (in its rubric file); if it doesn't, the tutor doesn't serve that
-  scenario and records it as a bank defect for the instructor. Gives the full path of the file and
+  scenario and records it as a bank defect for the instructor. The keys record `eb7b655`, the
+  revised layout on the `deck-workflow-fixes` branch, and the check runs against the learner's
+  merged `course-materials`; a clone still at the older `6b578e9` fails it, so the bank needs that
+  branch merged before it is released. Gives the full path of the file and
   has the learner double-click it (it opens in Camunda Modeler on a machine that finished
   Installation 2); if it doesn't open, opens it by path, as `setup-editors` does (`open -a "Camunda
   Modeler" "<path>"` on macOS, `Start-Process "C:\Program Files\Camunda Modeler\Camunda
@@ -155,8 +158,10 @@ with the learner.
   invents a diagram. Do not use `workflows/learn/learn.bpmn`, which lags the learn workflow it
   depicts. Every answer in a key is read from the `.bpmn` file at the commit the key records,
   checked against the plane in Camunda or a render (`node workflows/diagram/tools/render.mjs`,
-  with the subprocess's id for a plane below the top), since a step drawn across two lanes shows
-  only in the geometry.
+  with the subprocess's id for a plane below the top), since a step drawn across lanes shows
+  only in the geometry. Keys are written against the revised layout, commit `eb7b655` (on the
+  `deck-workflow-fixes` branch until it is merged): no flow changed from `6b578e9`, but `Set up the
+  workspace` is now drawn across all three lanes.
 
   **A scenario is one plane**, and there are three, each a file
   `tasks/a-read-course-diagram/<scenario-id>.md` with its key in
@@ -164,13 +169,12 @@ with the learner.
   - `setup-top`: the top level, "opens the Day 1 page in Canvas" to its two end states. Carries
     `states`, `step-box`, `gateway-shape`, `subprocess-box`, `lane-owner`, `spans-lanes`,
     `handoff`, `splits`, `merges`, `trace-steps` and `trace-end`, the only plane that carries
-    `subprocess-box`, `lane-owner` or `spans-lanes`. Its handoff pairs (step to step, gateways
-    between ignored): `Set up the workspace` to `Check the install`, `Set up the workspace` to
-    `Report being stuck`, `Check the install` to `Submit each session's report`, and `Check the
-    install` back to `Set up the workspace`. It has no same-actor pair that leaves out `Get Codex
-    running`, so it carries no `not-handoff` question. It has two collapsed subprocesses (`Get Codex
-    running`, `Set up the workspace`), one step drawn across two lanes (`Get Codex running`, in
-    the HUMAN operator lane and reaching into AI AGENT), three named splits (`Codex running?`,
+    `subprocess-box`, `lane-owner` or `spans-lanes`. Its only handoff pair (step to step,
+    gateways between ignored, steps drawn across lanes left out) is `Check the install` to
+    `Submit each session's report`. It has no same-actor pair, so it carries no `not-handoff`
+    question. It has two collapsed subprocesses (`Get Codex running`, `Set up the workspace`), both
+    drawn across lanes: `Get Codex running` across HUMAN operator and AI AGENT, `Set up the
+    workspace` across all three (its own plane has steps in all three), three named splits (`Codex running?`,
     `Able to complete?`, `install correct?`), two unnamed merges, and a loop (`not yet` at
     `install correct?` leads back to the merge before `Set up the workspace`). It has no solid arrow
     joining two steps directly, so it doesn't carry `control-arrow`, and the bank asks
@@ -238,7 +242,7 @@ with the learner.
   answer needs. On `set-up-workspace` `not-handoff` and `handoff` come before `lane-owner`, which
   would reveal a step's actor. Mcq credit is
   full for the right choice and none otherwise. **In every free answer** (`handoff`,
-  `after-split`, `one-merge`, `one-split`, `after-loop`, `after-step` and any other), credit a
+  `one-merge`, `one-split`, `after-loop`, `after-step` and any other), credit a
   paraphrased step or gateway name when it is clear which element the learner means; ask which
   they mean only when it is not. About 1 minute a multiple-choice question, 2 a
   free one. The examples show the shape, not bank items; a case may carry several such questions
@@ -249,7 +253,7 @@ with the learner.
   conditional built from the branch labels ("if `success`, `Submit each session's report`; if
   `not yet`, back to `Set up the workspace`"). Pick only steps whose split, if any, leads on every
   branch (through merges only) straight to a step or an end state, never to a second split, and
-  never a step drawn across two lanes. **Which case it carries:** the one the answer most depends
+  never a step drawn across lanes. **Which case it carries:** the one the answer most depends
   on. When a single step comes next, `trace-steps`. When an end state comes next, `trace-end`
   (the step is a last step). When a named split comes next and one of its branches loops back to
   an earlier step, `trace-steps`, since following the loop back is what that case now asks.
@@ -285,32 +289,36 @@ with the learner.
   6. `lane-step` (`lane-owner`, Easy, mcq): "Who does `<step A>`?" Step A is a step with no plane
      below it: `Check the install` (PROGRAM), `Report being stuck` or `Submit each session's
      report` (both HUMAN operator), varying between the bank and live runs; never `Set up the
-     workspace`, whose own plane has steps in other lanes. Choices: the human; the AI agent; a
+     workspace`, which is drawn across all three lanes. Choices: the human; the AI agent; a
      program; more than one of them. This is the weaker `lane-owner` form: on this plane the
      labels give the answer away (`Check the install`'s second line names `check-setup.mjs`, and
      the human steps say "on Canvas"). The stronger form is on `set-up-workspace`.
   7. `lane-span` (`spans-lanes`, Medium, mcq): "Who does `Get Codex running`?" Choices: the human
-     only; the AI agent only; the human and the AI agent both take part; a program. Right: the
-     third.
+     only; the AI agent only; the human and the AI agent both take part; the human, the AI agent
+     and a program all take part. Right: the third. Live runs may ask the same about `Set up the
+     workspace`, where the fourth is right.
   8. `handoff` (`handoff`, Medium, free): "Name one handoff in this plane: a place where the run
      goes from a step done by one actor to the next step, done by a different actor (gateways
-     between them don't matter). Name the two steps." Accepted: any of this plane's four handoff
-     pairs listed above. A pair with `Get Codex running` in it is not accepted, since that step is
-     drawn across two lanes; the tutor says so and asks for another.
+     between them don't matter). Name the two steps." Accepted: the plane's one handoff pair,
+     `Check the install` to `Submit each session's report`. A pair with `Get Codex running` or
+     `Set up the workspace` in it is not accepted, since those are drawn across lanes; the tutor
+     says so and asks for another.
      **Pairs, not arrows.** A handoff question names two steps, A and B, such that the run can go
      from A to B with no other step between them (only gateways, or nothing). The pair is a
      handoff exactly when A and B are done by different actors, a not-handoff when the same actor
      does both. A question never points at an arrow that ends at a gateway and never asks who a
-     gateway belongs to, and a step drawn across two lanes (`Get Codex running`) is never in a
-     pair. No diagram question mentions data: bootstrap.bpmn has no data handoff (no step writes
+     gateway belongs to, and a step drawn across lanes (`Get Codex running`, `Set up the
+     workspace`) is never in a pair. No diagram question mentions data: bootstrap.bpmn has no data handoff (no step writes
      a file another actor's step reads), so the questions narrow handoff to control passing from
      one actor's step to the next step, done by a different actor; the words bank keeps the broad
      control-or-data definition. In a free answer, a learner who names an arrow ending at a
      gateway is not marked wrong: credit it when the steps on either side of that gateway make a
      qualifying pair, and otherwise ask which steps they mean.
-  9. `after-split` (`splits`, Medium, free): "What happens after `Set up the workspace`?" Answer:
-     if `yes`, `Check the install`; if `no`, `Report being stuck`. No branch loops back, so it is
-     tagged `splits`. Credit as for a conditional above.
+  9. `one-split` (`splits`, Medium, free): "Name one place where the flow splits. Point to it by
+     the steps or gateways just before and after it." Answer: any of the three named gateways.
+     Credit: full for one; none for an unnamed merge or a step. (The "what happens after" form is
+     not used for `splits` here: the only steps on this plane followed by a split without a
+     loop-back are drawn across lanes.)
   10. `one-merge` (`merges`, Medium, free): "Name one place where paths come back together. Point
       to it by the steps or gateways just before and after it." Answer: either unnamed gateway
       (the one before `Set up the workspace`, or the one before `Report being stuck`). Credit:
@@ -401,8 +409,8 @@ with the learner.
   `Ask what they want`, control flow with no handoff) and data flow (`Explain the four parts of
   the tour` reads the guide; `Write the record`, in PROGRAM, writes `tour.md`, which `Open the file
   in the editor`, in the human's lane, reads later: a data handoff); and the top level of `workflows/develop/superpowers.bpmn`, which is in no bank, for everything
-  else: the box `Brainstorm the design` (a plus, drawn across the HUMAN operator and AI AGENT
-  lanes) for a subprocess and a step across two lanes; the diamond `how much process does this
+  else: the box `Brainstorm the design` (a plus, drawn across all three lanes in the revised
+  layout on the `deck-workflow-fixes` branch) for a subprocess and a step drawn across lanes; the diamond `how much process does this
   need?` for a split, with its labels `spike`, `bounded` and `architectural` for branch labels;
   the unnamed diamond it follows, where the start and the two `yes` branches from `hidden
   complexity?` meet, for a merge (and for a loop back); "what happens after `Brainstorm the
@@ -461,6 +469,9 @@ with the learner.
   meeting the goal takes one question per case, fourteen over the three scenarios, about 20
   minutes, splittable over sittings.
 - **done when:** as `a-read-course-diagram`'s: the criterion met with no help, case by case.
+- **note:** on hold. Its drafted sample (`setup-top`) was keyed to `bootstrap.bpmn` at `6b578e9`,
+  before `Set up the workspace` was redrawn across all three lanes, so it needs rekeying to
+  `eb7b655` when this activity comes off hold.
 - **generator:** **The material** is as `a-read-course-diagram`'s: the same three planes, the
   same cases per plane, the same `diagram commit:` line in each key (never in the task file),
   and nothing drawn or invented. Its

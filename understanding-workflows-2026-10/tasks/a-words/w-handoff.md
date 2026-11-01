@@ -6,7 +6,7 @@ A dental office has drawn its workflow for a checkup, with two lanes, Receptioni
 the Receptionist lane, "Check in the patient" has a solid arrow to "Pull up the chart", which has a
 solid arrow across into the Dentist lane to "Examine the patient". That leads by a solid arrow to
 "Write treatment notes", which has a dotted line to a file, "Treatment plan". After two more
-dentist steps, the run ends in the Receptionist lane at "Book the follow-up", which has a dotted
+dentist steps, the last step, in the Receptionist lane, is "Book the follow-up", which has a dotted
 line from the "Treatment plan" file.
 
 In this diagram, what is the difference between a handoff and control flow? Answer in two or three

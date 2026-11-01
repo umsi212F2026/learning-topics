@@ -86,7 +86,7 @@ includes `Get Codex running`, which is drawn across two lanes.
 - **credit:** full for one of the four accepted pairs; none otherwise. The two steps may be named
   in either order. A learner who names an arrow ending at a gateway is not marked wrong: credit it
   when the steps on either side of that gateway make an accepted pair, and otherwise ask which
-  steps they mean. Be lenient about paraphrases of step names if it's clear that they are referring to.
+  steps they mean. Credit a paraphrased step name when it is clear which step is meant; ask which only when it is not.
 - **tutor note:** a pair with `Get Codex running` in it is not accepted, since that step is drawn
   across two lanes; say so and ask for another.
 

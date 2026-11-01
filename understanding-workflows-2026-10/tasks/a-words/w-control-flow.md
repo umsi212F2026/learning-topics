@@ -4,7 +4,7 @@
 
 A veterinary clinic has drawn its workflow for a walk-in visit. A vet tech does "Weigh the pet",
 which has a solid arrow to "Take the history". From there a solid arrow leads to the vet's
-"Examine the pet", and another to "Prescribe treatment".
+"Examine the pet", and from that one to "Prescribe treatment".
 
 In this diagram, what is the difference between control flow and a workflow step? Answer in two
 or three sentences, in your own words.
