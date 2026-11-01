@@ -5,7 +5,12 @@ with the learner.
 
 ## Check notes
 
-2026-10-28: nothing at file level.
+2026-11-01: The one capability, `c-read-diagram`, has one live check, `a-read-course-diagram`;
+`a-judge-diagram-summary` is on hold for a rewrite. Both use the same three planes of
+`bootstrap.bpmn`. Every key in `a-read-course-diagram`'s bank records `eb7b655`, the revised drawing
+on the unmerged `deck-workflow-fixes` branch. Until that branch is merged, no banked scenario passes
+the commit check on a learner's clone, and the capability can only be served live, keyed from the
+file at the learner's current commit.
 
 ## Goals
 
@@ -19,7 +24,7 @@ with the learner.
 | goal | checks | notes |
 | ---- | ------ | ----- |
 | `o-orientation` | `a-read-workflow-deck` | |
-| `c-read-diagram` | `a-read-course-diagram`, `a-judge-diagram-summary` | Both checks use the same three planes of one diagram the learner has already met in Installation 2 and in session 2, with exclusive gateways only and every element pointed at by the question. Meeting the goal therefore shows the learner can read this diagram when asked about specific parts. It does not show they can read an unfamiliar one, notice what a diagram leaves out, or handle parallel gateways. If both activities are done, the second one is answered on a plane the learner has already worked through, so treat it as review rather than new evidence. |
+| `c-read-diagram` | `a-read-course-diagram`, `a-judge-diagram-summary` | Every check uses one diagram the learner has already met in Installation 2 and in session 2. It has exclusive gateways only, and the question points at each element. Meeting the goal therefore shows the learner can read this diagram when asked about specific parts. It does not show they can read an unfamiliar one, notice what a diagram leaves out, or handle parallel paths, and the sessions 18 to 21 use is on other diagrams. No check carries a data handoff, because no step in `bootstrap.bpmn` writes a file that another actor's step reads. `a-judge-diagram-summary` has no `not-handoff` question, so on its own it cannot finish the goal. |
 
 ---
 
@@ -49,6 +54,7 @@ with the learner.
   (the repository is public and the page answers, but GitHub shows the file's source rather than
   the slides, and the repository has no GitHub Pages site, so the local copy is the one to open).
   About 4 minutes for the four slides, about 10 with the stop, the tutor's additions and the close.
+- **verified:** 2026-11-01
 - **learner does:** reads slides 4 to 7 once, then stops at slide 7 and answers before going on;
   "I'm not sure" is an honest answer. At the stop, writes one line in their own words for each of
   the glossary's five symbols, saying what it marks in a diagram: a state, a step, a file, a
@@ -123,7 +129,7 @@ with the learner.
   2 and discussed at their table in session 2. Questions from this activity's bank or set live per
   the generator below. A scenario is one plane: `setup-top` twelve questions (about 16 minutes),
   `get-codex-running` six (about 9), `set-up-workspace` nine (about 11), each one sitting.
-- **verified:** 2026-10-28
+- **verified:** 2026-11-01
 - **learner does:** opens the diagram in Camunda Modeler, goes to the plane the scenario names, and
   answers the one question served in their own words, pointing at elements by the first words of
   their labels or by the steps or gateways on either side of them.
@@ -441,13 +447,27 @@ with the learner.
   each with one answer, mostly multiple choice, with short free answers such as "what happens
   after this step?" and "name one handoff". No single plane meets the goal: it takes one question
   per case, fifteen in all across the three planes, about 20 minutes.
-- **check note:** On the `get-codex-running` plane, the step `Open U-M GPT` carries the path of
-  `bootstrap-prompt.md` as the second line of its own label. In Camunda, the learner can therefore
-  see which file the step uses without reading the dotted line at all. Part (c) of the `arrows`
-  question still catches the misreading that matters (the run moving to the file as its next
-  step), but a right answer to "which step uses the file" is easier than it looks. For the `lanes`
-  question, prefer `Check the install` as step A: `Set up the workspace` has HUMAN and PROGRAM
-  steps on the plane underneath it, so "who does it" is open to argument.
+- **check note:** Treat these five points as part of running it.
+  - **`lane-owner`:** the case is usually met on `setup-top`, where each step's label names its
+    actor (`check-setup.mjs`, "on Canvas"). A pass there may come from the label rather than the
+    lane. If that is the learner's only `lane-owner` pass and you doubt it, `set-up-workspace`'s
+    `lane-step` is the better evidence. Even there, a learner who knows that a second line like
+    `setup-addressing` names a skill can infer the AI agent without the lane.
+  - **`setup-top` handoff:** the question doesn't say that steps drawn across lanes are left out. A
+    learner who names `Set up the workspace` to `Check the install` has made a reasonable reading,
+    not an error. Say the exclusion is a rule of the question. Note in the attempt that you said it,
+    since after it only one pair remains.
+  - **`data-line`:** `Open U-M GPT`'s own label names `bootstrap-prompt.md`, so the right choice is
+    easier than it looks.
+  - **Help on `not-handoff` or `control-arrow`:** `tour.bpmn` has no step-to-step arrow inside one
+    lane, and its start arrow leaves a state, not a step. Work the help on the plane under `Execute
+    the plan, task by task` in `superpowers.bpmn` instead. Its pair `Open this plan's ledger, or
+    start one` to `Scan the plan for conflicts and rule on each` is a solid arrow between two AI
+    AGENT steps.
+  - **Commit check:** until `deck-workflow-fixes` is merged, every scenario fails it. Ask the
+    questions live instead, keyed from the learner's commit. Nothing that the bank asks about
+    differs between `6b578e9` and `eb7b655` except that `Set up the workspace` is now drawn across
+    all three lanes.
 
 ### `a-judge-diagram-summary`
 
@@ -457,7 +477,7 @@ with the learner.
 - **artifact:** the same diagram, `workflows/bootstrap/bootstrap.bpmn`, with sentences from a
   summary of it that an AI agent wrote, from this activity's bank or written live per the generator
   below. About 2 to 3 minutes a question, 5 to 10 a scenario.
-- **verified:** 2026-10-28
+- **verified:** 2026-11-01
 - **learner does:** opens the plane the scenario names in Camunda Modeler and, for each sentence in
   the question served, says whether the diagram says that: yes or no.
 - **tutor role:** examiner
@@ -555,12 +575,16 @@ with the learner.
   setup diagram, judged sentence by sentence. Closest to the course's use, checking what an agent
   says a workflow does. No single plane meets the goal: it takes one question per case,
   fourteen in all across the three planes, about 20 minutes.
-- **check note:** Its `trace-run` question is the weakest substitute for the case. Judging
-  sentences about a run that is already stated can be done piece by piece without tracing the
-  run, so a pass here says less about tracing than a pass on `a-read-course-diagram`'s trace
-  question. Where a learner will do only one of the two activities and has shown trouble following
-  loops, `a-read-course-diagram` is the better check for that case. The same label caveat applies
-  to the file sentence: `Open U-M GPT`'s label names the file.
+- **check note:** This activity is on hold. If it is served anyway, note four things.
+  - **Only `setup-top` is drafted.** Its key records `6b578e9`, so it passes the commit check on a
+    clone that predates the merge and fails on a merged one. Its key also describes `Set up the
+    workspace` as sitting in AI AGENT, which is the old drawing; no question turns on that.
+  - **No question carries `not-handoff`.** The learner needs that case from somewhere else. Set it
+    live from `a-read-course-diagram`'s `set-up-workspace` `not-handoff` question.
+  - **Correct the count.** Tell the learner fifteen cases, not fourteen.
+  - **Each question is ruled as one.** A learner who judges one sentence right and the other wrong
+    earns nothing on that case. The `get-codex-running` and `set-up-workspace` questions don't exist
+    yet and would have to be written live from the generator.
 
 ### `a-words`
 
