@@ -226,7 +226,10 @@ with the learner.
   a long dash is named by its first words (`blocked`, `stuck`). A diamond is pointed at by its
   neighbors, never by its label. Questions come in the order listed (study order: a later question
   may name something an earlier one asked the learner to find, never the reverse). Mcq credit is
-  full for the right choice and none otherwise. About 1 minute a multiple-choice question, 2 a
+  full for the right choice and none otherwise. **In every free answer** (`handoff`,
+  `after-split`, `one-merge`, `one-split`, `after-loop`, `after-step` and any other), credit a
+  paraphrased step or gateway name when it is clear which element the learner means; ask which
+  they mean only when it is not. About 1 minute a multiple-choice question, 2 a
   free one. The examples show the shape, not bank items; a case may carry several such questions
   across the bank and live runs.
 
