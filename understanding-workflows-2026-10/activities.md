@@ -17,7 +17,7 @@ file at the learner's current commit.
 | id | Goal | Criterion: what gets examined, and what counts |
 | -- | ---- | ---------------------------------------------- |
 | `o-orientation` | get the shape of this area before working on any particular part of it | `orientation` |
-| `c-read-diagram` | read a workflow diagram and say what it claims | given a workflow diagram, says what it claims: what each shape marks, who does each step, what each kind of arrow means, and where the flow splits and merges. Cases: `states` (the shape marking where a run starts or ends [not a step]), `step-box` (the shape marking a step), `gateway-shape` (the shape marking a gateway), `subprocess-box` (the shape marking a collapsed subprocess), `lane-owner` (who does a step, from its lane), `spans-lanes` (who does a step drawn across two lanes), `handoff` (where control, or data a later step uses, passes to a step done by a different actor), `not-handoff` (that a step followed by another step of the same actor is not a handoff), `control-arrow` (what a solid arrow between two steps says [which step runs next]), `branch-label` (what a label on an arrow leaving a gateway says), `data-line` (what a dotted line between a step and a file says [data written or read, not the run moving to the file]), `splits` (where flow splits [a named gateway]), `merges` (where flow merges [an unnamed gateway]), `trace-steps` (what happens after a given step), `trace-loop` (where a branch that loops back goes), `trace-branches` (where each branch goes after a step followed by a split), `trace-end` (which end state follows a given last step). Taught elsewhere: session 18 class. |
+| `c-read-diagram` | read a workflow diagram and say what it claims | given a workflow diagram, says what it claims: what each shape marks, who does each step, what each kind of arrow means, and where the flow splits and merges. Cases: `states` (the shape marking where a run starts or ends [not a step]), `step-box` (the shape marking a step), `gateway-shape` (the shape marking a gateway), `subprocess-box` (the shape marking a collapsed subprocess), `lane-owner` (who does a step, from its lane), `spans-lanes` (who does a step drawn across two lanes), `handoff` (where control, or data a later step uses, passes to a step done by a different actor), `not-handoff` (that a step followed by another step of the same actor is not a handoff), `control-arrow` (what a solid arrow between two steps says [which step runs next]), `branch-label` (what a label on an arrow leaving a gateway says), `data-line` (what a dotted line between a step and a file says [data written or read, not the run moving to the file]), `splits` (where flow splits [a named gateway]), `merges` (where flow merges [an unnamed gateway]), `trace-steps` (what happens after a given step), `trace-branches` (where each branch goes after a step followed by a split), `trace-loop` (where a branch that loops back goes), `trace-end` (which end state follows a given last step). Taught elsewhere: session 18 class. |
 
 ## Coverage
 
@@ -124,6 +124,7 @@ file at the learner's current commit.
   2 and discussed at their table in session 2. Questions from this activity's bank or set live per
   the generator below. A scenario is one plane: `setup-top` ten questions (about 13 minutes),
   `get-codex-running` six (about 9), `set-up-workspace` ten (about 12), each one sitting.
+- **verified:** 2026-11-01
 - **learner does:** opens the diagram in Camunda Modeler, goes to the plane the scenario names, and
   answers the one question served in their own words, pointing at elements by the first words of
   their labels or by the steps or gateways on either side of them.
@@ -462,7 +463,8 @@ file at the learner's current commit.
 - **checks:** `c-read-diagram`
 - **artifact:** the same diagram, `workflows/bootstrap/bootstrap.bpmn`, with sentences from a
   summary of it that an AI agent wrote, from this activity's bank or written live per the generator
-  below. About 1 to 2 minutes a question, 11 to 14 a scenario.
+  below. About 1 to 2 minutes a question, 11 to 15 a scenario.
+- **verified:** 2026-11-01
 - **learner does:** opens the plane the scenario names in Camunda Modeler and reads the question
   served: sentences from an AI agent's summary about one named element. In a compound question,
   picks True or False for each sentence, part by part; in a four-choice question, picks the one
@@ -583,7 +585,7 @@ file at the learner's current commit.
     circle confused with the step before it); "it is a subprocess, with the reports underneath it"
     (plausible: the label names several reports). Third may be blatant ("it marks where a run
     starts").
-  - `gateway-shape` (a merge, said to be a gateway only): "it is a step where the AI agent checks
+  - `gateway-shape` (a merge, said to be a gateway only): "it is a step where the human checks
     the result" (a gateway read as its lane's step); "it is an end circle for runs that are
     blocked" (confused with the circle after the step beyond it). Third may be blatant ("it is a
     file").
