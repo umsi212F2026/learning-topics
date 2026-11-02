@@ -50,7 +50,7 @@ What kind of shape is the diamond just before `Set up the workspace`?
 
 ### file-shape
 
-What does the shape `U-M API key` mark?
+What does the folded-corner page `U-M API key` mark?
 
 1. where a run starts or ends
 2. a gateway

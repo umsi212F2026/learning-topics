@@ -45,8 +45,10 @@ Compound parts in this scenario: five, three True and two False.
 - **type:** mcq
 - **answer:** 4
 - **credit:** full for 4 only.
-- **tutor note:** this diamond is the unnamed merge before `Report being stuck`, in the HUMAN lane;
-  a gateway's lane does not make it a step. Don't confirm or deny whether it splits or merges.
+- **tutor note:** this diamond sits just after `Check the install`, in the PROGRAM lane; a
+  gateway's lane does not make it a step, so choice 1 reads it as the program's check. Choice 2
+  confuses it with the end circle `workspace ready` further on. Don't confirm or deny whether it
+  splits or merges.
 
 ### subprocess
 
@@ -111,9 +113,10 @@ Compound parts in this scenario: five, three True and two False.
 - **type:** mcq
 - **answer:** 2
 - **credit:** full for 2 only.
-- **tutor note:** two arrows come in (`success` from the split after `Get Codex running`, `not yet`
-  from the split after `Check the install`) and one goes out to `Set up the workspace`. The `stuck`
-  path goes to the other merge, before `Report being stuck`.
+- **tutor note:** two arrows come in (`stuck` from the split after `Get Codex running`, `no` from
+  the split after `Set up the workspace`) and one goes out to `Report being stuck`. The `success`
+  path from `Codex running?` goes to the other merge, before `Set up the workspace`. Choice 3
+  misses the `stuck` arrow.
 
 ### after-loop
 

@@ -9,8 +9,8 @@ below gives sentences from its summary about one element of the plane.
 
 ### start-circle
 
-The agent's summary says several things about the circle `opens the Day 1 page in Canvas`. Which
-one does the diagram support?
+An AI agent's summary of this plane says several things about the circle `opens the Day 1 page in
+Canvas`. Which one does the diagram support?
 
 1. It is the first step: the human opens the Day 1 page.
 2. It marks the outcome of `Get Codex running`.
@@ -19,8 +19,8 @@ one does the diagram support?
 
 ### plain-step
 
-The agent's summary says several things about the rounded box `Submit each session's report`.
-Which one does the diagram support?
+An AI agent's summary of this plane says several things about the rounded box `Submit each session's
+report`. Which one does the diagram support?
 
 1. It marks the outcome a run of the workflow ends in.
 2. It marks one step, work the workflow does.
@@ -29,18 +29,18 @@ Which one does the diagram support?
 
 ### gateway
 
-The agent's summary says several things about the diamond just before the rounded box `Report
-being stuck`. Which one does the diagram support?
+An AI agent's summary of this plane says several things about the diamond just after the rounded
+box `Check the install`. Which one does the diagram support?
 
-1. It is a step where the human checks how setup went.
-2. It is an end circle, for a run that cannot go on.
+1. It is a step where the program checks the install.
+2. It is an end circle, for runs whose install is correct.
 3. It marks a file that the workflow uses.
 4. It marks a gateway in the flow of the run.
 
 ### subprocess
 
-The agent's summary says several things about the rounded box `Set up the workspace`. Which one
-does the diagram support?
+An AI agent's summary of this plane says several things about the rounded box `Set up the
+workspace`. Which one does the diagram support?
 
 1. It is a step with a diagram of its own underneath it.
 2. It is a single step, one the AI agent does.
@@ -49,8 +49,8 @@ does the diagram support?
 
 ### file
 
-The agent's summary says several things about the shape `U-M API key`. Which one does the diagram
-support?
+An AI agent's summary of this plane says several things about the folded-corner page `U-M API key`.
+Which one does the diagram support?
 
 1. It marks a file, data that a step uses.
 2. It is a step: the human gets the U-M API key.
@@ -59,8 +59,8 @@ support?
 
 ### lane-span
 
-The agent's summary says these things about the rounded box `Get Codex running`. Is each sentence
-true or false of what the diagram shows?
+An AI agent's summary of this plane says these things about the rounded box `Get Codex running`. Is
+each sentence true or false of what the diagram shows?
 
 #### a
 
@@ -85,8 +85,8 @@ true or false of what the diagram shows?
 
 ### one-split
 
-The agent's summary says several things about the diamond just after the rounded box `Set up the
-workspace`. Which one does the diagram support?
+An AI agent's summary of this plane says several things about the diamond just after the rounded box
+`Set up the workspace`. Which one does the diagram support?
 
 1. Paths come back together here, and one path goes on.
 2. The run takes both paths from here at the same time.
@@ -95,18 +95,18 @@ workspace`. Which one does the diagram support?
 
 ### one-merge
 
-The agent's summary says several things about the diamond just before the rounded box `Set up the
-workspace`. Which one does the diagram support?
+An AI agent's summary of this plane says several things about the diamond just before the rounded
+box `Report being stuck`. Which one does the diagram support?
 
 1. It is a decision: the run goes one way or the other here.
-2. The paths from `Codex running?` and `install correct?` come back together here.
-3. Only one path arrives here, and one path goes on.
-4. The `stuck` path meets the others here.
+2. The paths from `Codex running?` and `Able to complete?` come back together here.
+3. Only one path arrives here, the one from `Able to complete?`.
+4. The `success` path from `Codex running?` meets the others here.
 
 ### after-loop
 
-The agent's summary says these things about the rounded box `Check the install`. Is each sentence
-true or false of what the diagram shows?
+An AI agent's summary of this plane says these things about the rounded box `Check the install`. Is
+each sentence true or false of what the diagram shows?
 
 #### a
 
@@ -124,8 +124,8 @@ true or false of what the diagram shows?
 
 ### after-last
 
-The agent's summary says several things about the rounded box `Report being stuck`. Which one does
-the diagram support?
+An AI agent's summary of this plane says several things about the rounded box `Report being stuck`.
+Which one does the diagram support?
 
 1. The run ends at `Report being stuck` itself, with nothing after it.
 2. After it, the run ends in the circle `workspace ready`.

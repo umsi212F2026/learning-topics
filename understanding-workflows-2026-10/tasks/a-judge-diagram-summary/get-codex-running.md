@@ -10,8 +10,8 @@ below gives sentences from its summary about one element of the plane.
 
 ### one-split
 
-The agent's summary says several things about the diamond just after the rounded box `Do the next
-step on the checklist`. Which one does the diagram support?
+An AI agent's summary of this plane says several things about the diamond just after the rounded box
+`Do the next step on the checklist`. Which one does the diagram support?
 
 1. Paths come back together here, and one path goes on.
 2. The flow splits here, on `stuck?`.
@@ -20,8 +20,9 @@ step on the checklist`. Which one does the diagram support?
 
 ### branch-label
 
-The agent's summary says several things about the diamond reached on `no` from the diamond just
-after the rounded box `Do the next step on the checklist`. Which one does the diagram support?
+An AI agent's summary of this plane says several things about the diamond reached on `no` from the
+diamond just after the rounded box `Do the next step on the checklist`. Which one does the diagram
+support?
 
 1. On its `yes` arrow, the run goes back to `Do the next step on the checklist`.
 2. On its `no` arrow, the run goes straight to `Provide explanations and suggestions`.
@@ -30,7 +31,7 @@ after the rounded box `Do the next step on the checklist`. Which one does the di
 
 ### file-line
 
-The agent's summary says several things about the dotted line between the file
+An AI agent's summary of this plane says several things about the dotted line between the file
 `bootstrap-prompt.md` and the rounded box `Open U-M GPT`. Which one does the diagram support?
 
 1. `Open U-M GPT` reads the file.
@@ -40,18 +41,18 @@ The agent's summary says several things about the dotted line between the file
 
 ### one-merge
 
-The agent's summary says several things about the diamond just before the rounded box `Do the
-next step on the checklist`. Which one does the diagram support?
+An AI agent's summary of this plane says several things about the diamond just before the rounded
+box `Do the next step on the checklist`. Which one does the diagram support?
 
 1. It is a decision: the run goes one way or the other here.
 2. Only one path arrives here, the one from `Open U-M GPT`.
-3. The `give up` path meets the others here.
-4. The paths from `checklist done?` and `worth trying?` come back together here.
+3. The `yes` path from `stuck?` meets the others here.
+4. The paths from `Open U-M GPT` and `checklist done?` come back together here.
 
 ### after-loop
 
-The agent's summary says these things about the rounded box `Provide explanations and
-suggestions`. Is each sentence true or false of what the diagram shows?
+An AI agent's summary of this plane says these things about the rounded box `Provide explanations
+and suggestions`. Is each sentence true or false of what the diagram shows?
 
 #### a
 
@@ -70,8 +71,8 @@ step on the checklist`."
 
 ### after-last
 
-The agent's summary says several things about the rounded box `Write a status report on where it
-stalled`. Which one does the diagram support?
+An AI agent's summary of this plane says several things about the rounded box `Write a status report
+on where it stalled`. Which one does the diagram support?
 
 1. After it, the run ends in the circle `stuck`.
 2. The run ends at `Write a status report` itself, with nothing after it.

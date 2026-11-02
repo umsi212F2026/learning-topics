@@ -90,9 +90,9 @@ Compound parts in this scenario: two, one True and one False.
 - **type:** mcq
 - **answer:** 1
 - **credit:** full for 1 only.
-- **tutor note:** five arrows come in, the `no` from each of `repos installed?`, `Address good?`,
-  `receipt landed?`, `editors installed?` and `remote set up?`, and one goes out to `stopped at a
-  checkpoint`. `first time` goes to `Record where things live`.
+- **tutor note:** five arrows come in, among them the `no` from `repos installed?` and the `no`
+  from `Address good?`, and one goes out to `stopped at a checkpoint`. `first time` goes to `Record
+  where things live`.
 
 ### after-branches
 

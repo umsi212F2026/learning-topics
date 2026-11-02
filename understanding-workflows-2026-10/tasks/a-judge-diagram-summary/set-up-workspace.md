@@ -10,8 +10,9 @@ below gives sentences from its summary about one element of the plane.
 
 ### next-arrow
 
-The agent's summary says several things about the solid arrow from the rounded box `Publish the
-repositories` to the rounded box `Check the remote`. Which one does the diagram support?
+An AI agent's summary of this plane says several things about the solid arrow from the rounded box
+`Publish the repositories` to the rounded box `Check the remote`. Which one does the diagram
+support?
 
 1. After `Publish the repositories`, the next step is `Submit Installation 3`.
 2. After `Publish the repositories`, `Check the remote` runs next.
@@ -20,8 +21,8 @@ repositories` to the rounded box `Check the remote`. Which one does the diagram 
 
 ### not-handoff
 
-The agent's summary says several things about the run going from the rounded box `Check the
-addressing` to the rounded box `Write the receipt`. Which one does the diagram support?
+An AI agent's summary of this plane says several things about the run going from the rounded box
+`Check the addressing` to the rounded box `Write the receipt`. Which one does the diagram support?
 
 1. It is a handoff from a program to the AI agent, which writes the receipt.
 2. It is not a handoff, since the AI agent does both steps.
@@ -30,8 +31,8 @@ addressing` to the rounded box `Write the receipt`. Which one does the diagram s
 
 ### handoff
 
-The agent's summary says several things about the run going from the rounded box `Check the
-editors` to the rounded box `Submit Installation 2`. Which one does the diagram support?
+An AI agent's summary of this plane says several things about the run going from the rounded box
+`Check the editors` to the rounded box `Submit Installation 2`. Which one does the diagram support?
 
 1. It is a handoff, from a program to the human.
 2. It is not a handoff, because a gateway sits between them.
@@ -40,8 +41,8 @@ editors` to the rounded box `Submit Installation 2`. Which one does the diagram 
 
 ### lane-step
 
-The agent's summary says several things about the rounded box `Install tools`. Which one does the
-diagram support?
+An AI agent's summary of this plane says several things about the rounded box `Install tools`. Which
+one does the diagram support?
 
 1. A program does it, since its label names `setup-repos`.
 2. The AI agent and a program both do it.
@@ -50,8 +51,8 @@ diagram support?
 
 ### split-after-remote
 
-The agent's summary says several things about the diamond just after the rounded box `Check the
-remote`. Which one does the diagram support?
+An AI agent's summary of this plane says several things about the diamond just after the rounded box
+`Check the remote`. Which one does the diagram support?
 
 1. Paths come back together here, and one path goes on.
 2. The flow splits here, on `editors installed?`.
@@ -60,18 +61,18 @@ remote`. Which one does the diagram support?
 
 ### merge-before-stop
 
-The agent's summary says several things about the diamond just before the circle `stopped at a
-checkpoint`. Which one does the diagram support?
+An AI agent's summary of this plane says several things about the diamond just before the circle
+`stopped at a checkpoint`. Which one does the diagram support?
 
-1. The paths from `Address good?` and `receipt landed?` come back together here.
+1. The `no` paths from `repos installed?` and `Address good?` come back together here.
 2. It is a decision: the run goes one way or the other here.
 3. Only one path arrives here, from the diamond after `Check the remote`.
 4. The `first time` path meets the others here.
 
 ### after-branches
 
-The agent's summary says these things about the rounded box `Check the receipt landed`. Is each
-sentence true or false of what the diagram shows?
+An AI agent's summary of this plane says these things about the rounded box `Check the receipt
+landed`. Is each sentence true or false of what the diagram shows?
 
 #### a
 
@@ -89,8 +90,8 @@ sentence true or false of what the diagram shows?
 
 ### after-step
 
-The agent's summary says several things about the rounded box `Submit Installation 2`. Which one
-does the diagram support?
+An AI agent's summary of this plane says several things about the rounded box `Submit Installation
+2`. Which one does the diagram support?
 
 1. After it, the next step is `Check the remote`.
 2. After it, the next step is `Publish the repositories`.
@@ -99,8 +100,8 @@ does the diagram support?
 
 ### after-last
 
-The agent's summary says several things about the rounded box `Submit Installation 3`. Which one
-does the diagram support?
+An AI agent's summary of this plane says several things about the rounded box `Submit Installation
+3`. Which one does the diagram support?
 
 1. The run ends at `Submit Installation 3` itself, with nothing after it.
 2. After it, the run ends in the circle `stopped at a checkpoint`.

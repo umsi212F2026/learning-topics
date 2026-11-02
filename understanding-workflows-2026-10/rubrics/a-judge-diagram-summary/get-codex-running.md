@@ -58,9 +58,9 @@ Compound parts in this scenario: two, one True and one False.
 - **type:** mcq
 - **answer:** 4
 - **credit:** full for 4 only.
-- **tutor note:** three arrows come in (from `Open U-M GPT`, `no` from `checklist done?`, `try
-  suggestion` from `worth trying?`) and one goes out to `Do the next step on the checklist`. The
-  `give up` path goes to `Write a status report on where it stalled`.
+- **tutor note:** three arrows come in, among them the one from `Open U-M GPT` and the `no` from
+  `checklist done?`, and one goes out to `Do the next step on the checklist`. The `yes` path from
+  `stuck?` goes to `Provide explanations and suggestions`, not here.
 
 ### after-loop
 
