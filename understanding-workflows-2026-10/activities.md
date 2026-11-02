@@ -126,6 +126,7 @@ activity has recognized right readings without producing one.
   2 and discussed at their table in session 2. Questions from this activity's bank or set live per
   the generator below. A scenario is one plane: `setup-top` eleven questions (about 14 minutes),
   `get-codex-running` six (about 9), `set-up-workspace` ten (about 13), each one sitting.
+- **verified:** 2026-11-01
 - **learner does:** opens the diagram in Camunda Modeler, goes to the plane the scenario names, and
   answers the one question served in their own words, pointing at elements by the first words of
   their labels or by the steps or gateways on either side of them.
@@ -467,6 +468,7 @@ activity has recognized right readings without producing one.
 - **artifact:** the same diagram, `workflows/bootstrap/bootstrap.bpmn`, with sentences from a
   summary of it that an AI agent wrote, from this activity's bank or written live per the generator
   below. About 1 to 2 minutes a question, 10 to 16 a scenario.
+- **verified:** 2026-11-01
 - **learner does:** opens the plane the scenario names in Camunda Modeler and reads the question
   served: sentences from an AI agent's summary about one named element. In a compound question,
   picks True or False for each sentence, part by part; in a four-choice question, picks the one
