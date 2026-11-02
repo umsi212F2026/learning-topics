@@ -52,9 +52,13 @@
 
 ## Where this came from
 
+_Yours to fill in. Nobody can answer this one for you._
+
 <!-- Which of A / B / C / D, and the answer to the follow-up. -->
 
 ## What I already have
+
+_Yours to fill in. Say where your knowledge stops, not what you have heard of._
 
 <!--
   The nearest thing already known well, and where it stops.
@@ -64,6 +68,9 @@
 
 ## What I'll use it for
 
+_Yours to fill in. The course supplies one occasion: Problem Set 5, where you build a small
+workflow that runs on your own machine. Name any others you have._
+
 <!--
   The use, and a concrete occasion.
   If several uses apply, rank them: the top one sets the depth, the rest are cut first
@@ -71,6 +78,11 @@
 -->
 
 ## Depth
+
+**Make and defend two design decisions: what triggers a workflow's runs, and whether work goes
+on a queue first.** Enough to plan the workflow you build for Problem Set 5, including what
+happens when your laptop is off, and to tell your agent what you want. How state is stored, how
+failures are handled and what each part can touch come in later topics.
 
 <!--
   Which of: recognize it / read it / modify something existing / author from scratch /
@@ -253,6 +265,43 @@
   beside a capability entry.
 -->
 
+### `c-choose-trigger`
+
+- **goal:** choose what triggers a workflow's runs, and defend the choice by its trade-offs
+- **criterion:** given a described workflow, says what should trigger its runs (a person, a
+  schedule or an event) and compares that choice with the strongest alternative. Names one goal the choice
+  helps and one it hurts, compared with that alternative, such as timeliness, people's effort or
+  cost, and ties each to something about this workflow: how soon its result is needed, how often
+  there is work to do, who would have to remember to start it, or whether the machine that does
+  the work will be on when the trigger fires. A reason that doesn't refer to
+  this workflow at all, such as "a schedule is automatic", does not meet it. Where the trigger is
+  an event, also says whether the workflow notices it by checking repeatedly or by being told
+  when it happens, and why that fits this workflow.
+- **cases:**
+  - `event`: a workflow best started by an event, so the answer also says whether it is noticed
+    by checking repeatedly or by being told
+  - `machine-off`: a workflow whose machine may be off or asleep when the trigger is due
+  - `not-event`: a workflow best started by a person or a schedule
+- **taught elsewhere:** session 19 class
+
+### `c-when-to-queue`
+
+- **goal:** decide where a workflow's work waits until a worker can take it up
+- **criterion:** given a described workflow, says what its work queue is: a queue the workflow
+  keeps, a source that already holds the waiting work, or a list worked out each time from the
+  state of files. Says what triggers the worker that takes work from it, and what would go
+  wrong in this workflow without it. Having no queue is right only when the worker is always
+  available and never overloaded, or when dropping some work is acceptable, and saying so means
+  naming which of those holds here. A verdict with no consequence tied to this workflow does
+  not meet it.
+- **cases:**
+  - `worker-unavailable`: work can arrive while the machine or person that does it is off or otherwise unavailable
+  - `spread-out`: work arrives in bursts, or faster than it should be done, so it has to be
+    spread out
+  - `no-queue`: a workflow whose worker is always available and never overloaded, or where
+    dropping some work is acceptable
+- **taught elsewhere:** session 19 class
+
 ### `o-orientation`
 
 - **goal:** get the shape of this area before working on any particular part of it
@@ -262,3 +311,57 @@
 - **recurrence:** never
 - **is_required:** no
 - **group:** orientation
+
+### `w-work-queue`
+
+- **goal:** work queue
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** whatever a worker consults to tell what work is still to be done, whether
+  kept on purpose, held by an outside source, or worked out from the state of files
+- **nearest confusable:** log
+- **synonyms:** job queue, task queue
+- **watch for:** thinks a queue and a log must be separate records, when a queue may be worked
+  out from a log
+
+### `w-polling`
+
+- **goal:** polling
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** asking again and again whether anything has changed, rather than being told
+- **nearest confusable:** hook
+
+### `w-cron-job`
+
+- **goal:** cron job
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a command the operating system starts at set times, with nothing kept running
+  in between
+- **nearest confusable:** a program left running in the background
+- **synonyms:** scheduled job, scheduled task
+
+### `w-hook`
+
+- **goal:** hook
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a place where a tool or service runs your command when something happens
+  inside it, so you are told rather than having to ask
+- **nearest confusable:** event-driven
+- **synonyms:** callback, webhook
+
+### `w-event-driven`
+
+- **goal:** event-driven
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** starting a run because something happened, rather than at set times or when
+  a person starts it
+- **nearest confusable:** polling
