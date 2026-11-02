@@ -1,7 +1,11 @@
-This is the course's setup workflow, as drawn for Installations 1 to 3. Open
-`workflows/bootstrap/bootstrap.bpmn` in your `course-materials` folder. It opens in Camunda
-Modeler. Click the small arrow button at the bottom-right corner of the `Get Codex running` box
-to open the diagram underneath it, and read that diagram only.
+This is the course's setup workflow, as drawn for Installations 1 to 3. The picture shows the
+diagram underneath its `Get Codex running` box. Read that diagram only.
+
+![The Camunda Modeler diagram for the Get Codex running plane](get-codex-running.png)
+
+You can also open `workflows/bootstrap/bootstrap.bpmn` from your `course-materials` folder in
+Camunda Modeler and click the small arrow button at the bottom-right corner of the `Get Codex
+running` box.
 
 ### one-split
 

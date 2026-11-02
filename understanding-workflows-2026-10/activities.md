@@ -123,12 +123,13 @@ activity has recognized right readings without producing one.
 - **checks:** `c-read-diagram`
 - **artifact:** one plane of the course's own setup diagram, `workflows/bootstrap/bootstrap.bpmn`
   in the learner's `course-materials` clone, which they opened in Camunda Modeler in Installation
-  2 and discussed at their table in session 2. Questions from this activity's bank or set live per
+  2 and discussed at their table in session 2. Each scenario shows its plane as a picture rendered
+  from that file, so its questions can be answered without Camunda and can go into quiz pools. Questions from this activity's bank or set live per
   the generator below. A scenario is one plane: `setup-top` eleven questions (about 14 minutes),
   `get-codex-running` six (about 9), `set-up-workspace` ten (about 13), each one sitting.
 - **verified:** 2026-11-01
-- **learner does:** opens the diagram in Camunda Modeler, goes to the plane the scenario names, and
-  answers the one question served in their own words, pointing at elements by the first words of
+- **learner does:** reads the plane from the picture in the scenario (or opens it in Camunda
+  Modeler, if they prefer), and answers the one question served in their own words, pointing at elements by the first words of
   their labels or by the steps or gateways on either side of them.
 - **tutor role:** examiner
 - **tutor does:** the goal is also taught in the session 18 class (`taught elsewhere`): before
@@ -136,11 +137,11 @@ activity has recognized right readings without producing one.
   ahead if they want. Before serving a scenario, checks that the diagram hasn't changed since the
   key was written: `git -C <course-materials> log -1 --format=%h -- workflows/bootstrap/bootstrap.bpmn`
   must print the commit the scenario's key records (in its rubric file); if it doesn't, the tutor doesn't serve that
-  scenario and records it as a bank defect for the instructor. The keys must record the diagram's
-  commit on `main`: they now record `eb7b655`, the revised layout's commit on its branch, and are
-  updated to the commit on `main` when this topic's release package lands. Gives the full path of the file and
-  has the learner double-click it (it opens in Camunda Modeler on a machine that finished
-  Installation 2); if it doesn't open, opens it by path, as `setup-editors` does (`open -a "Camunda
+  scenario and records it as a bank defect for the instructor. The keys record the diagram's
+  commit on `main`, `eb7b655`. The scenario shows the plane as a picture. If the learner wants to
+  open it in Camunda Modeler too, gives the full path of the file and has the learner
+  double-click it (it opens in Camunda Modeler on a machine that finished Installation 2); if it
+  doesn't open, opens it by path, as `setup-editors` does (`open -a "Camunda
   Modeler" "<path>"` on macOS, `Start-Process "C:\Program Files\Camunda Modeler\Camunda
   Modeler.exe" -ArgumentList "<path>"` on Windows). Never describes the diagram in words, pastes
   its XML, or names an element the question doesn't already name. Reads the diagram itself from
@@ -154,7 +155,7 @@ activity has recognized right readings without producing one.
   `set-up-workspace` for control-arrow, not-handoff, handoff, lane-owner, trace-branches and
   trace-steps), twelve of them one-minute multiple choice and six free answers, about 24
   minutes, which can be split over sittings. **Serves `setup-top` first**: the other two
-  scenarios' setups open the diagrams under `Get Codex running` and `Set up the workspace`, which
+  scenarios show the diagrams under `Get Codex running` and `Set up the workspace`, which
   would answer `setup-top`'s `subprocess` and `lane-span` questions.
 - **done when:** the criterion met with no help, case by case: a full-credit answer passes the case
   its question carries; half credit or none passes none.
@@ -166,7 +167,7 @@ activity has recognized right readings without producing one.
   with the subprocess's id for a plane below the top), since a step drawn across lanes shows
   only in the geometry. Keys are written against the diagram as learners have it, in which `Set up
   the workspace` is drawn across all three lanes; each key's `diagram commit:` line is the
-  diagram's commit on `main` (now `eb7b655` on its branch, updated when the package lands).
+  diagram's commit on `main`, `eb7b655`.
 
   **A scenario is one plane**, and there are three, each a file
   `tasks/a-read-course-diagram/<scenario-id>.md` with its key in
@@ -220,14 +221,22 @@ activity has recognized right readings without producing one.
   **The setup** is three sentences: what the workflow is ("the course's setup workflow, as drawn
   for Installations 1 to 3"; never "the setup you went through", and nothing implying it covers
   everything the student did, since later installations, such as Installation 4's Superpowers and
-  the optional switch to a personal ChatGPT account, are not drawn), the path of the file and how
-  to reach the plane ("Open
-  `workflows/bootstrap/bootstrap.bpmn` in your `course-materials` folder. It opens in Camunda
-  Modeler. Click the small arrow button at the bottom-right corner of the `Get Codex running`
-  box to open the diagram underneath it, and read that diagram only."; on the top level, "Read
-  this top level only, without opening the diagram under any box that has one."). It names no step,
-  lane, gateway or outcome beyond the one needed to reach the plane, and says nothing about the
-  questions as a set.
+  the optional switch to a personal ChatGPT account, are not drawn), that the plane is shown
+  in the picture above, and, as an option, the path of the file and how to reach the plane in
+  Camunda ("You can also open `workflows/bootstrap/bootstrap.bpmn` in your `course-materials`
+  folder in Camunda Modeler, click the small arrow button at the bottom-right corner of the `Get
+  Codex running` box, and read that diagram only."; on the top level, "Read this top level only,
+  without opening the diagram under any box that has one."). It names no step, lane, gateway or
+  outcome beyond the one needed to reach the plane, and says nothing about the questions as a
+  set.
+
+  **The picture.** On its own line in the scenario part, above any `## Framing`:
+  `![The Camunda Modeler diagram for the <plane name> plane](<scenario-id>.png)`, with the PNG
+  next to the task file (`setup-top.png`, `get-codex-running.png`, `set-up-workspace.png`),
+  rendered from `bootstrap.bpmn` at the key's commit with `node workflows/diagram/tools/render.mjs`
+  (with the subprocess's id for a plane below the top). Whenever the diagram commit changes, the
+  pictures are re-rendered with the keys. Images go only in the scenario part or a question's
+  stem, never in a compound's part.
 
   **The key**, `rubrics/a-read-course-diagram/<scenario-id>.md`, records in its top part, on a line
   of its own, `diagram commit: <hash>`, the commit of `bootstrap.bpmn` it was written against. The
@@ -469,13 +478,13 @@ activity has recognized right readings without producing one.
   summary of it that an AI agent wrote, from this activity's bank or written live per the generator
   below. About 1 to 2 minutes a question, 10 to 16 a scenario.
 - **verified:** 2026-11-01
-- **learner does:** opens the plane the scenario names in Camunda Modeler and reads the question
-  served: sentences from an AI agent's summary about one named element. In a compound question,
+- **learner does:** reads the plane from the picture in the scenario (or in Camunda Modeler, if
+  they prefer) and reads the question served: sentences from an AI agent's summary about one named element. In a compound question,
   picks True or False for each sentence, part by part; in a four-choice question, picks the one
   sentence the diagram supports.
 - **tutor role:** examiner
 - **tutor does:** as `a-read-course-diagram`'s (the session 18 offer, the commit check against
-  the diagram's commit on `main` recorded in each key, opening the diagram, never describing it,
+  the diagram's commit on `main` recorded in each key, the picture with Camunda as an option, never describing the diagram,
   help recorded as helped), and also: shows a compound's stem and its parts lettered `(a)`, `(b)`
   in one message and takes the learner's answers to every part in one reply; settles each part
   from the key. While the learner answers, gives no hint: never says which sentences are wrong or
@@ -485,13 +494,13 @@ activity has recognized right readings without producing one.
   for it. Labels a live run `a-judge-diagram-summary/<case>`. Says when offering it that no one
   plane carries every case: meeting the goal takes one question per case, eighteen over the three
   scenarios, about 28 minutes, splittable over sittings. Serves `setup-top` first, since the other
-  scenarios' setups open the diagrams under its two subprocess boxes.
+  scenarios show the diagrams under its two subprocess boxes.
 - **done when:** the criterion met with no help, case by case. A four-choice question passes its
   case when its one answer is right. A compound passes its case only when every part is right (study
   records `met` only then; quiz grading scores the mean of the parts).
 - **generator:** **The material** is as `a-read-course-diagram`'s: `workflows/bootstrap/bootstrap.bpmn`
   as learners have it, the diagram's commit on `main` recorded as `diagram commit:` in each rubric
-  key's top part (now `eb7b655`, updated when the package lands) and never in the task file, the same three planes, and nothing drawn or invented. `Set up the
+  key's top part (`eb7b655`) and never in the task file, the same three planes, and nothing drawn or invented. `Set up the
   workspace` is drawn across all three lanes and `Get Codex running` across two. All of that
   entry's reading rules hold here: elements named by the first words of their label, diamonds
   pointed at by their neighbors, the plane under a subprocess opened from the small arrow button
@@ -504,8 +513,12 @@ activity has recognized right readings without producing one.
 
   **A scenario file.** Its top part says only what the diagram is ("the course's setup workflow,
   as drawn for Installations 1 to 3", with the same caution as `a-read-course-diagram`'s setup),
-  the file's path, and how to reach the plane (on the top level, "Read this top level only,
-  without opening the diagram under any box that has one."). Under `## Framing`: "An AI agent was asked to say in
+  that the plane is shown in the picture above, and, as an option, the file's path and how to
+  reach the plane in Camunda (on the top level, "Read this top level only, without opening the
+  diagram under any box that has one."). The picture follows `a-read-course-diagram`'s rule: its
+  own line in the scenario part, above `## Framing`, `![The Camunda Modeler diagram for the <plane
+  name> plane](<scenario-id>.png)`, the PNG next to the task file and re-rendered whenever the
+  diagram commit changes; never inside a compound's part. Under `## Framing`: "An AI agent was asked to say in
   plain words what this plane of the diagram claims. Each question below gives sentences from its
   summary about one element of the plane." How to answer goes in each question, never in the top
   part or the framing.
