@@ -91,7 +91,10 @@ meet in this topic:
 - **Maker-checker.** When a step is unreliable, a separate step checks its output before anything
   relies on it. The checker is usually a different executor: a person, a program, or another agent
   with different instructions. When the checker is a person, this is often called *human in the
-  loop*. In the TA's workflow, step 4 checks step 3.
+  loop*. In the TA's workflow, step 4 checks step 3. A check is only as good as the record it
+  leaves. If the checker writes nothing down for each item it passes, the record looks the same
+  whether it looked carefully or not at all. What to record, and where, comes in the later topic
+  on storing state.
 
 Named patterns are useful as conversational shorthand. Telling your agent "use the propose-apply
 pattern for the gradebook step" says a lot in a few words.
