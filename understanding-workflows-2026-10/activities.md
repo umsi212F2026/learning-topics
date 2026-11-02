@@ -105,8 +105,7 @@ activity has recognized right readings without producing one.
 - **worked example:** n/a
 - **doesn't show:** an indication of readiness is all this goal asks for and all this shows. The
   stop is helped, ungraded and about the symbols in general, with no diagram open, so it shows
-  nothing about `c-read-diagram`. It shows nothing about the fifteen live words (a sixteenth,
-  workflow state, is retired), which have their own supply in `a-words`; slides 4 to 7 name only
+  nothing about `c-read-diagram`. It shows nothing about the fifteen words, which have their own supply in `a-words`; slides 4 to 7 name only
   some of them (they never say lane, subprocess, executor or data flow), and lane, subprocess and data flow reach the learner
   only through the tutor's spoken additions. The revised slide 7 states the handoff rule for
   control flow only; that a file passed between actors is also a handoff rests on the tutor's

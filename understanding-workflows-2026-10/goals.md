@@ -345,16 +345,6 @@ do a step, are not part of this topic.
 - **nearest confusable:** trigger
 - **synonyms:** end state, end event
 
-### `w-workflow-state`
-
-- **goal:** workflow state
-- **criterion:** vocabulary
-- **bar:** one production pass
-- **group:** vocabulary
-- **what it names:** a condition that holds, rather than an action that happens
-- **nearest confusable:** workflow step
-- **synonyms:** event
-
 ### `w-workflow-step`
 
 - **goal:** workflow step
