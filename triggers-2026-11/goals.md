@@ -81,10 +81,12 @@ workflow that runs on your own machine. Name any others you have._
 
 ## Depth
 
-**Make and defend two design decisions: what triggers a workflow's runs, and whether work goes
-on a queue first.** Enough to plan the workflow you build for Problem Set 5, including what
-happens when your laptop is off, and to tell your agent what you want. How state is stored, how
-failures are handled and what each part can touch come in later topics.
+**Make three design decisions and say why: what triggers a workflow's runs, how an event-driven
+one finds out that its event happened, and where work waits until it can be done.** Enough to
+plan the workflow you build for Problem Set 5, including what happens when your laptop is off,
+and to tell your agent what you want. Choosing where work waits is as far as this topic goes into
+state: how state is stored, how failures are handled and what each part can touch come in later
+topics.
 
 <!--
   Which of: recognize it / read it / modify something existing / author from scratch /
@@ -269,34 +271,41 @@ failures are handled and what each part can touch come in later topics.
 
 ### `c-choose-trigger`
 
-- **goal:** choose what triggers a workflow's runs, and defend the choice by its trade-offs
+- **goal:** choose what triggers a workflow's runs, and say why
 - **criterion:** given a described workflow, says what should trigger its runs (a person, a
-  schedule or an event) and compares that choice with the strongest alternative. Names one goal the choice
-  helps and one it hurts, compared with that alternative, such as timeliness, people's effort or
-  cost, and ties each to something about this workflow: how soon its result is needed, how often
-  there is work to do, who would have to remember to start it, or whether the machine or person
-  that does the work will be available when the trigger fires. A reason that doesn't refer to
-  this workflow at all, such as "a schedule is automatic", does not meet it. Where the trigger is
-  an event, also says whether the workflow notices it by checking repeatedly or by being told
-  when it happens, and why that fits this workflow.
+  schedule or an event) and why, with a reason tied to something about this workflow that makes
+  the choice fit better than the other kinds: how soon its result is needed, how often there is
+  work to do, who would have to remember to start it, or whether the machine or person that does
+  the work will be available when the trigger fires. A reason that doesn't refer to this workflow
+  at all, such as "a schedule is automatic", does not meet it.
 - **cases:**
-  - `event`: a workflow best started by an event, so the answer also says whether it is noticed
-    by checking repeatedly or by being told
+  - `event`: a workflow best started by an event
   - `unavailable`: a workflow whose machine, or the person who does a step, may be unavailable
     when the trigger is due
   - `not-event`: a workflow best started by a person or a schedule
 - **taught elsewhere:** session 19 class
 
+### `c-choose-noticing`
+
+- **goal:** decide how an event-driven workflow finds out that its event happened
+- **criterion:** given a workflow started by an event, says whether it should notice the event by
+  polling or through a hook, and why, with a reason tied to this workflow: whether the source
+  offers a hook, how soon the result is needed, what each check costs, and who would have to set
+  up receiving the message. A reason that doesn't refer to this workflow at all does not meet it.
+- **cases:**
+  - `hook`: a workflow best told through a hook
+  - `poll`: a workflow best served by polling
+- **taught elsewhere:** session 19 class
+
 ### `c-when-to-queue`
 
 - **goal:** decide where a workflow's work waits until a worker can take it up
-- **criterion:** given a described workflow, says what its work queue is: a queue the workflow
-  keeps, a source that already holds the waiting work, or a list worked out each time from the
-  state of files. Says what triggers the worker that takes work from it, and what would go
-  wrong in this workflow without it. Having no queue is right only when the worker is always
-  available and never overloaded, or when dropping some work is acceptable, and saying so means
-  naming which of those holds here. A verdict with no consequence tied to this workflow does
-  not meet it.
+- **criterion:** given a described workflow, says where its work should wait until a worker can
+  take it up (a queue the workflow keeps, a source that already holds the waiting work, a list
+  worked out each time from the state of files, or nowhere) and why, with a reason tied to this
+  workflow: what would go wrong here without it, or, for nowhere, whether the worker is always
+  available and never overloaded or dropping some work is acceptable. A reason with no
+  consequence tied to this workflow does not meet it.
 - **cases:**
   - `worker-unavailable`: work can arrive while the machine or person that does it is off or otherwise unavailable
   - `spread-out`: work arrives in bursts, or faster than it should be done, so it has to be
