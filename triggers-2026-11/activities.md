@@ -58,7 +58,7 @@ planning their own Problem Set 5 workflow will require.
 - **supports:** orient
 - **checks:** `o-orientation`
 - **artifact:** a reading the course wrote for this topic, `tasks/read-triggers.md` in this folder,
-  "What starts a workflow, and where its work waits" (about 1,300 words, about 6 to 7 minutes). No
+  "What starts a workflow, and where its work waits" (about 1,400 words, about 6 to 7 minutes). No
   external reading is used: the instructor wanted a course-written one, a sequel to
   `workflow-steps-design-2026-10/tasks/read-workflow-design.md`. It continues that reading's
   made-up example, a teaching assistant who grades about 200 homework submissions a week, and adds
@@ -84,6 +84,7 @@ planning their own Problem Set 5 workflow will require.
   real tool or service except cron, launchd and Git, all generically, and names Mac and Linux as
   operating systems. It says nothing about how state is
   stored, how failures are handled or what each part may touch, all later topics.
+- **verified:** 2026-11-03
 - **learner does:** reads the page once, top to bottom, and stops once, in Three kinds of trigger
   after the three trade-off bullets and before the paragraph beginning "Which matters most",
   answering before reading on ("I don't know yet" is an honest answer): which kind of trigger
@@ -677,6 +678,7 @@ planning their own Problem Set 5 workflow will require.
 - **artifact:** no external source. A described workflow whose design is left open, as in
   `a-place-the-waiting-work`, and one four-choice question offering four whole designs for it, from
   this activity's bank or written live per the generator below. About 3 minutes a question.
+- **verified:** 2026-11-03
 - **learner does:** reads the scenario, then picks which of four whole designs fits it: each says
   where the worker finds the work still to be done, what starts the worker, and why.
 - **tutor role:** examiner
@@ -779,7 +781,10 @@ planning their own Problem Set 5 workflow will require.
   scenario that settles each dimension of the sound design and, for each near-miss, which
   dimension is wrong and the fact that rules it out.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. The
-  tutor takes the illustration in `a-place-the-waiting-work` of the same shape, writes four
+  tutor takes the illustration in `a-place-the-waiting-work` of the same shape where there is one
+  (for `unavailable`, the bike repair shop; for `no-queue` `always-ready`, the office computer case
+  in its worked example), and otherwise makes up one of its own in that activity's style, in a
+  domain no bank here uses. It writes four
   designs for it in this activity's style, and goes through them aloud, saying for each near-miss
   which dimension is wrong and which fact shows it. It may point to Where the work waits and When
   there's no queue in `tasks/read-triggers.md`.
