@@ -5,11 +5,17 @@ with the learner.
 
 The initial study, the orientation and one passed question for each of the five words, comes to
 about 25 minutes: about 11 for `a-read-triggers` (the reading is about 6 to 7 minutes on its own)
-and about 3 a word. Both capabilities carry `taught elsewhere` (the session 19 class), so their
-four activities are offered after that class, as practice and review. Meeting both capabilities
-through the write-it checks takes six questions, one per case, at about 5 minutes each, so about 30
-minutes; through the pick-one checks, about 2 minutes a question for `a-pick-trigger-defense` and
-about 3 for `a-trace-the-waiting-work`, so about 15.
+and about 3 a word. All three capabilities carry `taught elsewhere` (the session 19 class), so
+their six activities are offered after that class, as practice and review. Meeting all three
+through the write-it checks takes eight questions, one per case: three for `a-argue-a-trigger` and
+two for `a-argue-noticing` at about 3 minutes each, and three for `a-place-the-waiting-work` at
+about 4, so about 27 minutes. Through the pick-one checks it is about 2 minutes a question for
+`a-pick-trigger-defense` and `a-pick-noticing` and about 3 for `a-trace-the-waiting-work`, so
+about 19.
+
+Every question asks for one thing, and every question works on its own as a bank question, never
+relying on a tutor's follow-up to collect the rest of an answer. A free-response question's fixed
+text always says how to answer ("Answer in two or three sentences.").
 
 In this topic's banks and live questions, every workflow is a made-up one described in words:
 never the learner's own app, repo, machine or project, never the reading's grading example (nor
@@ -37,15 +43,17 @@ planning their own Problem Set 5 workflow will require.
 | id                 | Goal | Criterion: what gets examined, and what counts |
 | ------------------ | ---- | ---------------------------------------------- |
 | `o-orientation`    | get the shape of this area before working on any particular part of it | `orientation` |
-| `c-choose-trigger` | choose what triggers a workflow's runs, and defend the choice by its trade-offs | given a described workflow, says what should trigger its runs (a person, a schedule or an event) and compares that choice with the strongest alternative. Names one goal the choice helps and one it hurts, compared with that alternative, such as timeliness, people's effort or cost, and ties each to something about this workflow: how soon its result is needed, how often there is work to do, who would have to remember to start it, or whether the machine or person that does the work will be available when the trigger fires. A reason that doesn't refer to this workflow at all, such as "a schedule is automatic", does not meet it. Where the trigger is an event, also says whether the workflow notices it by checking repeatedly or by being told when it happens, and why that fits this workflow. Cases: `event`, `unavailable`, `not-event` |
-| `c-when-to-queue`  | decide where a workflow's work waits until a worker can take it up | given a described workflow, says what its work queue is: a queue the workflow keeps, a source that already holds the waiting work, or a list worked out each time from the state of files. Says what triggers the worker that takes work from it, and what would go wrong in this workflow without it. Having no queue is right only when the worker is always available and never overloaded, or when dropping some work is acceptable, and saying so means naming which of those holds here. A verdict with no consequence tied to this workflow does not meet it. Cases: `worker-unavailable`, `spread-out`, `no-queue` |
+| `c-choose-trigger` | choose what triggers a workflow's runs, and say why | given a described workflow, says what should trigger its runs (a person, a schedule or an event) and why, with a reason tied to something about this workflow that makes the choice fit better than the other kinds: how soon its result is needed, how often there is work to do, who would have to remember to start it, or whether the machine or person that does the work will be available when the trigger fires. A reason that doesn't refer to this workflow at all, such as "a schedule is automatic", does not meet it. Cases: `event`, `unavailable`, `not-event` |
+| `c-choose-noticing` | decide how an event-driven workflow finds out that its event happened | given a workflow started by an event, says whether it should notice the event by polling or through a hook, and why, with a reason tied to this workflow: whether the source offers a hook, how soon the result is needed, what each check costs, and who would have to set up receiving the message. A reason that doesn't refer to this workflow at all does not meet it. Cases: `hook`, `poll` |
+| `c-when-to-queue`  | decide where a workflow's work waits until a worker can take it up | given a described workflow, says where its work should wait until a worker can take it up (a queue the workflow keeps, a source that already holds the waiting work, a list worked out each time from the state of files, or nowhere) and why, with a reason tied to this workflow: what would go wrong here without it, or, for nowhere, whether the worker is always available and never overloaded or dropping some work is acceptable. A reason with no consequence tied to this workflow does not meet it. Cases: `worker-unavailable`, `spread-out`, `no-queue` |
 
 ## Coverage
 
 | goal               | checks | notes |
 | ------------------ | ------ | ----- |
 | `o-orientation`    | `a-read-triggers` |       |
-| `c-choose-trigger` | `a-argue-a-trigger`, `a-pick-trigger-defense` | No check holds the learner to the strongest alternative: `a-pick-trigger-defense` supplies it, and `a-argue-a-trigger` accepts any alternative its key doesn't count as plainly weak. |
+| `c-choose-trigger` | `a-argue-a-trigger`, `a-pick-trigger-defense` |       |
+| `c-choose-noticing` | `a-argue-noticing`, `a-pick-noticing` |       |
 | `c-when-to-queue`  | `a-place-the-waiting-work`, `a-trace-the-waiting-work` |       |
 
 ---
@@ -90,10 +98,10 @@ planning their own Problem Set 5 workflow will require.
   answering before reading on ("I don't know yet" is an honest answer): which kind of trigger
   would you pick for the TA's grading, and what about the TA's workflow makes you think so? The
   next paragraph gives the page's own answer, which the learner then reads. Then the
-  close, about 2 minutes, with the reading still beside them: answers the question the tutor
-  puts: with this page beside you, could you now take a short description of a workflow and say
-  what should start its runs and argue that choice against another; and say where its work should
-  wait until something takes it up, or why it needn't wait?
+  close, about 2 minutes, with the reading still beside them: answers the one question the tutor
+  puts: with this page beside you, could you now take a short description of a workflow and make
+  the three decisions this page covers, saying why for each: what should start its runs, how it
+  should find out that its event happened, and where its work should wait?
 - **tutor role:** explainer
 - **tutor does:** puts the reading in front of the learner by opening the file
   `tasks/read-triggers.md` from the topic folder on the local filesystem, so the learner's agent
@@ -109,8 +117,8 @@ planning their own Problem Set 5 workflow will require.
   then? What about this workflow says yes or no?"). Does not set or rehearse any word question from `a-words`: does
   not ask the learner to define any of the five words, to say what separates polling from a hook
   or event-driven from polling, or to correct a misused sentence. Does not set or rehearse a
-  question from this topic's capability activities: does not ask the learner to choose a trigger or
-  a queue for a new workflow beyond what the reading itself works through; if the learner asks how
+  question from this topic's capability activities: does not ask the learner to choose a trigger, a
+  way of noticing an event or a place for work to wait for a new workflow beyond what the reading itself works through; if the learner asks how
   to do that, says that is what the session 19 class and the practice after it are for. Says that
   building a workflow is Problem Set 5's work, not this topic's; that how state is stored, how
   failures are handled, what each part may touch and where else a workflow could run come in later
@@ -120,21 +128,21 @@ planning their own Problem Set 5 workflow will require.
   rules on the answer.
 - **done when:** criterion met. The bar for this goal is did it once and help is expected
   throughout, so the ruling is on the learner's answer to the readiness question, not on the stop
-  or on whether the tutor thinks they are ready. A plain yes to both parts is `criterion: met`. A
-  hedge on either part, with no plain no, is `criterion: unclear`: for the first part go over
-  Three kinds of trigger and Noticing an event once more, for the second Where the work waits and
-  When there's no queue, and put the question again. A second hedge stays `unclear`: the tutor says
-  both decisions are taught in the session 19 class and offers this topic's practice activities
-  after it. Before session 19, an answer that waits on the class ("not until we've done it in
-  class") is a hedge, not a no: it is `criterion: unclear` with no rereading, the tutor says the
-  class teaches both decisions, and puts the question again at the learner's first study after it.
-  A plain no to either part is `criterion: not met`: record it, ask what is missing, and offer to go
+  or on whether the tutor thinks they are ready. A plain yes is `criterion: met`. A hedge, with no
+  plain no, is `criterion: unclear`: ask which decision feels shaky, go over its section once more
+  (Three kinds of trigger, Noticing an event, or Where the work waits and When there's no queue),
+  and put the question again. A second hedge stays `unclear`: the tutor says all three decisions
+  are taught in the session 19 class and offers this topic's practice activities after it. Before
+  session 19, an answer that waits on the class ("not until we've done it in class") is a hedge,
+  not a no: it is `criterion: unclear` with no rereading, the tutor says the class teaches all
+  three decisions, and puts the question again at the learner's first study after it. A plain no is
+  `criterion: not met`: record it, ask what is missing, and offer to go
   back over the section that bears on it; don't put the question again in the same sitting. This
   goal isn't required, so a no never blocks anything else the learner wants to try.
 - **worked example:** n/a
 - **doesn't show:** an indication of readiness is all this goal asks for and all this shows. It
   shows nothing about the five words, which have their own supply in `a-words`, and nothing about
-  either capability: the reading works one example of each decision, the readiness question asks
+  any capability: the reading works one example of each decision, the readiness question asks
   only whether the learner thinks they could do the same, and the stop is helped, ungraded and
   answered just before the page gives its own answer. The reading is one course-written page built on one made-up grading
   workflow, so it shows nothing of a workflow in a different domain, or of the case worked in the
@@ -150,13 +158,10 @@ planning their own Problem Set 5 workflow will require.
 - **supports:** attempt
 - **checks:** `c-choose-trigger`
 - **artifact:** no external source. A described workflow whose trigger is left open, told in a
-  short paragraph, from this activity's bank or written live per the generator below. About 5
+  short paragraph, from this activity's bank or written live per the generator below. About 3
   minutes a question.
-- **verified:** 2026-11-02
-- **learner does:** reads the scenario and its one question; says what should start the
-  workflow's runs, compares that with the strongest other option, names one goal the choice helps
-  and one it hurts, saying what about the workflow makes it so, and, if the choice is an event,
-  says whether the workflow should notice it by checking repeatedly or by being told, and why.
+- **learner does:** reads the scenario and its one question; says in two or three sentences what
+  should start the workflow's runs, and why.
 - **tutor role:** examiner
 - **tutor does:** choosing a trigger is taught in the session 19 class (`taught elsewhere`), and
   this is practice for after it: before session 19 the tutor says so and offers to wait, and goes
@@ -165,11 +170,8 @@ planning their own Problem Set 5 workflow will require.
   being generic. Gives help whenever it is asked for, and records the attempt as helped. When the
   generator is run live, writes the key and the case into the record before showing the question.
   Labels the attempt with the question's path, or `a-argue-a-trigger/<shape>` when run live, and
-  records the case with `--cases`. Rules on the reasons, not on the choice: any trigger defended by
-  reasons tied to the workflow passes, within the credit rules below. After the ruling, when the
-  learner's alternative isn't the key's strongest one, asks once, "What about <the key's
-  alternative>?", and talks that comparison through with the learner, as help. The follow-up never
-  changes the credit already given.
+  records the case with `--cases`. Rules from the question alone, by the credit rules below; no
+  follow-up question collects part of the answer.
 - **done when:** the criterion met with no help, case by case: a full-credit answer passes the case
   its question carries.
 - **generator:** **A scenario** is one made-up workflow that someone runs, told in one paragraph of
@@ -190,63 +192,33 @@ planning their own Problem Set 5 workflow will require.
     person is there and when they are away;
   - what an empty run costs (a program glancing at a folder, or an agent reading every message
     again to find that nothing is new);
-  - where the work comes from, and whether that source can tell the workflow when something
-    arrives ("the sign-up form can send a message to a web address each time someone signs up")
-    or can only be looked at ("the shared mailbox has no way to announce new mail; it can only be
-    checked").
+  - where the work comes from. How an event would be noticed is `a-argue-noticing`'s question,
+    not this one's, so the scenario need not say whether the source can send word.
   Plus one irrelevant detail, said as plainly as the facts and bearing on no goal (how long the
   workflow has run, what the form's heading says, which day the team meets). The facts are stated
   plainly, never as a hint, and never using the words trigger, schedule, event, polling, hook,
   cron or queue.
 
   **A question** reads: "What should start this workflow's runs: a person, a schedule or an event?
-  Compare your choice with the strongest other option: name one goal your choice helps and one it
-  hurts, and say what about this workflow makes it so. If you choose an event, also say whether the
-  workflow should notice it by checking repeatedly or by being told, and why." Free response,
-  `type: free`. One question per scenario.
+  Say why. Answer in two or three sentences." Free response, `type: free`. One question per
+  scenario, asking only this.
 
   **Shapes**, each with the case it carries, which its rubric `cases:` line lists. In every shape
-  the facts give the natural choice one goal it helps and one it hurts against the strongest
-  alternative, each traceable to a fact, and give the alternative the same, so a learner who picks
-  the alternative can also pass, except in `event-best`: that shape's case is about how an event is
-  noticed, so a non-event choice there can earn at most half (see Credit). Both the natural
-  choice and the strongest alternative are always workable designs, ones that would actually run
-  and produce a result; a design that would never run (a schedule set for when the machine is
-  turned off) is at most an option the key counts as plainly weak. The examples are
-  illustrations, not bank items, and their domains (a dentist's office, a running club, a
-  community choir) are used by no bank in this topic.
+  the facts make one kind of trigger fit better than the other two, and the key names the fact or
+  facts that show it; in a Hard question two kinds fit about equally and the key accepts both.
+  Every choice the key accepts is a workable design, one that would actually run and produce a
+  result; a design that would never run (a schedule set for when the machine is turned off) is
+  never accepted. The examples are illustrations, not bank items, and their domains (a dentist's
+  office, a running club, a community choir) are used by no bank in this topic.
   - `event-best` (`event`): a result is needed within minutes or an hour; work arrives a few times
-    a day at unpredictable times, so most scheduled runs would be empty, and an empty run is costly
-    (an agent rereads everything); the machine is always on. Natural choice an event; strongest
-    alternative a schedule frequent enough to be timely. Helped: timeliness, tied to how soon the
-    result is needed, or the cost of empty runs, tied to how rarely work comes. Hurt: people's
-    effort at set-up, tied to what the source needs done to tell the workflow, or the cost of a
-    burst, tied to a fact that work sometimes comes many at once (each starting its own run). Two
-    variants, which the key names: `told`, where the source can send word when something arrives,
-    so being told fits (quicker, and no empty looks); and `poll`, where it can only be looked at,
-    so checking repeatedly is the only way, at an interval tied to how soon the result is needed.
-    In a `poll` scenario the facts make the difference from a schedule concrete: a look is cheap
-    (a program checks whether anything new has come in, which takes a moment and costs nothing),
-    while a run is costly (the agent reads the whole mailbox or every record). So the event
-    noticed by checking repeatedly means many cheap looks that start the costly agent only when
-    something is new, against the strongest alternative, a schedule that runs the agent itself as
-    often, paying the full cost every time. The key states that difference in those terms. A
-    `poll` scenario also carries one fact that gives the event choice its hurt goal against that
-    schedule: people's effort at set-up, because a separate checking program has to be set up
-    beside the agent, and the scenario says who would have to do that and that it is a bother for
-    them ("anything beyond the agent itself means asking my nephew, who helps once a month"). The
-    key names that hurt goal and its sentence. A `told` scenario likewise always carries one fact
-    that gives the event choice its hurt goal against the frequent schedule, chosen from these two:
-    people's effort at set-up, because receiving the source's message needs something set up that
-    a schedule doesn't, and the scenario says who would have to do it and that it is a bother for
-    them; or the cost of a burst, because the scenario says work sometimes comes many at once, so
-    each arrival starts its own costly run where one scheduled run would take them together. The
-    key names which, and its sentence.
-    "New patients fill in a form on the office's website, a few a day, and the dentist wants the
-    agent's summary of each patient's history waiting before the patient arrives, often within the
-    hour. The website can send a message to a web address each time a form comes in, but taking
-    those messages in means the office manager setting something up, and she dreads anything
-    technical."
+    a day at unpredictable times, so most runs on a schedule frequent enough to be timely would
+    find nothing, and a run is costly (an agent rereads everything); the machine is always on.
+    Natural choice an event. The deciding facts: how soon the result is needed (a person or a
+    slow schedule would be too late) and how rarely and unpredictably the work comes (a frequent
+    schedule would mostly run for nothing). "New patients fill in a form on the office's website,
+    a few a day at no set times, and the dentist wants the agent's summary of each patient's
+    history waiting before the patient arrives, often within the hour. Each summary run has the
+    agent reread the whole patient file."
   - `unavailable` (`unavailable`): the machine that does the work, or a person who does a step,
     is unavailable at known times, and the facts bear on whether each option would find them
     available when it fires. Two variants, which the key names:
@@ -256,21 +228,21 @@ planning their own Problem Set 5 workflow will require.
       day and a result is needed by a set time. The two workable options are a schedule at a time
       the laptop is usually on and the runner starting it by hand when they turn the laptop on;
       which is natural depends on the facts (how irregular the on-time is against how reliable
-      the runner is at remembering). Helped and hurt, for the hand start against the schedule:
-      correctness, tied to the run happening every day even when the laptop comes on late, since a
-      schedule that fires while it is still off simply doesn't run; against people's effort, tied
-      to the runner having to remember. "Each evening the club's agent turns the day's run logs
+      the runner is at remembering). For the hand start, the deciding fact is the late mornings:
+      a schedule that fires while the laptop is still off simply doesn't run that day. For the
+      schedule, it is a runner who forgets, against a laptop that is reliably on by the set time.
+      "Each evening the club's agent turns the day's run logs
       into a leaderboard. The captain turns her laptop off at about 11 p.m.; most mornings she
       turns it on at 7, but on her early shifts not until noon. Members check the board at
       breakfast, and she admits she forgets small chores."
     - `person-away`: a person must do a step of each run (approve, sign off, add something by
       hand) and is away at known times (weekends, every other Friday), and the input changes
       while they are away, so a result made before they leave is stale by the time they act on it.
-      The two workable options are a schedule timed for just before the person is back and the
-      person starting it themselves when they return, or a schedule before they leave; the key
-      names the natural one and the strongest alternative. Helped and hurt tied to those facts:
-      correctness, tied to the result being fresh when the person acts on it, against people's
-      effort (someone has to remember) or timeliness (the result now comes later). Never the
+      The workable options are a schedule timed for just before the person is back, the person
+      starting it themselves when they return, and a schedule before they leave; the key names
+      which it accepts. The deciding fact is that the input changes while the person is away, so a
+      run made before they leave is stale when they act on it; between the first two, whether the
+      person reliably remembers decides. Never the
       reading's example of a TA approving feedback, or any approval of student work. "A community
       choir's agent drafts each week's seating chart from who has said they'll attend, and the
       director approves it before it goes out. She is away from Friday evening to Monday morning,
@@ -278,102 +250,77 @@ planning their own Problem Set 5 workflow will require.
   - `person-or-schedule` (`not-event`): two variants, which the key names. `schedule`: work
     accumulates steadily, a result is needed by a set time and not before, the machine is always
     on or always on at that time, and reacting to each item one at a time would mean many runs
-    where one would do; natural choice a schedule, strongest alternative an event (or a person,
-    where the key says so). `person`: runs are rare and irregular, and the person has to be there
-    anyway (to supply the input or look over the result straight away); natural choice a person,
-    strongest alternative a schedule, which would mostly run before there is anything to do or
-    when nobody is there to look. Helped and hurt goals tied to those facts: for a schedule,
-    people's effort (nobody has to remember) and the cost of many runs, against timeliness for
-    work that waits until the set time; for a person, the cost of empty runs and the result
-    being looked at straight away, against people's effort and the run not happening when they
-    forget.
+    where one would do; natural choice a schedule, the deciding facts being the set time and the
+    steady flow (an event would start many runs where one would do, and a person would have to
+    remember). `person`: runs are rare and irregular, and the person has to be there anyway (to
+    supply the input or look over the result straight away); natural choice a person, the
+    deciding facts being the irregular need and the person's presence (a schedule would mostly run
+    before there is anything to do or when nobody is there to look).
 
   **How hard.** Medium when the facts favor the natural choice clearly. Hard, in `unavailable` and
-  `person-or-schedule`, when the strongest alternative is nearly as good (in `machine-off`, a
-  laptop that is late coming on only now and then, against a runner who sometimes forgets), so
-  both are defensible; the key then treats both as natural choices, each with its own helped and
-  hurt goals. In `event-best` the event stays the only natural choice, since Credit caps a
-  non-event choice there; a Hard `event-best` question is hard through its facts instead: a `poll`
-  scenario whose result is needed soon enough that the checking interval must be worked out from
-  it, or a `told` scenario whose set-up cost is large enough that the hurt goal weighs heavily.
-  The question's wording is unchanged.
+  `person-or-schedule`, when a second kind is nearly as good (in `machine-off`, a laptop that is
+  late coming on only now and then, against a runner who sometimes forgets), so both are
+  defensible; the key then accepts both, each with its deciding fact. In `event-best` the event
+  stays the only natural choice; a Hard `event-best` question is hard through its facts instead:
+  work that comes often enough that a frequent schedule looks tempting, with the cost of each run
+  the fact that tips it. The question's wording is unchanged.
 
   **Spread across the bank.** A bank is six scenarios, six questions: each shape twice, one of
-  each pair Hard; `event-best` once `told` and once `poll`; `unavailable` once `machine-off` and once
-  `person-away`; `person-or-schedule` once `schedule` and once `person`. When the generator is run live, the tutor picks each next shape to carry a case
+  each pair Hard; `unavailable` once `machine-off` and once `person-away`; `person-or-schedule` once
+  `schedule` and once `person`. When the generator is run live, the tutor picks each next shape to carry a case
   the learner hasn't passed.
 
   **Domains** vary by scenario, none repeating within the bank: a dog daycare's photo updates to
   owners, a food pantry's weekly inventory count, a hardware store's low-stock alerts, a
   bed-and-breakfast's booking confirmations, a city council member's constituent emails, a road
   race's finish-time results, a family's monthly budget summary, a robotics team's sponsor
-  thank-you notes. No domain from the other three question activities' lists, and no homework or
+  thank-you notes. No domain from the other five question activities' lists, and no homework or
   grading workflow.
 
-  **The key** gives the natural choice (two in a Hard question) and the strongest alternative; for
-  each, the goal it helps and the goal it hurts against the other, and the sentence carrying each
-  fact; any option the key counts as plainly weak (a person for work arriving a hundred times a
-  day); for `event-best`, the noticing method the facts favor and why, and for a `poll` scenario
-  the cheap-look, costly-run difference from a schedule; for `unavailable`, when the machine is on
-  or the person is there, and which options are plainly weak because they would fire while the
-  machine is off or the person away with nothing to show for it; the irrelevant detail; and two or three generic reasons that would fail
-  ("a schedule is automatic", "events are faster", "polling wastes resources", "a person can make
+  **The key** gives the choice it accepts (two in a Hard question), the deciding fact or facts and
+  the sentence carrying each, why each other kind fits worse and the fact that shows it, any
+  choice it never accepts (one that would fire while the machine is turned off or the person away
+  and so produce nothing, or a stale result); the irrelevant detail; and two or three generic
+  reasons that would fail ("a schedule is automatic", "events are faster", "a person can make
   sure it's done right").
 
-  Credit: full when the answer chooses a trigger, compares it with a strongest alternative, and
-  names a goal the choice helps and a goal it hurts compared with that alternative, each with a
-  reason tied to a fact about this workflow. A strongest alternative is the key's, or in a Hard
-  question the other natural choice; an alternative outside the key that the key doesn't count as
-  plainly weak also counts, and its helped and hurt goals are judged on the same terms, each
-  needing a reason tied to a fact in this scenario. The choice itself may likewise be outside the
-  key, except in `event-best` (below). A reason is tied when it refers to this workflow ("the
-  summaries are needed within the hour", "the captain's laptop is off until noon on early-shift days"); one resting on
-  the irrelevant detail is not, and neither is one the scenario's facts contradict.
-  An intermediate goal from the last topic's reading counts on the same terms as a final goal.
-  Also, in any question where the answer chooses an event, it says whether to check repeatedly or
-  be told, with a reason tied to this workflow (whether the source can send word, how soon the
-  result is needed, what each look costs); choosing to be told when the source can only be looked
-  at fails that part. Every scenario says whether its source can send word, so this can always be
-  ruled on.
-  An answer is ruled on the design it describes, not the name it gives it: cheap repeated looks
-  that start the costly run only when something is new ("a schedule every ten minutes that checks
-  for anything new and starts the agent only then") are the event choice noticed by checking
-  repeatedly, whatever the answer calls them, and are judged as that. An `event-best` answer that
-  chooses a person, or a schedule that runs the whole workflow each time, gets at most half,
-  however well tied its reasons, and does not pass `event`: the case asks how the event would be noticed, which a
-  non-event answer never says. After the ruling the tutor may ask the learner how the workflow
-  would notice the event if one started it, as help. In an `unavailable` question, at least one of
-  the two reasons rests on whether the machine is on, or the person there, when the trigger fires;
-  a trigger that would fire while the machine is off or the person away, from an answer that
-  doesn't notice that, gets at most half. An answer that relies on a missed run being caught up
-  when the laptop wakes (as the reading says launchd does after sleep) rests on a fact the scenario
-  contradicts, since the laptop is turned off, not asleep: that reason is not tied, and the tutor
-  says so after the ruling. Half when one of the two goal reasons is tied and the other is generic
-  or missing; when both are tied but the alternative is missing or one the key counts as plainly
-  weak; or, in any answer that chooses an event, when everything else is there but the noticing
-  part is missing or untied. None when neither reason is tied, or no trigger is chosen.
+  Credit: full when the answer chooses a trigger the key accepts and gives a reason tied to a fact
+  about this workflow that makes that choice fit better than the other kinds. One tied reason is
+  enough; the answer need not compare with every other kind, and a reason that also names what the
+  choice costs ("it means remembering each morning, but the laptop is often off at 7:15") still
+  earns full credit. A reason is tied when it refers to this workflow ("the summaries are needed
+  within the hour", "the captain's laptop is off until noon on early-shift days"); one resting on
+  the irrelevant detail is not, and neither is one the scenario's facts contradict. An answer is
+  ruled on the design it describes, not the name it gives it: cheap repeated looks that start the
+  costly run only when something is new ("a schedule every ten minutes that checks for anything
+  new and starts the agent only then") are an event choice, whatever the answer calls them. In an
+  `unavailable` question the accepted choices are those that account for when the machine is on or
+  the person there, and the reason must rest on that; an answer that relies on a missed run being
+  caught up when the laptop wakes (as the reading says launchd does after sleep) rests on a fact
+  the scenario contradicts, since the laptop is turned off, not asleep, so that reason is not
+  tied. Half when the choice is one the key doesn't accept but the reason is tied to a real fact
+  of this workflow (the learner read the scenario but drew the wrong verdict), or when the choice
+  is accepted but the reason is generic or missing. None when the choice is not accepted and the
+  reason is generic or missing, or no trigger is chosen.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. The
   tutor works the illustration of the same shape as the question aloud, from the facts to the
-  choice: says which facts bear on timeliness, on people's effort and on the cost of empty runs,
-  picks the strongest alternative and says why it is the strongest, names the goal helped and the
-  goal hurt with the fact behind each, and, for `event-best`, says whether the source can send word.
-  Then shows a generic version ("a schedule is automatic") and says why it doesn't refer to this
-  workflow at all. It may point to Three kinds of trigger, Noticing an event, and Schedules, and
+  choice: says which facts bear on how soon the result is needed, how often there is work, who
+  would have to remember and whether the machine or person will be available, says which kind
+  those facts favor and why the other two fit worse. Then shows a generic version ("a schedule is
+  automatic") and says why it doesn't refer to this workflow at all. It may point to Three kinds of trigger, Noticing an event, and Schedules, and
   the laptop problem in `tasks/read-triggers.md`.
 - **doesn't show:** the workflow's facts are all in one short paragraph with one irrelevant detail
   beside them, so a pass shows the learner can pick what matters out of a loose description, but
   not that they would notice a fact they need is missing and ask, as their own Problem Set 5
   workflow would make them. The `machine-off` variant always puts the work on the runner's own
   laptop, so it shows nothing about choosing a different machine, which is a later topic, and
-  every machine that is off is turned off, so nothing tests one that is only asleep. Credit
-  accepts any alternative the key doesn't count as plainly weak, so a pass doesn't show the
-  learner found the strongest one; the tutor's follow-up after the ruling is help. An `event-best`
-  question passes only an event choice, so it doesn't show the learner would defend a non-event
-  choice there well. Ruling on whether
+  every machine that is off is turned off, so nothing tests one that is only asleep. One tied
+  reason earns full credit, so a pass doesn't show the learner weighed every kind against the
+  others. How an event is noticed is not asked here; `a-argue-noticing` asks it. Ruling on whether
   a reason is tied is a judgment; the key's generic reasons narrow it without removing it.
 - **offer as:** the write-it-yourself check, after session 19: a short description of a workflow,
-  and you say what should start it and argue the choice. About 5 minutes a question. Harder than
-  `a-pick-trigger-defense`, since you choose, find the facts and write the argument yourself.
+  and you say what should start it and why. About 3 minutes a question. Harder than
+  `a-pick-trigger-defense`, since you choose, find the facts and write the reason yourself.
 
 ### `a-pick-trigger-defense`
 
@@ -384,125 +331,269 @@ planning their own Problem Set 5 workflow will require.
   two people's defenses of the same trigger for it, from this activity's bank or written live per
   the generator below. About 2 minutes a question.
 - **verified:** 2026-11-02
-- **learner does:** reads the scenario and the one question served, two defenses of the same
-  choice of trigger, and picks the sound one.
+- **learner does:** reads the scenario and the one question served, two one-sentence defenses of
+  the same choice of trigger, and picks the one whose reason is sound.
 - **tutor role:** examiner
 - **tutor does:** as `a-argue-a-trigger`'s, including the offer to wait for session 19, except that
   it labels a live run `a-pick-trigger-defense/<shape>` and rules from the rubric's `answer`. Never
-  says which clause differs between the two defenses before the learner has chosen.
+  says which reason is faulty before the learner has chosen.
 - **done when:** the criterion met with no help, case by case. Each question gets one ruling: the
   sound defense passes the case the question carries, and the other passes none. There is no half
   credit.
 - **generator:** **A scenario** uses the same three shapes, variants and facts as
-  `a-argue-a-trigger`, except in one respect: the facts are not running prose. After one or two
+  `a-argue-a-trigger`, except in two respects: it adds one fact that bears on something other
+  than when runs should start (who reads the result, what form it takes), for a `does-not-support`
+  near-miss to use, and the facts are not running prose. After one or two
   sentences saying what the workflow is for and what does its work, a short paragraph headed "About
   this workflow:" gives its facts, one sentence each, then one sentence that would be true whatever
-  started the runs (how long each run takes, or who reads the result), and nothing else, so the
+  started the runs (how long each run takes), and nothing else, so the
   learner can check a defense's clause against exactly what the paragraph says. No irrelevant
   detail beyond that sentence.
 
   **A question** reads: "<Name1> and <Name2> both think this workflow's runs should be started by
-  <choice> rather than <alternative>. Here is how each puts it." Then two defenses, each a paragraph
-  starting with a bold label, "**Defense 1, <Name1>'s:**" and "**Defense 2, <Name2>'s:**", each in
-  the same frame: "<Choice> rather than <alternative> helps <goal>, because ... It hurts <goal>,
-  because ...". In an `event-best` question each defense adds a third sentence: "It should notice
-  each <item> by <checking every N minutes / being told by the <source>>, because ...". Both choose
-  the shape's natural choice over its strongest alternative, name the same two goals (except in
-  the `person-away` question, below) and, in an `event-best` question, the same noticing method. Then "Which defense is sound?" with the choices
-  "1. <Name1>'s" and "2. <Name2>'s", `type: mcq`. In the sound defense every because-clause points
-  at a fact in the paragraph and draws from it the direction the fact supports. The near-miss is
-  identical except for one because-clause, faulty in one of three ways:
-  - Medium, `generic`: the clause refers to nothing about this workflow ("because a schedule runs
-    on its own", "because being told is quicker than checking"), the kind of reason the criterion
-    names as not meeting it.
-  - Medium, `does-not-support`: the clause rests on a fact in the paragraph, one no other clause of
-    either defense uses (except where the shape rules below say otherwise), but draws from it a
-    conclusion it doesn't support, either the opposite
-    direction or a goal the fact doesn't bear on ("helps timeliness, because the results are read
-    by the coach", a fact about who reads the result).
-  - Hard, `not-a-difference`: the clause rests on the sentence that would be true whatever started
-    the runs, which bears on the goal but would hold just as much under the alternative, so it is no
-    help or cost of the choice compared with it ("hurts timeliness, because each run takes twenty
-    minutes", when a scheduled run would take twenty minutes too).
-  The two defenses are within ten words of each other in length, and the differing clause matches
-  the one it replaces in form: one fact or claim, said as concretely, with no hedge or intensifier
-  ("might", "always", "clearly") the other lacks; a `generic` clause gets no exception, so it is
-  told apart only by referring to nothing about this workflow, never by its wording. Which defense
-  is longer varies.
+  <choice>. Here is the reason each gives." Then two defenses, each one sentence starting with a
+  bold label, "**Defense 1, <Name1>'s:**" and "**Defense 2, <Name2>'s:**", in the same frame:
+  "<Choice> fits this workflow best, because <reason>." Then "Which defense gives a sound reason?"
+  with the choices "1. <Name1>'s" and "2. <Name2>'s", `type: mcq`. Both choose the shape's natural
+  choice. Each reason is one fact from the paragraph, stated as the paragraph states it, with no
+  added "so ..." explanation, no hedge and no intensifier ("might", "always", "clearly"). The two
+  defenses differ only in their reason, and the two sentences are within ten words of each other
+  in length. Which is longer varies. The sound defense's reason is a fact that makes the choice fit
+  better than the other kinds. The near-miss's reason is also a fact from the paragraph, so it is
+  never generic: both reasons refer to this workflow, and the pick turns only on whether the fact
+  bears on the choice. Its fault is one of two kinds:
+  - Medium, `does-not-support`: the fact bears on something other than when the run should start,
+    such as who reads the result or what form it takes, or points toward a different kind of
+    trigger ("because the summaries are read on the dentist's tablet").
+  - Hard, `not-a-difference`: the fact bears on when runs could happen but holds just as much for
+    the other kinds, so it doesn't make this choice fit better (the neutral sentence, "because
+    each run takes the agent about twenty minutes", or an availability fact that holds for every
+    option alike).
 
-  **Which clause differs, and how**, by shape. Each shape's two questions are fixed, so the fault
-  rules and the spread below agree:
+  **Which reason differs, and how**, by shape. Each shape's two questions are fixed, so the fault
+  rules and the spread below agree. The examples obey the form rule above.
   - `unavailable`, one `machine-off` question and one `person-away` question, as in
-    `a-argue-a-trigger`, with workable choices only: neither defense's alternative is a design
-    that would never run. In both, the differing clause is the helped clause and the near-miss
-    rests on an availability fact, so the pick turns on what the machine being off, or the person
-    being away, actually affects. Every clause, sound or faulty, states only its fact, with no
-    added "so ..." explanation.
-    - `machine-off`, `not-a-difference` resting on an availability fact rather than the neutral
-      sentence. The paragraph gives "The laptop is turned off at 11 p.m.", "Most mornings it is
-      turned on at 7, but on early-shift days not until noon" and "She sometimes forgets small
-      chores." Both defenses: "Starting it by hand when she turns the laptop on, rather than a
-      schedule at 7:15 a.m., helps correctness, because ... It hurts people's effort, because she
-      sometimes forgets small chores." Sound helped clause: "because on early-shift days the laptop
-      isn't turned on until noon." Near-miss: "because the laptop is turned off at 11 p.m." The key
-      says why only the sound clause holds: both options run after the laptop comes on in the
-      morning, so its being off from 11 p.m. holds just as much for the schedule and separates
-      nothing; only the late mornings, when a 7:15 schedule fires while the laptop is still off and
-      simply doesn't run, make the hand start more reliable.
-    - `person-away`, `does-not-support`, the one place where the two defenses name different
-      goals. The paragraph gives "The director approves the chart before it goes out", "She is
-      away from Friday evening to Monday morning" and "Singers keep changing their answers all
-      weekend." Both defenses: "Her starting it on Monday morning, rather than a schedule on Friday
-      at 5 p.m., helps <goal>, because ... It hurts people's effort, because she has to remember
-      it each Monday." Sound helped clause: "helps correctness, because singers keep changing their
-      answers all weekend." Near-miss: "helps timeliness, because she is away from Friday evening
-      to Monday morning." The key says why only the sound clause holds: the chart is approved on
-      Monday either way, and a Friday run would have it drafted sooner, so her being away makes
-      the Monday start no quicker; what it helps is a chart that is up to date.
-  - `event-best`, one `told` question and one `poll` question, and in both the differing clause is
-    the noticing clause, so `event` is never passed with noticing untested. Both defenses name the
-    same noticing method. In the `told` question the fault is `generic` ("by being told by the
-    sign-up form, because being told is quicker than checking", against the sound "because each
-    summary is needed within the hour and the form can send word the moment one comes in"). In the
-    `poll` question the fault is `does-not-support`, of a kind particular to polling: the near-miss
-    checks at an interval that the fact about how soon the result is needed rules out, and gives
-    that fact as its reason ("by checking every three hours, because each reply is wanted within
-    the hour", against the sound "by checking every ten minutes, because each reply is wanted
-    within the hour"). The two then differ in the interval as well as the clause.
-  - `person-or-schedule`, both questions `not-a-difference`: the helped clause in one, the hurt
-    clause in the other.
+    `a-argue-a-trigger`, with workable choices only. In both, the near-miss rests on an
+    availability fact, so the pick turns on what the machine being off, or the person being away,
+    actually affects.
+    - `machine-off`, `not-a-difference`. The paragraph gives "The laptop is turned off at 11
+      p.m.", "Most mornings it is turned on at 7, but on early-shift days not until noon" and "She
+      sometimes forgets small chores." Both: "Starting it by hand when she turns the laptop on fits
+      this workflow best, because ..." Sound (9 words): "on early-shift days the laptop isn't on
+      until noon." Near-miss (9 words): "the laptop is turned off every night at 11." The key says
+      why only the sound reason holds: every option runs after the laptop comes on in the morning,
+      so its being off from 11 p.m. separates nothing; only the late mornings, when a 7:15
+      schedule would fire while the laptop is still off and simply not run, make the hand start fit
+      better.
+    - `person-away`, `does-not-support`. The paragraph gives "The director approves the chart
+      before it goes out", "She is away from Friday evening to Monday morning", "Singers keep
+      changing their answers all weekend" and "She prints the approved chart for the folders."
+      Both: "Her starting it on Monday morning fits this workflow best, because ..." Sound (7
+      words): "singers keep changing their answers all weekend." Near-miss (8 words): "she prints
+      the approved chart for the folders." The key says why only the sound reason holds: printing
+      happens whenever the chart is made, so it has no bearing on when to start; the weekend
+      changes make a Friday run stale by Monday.
+  - `event-best`: one `does-not-support` and one `not-a-difference`. For example, sound (12
+    words): "forms come in only a few a day, at no set times"; near-miss `does-not-support` (8
+    words): "the dentist reads each summary on her tablet"; near-miss `not-a-difference` (8
+    words), the neutral sentence: "each summary takes the agent about two minutes".
+  - `person-or-schedule`: one `does-not-support` and one `not-a-difference`.
 
   **Spread across the bank.** A bank is six scenarios, six questions: each shape twice, made up as
-  above, so two `does-not-support` questions (`person-away`, `poll`), one `generic` (`told`) and
-  three `not-a-difference` (`machine-off` and the two `person-or-schedule`); the sound defense
-  first in three.
-  Names vary and are never reused within a scenario.
+  above, so three `does-not-support` and three `not-a-difference`; the sound defense first in
+  three. Names vary and are never reused within a scenario.
 
   **Domains** are this activity's own, none repeating within the bank: a florist's delivery route
   sheet, a youth soccer club's field-closure notices, a bookstore's preorder arrivals, a carpool's
   weekly driving schedule, a yoga studio's class waitlists, a museum's lost-and-found listings, a
-  quilting guild's meeting minutes, a car wash's daily sales summary. No domain from the other three
+  quilting guild's meeting minutes, a car wash's daily sales summary. No domain from the other five
   question activities' lists, and no homework or grading workflow.
 
   Credit: full for the sound defense, whose position is the rubric's `answer`; none for the other.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. As
-  `a-argue-a-trigger`'s, then the tutor sets the tied defense of the same illustration beside one
-  version of it with a faulty clause, says which fact each clause rests on, and says why the changed
-  one doesn't support its goal or would hold just as much for the alternative.
-- **doesn't show:** the choice, the alternative, the goals and the noticing method are given, and
-  the learner picks between two defenses, so a pass doesn't show they would choose a trigger, find
-  the strongest alternative or find the workflow's facts on their own; with two choices a guess is
-  right half the time. Every defense argues for the natural choice, so a pass says nothing about
-  defending a less obvious one. The facts are laid out one to a sentence under a heading, so a pass
+  `a-argue-a-trigger`'s, then the tutor sets the sound defense of the same illustration beside one
+  with a faulty reason, says which fact each rests on, and says why the changed one has no bearing
+  on when to start, or would hold just as much for another kind of trigger.
+- **doesn't show:** the choice is given and the learner picks between two reasons, so a pass
+  doesn't show they would choose a trigger or find the workflow's facts on their own; with two
+  choices a guess is right half the time. Every defense argues for the natural choice, so a pass
+  says nothing about defending a less obvious one. Both reasons refer to this workflow, so a pass
+  doesn't show the learner would reject a reason that refers to nothing about it. The facts are laid out one to a sentence under a heading, so a pass
   doesn't show the learner would find them in a looser description; `a-argue-a-trigger` gives them
   as running prose and has the learner write the argument.
 - **offer as:** the quick check, after session 19: a short workflow and two people's defenses of the
   same trigger for it, and you pick the one whose reasons actually hold up. About 2 minutes a
   question. Easier than `a-argue-a-trigger`, since the arguments are written for you.
-- **check note:** A pass here leaves most of this goal untested. The trigger, the alternative, the
-  two goals and, in `event-best`, the noticing method are all given, and the learner only judges
-  whose reasons hold. Where the learner has time, have at least one case met through
-  `a-argue-a-trigger`.
+- **check note:** A pass here leaves most of this goal untested. Where the learner has time, have
+  at least one case met through `a-argue-a-trigger`.
+
+### `a-argue-noticing`
+
+- **serves:** `c-choose-noticing`
+- **supports:** attempt
+- **checks:** `c-choose-noticing`
+- **artifact:** no external source. A described workflow that is started by an event, told in a
+  short paragraph, with how it finds out about each event left open, from this activity's bank or
+  written live per the generator below. About 3 minutes a question.
+- **learner does:** reads the scenario and its one question; says in two or three sentences
+  whether the workflow should find out about each new item by checking again and again or by
+  being told each time, and why.
+- **tutor role:** examiner
+- **tutor does:** as `a-argue-a-trigger`'s (the offer to wait for session 19, setting the question
+  as served, help on request recorded as helped, the key and case written before a live question,
+  ruling from the question alone), except that it labels a live run `a-argue-noticing/<shape>`.
+  Never names the cases or which fact matters.
+- **done when:** the criterion met with no help, case by case: a full-credit answer passes the case
+  its question carries.
+- **generator:** **A scenario** is one made-up workflow, told in one paragraph of running prose,
+  six to nine sentences, in the voice of the person who runs it. It says plainly that each new
+  item should be handled soon after it arrives, so the workflow is started by an event; the
+  question is only how it finds out. It says what does the work, in plain words, and on which
+  machine; nothing is described with code, a command, a file format or a query. Mixed through the
+  paragraph, in no fixed order and never under labels, are these facts:
+  - where the items come from, and whether that source can tell the workflow when one arrives,
+    said in plain words ("the sign-up form can send a message to a web address each time someone
+    signs up") or that it can only be looked at ("the shared mailbox has no way to announce new
+    mail; it can only be checked"), never with the words hook, webhook, polling or callback;
+  - how soon a result is needed after an item arrives (within a minute, within the hour, by the
+    end of the day);
+  - what each check would cost: a quick look by a program that takes a moment and costs nothing,
+    or a look that means the agent reading everything again;
+  - who would have to set up receiving the source's message, and whether that is easy for them or
+    a bother ("anything beyond the agent itself means asking my nephew, who helps once a month");
+  - that the machine doing the work is never turned off (an office computer), so a message sent
+    to it would be received; this topic never sets a noticing question on a machine that is off.
+  Plus one irrelevant detail, said as plainly as the facts and bearing on neither method. The facts
+  are stated as facts, never as what they mean for the choice.
+
+  **A question** reads: "Should this workflow find out about each new <item> by checking for new
+  ones again and again, or by being told each time one arrives? Say why. Answer in two or three
+  sentences." Free response, `type: free`. One question per scenario, asking only this.
+
+  **Shapes**, each with the case it carries. The examples are illustrations, not bank items, and
+  their domains (a dentist's office, a tenants' association) are used by no bank in this topic.
+  - `hook-best` (`hook`): the source can send a message each time; the result is needed soon (a
+    minute or a few), so checking would have to be very frequent; receiving the message is easy to
+    set up for whoever must do it. Deciding facts: the source can send word, and how soon the
+    result is needed (or what frequent checks would cost). "New patients fill in a form on the
+    office's website, and the dentist wants each summary within a few minutes. The website can send
+    a message to a web address each time a form comes in, and the office's computer person sets
+    that kind of thing up in an afternoon."
+  - `poll-best` (`poll`): two variants, which the key names. `no-word`: the source can only be
+    looked at, so checking again and again is the only way; the result can wait long enough that
+    checking every so often is fine, and each look is cheap. `costly-setup`: the source can send
+    a message, but receiving it means setting something up that the person who would have to do it
+    finds a bother or can't get to soon, while each look is cheap and the result can wait (within
+    the hour), so a cheap check every ten minutes serves. "Repair requests arrive in the
+    association's shared mailbox, a few a day, and a reply within the day is fine. The mailbox can
+    only be checked; a quick look by a program takes a moment."
+
+  **How hard.** Medium when one deciding fact settles it (the source can't send word; the result
+  is needed within a minute). Hard when the facts pull both ways: in `costly-setup`, a source that
+  can send word but a set-up nobody can do soon; in a Hard `hook-best`, a set-up that is some
+  bother but a result needed so soon that checking would have to be constant. The question's
+  wording is unchanged.
+
+  **Spread across the bank.** A bank is four scenarios, four questions: `hook-best` twice, one Hard;
+  `poll-best` twice, once `no-word` (Medium) and once `costly-setup` (Hard). When the generator is
+  run live, the tutor picks each next shape to carry a case the learner hasn't passed.
+
+  **Domains** vary by scenario, none repeating within the bank: a vet clinic's appointment
+  requests, a farm stand's preorders, a theater's volunteer usher sign-ups, a housing co-op's
+  maintenance reports, a youth band's rehearsal absences, a bakery's wholesale orders. No domain
+  from the other five question activities' lists, and no homework or grading workflow.
+
+  **The key** gives the method it accepts (both, in a Hard question where the facts truly balance,
+  each with its deciding fact), the deciding fact or facts and the sentence carrying each, why the
+  other method fits worse, the irrelevant detail, and two or three generic reasons that would fail
+  ("being told is faster", "checking wastes resources", "it's simpler to just check").
+
+  Credit: full when the answer chooses a method the key accepts and gives a reason tied to a fact
+  about this workflow (whether the source can send word, how soon the result is needed, what each
+  check costs, who would set up receiving the message). One tied reason is enough. An answer is
+  ruled on the design it describes: "a program looks every ten minutes" is checking again and
+  again, whatever it is called. Half when the method is one the key doesn't accept but the reason
+  is tied to a real fact of this workflow, or the method is accepted but the reason is generic or
+  missing. None when the answer chooses being told for a source the scenario says can only be
+  looked at, when the method is not accepted and the reason is generic, or no method is chosen.
+- **worked example:** shown only as help when asked for, which records the attempt as helped. The
+  tutor works the illustration of the same shape aloud: says whether the source can send word,
+  how soon the result is needed, what a check costs and who would set up receiving the message,
+  then which method those facts favor and why. Then shows a generic version ("being told is
+  faster") and says why it doesn't refer to this workflow. It may point to Noticing an event in
+  `tasks/read-triggers.md`.
+- **doesn't show:** every scenario's machine is always on, so a pass shows nothing about a
+  message arriving at a machine that is off, which the reading mentions. One tied reason earns
+  full credit, so a pass doesn't show the learner weighed every fact. How often to check, once
+  checking is chosen, is not asked.
+- **offer as:** the write-it-yourself check, after session 19: a workflow that reacts to each new
+  item, and you say whether it should keep checking for new ones or be told, and why. About 3
+  minutes a question. Harder than `a-pick-noticing`, since you choose and write the reason
+  yourself.
+
+### `a-pick-noticing`
+
+- **serves:** `c-choose-noticing`
+- **supports:** attempt
+- **checks:** `c-choose-noticing`
+- **artifact:** no external source. A described workflow started by an event, its facts set out one
+  to a sentence, and two people's one-sentence defenses of the same way of noticing the event,
+  from this activity's bank or written live per the generator below. About 2 minutes a question.
+- **learner does:** reads the scenario and the one question served, two defenses of the same
+  method, and picks the one whose reason is sound.
+- **tutor role:** examiner
+- **tutor does:** as `a-argue-noticing`'s, except that it labels a live run `a-pick-noticing/<shape>`
+  and rules from the rubric's `answer`. Never says which reason is faulty before the learner has
+  chosen.
+- **done when:** the criterion met with no help, case by case. Each question gets one ruling: the
+  sound defense passes the case the question carries, and the other passes none. There is no half
+  credit.
+- **generator:** **A scenario** uses the same shapes, variants and facts as `a-argue-noticing`,
+  except that the facts are not running prose: after one or two sentences saying what the workflow
+  does and that each new item should be handled soon after it arrives, a short paragraph headed
+  "About this workflow:" gives the facts one sentence each, plus one fact that bears on neither
+  method (who reads the result, how long each item takes the agent), and nothing else.
+
+  **A question** reads: "<Name1> and <Name2> both think this workflow should find out about each
+  new <item> by <checking for new ones every N minutes / being told each time one arrives>. Here is
+  the reason each gives." Then two defenses, each one sentence starting with a bold label,
+  "**Defense 1, <Name1>'s:**" and "**Defense 2, <Name2>'s:**", in the frame "<Method> fits this
+  workflow best, because <reason>." Then "Which defense gives a sound reason?" with the choices
+  "1. <Name1>'s" and "2. <Name2>'s", `type: mcq`. Both name the shape's natural method. Each reason
+  is one fact from the paragraph, stated as the paragraph states it, with no added explanation, no
+  hedge and no intensifier, and the two sentences are within ten words of each other in length.
+  The near-miss's reason is also a fact from the paragraph, never a generic claim, and is faulty in
+  one of two ways:
+  - Medium, `does-not-support`: the fact bears on neither method (who reads the result), or points
+    toward the other method (for being told, "because a quick look by a program costs nothing").
+  - Hard, `not-a-difference`: the fact holds just as much for either method ("because each summary
+    takes the agent about two minutes", "because the office computer is never turned off").
+  For example, in a `hook-best` question with the method "being told each time one arrives", sound
+  (9 words): "the dentist wants each summary within a few minutes"; near-miss `does-not-support` (8
+  words): "the dentist reads each summary on her tablet".
+
+  **Spread across the bank.** A bank is four scenarios, four questions: each case twice, one of each
+  fault kind per case; in the two `poll` questions, one `no-word` and one `costly-setup`; the sound
+  defense first in two. Names vary and are never reused within a scenario.
+
+  **Domains** are this activity's own, none repeating within the bank: a pet groomer's bookings, a
+  church's prayer-request line, a used bookshop's trade-in offers, a climbing gym's waiver forms, a
+  neighborhood swap group's listings, a dance studio's makeup-class requests. No domain from the
+  other five question activities' lists, and no homework or grading workflow.
+
+  Credit: full for the sound defense, whose position is the rubric's `answer`; none for the other.
+- **worked example:** shown only as help when asked for, which records the attempt as helped. As
+  `a-argue-noticing`'s, then the tutor sets the sound defense of the same illustration beside one
+  with a faulty reason and says why the faulty fact has no bearing on the choice, or holds for
+  both methods alike.
+- **doesn't show:** the method is given and the learner picks between two reasons, so a pass
+  doesn't show they would choose the method or find the deciding fact on their own; with two
+  choices a guess is right half the time. Both reasons refer to this workflow, so a pass doesn't
+  show the learner would reject a reason that refers to nothing about it. `a-argue-noticing` has
+  the learner choose and write the reason.
+- **offer as:** the quick check, after session 19: a workflow that reacts to each new item and two
+  people's reasons for the same way of finding out about it, and you pick the sound one. About 2
+  minutes a question. Easier than `a-argue-noticing`, since the method and the reasons are given.
 
 ### `a-place-the-waiting-work`
 
@@ -511,11 +602,9 @@ planning their own Problem Set 5 workflow will require.
 - **checks:** `c-when-to-queue`
 - **artifact:** no external source. A described workflow, told in a short paragraph, that says how
   its work arrives and when its worker is available but not where the work waits, from this
-  activity's bank or written live per the generator below. About 5 minutes a question.
-- **verified:** 2026-11-02
-- **learner does:** reads the scenario and its one question; says where the work should wait until
-  the worker takes it up and what should start the worker, and what would go wrong in this workflow
-  without that; or says the work needn't wait anywhere and why that is safe here.
+  activity's bank or written live per the generator below. About 4 minutes a question.
+- **learner does:** reads the scenario and its one question; says in two or three sentences where
+  the work should wait until it can be done, or that it needn't wait anywhere, and why.
 - **tutor role:** examiner
 - **tutor does:** deciding where work waits is taught in the session 19 class (`taught elsewhere`),
   and this is practice for after it: before session 19 the tutor says so and offers to wait, and
@@ -531,9 +620,12 @@ planning their own Problem Set 5 workflow will require.
   seven to ten sentences, in the voice of the person who runs it. It names the worker, what takes
   up each piece of work, in plain words (a program, an AI agent, or a person named by role), and
   says what the workflow is for; nothing is described with code, a command, a file format or a
-  query. It never says where the work waits or what starts the worker. Mixed through the paragraph,
-  in no fixed order and never under labels, are these facts:
+  query. It never says where the work waits. What starts the worker is not asked and need not be
+  said. Mixed through the paragraph, in no fixed order and never under labels, are these facts:
   - where the work comes from and how it arrives: how many, how evenly, at what hours;
+  - how soon a result is needed (a reply by mid-morning is fine; the display should show each
+    reading as it comes in), stated in every scenario, since whether work may wait at all depends
+    on it: an `unavailable` scenario's result can always wait until the worker is next available;
   - when the worker is available (a laptop turned on only during the working day, and turned off,
     not just closed, the rest of the time; a person who works
     through these on Friday afternoons; an office computer that is never turned off), and how fast
@@ -546,12 +638,15 @@ planning their own Problem Set 5 workflow will require.
   - whether losing an occasional piece of work matters, said through what the work is for (a
     display that each new reading replaces, or a request somebody is waiting on).
   Plus one irrelevant detail, said as plainly as the facts and bearing on no goal. The facts never
-  use the words queue, waiting list, backlog, poll, hook, cron or trigger.
+  use the words queue, waiting list, backlog, poll, hook, cron or trigger. **How pointed a fact may
+  be:** each fact says what is kept, done or left behind ("the agent emails each reply and keeps no
+  copy"; "each request is saved into the shared folder"), never what that does or doesn't let
+  someone tell. A sentence such as "nothing shows which inquiries have been answered" draws the
+  inference the learner is meant to draw, and is not used.
 
-  **A question** reads: "Where should this workflow's work wait until <worker> takes it up, and
-  what should start <worker>? What would go wrong in this workflow without that? If you think the
-  work needn't wait anywhere, say why that is safe here, and still say what should start
-  <worker>." Free response, `type: free`. One question per scenario.
+  **A question** reads: "Where should this workflow's work wait until it can be done? Say why.
+  Answer in two or three sentences." Free response, `type: free`. One question per scenario,
+  asking only this.
 
   **Shapes**, each with the case it carries. The examples are illustrations, not bank items, and
   their domains (a bike repair shop, a neighborhood tool library) are used by no bank in this
@@ -572,7 +667,10 @@ planning their own Problem Set 5 workflow will require.
     list needs something on to receive each arrival, so `kept` is used only in `burst`, where the
     worker is never off, never in `unavailable`.
   The key names both facts behind the natural kind: where the items are held, and what (if
-  anything) says which are done.
+  anything) says which are done. These patterns are for the writer; the scenario itself states only
+  what is saved where, by the pointedness rule above (for `files`, "each request is saved into the
+  shared folder" and "a reply file is saved beside each request answered", never "nothing marks
+  which are done").
 
   - `unavailable` (`worker-unavailable`): work arrives at any hour, including when the worker is
     off (the laptop turned off overnight, the person away until Friday), and the worker keeps up
@@ -582,26 +680,21 @@ planning their own Problem Set 5 workflow will require.
     request with the time it came in, so it can list everything since any given morning. The agent
     that answers them runs on Ana's laptop, which is on from about 8 a.m. to 6 p.m. on weekdays and
     turned off the rest of the time. It emails a reply to each request; no copy of the reply is
-    kept." (Here only the source fits: nothing is left behind per request, and nothing is on
-    overnight to add requests to a list. What starts the agent is left for the learner.)
+    kept. A reply by mid-morning is soon enough." (Here only the source fits: nothing is left
+    behind per request, and nothing is on overnight to add requests to a list.)
   - `burst` (`spread-out`): work arrives in a burst faster than the worker should take it (three
     hundred sign-ups in the hour after a newsletter goes out, against a provider that takes about
     twenty requests a minute). The worker is always a program or an agent on a machine that is
     never turned off, never a person, since a person is not always available. What goes wrong
     without a queue: the burst hits the worker all at once, past what it can take. The natural kind
-    is any of the four. Starting the worker once for each arriving
-    item undoes the spreading, since three hundred arrivals then start three hundred runs at once,
-    so the key names a per-item start as ruled out by the worker's limit, unless the answer says
-    the worker takes waiting items one at a time (a single run that works through the queue at
-    its own pace, started by an arrival when it isn't already running).
+    is any of the four. The scenario always states the worker's limit in plain words, so the
+    consequence can be tied to it.
   - `no-queue` (`no-queue`): two variants, which the key names. `always-ready`: a quick program on
     a machine that is never off, with a few items an hour, each taking a second, so nothing ever
     has to wait. `drop-ok`: losing an occasional item does no harm, because the next one replaces
     it (a display showing the latest reading, a count that each update corrects). The key: no
-    queue is needed, which condition holds and the fact that makes it hold, and what starts the
-    worker: each item's arrival, and in `drop-ok` also a schedule that takes only the latest item,
-    unless the scenario says the result must change the moment an item arrives, in which case the
-    key says that fact rules a schedule out.
+    queue is needed, which condition holds and the fact that makes it hold, and why the other
+    condition doesn't.
 
   **How hard.** Medium when the natural kind of queue is `source` or `kept`, or the `no-queue`
   variant is `always-ready`. Hard when it is `files` or `log`, where the learner must notice that
@@ -622,40 +715,37 @@ planning their own Problem Set 5 workflow will require.
   three question activities' lists, and no homework or grading workflow.
 
   **The key** gives the shape and the natural kind of queue, named concretely for this workflow
-  ("the website's list of requests"), any other kind the facts make workable, what should start
-  the worker and which facts allow it, the consequence without a queue and the sentence it rests
-  on, and, for `no-queue`, which condition holds and why the other doesn't; plus the irrelevant
-  detail.
+  ("the website's list of requests"), any other kind the facts make workable, the consequence
+  without a queue and the sentence it rests on, and, for `no-queue`, which condition holds and why
+  the other doesn't; plus the irrelevant detail.
 
-  Credit: in an `unavailable` or `burst` question, full when the answer does all three: names where
-  the work waits, as something concrete in this workflow that the facts make workable (the key's
-  natural kind or another it lists; in a `burst` question a list the workflow keeps is workable
-  though not always needed, since the worker's machine is never off and can take in each arrival;
-  in an `unavailable` question it is not, unless the answer says what stays on to add each item
-  as it arrives, which the scenario never supplies, so such an answer has invented a machine and
-  earns no credit for this part); says what starts the worker, a person, a schedule or an event, that the facts don't rule
-  out (not a schedule set for when the laptop is off, and, in a `burst` question, not a start for
-  each arriving item unless the worker takes the waiting items one at a time, as the `burst` shape
-  says); and names what would go wrong without the
-  queue, tied to this workflow (requests arriving overnight never get a reply; three hundred
-  sign-ups at once overrun the provider's limit). Half when two of the three are there, or when the
-  consequence is generic ("work might get lost"). None when fewer than two are there, or when the
-  answer says no queue is needed. In a `no-queue` question, full when the answer does all three:
-  says the work needn't wait; names the condition that holds and ties it to the fact that makes it
-  hold (the program is on a machine that's never off and takes a second for each of a few an hour;
-  each reading replaces the last); and says what starts the worker. In `always-ready` that is each
-  item's arrival (a schedule or a person would leave items waiting, which is a queue after all).
-  In `drop-ok` it is each item's arrival, or a schedule that takes only the latest item and drops
-  the ones between, when the answer ties that to each item replacing the last, unless the scenario
-  says the result must change the moment an item arrives. Half
-  when two of the three are there, including the case where the condition is named but tied to
-  nothing about this workflow; or when it proposes a queue while correctly saying that one of the
-  two conditions holds here. None when it proposes a queue and names a loss the facts rule out, or
-  says nothing about why waiting is or isn't needed.
+  **Places the facts don't already supply.** An answer may propose something the workflow would
+  newly start doing: a list it keeps, or a file or log line it begins writing for each finished
+  item. That counts as a workable place when it would work with the facts as given. A list the
+  workflow keeps needs something on to add each item as it arrives, so it is workable in a `burst`
+  question (the worker's machine is never off) and not in an `unavailable` one, where the scenario
+  supplies nothing that is on while the worker is off; an answer that invents such a machine earns
+  nothing for the place. A new file or log line per finished item needs the items themselves to be
+  held somewhere the worker can look (the source, a shared folder); where they are, it is workable,
+  though not the simplest when the source can already list the new ones.
+
+  Credit: in an `unavailable` or `burst` question, full when the answer names a workable place for
+  the work, said concretely for this workflow (the key's natural kind, another it lists, or a new
+  one that passes the rule above), and gives as the reason what would go wrong here without it,
+  tied to this workflow (requests arriving overnight never get a reply; three hundred sign-ups at
+  once overrun the provider's limit). Half when the place is workable but the reason is generic
+  ("work might get lost") or missing, or when the reason is tied but the place is unworkable. None
+  when neither holds, or when the answer says no place is needed. In a `no-queue` question, full
+  when the answer says the work needn't wait and gives as the reason the condition that holds,
+  tied to the fact that makes it hold (the program is on a machine that's never off and takes a
+  second for each of a few an hour; each reading replaces the last). Half when it says no place is
+  needed but the reason is generic or names the condition that doesn't hold, or when it proposes a
+  place while correctly saying that one of the two conditions holds here. None when it proposes a
+  place and names a loss the facts rule out, or gives no reason.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. The
   tutor works the illustration of the same shape aloud: says when work arrives and when the worker
   is available, what already holds or leaves behind a record of the waiting work, which kind of
-  queue that gives, what starts the worker, and what would be lost without it. For `no-queue` it
+  queue that gives, and what would be lost without it. For `no-queue` it
   works a made-up case of its own (a program on an office computer that is never off, turning each
   of a few emails an hour into a line on a sign-in sheet). It may point to Where the work waits and
   When there's no queue in `tasks/read-triggers.md`.
@@ -666,8 +756,7 @@ planning their own Problem Set 5 workflow will require.
   pass shows nothing about weighing two at once. Nothing here asks how the queue is stored or what
   happens when the worker fails partway, which are later topics.
 - **offer as:** the write-it-yourself check, after session 19: a short description of a workflow,
-  and you say where its work should wait, what starts the worker, and what goes wrong without it,
-  or why nothing needs to wait. About 5 minutes a question. Harder than `a-trace-the-waiting-work`,
+  and you say where its work should wait, or that it needn't, and why. About 4 minutes a question. Harder than `a-trace-the-waiting-work`,
   since nothing is laid out for you to choose from.
 
 ### `a-trace-the-waiting-work`
@@ -676,15 +765,16 @@ planning their own Problem Set 5 workflow will require.
 - **supports:** attempt
 - **checks:** `c-when-to-queue`
 - **artifact:** no external source. A described workflow whose design is left open, as in
-  `a-place-the-waiting-work`, and one four-choice question offering four whole designs for it, from
-  this activity's bank or written live per the generator below. About 3 minutes a question.
-- **verified:** 2026-11-03
-- **learner does:** reads the scenario, then picks which of four whole designs fits it: each says
-  where the worker finds the work still to be done, what starts the worker, and why.
+  `a-place-the-waiting-work`, and one four-choice question offering four designs for it, each a
+  place for the work to wait and a reason, from this activity's bank or written live per the
+  generator below. About 3 minutes a question.
+- **learner does:** reads the scenario, then picks which of four designs, each a place for the work
+  to wait (or none) with its reason, fits it.
 - **tutor role:** examiner
 - **tutor does:** as `a-place-the-waiting-work`'s, including the offer to wait for session 19,
   except that it labels a live run `a-trace-the-waiting-work/<shape>` and the choice is settled
-  from the rubric. Never says which part of a wrong design is wrong before the learner has chosen.
+  from the rubric. Never says whether a wrong design's place or its reason is wrong before the
+  learner has chosen.
 - **done when:** the criterion met with no help, case by case. Each question gets one ruling: the
   sound design passes the case the question carries, and the others pass none. There is no half
   credit.
@@ -692,22 +782,34 @@ planning their own Problem Set 5 workflow will require.
   running prose, in the voice of the person who runs it, giving the same kinds of fact (how the work
   arrives, when the worker is available and how fast it can go, what the source keeps, what the
   workflow already leaves behind for each finished item, whether losing an occasional item
-  matters, and how soon a result is needed), plus one irrelevant detail. Like that activity's, it
-  never says where the work waits or what starts the worker; those are what the question asks.
-  Nothing is described with code, a command, a file format or a query, and the words queue,
-  waiting list, backlog, poll, hook, cron and trigger never appear; a log may be called a log. A
-  machine that is off is said to be turned off, never closed or asleep. The worker is always a
-  program or an agent, never a person, so a schedule that starts it is a natural key. Because the
-  question has one key, the facts are chosen so that exactly one design fits, as below.
+  matters, and how soon a result is needed), plus one irrelevant detail, and by the same
+  pointedness rule. Like that activity's, it never says where the work waits; that is what the
+  question asks. Nothing is described with code, a command, a file format or a query, and the words
+  queue, waiting list, backlog, poll, hook, cron and trigger never appear; a log may be called a
+  log. A machine that is off is said to be turned off, never closed or asleep. The worker is always
+  a program or an agent, never a person. Because the question has one key, the facts are chosen so
+  that exactly one design fits, as below, and the scenario states every fact a near-miss needs to
+  be shown wrong: a `burst` reason used as a near-miss needs the worker's limit and the arrival rate
+  stated (well under the limit, where that reason is false); a no-queue reason needs the fact that
+  makes it false stated (the laptop is turned off at night; each request is someone waiting on a
+  reply).
 
   **A question** is one multiple-choice question, `type: mcq`, with one goal, `c-when-to-queue`,
-  and the case its shape carries. It is a single question, not a compound, because its three
-  dimensions are not judged independently: what starts the worker follows from why the work must
-  wait. It reads "Which of these is the best way to set up this workflow?", then four numbered
-  designs, each one sentence in the same frame: "<Worker> finds its work by <where>, is started by
-  <what>, because <why>." The four are within ten words of each other in length. One is sound on
-  all three dimensions; each of the other three is identical to it except on one dimension, and
-  each dimension is wrong in exactly one of them, so every question tests all three:
+  and the case its shape carries. It reads "Which design, with its reason, fits this workflow?",
+  then four numbered designs, each one sentence in the same frame: "The work should wait <where>,
+  because <why>." The four are within ten words of each other in length. One is sound on both its
+  place and its reason. The three near-misses are:
+  - **wrong place**: an unworkable place with the sound design's reason;
+  - **wrong reason**: the sound design's place with a reason the facts make false;
+  - **other design**: a different, coherent design, nowhere with the no-queue reason the facts
+    make false, so it reads as a real alternative and is wrong on the facts, not on fit.
+  In a `no-queue` question, where a place with the sound no-queue reason would not hang together,
+  the three near-misses are instead: the wrong reason (nowhere, with the other no-queue reason, the
+  facts making it false), and two other designs, each a workable-looking place with a queue reason
+  the facts make false, one with each queue reason (the worker's machine is never turned off; the
+  arrivals stay well under its stated limit).
+  So no choice is wrong only in a way that leaves it an equal setup, and every question tests both
+  the place and the reason:
 
   **Where** (the `<where>` slot). The options, put in this workflow's terms: a list the workflow
     keeps, adding each <item> as it arrives; asking <the source> for the <items> that came in since
@@ -722,31 +824,26 @@ planning their own Problem Set 5 workflow will require.
     behind, and the worker's machine is never off to take in each arrival, so a kept list is the
     answer only in a `burst` question; for nothing, a `no-queue` condition holds, which makes every
     list unneeded and so not the simplest. The key names both facts behind the answer: where the
-    items are held, and what (if anything) says which are done. The design wrong on where uses one
-    the facts make unworkable, so it would lose work: nothing, when items arrive while the worker
-    is off or faster than it can take them; asking the source, when the source keeps nothing or
-    can't say which items are new; files or a log, when the workflow leaves nothing behind per
-    item; a kept list, when nothing is on to add each arrival. Never one that merely does more
-    than it needs to.
-
-  **What starts it** (the `<what>` slot). The sound design's: in an `unavailable` or `burst`
-  question, a schedule, said in words, at a time the worker is on and soon enough for the result;
-  in a `no-queue` question, each new <item> arriving. The design wrong on what starts it uses one
-  the facts rule out: a schedule at a time the scenario says the worker's machine is turned off; a
-  schedule too late for when the result is needed, or less often than the work needs; or, in an
-  `unavailable` or `burst` question, each new <item> arriving (the worker is off when items arrive,
-  or three hundred arrivals would start three hundred runs at once). A `drop-ok` scenario here
-  always says the result must change the moment an item arrives (the display should show each
-  reading as it comes in), so any schedule is plainly wrong there.
+    items are held, and what (if anything) says which are done. A wrong place is one the facts
+    make unworkable, so it would lose work: nothing, when items arrive while the worker is off or
+    faster than it can take them; asking the source, when the source keeps nothing or can't say
+    which items are new; files or a log, when the workflow leaves nothing behind per item; a kept
+    list, when nothing is on to add each arrival. Never one that merely does more than it needs to.
+    Which wrong place to use, by the sound place: when the sound place is the source, the wrong
+    place is files or a log (the workflow leaves nothing behind per item) and the other design is
+    nowhere; when it is files or a log, the wrong place is asking the source (it can't say which
+    items are new) and the other design is nowhere; when it is a kept list, the wrong place is
+    asking the source (it keeps nothing) and the other design is nowhere. When it is nowhere, the
+    `no-queue` rule above applies instead.
 
   **Why** (the `<why>` slot), one of four statements put in this workflow's terms and worded the
   same way in every shape: otherwise <items> arriving while <worker> is <unavailable> would never
   be handled; otherwise a burst of <items> would reach <worker> faster than <its limit>; nothing
   needs to wait, as <worker> is always available and never overloaded; nothing needs to wait, as
   losing an occasional <item> does no harm here. Exactly one is true by the facts, and it is the
-  shape's case; the design wrong on why uses one the facts make false, chosen to sit naturally
-  with the sound design's where (a reason for a queue when there is one, a reason for none when
-  there is none).
+  shape's case. The wrong-reason near-miss uses one the facts make false that sits naturally with
+  the sound place (the other queue reason when there is a queue, the other no-queue reason when
+  there is none), and the scenario states the fact that makes it false.
 
   **Shapes**, each carrying one case, which its rubric `cases:` line lists:
   - `unavailable` (`worker-unavailable`): work arrives while the worker's machine is turned off,
@@ -754,8 +851,8 @@ planning their own Problem Set 5 workflow will require.
     statement.
   - `burst` (`spread-out`): work arrives in a burst past what the worker can take, and the worker's
     machine is never turned off; the sound why is the second.
-  - `no-queue` (`no-queue`): the sound where is nothing and the sound what is each item's arrival;
-    the sound why is the third or the fourth statement, by variant (`always-ready` or `drop-ok`, as
+  - `no-queue` (`no-queue`): the sound where is nothing; the sound why is the third or the fourth
+    statement, by variant (`always-ready` or `drop-ok`, as
     in `a-place-the-waiting-work`), the facts ruling out the other one (a `drop-ok` worker is
     sometimes off or slow; an `always-ready` workflow's items each matter).
 
@@ -769,34 +866,33 @@ planning their own Problem Set 5 workflow will require.
   their sound where, the two `burst` scenarios a kept list and a log; three questions Hard, the
   files, log and `drop-ok` ones. A kept list is never the sound where in an `unavailable`
   question, live or banked. The sound design sits in each of the four positions at least once and
-  in none more than twice, and which dimension the first near-miss gets wrong varies.
+  in none more than twice, and the order of the three near-misses varies.
 
   **Domains** are this activity's own, none repeating within the bank: a makerspace's 3D-print
   requests, a community radio station's song requests, a school weather station's readings display,
   a thrift store's donation pickups, a neighborhood watch's tip line, a little league's rain-delay
   texts, a language exchange's partner matching, a parking garage's open-space sign. No domain
-  from the other three question activities' lists, and no homework or grading workflow.
+  from the other five question activities' lists, and no homework or grading workflow.
 
-  The rubric gives the `answer` (the 1-based choice) and, in a `tutor note`, the sentence of the
-  scenario that settles each dimension of the sound design and, for each near-miss, which
-  dimension is wrong and the fact that rules it out.
+  The rubric gives the `answer` (the 1-based choice) and, in a `tutor note`, the sentences of the
+  scenario that settle the sound design's place and reason and, for each near-miss, whether its
+  place or its reason is wrong (or both, for the other design) and the fact that shows it.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. The
   tutor takes the illustration in `a-place-the-waiting-work` of the same shape where there is one
   (for `unavailable`, the bike repair shop; for `no-queue` `always-ready`, the office computer case
   in its worked example), and otherwise makes up one of its own in that activity's style, in a
   domain no bank here uses. It writes four
   designs for it in this activity's style, and goes through them aloud, saying for each near-miss
-  which dimension is wrong and which fact shows it. It may point to Where the work waits and When
+  whether its place or its reason is wrong and which fact shows it. It may point to Where the work waits and When
   there's no queue in `tasks/read-triggers.md`.
 - **doesn't show:** the learner picks among four designs rather than proposing one, so a pass
-  doesn't show they would come up with the queue, the worker's trigger or the consequence on their
-  own, or say why; `a-place-the-waiting-work` checks that. The facts are chosen so one design fits,
+  doesn't show they would come up with the place or the consequence on their own;
+  `a-place-the-waiting-work` checks that. The facts are chosen so one design fits,
   so a pass doesn't show the learner could weigh two workable designs. With four choices a guess is
   right a quarter of the time. The four kinds of where and the four statements of why are the same
   in every question, so they become familiar with repetition.
 - **offer as:** the quick check, after session 19: a short description of a workflow and four
-  whole designs for it, each saying where the work waits, what starts the worker and why, and you
-  pick the one that fits. About 3 minutes a question. Easier than `a-place-the-waiting-work`, since
+  designs for it, each saying where the work waits and why, and you pick the one that fits. About 3 minutes a question. Easier than `a-place-the-waiting-work`, since
   the choices are in front of you.
 
 ### `a-words`
