@@ -354,7 +354,6 @@ topics.
 - **group:** vocabulary
 - **what it names:** a command the operating system starts at set times, with nothing kept running
   in between
-- **nearest confusable:** a program left running in the background
 - **synonyms:** scheduled job, scheduled task
 
 ### `w-hook`
