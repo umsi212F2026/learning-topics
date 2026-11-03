@@ -28,8 +28,8 @@ None of them is best everywhere. Each helps some goals and hurts others.
   decide that nothing has changed. An event trigger runs only when there is something to do.
 
 Which matters most depends on facts about this workflow: how soon its result is needed, how often
-there is work, who would have to remember to start it, and whether the machine that does the work
-will be on when the trigger fires. For the TA, nobody needs feedback before the deadline, and
+there is work, who would have to remember to start it, and whether the machine or person that does
+the work will be available when the trigger fires. For the TA, nobody needs feedback before the deadline, and
 nearly all the work arrives in one burst, so one scheduled run on Saturday morning fits. A course
 where students resubmit all week and want quick feedback would push toward an event.
 
@@ -60,10 +60,13 @@ own scheduler, launchd, instead.
 A schedule on your own laptop fires only if the laptop is on and awake at that time. If the TA's
 laptop is turned off at 9 a.m. on Saturday, the cron job simply doesn't run that week. (A laptop
 that is only asleep is different on a Mac: launchd runs a job it missed during sleep once the Mac
-wakes, though not one missed while the Mac was turned off. cron runs neither.) A hook that runs a command on the laptop has the same problem: if the event happens while
-the laptop is off or asleep, nothing runs. So pick a time when the machine is reliably on, or let
-a person start the run, or make sure a missed run's work is still waiting for the next one. Where
-else a workflow could run comes in a later topic.
+wakes, though not one missed while the Mac was turned off. cron runs neither.) A hook that runs a
+command on the laptop has the same problem: if the event happens while the laptop is off or
+asleep, nothing runs. A person can be unavailable too. If the TA has to approve each student's
+feedback before it is sent, and is away the weekend the run fires, the feedback sits unsent until
+they are back. So pick a time when the machine is reliably on, or let a person start the run, or
+make sure a missed run's work is still waiting for the next one. Where else a workflow could run
+comes in a later topic.
 
 ## Where the work waits
 

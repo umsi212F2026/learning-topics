@@ -274,15 +274,16 @@ failures are handled and what each part can touch come in later topics.
   schedule or an event) and compares that choice with the strongest alternative. Names one goal the choice
   helps and one it hurts, compared with that alternative, such as timeliness, people's effort or
   cost, and ties each to something about this workflow: how soon its result is needed, how often
-  there is work to do, who would have to remember to start it, or whether the machine that does
-  the work will be on when the trigger fires. A reason that doesn't refer to
+  there is work to do, who would have to remember to start it, or whether the machine or person
+  that does the work will be available when the trigger fires. A reason that doesn't refer to
   this workflow at all, such as "a schedule is automatic", does not meet it. Where the trigger is
   an event, also says whether the workflow notices it by checking repeatedly or by being told
   when it happens, and why that fits this workflow.
 - **cases:**
   - `event`: a workflow best started by an event, so the answer also says whether it is noticed
     by checking repeatedly or by being told
-  - `machine-off`: a workflow whose machine may be off or asleep when the trigger is due
+  - `unavailable`: a workflow whose machine, or the person who does a step, may be unavailable
+    when the trigger is due
   - `not-event`: a workflow best started by a person or a schedule
 - **taught elsewhere:** session 19 class
 
