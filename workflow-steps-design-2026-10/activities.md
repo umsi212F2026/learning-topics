@@ -474,7 +474,7 @@ Each capability has one write-it check and one pick-one check, and either alone 
   each of the three pairings, the helped and hurt goals each fact supports for each side; which
   sentences of the paragraph carry each open step's facts; the irrelevant detail for each open
   step; and two or three generic reasons that would fail because they don't refer to this step
-  at all ("programs don't make mistakes", "an agent is cheaper", "a person has better judgment",
+  at all ("programs don't make mistakes", "an agent is cheaper", "a person is accountable for judgments", "a person has better judgment",
   "agents can be wrong in ways that look right"). A reason resting on the irrelevant detail is not
   tied. Credit: full when the answer chooses an
   executor, names one alternative, and names a goal the choice helps and a goal it hurts compared
@@ -498,8 +498,8 @@ Each capability has one write-it check and one pick-one check, and either alone 
   it; the notes include home addresses; the owner does matching on Sundays. The owner rather than
   an agent: it helps correctness, because the notes need judgment about which walker can handle
   which dog and a mistake there can injure someone; it hurts timeliness, because a client who signs
-  up on Monday waits until Sunday. Then the tutor shows a generic version ("a person has better
-  judgment") and says why it doesn't refer to this step at all. It may point to Trade-offs and Who does each
+  up on Monday waits until Sunday. Then the tutor shows a generic version ("a person
+  is accountable for judgments") and says why it doesn't refer to this step at all. It may point to Trade-offs and Who does each
   step in `tasks/read-workflow-design.md`.
 - **doesn't show:** the step's facts are all present in one short paragraph with only one
   irrelevant detail beside them, so a pass shows the learner can pick what matters out of a loose

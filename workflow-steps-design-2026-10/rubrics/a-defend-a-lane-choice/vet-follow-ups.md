@@ -49,7 +49,7 @@ reason resting on either is not tied.
   the technician could" is tied; after ruling, the tutor says it would be stronger naming what
   about the replies makes speed matter, asks for that, and if the learner can't say, points to the
   volume and the free-text replies of every length. Generic reasons, which don't refer to the step
-  at all: "an agent is cheaper", "a person has better judgment", "agents can be wrong in ways that
+  at all: "an agent is cheaper", "a person is accountable for judgments", "a person has better judgment", "agents can be wrong in ways that
   look right". A reason resting on the texting service the clinic has used since 2015 is not tied.
   An intermediate goal from the reading counts as a goal helped or hurt when its reason is tied to
   a fact here. Half when one of the two is tied and the other is generic or missing, or when both
@@ -88,8 +88,8 @@ reason resting on either is not tied.
   "Dr. Okafor makes better calls on these pets than an agent would" is tied; after ruling, the
   tutor says it would be stronger naming what about these cases makes judgment matter, asks for
   that, and if the learner can't say, points to each case being different and a wrong "wait" going
-  out unchecked. Generic reasons, which don't refer to the step at all: "a person has better
-  judgment", "an agent is faster", "agents can be wrong in ways that look right". A reason resting
+  out unchecked. Generic reasons, which don't refer to the step at all: "a person is accountable for judgments",
+  "a person has better judgment", "an agent is faster", "agents can be wrong in ways that look right". A reason resting
   on the repainted recheck room is not tied. An intermediate goal from the reading counts on the
   same terms: "keeping the money notes away from a provider is least privilege for this step" is
   tied; "least privilege" alone is generic. Half when one of the two is tied and the other is

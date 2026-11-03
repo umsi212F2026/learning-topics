@@ -51,7 +51,7 @@ A reason resting on either is not tied.
   tied; after ruling, the tutor says it would be stronger naming what about these moves makes
   accuracy hard, asks for that, and if the learner can't say, points to each request turning on
   something the rate table doesn't cover and a low quote going out unchecked. Generic reasons,
-  which don't refer to the step at all: "a person has better judgment", "an agent is faster",
+  which don't refer to the step at all: "a person is accountable for judgments", "a person has better judgment", "an agent is faster",
   "agents can be wrong in ways that look right". A reason resting on the piano requests coming
   from around the music school is not tied. An intermediate goal from the reading counts on the
   same terms as a final goal. Half when one of the two is tied and the other is generic or

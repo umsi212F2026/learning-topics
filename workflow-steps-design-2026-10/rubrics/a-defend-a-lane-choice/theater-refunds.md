@@ -47,7 +47,7 @@ it!" (sentence 1); for step 4, that refunds went to cards rather than checks two
   could" is tied; after ruling, the tutor says it would be stronger naming what about the requests makes
   speed matter, asks for that, and if the learner can't say, points to the volume and the typed
   free text.
-  Generic reasons, which don't refer to the step at all: "an agent is faster", "a person has
+  Generic reasons, which don't refer to the step at all: "an agent is faster", "a person is accountable for judgments", "a person has
   better judgment", "agents can be wrong in ways that look right". A reason resting
   on the form's heading is not tied. An intermediate goal from the reading counts as a goal helped
   or hurt when its reason is tied to a fact here. Half when one of the two is tied and the other

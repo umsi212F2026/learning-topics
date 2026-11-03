@@ -90,7 +90,7 @@ resting on either is not tied.
   is tied; after ruling, the tutor says it would be stronger naming what about these requests
   makes that knowledge matter, asks for that, and if the learner can't say, points to the requests
   no form settles and the prepaid term a wrong match costs. Generic reasons, which don't refer to
-  the step at all: "a person has better judgment", "an agent is faster", "agents can be wrong in
+  the step at all: "a person is accountable for judgments", "a person has better judgment", "an agent is faster", "agents can be wrong in
   ways that look right". A reason resting on where the director's office is is not tied. An
   intermediate goal from the reading counts on the same terms as a final goal. Half when one of the
   two is tied and the other is generic or missing, or when both are tied but no alternative is

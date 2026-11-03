@@ -84,8 +84,8 @@ either is not tied.
   to this step: "an agent would answer these donors sooner than the director" is tied; after
   ruling, the tutor says it would be stronger naming what about the step makes the wait matter,
   asks for that, and if the learner can't say, points to the director answering only on Thursday
-  afternoons. Generic reasons, which don't refer to the step at all: "a person has better
-  judgment", "an agent is faster", "agents can be wrong in ways that look right". A reason resting
+  afternoons. Generic reasons, which don't refer to the step at all: "a person is accountable for judgments",
+  "a person has better judgment", "an agent is faster", "agents can be wrong in ways that look right". A reason resting
   on the motto the director signs with is not tied. An intermediate goal from the reading counts
   on the same terms as a final goal. Half when one of the two is tied and the other is generic or
   missing, or when both are tied but no alternative is named. None when neither is tied, or no

@@ -49,7 +49,7 @@ The irrelevant details, one per open step: for step 2, that the app's report but
   to this step: "an agent gets through these reports faster than the fleet lead" is tied; after
   ruling, the tutor says it would be stronger naming what about the reports makes speed matter,
   asks for that, and if the learner can't say, points to the 200 reports a week typed in every
-  style. Generic reasons, which don't refer to the step at all: "an agent is faster", "a person has
+  style. Generic reasons, which don't refer to the step at all: "an agent is faster", "a person is accountable for judgments", "a person has
   better judgment", "agents can be wrong in ways that look right". A reason resting on the green
   report button is not tied. An intermediate goal from the reading counts as a goal helped or hurt
   when its reason is tied to a fact here. Half when one of the two is tied and the other is generic
