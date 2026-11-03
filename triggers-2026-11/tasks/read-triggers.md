@@ -43,7 +43,7 @@ to look. But most looks find nothing, each costs a little, and a submission can 
 to be noticed. Polling is a schedule doing an event trigger's job.
 
 **Being told.** Some tools and services let you name a command to run when something happens
-inside them. That place is a **hook**. Git, for example, can run a command of yours every time you
+inside them. That arrangement is a **hook**. Git, for example, can run a command of yours every time you
 make a commit. A service on the web usually tells you by sending a message to a web address you
 gave it, and then the hook is called a **webhook**: the course site might send one each time a
 student submits. Being told is quicker than polling and wastes nothing on empty looks. But the

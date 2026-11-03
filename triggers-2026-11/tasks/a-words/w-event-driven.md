@@ -1,27 +1,29 @@
 # Event-driven
 
-### vs-polling
+### vs-schedule
 
-A dentist's office wants a text sent to each patient soon after they book an appointment online.
-The booking site offers no way to send the office a message when a booking is made, so the
-office's program asks the booking site every five minutes for any new appointments, and texts each
-new patient it finds.
+A dentist's office has a program that sends patients two kinds of text.
 
-In this workflow, what is the difference between being event-driven and polling? Answer in two or
-three sentences, in your own words.
+- **Booking texts.** Every five minutes, the program asks the booking site for any appointments
+  booked since it last asked, and texts each of those patients a confirmation.
+- **Reminder texts.** Every evening at 6, the program texts every patient who has an appointment
+  the next day.
+
+Which of these is event-driven?
+
+1. The booking texts
+2. The reminder texts
+3. Both, since the program starts each one with no person involved
+4. Neither, since both come from checks at set times
 
 ### catch-pick
 
-A small online store's site sends a message to the warehouse's program each time a customer places
-an order, and the program prints a packing slip for that order. Separately, a cron job emails the
-owner a sales summary every Friday at 5 p.m.
+Which of these is event-driven?
 
-In this workflow, what is event-driven?
-
-1. The Friday sales summary
-2. Both jobs, since no person starts either
-3. The packing slips
-4. Neither, since nothing checks for orders
+1. A receptionist texts each patient whenever she remembers to check the bookings
+2. A program texts each patient within a minute of their booking
+3. A program texts every patient with an appointment tomorrow at 6 p.m.
+4. A program texts all patients a newsletter on the first of each month
 
 ### catch-backup
 

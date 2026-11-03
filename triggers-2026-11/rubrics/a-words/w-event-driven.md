@@ -12,36 +12,30 @@ though nobody starts it. The reading's line "polling is a schedule doing an even
 describes the checks, which run on a schedule; the texts or slips they lead to are still started
 by the event.
 
-### vs-polling
+### vs-schedule
 
 - **goal:** `w-event-driven`
 - **move:** DISTINGUISH
-- **answer:** Being event-driven is about what starts a run: here, a patient booking an
-  appointment, which leads to a text. Polling is how the program notices that event: by asking the
-  booking site every five minutes whether there are new appointments, since the site won't tell
-  it. So this workflow is event-driven, and it notices its events by polling; the two are not
-  rivals.
-- **credit:** full for naming that event-driven is about a run starting because something
-  happened, and polling is a way of noticing the event by asking again and again, matched to this
-  workflow. Saying outright that this workflow is both is welcome but not required. Half for "an
-  event-driven workflow reacts to events, polling checks on a schedule" with nothing on how the
-  two relate here. Half at most for the right definitions joined to a verdict that this workflow
-  is not event-driven because it polls. None for an incidental difference alone, such as that
-  polling is slower.
-- **tutor note:** a learner who calls the workflow scheduled because of the five-minute checks is
-  reading the checks as the run; ask what makes a text go out to a particular patient.
+- **type:** mcq
+- **answer:** 1
+- **credit:** full for 1 only. Each booking text goes out because a patient booked; the
+  five-minute checks are polling, a way of noticing that event, and on most checks no text is
+  sent. Each reminder goes out because it is 6 p.m., whatever has happened, so the reminders are
+  on a schedule. Choice 2 reverses the two. Choice 3 stretches the word to anything automatic.
+  Choice 4 reads the five-minute checks as the run, when the run that matters, the text to a
+  patient, is started by the booking.
+- **tutor note:** a learner who picks 4 is reading the checks as what starts each text; ask what
+  makes a particular patient get a booking text.
 
 ### catch-pick
 
 - **goal:** `w-event-driven`
 - **move:** CATCH
 - **type:** mcq
-- **answer:** 3
-- **credit:** full for 3 only. Each slip is printed because an order was placed, which is what
-  event-driven names. Choice 1 takes the cron job for event-driven: the Friday summary runs at a
-  set time, which is a schedule. Choice 2 stretches the word to anything automatic; the summary
-  has no person starting it but is still a schedule. Choice 4 reads event-driven as needing the
-  program to check; here the site tells the program, and that is still event-driven.
+- **answer:** 2
+- **credit:** full for 2 only. Each text goes out because a patient booked, which is what
+  event-driven names. Choice 1 is started by a person, whenever she remembers. Choices 3 and 4 are
+  schedules: they run at set times whatever has happened, even though no person starts them.
 
 ### catch-backup
 

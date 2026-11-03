@@ -362,8 +362,8 @@ topics.
 - **criterion:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
-- **what it names:** a place where a tool or service runs your command when something happens
-  inside it, so you are told rather than having to ask
+- **what it names:** an arrangement in which a tool or service runs your command, or sends you a
+  message, when something happens inside it, so you are told rather than having to ask
 - **nearest confusable:** event-driven
 - **synonyms:** callback, webhook
 
@@ -375,4 +375,4 @@ topics.
 - **group:** vocabulary
 - **what it names:** starting a run because something happened, rather than at set times or when
   a person starts it
-- **nearest confusable:** polling
+- **nearest confusable:** schedule

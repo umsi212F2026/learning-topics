@@ -3,7 +3,7 @@
 If the learner misses a question here, set a DEFINE or INTERPRET move for hook live, as help (it
 is recorded as helped and doesn't count), then come back to a production question.
 
-A hook is a place where a tool or service runs your command, or sends your address a message,
+A hook is an arrangement in which a tool or service runs your command, or sends you a message,
 when something happens inside it, so you are told rather than having to ask. Event-driven names
 something else: that a run starts because something happened, rather than at set times or when a
 person starts it. A hook is one way an event-driven workflow learns of its event; polling is the
@@ -15,20 +15,37 @@ workflow asking.
 
 - **goal:** `w-hook`
 - **move:** DISTINGUISH
-- **answer:** Event-driven says why each run starts: because something happened, a form being
-  submitted, rather than at set times or because a person started it. The hook is the place in
-  the form service where the coordinator entered her web address, so the service tells her
-  program when a form is submitted. The hook is how the program learns of the event; the workflow
-  could still be event-driven without one, by checking the form service again and again.
-- **credit:** full for naming that event-driven is about what starts a run (something happening)
-  and the hook is the place in the tool that tells the program when it happens, matched to this
-  workflow. Saying that an event-driven workflow could do without a hook by polling is welcome but
-  not required. Half for "the hook is the specific mechanism and event-driven is the general
-  idea" with nothing on what each does. Half at most for the right difference joined to a claim
-  that every event-driven workflow needs a hook. None for treating the two as names for one
-  thing.
-- **tutor note:** if the learner says they are the same, ask how the program would learn of a new
-  sign-up if the form service had no setting for a web address.
+- **type:** compound
+- **tutor note:** both set-ups are event-driven, since each volunteer is added because a sign-up
+  happened; only A uses a hook. A learner who marks (d) false thinks event-driven needs a hook;
+  ask what makes a volunteer get added in set-up B.
+
+#### a
+
+- **type:** mcq
+- **answer:** 1
+- **tutor note:** the web-address setting is the hook: the form service sends a message when a
+  sign-up happens, so the program is told rather than having to ask. The word "hook" never
+  appears; recognizing one from its description is the point.
+
+#### b
+
+- **type:** mcq
+- **answer:** 1
+
+#### c
+
+- **type:** mcq
+- **answer:** 2
+- **tutor note:** in B the program asks; nothing tells it. A hook is the form service running a
+  command or sending a message when a sign-up happens.
+
+#### d
+
+- **type:** mcq
+- **answer:** 1
+- **tutor note:** the ten-minute asks are polling, a way of noticing the event; each volunteer is
+  still added because a sign-up happened.
 
 ### catch-pick
 
@@ -36,11 +53,10 @@ workflow asking.
 - **move:** CATCH
 - **type:** mcq
 - **answer:** 2
-- **credit:** full for 2 only. The hook is the place in git where she named a command, which git
-  runs when a commit happens. Choice 1 stretches the word to the place the work ends up. Choice 3
-  reads a hook as checking again and again, which is polling; with a hook, git tells, nobody
-  asks. Choice 4 reads hook as another name for event-driven: the backup is event-driven, and the
-  hook is how it learns of each commit.
+- **credit:** full for 2 only. Git runs the writer's command when a commit happens, so she is told
+  rather than having to ask. Choice 1 is polling: the script asks again and again, and nothing
+  tells it. Choice 3 is a schedule: it runs at a set time whatever has happened. Choice 4 is a
+  person starting each run.
 
 ### catch-weather
 
