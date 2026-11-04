@@ -54,7 +54,7 @@ workflow may require both.
 | ------------------ | ------ | ----- |
 | `o-orientation`    | `a-read-triggers` |       |
 | `c-choose-trigger` | `a-argue-a-trigger`, `a-pick-trigger-defense` |       |
-| `c-choose-noticing` | `a-argue-noticing`, `a-pick-noticing` | The `poll` case can be met through a `no-word` scenario, where the source's being unable to send word settles the choice on its own. A learner can therefore meet this goal without ever weighing set-up effort or the cost of a check against how soon the result is needed. Where there is time, have `poll` met through a `costly-setup` question. Neither check puts the work on a machine that is turned off, though the reading raises a hook on a laptop that is off. |
+| `c-choose-noticing` | `a-argue-noticing`, `a-pick-noticing` | The `poll` case can be met through a `no-word` or `cant-be-reached` scenario, where one fact (the source can't send word, or the machine has nothing its messages can arrive at) settles the choice on its own. A learner can therefore meet this goal without ever weighing set-up effort or the cost of a check against how soon the result is needed. Where there is time, have `poll` met through a `costly-setup` question. Neither check puts the work on a machine that is turned off, though the reading raises a hook on a laptop that is off. |
 | `c-when-to-queue`  | `a-place-the-waiting-work`, `a-trace-the-waiting-work` |       |
 
 ---
