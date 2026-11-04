@@ -12,7 +12,7 @@ in, but notices need a web server to arrive at, and the office computer doesn't 
 
 Which of these fits this workflow?
 
-1. Being told by the website each time a request arrives, because the website can send a notice each time a request comes in.
-2. Checking for new requests every ten minutes, because notices need a web server to arrive at, and the office computer doesn't run one.
-3. Being told by the website each time a request arrives, because a reply within the hour is fine.
-4. Checking for new requests every ten minutes, because the reply is a short note with a picture of ballet shoes.
+1. A webhook: the website sends a notice each time a request arrives, because the website can send a notice each time a request comes in.
+2. Polling for new requests every ten minutes, because notices need a web server to arrive at, and the office computer doesn't run one.
+3. A webhook: the website sends a notice each time a request arrives, because a reply within the hour is fine.
+4. Polling for new requests every ten minutes, because the reply is a short note with a picture of ballet shoes.

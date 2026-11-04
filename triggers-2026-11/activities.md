@@ -559,8 +559,8 @@ workflow may require both.
   short paragraph, with how it finds out about each event left open, from this activity's bank or
   written live per the generator below. About 3 minutes a question.
 - **learner does:** reads the scenario and its one question; says in two or three sentences
-  whether the workflow should find out about each new item by checking again and again or by
-  being told each time, and why.
+  whether the workflow should find out about each new item by polling or through a webhook (a
+  hook, where the source isn't a website), and why.
 - **tutor role:** examiner
 - **tutor does:** as `a-argue-a-trigger`'s (the offer to wait for session 19, setting the question
   as served, help on request recorded as helped, the key and case written before a live question,
@@ -576,10 +576,9 @@ workflow may require both.
   machine; nothing is described with code, a command, a file format or a query. Mixed through the
   paragraph, in no fixed order and never under labels, are these facts:
   - where the items come from, and whether that source can tell the workflow when one arrives,
-    said in plain words ("the sign-up form can send a message to a web address each time someone
-    signs up") or that it can only be looked at ("the mailbox sends no notice of new mail; a
-    program can open it and look"), never with the words hook, webhook, polling or callback, and
-    never echoing the question's own wording ("checking", "being told");
+    said plainly ("the sign-up form can send a webhook each time someone signs up", or "can send a
+    message to a web address each time") or that it can only be looked at ("the mailbox sends no
+    notice of new mail; a program can open it and look");
   - how soon a result is needed after an item arrives (within a minute, within the hour, by the
     end of the day);
   - what each check would cost: a quick look by a program that takes a moment and costs nothing,
@@ -595,6 +594,16 @@ workflow may require both.
   Plus one irrelevant detail, said as plainly as the facts and bearing on neither method. The facts
   are stated as facts, never as what they mean for the choice.
 
+  **Words in context.** The topic's vocabulary is used in context, with no gloss. Questions,
+  options and keys name the two methods with the words: polling (with its interval, "polling for
+  new requests every ten minutes") and a webhook ("a webhook: the website sends a notice each time
+  a request arrives"), or a hook where the source isn't a website (a tool that runs a command when
+  something happens). A scenario may use "webhook" where a real person would ("the website can
+  send a webhook each time a request comes in"), but the fact that decides the answer is still
+  said plainly, never left to be inferred from a word (in `cant-be-reached`, that notices need a
+  web server to arrive at and the machine doesn't run one). In the rest of this entry, "checking"
+  means polling and "being told" means a webhook or hook.
+
   **Facts kept to the case.** The list above is what a scenario may draw on, not what each must
   carry. A scenario states its case's defining facts (named in each shape below), the facts
   needed to show the other method wrong, the one irrelevant detail, and nothing else that offers a
@@ -604,9 +613,10 @@ workflow may require both.
   method wrong needs a fact that could also serve as such a reason, word it so that it only rules
   the other method out, or leave it out and rule the method out another way.
 
-  **A question** reads: "Should this workflow find out about each new <item> by checking for new
-  ones again and again, or by being told each time one arrives? Say why. Answer in two or three
-  sentences." Free response, `type: free`. One question per scenario, asking only this.
+  **A question** reads: "Should this workflow find out about each new <item> by polling or through a
+  webhook? Say why. Answer in two or three sentences." Where the source isn't a website, it says
+  "through a hook" instead. Free response, `type: free`. One question per scenario, asking only
+  this.
 
   **Shapes**, each with the case it carries. The examples are illustrations, not bank items, and
   their domains (a kennel, a tenants' association) are used by no bank in this topic.
@@ -669,11 +679,12 @@ workflow may require both.
   from the other five question activities' lists, and no homework or grading workflow.
 
   **The key** gives every design it accepts, which is every design that would work on the facts
-  (both methods, in a Hard question where the facts truly balance, each with its deciding fact; a
-  check at an interval the facts allow counts as checking), as `a-argue-a-trigger`'s key does,
-  the deciding fact or facts and the sentence carrying each, why the
-  other method fits worse, the irrelevant detail, two or three generic reasons that would fail
-  ("being told is faster", "checking wastes resources", "it's simpler to just check"), one or two
+  (both methods, in a Hard question where the facts truly balance, each with its deciding fact;
+  polling at an interval the facts allow counts as polling), as `a-argue-a-trigger`'s key does,
+  naming each method with the topic's words, the deciding fact or facts and the sentence carrying
+  each, why the other method fits worse, the irrelevant detail, two or three generic reasons that
+  would fail ("a webhook is faster", "polling wastes resources", "it's simpler to just poll"), one
+  or two
   facts of this scenario that are true but have no bearing on the method at all, which also fail
   ("the booking form was designed by the manager's cousin"), and an example of each of the three
   kinds of tied reason below, for the method it accepts. A question whose key accepts both methods
@@ -683,48 +694,50 @@ workflow may require both.
   Credit: full when the answer chooses a method the key accepts and gives a reason tied to this
   workflow of any of three kinds:
   - **what makes that method good here**: a fact of this workflow the method suits, needs or
-    meets. For being told, that the source can send a message each time is a full reason of this
-    kind on its own, as are a set-up that is easy for whoever must do it and a machine that is
-    never turned off to receive the message. For checking, that the source sends no notice is a
+    meets. For a webhook or hook, that the source can send a message each time is a full reason of
+    this kind on its own, as are a set-up that is easy for whoever must do it and a machine that is
+    never turned off to receive the message. For polling, that the source sends no notice is a
     full reason on its own, as is that the machine has nothing the notices can arrive at
     (`cant-be-reached`) and that it can fetch from the source itself, and so are a cheap look and
     a result that can wait;
   - **what would go wrong here without it**: a consequence in this workflow of not using it
-    ("bookings would wait for the next check, past the few minutes the manager wants");
+    ("bookings would wait for the next poll, past the few minutes the manager wants");
   - **what would make the other method worse**: a fact that tells against the other method ("each
     look means the agent reading every booking again"; "receiving the messages means asking my
     nephew, who next helps in three weeks, and sign-ups open tomorrow").
   One tied reason is enough. A fact with no bearing on the method is not a tied reason; nor is one
-  resting on the irrelevant detail, or one the scenario's facts contradict. An answer is
-  ruled on the design it describes: "a program looks every ten minutes" is checking again and
-  again, whatever it is called. The ruling is on the design the answer commits to: an answer that
+  resting on the irrelevant detail, or one the scenario's facts contradict. An answer is still
+  ruled on the design it describes, whatever it calls it: "a program looks every ten minutes" is
+  polling, and "the website pings the computer when a request comes in" is a webhook, whether or
+  not the answer uses those words, and an answer that names one method but describes the other is
+  ruled as the one it describes. The ruling is on the design the answer commits to: an answer that
   lists both methods, outside a question whose key accepts both, is ruled as choosing neither; a
-  combined design ("be told, and check daily as a backup") is ruled by its main method. Half when
-  the method is one the key doesn't accept but the reason
+  combined design ("a webhook, with a daily poll as a backup") is ruled by its main method. Half
+  when the method is one the key doesn't accept but the reason
   rests on a fact that bears on the method, or the method is accepted but the reason is generic,
-  not tied, or missing. None when the answer chooses being told for a source the scenario says
+  not tied, or missing. None when the answer chooses a webhook or hook for a source the scenario says
   can only be looked at, or for a machine the scenario says has nothing the notices can arrive at
   (`cant-be-reached`), when the method is not accepted and the reason is generic, not tied, or
-  missing, or no method is chosen. Where a Half clause and a None clause both fit (being told in
+  missing, or no method is chosen. Where a Half clause and a None clause both fit (a webhook in
   either of those cases, with a reason that bears on the method), the None clause governs. In a
-  `cant-be-reached` question the key accepts checking at any interval within how long the result
-  can wait, and never accepts being told, nor a design that adds a web server or other receiver
+  `cant-be-reached` question the key accepts polling at any interval within how long the result
+  can wait, and never accepts a webhook, nor a design that adds a web server or other receiver
   the scenario doesn't supply.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. The
   tutor works the illustration of the same shape aloud: says, of the facts the scenario states,
   whether the source can send word, how soon the result is needed, what a check costs and who
   would set up receiving the message, never adding a fact the illustration leaves out, then which
-  method those facts favor and why. Then shows a generic version ("being told is
-  faster") and says why it doesn't refer to this workflow. It may point to Noticing an event in
+  method those facts favor and why. Then shows a generic version ("a webhook is faster") and says
+  why it doesn't refer to this workflow. It may point to Noticing an event in
   `tasks/read-triggers.md`.
 - **doesn't show:** no scenario has a machine that is off, so a pass shows nothing about a
   message arriving at a machine that is off, which the reading mentions. One tied reason earns
-  full credit, so a pass doesn't show the learner weighed every fact. How often to check, once
-  checking is chosen, is not asked. Scenarios keep their facts to their case, but a learner may
+  full credit, so a pass doesn't show the learner weighed every fact. How often to poll, once
+  polling is chosen, is not asked. Scenarios keep their facts to their case, but a learner may
   still bring in a reason from outside the scenario; such an answer is credited and counts toward
   the case, so a pass doesn't always show the learner used the case's defining fact.
 - **offer as:** the write-it-yourself check, after session 19: a workflow that reacts to each new
-  item, and you say whether it should keep checking for new ones or be told, and why. About 3
+  item, and you say whether it should find out by polling or through a webhook, and why. About 3
   minutes a question. Harder than `a-pick-noticing`, since you choose and write the reason
   yourself.
 
@@ -738,7 +751,7 @@ workflow may require both.
   each with a reason, from this activity's bank or written live per the generator below. About 3
   minutes a question.
 - **learner does:** reads the scenario, then picks which of four options, each a way of finding out
-  (checking again and again, or being told) with its reason, fits the workflow.
+  (polling, or a webhook or hook) with its reason, fits the workflow.
 - **tutor role:** examiner
 - **tutor does:** as `a-argue-noticing`'s, except that it labels a live run `a-pick-noticing/<shape>`
   and rules from the rubric's `answer`. Never says what is wrong with an option before the learner
@@ -758,8 +771,9 @@ workflow may require both.
   It never touches timing, availability or cost: not how long each item takes (a quick job could
   help meet a tight deadline), not that the machine is never turned off (so a message would be
   received), since under the criterion any of those can be a reason of the "good here" kind. The
-  source's ability to send word is said in plain words, never with the words hook, webhook, polling
-  or callback.
+  topic's words are used in context with no gloss, as in `a-argue-noticing`: a scenario may say
+  "webhook" where a real person would, but the fact that decides the answer is still said plainly.
+  In the rest of this entry, "checking" means polling and "being told" means a webhook or hook.
 
   **Facts kept to the case**, as in `a-argue-noticing`: the paragraph states the case's defining
   facts, the facts each near-miss needs to be shown wrong, the one neutral sentence, and nothing
@@ -770,8 +784,10 @@ workflow may require both.
   `a-argue-noticing`.
 
   **A question** reads "Which of these fits this workflow?", then four numbered options, each one
-  sentence in the same frame: "<Method>, because <reason>." A method is said concretely: "Checking
-  for new <items> every <interval>" or "Being told by <the source> each time one arrives". Each
+  sentence in the same frame: "<Method>, because <reason>." A method is named with the topic's
+  words and said concretely: "Polling for new <items> every <interval>", or "A webhook: <the
+  source> sends a notice each time <an item> arrives" ("A hook: ..." where the source isn't a
+  website). Each
   reason is one fact from the paragraph, stated as the paragraph states it, with no added
   explanation, no hedge and no intensifier. The four sentences are within ten words of each other in
   length. `type: mcq`. The four options are:
@@ -811,14 +827,15 @@ workflow may require both.
   to a web address each time", "Receiving those messages means asking my nephew, who next helps in
   three weeks, and sign-ups open tomorrow", "A quick look at the form's list by a program takes a
   moment", "A reply within the hour is fine" and the neutral sentence "The confirmation is a short
-  note with the club's logo." Options (word counts): sound, "Checking for new sign-ups every ten
+  note with the club's logo." Options (word counts): sound, "Polling for new sign-ups every ten
   minutes, because receiving those messages means asking my nephew, who next helps in three
-  weeks, and sign-ups open tomorrow" (25); not a difference, "Checking for new sign-ups every ten
-  minutes, because the confirmation is a short note with the club's logo" (18); other method,
-  "Being told by the form each time a sign-up arrives, because the sign-up form can send a message
-  to a web address each time" (24); other method, "Being told by the form each time a sign-up
-  arrives, because a reply within the hour is fine" (18). Both being-told options fail on the
-  nephew sentence, which the tutor note cites. Two checking, two being told.
+  weeks, and sign-ups open tomorrow" (25); not a difference, "Polling for new sign-ups every ten
+  minutes, because the confirmation is a short note with the club's logo" (18); other method, "A
+  webhook: the form sends a notice each time a sign-up arrives, because the sign-up form can send
+  a message to a web address each time" (26); other method, "A webhook: the form sends a notice
+  each time a sign-up arrives, because a reply within the hour is fine" (20). The spread is 8
+  words. Both webhook options fail on the nephew sentence, which the tutor note cites. Two
+  polling, two webhook.
 
   **Example**, a `cant-be-reached` question, from the bank's dance studio scenario
   (`dance-makeup-requests`). The paragraph gives "Students ask for makeup classes through a form on
@@ -827,15 +844,15 @@ workflow may require both.
   and can fetch the list of requests from the website and send email", "The website can send a
   notice each time a request comes in, but notices need a web server to arrive at, and the office
   computer doesn't run one", "A reply within the hour is fine" and the neutral sentence "The reply
-  is a short note with a picture of ballet shoes." Options: other method, "Being told by the
-  website each time a request arrives, because the website can send a notice each time a request
-  comes in"; sound, "Checking for new requests every ten minutes, because notices need a web
-  server to arrive at, and the office computer doesn't run one"; other method, "Being told by the
-  website each time a request arrives, because a reply within the hour is fine"; not a
-  difference, "Checking for new requests every ten minutes, because the reply is a short note with
-  a picture of ballet shoes". Both being-told options fail on the web-server sentence, which the
-  tutor note cites; asking only needs the office computer to reach out to the website. Two
-  checking, two being told.
+  is a short note with a picture of ballet shoes." Options (word counts): other method, "A
+  webhook: the website sends a notice each time a request arrives, because the website can send a
+  notice each time a request comes in" (25); sound, "Polling for new requests every ten minutes,
+  because notices need a web server to arrive at, and the office computer doesn't run one" (23);
+  other method, "A webhook: the website sends a notice each time a request arrives, because a
+  reply within the hour is fine" (20); not a difference, "Polling for new requests every ten
+  minutes, because the reply is a short note with a picture of ballet shoes" (20). The spread is 5
+  words. Both webhook options fail on the web-server sentence, which the tutor note cites;
+  polling only needs the office computer to reach out to the website. Two polling, two webhook.
 
   **Spread across the bank.** A bank is five scenarios, five questions: `hook` twice and `poll`
   three times, the three `poll` questions one each of `no-word`, `costly-setup` and

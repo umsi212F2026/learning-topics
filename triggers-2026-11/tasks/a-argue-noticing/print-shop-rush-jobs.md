@@ -9,5 +9,5 @@ a program check for new orders no more than once an hour. Our shop's sign is a p
 
 ### q1
 
-Should this workflow find out about each new rush job by checking for new ones again and again, or
-by being told each time one arrives? Say why. Answer in two or three sentences.
+Should this workflow find out about each new rush job by polling or through a webhook? Say why.
+Answer in two or three sentences.

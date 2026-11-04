@@ -42,10 +42,9 @@ Examples of each kind of tied reason, for being told:
 
 - **goal:** `c-choose-noticing`
 - **cases:** hook
-- **answer:** Being told: the order page can send a message each time a rush job comes in, and the
-  partner can set up the always-on front computer to take those messages in an afternoon.
-  Checking can't meet the few minutes customers want, since the order page allows a look only once
-  an hour.
+- **answer:** A webhook: the order page can send a message each time a rush job comes in, and the
+  partner can set up the always-on front computer to take those messages in an afternoon. Polling
+  can't meet the few minutes customers want, since the website allows a check only once an hour.
 - **credit:** full when the answer chooses being told and gives a reason tied to this workflow of
   any of the three kinds: what makes being told good here (the order page can send a message each
   time is a full reason on its own, as are the easy afternoon set-up and the front computer that
