@@ -13,8 +13,8 @@ The deciding facts, and the sentences carrying them:
 - Receiving it can be set up: "My partner, who looks after our computers, can set up the front
   computer, which is never turned off, to take in those messages in an afternoon."
 - How soon the result is needed: "customers want that email within a few minutes."
-- What rules out frequent checking: "The order page lets a program look at its list of orders at
-  most once an hour."
+- What rules out frequent checking: "To protect itself from being flooded with requests, the
+  website lets a program check for new orders no more than once an hour."
 
 Why checking fits worse: to answer within a few minutes, a program would have to look every minute
 or two, which the order page doesn't allow; the most it allows, once an hour, would leave a rush
