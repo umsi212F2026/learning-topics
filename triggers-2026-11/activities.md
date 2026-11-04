@@ -93,7 +93,7 @@ workflow may require both.
   real tool or service except cron, launchd and Git, all generically, and names Mac and Linux as
   operating systems. It says nothing about how state is
   stored, how failures are handled or what each part may touch, all later topics.
-- **verified:** 2026-11-03
+- **verified:** 2026-11-04
 - **learner does:** reads the page once, top to bottom, and stops once, in Three kinds of trigger
   after the three trade-off bullets and before the paragraph beginning "Which matters most",
   answering before reading on ("I don't know yet" is an honest answer): which kind of trigger
@@ -594,6 +594,7 @@ workflow may require both.
   to a sentence, and one four-choice question offering four ways of finding out about each event,
   each with a reason, from this activity's bank or written live per the generator below. About 3
   minutes a question.
+- **verified:** 2026-11-04
 - **learner does:** reads the scenario, then picks which of four options, each a way of finding out
   (checking again and again, or being told) with its reason, fits the workflow.
 - **tutor role:** examiner
@@ -865,6 +866,7 @@ workflow may require both.
   `a-place-the-waiting-work`, and one four-choice question offering four designs for it, each a
   place for the work to wait and a reason, from this activity's bank or written live per the
   generator below. About 3 minutes a question.
+- **verified:** 2026-11-04
 - **learner does:** reads the scenario, then picks which of four designs, each a place for the work
   to wait (or none) with its reason, fits it.
 - **tutor role:** examiner
