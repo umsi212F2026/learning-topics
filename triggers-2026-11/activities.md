@@ -42,9 +42,9 @@ planning their own Problem Set 5 workflow will require.
 | id                 | Goal | Criterion: what gets examined, and what counts |
 | ------------------ | ---- | ---------------------------------------------- |
 | `o-orientation`    | get the shape of this area before working on any particular part of it | `orientation` |
-| `c-choose-trigger` | choose what triggers a workflow's runs, and say why | given a described workflow, says what should trigger its runs (a person, a schedule or an event) and why, with a reason tied to something about this workflow that makes the choice fit better than the other kinds: how soon its result is needed, how often there is work to do, who would have to remember to start it, or whether the machine or person that does the work will be available when the trigger fires. A reason that doesn't refer to this workflow at all, such as "a schedule is automatic", does not meet it. Cases: `event`, `unavailable`, `not-event` |
-| `c-choose-noticing` | decide how an event-driven workflow finds out that its event happened | given a workflow started by an event, says whether it should notice the event by polling or through a hook, and why, with a reason tied to this workflow: whether the source offers a hook, how soon the result is needed, what each check costs, and who would have to set up receiving the message. A reason that doesn't refer to this workflow at all does not meet it. Cases: `hook`, `poll` |
-| `c-when-to-queue`  | decide where a workflow's work waits until a worker can take it up | given a described workflow, says where its work should wait until a worker can take it up (a queue the workflow keeps, a source that already holds the waiting work, a list worked out each time from the state of files, or nowhere) and why, with a reason tied to this workflow: what would go wrong here without it, or, for nowhere, whether the worker is always available and never overloaded or dropping some work is acceptable. A reason with no consequence tied to this workflow does not meet it. Cases: `worker-unavailable`, `spread-out`, `no-queue` |
+| `c-choose-trigger` | choose what triggers a workflow's runs, and say why | given a described workflow, says what should trigger its runs (a person, a schedule or an event) and why, with a reason tied to this workflow of any of three kinds: what makes that trigger good here, what would go wrong here without it, or what would make a specific other kind worse. The facts that bear on it include how soon its result is needed, how often there is work to do, who would have to remember to start it, and whether the machine or person that does the work will be available when the trigger fires. A reason that doesn't refer to this workflow at all, such as "a schedule is automatic", does not meet it. Cases: `event`, `unavailable`, `not-event` |
+| `c-choose-noticing` | decide how an event-driven workflow finds out that its event happened | given a workflow started by an event, says whether it should notice the event by polling or through a hook, and why, with a reason tied to this workflow of any of three kinds: what makes that method good here, what would go wrong here without it, or what would make the other method worse. The facts that bear on it include whether the source can send word, how soon the result is needed, what each check costs, and who would have to set up receiving the message. A reason that doesn't refer to this workflow at all does not meet it. Cases: `hook`, `poll` |
+| `c-when-to-queue`  | decide where a workflow's work waits until a worker can take it up | given a described workflow, says where its work should wait until a worker can take it up (a queue the workflow keeps, a source that already holds the waiting work, a list worked out each time from the state of files, or nowhere) and why, with a reason tied to this workflow of any of three kinds: what makes that place good here, what would go wrong here without it, or what would make a specific other place worse. For nowhere, the reason is that the worker is always available and never overloaded, or that dropping some work is acceptable. A reason that doesn't refer to this workflow at all does not meet it. Cases: `worker-unavailable`, `spread-out`, `no-queue` |
 
 ## Coverage
 
@@ -293,20 +293,25 @@ planning their own Problem Set 5 workflow will require.
   person away and so produce nothing, an evening schedule that misses late work, a run made before
   the person leaves, an event where each run is costly); the irrelevant detail; two or three
   generic reasons that would fail ("a schedule is automatic", "events are faster", "a person can
-  make sure it's done right"); and one or two facts of this scenario that are true but don't
-  separate the choice from any other kind, which also fail ("each run takes the agent ten
-  minutes", "members check the board at breakfast" when every accepted option is done by then).
+  make sure it's done right"); one or two facts of this scenario that are true but have no
+  bearing on the choice at all, which also fail ("each run takes the agent ten minutes"); and an
+  example of each of the three kinds of tied reason below, for the choice it accepts.
 
-  Credit: full when the answer chooses a trigger the key accepts and gives a reason tied to a fact
-  about this workflow that makes that choice fit better than the other kinds. One tied reason is
-  enough; the answer need not compare with every other kind, and a reason that also names what the
-  choice costs ("it means remembering each morning, but the laptop is often off at 7:15") still
-  earns full credit. A reason is tied when it rests on a fact of this workflow that separates the
-  choice from at least one other kind, making the choice fit better than it ("the care sheets are
-  needed within the hour", so a person or a slow schedule would be too late; "the captain's laptop
-  is off until noon on early-shift days", so a 7:15 schedule wouldn't run then). A true fact that
-  holds just as much for the other kinds is not a tied reason; nor is one resting on the
-  irrelevant detail, or one the scenario's facts contradict. An answer is
+  Credit: full when the answer chooses a trigger the key accepts and gives a reason tied to this
+  workflow of any of three kinds:
+  - **what makes that trigger good here**: a fact of this workflow the choice suits, needs or
+    meets ("new clients fill in the form at no set times"; "the office computer is never turned
+    off", for an event);
+  - **what would go wrong here without it**: a consequence in this workflow of not using it ("a
+    care sheet could be hours late");
+  - **what would make a specific other kind worse**: a fact that tells against a named other
+    option ("the captain's laptop is off until noon on early-shift days, so a 7:15 schedule
+    wouldn't run then").
+  One tied reason is enough; the answer need not compare with every other kind, and a reason that
+  also names what the choice costs ("it means remembering each morning, but the laptop is often
+  off at 7:15") still earns full credit. A fact with no bearing on the choice is not a tied reason
+  (how long a run takes, who reads the result); nor is one resting on the irrelevant detail, or
+  one the scenario's facts contradict. An answer is
   ruled on the design it describes, not the name it gives it: cheap repeated looks that start the
   costly run only when something is new ("a schedule every ten minutes that checks for anything
   new and starts the agent only then") are an event choice, whatever the answer calls them. In an
@@ -361,8 +366,10 @@ planning their own Problem Set 5 workflow will require.
   running prose. After one or two sentences saying what the workflow is for and what does its
   work, a short paragraph headed "About this workflow:" gives the facts one sentence each: the
   deciding fact or facts, every fact a near-miss needs to be shown wrong, and one neutral sentence
-  that would be true whatever started the runs (how long each run takes, or that the machine is
-  never turned off where every option runs on it), and nothing else.
+  that has no bearing on when runs should start (how long each run takes), and nothing else. The
+  neutral sentence is never a fact some trigger needs or meets (that the machine is never turned
+  off, that the person is in on weekdays), since under the criterion such a fact can be a reason
+  of the "good here" kind.
 
   **A question** reads "Which of these fits this workflow?", then four numbered options, each one
   sentence in the same frame: "<Choice>, because <reason>." A choice is said concretely: "<Who>
@@ -373,8 +380,10 @@ planning their own Problem Set 5 workflow will require.
   - **sound**: the natural choice, with a fact that separates it from the other kinds;
   - **wrong choice, true reason**: a different choice with a reason that is true by the facts, or
     sounds true, but doesn't rescue it: another fact in the paragraph rules the choice out;
-  - **not a difference**: the natural choice with a true fact that doesn't separate it from the
-    other kinds (the neutral sentence, or an availability fact that holds for every option alike);
+  - **not a difference**: the natural choice with the neutral sentence as its reason, a true fact
+    with no bearing on the choice. It is never an availability fact or any fact that makes the
+    choice good here, would go wrong without it, or tells against a named other kind, since any of
+    those is a reason the criterion accepts;
   - **ruled-out alternative**: a coherent design, a choice and the reason that would go with it,
     that a stated fact rules out (it would fire while the machine is turned off, miss work that is
     still arriving, be too late, or cost a run per change where each run is costly).
@@ -401,11 +410,11 @@ planning their own Problem Set 5 workflow will require.
   - `event-best`, a pet-sitting service. The paragraph gives "New clients fill in the form a few a
     day, at no set times", "Each care sheet is needed within the hour", "Each care-sheet run has
     the agent reread the whole client file", "The owner starts work at 8 a.m." and the neutral
-    sentence "The office computer is never turned off." Options: sound, "An event: each new form
-    starts a run, because new clients fill in the form a few a day, at no set times"; wrong
-    choice, true reason, "A schedule every hour, because each care sheet is needed within the
+    sentence "Each care sheet takes the agent about two minutes." Options: sound, "An event: each
+    new form starts a run, because new clients fill in the form a few a day, at no set times";
+    wrong choice, true reason, "A schedule every hour, because each care sheet is needed within the
     hour" (most hourly runs would reread the whole client file for nothing); not a difference, "An
-    event: each new form starts a run, because the office computer is never turned off";
+    event: each new form starts a run, because each care sheet takes the agent about two minutes";
     ruled-out alternative, "A schedule every morning at 8 a.m., because the owner starts work at 8
     a.m." (forms come in all day, and each care sheet is needed within the hour). Two events, two
     schedules.
@@ -435,7 +444,7 @@ planning their own Problem Set 5 workflow will require.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. As
   `a-argue-a-trigger`'s, then the tutor sets four options for the same illustration in this
   activity's style and goes through them aloud, saying for each near-miss which fact rules it out
-  or why its reason separates nothing.
+  or why its reason has no bearing on the choice.
 - **doesn't show:** the learner picks among four options rather than writing one, so a pass doesn't
   show they would find the deciding fact or word the reason themselves; with four choices a guess
   is right a quarter of the time. Every scenario has one natural choice, so a pass shows nothing
@@ -535,20 +544,25 @@ planning their own Problem Set 5 workflow will require.
   check at an interval the facts allow counts as checking), as `a-argue-a-trigger`'s key does,
   the deciding fact or facts and the sentence carrying each, why the
   other method fits worse, the irrelevant detail, two or three generic reasons that would fail
-  ("being told is faster", "checking wastes resources", "it's simpler to just check"), and one or
-  two facts of this scenario that are true but don't separate the methods, which also fail ("the
-  office computer is never turned off", "each booking takes the agent two minutes", and, for being
-  told, "the website can send a message each time" on its own).
+  ("being told is faster", "checking wastes resources", "it's simpler to just check"), one or two
+  facts of this scenario that are true but have no bearing on the method at all, which also fail
+  ("each booking takes the agent two minutes"), and an example of each of the three kinds of tied
+  reason below, for the method it accepts.
 
   Credit: full when the answer chooses a method the key accepts and gives a reason tied to this
-  workflow. A reason is tied when it rests on a fact of this workflow that separates the chosen
-  method from the other one, making it fit better. That the source can send a message is only a
-  precondition for being told, not a reason it beats checking: an answer for being told must also
-  rest on how soon the result is needed (checks would have to be very frequent), what each check
-  costs, or set-up being easy for whoever must do it. For checking, the source being unable to send
-  word is a full reason on its own (it rules being told out); otherwise the reason rests on set-up
-  being a bother or out of reach, with checks cheap and the result able to wait. One tied reason
-  is enough. An answer is
+  workflow of any of three kinds:
+  - **what makes that method good here**: a fact of this workflow the method suits, needs or
+    meets. For being told, that the source can send a message each time is a full reason of this
+    kind on its own, as are a set-up that is easy for whoever must do it and a machine that is
+    never turned off to receive the message. For checking, that the source sends no notice is a
+    full reason on its own, as are a cheap look and a result that can wait;
+  - **what would go wrong here without it**: a consequence in this workflow of not using it
+    ("bookings would wait for the next check, past the few minutes the manager wants");
+  - **what would make the other method worse**: a fact that tells against the other method ("each
+    look means the agent reading every booking again"; "receiving the messages means asking my
+    nephew, who helps once a month").
+  One tied reason is enough. A fact with no bearing on the method is not a tied reason; nor is one
+  resting on the irrelevant detail, or one the scenario's facts contradict. An answer is
   ruled on the design it describes: "a program looks every ten minutes" is checking again and
   again, whatever it is called. Half when the method is one the key doesn't accept but the reason
   is tied to a real fact of this workflow, or the method is accepted but the reason is generic or
@@ -593,8 +607,10 @@ planning their own Problem Set 5 workflow will require.
   handled after it arrives, not at set times, a short paragraph headed "About this workflow:" gives
   the facts one sentence each: the deciding fact or facts, every fact a near-miss needs to be shown
   wrong (how soon the result is needed, what each check costs, whether the source can send word,
-  who would set up receiving it), and one neutral sentence that holds for either method (the office
-  computer is never turned off; each item takes the agent about two minutes), and nothing else. The
+  who would set up receiving it), and one neutral sentence with no bearing on either method (each
+  item takes the agent about two minutes), and nothing else. The neutral sentence is never a fact
+  a method needs or meets (that the machine is never turned off, so a message would be received),
+  since under the criterion such a fact can be a reason of the "good here" kind. The
   source's ability to send word is said in plain words, never with the words hook, webhook, polling
   or callback.
 
@@ -605,7 +621,8 @@ planning their own Problem Set 5 workflow will require.
   explanation, no hedge and no intensifier. The four sentences are within ten words of each other in
   length. `type: mcq`. The four options are:
   - **sound**: the natural method, with a fact that separates it from the other method;
-  - **not a difference**: the natural method with the neutral sentence as its reason;
+  - **not a difference**: the natural method with the neutral sentence as its reason, a true fact
+    with no bearing on the method;
   - two options on **the other method**, each with a different fact from the paragraph that is
     true, or sounds true, but doesn't rescue that method.
   So the four split two and two by method, and counting methods gives nothing away. By shape:
@@ -629,10 +646,10 @@ planning their own Problem Set 5 workflow will require.
   **Example**, a `costly-setup` question. The paragraph gives "The sign-up form can send a message
   to a web address each time", "Receiving those messages means asking my nephew, who helps once a
   month", "A quick look at the form's list by a program takes a moment", "A reply within the hour
-  is fine" and the neutral sentence "The office computer is never turned off." Options: sound,
-  "Checking for new sign-ups every ten minutes, because receiving those messages means asking my
-  nephew, who helps once a month"; not a difference, "Checking for new sign-ups every ten minutes,
-  because the office computer is never turned off"; other method, "Being told by the form each
+  is fine" and the neutral sentence "Each sign-up takes the agent about two minutes." Options:
+  sound, "Checking for new sign-ups every ten minutes, because receiving those messages means
+  asking my nephew, who helps once a month"; not a difference, "Checking for new sign-ups every ten
+  minutes, because each sign-up takes the agent about two minutes"; other method, "Being told by the form each
   time, because the sign-up form can send a message to a web address each time"; other method,
   "Being told by the form each time, because a reply within the hour is fine". Both being-told
   options fail on the nephew sentence. Two checking, two being told.
@@ -652,7 +669,7 @@ planning their own Problem Set 5 workflow will require.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. As
   `a-argue-noticing`'s, then the tutor sets four options for the same illustration in this
   activity's style and goes through them aloud, saying for each near-miss which fact rules it out
-  or why its reason holds for either method.
+  or why its reason has no bearing on the method.
 - **doesn't show:** the learner picks among four options rather than writing one, so a pass doesn't
   show they would find the deciding fact or word the reason themselves; with four choices a guess
   is right a quarter of the time. Every scenario has one natural method, so a pass shows nothing
@@ -799,16 +816,22 @@ planning their own Problem Set 5 workflow will require.
 
   Credit: in an `unavailable` or `burst` question, full when the answer names a workable place for
   the work, said concretely for this workflow (the key's natural kind, another it lists, or a new
-  one that passes the rule above), and gives a reason tied to this workflow. Either of two reasons
-  counts as tied: what would go wrong here without it (requests arriving overnight never get a
-  reply; three hundred sign-ups at once overrun the provider's limit), or the fact that makes this
-  place work for this workflow's arrivals (the website keeps every request with its time, so the
-  agent can find the night's requests in the morning). Half when the place is workable but the
-  reason is generic ("work might get lost") or missing, or when the reason is tied but the place
-  is unworkable. None when neither holds, or when the answer says no place is needed. In a
-  `no-queue` question, full when the answer says the work needn't wait and gives as the reason the
-  condition that holds, tied to the fact that makes it hold (the program is on a machine that's
-  never off and takes a second for each of a few an hour; each reading replaces the last). Half
+  one that passes the rule above), and gives a reason tied to this workflow of any of three kinds:
+  - **what makes that place good here**: the fact that makes it work for this workflow's arrivals
+    (the website keeps every request with its time, so the agent can find the night's requests in
+    the morning);
+  - **what would go wrong here without it**: requests arriving overnight never get a reply; three
+    hundred sign-ups at once overrun the provider's limit;
+  - **what would make a specific other place worse**: a fact that tells against a named other
+    place (a list the workflow keeps would miss the night's requests, since nothing is on overnight
+    to add them; doing nothing would lose every request that comes in while the laptop is off).
+  Half when the place is workable but the reason doesn't refer to this workflow at all ("work
+  might get lost") or is missing, or when the reason is tied but the place is unworkable. None when neither holds, or when the answer says no place is needed. In a
+  `no-queue` question the criterion's rule for nowhere applies: full when the answer says the work
+  needn't wait and gives as the reason the condition that holds, that the worker is always
+  available and never overloaded or that dropping some work is acceptable, tied to the fact that
+  makes it hold (the program is on a machine that's never off and takes a second for each of a few
+  an hour; each reading replaces the last). Half
   when it says no place is needed but the reason is generic or names the condition that doesn't
   hold; when it proposes a place while correctly saying that one of the two conditions holds here;
   or, in `drop-ok`, when it proposes a place for a loss that is real but harmless (keeping every
