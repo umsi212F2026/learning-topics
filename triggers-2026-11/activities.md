@@ -569,9 +569,10 @@ workflow may require both.
 - **done when:** the criterion met with no help, case by case: a full-credit answer passes the case
   its question carries.
 - **generator:** **A scenario** is one made-up workflow, told in one paragraph of running prose,
-  six to nine sentences, in the voice of the person who runs it. It says plainly that each new
-  item should be handled after it arrives, not at set times, so the workflow is started by an
-  event (how soon is one of the facts below, and may be anything from a minute to the day); the
+  six to nine sentences, in the voice of the person who runs it. It shows, without saying so
+  outright, that each new item is handled after it arrives rather than at set times (the agent
+  "reads each rush job" and customers want the reply "within a few minutes"), so the workflow is
+  started by an event (how soon is one of the facts below, and may be anything from a minute to the day); the
   question is only how it finds out. It says what does the work, in plain words, and on which
   machine; nothing is described with code, a command, a file format or a query. Mixed through the
   paragraph, in no fixed order and never under labels, are these facts:
@@ -762,9 +763,11 @@ workflow may require both.
   credit.
 - **generator:** **A scenario** uses the same shapes and variants as `a-argue-noticing`, with one
   natural method only (no Hard question where the facts balance), and its facts are not running
-  prose: after one or two sentences saying what the workflow does and that each new item should be
-  handled after it arrives, not at set times, a short paragraph headed "About this workflow:" gives
-  the facts one sentence each: the deciding fact or facts, every fact a near-miss needs to be shown
+  prose: after one to three sentences saying what the workflow does, showing without saying so outright
+  that each new item is handled after it arrives (the agent "replies to each makeup-class
+  request"), and possibly carrying how soon the result is needed and the neutral sentence, a short
+  paragraph headed "About this workflow:" gives the remaining facts one sentence each. Between
+  them, the opening and the paragraph give: the deciding fact or facts, every fact a near-miss needs to be shown
   wrong (how soon the result is needed, what each check costs, whether the source can send word,
   who would set up receiving it), and one neutral sentence with no bearing on either method, and
   nothing else. The neutral sentence says what the result looks like or who made something ("The
@@ -844,8 +847,8 @@ workflow may require both.
   a free AI model so we don't pay for each use", "The office computer is connected to the internet
   and can fetch the list of requests from the website and send email", "The website can send a
   notice each time a request comes in, but notices need a web server to arrive at, and the office
-  computer doesn't run one", "A reply within the hour is fine" and the neutral sentence "The reply
-  is a short note with a picture of ballet shoes." Options (word counts): other method, "A
+  computer doesn't run one"; the opening gives "A reply within the hour is fine" and the neutral
+  sentence "The reply is a short note with a picture of ballet shoes." Options (word counts): other method, "A
   webhook: the website sends a notice each time a request arrives, because the website can send a
   notice each time a request comes in" (25); sound, "Polling for new requests every ten minutes,
   because notices need a web server to arrive at, and the office computer doesn't run one" (23);
