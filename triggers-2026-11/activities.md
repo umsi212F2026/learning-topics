@@ -28,14 +28,16 @@ website", never a brand. Learner-facing text states the task, never the scoring.
 
 ## Check notes
 
-2026-11-02. No bank exists yet for any of the four question activities, so every question is
-written live from its generator; check each live scenario against the shape it claims before
-serving it. Each capability has a write-it check and a quick check, and either can meet the goal
-alone. The topic's depth asks the learner to make and defend each decision, which only the
-write-it checks have them do, so where there is time, have at least one case of each capability
-met through `a-argue-a-trigger` or `a-place-the-waiting-work`. Every scenario states the facts its
-decision needs, so no check shows the learner would notice that a fact is missing and ask, which
-planning their own Problem Set 5 workflow will require.
+2026-11-04. Each capability has a write-it check and a pick-one check, and either can meet the
+goal alone. The topic's depth asks the learner to make each decision and say why, which only the
+write-it checks (`a-argue-a-trigger`, `a-argue-noticing`, `a-place-the-waiting-work`) have them
+do. Where there is time, have at least one case of each capability met through one of those. An
+activity with no bank folder under `tasks/` is written live from its generator: check each live
+scenario against the shape it claims before serving it, and in a pick-one question check the
+option pattern its generator requires. Every scenario states the facts its decision needs, and
+every machine that is off is turned off. So no check shows that the learner would notice a missing
+fact and ask, or would plan for a laptop that only sleeps. Planning their own Problem Set 5
+workflow may require both.
 
 ## Goals
 
@@ -52,7 +54,7 @@ planning their own Problem Set 5 workflow will require.
 | ------------------ | ------ | ----- |
 | `o-orientation`    | `a-read-triggers` |       |
 | `c-choose-trigger` | `a-argue-a-trigger`, `a-pick-trigger-defense` |       |
-| `c-choose-noticing` | `a-argue-noticing`, `a-pick-noticing` |       |
+| `c-choose-noticing` | `a-argue-noticing`, `a-pick-noticing` | The `poll` case can be met through a `no-word` scenario, where the source's being unable to send word settles the choice on its own. A learner can therefore meet this goal without ever weighing set-up effort or the cost of a check against how soon the result is needed. Where there is time, have `poll` met through a `costly-setup` question. Neither check puts the work on a machine that is turned off, though the reading raises a hook on a laptop that is off. |
 | `c-when-to-queue`  | `a-place-the-waiting-work`, `a-trace-the-waiting-work` |       |
 
 ---
