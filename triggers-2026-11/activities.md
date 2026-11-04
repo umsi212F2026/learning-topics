@@ -845,7 +845,8 @@ workflow may require both.
   (`dance-makeup-requests`). The paragraph gives "Students ask for makeup classes through a form on
   our website, which keeps a list of all requests", "The agent runs on the office computer, using
   a free AI model so we don't pay for each use", "The office computer is connected to the internet
-  and can fetch the list of requests from the website and send email", "The website can send a
+  and can fetch the list of requests from the website and send email", "Fetching the list is
+  quick and costs almost nothing", "The website can send a
   notice each time a request comes in, but notices need a web server to arrive at, and the office
   computer doesn't run one"; the opening gives "A reply within the hour is fine" and the neutral
   sentence "The reply is a short note with a picture of ballet shoes." Options (word counts): other method, "A

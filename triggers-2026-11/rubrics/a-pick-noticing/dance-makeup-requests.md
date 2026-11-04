@@ -2,7 +2,8 @@ Shape `poll-best`, variant `cant-be-reached`, case `poll`. The natural method is
 requests every so often, ten minutes being well within what the facts allow. The source can send
 word ("The website can send a notice each time a request comes in"), but the machine that does the
 work can't receive it: "notices need a web server to arrive at, and the office computer doesn't run
-one." Polling works ("can fetch the list of requests from the website") and the result can wait ("A reply within the hour is fine"), so a check
+one." Polling works ("can fetch the list of requests from the website"; "Fetching the list is quick and costs almost
+nothing") and the result can wait ("A reply within the hour is fine"), so a check
 every ten minutes serves. The paragraph says nothing about when any machine is on. The neutral sentence is "The reply
 is a short note with a picture of ballet shoes." Two polling, two webhook.
 
