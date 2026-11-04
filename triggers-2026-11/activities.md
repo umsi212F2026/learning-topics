@@ -558,7 +558,6 @@ workflow may require both.
 - **artifact:** no external source. A described workflow that is started by an event, told in a
   short paragraph, with how it finds out about each event left open, from this activity's bank or
   written live per the generator below. About 3 minutes a question.
-- **verified:** 2026-11-04
 - **learner does:** reads the scenario and its one question; says in two or three sentences
   whether the workflow should find out about each new item by checking again and again or by
   being told each time, and why.
@@ -623,29 +622,46 @@ workflow may require both.
     kennel's computer person can set up the office computer, which is never turned off, to take in
     those messages in an afternoon. Each look at the bookings means the agent reading every booking
     again."
-  - `poll-best` (`poll`): two variants, which the key names. `no-word`: the source can only be
+  - `poll-best` (`poll`): three variants, which the key names. `no-word`: the source can only be
     looked at, so checking again and again is the only way; the result can wait long enough that
     checking every so often is fine, and each look is cheap. `costly-setup`: the source can send
     a message, but receiving it means setting something up that can't be done in time, and the
     scenario always says so in plain terms, not merely that it is a bother, with the deadline in
     the same sentence as the set-up's delay ("receiving those messages means asking my nephew, who
     next helps in three weeks, and sign-ups open tomorrow"), while each look is cheap and the
-    result can wait (within the hour), so a cheap check every ten minutes serves. Defining facts,
-    in both variants: whatever rules out being told (the source sends no notice; the set-up can't
-    be done in time), that a look is cheap, and how long the result can wait. "Repair requests arrive in the
+    result can wait (within the hour), so a cheap check every ten minutes serves.
+    `cant-be-reached`: the source can send word each time, but the machine that does the work
+    can't receive it, and the scenario says so plainly in one sentence that also says what the
+    missing piece is for, so the learner never has to infer what a web server does ("The website
+    can send a notice each time a request comes in, but notices need a web server to arrive at,
+    and the office computer doesn't run one"). The scenario also says the machine can reach out
+    and fetch from the source ("The office computer is connected to the internet and can fetch the
+    list of requests from the website"). The difference this variant teaches is that asking only
+    needs your machine to reach out, while being told needs something the source can reach.
+    Natural method checking; each look is cheap and the result can wait. The scenario says nothing
+    about when any machine is on.
+    Defining facts, in every variant: whatever rules out being told (the source sends no notice;
+    the set-up can't be done in time; the machine has nothing the notices can arrive at), that the
+    machine can look (a program can open the mailbox; the computer can fetch the list), that a
+    look is cheap, and how long the result can wait. In `cant-be-reached` the fetch fact is a
+    defining fact, the reaching-out half of the contrast, so a reason resting on it ("checking,
+    because the office computer can fetch the list itself") rests on a defining fact and is
+    allowed under the facts-kept rule. "Repair requests arrive in the
     association's shared mailbox, a few a day, and a reply within the day is fine. The mailbox
     sends no notice of new mail; a program can open it and look, which takes a moment."
 
   **How hard.** Medium when one deciding fact settles it (the source can't send word; the result
-  is needed within a minute). Hard when the facts pull both ways: in `costly-setup`, a source that
+  is needed within a minute; in `cant-be-reached`, the office computer has nothing the notices
+  can arrive at). Hard when the facts pull both ways: in `costly-setup`, a source that
   can send word but a set-up nobody can do in time; in a Hard `hook-best`, a set-up that is some
   bother but a result needed so soon that checking would have to be constant. The question's
   wording is unchanged. A question where the facts truly balance and the key accepts both methods
   carries no case (see the key below), so the bank's case-carrying questions never balance.
 
-  **Spread across the bank.** A bank is four scenarios, four questions: `hook-best` twice, one Hard;
-  `poll-best` twice, once `no-word` (Medium) and once `costly-setup` (Hard). When the generator is
-  run live, the tutor picks each next shape to carry a case the learner hasn't passed.
+  **Spread across the bank.** A bank is five scenarios, five questions: `hook-best` twice, one
+  Hard; `poll-best` three times, once `no-word` (Medium), once `costly-setup` (Hard) and once
+  `cant-be-reached` (Medium). When the generator is run live, the tutor picks each next shape to
+  carry a case the learner hasn't passed.
 
   **Domains** vary by scenario, none repeating within the bank: a vet clinic's appointment
   requests, a farm stand's preorders, a theater's volunteer usher sign-ups, a ski shop's tune-up
@@ -670,7 +686,9 @@ workflow may require both.
     meets. For being told, that the source can send a message each time is a full reason of this
     kind on its own, as are a set-up that is easy for whoever must do it and a machine that is
     never turned off to receive the message. For checking, that the source sends no notice is a
-    full reason on its own, as are a cheap look and a result that can wait;
+    full reason on its own, as is that the machine has nothing the notices can arrive at
+    (`cant-be-reached`) and that it can fetch from the source itself, and so are a cheap look and
+    a result that can wait;
   - **what would go wrong here without it**: a consequence in this workflow of not using it
     ("bookings would wait for the next check, past the few minutes the manager wants");
   - **what would make the other method worse**: a fact that tells against the other method ("each
@@ -685,10 +703,13 @@ workflow may require both.
   the method is one the key doesn't accept but the reason
   rests on a fact that bears on the method, or the method is accepted but the reason is generic,
   not tied, or missing. None when the answer chooses being told for a source the scenario says
-  can only be looked at, when the method is not accepted and the reason is generic, not tied, or
-  missing, or no method is chosen. Where a Half clause and a None clause both fit (being told for a
-  source that can only be looked at, with a reason that bears on the method), the None clause
-  governs.
+  can only be looked at, or for a machine the scenario says has nothing the notices can arrive at
+  (`cant-be-reached`), when the method is not accepted and the reason is generic, not tied, or
+  missing, or no method is chosen. Where a Half clause and a None clause both fit (being told in
+  either of those cases, with a reason that bears on the method), the None clause governs. In a
+  `cant-be-reached` question the key accepts checking at any interval within how long the result
+  can wait, and never accepts being told, nor a design that adds a web server or other receiver
+  the scenario doesn't supply.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. The
   tutor works the illustration of the same shape aloud: says, of the facts the scenario states,
   whether the source can send word, how soon the result is needed, what a check costs and who
@@ -716,7 +737,6 @@ workflow may require both.
   to a sentence, and one four-choice question offering four ways of finding out about each event,
   each with a reason, from this activity's bank or written live per the generator below. About 3
   minutes a question.
-- **verified:** 2026-11-04
 - **learner does:** reads the scenario, then picks which of four options, each a way of finding out
   (checking again and again, or being told) with its reason, fits the workflow.
 - **tutor role:** examiner
@@ -770,6 +790,14 @@ workflow may require both.
     may claim it does; each gives a different true fact from the paragraph that sounds like a
     reason to want word at once (how soon a reply is wanted, how many items arrive a day, who is
     waiting on them). Being told is ruled out by the fact that the source sends no notice.
+  - `cant-be-reached`: both other-method options are being told, each with a different true fact
+    from the paragraph: one that the source can send a notice each time, the other how soon the
+    result is needed. Neither rescues being told, because the paragraph's one sentence on the
+    missing receiver ("notices need a web server to arrive at, and the office computer doesn't run
+    one") leaves the notices nowhere to arrive; the tutor note cites that sentence. The sound
+    option gives that sentence as its reason. The paragraph also states the fetch fact ("can fetch
+    the list of requests from the website"), a defining fact as in `a-argue-noticing`, and says
+    nothing about when any machine is on.
   - `hook-best`: both other-method options are checking, at intervals the paragraph's facts rule
     out: one frequent enough to be timely, with a true fact such as how soon the result is needed
     (ruled out because each check is costly, or the source limits how often it may be looked at);
@@ -792,9 +820,27 @@ workflow may require both.
   arrives, because a reply within the hour is fine" (18). Both being-told options fail on the
   nephew sentence, which the tutor note cites. Two checking, two being told.
 
-  **Spread across the bank.** A bank is four scenarios, four questions: each case twice; in the two
-  `poll` questions, one `no-word` and one `costly-setup`. The sound option sits in each of the four
-  positions once, and the order of the three near-misses varies.
+  **Example**, a `cant-be-reached` question, from the bank's dance studio scenario
+  (`dance-makeup-requests`). The paragraph gives "Students ask for makeup classes through a form on
+  our website, which keeps a list of all requests", "The agent runs on the office computer, using
+  a free AI model so we don't pay for each use", "The office computer is connected to the internet
+  and can fetch the list of requests from the website and send email", "The website can send a
+  notice each time a request comes in, but notices need a web server to arrive at, and the office
+  computer doesn't run one", "A reply within the hour is fine" and the neutral sentence "The reply
+  is a short note with a picture of ballet shoes." Options: other method, "Being told by the
+  website each time a request arrives, because the website can send a notice each time a request
+  comes in"; sound, "Checking for new requests every ten minutes, because notices need a web
+  server to arrive at, and the office computer doesn't run one"; other method, "Being told by the
+  website each time a request arrives, because a reply within the hour is fine"; not a
+  difference, "Checking for new requests every ten minutes, because the reply is a short note with
+  a picture of ballet shoes". Both being-told options fail on the web-server sentence, which the
+  tutor note cites; asking only needs the office computer to reach out to the website. Two
+  checking, two being told.
+
+  **Spread across the bank.** A bank is five scenarios, five questions: `hook` twice and `poll`
+  three times, the three `poll` questions one each of `no-word`, `costly-setup` and
+  `cant-be-reached`. The sound option sits in each of the four positions at least once and in none
+  more than twice, and the order of the three near-misses varies.
 
   **Domains** are this activity's own, none repeating within the bank: a pet groomer's bookings, a
   church's prayer-request line, a used bookshop's trade-in offers, a climbing gym's waiver forms, a
