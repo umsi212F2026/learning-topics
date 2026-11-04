@@ -649,7 +649,8 @@ workflow may require both.
     list of requests from the website"). The difference this variant teaches is that asking only
     needs your machine to reach out, while being told needs something the source can reach.
     Natural method checking; each look is cheap and the result can wait. The scenario says nothing
-    about when any machine is on.
+    about when any machine is on. The source in a `cant-be-reached` scenario is always a website,
+    so the question always says "through a webhook".
     Defining facts, in every variant: whatever rules out being told (the source sends no notice;
     the set-up can't be done in time; the machine has nothing the notices can arrive at), that the
     machine can look (a program can open the mailbox; the computer can fetch the list), that a
@@ -1156,11 +1157,13 @@ workflow may require both.
   well under the twenty a minute the agent's provider takes").
 
   **A question** is one multiple-choice question, `type: mcq`, with one goal, `c-when-to-queue`,
-  and the case its shape carries. It reads "Where should this workflow's work wait, and why?",
-  then four numbered designs, each one sentence in the same frame: "<Where>, because <why>." Each
-  place and each reason is said as briefly as its facts allow ("In the text line, asking it for new
-  requests each run"; "because requests sent while the agent's computer is off would be lost"), so
-  an option runs to about 25 words. The four are within ten words of each other in length. One is sound on both its
+  and the case its shape carries. It reads "Where, if anywhere, should this workflow's work wait,
+  and why?", then four numbered designs, each one sentence in the same frame: "<Where>, because
+  <why>." Each place and each reason is said as briefly as its facts allow ("In the text line,
+  asking it for new requests each run"; "because requests sent while the agent's computer is off,
+  each with a listener waiting, would never be handled"), so an option runs to about 25 words.
+  Brevity never drops the first why statement's "each with someone waiting on it" or its
+  equivalent, which is what makes that statement false in `drop-ok`. The four are within ten words of each other in length. One is sound on both its
   place and its reason. The four cross two places with two reasons, so the sound one can't be found
   from the options alone:
   - In an `unavailable` or `burst` question, every place and every reason appears in exactly two
@@ -1209,8 +1212,8 @@ workflow may require both.
       wrong place is asking the source.
     When the sound place is nowhere, the `no-queue` rule above applies instead.
 
-  **Why** (the `<why>` slot), one of four statements put in this workflow's terms and worded the
-  same way in every shape: otherwise <items> arriving while <worker> is <unavailable>, each with
+  **Why** (the `<why>` slot), one of four statements put in this workflow's terms and making the
+  same claim in every shape: otherwise <items> arriving while <worker> is <unavailable>, each with
   someone waiting on it, would never be handled; otherwise a burst of <items> would reach <worker>
   faster than <its limit>; nothing
   needs to wait, as <worker> is always available and never overloaded; nothing needs to wait, as
