@@ -14,7 +14,7 @@ The deciding facts, and the sentences carrying them:
 - What each run costs: "Each time the agent runs, it rereads my whole constituent file to see who
   has written before, which costs real money even when no new message has come in."
 - The watching fact, which rules out a person: "Nobody on my staff can sit watching for new
-  messages all day, since they come at no set times."
+  messages all day."
 
 Why the other kinds fit worse:
 
