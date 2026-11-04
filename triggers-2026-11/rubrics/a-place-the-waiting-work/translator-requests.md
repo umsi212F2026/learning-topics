@@ -2,7 +2,7 @@ Shape `unavailable`, case `worker-unavailable`, natural kind `source`, Medium.
 
 The natural place is the website's own record of requests: each run, the agent asks it for the
 requests that came in since its last run. The two facts behind it: where the items are held, "The
-website keeps every request that comes in while my laptop is off, with the time it came in"; and
+website keeps a list of every request, with the time it came in"; and
 that nothing the workflow leaves behind says which are done, "The agent emails each match and keeps
 no copy of it." So no file or log could tell what is still waiting, and the website's list is the
 simplest place that loses nothing.
@@ -36,8 +36,8 @@ who knows the language; the people asking need a letter or a form translated.
 
 Examples of each kind of tied reason, for the website's list:
 
-- What makes that place good here: "the website keeps every request that comes in while the laptop
-  is off, with its time, so each morning the agent can ask for the ones since its last run."
+- What makes that place good here: "the website keeps a list of every request, with its time, so
+  each morning the agent can ask for the ones since its last run."
 - What would go wrong here without it: "requests sent overnight or at the weekend would never get a
   volunteer."
 - What would make a specific other place worse: "a list the agent keeps would miss the night's
@@ -49,8 +49,7 @@ Examples of each kind of tied reason, for the website's list:
 - **goal:** `c-when-to-queue`
 - **cases:** worker-unavailable
 - **answer:** On the website: each time it runs, the agent asks the website for the requests that
-  came in since its last run. The website keeps every request that arrives while the laptop is off,
-  with its time, and the agent keeps no copy of its emails, so nothing else could say which are
+  came in since its last run. The website keeps a list of every request, with its time, and the agent keeps no copy of its emails, so nothing else could say which are
   done. Without that, requests sent in the evening, overnight or at the weekend would never be
   matched.
 - **credit:** full when the answer names a workable place, said concretely for this workflow (the
