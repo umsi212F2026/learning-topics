@@ -264,7 +264,9 @@ workflow may require both.
     on or always on at that time, and reacting to each item one at a time would mean many runs
     where one would do; natural choice a schedule, the deciding facts being the set time and the
     steady flow (an event would start many runs where one would do, and a person would have to
-    remember). `person`: runs are rare and irregular, and the person has to be there anyway (to
+    remember). Every `schedule` scenario states either that each run is costly or that the result
+    is one summary of the period ("one report covering the whole week"), so that an event's many
+    runs are plainly worse. `person`: runs are rare and irregular, and the person has to be there anyway (to
     supply the input or look over the result straight away); natural choice a person, the
     deciding facts being the irregular need and the person's presence (a schedule would mostly run
     before there is anything to do or when nobody is there to look).
@@ -296,7 +298,7 @@ workflow may require both.
   the person leaves, an event where each run is costly); the irrelevant detail; two or three
   generic reasons that would fail ("a schedule is automatic", "events are faster", "a person can
   make sure it's done right"); one or two facts of this scenario that are true but have no
-  bearing on the choice at all, which also fail ("each run takes the agent ten minutes"); and an
+  bearing on the choice at all, which also fail ("the care sheet is a one-page form"); and an
   example of each of the three kinds of tied reason below, for the choice it accepts.
 
   Credit: full when the answer chooses a trigger the key accepts and gives a reason tied to this
@@ -312,7 +314,7 @@ workflow may require both.
   One tied reason is enough; the answer need not compare with every other kind, and a reason that
   also names what the choice costs ("it means remembering each morning, but the laptop is often
   off at 7:15") still earns full credit. A fact with no bearing on the choice is not a tied reason
-  (how long a run takes, who reads the result); nor is one resting on the irrelevant detail, or
+  (what the result looks like, who designed the form); nor is one resting on the irrelevant detail, or
   one the scenario's facts contradict. An answer is
   ruled on the design it describes, not the name it gives it: cheap repeated looks that start the
   costly run only when something is new ("a schedule every ten minutes that checks for anything
@@ -322,10 +324,11 @@ workflow may require both.
   scenario's facts; it is not on whether the reason uses the word "available". An answer that
   relies on a missed run being caught up when the laptop wakes (as the reading says launchd does
   after sleep) rests on a fact the scenario contradicts, since the laptop is turned off, not
-  asleep, so that reason is not tied. Half when the choice is one the key doesn't accept but the reason rests on a real fact
-  of this workflow (the learner read the scenario but drew the wrong verdict), or when the choice
-  is accepted but the reason is generic or missing. None when the choice is not accepted and the
-  reason is generic or missing, or no trigger is chosen.
+  asleep, so that reason is not tied. Half when the choice is one the key doesn't accept but the
+  reason rests on a fact that bears on the choice (the learner read the scenario but drew the
+  wrong verdict), or when the choice is accepted but the reason is generic, not tied, or missing.
+  None when the choice is not accepted and the reason is generic, not tied, or missing, or no
+  trigger is chosen.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. The
   tutor works the illustration of the same shape as the question aloud, from the facts to the
   choice: says which facts bear on how soon the result is needed, how often there is work, who
@@ -368,10 +371,12 @@ workflow may require both.
   running prose. After one or two sentences saying what the workflow is for and what does its
   work, a short paragraph headed "About this workflow:" gives the facts one sentence each: the
   deciding fact or facts, every fact a near-miss needs to be shown wrong, and one neutral sentence
-  that has no bearing on when runs should start (how long each run takes), and nothing else. The
-  neutral sentence is never a fact some trigger needs or meets (that the machine is never turned
-  off, that the person is in on weekdays), since under the criterion such a fact can be a reason
-  of the "good here" kind.
+  that has no bearing on when runs should start, and nothing else. The neutral sentence says what
+  the result looks like or who made something ("The leaderboard is a single page with a photo of
+  the week's top runner", "The owner's niece designed the form"). It never touches timing,
+  availability or cost: not how long a run takes (a short run could help meet a tight deadline),
+  not that the machine is never turned off, not that the person is in on weekdays, since under the
+  criterion any of those can be a reason of the "good here" kind.
 
   **A question** reads "Which of these fits this workflow?", then four numbered options, each one
   sentence in the same frame: "<Choice>, because <reason>." A choice is said concretely: "<Who>
@@ -401,28 +406,32 @@ workflow may require both.
   **Examples**, which obey the form rule above. The paragraph sentences are given in quotation marks.
   - `machine-off`. The paragraph gives "The laptop is turned off at 11 p.m.", "Members log runs
     until 11 p.m.", "On most days the laptop is turned on at 7 a.m.", "On early-shift days the
-    laptop is turned on at noon" and the neutral sentence "Each leaderboard run takes the agent
-    about ten minutes." Options: sound, "She starts it by hand when she turns the laptop on,
+    laptop is turned on at noon" and the neutral sentence "The leaderboard is a single page with a
+    photo of the top runner." Options: sound, "She starts it by hand when she turns the laptop on,
     because on early-shift days the laptop is turned on at noon"; wrong choice, true reason, "A
     schedule at 7:15 a.m., because on most days the laptop is turned on at 7 a.m."; not a
-    difference, "She starts it by hand when she turns the laptop on, because each leaderboard run
-    takes the agent about ten minutes"; ruled-out alternative, "A schedule at 10:30 p.m., because
+    difference, "She starts it by hand when she turns the laptop on, because the leaderboard is a
+    single page with a photo of the top runner"; ruled-out alternative, "A schedule at 10:30 p.m., because
     the laptop is turned off at 11 p.m." (members log runs until 11). Two hand starts, two
     schedules. No fact that she forgets appears.
   - `event-best`, a pet-sitting service. The paragraph gives "New clients fill in the form a few a
-    day, at no set times", "Each care sheet is needed within the hour", "Each care-sheet run has
-    the agent reread the whole client file", "The owner starts work at 8 a.m." and the neutral
-    sentence "Each care sheet takes the agent about two minutes." Options: sound, "An event: each
-    new form starts a run, because new clients fill in the form a few a day, at no set times";
-    wrong choice, true reason, "A schedule every hour, because each care sheet is needed within the
-    hour" (most hourly runs would reread the whole client file for nothing); not a difference, "An
-    event: each new form starts a run, because each care sheet takes the agent about two minutes";
-    ruled-out alternative, "A schedule every morning at 8 a.m., because the owner starts work at 8
-    a.m." (forms come in all day, and each care sheet is needed within the hour). Two events, two
-    schedules.
+    day, at no set times", "Each care sheet is needed within the hour", "Every run, even one that
+    finds no new form, has the agent reread the whole client file, which costs real money", "The
+    owner starts work at 8 a.m." and the neutral sentence "The owner's niece designed the form."
+    Options: sound, "An event: each new form starts a run, because new clients fill in the form a
+    few a day, at no set times"; wrong choice, true reason, "A schedule every hour, because each
+    care sheet is needed within the hour" (most hourly runs would find no new form and still cost
+    real money); not a difference, "An event: each new form starts a run, because the owner's niece
+    designed the form"; ruled-out alternative, "A schedule every morning at 8 a.m., because the
+    owner starts work at 8 a.m." (forms come in all day, and each care sheet is needed within the
+    hour). Two events, two schedules. The tutor note cites the every-run sentence as what rules out
+    the hourly schedule.
   - `person-away`: the paragraph states whether the person reliably remembers, when they get back,
     that the input changes while they are away and that each run is costly, as in
-    `a-argue-a-trigger`; the two options on the other kind are both schedules (for a hand start
+    `a-argue-a-trigger`. When the hand start is natural, the paragraph also says both that she wants
+    the result as soon as she is back and that the input keeps changing until she acts, so a fixed
+    schedule is shown wrong either way (too late if she is back early, stale if she is back late);
+    the two options on the other kind are both schedules (for a hand start
     that is natural: a fixed Monday schedule, and a schedule before they leave, which is stale) or
     both hand starts (when a schedule is natural).
   - `person-or-schedule`: the two options on the other kind are both of the other of person and
@@ -520,17 +529,19 @@ workflow may require both.
   - `poll-best` (`poll`): two variants, which the key names. `no-word`: the source can only be
     looked at, so checking again and again is the only way; the result can wait long enough that
     checking every so often is fine, and each look is cheap. `costly-setup`: the source can send
-    a message, but receiving it means setting something up that the person who would have to do it
-    finds a bother or can't get to soon, while each look is cheap and the result can wait (within
-    the hour), so a cheap check every ten minutes serves. "Repair requests arrive in the
+    a message, but receiving it means setting something up that can't be done in time, and the
+    scenario always says so in plain terms, not merely that it is a bother ("receiving those
+    messages means asking my nephew, who helps once a month"), while each look is cheap and the
+    result can wait (within the hour), so a cheap check every ten minutes serves. "Repair requests arrive in the
     association's shared mailbox, a few a day, and a reply within the day is fine. The mailbox
     sends no notice of new mail; a program can open it and look, which takes a moment."
 
   **How hard.** Medium when one deciding fact settles it (the source can't send word; the result
   is needed within a minute). Hard when the facts pull both ways: in `costly-setup`, a source that
-  can send word but a set-up nobody can do soon; in a Hard `hook-best`, a set-up that is some
+  can send word but a set-up nobody can do in time; in a Hard `hook-best`, a set-up that is some
   bother but a result needed so soon that checking would have to be constant. The question's
-  wording is unchanged.
+  wording is unchanged. A question where the facts truly balance and the key accepts both methods
+  carries no case (see the key below), so the bank's case-carrying questions never balance.
 
   **Spread across the bank.** A bank is four scenarios, four questions: `hook-best` twice, one Hard;
   `poll-best` twice, once `no-word` (Medium) and once `costly-setup` (Hard). When the generator is
@@ -548,8 +559,10 @@ workflow may require both.
   other method fits worse, the irrelevant detail, two or three generic reasons that would fail
   ("being told is faster", "checking wastes resources", "it's simpler to just check"), one or two
   facts of this scenario that are true but have no bearing on the method at all, which also fail
-  ("each booking takes the agent two minutes"), and an example of each of the three kinds of tied
-  reason below, for the method it accepts.
+  ("the booking form was designed by the manager's cousin"), and an example of each of the three
+  kinds of tied reason below, for the method it accepts. A question whose key accepts both methods
+  carries no case, since `hook` and `poll` are each a workflow best served by one method; its
+  rubric `cases:` line is left empty and a pass on it meets neither case.
 
   Credit: full when the answer chooses a method the key accepts and gives a reason tied to this
   workflow of any of three kinds:
@@ -567,9 +580,12 @@ workflow may require both.
   resting on the irrelevant detail, or one the scenario's facts contradict. An answer is
   ruled on the design it describes: "a program looks every ten minutes" is checking again and
   again, whatever it is called. Half when the method is one the key doesn't accept but the reason
-  is tied to a real fact of this workflow, or the method is accepted but the reason is generic or
-  missing. None when the answer chooses being told for a source the scenario says can only be
-  looked at, when the method is not accepted and the reason is generic, or no method is chosen.
+  rests on a fact that bears on the method, or the method is accepted but the reason is generic,
+  not tied, or missing. None when the answer chooses being told for a source the scenario says
+  can only be looked at, when the method is not accepted and the reason is generic, not tied, or
+  missing, or no method is chosen. Where a Half clause and a None clause both fit (being told for a
+  source that can only be looked at, with a reason that bears on the method), the None clause
+  governs.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. The
   tutor works the illustration of the same shape aloud: says whether the source can send word,
   how soon the result is needed, what a check costs and who would set up receiving the message,
@@ -594,7 +610,6 @@ workflow may require both.
   to a sentence, and one four-choice question offering four ways of finding out about each event,
   each with a reason, from this activity's bank or written live per the generator below. About 3
   minutes a question.
-- **verified:** 2026-11-04
 - **learner does:** reads the scenario, then picks which of four options, each a way of finding out
   (checking again and again, or being told) with its reason, fits the workflow.
 - **tutor role:** examiner
@@ -610,10 +625,12 @@ workflow may require both.
   handled after it arrives, not at set times, a short paragraph headed "About this workflow:" gives
   the facts one sentence each: the deciding fact or facts, every fact a near-miss needs to be shown
   wrong (how soon the result is needed, what each check costs, whether the source can send word,
-  who would set up receiving it), and one neutral sentence with no bearing on either method (each
-  item takes the agent about two minutes), and nothing else. The neutral sentence is never a fact
-  a method needs or meets (that the machine is never turned off, so a message would be received),
-  since under the criterion such a fact can be a reason of the "good here" kind. The
+  who would set up receiving it), and one neutral sentence with no bearing on either method, and
+  nothing else. The neutral sentence says what the result looks like or who made something ("The
+  confirmation is a short note with the club's logo", "The manager's cousin designed the form").
+  It never touches timing, availability or cost: not how long each item takes (a quick job could
+  help meet a tight deadline), not that the machine is never turned off (so a message would be
+  received), since under the criterion any of those can be a reason of the "good here" kind. The
   source's ability to send word is said in plain words, never with the words hook, webhook, polling
   or callback.
 
@@ -632,7 +649,7 @@ workflow may require both.
   - `costly-setup`: both other-method options are being told. One gives the fact that the source
     can send a message each time; the other gives another true fact (how soon the result is
     needed, or how many items arrive). Neither rescues being told, because receiving the message
-    needs a set-up nobody can do soon.
+    needs a set-up that can't be done in time.
   - `no-word`: both other-method options are being told. The source sends no notice, so neither
     may claim it does; each gives a different true fact from the paragraph that sounds like a
     reason to want word at once (how soon a reply is wanted, how many items arrive a day, who is
@@ -649,10 +666,10 @@ workflow may require both.
   **Example**, a `costly-setup` question. The paragraph gives "The sign-up form can send a message
   to a web address each time", "Receiving those messages means asking my nephew, who helps once a
   month", "A quick look at the form's list by a program takes a moment", "A reply within the hour
-  is fine" and the neutral sentence "Each sign-up takes the agent about two minutes." Options:
-  sound, "Checking for new sign-ups every ten minutes, because receiving those messages means
-  asking my nephew, who helps once a month"; not a difference, "Checking for new sign-ups every ten
-  minutes, because each sign-up takes the agent about two minutes"; other method, "Being told by the form each
+  is fine" and the neutral sentence "The confirmation is a short note with the club's logo."
+  Options: sound, "Checking for new sign-ups every ten minutes, because receiving those messages
+  means asking my nephew, who helps once a month"; not a difference, "Checking for new sign-ups
+  every ten minutes, because the confirmation is a short note with the club's logo"; other method, "Being told by the form each
   time, because the sign-up form can send a message to a web address each time"; other method,
   "Being told by the form each time, because a reply within the hour is fine". Both being-told
   options fail on the nephew sentence. Two checking, two being told.
@@ -805,7 +822,11 @@ workflow may require both.
   **The key** gives the shape and the natural kind of queue, named concretely for this workflow
   ("the website's list of requests"), any other kind the facts make workable, the consequence
   without a queue and the sentence it rests on, and, for `no-queue`, which condition holds and why
-  the other doesn't; plus the irrelevant detail.
+  the other doesn't; the irrelevant detail; two or three generic reasons that would fail ("work
+  might get lost", "a queue is safer", "it's good to keep a record"); one or two facts of this
+  scenario that are true but have no bearing on where the work waits, which also fail ("the
+  replies are signed with the shop's name"); and an example of each of the three kinds of tied
+  reason below, for the place it accepts.
 
   **Places the facts don't already supply.** An answer may propose something the workflow would
   newly start doing: a list it keeps, or a file or log line it begins writing for each finished
@@ -828,18 +849,28 @@ workflow may require both.
   - **what would make a specific other place worse**: a fact that tells against a named other
     place (a list the workflow keeps would miss the night's requests, since nothing is on overnight
     to add them; doing nothing would lose every request that comes in while the laptop is off).
-  Half when the place is workable but the reason doesn't refer to this workflow at all ("work
-  might get lost") or is missing, or when the reason is tied but the place is unworkable. None when neither holds, or when the answer says no place is needed. In a
-  `no-queue` question the criterion's rule for nowhere applies: full when the answer says the work
-  needn't wait and gives as the reason the condition that holds, that the worker is always
+  A fact with no bearing on where the work waits is not a tied reason; nor is one resting on the
+  irrelevant detail, or one the scenario's facts contradict. Half when the place is workable but
+  the reason is generic, not tied, or missing, or when the reason is tied but the place is
+  unworkable. None when the place is unworkable and the reason is generic, not tied, or missing, or
+  when the answer says no place is needed.
+
+  In a `no-queue` question the criterion's rule for nowhere applies: full when the answer says the
+  work needn't wait and gives as the reason the condition that holds, that the worker is always
   available and never overloaded or that dropping some work is acceptable, tied to the fact that
   makes it hold (the program is on a machine that's never off and takes a second for each of a few
-  an hour; each reading replaces the last). Half
-  when it says no place is needed but the reason is generic or names the condition that doesn't
-  hold; when it proposes a place while correctly saying that one of the two conditions holds here;
-  or, in `drop-ok`, when it proposes a place for a loss that is real but harmless (keeping every
-  reading so none is missed, when each is replaced by the next). None when it proposes a place and
-  names a loss the facts rule out, or gives no reason.
+  an hour; each reading replaces the last). The `always-ready` condition has two halves, and the
+  reason must give both (the worker is always available, and it is never overloaded). Half when:
+  - it says no place is needed but the reason is generic, not tied, or missing, or names the
+    condition that doesn't hold;
+  - it says no place is needed with only half of the `always-ready` condition ("it never gets more
+    than it can handle", with nothing about the worker always being available, or the reverse);
+  - it proposes a place while correctly saying that one of the two conditions holds here;
+  - it proposes a place with a "good here" reason that is true of this workflow (the form keeps
+    every reading, so nothing would be lost), since a place is workable but not needed;
+  - in `drop-ok`, it proposes a place for a loss that is real but harmless (keeping every reading
+    so none is missed, when each is replaced by the next).
+  None when it proposes a place and names a loss the facts rule out, or gives no reason.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. The
   tutor works the illustration of the same shape aloud: says when work arrives and when the worker
   is available, what already holds or leaves behind a record of the waiting work, which kind of
