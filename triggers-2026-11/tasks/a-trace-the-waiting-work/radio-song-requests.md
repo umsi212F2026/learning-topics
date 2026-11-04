@@ -9,9 +9,9 @@ broadcasts from a room above the old firehouse.
 
 ### q1
 
-Which design, with its reason, fits this workflow?
+Where should this workflow's work wait, and why?
 
-1. The work should wait in the text line, asking it for the requests that came in since the last run, because otherwise a burst of requests would reach the agent faster than the twenty a minute its provider takes.
-2. The work should wait in a list the workflow keeps, adding each request as it arrives, because otherwise requests arriving while the agent's computer is turned off, each with someone waiting on it, would never be handled.
-3. The work should wait in the text line, asking it for the requests that came in since the last run, because otherwise requests arriving while the agent's computer is turned off, each with someone waiting on it, would never be handled.
-4. The work should wait in a list the workflow keeps, adding each request as it arrives, because otherwise a burst of requests would reach the agent faster than the twenty a minute its provider takes.
+1. In the text line, asking it for new requests each run, because a burst would arrive faster than the twenty a minute the provider takes.
+2. In a list the workflow keeps as each request arrives, because requests sent while the agent's computer is off would be lost.
+3. In the text line, asking it for new requests each run, because requests sent while the agent's computer is off would be lost.
+4. In a list the workflow keeps as each request arrives, because a burst would arrive faster than the twenty a minute the provider takes.

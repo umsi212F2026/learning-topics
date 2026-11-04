@@ -1114,7 +1114,6 @@ workflow may require both.
   `a-place-the-waiting-work`, and one four-choice question offering four designs for it, each a
   place for the work to wait and a reason, from this activity's bank or written live per the
   generator below. About 3 minutes a question.
-- **verified:** 2026-11-04
 - **learner does:** reads the scenario, then picks which of four designs, each a place for the work
   to wait (or none) with its reason, fits it.
 - **tutor role:** examiner
@@ -1157,9 +1156,11 @@ workflow may require both.
   well under the twenty a minute the agent's provider takes").
 
   **A question** is one multiple-choice question, `type: mcq`, with one goal, `c-when-to-queue`,
-  and the case its shape carries. It reads "Which design, with its reason, fits this workflow?",
-  then four numbered designs, each one sentence in the same frame: "The work should wait <where>,
-  because <why>." The four are within ten words of each other in length. One is sound on both its
+  and the case its shape carries. It reads "Where should this workflow's work wait, and why?",
+  then four numbered designs, each one sentence in the same frame: "<Where>, because <why>." Each
+  place and each reason is said as briefly as its facts allow ("In the text line, asking it for new
+  requests each run"; "because requests sent while the agent's computer is off would be lost"), so
+  an option runs to about 25 words. The four are within ten words of each other in length. One is sound on both its
   place and its reason. The four cross two places with two reasons, so the sound one can't be found
   from the options alone:
   - In an `unavailable` or `burst` question, every place and every reason appears in exactly two
