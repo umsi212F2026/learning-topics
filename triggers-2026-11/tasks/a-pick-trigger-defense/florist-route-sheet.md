@@ -2,8 +2,9 @@ Rosa owns a neighborhood florist, and an AI agent on her laptop makes the delive
 sheet. Each morning the agent turns every order placed since the last sheet into one route sheet.
 
 **About this workflow:** Customers place orders on the shop's website at all hours, including while
-the laptop is off. The driver wants that morning's orders on the sheet. The laptop is off from 10
-p.m. until 6 a.m., or until 9 a.m. on flower-market days. Rosa wants the route sheet as soon as the
+the laptop is off. The driver wants that morning's orders on the sheet. The laptop is turned off at
+10 p.m. On most days the laptop is turned on at 6 a.m. On flower-market days the laptop is turned
+on at 9 a.m. Rosa wants the route sheet as soon as the
 laptop is on. The route sheet is printed on
 pink paper with the shop's name.
 
