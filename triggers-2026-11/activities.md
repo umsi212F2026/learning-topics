@@ -114,8 +114,9 @@ planning their own Problem Set 5 workflow will require.
   arrives in one burst. An answer that gives only a reason true of any workflow ("a schedule is
   automatic", "events are faster") gets one near-miss question ("would a run every hour be better,
   then? What about this workflow says yes or no?"). Does not set or rehearse any word question from `a-words`: does
-  not ask the learner to define any of the five words, to say what separates polling from a hook
-  or event-driven from polling, or to correct a misused sentence. Does not set or rehearse a
+  not ask the learner to define any of the five words, to say what separates a word from its
+  nearest confusable in goals.md (polling and a hook, a hook and event-driven, event-driven and a
+  schedule, a work queue and a log), or to correct a misused sentence. Does not set or rehearse a
   question from this topic's capability activities: does not ask the learner to choose a trigger, a
   way of noticing an event or a place for work to wait for a new workflow beyond what the reading itself works through; if the learner asks how
   to do that, says that is what the session 19 class and the practice after it are for. Says that
@@ -207,17 +208,17 @@ planning their own Problem Set 5 workflow will require.
   facts that show it; in a Hard question two kinds fit about equally and the key accepts both.
   Every choice the key accepts is a workable design, one that would actually run and produce a
   result; a design that would never run (a schedule set for when the machine is turned off) is
-  never accepted. The examples are illustrations, not bank items, and their domains (a dentist's
-  office, a running club, a community choir) are used by no bank in this topic.
+  never accepted. The examples are illustrations, not bank items, and their domains (a pet-sitting
+  service, a running club, a community choir) are used by no bank in this topic.
   - `event-best` (`event`): a result is needed within minutes or an hour; work arrives a few times
     a day at unpredictable times, so most runs on a schedule frequent enough to be timely would
     find nothing, and a run is costly (an agent rereads everything); the machine is always on.
     Natural choice an event. The deciding facts: how soon the result is needed (a person or a
     slow schedule would be too late) and how rarely and unpredictably the work comes (a frequent
-    schedule would mostly run for nothing). "New patients fill in a form on the office's website,
-    a few a day at no set times, and the dentist wants the agent's summary of each patient's
-    history waiting before the patient arrives, often within the hour. Each summary run has the
-    agent reread the whole patient file."
+    schedule would mostly run for nothing). "New clients fill in a form on the service's website,
+    a few a day at no set times, and the owner wants the agent's care sheet for each pet ready
+    before the first visit, often within the hour. Each care-sheet run has the agent reread the
+    whole client file."
   - `unavailable` (`unavailable`): the machine that does the work, or a person who does a step,
     is unavailable at known times, and the facts bear on whether each option would find them
     available when it fires. Two variants, which the key names:
@@ -301,7 +302,7 @@ planning their own Problem Set 5 workflow will require.
   enough; the answer need not compare with every other kind, and a reason that also names what the
   choice costs ("it means remembering each morning, but the laptop is often off at 7:15") still
   earns full credit. A reason is tied when it rests on a fact of this workflow that separates the
-  choice from at least one other kind, making the choice fit better than it ("the summaries are
+  choice from at least one other kind, making the choice fit better than it ("the care sheets are
   needed within the hour", so a person or a slow schedule would be too late; "the captain's laptop
   is off until noon on early-shift days", so a 7:15 schedule wouldn't run then). A true fact that
   holds just as much for the other kinds is not a tied reason; nor is one resting on the
@@ -314,7 +315,7 @@ planning their own Problem Set 5 workflow will require.
   scenario's facts; it is not on whether the reason uses the word "available". An answer that
   relies on a missed run being caught up when the laptop wakes (as the reading says launchd does
   after sleep) rests on a fact the scenario contradicts, since the laptop is turned off, not
-  asleep, so that reason is not tied. Half when the choice is one the key doesn't accept but the reason is tied to a real fact
+  asleep, so that reason is not tied. Half when the choice is one the key doesn't accept but the reason rests on a real fact
   of this workflow (the learner read the scenario but drew the wrong verdict), or when the choice
   is accepted but the reason is generic or missing. None when the choice is not accepted and the
   reason is generic or missing, or no trigger is chosen.
@@ -377,7 +378,11 @@ planning their own Problem Set 5 workflow will require.
   - **ruled-out alternative**: a coherent design, a choice and the reason that would go with it,
     that a stated fact rules out (it would fire while the machine is turned off, miss work that is
     still arriving, be too late, or cost a run per change where each run is costly).
-  Exactly one option is right by the facts. No option is wrong merely because it does more than it
+  The four split two and two by choice, so counting choices gives nothing away: the sound option
+  and the not-a-difference option name the natural choice, and the wrong-choice option and the
+  ruled-out alternative name one and the same other kind (two schedules at different times, two
+  person starts at different times, or two events where each run is costly). Exactly one option is
+  right by the facts. No option is wrong merely because it does more than it
   needs to (a frequent schedule whose only fault is extra runs is never a near-miss unless the
   paragraph says each run is costly). Every fact a near-miss needs to be shown wrong is in the
   paragraph.
@@ -391,24 +396,27 @@ planning their own Problem Set 5 workflow will require.
     schedule at 7:15 a.m., because on most days the laptop is turned on at 7 a.m."; not a
     difference, "She starts it by hand when she turns the laptop on, because each leaderboard run
     takes the agent about ten minutes"; ruled-out alternative, "A schedule at 10:30 p.m., because
-    the laptop is turned off at 11 p.m." (members log runs until 11). No fact that she forgets
-    appears.
-  - `event-best`. The paragraph gives "New patients fill in the form a few a day, at no set
-    times", "Each summary must be ready before the patient arrives", "The receptionist sees each
-    patient when they check in", "The office opens at 8 a.m.", "Each summary run has the agent
-    reread the whole patient file" and the neutral sentence "The office computer is never turned
-    off." Options: sound, "An event: each new form starts a run, because forms come in a few a
-    day, at no set times"; wrong choice, true reason, "The receptionist starts each run by hand,
-    because she sees each patient when they check in" (too late: the summary must be ready before
-    the patient arrives); not a difference, "An event: each new form starts a run, because the
-    office computer is never turned off"; ruled-out alternative, "A schedule every morning at 8,
-    because the office opens at 8 a.m." (forms keep coming all day).
+    the laptop is turned off at 11 p.m." (members log runs until 11). Two hand starts, two
+    schedules. No fact that she forgets appears.
+  - `event-best`, a pet-sitting service. The paragraph gives "New clients fill in the form a few a
+    day, at no set times", "Each care sheet is needed within the hour", "Each care-sheet run has
+    the agent reread the whole client file", "The owner starts work at 8 a.m." and the neutral
+    sentence "The office computer is never turned off." Options: sound, "An event: each new form
+    starts a run, because new clients fill in the form a few a day, at no set times"; wrong
+    choice, true reason, "A schedule every hour, because each care sheet is needed within the
+    hour" (most hourly runs would reread the whole client file for nothing); not a difference, "An
+    event: each new form starts a run, because the office computer is never turned off";
+    ruled-out alternative, "A schedule every morning at 8 a.m., because the owner starts work at 8
+    a.m." (forms come in all day, and each care sheet is needed within the hour). Two events, two
+    schedules.
   - `person-away`: the paragraph states whether the person reliably remembers, when they get back,
     that the input changes while they are away and that each run is costly, as in
-    `a-argue-a-trigger`; the ruled-out alternative is a schedule before they leave (stale) or an
-    event (a costly run per change).
-  - `person-or-schedule`: the wrong choice is the other of person and schedule, or an event where
-    reacting to each item would mean many runs and the paragraph says each run is costly.
+    `a-argue-a-trigger`; the two options on the other kind are both schedules (for a hand start
+    that is natural: a fixed Monday schedule, and a schedule before they leave, which is stale) or
+    both hand starts (when a schedule is natural).
+  - `person-or-schedule`: the two options on the other kind are both of the other of person and
+    schedule, at different times, or both events where reacting to each item would mean many runs
+    and the paragraph says each run is costly.
 
   **Spread across the bank.** A bank is six scenarios, six questions: each shape twice;
   `unavailable` once `machine-off` and once `person-away`; `person-or-schedule` once `schedule` and
@@ -467,8 +475,9 @@ planning their own Problem Set 5 workflow will require.
   paragraph, in no fixed order and never under labels, are these facts:
   - where the items come from, and whether that source can tell the workflow when one arrives,
     said in plain words ("the sign-up form can send a message to a web address each time someone
-    signs up") or that it can only be looked at ("the shared mailbox has no way to announce new
-    mail; it can only be checked"), never with the words hook, webhook, polling or callback;
+    signs up") or that it can only be looked at ("the mailbox sends no notice of new mail; a
+    program can open it and look"), never with the words hook, webhook, polling or callback, and
+    never echoing the question's own wording ("checking", "being told");
   - how soon a result is needed after an item arrives (within a minute, within the hour, by the
     end of the day);
   - what each check would cost: a quick look by a program that takes a moment and costs nothing,
@@ -485,22 +494,26 @@ planning their own Problem Set 5 workflow will require.
   sentences." Free response, `type: free`. One question per scenario, asking only this.
 
   **Shapes**, each with the case it carries. The examples are illustrations, not bank items, and
-  their domains (a dentist's office, a tenants' association) are used by no bank in this topic.
+  their domains (a kennel, a tenants' association) are used by no bank in this topic.
   - `hook-best` (`hook`): the source can send a message each time; the result is needed soon (a
     minute or a few), so checking would have to be very frequent; receiving the message is easy to
-    set up for whoever must do it. Deciding facts: the source can send word, and how soon the
-    result is needed (or what frequent checks would cost). "New patients fill in a form on the
-    office's website, and the dentist wants each summary within a few minutes. The website can send
-    a message to a web address each time a form comes in, and the office's computer person sets
-    that kind of thing up in an afternoon."
+    set up for whoever must do it. Every `hook-best` scenario also states a fact that rules out
+    frequent checking: each check is costly (it means the agent reading everything again) or the
+    source limits how often it may be looked at ("the booking site lets a program look at most
+    once an hour"). Deciding facts: the source can send word, how soon the result is needed, and
+    the fact that rules out frequent checking. "Owners book boarding through the kennel's website,
+    and the manager wants each booking confirmed within a few minutes. The website can send a
+    message to a web address each time a booking comes in, and the kennel's computer person sets
+    that kind of thing up in an afternoon. Each look at the bookings means the agent reading every
+    booking again."
   - `poll-best` (`poll`): two variants, which the key names. `no-word`: the source can only be
     looked at, so checking again and again is the only way; the result can wait long enough that
     checking every so often is fine, and each look is cheap. `costly-setup`: the source can send
     a message, but receiving it means setting something up that the person who would have to do it
     finds a bother or can't get to soon, while each look is cheap and the result can wait (within
     the hour), so a cheap check every ten minutes serves. "Repair requests arrive in the
-    association's shared mailbox, a few a day, and a reply within the day is fine. The mailbox can
-    only be checked; a quick look by a program takes a moment."
+    association's shared mailbox, a few a day, and a reply within the day is fine. The mailbox
+    sends no notice of new mail; a program can open it and look, which takes a moment."
 
   **How hard.** Medium when one deciding fact settles it (the source can't send word; the result
   is needed within a minute). Hard when the facts pull both ways: in `costly-setup`, a source that
@@ -514,15 +527,17 @@ planning their own Problem Set 5 workflow will require.
 
   **Domains** vary by scenario, none repeating within the bank: a vet clinic's appointment
   requests, a farm stand's preorders, a theater's volunteer usher sign-ups, a ski shop's tune-up
-  drop-offs, a youth band's rehearsal absences, a bakery's wholesale orders. No domain
+  drop-offs, a youth band's rehearsal absences, a print shop's rush jobs. No domain
   from the other five question activities' lists, and no homework or grading workflow.
 
-  **The key** gives the method it accepts (both, in a Hard question where the facts truly balance,
-  each with its deciding fact), the deciding fact or facts and the sentence carrying each, why the
+  **The key** gives every design it accepts, which is every design that would work on the facts
+  (both methods, in a Hard question where the facts truly balance, each with its deciding fact; a
+  check at an interval the facts allow counts as checking), as `a-argue-a-trigger`'s key does,
+  the deciding fact or facts and the sentence carrying each, why the
   other method fits worse, the irrelevant detail, two or three generic reasons that would fail
   ("being told is faster", "checking wastes resources", "it's simpler to just check"), and one or
   two facts of this scenario that are true but don't separate the methods, which also fail ("the
-  office computer is never turned off", "each summary takes the agent two minutes", and, for being
+  office computer is never turned off", "each booking takes the agent two minutes", and, for being
   told, "the website can send a message each time" on its own).
 
   Credit: full when the answer chooses a method the key accepts and gives a reason tied to this
@@ -590,14 +605,23 @@ planning their own Problem Set 5 workflow will require.
   explanation, no hedge and no intensifier. The four sentences are within ten words of each other in
   length. `type: mcq`. The four options are:
   - **sound**: the natural method, with a fact that separates it from the other method;
-  - **wrong method, true reason**: the other method with a reason that is true by the facts, or
-    sounds true, but doesn't rescue it (for being told, that the source can send a message, when
-    receiving it needs a set-up nobody can do soon; for checking, that a quick look costs nothing,
-    when the paragraph says each look means the agent rereading everything);
   - **not a difference**: the natural method with the neutral sentence as its reason;
-  - **ruled-out alternative**: a coherent design the facts rule out: being told by a source the
-    paragraph says can only be checked, or checking at an interval longer than the paragraph says
-    the result can wait, with the reason that would go with it.
+  - two options on **the other method**, each with a different fact from the paragraph that is
+    true, or sounds true, but doesn't rescue that method.
+  So the four split two and two by method, and counting methods gives nothing away. By shape:
+  - `costly-setup`: both other-method options are being told. One gives the fact that the source
+    can send a message each time; the other gives another true fact (how soon the result is
+    needed, or how many items arrive). Neither rescues being told, because receiving the message
+    needs a set-up nobody can do soon.
+  - `no-word`: both other-method options are being told. The source sends no notice, so neither
+    may claim it does; each gives a different true fact from the paragraph that sounds like a
+    reason to want word at once (how soon a reply is wanted, how many items arrive a day, who is
+    waiting on them). Being told is ruled out by the fact that the source sends no notice.
+  - `hook-best`: both other-method options are checking, at intervals the paragraph's facts rule
+    out: one frequent enough to be timely, with a true fact such as how soon the result is needed
+    (ruled out because each check is costly, or the source limits how often it may be looked at);
+    one slow enough to keep checks few, with a true fact such as what each check costs (ruled out
+    because the result is needed within minutes).
   Exactly one option is right by the facts. No option is wrong merely because it does more than it
   needs to (checking more often than needed is never a near-miss unless the paragraph says each
   check is costly). Every fact a near-miss needs to be shown wrong is in the paragraph.
@@ -606,11 +630,12 @@ planning their own Problem Set 5 workflow will require.
   to a web address each time", "Receiving those messages means asking my nephew, who helps once a
   month", "A quick look at the form's list by a program takes a moment", "A reply within the hour
   is fine" and the neutral sentence "The office computer is never turned off." Options: sound,
-  "Checking for new sign-ups every ten minutes, because receiving messages means asking my nephew";
-  wrong method, true reason, "Being told by the form each time, because the form can send a message
-  each time"; not a difference, "Checking for new sign-ups every ten minutes, because the office
-  computer is never turned off"; ruled-out alternative, "Checking for new sign-ups every three
-  hours, because a quick look takes a moment" (a reply within the hour is wanted).
+  "Checking for new sign-ups every ten minutes, because receiving those messages means asking my
+  nephew, who helps once a month"; not a difference, "Checking for new sign-ups every ten minutes,
+  because the office computer is never turned off"; other method, "Being told by the form each
+  time, because the sign-up form can send a message to a web address each time"; other method,
+  "Being told by the form each time, because a reply within the hour is fine". Both being-told
+  options fail on the nephew sentence. Two checking, two being told.
 
   **Spread across the bank.** A bank is four scenarios, four questions: each case twice; in the two
   `poll` questions, one `no-word` and one `costly-setup`. The sound option sits in each of the four
@@ -692,7 +717,7 @@ planning their own Problem Set 5 workflow will require.
   scenario, asking only this.
 
   **Shapes**, each with the case it carries. The examples are illustrations, not bank items, and
-  their domains (a bike repair shop, a neighborhood tool library) are used by no bank in this
+  their domain (a bike repair shop) is used by no bank in this
   topic.
   **Kinds of queue, and the facts that make each the natural one.** Each `unavailable` or `burst`
   scenario has one natural kind, and its facts rule the others out as the simplest:
@@ -845,24 +870,21 @@ planning their own Problem Set 5 workflow will require.
   and the case its shape carries. It reads "Which design, with its reason, fits this workflow?",
   then four numbered designs, each one sentence in the same frame: "The work should wait <where>,
   because <why>." The four are within ten words of each other in length. One is sound on both its
-  place and its reason. The three near-misses are:
-  - **wrong place**: an unworkable place with the sound design's reason;
-  - **wrong reason**: the sound design's place with a reason the facts make false;
-  - **other design**: a different, coherent design, nowhere with the no-queue reason the facts
-    make false, so it reads as a real alternative and is wrong on the facts, not on fit.
-  In a `no-queue` question, where a place with the sound no-queue reason would not hang together,
-  the three near-misses are instead:
-  - `always-ready`: the wrong reason (nowhere, with the `drop-ok` reason, false since each item has
-    someone waiting on it), and two other designs, each a workable-looking place with a queue
-    reason the facts make false, one with each queue reason (the worker's machine is never turned
-    off; the arrivals stay well under its stated limit).
-  - `drop-ok`: the wrong reason (nowhere, with the `always-ready` reason, false since the worker is
-    turned off at times); a workable-looking place with the burst reason, false by the stated
-    arrival rate, which stays well under the stated limit; and an unworkable place with the first
-    queue reason, asking a source the scenario says keeps nothing (the display's sensor shows each
-    reading once).
-  So no choice is wrong only in a way that leaves it an equal setup, and every question tests both
-  the place and the reason:
+  place and its reason. The four cross two places with two reasons, so that every place and every
+  reason appears in exactly two options and the sound one can't be found from the options alone:
+  - In an `unavailable` or `burst` question, the two places are the sound place and one unworkable
+    place (chosen below), and the two reasons are the sound reason and the other queue reason,
+    which the facts make false. The four options are sound place with sound reason (the answer),
+    sound place with false reason, unworkable place with sound reason, and unworkable place with
+    false reason. All four are coherent queue designs with queue reasons.
+  - In a `no-queue` question, nowhere appears twice, once with the true no-queue reason (the
+    answer) and once with the other no-queue reason, which the facts make false (`always-ready`:
+    the items each have someone waiting on them; `drop-ok`: the worker is turned off at times).
+    One place appears twice, a list the workflow keeps, once with each queue reason, both false by
+    the facts: the first because the worker is never off (`always-ready`) or because no one is
+    waiting on a reading the next replaces (`drop-ok`), the second because the arrivals stay well
+    under the stated limit.
+  Exactly one option is right by the facts, and every question tests both the place and the reason:
 
   **Where** (the `<where>` slot). The options, put in this workflow's terms: a list the workflow
     keeps, adding each <item> as it arrives; asking <the source> for the <items> that came in since
@@ -886,12 +908,12 @@ planning their own Problem Set 5 workflow will require.
     source-side wrong place (asking the source) is used only where the scenario says outright that
     the source keeps nothing. Which wrong place to use, by the sound place:
     - in an `unavailable` question (source or files), the wrong place is a list the workflow keeps,
-      since nothing is on while the worker is off to add each arrival; the other design is nowhere;
+      since nothing is on while the worker is off to add each arrival;
     - in a `burst` question with a kept list, the wrong place is asking the source, which the
-      scenario says keeps nothing (an alert shown once); the other design is nowhere;
+      scenario says keeps nothing (an alert shown once);
     - in a `burst` question with a log, the scenario says the source keeps nothing and the workflow
       saves each item into a folder as it arrives (the worker's machine is never off); the wrong
-      place is asking the source; the other design is nowhere.
+      place is asking the source.
     When the sound place is nowhere, the `no-queue` rule above applies instead.
 
   **Why** (the `<why>` slot), one of four statements put in this workflow's terms and worded the
@@ -900,9 +922,8 @@ planning their own Problem Set 5 workflow will require.
   faster than <its limit>; nothing
   needs to wait, as <worker> is always available and never overloaded; nothing needs to wait, as
   losing an occasional <item> does no harm here. Exactly one is true by the facts, and it is the
-  shape's case. The wrong-reason near-miss uses one the facts make false that sits naturally with
-  the sound place (the other queue reason when there is a queue, the other no-queue reason when
-  there is none), and the scenario states the fact that makes it false.
+  shape's case. The false reasons are the ones the crossing above names, and the scenario states
+  the fact that makes each false.
 
   **Shapes**, each carrying one case, which its rubric `cases:` line lists:
   - `unavailable` (`worker-unavailable`): work arrives while the worker's machine is turned off,
@@ -939,7 +960,7 @@ planning their own Problem Set 5 workflow will require.
 
   The rubric gives the `answer` (the 1-based choice) and, in a `tutor note`, the sentences of the
   scenario that settle the sound design's place and reason and, for each near-miss, whether its
-  place or its reason is wrong (or both, for the other design) and the fact that shows it.
+  place or its reason is wrong, or both, and the fact that shows it.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. The
   tutor takes the illustration in `a-place-the-waiting-work` of the same shape where there is one
   (for `unavailable`, the bike repair shop; for `no-queue` `always-ready`, the office computer case
