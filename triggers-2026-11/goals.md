@@ -273,11 +273,12 @@ topics.
 
 - **goal:** choose what triggers a workflow's runs, and say why
 - **criterion:** given a described workflow, says what should trigger its runs (a person, a
-  schedule or an event) and why, with a reason tied to something about this workflow that makes
-  the choice fit better than the other kinds: how soon its result is needed, how often there is
-  work to do, who would have to remember to start it, or whether the machine or person that does
-  the work will be available when the trigger fires. A reason that doesn't refer to this workflow
-  at all, such as "a schedule is automatic", does not meet it.
+  schedule or an event) and why, with a reason tied to this workflow of any of three kinds: what
+  makes that trigger good here, what would go wrong here without it, or what would make a
+  specific other kind worse. The facts that bear on it include how soon its result is needed,
+  how often there is work to do, who would have to remember to start it, and whether the machine
+  or person that does the work will be available when the trigger fires. A reason that doesn't
+  refer to this workflow at all, such as "a schedule is automatic", does not meet it.
 - **cases:**
   - `event`: a workflow best started by an event
   - `unavailable`: a workflow whose machine, or the person who does a step, may be unavailable
@@ -289,9 +290,11 @@ topics.
 
 - **goal:** decide how an event-driven workflow finds out that its event happened
 - **criterion:** given a workflow started by an event, says whether it should notice the event by
-  polling or through a hook, and why, with a reason tied to this workflow: whether the source
-  offers a hook, how soon the result is needed, what each check costs, and who would have to set
-  up receiving the message. A reason that doesn't refer to this workflow at all does not meet it.
+  polling or through a hook, and why, with a reason tied to this workflow of any of three kinds:
+  what makes that method good here, what would go wrong here without it, or what would make the
+  other method worse. The facts that bear on it include whether the source can send word, how
+  soon the result is needed, what each check costs, and who would have to set up receiving the
+  message. A reason that doesn't refer to this workflow at all does not meet it.
 - **cases:**
   - `hook`: a workflow best told through a hook
   - `poll`: a workflow best served by polling
@@ -303,9 +306,10 @@ topics.
 - **criterion:** given a described workflow, says where its work should wait until a worker can
   take it up (a queue the workflow keeps, a source that already holds the waiting work, a list
   worked out each time from the state of files, or nowhere) and why, with a reason tied to this
-  workflow: what would go wrong here without it, or, for nowhere, whether the worker is always
-  available and never overloaded or dropping some work is acceptable. A reason with no
-  consequence tied to this workflow does not meet it.
+  workflow of any of three kinds: what makes that place good here, what would go wrong here
+  without it, or what would make a specific other place worse. For nowhere, the reason is that
+  the worker is always available and never overloaded, or that dropping some work is acceptable.
+  A reason that doesn't refer to this workflow at all does not meet it.
 - **cases:**
   - `worker-unavailable`: work can arrive while the machine or person that does it is off or otherwise unavailable
   - `spread-out`: work arrives in bursts, or faster than it should be done, so it has to be
