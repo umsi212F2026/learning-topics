@@ -14,5 +14,5 @@ Which of these fits this workflow?
 
 1. A webhook: the website sends a notice each time a request arrives, because the website can send a notice each time a request comes in.
 2. Polling for new requests every ten minutes, because notices need a web server to arrive at, and the office computer doesn't run one.
-3. A webhook: the website sends a notice each time a request arrives, because a reply within the hour is fine.
+3. A webhook: the website sends a notice each time a request arrives, because each student is waiting to hear which class they can join.
 4. Polling for new requests every ten minutes, because the reply is a short note with a picture of ballet shoes.

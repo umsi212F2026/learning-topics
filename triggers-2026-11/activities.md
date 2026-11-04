@@ -802,8 +802,9 @@ workflow may require both.
     true, or sounds true, but doesn't rescue that method.
   So the four split two and two by method, and counting methods gives nothing away. By shape:
   - `costly-setup`: both other-method options are being told. One gives the fact that the source
-    can send a message each time; the other gives another true fact (how soon the result is
-    needed, or how many items arrive). Neither rescues being told, because receiving the message
+    can send a message each time; the other gives a different true fact from the paragraph that
+    sounds like a reason to want word at once (how many items arrive, who is waiting on them),
+    never a slack deadline, which argues for checking. Neither rescues being told, because receiving the message
     needs a set-up that can't be done in time, which the paragraph says in one sentence that also
     gives the deadline, as in `a-argue-noticing`; the tutor note cites that sentence.
   - `no-word`: both other-method options are being told. The source sends no notice, so neither
@@ -811,8 +812,9 @@ workflow may require both.
     reason to want word at once (how soon a reply is wanted, how many items arrive a day, who is
     waiting on them). Being told is ruled out by the fact that the source sends no notice.
   - `cant-be-reached`: both other-method options are being told, each with a different true fact
-    from the paragraph: one that the source can send a notice each time, the other how soon the
-    result is needed. Neither rescues being told, because the paragraph's one sentence on the
+    from the paragraph: one that the source can send a notice each time, the other a fact that
+    sounds like a reason to want word at once (how many items arrive, who is waiting on them),
+    never a slack deadline, which argues for checking. Neither rescues being told, because the paragraph's one sentence on the
     missing receiver ("notices need a web server to arrive at, and the office computer doesn't run
     one") leaves the notices nowhere to arrive; the tutor note cites that sentence. The sound
     option gives that sentence as its reason. The paragraph also states the fetch fact ("can fetch
@@ -848,13 +850,14 @@ workflow may require both.
   and can fetch the list of requests from the website and send email", "Fetching the list is
   quick and costs almost nothing", "The website can send a
   notice each time a request comes in, but notices need a web server to arrive at, and the office
-  computer doesn't run one"; the opening gives "A reply within the hour is fine" and the neutral
+  computer doesn't run one", "Each student is waiting to hear which class they can join"; the
+  opening gives "A reply within the hour is fine" and the neutral
   sentence "The reply is a short note with a picture of ballet shoes." Options (word counts): other method, "A
   webhook: the website sends a notice each time a request arrives, because the website can send a
   notice each time a request comes in" (25); sound, "Polling for new requests every ten minutes,
   because notices need a web server to arrive at, and the office computer doesn't run one" (23);
-  other method, "A webhook: the website sends a notice each time a request arrives, because a
-  reply within the hour is fine" (20); not a difference, "Polling for new requests every ten
+  other method, "A webhook: the website sends a notice each time a request arrives, because each
+  student is waiting to hear which class they can join" (24); not a difference, "Polling for new requests every ten
   minutes, because the reply is a short note with a picture of ballet shoes" (20). The spread is 5
   words. Both webhook options fail on the web-server sentence, which the tutor note cites;
   polling only needs the office computer to reach out to the website. Two polling, two webhook.

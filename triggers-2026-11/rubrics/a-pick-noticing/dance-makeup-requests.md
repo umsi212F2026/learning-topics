@@ -18,7 +18,7 @@ is a short note with a picture of ballet shoes." Two polling, two webhook.
   doesn't run one, so the website's notices would have nowhere to arrive; that is what separates
   polling from a webhook here. Polling only needs the office computer to reach out to the website. 1 is the other method:
   it is true that the website can send a notice each time, but nothing can receive it. 3 is the
-  other method: a reply within the hour is fine, but that doesn't rescue a webhook, whose notices
-  still have nowhere to arrive. 4 is not a difference: the picture of ballet shoes bears on nothing
+  other method: each student is waiting, but that doesn't rescue a webhook, whose notices still
+  have nowhere to arrive, and a reply within the hour is fine. 4 is not a difference: the picture of ballet shoes bears on nothing
   about how new requests are found. If the learner picks 1, ask where the website's notice would
   go.
