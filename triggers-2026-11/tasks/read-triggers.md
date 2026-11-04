@@ -92,8 +92,9 @@ happened, and the queue comes from it; they needn't be two records.
 **The worker taking work from a queue has a trigger of its own.** Putting work on a queue doesn't
 get it done. Something still has to start the worker: the TA by hand, a cron job, or an event such
 as a new item arriving. A common combination is an event that adds each submission to the queue as
-it arrives, and a schedule that starts the worker. Then a run missed because the laptop was off
-loses nothing: the work is still waiting, and the next run picks it up.
+it arrives, and a schedule that starts the worker. Then a run missed because the laptop was off at
+its set time loses nothing, as long as whatever adds each submission was on when it arrived: the
+work is still waiting, and the next run picks it up.
 
 A queue also spreads work out. If 150 submissions in the last two hours each started an agent run
 at once, that is 150 runs together, and an agent's provider may limit how many requests it takes
