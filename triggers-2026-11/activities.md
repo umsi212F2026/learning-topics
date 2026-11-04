@@ -558,6 +558,7 @@ workflow may require both.
 - **artifact:** no external source. A described workflow that is started by an event, told in a
   short paragraph, with how it finds out about each event left open, from this activity's bank or
   written live per the generator below. About 3 minutes a question.
+- **verified:** 2026-11-04
 - **learner does:** reads the scenario and its one question; says in two or three sentences
   whether the workflow should find out about each new item by polling or through a webhook (a
   hook, where the source isn't a website), and why.
@@ -752,6 +753,7 @@ workflow may require both.
   to a sentence, and one four-choice question offering four ways of finding out about each event,
   each with a reason, from this activity's bank or written live per the generator below. About 3
   minutes a question.
+- **verified:** 2026-11-04
 - **learner does:** reads the scenario, then picks which of four options, each a way of finding out
   (polling, or a webhook or hook) with its reason, fits the workflow.
 - **tutor role:** examiner
@@ -1124,6 +1126,7 @@ workflow may require both.
   `a-place-the-waiting-work`, and one four-choice question offering four designs for it, each a
   place for the work to wait and a reason, from this activity's bank or written live per the
   generator below. About 3 minutes a question.
+- **verified:** 2026-11-04
 - **learner does:** reads the scenario, then picks which of four designs, each a place for the work
   to wait (or none) with its reason, fits it.
 - **tutor role:** examiner
