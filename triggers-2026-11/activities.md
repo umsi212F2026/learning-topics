@@ -9,9 +9,8 @@ and about 3 a word. All three capabilities carry `taught elsewhere` (the session
 their six activities are offered after that class, as practice and review. Meeting all three
 through the write-it checks takes eight questions, one per case: three for `a-argue-a-trigger` and
 two for `a-argue-noticing` at about 3 minutes each, and three for `a-place-the-waiting-work` at
-about 4, so about 27 minutes. Through the pick-one checks it is about 2 minutes a question for
-`a-pick-trigger-defense` and `a-pick-noticing` and about 3 for `a-trace-the-waiting-work`, so
-about 19.
+about 4, so about 27 minutes. Through the pick-one checks it is about 3 minutes a question for
+each of `a-pick-trigger-defense`, `a-pick-noticing` and `a-trace-the-waiting-work`, so about 24.
 
 Every question asks for one thing, and every question works on its own as a bank question, never
 relying on a tutor's follow-up to collect the rest of an answer. A free-response question's fixed
@@ -345,87 +344,76 @@ planning their own Problem Set 5 workflow will require.
 - **supports:** attempt
 - **checks:** `c-choose-trigger`
 - **artifact:** no external source. A described workflow, its facts set out one to a sentence, and
-  two people's defenses of the same trigger for it, from this activity's bank or written live per
-  the generator below. About 2 minutes a question.
-- **verified:** 2026-11-02
-- **learner does:** reads the scenario and the one question served, two one-sentence defenses of
-  the same choice of trigger, and picks the one whose reason is sound.
+  one four-choice question offering four triggers for it, each with a reason, from this
+  activity's bank or written live per the generator below. About 3 minutes a question.
+- **learner does:** reads the scenario, then picks which of four options, each a trigger (a person,
+  a schedule or an event) with its reason, fits the workflow.
 - **tutor role:** examiner
 - **tutor does:** as `a-argue-a-trigger`'s, including the offer to wait for session 19, except that
   it labels a live run `a-pick-trigger-defense/<shape>` and rules from the rubric's `answer`. Never
-  says which reason is faulty before the learner has chosen.
+  says what is wrong with an option before the learner has chosen.
 - **done when:** the criterion met with no help, case by case. Each question gets one ruling: the
-  sound defense passes the case the question carries, and the other passes none. There is no half
+  sound option passes the case the question carries, and the others pass none. There is no half
   credit.
-- **generator:** **A scenario** uses the same three shapes, variants and facts as
-  `a-argue-a-trigger`, except in two respects: it adds one fact that bears on something other
-  than when runs should start (who reads the result, what form it takes), for a `does-not-support`
-  near-miss to use, and the facts are not running prose. After one or two
-  sentences saying what the workflow is for and what does its work, a short paragraph headed "About
-  this workflow:" gives its facts, one sentence each, then one sentence that would be true whatever
-  started the runs (how long each run takes), and nothing else, so the
-  learner can check a defense's clause against exactly what the paragraph says. No irrelevant
-  detail beyond those two sentences (the added fact and the one true whatever started the runs).
+- **generator:** **A scenario** uses the same three shapes and variants as `a-argue-a-trigger`, with
+  one natural choice only (no Hard question with two acceptable choices), and its facts are not
+  running prose. After one or two sentences saying what the workflow is for and what does its
+  work, a short paragraph headed "About this workflow:" gives the facts one sentence each: the
+  deciding fact or facts, every fact a near-miss needs to be shown wrong, and one neutral sentence
+  that would be true whatever started the runs (how long each run takes, or that the machine is
+  never turned off where every option runs on it), and nothing else.
 
-  **A question** reads: "<Name1> and <Name2> both think this workflow's runs should be started by
-  <choice>. Here is the reason each gives." Then two defenses, each one sentence starting with a
-  bold label, "**Defense 1, <Name1>'s:**" and "**Defense 2, <Name2>'s:**", in the same frame:
-  "<Choice> fits this workflow best, because <reason>." Then "Which defense gives a sound reason?"
-  with the choices "1. <Name1>'s" and "2. <Name2>'s", `type: mcq`. Both choose the shape's natural
-  choice. Each reason is one fact from the paragraph, stated as the paragraph states it, with no
-  added "so ..." explanation, no hedge and no intensifier ("might", "always", "clearly"). The two
-  defenses differ only in their reason, and the two sentences are within ten words of each other
-  in length. Which is longer varies. The sound defense's reason is a fact that makes the choice fit
-  better than the other kinds. The near-miss's reason is also a fact from the paragraph, so it is
-  never generic: both reasons refer to this workflow, and the pick turns only on whether the fact
-  bears on the choice. Its fault is one of two kinds:
-  - Medium, `does-not-support`: the fact bears on something other than when the run should start,
-    such as who reads the result or what form it takes, or points toward a different kind of
-    trigger ("because the summaries are read on the dentist's tablet").
-  - Hard, `not-a-difference`: the fact bears on when runs could happen but holds just as much for
-    the other kinds, so it doesn't make this choice fit better (the neutral sentence, "because
-    each run takes the agent about twenty minutes", or an availability fact that holds for every
-    option alike).
+  **A question** reads "Which of these fits this workflow?", then four numbered options, each one
+  sentence in the same frame: "<Choice>, because <reason>." A choice is said concretely: "<Who>
+  starts each run by hand <when>", "A schedule <time, in words>", or "An event: each new <item>
+  starts a run". Each reason is one fact from the paragraph, stated as the paragraph states it,
+  with no added "so ..." explanation, no hedge and no intensifier. The four sentences are within ten
+  words of each other in length. `type: mcq`. The four options are:
+  - **sound**: the natural choice, with a fact that separates it from the other kinds;
+  - **wrong choice, true reason**: a different choice with a reason that is true by the facts, or
+    sounds true, but doesn't rescue it: another fact in the paragraph rules the choice out;
+  - **not a difference**: the natural choice with a true fact that doesn't separate it from the
+    other kinds (the neutral sentence, or an availability fact that holds for every option alike);
+  - **ruled-out alternative**: a coherent design, a choice and the reason that would go with it,
+    that a stated fact rules out (it would fire while the machine is turned off, miss work that is
+    still arriving, be too late, or cost a run per change where each run is costly).
+  Exactly one option is right by the facts. No option is wrong merely because it does more than it
+  needs to (a frequent schedule whose only fault is extra runs is never a near-miss unless the
+  paragraph says each run is costly). Every fact a near-miss needs to be shown wrong is in the
+  paragraph.
 
-  **Which reason differs, and how**, by shape. Each shape's two questions are fixed, so the fault
-  rules and the spread below agree. The examples obey the form rule above.
-  - `unavailable`, one `machine-off` question and one `person-away` question, as in
-    `a-argue-a-trigger`, with workable choices only. In both, the sound reason is the availability
-    fact that separates the defended choice from the other workable option, so the pick turns on
-    what the machine being off, or the person being away, actually affects. Neither paragraph
-    carries a fact that the person forgets, since both defenses defend a start by hand.
-    - `machine-off`, `not-a-difference`. The paragraph gives "The laptop is turned off at 11
-      p.m.", "Members log runs until 11 p.m.", "On most days the laptop is turned on at 7 a.m.",
-      "On early-shift days the laptop is turned on at noon" and the neutral sentence "Each
-      leaderboard run takes the agent about ten minutes." Both: "Starting it by hand when she turns
-      the laptop on fits this workflow best, because ..." Sound (10 words): "on early-shift days
-      the laptop is turned on at noon." Near-miss (9 words), the neutral sentence: "each
-      leaderboard run takes the agent about ten minutes." The key says why only the sound reason
-      holds, naming every other option: a 7:15 a.m. schedule would not run on early-shift days,
-      since the laptop is still off; an evening schedule at 10:30 p.m. would miss runs logged until
-      11; a schedule after 11 p.m. would never run. The ten-minute run takes as long whatever starts
-      it, so it separates nothing.
-    - `person-away`, `does-not-support`. The paragraph gives "The director approves the chart
-      before it goes out", "She is away from Friday evening until Monday", "She gets back on
-      Monday anywhere from 8 a.m. to noon", "Singers keep changing their answers until she is
-      back", "Each draft is a long agent run that costs real money", "She never forgets a chore"
-      and "She prints the approved chart for the folders." Both: "Her starting it when she gets back
-      on Monday fits this workflow best, because ..." Sound (10 words): "she gets back on Monday
-      anywhere from 8 a.m. to noon." Near-miss (8 words): "she prints the approved chart for the
-      folders." The key says why only the sound reason holds, naming every other option: a fixed
-      Monday schedule would either leave the chart waiting until she is back or make it before the
-      last changes, since her return time varies; a Friday schedule would be stale; a fresh run on
-      each change is ruled out by the cost of each draft. Printing happens whenever the chart is
-      made, so it has no bearing on when to start.
-  - `event-best`: one `does-not-support` and one `not-a-difference`. For example, sound (12
-    words): "forms come in only a few a day, at no set times"; near-miss `does-not-support` (8
-    words): "the dentist reads each summary on her tablet"; near-miss `not-a-difference` (8
-    words), the neutral sentence: "each summary takes the agent about two minutes".
-  - `person-or-schedule`: one `does-not-support` and one `not-a-difference`.
+  **Examples**, which obey the form rule above. The paragraph sentences are given in quotation marks.
+  - `machine-off`. The paragraph gives "The laptop is turned off at 11 p.m.", "Members log runs
+    until 11 p.m.", "On most days the laptop is turned on at 7 a.m.", "On early-shift days the
+    laptop is turned on at noon" and the neutral sentence "Each leaderboard run takes the agent
+    about ten minutes." Options: sound, "She starts it by hand when she turns the laptop on,
+    because on early-shift days the laptop is turned on at noon"; wrong choice, true reason, "A
+    schedule at 7:15 a.m., because on most days the laptop is turned on at 7 a.m."; not a
+    difference, "She starts it by hand when she turns the laptop on, because each leaderboard run
+    takes the agent about ten minutes"; ruled-out alternative, "A schedule at 10:30 p.m., because
+    the laptop is turned off at 11 p.m." (members log runs until 11). No fact that she forgets
+    appears.
+  - `event-best`. The paragraph gives "New patients fill in the form a few a day, at no set
+    times", "Each summary must be ready before the patient arrives", "The receptionist sees each
+    patient when they check in", "The office opens at 8 a.m.", "Each summary run has the agent
+    reread the whole patient file" and the neutral sentence "The office computer is never turned
+    off." Options: sound, "An event: each new form starts a run, because forms come in a few a
+    day, at no set times"; wrong choice, true reason, "The receptionist starts each run by hand,
+    because she sees each patient when they check in" (too late: the summary must be ready before
+    the patient arrives); not a difference, "An event: each new form starts a run, because the
+    office computer is never turned off"; ruled-out alternative, "A schedule every morning at 8,
+    because the office opens at 8 a.m." (forms keep coming all day).
+  - `person-away`: the paragraph states whether the person reliably remembers, when they get back,
+    that the input changes while they are away and that each run is costly, as in
+    `a-argue-a-trigger`; the ruled-out alternative is a schedule before they leave (stale) or an
+    event (a costly run per change).
+  - `person-or-schedule`: the wrong choice is the other of person and schedule, or an event where
+    reacting to each item would mean many runs and the paragraph says each run is costly.
 
-  **Spread across the bank.** A bank is six scenarios, six questions: each shape twice, made up as
-  above, so three `does-not-support` and three `not-a-difference`; the sound defense first in
-  three. Names vary and are never reused within a scenario.
+  **Spread across the bank.** A bank is six scenarios, six questions: each shape twice;
+  `unavailable` once `machine-off` and once `person-away`; `person-or-schedule` once `schedule` and
+  once `person`. The sound option sits in each of the four positions at least once and in none
+  more than twice, and the order of the three near-misses varies.
 
   **Domains** are this activity's own, none repeating within the bank: a florist's delivery route
   sheet, a youth soccer club's field-closure notices, a toy store's holiday layaway pickups, a carpool's
@@ -433,23 +421,24 @@ planning their own Problem Set 5 workflow will require.
   quilting guild's meeting minutes, a car wash's daily sales summary. No domain from the other five
   question activities' lists, and no homework or grading workflow.
 
-  Credit: full for the sound defense, whose position is the rubric's `answer`; none for the other.
+  The rubric gives the `answer` (the 1-based choice) and, in a `tutor note`, the sentence that
+  settles the sound option and, for each near-miss, which kind it is and the fact that rules it out.
+  Credit: full for the sound option; none for the others.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. As
-  `a-argue-a-trigger`'s, then the tutor sets the sound defense of the same illustration beside one
-  with a faulty reason, says which fact each rests on, and says why the changed one has no bearing
-  on when to start, or would hold just as much for another kind of trigger.
-- **doesn't show:** the choice is given and the learner picks between two reasons, so a pass
-  doesn't show they would choose a trigger or find the workflow's facts on their own; with two
-  choices a guess is right half the time. Every defense argues for the natural choice, so a pass
-  says nothing about defending a less obvious one. Both reasons refer to this workflow, so a pass
-  doesn't show the learner would reject a reason that refers to nothing about it. The facts are laid out one to a sentence under a heading, so a pass
-  doesn't show the learner would find them in a looser description; `a-argue-a-trigger` gives them
-  as running prose and has the learner write the argument.
-- **offer as:** the quick check, after session 19: a short workflow and two people's defenses of the
-  same trigger for it, and you pick the one whose reasons actually hold up. About 2 minutes a
-  question. Easier than `a-argue-a-trigger`, since the arguments are written for you.
-- **check note:** A pass here leaves most of this goal untested. Where the learner has time, have
-  at least one case met through `a-argue-a-trigger`.
+  `a-argue-a-trigger`'s, then the tutor sets four options for the same illustration in this
+  activity's style and goes through them aloud, saying for each near-miss which fact rules it out
+  or why its reason separates nothing.
+- **doesn't show:** the learner picks among four options rather than writing one, so a pass doesn't
+  show they would find the deciding fact or word the reason themselves; with four choices a guess
+  is right a quarter of the time. Every scenario has one natural choice, so a pass shows nothing
+  about weighing two defensible ones. Every option's reason is a fact from the paragraph, so a pass
+  doesn't show the learner would reject a reason that refers to nothing about this workflow. The
+  facts are laid out one to a sentence under a heading, so a pass doesn't show the learner would
+  find them in a looser description; `a-argue-a-trigger` gives them as running prose and has the
+  learner write the reason.
+- **offer as:** the quick check, after session 19: a short workflow and four triggers for it, each
+  with a reason, and you pick the one that fits. About 3 minutes a question. Easier than
+  `a-argue-a-trigger`, since the options are written for you.
 
 ### `a-argue-noticing`
 
@@ -571,63 +560,83 @@ planning their own Problem Set 5 workflow will require.
 - **supports:** attempt
 - **checks:** `c-choose-noticing`
 - **artifact:** no external source. A described workflow started by an event, its facts set out one
-  to a sentence, and two people's one-sentence defenses of the same way of noticing the event,
-  from this activity's bank or written live per the generator below. About 2 minutes a question.
-- **learner does:** reads the scenario and the one question served, two defenses of the same
-  method, and picks the one whose reason is sound.
+  to a sentence, and one four-choice question offering four ways of finding out about each event,
+  each with a reason, from this activity's bank or written live per the generator below. About 3
+  minutes a question.
+- **learner does:** reads the scenario, then picks which of four options, each a way of finding out
+  (checking again and again, or being told) with its reason, fits the workflow.
 - **tutor role:** examiner
 - **tutor does:** as `a-argue-noticing`'s, except that it labels a live run `a-pick-noticing/<shape>`
-  and rules from the rubric's `answer`. Never says which reason is faulty before the learner has
-  chosen.
+  and rules from the rubric's `answer`. Never says what is wrong with an option before the learner
+  has chosen.
 - **done when:** the criterion met with no help, case by case. Each question gets one ruling: the
-  sound defense passes the case the question carries, and the other passes none. There is no half
+  sound option passes the case the question carries, and the others pass none. There is no half
   credit.
-- **generator:** **A scenario** uses the same shapes, variants and facts as `a-argue-noticing`,
-  except that the facts are not running prose: after one or two sentences saying what the workflow
-  does and that each new item should be handled soon after it arrives, a short paragraph headed
-  "About this workflow:" gives the facts one sentence each, plus one fact that bears on neither
-  method (who reads the result, how long each item takes the agent), and nothing else.
+- **generator:** **A scenario** uses the same shapes and variants as `a-argue-noticing`, with one
+  natural method only (no Hard question where the facts balance), and its facts are not running
+  prose: after one or two sentences saying what the workflow does and that each new item should be
+  handled after it arrives, not at set times, a short paragraph headed "About this workflow:" gives
+  the facts one sentence each: the deciding fact or facts, every fact a near-miss needs to be shown
+  wrong (how soon the result is needed, what each check costs, whether the source can send word,
+  who would set up receiving it), and one neutral sentence that holds for either method (the office
+  computer is never turned off; each item takes the agent about two minutes), and nothing else. The
+  source's ability to send word is said in plain words, never with the words hook, webhook, polling
+  or callback.
 
-  **A question** reads: "<Name1> and <Name2> both think this workflow should find out about each
-  new <item> by <checking for new ones every N minutes / being told each time one arrives>. Here is
-  the reason each gives." Then two defenses, each one sentence starting with a bold label,
-  "**Defense 1, <Name1>'s:**" and "**Defense 2, <Name2>'s:**", in the frame "<Method> fits this
-  workflow best, because <reason>." Then "Which defense gives a sound reason?" with the choices
-  "1. <Name1>'s" and "2. <Name2>'s", `type: mcq`. Both name the shape's natural method. Each reason
-  is one fact from the paragraph, stated as the paragraph states it, with no added explanation, no
-  hedge and no intensifier, and the two sentences are within ten words of each other in length.
-  The near-miss's reason is also a fact from the paragraph, never a generic claim, and is faulty in
-  one of two ways:
-  - Medium, `does-not-support`: the fact bears on neither method (who reads the result), or points
-    toward the other method (for being told, "because a quick look by a program costs nothing").
-  - Hard, `not-a-difference`: the fact holds just as much for either method ("because each summary
-    takes the agent about two minutes", "because the office computer is never turned off").
-  For example, in a `hook-best` question with the method "being told each time one arrives", sound
-  (9 words): "the dentist wants each summary within a few minutes"; near-miss `does-not-support` (8
-  words): "the dentist reads each summary on her tablet".
+  **A question** reads "Which of these fits this workflow?", then four numbered options, each one
+  sentence in the same frame: "<Method>, because <reason>." A method is said concretely: "Checking
+  for new <items> every <interval>" or "Being told by <the source> each time one arrives". Each
+  reason is one fact from the paragraph, stated as the paragraph states it, with no added
+  explanation, no hedge and no intensifier. The four sentences are within ten words of each other in
+  length. `type: mcq`. The four options are:
+  - **sound**: the natural method, with a fact that separates it from the other method;
+  - **wrong method, true reason**: the other method with a reason that is true by the facts, or
+    sounds true, but doesn't rescue it (for being told, that the source can send a message, when
+    receiving it needs a set-up nobody can do soon; for checking, that a quick look costs nothing,
+    when the paragraph says each look means the agent rereading everything);
+  - **not a difference**: the natural method with the neutral sentence as its reason;
+  - **ruled-out alternative**: a coherent design the facts rule out: being told by a source the
+    paragraph says can only be checked, or checking at an interval longer than the paragraph says
+    the result can wait, with the reason that would go with it.
+  Exactly one option is right by the facts. No option is wrong merely because it does more than it
+  needs to (checking more often than needed is never a near-miss unless the paragraph says each
+  check is costly). Every fact a near-miss needs to be shown wrong is in the paragraph.
 
-  **Spread across the bank.** A bank is four scenarios, four questions: each case twice, one of each
-  fault kind per case; in the two `poll` questions, one `no-word` and one `costly-setup`; the sound
-  defense first in two. Names vary and are never reused within a scenario.
+  **Example**, a `costly-setup` question. The paragraph gives "The sign-up form can send a message
+  to a web address each time", "Receiving those messages means asking my nephew, who helps once a
+  month", "A quick look at the form's list by a program takes a moment", "A reply within the hour
+  is fine" and the neutral sentence "The office computer is never turned off." Options: sound,
+  "Checking for new sign-ups every ten minutes, because receiving messages means asking my nephew";
+  wrong method, true reason, "Being told by the form each time, because the form can send a message
+  each time"; not a difference, "Checking for new sign-ups every ten minutes, because the office
+  computer is never turned off"; ruled-out alternative, "Checking for new sign-ups every three
+  hours, because a quick look takes a moment" (a reply within the hour is wanted).
+
+  **Spread across the bank.** A bank is four scenarios, four questions: each case twice; in the two
+  `poll` questions, one `no-word` and one `costly-setup`. The sound option sits in each of the four
+  positions once, and the order of the three near-misses varies.
 
   **Domains** are this activity's own, none repeating within the bank: a pet groomer's bookings, a
   church's prayer-request line, a used bookshop's trade-in offers, a climbing gym's waiver forms, a
   neighborhood swap group's listings, a dance studio's makeup-class requests. No domain from the
   other five question activities' lists, and no homework or grading workflow.
 
-  Credit: full for the sound defense, whose position is the rubric's `answer`; none for the other.
+  The rubric gives the `answer` (the 1-based choice) and, in a `tutor note`, the sentence that
+  settles the sound option and, for each near-miss, which kind it is and the fact that rules it out.
+  Credit: full for the sound option; none for the others.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. As
-  `a-argue-noticing`'s, then the tutor sets the sound defense of the same illustration beside one
-  with a faulty reason and says why the faulty fact has no bearing on the choice, or holds for
-  both methods alike.
-- **doesn't show:** the method is given and the learner picks between two reasons, so a pass
-  doesn't show they would choose the method or find the deciding fact on their own; with two
-  choices a guess is right half the time. Both reasons refer to this workflow, so a pass doesn't
-  show the learner would reject a reason that refers to nothing about it. `a-argue-noticing` has
-  the learner choose and write the reason.
-- **offer as:** the quick check, after session 19: a workflow that reacts to each new item and two
-  people's reasons for the same way of finding out about it, and you pick the sound one. About 2
-  minutes a question. Easier than `a-argue-noticing`, since the method and the reasons are given.
+  `a-argue-noticing`'s, then the tutor sets four options for the same illustration in this
+  activity's style and goes through them aloud, saying for each near-miss which fact rules it out
+  or why its reason holds for either method.
+- **doesn't show:** the learner picks among four options rather than writing one, so a pass doesn't
+  show they would find the deciding fact or word the reason themselves; with four choices a guess
+  is right a quarter of the time. Every scenario has one natural method, so a pass shows nothing
+  about weighing facts that pull both ways. Every option's reason is a fact from the paragraph, so a
+  pass doesn't show the learner would reject a reason that refers to nothing about this workflow.
+  `a-argue-noticing` has the learner choose and write the reason.
+- **offer as:** the quick check, after session 19: a workflow that reacts to each new item and four
+  ways of finding out about it, each with a reason, and you pick the one that fits. About 3
+  minutes a question. Easier than `a-argue-noticing`, since the options are written for you.
 
 ### `a-place-the-waiting-work`
 
