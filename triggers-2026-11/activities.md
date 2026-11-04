@@ -541,6 +541,7 @@ workflow may require both.
 - **artifact:** no external source. A described workflow that is started by an event, told in a
   short paragraph, with how it finds out about each event left open, from this activity's bank or
   written live per the generator below. About 3 minutes a question.
+- **verified:** 2026-11-04
 - **learner does:** reads the scenario and its one question; says in two or three sentences
   whether the workflow should find out about each new item by checking again and again or by
   being told each time, and why.
@@ -698,6 +699,7 @@ workflow may require both.
   to a sentence, and one four-choice question offering four ways of finding out about each event,
   each with a reason, from this activity's bank or written live per the generator below. About 3
   minutes a question.
+- **verified:** 2026-11-04
 - **learner does:** reads the scenario, then picks which of four options, each a way of finding out
   (checking again and again, or being told) with its reason, fits the workflow.
 - **tutor role:** examiner
@@ -807,6 +809,7 @@ workflow may require both.
 - **artifact:** no external source. A described workflow, told in a short paragraph, that says how
   its work arrives and when its worker is available but not where the work waits, from this
   activity's bank or written live per the generator below. About 4 minutes a question.
+- **verified:** 2026-11-04
 - **learner does:** reads the scenario and its one question; says in two or three sentences where
   the work should wait until it can be done, or that it needn't wait anywhere, and why.
 - **tutor role:** examiner
