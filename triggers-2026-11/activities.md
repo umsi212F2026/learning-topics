@@ -220,17 +220,21 @@ workflow may require both.
   Every choice the key accepts is a workable design, one that would actually run and produce a
   result; a design that would never run (a schedule set for when the machine is turned off) is
   never accepted. The examples are illustrations, not bank items, and their domains (a pet-sitting
-  service, a running club, a community choir) are used by no bank in this topic.
+  service, a running club, a community choir, a garden club, a family's trip albums) are used by
+  no bank in this topic.
   - `event-best` (`event`): a result is needed within minutes or an hour; work arrives a few times
     a day at unpredictable times, so most runs on a schedule frequent enough to be timely would
     find nothing, and a run is costly (an agent rereads everything). Natural choice an event. The
-    defining facts: how soon the result is needed (a person or a slow schedule would be too late),
-    how rarely and unpredictably the work comes, and what each run costs (a frequent schedule
-    would mostly run for nothing, at a cost). The scenario doesn't say when the machine is on:
-    "it is never turned off" would be a reason for an event resting on none of those. "New clients fill in a form on the service's website,
-    a few a day at no set times, and the owner wants the agent's care sheet for each pet ready
-    before the first visit, often within the hour. Each care-sheet run has the agent reread the
-    whole client file."
+    defining facts: how soon the result is needed (a slow schedule would be too late), how rarely
+    and unpredictably the work comes, which is also what rules out a person (a person would have to
+    watch for forms all day, since they come at no set times, and the scenario says so in those
+    terms), and what each run costs (a frequent schedule would mostly run for nothing, at a cost).
+    The key cites the watching fact for the person. The scenario doesn't say when the machine is
+    on: "it is never turned off" would be a reason for an event resting on none of those. "New
+    clients fill in a form on the service's website, a few a day at no set times, and the owner
+    wants the agent's care sheet for each pet ready before the first visit, often within the hour.
+    Nobody can sit watching for forms all day, since they come at no set times. Each care-sheet run
+    has the agent reread the whole client file."
   - `unavailable` (`unavailable`): the machine that does the work, or a person who does a step,
     is unavailable at known times, and the facts bear on whether each option would find them
     available when it fires. Two variants, which the key names:
@@ -239,44 +243,58 @@ workflow may require both.
       back on varies (most mornings at 7, some not until 9 or later). Natural choice the runner
       starting it by hand when they turn the laptop on. The defining facts are the laptop's hours:
       when it is turned off, and that its morning on-time varies, so a schedule that fires while it
-      is still off simply doesn't run that day. Work keeps arriving right up to shutdown, said as
-      part of the shutdown fact ("members log runs right up to 11 p.m., when she turns the laptop
-      off"), so an evening schedule just before shutdown would miss work; the key lists it by name
-      as never accepted. A result is needed by a set time. The scenario says nothing about how
-      reliably the runner remembers, either way: "she never forgets" would be a reason for the hand
-      start that doesn't rest on the laptop's hours. "Each morning the club's agent turns the
-      previous day's run logs into a leaderboard. Members log runs right up to 11 p.m., when the
-      captain turns her laptop off. Most mornings she turns it on at 7, but on her early shifts not
-      until noon. Members check the board at breakfast."
+      is still off simply doesn't run that day. Work arrives at all hours, said as part of the
+      laptop's hours ("members log runs at all hours, including late at night and early in the
+      morning while her laptop is off"), so an evening schedule just before shutdown would miss
+      work, and so would an event that starts a run for each logged run (many arrive while the
+      laptop is off); the key lists both by name as never accepted. No cost fact is used to rule out
+      the per-run event. The laptop being turned on starting the run is an event by the design rule
+      in Credit, and it works, so the key accepts it with the hand start. A result is needed by a
+      set time. The scenario says nothing about how reliably the runner remembers, either way: "she
+      never forgets" would be a reason for the hand start that doesn't rest on the laptop's hours.
+      "Each morning the club's agent turns all runs logged since the last board into a leaderboard.
+      Members log runs at all hours, including late at night and early in the morning while the
+      captain's laptop is off. She turns it off at 11 p.m.; most mornings she turns it on at 7, but
+      on her early shifts not until noon. Members check the board at breakfast."
     - `person-away`: each run can only begin once a person has done the first step by hand (typed
       in that week's input, signed off on what goes in), and that person is away at known times and
       gets back at a time that varies. Natural choice the person starting it themselves when they
-      get back. The defining facts are when the person is away and that their return time varies:
-      a fixed schedule early enough to catch an early return would fire before a late one, when
-      the run can't begin without them, and one late enough to be safe would leave the result
-      waiting after an early return, since the scenario says, as part of the return fact, that they
-      want the result the moment they are back ("she wants the chart the moment she is back,
-      anywhere from 8 a.m. to noon"). So no fixed schedule is accepted, and the key lists both by
-      name. There is nothing for an event to react
-      to, since the run waits only on the person. The scenario says nothing about how reliably the
-      person remembers, how costly a run is, or what changes while they are away, since each of
-      those would offer a reason not resting on their being away. Never the reading's example of a
-      TA approving feedback, or any approval of student work. "A community choir's agent drafts
-      each week's seating chart, but only after the director types in that week's soloists. She is
-      away most weekends and wants the chart the moment she is back, which is anywhere from 8 a.m.
-      to noon on Monday."
+      have done that step. The defining facts are when the person is away and that their return
+      time varies, and the scenario always puts the timing of the first step into the return fact,
+      so it can't have been done before they left ("she types in the soloists once she is back,
+      anywhere from 8 a.m. to noon on Monday"). A fixed schedule early enough to catch an early
+      return would fire before a late one, when the run can't begin without the step, and one late
+      enough to be safe would leave the result waiting after an early return, since the scenario
+      says, again as part of the return fact, that they want the result the moment the step is
+      done. So no fixed schedule is accepted, and the key lists both by name. A design where the
+      person's own input starts the run (saving the soloists starts the draft) is ruled as the
+      person starting it, and accepted. The scenario says nothing about how reliably the person
+      remembers, how costly a run is, or what changes while they are away, since each of those
+      would offer a reason not resting on their being away. Never the reading's example of a TA
+      approving feedback, or any approval of student work. "A community choir's agent drafts each
+      week's seating chart from the soloists the director types in. She is away most weekends, and
+      she types in the soloists once she is back, anywhere from 8 a.m. to noon on Monday. She
+      wants the chart the moment she has typed them in."
   - `person-or-schedule` (`not-event`): two variants, which the key names. `schedule`: work
     accumulates steadily, a result is needed by a set time and not before, and reacting to each
     item one at a time would mean many runs where one would do; natural choice a schedule, the
     defining facts being the set time, the steady flow, and either that each run is costly or that
     the result is one summary of the period ("one report covering the whole week"), so that an
     event's many runs are plainly worse. Every `schedule` scenario states one of those last two.
-    It doesn't say when the machine is on or who would remember, since "the computer is never off"
-    or "nobody would have to remember" would be reasons resting on none of the defining facts.
+    The set time is also what rules out a person: the result is due when nobody is there to start
+    it, and the scenario says so as part of the set-time fact ("the digest must be in members'
+    inboxes by 6 a.m. Monday, before anyone is up"). It doesn't say when the machine is on or who
+    would remember, since "the computer is never off" or "nobody would have to remember" would be
+    reasons resting on none of the defining facts. "Members post notices to the garden club's
+    board all week, a dozen a day. The agent turns the week's notices into one digest, which must
+    be in members' inboxes by 6 a.m. Monday, before anyone is up."
     `person`: runs are rare and irregular, and the person has to be there anyway (to supply the
     input or look over the result straight away); natural choice a person, the defining facts
     being the irregular need and the person's presence (a schedule would mostly run before there
-    is anything to do or when nobody is there to look).
+    is anything to do or when nobody is there to look). A design where the person's own input
+    starts the run (uploading the photos starts the album) is ruled as the person starting it, and
+    accepted. "After each family trip, a few a year at no set times, Dad uploads the photos, and
+    the agent builds an album that he looks over straight away."
 
   **How hard.** Medium when the facts favor the natural choice clearly. Hard, in
   `person-or-schedule`, when a second kind is nearly as good, so both are defensible; the key then
@@ -302,8 +320,9 @@ workflow may require both.
   **The key** gives the choice it accepts (two in a Hard question), the deciding fact or facts and
   the sentence carrying each, why each other kind fits worse and the fact that shows it, any
   choice it never accepts, by name (one that would fire while the machine is turned off or the
-  person away and so produce nothing, an evening schedule that misses late work, a fixed schedule
-  that fires before the person is back); the irrelevant detail; two or three
+  person away and so produce nothing, an evening schedule that misses late work, an event per
+  logged item where many arrive while the machine is off, a fixed schedule that fires before the
+  person is back); the irrelevant detail; two or three
   generic reasons that would fail ("a schedule is automatic", "events are faster", "a person can
   make sure it's done right"); one or two facts of this scenario that are true but have no
   bearing on the choice at all, which also fail ("the care sheet is a one-page form"); and an
@@ -325,7 +344,10 @@ workflow may require both.
   one the scenario's facts contradict. An answer is
   ruled on the design it describes, not the name it gives it: cheap repeated looks that start the
   costly run only when something is new ("a schedule every ten minutes that checks for anything
-  new and starts the agent only then") are an event choice, whatever the answer calls them. In an
+  new and starts the agent only then") are an event choice, whatever the answer calls them. The
+  ruling is on the design the answer commits to: an answer that lists two choices, outside a Hard
+  question whose key accepts both, is ruled as choosing neither; a combined design ("an event, with
+  a weekly schedule as a backup") is ruled by its main choice. In an
   `unavailable` question the ruling is on whether the design the answer describes would actually
   run while the machine is on or the person there, and produce a result that isn't stale, by the
   scenario's facts; it is not on whether the reason uses the word "available". An answer that
@@ -338,8 +360,9 @@ workflow may require both.
   trigger is chosen.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. The
   tutor works the illustration of the same shape as the question aloud, from the facts to the
-  choice: says which facts bear on how soon the result is needed, how often there is work, who
-  would have to remember and whether the machine or person will be available, says which kind
+  choice: says which of the facts the scenario states bear on how soon the result is needed, how
+  often there is work, who would have to remember and whether the machine or person will be
+  available, never adding a fact the illustration leaves out, says which kind
   those facts favor and why the other two fit worse. Then shows a generic version ("a schedule is
   automatic") and says why it doesn't refer to this workflow at all. It may point to Three kinds
   of trigger and Schedules, and the laptop problem in `tasks/read-triggers.md`.
@@ -422,16 +445,19 @@ workflow may require both.
   paragraph.
 
   **Examples**, which obey the form rule above. The paragraph sentences are given in quotation marks.
-  - `machine-off`. The paragraph gives "The laptop is turned off at 11 p.m.", "Members log runs
-    right up to the moment the laptop is turned off", "On most days the laptop is turned on at 7
-    a.m.", "On early-shift days the laptop is turned on at noon" and the neutral sentence "The leaderboard is a single page with a
-    photo of the top runner." Options: sound, "She starts it by hand when she turns the laptop on,
-    because on early-shift days the laptop is turned on at noon"; wrong choice, true reason, "A
-    schedule at 7:15 a.m., because on most days the laptop is turned on at 7 a.m."; not a
-    difference, "She starts it by hand when she turns the laptop on, because the leaderboard is a
-    single page with a photo of the top runner"; ruled-out alternative, "A schedule at 10:30 p.m., because
-    the laptop is turned off at 11 p.m." (members log runs right up to the moment it is turned
-    off). Two hand starts, two schedules. No fact about whether she remembers appears.
+  - `machine-off`. The paragraph gives "The laptop is turned off at 11 p.m.", "Members log runs at
+    all hours, including while the laptop is off", "On most days the laptop is turned on at 7
+    a.m.", "On early-shift days the laptop is turned on at noon" and the neutral sentence "The
+    leaderboard has the top runner's photo." Options (word counts in parentheses): sound, "She
+    starts it by hand when she turns the laptop on, because on early-shift days the laptop is
+    turned on at noon" (22); wrong choice, true reason, "A schedule at 7:15 a.m. each morning,
+    because on most days the laptop is turned on at 7 a.m." (19); not a difference, "She starts it
+    by hand when she turns the laptop on, because the leaderboard has the top runner's photo" (19);
+    ruled-out alternative, "A schedule at 10:30 p.m., just before shutdown, because the laptop is
+    turned off at 11 p.m." (17), wrong because members log runs at all hours. The longest and
+    shortest differ by 5 words, and a schedule option ties a hand-start option for second
+    longest, so length points to no choice. Two hand starts, two schedules. No fact about whether
+    she remembers appears.
   - `event-best`, a pet-sitting service. The paragraph gives "New clients fill in the form a few a
     day, at no set times", "Each care sheet is needed within the hour", "Every run, even one that
     finds no new form, has the agent reread the whole client file, which costs real money", "The
@@ -445,22 +471,37 @@ workflow may require both.
     hour). Two events, two schedules. The tutor note cites the every-run sentence as what rules out
     the hourly schedule.
   - `person-away`, as in `a-argue-a-trigger`: the run can't begin until the person has done its
-    first step, and they get back at a time that varies. The paragraph gives "The director types
-    in the week's soloists before each draft", "She is away from Friday evening until Monday",
-    "She gets back on Monday anywhere from 8 a.m. to noon", "She wants the chart the moment she is
-    back" and the neutral sentence "The chart is printed on the choir's letterhead." It says
-    nothing about whether she remembers, what a draft costs, or what changes while she is away.
-    Options: sound, "She starts it by hand when she gets back, because she gets back on Monday
-    anywhere from 8 a.m. to noon"; wrong choice, true reason, "A schedule at 8 a.m. Monday,
-    because she is away from Friday evening until Monday" (on a late Monday the run fires before
-    she has typed in the soloists, so it can't begin); not a difference, "She starts it by hand
-    when she gets back, because the chart is printed on the choir's letterhead"; ruled-out
-    alternative, "A schedule at noon on Monday, because the director types in the week's soloists
-    before each draft" (on an early Monday the chart comes four hours after she wants it). Two
+    first step, and the step's timing is part of the return fact. The paragraph gives "The agent
+    drafts each chart from the soloists the director types in", "She is away from Friday evening
+    until Monday", "She types in the soloists once she is back, anywhere from 8 a.m. to noon on
+    Monday", "She wants the chart the moment she has typed them in" and the neutral sentence "The
+    chart is printed on letterhead." It says nothing about whether she remembers, what a draft
+    costs, or what changes while she is away. Options (word counts): sound, "She starts it by hand,
+    because she types in the soloists once she is back, anywhere from 8 a.m. to noon on Monday"
+    (22); wrong choice, true reason, "A schedule at 8 a.m. Monday, because she is away from Friday
+    evening until Monday" (15), wrong because on a late Monday the soloists aren't in yet; not a
+    difference, "She starts it by hand, because the chart is printed on letterhead" (12); ruled-out
+    alternative, "A schedule at noon on Monday, because the agent drafts each chart from the
+    soloists the director types in" (19), wrong because on an early Monday the chart comes hours
+    after she wants it. The longest and shortest differ by 10 words. A design where her saving the
+    soloists starts the draft would be the person starting it, and is not among the options. Two
     hand starts, two schedules.
   - `person-or-schedule`: the two options on the other kind are both of the other of person and
     schedule, at different times, or both events where reacting to each item would mean many runs
-    and the paragraph says each run is costly.
+    and the paragraph says each run is costly or that the result is one summary of the period. For
+    example, `schedule`, the garden club: the paragraph gives "Members post notices to the board
+    all week, until midnight on Sunday", "The agent turns the week's notices into one digest",
+    "The digest must be in members' inboxes by 6 a.m. Monday, before anyone is up" and the neutral
+    sentence "The digest has the club's logo at the top." Options (word counts): sound, "A schedule
+    at 5 a.m. Monday, because the digest must be in members' inboxes by 6 a.m. Monday, before
+    anyone is up" (20); wrong choice, true reason, "The secretary starts it by hand on Monday
+    morning, because the agent turns the week's notices into one digest" (19), wrong because
+    nobody is up before 6 a.m.; not a difference, "A schedule at 5 a.m. Monday, because the digest
+    has the club's logo at the top" (16); ruled-out alternative, "The secretary starts it by hand
+    on Sunday evening, because members post notices to the board all week" (18), wrong because
+    notices keep coming until midnight on Sunday. Two schedules, two person starts. For the
+    `person` variant, the writer builds the options the same way from the trip-album illustration's
+    pattern in `a-argue-a-trigger`, in a domain no bank here uses.
 
   **Spread across the bank.** A bank is six scenarios, six questions: each shape twice;
   `unavailable` once `machine-off` and once `person-away`; `person-or-schedule` once `schedule` and
@@ -527,7 +568,8 @@ workflow may require both.
   - what each check would cost: a quick look by a program that takes a moment and costs nothing,
     or a look that means the agent reading everything again;
   - who would have to set up receiving the source's message, and whether that is easy for them or
-    a bother ("anything beyond the agent itself means asking my nephew, who helps once a month");
+    a bother; where it can't be done in time, a deadline in the same sentence ("receiving those
+    messages means asking my nephew, who next helps in three weeks, and sign-ups open tomorrow");
   - in a `hook-best` scenario only, that the machine that would receive the message is never
     turned off, said as part of the set-up fact ("the kennel's computer person can set up the
     office computer, which is never turned off, to take in those messages in an afternoon"); this
@@ -567,8 +609,9 @@ workflow may require both.
     looked at, so checking again and again is the only way; the result can wait long enough that
     checking every so often is fine, and each look is cheap. `costly-setup`: the source can send
     a message, but receiving it means setting something up that can't be done in time, and the
-    scenario always says so in plain terms, not merely that it is a bother ("receiving those
-    messages means asking my nephew, who helps once a month"), while each look is cheap and the
+    scenario always says so in plain terms, not merely that it is a bother, with the deadline in
+    the same sentence as the set-up's delay ("receiving those messages means asking my nephew, who
+    next helps in three weeks, and sign-ups open tomorrow"), while each look is cheap and the
     result can wait (within the hour), so a cheap check every ten minutes serves. Defining facts,
     in both variants: whatever rules out being told (the source sends no notice; the set-up can't
     be done in time), that a look is cheap, and how long the result can wait. "Repair requests arrive in the
@@ -614,11 +657,14 @@ workflow may require both.
     ("bookings would wait for the next check, past the few minutes the manager wants");
   - **what would make the other method worse**: a fact that tells against the other method ("each
     look means the agent reading every booking again"; "receiving the messages means asking my
-    nephew, who helps once a month").
+    nephew, who next helps in three weeks, and sign-ups open tomorrow").
   One tied reason is enough. A fact with no bearing on the method is not a tied reason; nor is one
   resting on the irrelevant detail, or one the scenario's facts contradict. An answer is
   ruled on the design it describes: "a program looks every ten minutes" is checking again and
-  again, whatever it is called. Half when the method is one the key doesn't accept but the reason
+  again, whatever it is called. The ruling is on the design the answer commits to: an answer that
+  lists both methods, outside a question whose key accepts both, is ruled as choosing neither; a
+  combined design ("be told, and check daily as a backup") is ruled by its main method. Half when
+  the method is one the key doesn't accept but the reason
   rests on a fact that bears on the method, or the method is accepted but the reason is generic,
   not tied, or missing. None when the answer chooses being told for a source the scenario says
   can only be looked at, when the method is not accepted and the reason is generic, not tied, or
@@ -626,9 +672,10 @@ workflow may require both.
   source that can only be looked at, with a reason that bears on the method), the None clause
   governs.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. The
-  tutor works the illustration of the same shape aloud: says whether the source can send word,
-  how soon the result is needed, what a check costs and who would set up receiving the message,
-  then which method those facts favor and why. Then shows a generic version ("being told is
+  tutor works the illustration of the same shape aloud: says, of the facts the scenario states,
+  whether the source can send word, how soon the result is needed, what a check costs and who
+  would set up receiving the message, never adding a fact the illustration leaves out, then which
+  method those facts favor and why. Then shows a generic version ("being told is
   faster") and says why it doesn't refer to this workflow. It may point to Noticing an event in
   `tasks/read-triggers.md`.
 - **doesn't show:** no scenario has a machine that is off, so a pass shows nothing about a
@@ -698,7 +745,8 @@ workflow may require both.
   - `costly-setup`: both other-method options are being told. One gives the fact that the source
     can send a message each time; the other gives another true fact (how soon the result is
     needed, or how many items arrive). Neither rescues being told, because receiving the message
-    needs a set-up that can't be done in time.
+    needs a set-up that can't be done in time, which the paragraph says in one sentence that also
+    gives the deadline, as in `a-argue-noticing`; the tutor note cites that sentence.
   - `no-word`: both other-method options are being told. The source sends no notice, so neither
     may claim it does; each gives a different true fact from the paragraph that sounds like a
     reason to want word at once (how soon a reply is wanted, how many items arrive a day, who is
@@ -713,15 +761,17 @@ workflow may require both.
   check is costly). Every fact a near-miss needs to be shown wrong is in the paragraph.
 
   **Example**, a `costly-setup` question. The paragraph gives "The sign-up form can send a message
-  to a web address each time", "Receiving those messages means asking my nephew, who helps once a
-  month", "A quick look at the form's list by a program takes a moment", "A reply within the hour
-  is fine" and the neutral sentence "The confirmation is a short note with the club's logo."
-  Options: sound, "Checking for new sign-ups every ten minutes, because receiving those messages
-  means asking my nephew, who helps once a month"; not a difference, "Checking for new sign-ups
-  every ten minutes, because the confirmation is a short note with the club's logo"; other method, "Being told by the form each
-  time, because the sign-up form can send a message to a web address each time"; other method,
-  "Being told by the form each time, because a reply within the hour is fine". Both being-told
-  options fail on the nephew sentence. Two checking, two being told.
+  to a web address each time", "Receiving those messages means asking my nephew, who next helps in
+  three weeks, and sign-ups open tomorrow", "A quick look at the form's list by a program takes a
+  moment", "A reply within the hour is fine" and the neutral sentence "The confirmation is a short
+  note with the club's logo." Options (word counts): sound, "Checking for new sign-ups every ten
+  minutes, because receiving those messages means asking my nephew, who next helps in three
+  weeks, and sign-ups open tomorrow" (25); not a difference, "Checking for new sign-ups every ten
+  minutes, because the confirmation is a short note with the club's logo" (18); other method,
+  "Being told by the form each time a sign-up arrives, because the sign-up form can send a message
+  to a web address each time" (24); other method, "Being told by the form each time a sign-up
+  arrives, because a reply within the hour is fine" (18). Both being-told options fail on the
+  nephew sentence, which the tutor note cites. Two checking, two being told.
 
   **Spread across the bank.** A bank is four scenarios, four questions: each case twice; in the two
   `poll` questions, one `no-word` and one `costly-setup`. The sound option sits in each of the four
@@ -810,7 +860,7 @@ workflow may require both.
   rests on it:
   - `unavailable`: the holding fact is tied to the worker's off hours ("the website keeps every
     request that comes in while Ana's laptop is off, with the time it came in"), and so is how
-    soon a result is needed ("a reply by the time her laptop comes on is soon enough");
+    soon a result is needed ("a reply the morning after is soon enough");
   - `burst`: the holding fact is tied to the burst ("the program that receives each sign-up as it
     arrives can pass only twenty a minute to the agent"; "the form keeps all three hundred
     sign-ups from the hour after the newsletter"). The scenario never says on its own that a
@@ -858,8 +908,8 @@ workflow may require both.
     hours. The agent that answers them runs on Ana's laptop, which is on from about 8 a.m. to 6
     p.m. on weekdays and turned off the rest of the time. The website keeps every request that
     comes in while her laptop is off, with the time it came in. The agent emails a reply to each
-    request; no copy of the reply is kept. A reply by the time her laptop comes on is soon
-    enough." (Here only the source fits: nothing is left behind per request, and nothing is on
+    request; no copy of the reply is kept. A reply the morning after is soon enough." (Here only
+    the source fits: nothing is left behind per request, and nothing is on
     overnight to add requests to a list.)
   - `burst` (`spread-out`): work arrives in a burst faster than the worker should take it (three
     hundred sign-ups in the hour after a newsletter goes out, against a provider that takes about
@@ -925,10 +975,12 @@ workflow may require both.
     place (a list the workflow keeps would miss the night's requests, since nothing is on overnight
     to add them; doing nothing would lose every request that comes in while the laptop is off).
   A fact with no bearing on where the work waits is not a tied reason; nor is one resting on the
-  irrelevant detail, or one the scenario's facts contradict. Half when the place is workable but
-  the reason is generic, not tied, or missing, or when the reason is tied but the place is
-  unworkable. None when the place is unworkable and the reason is generic, not tied, or missing, or
-  when the answer says no place is needed.
+  irrelevant detail, or one the scenario's facts contradict. A place named only generically ("put
+  them in a queue"), with nothing saying what holds the items, is ruled as a list the workflow
+  keeps: workable in a `burst` question, not in an `unavailable` one. Half when the place is
+  workable but the reason is generic, not tied, or missing, or when the reason is tied but the
+  place is unworkable. None when the place is unworkable and the reason is generic, not tied, or
+  missing, or when the answer says no place is needed.
 
   In a `no-queue` question the criterion's rule for nowhere applies: full when the answer says the
   work needn't wait and gives as the reason the condition that holds, that the worker is always
@@ -945,13 +997,16 @@ workflow may require both.
     every reading, so nothing would be lost), since a place is workable but not needed;
   - in `drop-ok`, it proposes a place for a loss that is real but harmless (keeping every reading
     so none is missed, when each is replaced by the next).
-  None when it proposes a place and names a loss the facts rule out, or gives no reason.
+  None when it proposes a place and names a loss the facts rule out, or with a reason that is
+  generic or not tied, or gives no reason.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. The
-  tutor works the illustration of the same shape aloud: says when work arrives and when the worker
-  is available, what already holds or leaves behind a record of the waiting work, which kind of
-  queue that gives, and what would be lost without it. For `no-queue` it
-  works a made-up case of its own (a program on an office computer that is never off, turning each
-  of a few emails an hour into a line on a sign-in sheet). It may point to Where the work waits and
+  tutor works the illustration of the same shape aloud: says, of the facts the scenario states,
+  when work arrives and when the worker is available, what already holds or leaves behind a
+  record of the waiting work, which kind of queue that gives, and what would be lost without it.
+  Only `unavailable` has an illustration above. For `no-queue` `always-ready` it works a made-up
+  case of its own (a program on an office computer that is never off, turning each of a few emails
+  an hour into a line on a sign-in sheet). For `burst` and `drop-ok` it otherwise makes up one of
+  its own in this activity's style, in a domain no bank here uses, obeying the facts-kept rule. It may point to Where the work waits and
   When there's no queue in `tasks/read-triggers.md`.
 - **doesn't show:** the workflow's facts are all in one short paragraph, so a pass doesn't show the
   learner would notice a fact they need is missing. Any workable kind of queue earns credit, so a
@@ -1007,8 +1062,11 @@ workflow may require both.
   the one irrelevant detail, and nothing else that offers a tied reason for the sound place that
   doesn't rest on a defining fact. A fact a near-miss needs is worded so that it only rules that
   near-miss out: in a `burst` question, the fact that makes the worker-unavailable reason false is
-  said as "sign-ups reach the agent at any hour, as they arrive", part of the burst, never as a
-  free-standing "the computer is never turned off"; in an `unavailable` question, the limit and
+  folded into the receiving fact ("the program that takes in sign-ups, at any hour, as they
+  arrive, passes only twenty a minute to the agent"; in the log variant, "each sign-up is saved
+  into the folder as it arrives, at any hour"), never a free-standing "the computer is never
+  turned off", and never a sentence saying the sign-ups reach the agent itself as they arrive,
+  which would describe a design with no queue; in an `unavailable` question, the limit and
   arrival rate that make the burst reason false are said together ("requests come a few an hour,
   well under the twenty a minute the agent's provider takes").
 
@@ -1016,9 +1074,10 @@ workflow may require both.
   and the case its shape carries. It reads "Which design, with its reason, fits this workflow?",
   then four numbered designs, each one sentence in the same frame: "The work should wait <where>,
   because <why>." The four are within ten words of each other in length. One is sound on both its
-  place and its reason. The four cross two places with two reasons, so that every place and every
-  reason appears in exactly two options and the sound one can't be found from the options alone:
-  - In an `unavailable` or `burst` question, the two places are the sound place and one unworkable
+  place and its reason. The four cross two places with two reasons, so the sound one can't be found
+  from the options alone:
+  - In an `unavailable` or `burst` question, every place and every reason appears in exactly two
+    options. The two places are the sound place and one unworkable
     place (chosen below), and the two reasons are the sound reason and the other queue reason,
     which the facts make false. The four options are sound place with sound reason (the answer),
     sound place with false reason, unworkable place with sound reason, and unworkable place with
@@ -1029,7 +1088,8 @@ workflow may require both.
     One place appears twice, a list the workflow keeps, once with each queue reason, both false by
     the facts: the first because the worker is never off (`always-ready`) or because no one is
     waiting on a reading the next replaces (`drop-ok`), the second because the arrivals stay well
-    under the stated limit.
+    under the stated limit. So each of the two places appears twice, each time with a different
+    reason, and each of the four reasons appears once.
   Exactly one option is right by the facts, and every question tests both the place and the reason:
 
   **Where** (the `<where>` slot). The options, put in this workflow's terms: a list the workflow
@@ -1058,7 +1118,7 @@ workflow may require both.
     - in a `burst` question with a kept list, the wrong place is asking the source, which the
       scenario says keeps nothing (an alert shown once);
     - in a `burst` question with a log, the scenario says the source keeps nothing and the workflow
-      saves each item into a folder as it arrives (the worker's machine is never off); the wrong
+      saves each item into a folder as it arrives, at any hour; the wrong
       place is asking the source.
     When the sound place is nowhere, the `no-queue` rule above applies instead.
 
