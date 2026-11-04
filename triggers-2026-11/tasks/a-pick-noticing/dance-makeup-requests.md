@@ -3,8 +3,7 @@ student could join instead. A reply within the hour is fine. The reply is a shor
 picture of ballet shoes.
 
 **About this workflow:** Students ask for makeup classes through a form on our website, which keeps
-a list of all requests. The agent runs on the office computer, using a free AI model so we don't
-pay for each use. The office computer is connected to the internet and can fetch the list of
+a list of all requests. The agent runs on the office computer. The office computer is connected to the internet and can fetch the list of
 requests from the website and send email. Fetching the list is quick and costs almost nothing. The website can send a notice each time a request comes
 in, but notices need a web server to arrive at, and the office computer doesn't run one. Each
 student is waiting to hear which class they can join.
