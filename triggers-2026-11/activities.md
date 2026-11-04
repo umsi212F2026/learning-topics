@@ -779,7 +779,7 @@ workflow may require both.
   "webhook" where a real person would, but the fact that decides the answer is still said plainly.
   In the rest of this entry, "checking" means polling and "being told" means a webhook or hook.
 
-  **Facts kept to the case**, as in `a-argue-noticing`: the paragraph states the case's defining
+  **Facts kept to the case**, as in `a-argue-noticing`: the scenario states the case's defining
   facts, the facts each near-miss needs to be shown wrong, the one neutral sentence, and nothing
   else that offers a tied reason for the natural method that doesn't rest on a defining fact.
   When a near-miss needs a fact that could also serve as such a reason, choose a different
@@ -792,27 +792,28 @@ workflow may require both.
   words and said concretely: "Polling for new <items> every <interval>", or "A webhook: <the
   source> sends a notice each time <an item> arrives" ("A hook: ..." where the source isn't a
   website). Each
-  reason is one fact from the paragraph, stated as the paragraph states it, with no added
+  reason is one fact from the scenario (the opening or the paragraph), stated as the scenario
+  states it, with no added
   explanation, no hedge and no intensifier. The four sentences are within ten words of each other in
   length. `type: mcq`. The four options are:
   - **sound**: the natural method, with a fact that separates it from the other method;
   - **not a difference**: the natural method with the neutral sentence as its reason, a true fact
     with no bearing on the method;
-  - two options on **the other method**, each with a different fact from the paragraph that is
+  - two options on **the other method**, each with a different fact from the scenario that is
     true, or sounds true, but doesn't rescue that method.
   So the four split two and two by method, and counting methods gives nothing away. By shape:
   - `costly-setup`: both other-method options are being told. One gives the fact that the source
-    can send a message each time; the other gives a different true fact from the paragraph that
+    can send a message each time; the other gives a different true fact from the scenario that
     sounds like a reason to want word at once (how many items arrive, who is waiting on them),
     never a slack deadline, which argues for checking. Neither rescues being told, because receiving the message
     needs a set-up that can't be done in time, which the paragraph says in one sentence that also
     gives the deadline, as in `a-argue-noticing`; the tutor note cites that sentence.
   - `no-word`: both other-method options are being told. The source sends no notice, so neither
-    may claim it does; each gives a different true fact from the paragraph that sounds like a
-    reason to want word at once (how soon a reply is wanted, how many items arrive a day, who is
-    waiting on them). Being told is ruled out by the fact that the source sends no notice.
+    may claim it does; each gives a different true fact from the scenario that sounds like a
+    reason to want word at once (how many items arrive a day, who is waiting on them), never a
+    slack deadline, which argues for checking. Being told is ruled out by the fact that the source sends no notice.
   - `cant-be-reached`: both other-method options are being told, each with a different true fact
-    from the paragraph: one that the source can send a notice each time, the other a fact that
+    from the scenario: one that the source can send a notice each time, the other a fact that
     sounds like a reason to want word at once (how many items arrive, who is waiting on them),
     never a slack deadline, which argues for checking. Neither rescues being told, because the paragraph's one sentence on the
     missing receiver ("notices need a web server to arrive at, and the office computer doesn't run
@@ -827,19 +828,21 @@ workflow may require both.
     because the result is needed within minutes).
   Exactly one option is right by the facts. No option is wrong merely because it does more than it
   needs to (checking more often than needed is never a near-miss unless the paragraph says each
-  check is costly). Every fact a near-miss needs to be shown wrong is in the paragraph.
+  check is costly). Every fact a near-miss needs to be shown wrong is in the scenario.
 
   **Example**, a `costly-setup` question. The paragraph gives "The sign-up form can send a message
   to a web address each time", "Receiving those messages means asking my nephew, who next helps in
   three weeks, and sign-ups open tomorrow", "A quick look at the form's list by a program takes a
-  moment", "A reply within the hour is fine" and the neutral sentence "The confirmation is a short
+  moment", "A reply within the hour is fine", "Each new member is waiting to hear they are signed
+  up" and the neutral sentence "The confirmation is a short
   note with the club's logo." Options (word counts): sound, "Polling for new sign-ups every ten
   minutes, because receiving those messages means asking my nephew, who next helps in three
   weeks, and sign-ups open tomorrow" (25); not a difference, "Polling for new sign-ups every ten
   minutes, because the confirmation is a short note with the club's logo" (18); other method, "A
   webhook: the form sends a notice each time a sign-up arrives, because the sign-up form can send
   a message to a web address each time" (26); other method, "A webhook: the form sends a notice
-  each time a sign-up arrives, because a reply within the hour is fine" (20). The spread is 8
+  each time a sign-up arrives, because each new member is waiting to hear they are signed up"
+  (24). The spread is 8
   words. Both webhook options fail on the nephew sentence, which the tutor note cites. Two
   polling, two webhook.
 

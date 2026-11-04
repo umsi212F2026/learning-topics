@@ -22,6 +22,6 @@ detail is the room above the old firehouse. Two places, each twice; two reasons,
   hundred arrive in the first ten minutes" against "The agent's provider takes only twenty requests
   a minute." 1 has the sound reason but the wrong place: the text line keeps nothing, so there is
   nothing to ask it for. 2 has the right place but the wrong reason: the program on the agent's
-  computer takes in requests "at any hour", so nothing is lost to the computer being off. 3 is
+  computer takes in requests "at any hour", so no request goes unhandled because the computer is off. 3 is
   wrong on both: the text line keeps nothing, and the computer is on at any hour. If the learner
   picks 2, ask when the agent's computer is off. If they pick 1, ask what the text line keeps.
