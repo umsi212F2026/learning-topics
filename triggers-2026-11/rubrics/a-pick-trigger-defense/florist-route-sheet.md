@@ -1,7 +1,7 @@
 Shape `unavailable`, variant `machine-off`, case `unavailable`, Medium. The natural choice is Rosa
 starting each run by hand when she turns the laptop on. The deciding facts are the laptop's hours:
-it is turned off at 10 p.m., and the time it is turned back on varies ("On most days the laptop is
-turned on at 6 a.m.", "On flower-market days the laptop is turned on at 9 a.m."), so a schedule
+it is turned off at 10 p.m., and the time it is turned back on varies ("The laptop is off from 10
+p.m. until 6 a.m., or until 9 a.m. on flower-market days."), so a schedule
 that fires while it is still off simply doesn't run that day. "Rosa wants the route sheet as soon
 as the laptop is on" gives no set deadline, and "The driver wants that morning's orders on the
 sheet", with orders placed "at all hours, including while the laptop is off", rules out a sheet
@@ -16,7 +16,7 @@ schedules.
 - **type:** mcq
 - **answer:** 3
 - **credit:** full for 3 only; none for the others.
-- **tutor note:** Sound (3): "On flower-market days the laptop is turned on at 9 a.m." separates
+- **tutor note:** Sound (3): the laptop being off "until 9 a.m. on flower-market days" separates
   the hand start from a fixed morning schedule, which on those days would fire while the laptop is
   still off. 1 is wrong choice, true reason: it is true that on most days the laptop is on at 6
   a.m., but on flower-market days it is off until 9, so a 6:15 schedule doesn't run and there is no
