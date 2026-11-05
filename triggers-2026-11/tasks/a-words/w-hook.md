@@ -43,12 +43,15 @@ Is each statement true or false?
 
 ### catch-pick
 
-Which of these uses a hook?
+A writer has set up Git so that each time she makes a commit, Git runs her command that copies
+her notes to a backup drive.
 
-1. A script checks a shared inbox every five minutes for new mail
-2. Git runs a writer's backup command each time she makes a commit
-3. A cron job copies a writer's notes to a backup drive at 1 a.m.
-4. A writer runs her backup command herself after each writing session
+Which of these uses the word "hook" correctly?
+
+1. "The hook is the backup drive, where the notes end up."
+2. "It's a hook because it runs with no person starting it."
+3. "The hook is Git running her command each time she commits."
+4. "It would still be a hook if her script asked Git every hour for new commits."
 
 ### catch-weather
 

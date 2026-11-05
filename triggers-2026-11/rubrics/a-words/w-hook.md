@@ -52,11 +52,14 @@ workflow asking.
 - **goal:** `w-hook`
 - **move:** CATCH
 - **type:** mcq
-- **answer:** 2
-- **credit:** full for 2 only. Git runs the writer's command when a commit happens, so she is told
-  rather than having to ask. Choice 1 is polling: the script asks again and again, and nothing
-  tells it. Choice 3 is a schedule: it runs at a set time whatever has happened. Choice 4 is a
-  person starting each run.
+- **answer:** 3
+- **credit:** full for 3 only. The hook is the arrangement: Git runs her command when a commit
+  happens, so she is told rather than having to ask. Choice 1 takes the hook to be the place the
+  work ends up. Choice 2 stretches the word to anything automatic; a cron job also runs with no
+  person starting it, and is no hook. Choice 4 calls asking a hook; a script asking every hour is
+  polling.
+- **tutor note:** a learner who picks 2 is treating "hook" as "automatic"; ask whether a backup
+  that runs every night at 1 a.m. would be a hook.
 
 ### catch-weather
 
