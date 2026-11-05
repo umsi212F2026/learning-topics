@@ -12,5 +12,5 @@ Where, if anywhere, should this workflow's work wait, and why?
 
 1. Nowhere, each tip going straight to the program as it arrives, because nothing needs to wait, as the program is always available and never overloaded.
 2. In a list the workflow keeps as each tip arrives, because a burst would arrive faster than the fifty a minute the program handles.
-3. Nowhere, each tip going straight to the program as it arrives, because nothing needs to wait, as losing an occasional tip does no harm here.
+3. Nowhere, each tip going straight to the program as it arrives, because nothing needs to wait, as losing some tips does no harm here.
 4. In a list the workflow keeps as each tip arrives, because tips sent while the office computer is off, each with a neighbor waiting, would never be handled.

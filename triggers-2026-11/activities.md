@@ -915,7 +915,6 @@ workflow may require both.
 - **artifact:** no external source. A described workflow, told in a short paragraph, that says how
   its work arrives and when its worker is available but not where the work waits, from this
   activity's bank or written live per the generator below. About 4 minutes a question.
-- **verified:** 2026-11-04
 - **learner does:** reads the scenario and its one question; says in two or three sentences where
   the work should wait until it can be done, or that it needn't wait anywhere, and why.
 - **tutor role:** examiner
@@ -1031,7 +1030,7 @@ workflow may require both.
     words. The natural kind is any of the four, its holding fact worded with the burst.
   - `no-queue` (`no-queue`): two variants, which the key names. `always-ready`: a quick program on
     a machine that is never off, with a few items an hour, each taking a second, so nothing ever
-    has to wait. `drop-ok`: losing an occasional item does no harm, because the next one replaces
+    has to wait. `drop-ok`: losing some items does no harm, because the next one replaces
     it (a display showing the latest reading, a count that each update corrects); its worker is
     turned off at times, so `always-ready` doesn't hold. The key: no queue is needed, which
     condition holds and the fact that makes it hold, and why the other condition doesn't.
@@ -1140,7 +1139,6 @@ workflow may require both.
   `a-place-the-waiting-work`, and one four-choice question offering four designs for it, each a
   place for the work to wait and a reason, from this activity's bank or written live per the
   generator below. About 3 minutes a question.
-- **verified:** 2026-11-04
 - **learner does:** reads the scenario, then picks which of four designs, each a place for the work
   to wait (or none) with its reason, fits it.
 - **tutor role:** examiner
@@ -1243,7 +1241,7 @@ workflow may require both.
   someone waiting on it, would never be handled; otherwise a burst of <items> would reach <worker>
   faster than <its limit>; nothing
   needs to wait, as <worker> is always available and never overloaded; nothing needs to wait, as
-  losing an occasional <item> does no harm here. Exactly one is true by the facts, and it is the
+  losing some <items> does no harm here. Exactly one is true by the facts, and it is the
   shape's case. The false reasons are the ones the crossing above names, and the scenario states
   the fact that makes each false.
 

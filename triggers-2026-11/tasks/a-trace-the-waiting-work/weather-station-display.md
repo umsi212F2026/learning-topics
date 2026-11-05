@@ -12,5 +12,5 @@ Where, if anywhere, should this workflow's work wait, and why?
 
 1. In a list the workflow keeps as each reading arrives, because readings sent while the science room computer is off, each with someone waiting, would never be handled.
 2. Nowhere, each reading going straight to the program as it arrives, because nothing needs to wait, as the program is always available and never overloaded.
-3. Nowhere, each reading going straight to the program as it arrives, because nothing needs to wait, as losing an occasional reading does no harm here.
+3. Nowhere, each reading going straight to the program as it arrives, because nothing needs to wait, as losing some readings does no harm here.
 4. In a list the workflow keeps as each reading arrives, because a burst would arrive faster than the hundred a minute the program handles.

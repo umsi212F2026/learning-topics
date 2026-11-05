@@ -1,5 +1,5 @@
 Shape `no-queue`, case `no-queue`, variant `drop-ok`, Hard. The sound design has the work wait
-nowhere, each reading going straight to the program, because losing an occasional reading does no
+nowhere, each reading going straight to the program, because losing some readings does no
 harm: "each new reading replaces the last one" on the lobby screen, which is there so people "can
 see what it is like outside right now". The `always-ready` condition is false because "The science
 room computer is turned off over weekends and school vacations." The first why statement is false
