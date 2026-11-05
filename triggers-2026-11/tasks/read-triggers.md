@@ -29,9 +29,10 @@ None of them is best everywhere. Each helps some goals and hurts others.
 
 Which matters most depends on facts about this workflow: how soon its result is needed, how often
 there is work, who would have to remember to start it, and whether the machine or person that does
-the work will be available when the trigger fires. For the TA, nobody needs feedback before the deadline, and
-nearly all the work arrives in one burst, so one scheduled run on Saturday morning fits. A course
-where students resubmit all week and want quick feedback would push toward an event-driven approach.
+the work will be available when the trigger fires. For the TA, nobody needs feedback before the
+deadline, and nearly all the work arrives in one burst, so one scheduled run on Saturday morning
+fits. A course where students resubmit all week and want quick feedback would push toward an
+event-driven approach.
 
 ## Noticing an event
 
@@ -43,10 +44,11 @@ to look. But most looks find nothing, each costs a little, and a submission can 
 to be noticed. Polling is a schedule doing an event trigger's job.
 
 **Being told.** Some tools and services let you name a command to run when something happens
-inside them. That arrangement is a **hook**. Git, for example, can run a command of yours every time you
-make a commit. A service on the Internet usually tells you by sending a message to a web address you
-gave it, in which case the hook is called a **webhook**. For example, Canvas might send one each time a student submits. Being told is quicker than polling and wastes no effort on empty looks. But the
-service has to offer a hook, and something has to be ready to receive the message.
+inside them. That arrangement is a **hook**. Git, for example, can run a command of yours every
+time you make a commit. A service on the Internet usually tells you by sending a message to a web
+address you gave it, in which case the hook is called a **webhook**. For example, Canvas might send
+one each time a student submits. Being told is quicker than polling and wastes no effort on empty
+looks. But the service has to offer a hook, and something has to be ready to receive the message.
 
 ## Schedules, and the laptop problem
 
@@ -70,8 +72,8 @@ make sure a missed run's work is still waiting for the next one.
 
 A trigger says when a run starts, not what it should work on. Submissions arrive at all hours, but
 the worker, whatever does the grading, is ready only some of the time. In between, the work waits
-somewhere, and the worker needs a way to find it. That is the **work queue**, a term this page and this course
-use loosely. There are three common kinds.
+somewhere, and the worker needs a way to find it. That is the **work queue**, a term this page and
+this course use loosely. There are three common kinds.
 
 - **A queue the workflow keeps.** Each time a submission arrives, a program adds it to a waiting
   list, and the grading run takes items off as it grades them. That program has to be running
@@ -81,7 +83,7 @@ use loosely. There are three common kinds.
   extra is kept.
 - **A list worked out each time from the state of files.** Each graded submission gets a grade
   file next to it, so any submission with no grade file is still waiting. Nobody keeps a list; the
-  run compites it by looking at all the files.
+  run computes it by looking at all the files.
 
 A queue can also be worked out from a log. If the workflow logs a line each time it finishes a
 submission, the work still waiting is every submission not in the log. The log records what
@@ -106,8 +108,8 @@ overloaded: a quick program on a machine that is never off, with a few items an 
 a workflow where dropping some work is acceptable: if a program updates a count of submissions on
 a page the TA glances at, a missed update is fixed by the next one.
 
-Outside those two situations, a workflow with no queue loses work. A submission that arrives while the
-laptop is off is never graded, and nobody notices until the student asks.
+Outside those two situations, a workflow with no queue loses work. A submission that arrives while
+the laptop is off is never graded, and nobody notices until the student asks.
 
 ## Putting it to use
 

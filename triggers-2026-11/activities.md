@@ -23,7 +23,7 @@ Banks need not avoid the domain the session 19 class works in, but every scenari
 states every fact its answer needs, so a learner who missed the class can answer it. No question needs reading code, a command or a schedule
 written in cron's notation: a schedule is always said in words ("every weekday at noon"). No
 question names a real tool or service other than the ones the reading names (cron, launchd,
-Git), and no operating system other than Mac and Linux, which the reading also names; a form, mailbox or website in a scenario is "the sign-up form", "the shop's
+Git, Canvas), and no operating system other than Mac and Linux, which the reading also names; a form, mailbox or website in a scenario is "the sign-up form", "the shop's
 website", never a brand. Learner-facing text states the task, never the scoring.
 
 ## Check notes
@@ -78,7 +78,7 @@ workflow may require both.
   of runs that find nothing to do; which matters depends on facts about the workflow, with the
   TA's one Saturday-morning run as the worked case); Noticing an event (checking again and again,
   and being told through a hook, a webhook being the web kind, with Git's commit hook as an
-  example); Schedules, and the laptop problem (cron jobs on Mac and Linux, launchd on a Mac, and a
+  example and Canvas sending a webhook as the web one); Schedules, and the laptop problem (cron jobs on Mac and Linux, launchd on a Mac, and a
   schedule or a hook on a laptop that is off or asleep not firing, with launchd's catch-up after
   sleep noted; then a person who is unavailable, the TA who must approve each student's feedback
   being away the weekend the run fires, so the feedback sits unsent); Where the work waits (work queue in a loose sense, its three kinds, a queue worked
@@ -90,7 +90,7 @@ workflow may require both.
   event-driven, polling, hook (with its synonym webhook, also bold), cron job, work queue. Also in bold, though
   none is a word of this topic: the three kinds of trigger, the three trade-offs, the two ways of
   noticing an event, the three kinds of queue, and the worker's own trigger. The reading names no
-  real tool or service except cron, launchd and Git, all generically, and names Mac and Linux as
+  real tool or service except cron, launchd, Git and Canvas, all generically, and names Mac and Linux as
   operating systems. It says nothing about how state is
   stored, how failures are handled or what each part may touch, all later topics.
 - **verified:** 2026-11-04
