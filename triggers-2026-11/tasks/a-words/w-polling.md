@@ -7,7 +7,7 @@ order as soon as it is placed. The kitchen program could ask the shop every two 
 any new orders have come in. Or the bakery could use a setting the shop offers: a web address the
 shop sends a message to each time an order is placed.
 
-Which of these two ways is polling, and which uses a hook?
+Which of these two ways is polling, and which uses a hook? Answer in one sentence.
 
 ### catch-pick
 
