@@ -162,7 +162,6 @@ workflow may require both.
 - **artifact:** no external source. A described workflow whose trigger is left open, told in a
   short paragraph, from this activity's bank or written live per the generator below. About 3
   minutes a question.
-- **verified:** 2026-11-04
 - **learner does:** reads the scenario and its one question; says in two or three sentences what
   should start the workflow's runs, and why.
 - **tutor role:** examiner
@@ -574,7 +573,6 @@ workflow may require both.
 - **artifact:** no external source. A described workflow that is started by an event, told in a
   short paragraph, with how it finds out about each event left open, from this activity's bank or
   written live per the generator below. About 3 minutes a question.
-- **verified:** 2026-11-04
 - **learner does:** reads the scenario and its one question; says in two or three sentences
   whether the workflow should find out about each new item by polling or through a webhook (a
   hook, where the source isn't a website), and why.
