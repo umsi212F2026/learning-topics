@@ -2,14 +2,14 @@ A quilting guild keeps minutes of its meetings, and an AI agent turns the secret
 the minutes.
 
 **About this workflow:** The guild meets a few times a year, at no set dates. The secretary types in
-her notes the morning after each meeting. She reads the minutes over as soon as she has typed in
-her notes. The guild's founder designed the cover page, which shows a quilt she made.
+her notes the morning after each meeting. She finishes at different times of the morning. She
+reads the minutes over as soon as she has typed in her notes.
 
 ### q1
 
 Which of these fits this workflow?
 
-1. The secretary starts it by hand once her notes are in, because the guild's founder designed the cover page, which shows a quilt she made.
-2. A schedule on the first Monday of each month, because the guild meets a few times a year.
-3. The secretary starts it by hand once her notes are in, because the guild meets a few times a year, at no set dates.
-4. A schedule every evening at 9 p.m., because the secretary types in her notes the morning after each meeting.
+1. A schedule every morning at 9 a.m.
+2. The secretary starts it by hand on the first Monday of each month.
+3. The secretary starts it by hand once her notes are in.
+4. A schedule at noon the day after each meeting.

@@ -3,10 +3,10 @@ secretary starting each run by hand once her notes are in. The deciding facts ar
 a few times a year, at no set dates", so there is rarely anything to do and no fixed time to do it,
 and "She reads the minutes over as soon as she has typed in her notes", so she is there anyway and
 any later run leaves her waiting. "The secretary types in her notes the morning after each meeting"
-is there only to give the evening schedule its reason. The paragraph says nothing about what a run
-costs or whether she remembers. A design where saving her notes starts the run would be the
-secretary starting it, and is not among the options. The neutral sentence is "The guild's founder
-designed the cover page, which shows a quilt she made." Two hand starts, two schedules.
+and "She finishes at different times of the morning" rule out a fixed morning time. The paragraph
+says nothing about what a run costs or whether she remembers. A design where saving her notes
+starts the run would be the secretary starting it, and is not among the options. The options give
+choices only, with no reasons. Two hand starts, two schedules.
 
 ### q1
 
@@ -15,12 +15,12 @@ designed the cover page, which shows a quilt she made." Two hand starts, two sch
 - **type:** mcq
 - **answer:** 3
 - **credit:** full for 3 only; none for the others.
-- **tutor note:** Sound (3): meetings come "a few times a year, at no set dates", so no schedule
-  can be set for them, and the secretary, who reads the minutes over straight away, is there to
-  start the run. 1 is not a difference: who designed the cover page bears on nothing about when
-  runs should start. 2 is a ruled-out alternative: with meetings at no set dates, a run on the
-  first Monday of the month can come weeks after she has typed in her notes, though "She reads the
-  minutes over as soon as she has typed in her notes." 4 is wrong choice, true reason: she does
-  type in her notes the morning after each meeting, but a 9 p.m. run leaves the minutes waiting all
-  day when she reads them over as soon as her notes are in. If the learner picks 4, ask when she
-  would first see the minutes.
+- **tutor note:** Sound (3): "She reads the minutes over as soon as she has typed in her notes", so
+  she is there to start the run the moment her notes are in, and any later run leaves her waiting;
+  and with meetings "a few times a year, at no set dates", no schedule can be set for them anyway.
+  1 fires at a fixed time, but "She finishes at different times of the morning", so on a late
+  morning 9 a.m. comes before her notes are in and the minutes wait until the next day. 2 is a
+  hand start at the wrong time: the first Monday of the month can come weeks after she has typed
+  in her notes. 4 needs the meeting dates ahead of time, and the guild meets "at no set dates", so
+  no schedule can be set for the day after each meeting; someone would have to set it by hand
+  each time. If the learner picks 4, ask who would set the schedule, and when.
