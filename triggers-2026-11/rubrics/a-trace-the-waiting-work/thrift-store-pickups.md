@@ -24,7 +24,7 @@ places, each twice; two reasons, each twice.
   the right place but the wrong reason: "Requests come a few an hour, well under the twenty a
   minute the agent's provider takes", so no burst outruns the provider. 3 has the sound reason but
   the wrong place: a list the workflow keeps needs something on to add each request as it arrives,
-  and the laptop is turned off overnight and at weekends, so the night's requests would never reach
+  and the laptop is turned off overnight and on weekends, so the night's requests would never reach
   the list. 4 is wrong on both: nothing is on overnight to add to the list, and requests come well
   under the provider's limit. If the learner picks 3, ask what is on at 2 a.m. to add a request to
   the list. If they pick 1, ask how many requests come in a minute.

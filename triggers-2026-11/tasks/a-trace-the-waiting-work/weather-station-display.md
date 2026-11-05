@@ -1,7 +1,7 @@
 I run the weather display in our school's front lobby. A weather station on the gym roof sends a
 new reading of temperature, wind and rain every five minutes, day and night. A program on the
 science room computer takes each reading and shows it on the lobby screen, where each new reading
-replaces the last one. The science room computer is turned off over weekends and school holidays.
+replaces the last one. The science room computer is turned off over weekends and school vacations.
 Readings come one every five minutes, well under the hundred a minute the program can handle. The
 screen should show each reading as it comes in, so people walking in can see what it is like
 outside right now. The weather station was a gift from last year's graduating class.

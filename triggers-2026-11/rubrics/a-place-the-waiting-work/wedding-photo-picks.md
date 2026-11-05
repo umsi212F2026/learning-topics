@@ -30,7 +30,7 @@ Other places:
 - Nowhere: not workable. Picks sent while the laptop is off would never be put in order.
 
 The consequence without a queue, resting on the laptop's hours and "often late at night or on a
-weekend": picks sent in the evening, overnight or at the weekend never get an edit list, and those
+weekend": picks sent in the evening, overnight or on the weekend never get an edit list, and those
 couples ("Every couple is waiting on an album") never get their albums.
 
 Irrelevant detail: "Most of my weddings are in the summer."

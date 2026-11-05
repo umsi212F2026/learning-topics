@@ -24,7 +24,7 @@ Other places:
   matched.
 
 The consequence without a queue, resting on the laptop's hours and "A few requests come in a day,
-at all hours": requests sent in the evening, overnight or at the weekend never get a volunteer, and
+at all hours": requests sent in the evening, overnight or on the weekend never get a volunteer, and
 the people who sent them ("Everyone who writes is waiting on a translation") never hear back.
 
 Irrelevant detail: "Between them, our volunteers speak fourteen languages."
@@ -38,7 +38,7 @@ Examples of each kind of tied reason, for the website's list:
 
 - What makes that place good here: "the website keeps a list of every request, with its time, so
   each morning the agent can ask for the ones since its last run."
-- What would go wrong here without it: "requests sent overnight or at the weekend would never get a
+- What would go wrong here without it: "requests sent overnight or on the weekend would never get a
   volunteer."
 - What would make a specific other place worse: "a list the agent keeps would miss the night's
   requests, since nothing is on overnight to add them"; or "doing nothing would lose every request
@@ -50,7 +50,7 @@ Examples of each kind of tied reason, for the website's list:
 - **cases:** worker-unavailable
 - **answer:** On the website: each time it runs, the agent asks the website for the requests that
   came in since its last run. The website keeps a list of every request, with its time, and the agent keeps no copy of its emails, so nothing else could say which are
-  done. Without that, requests sent in the evening, overnight or at the weekend would never be
+  done. Without that, requests sent in the evening, overnight or on the weekend would never be
   matched.
 - **credit:** full when the answer names a workable place, said concretely for this workflow (the
   website's list of requests since the last run, or a log or file the workflow would newly start
