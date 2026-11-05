@@ -162,6 +162,7 @@ workflow may require both.
 - **artifact:** no external source. A described workflow whose trigger is left open, told in a
   short paragraph, from this activity's bank or written live per the generator below. About 3
   minutes a question.
+- **verified:** 2026-11-04
 - **learner does:** reads the scenario and its one question; says in two or three sentences what
   should start the workflow's runs, and why.
 - **tutor role:** examiner
@@ -404,8 +405,9 @@ workflow may require both.
 - **artifact:** no external source. A described workflow, its facts set out one to a sentence, and
   one four-choice question offering four triggers for it, usually each with a reason, from this
   activity's bank or written live per the generator below. About 3 minutes a question.
+- **verified:** 2026-11-04
 - **learner does:** reads the scenario, then picks which of four options, each a trigger (a person,
-  a schedule or an event) with its reason, fits the workflow.
+  a schedule or an event), usually with its reason, fits the workflow.
 - **tutor role:** examiner
 - **tutor does:** as `a-argue-a-trigger`'s, including the offer to wait for session 19, except that
   it labels a live run `a-pick-trigger-defense/<shape>` and rules from the rubric's `answer`. Never
@@ -418,7 +420,8 @@ workflow may require both.
   running prose. After one or two sentences saying what the workflow is for and what does its
   work, a short paragraph headed "About this workflow:" gives the facts one sentence each: the
   deciding fact or facts, every fact a near-miss needs to be shown wrong, and one neutral sentence
-  that has no bearing on when runs should start, and nothing else. The neutral sentence says what
+  (none in a choices-only question) that has no bearing on when runs should start, and nothing
+  else. The neutral sentence says what
   the result looks like or who made something ("The leaderboard is a single page with a photo of
   the week's top runner", "The owner's niece designed the form"). It never touches timing,
   availability or cost: not how long a run takes (a short run could help meet a tight deadline),
@@ -426,8 +429,8 @@ workflow may require both.
   criterion any of those can be a reason of the "good here" kind.
 
   **Facts kept to the case**, as in `a-argue-a-trigger`: the paragraph states the case's defining
-  fact or facts, the facts each near-miss needs to be shown wrong, the one neutral sentence, and
-  nothing else that offers a tied reason for the natural choice that doesn't rest on a defining
+  fact or facts, the facts each near-miss needs to be shown wrong, the one neutral sentence (none
+  in a choices-only question), and nothing else that offers a tied reason for the natural choice that doesn't rest on a defining
   fact. When a near-miss needs a fact that could also serve as such a reason, choose a different
   near-miss, or word the fact so that it only rules the near-miss out (for the `machine-off`
   evening schedule, "Members want that morning's runs on the board", which bears only on a board
@@ -472,7 +475,7 @@ workflow may require both.
   after her notes are in); "A schedule at noon the day after each meeting" (with no set dates,
   nobody can set it ahead of time). Two hand starts, two schedules.
 
-  **Examples**, which obey the form rule above. The paragraph sentences are given in quotation marks.
+  **Examples**, which obey the because-form above. The paragraph sentences are given in quotation marks.
   - `machine-off`. The paragraph gives "The laptop is turned off at 11 p.m.", "Members log runs at
     all hours, including while the laptop is off", "Members want that morning's runs on the
     board", "On most days the laptop is turned on at 7 a.m.", "On early-shift days the laptop is
@@ -557,12 +560,14 @@ workflow may require both.
   show they would find the deciding fact or word the reason themselves; with four choices a guess
   is right a quarter of the time. Every scenario has one natural choice, so a pass shows nothing
   about weighing two defensible ones. Every option's reason is a fact from the paragraph, so a pass
-  doesn't show the learner would reject a reason that refers to nothing about this workflow. The
+  doesn't show the learner would reject a reason that refers to nothing about this workflow. A
+  choices-only question checks only the choice, so passing it shows nothing about the "and why" in
+  the criterion, though it still passes its case. The
   facts are laid out one to a sentence under a heading, so a pass doesn't show the learner would
   find them in a looser description; `a-argue-a-trigger` gives them as running prose and has the
   learner write the reason.
-- **offer as:** the quick check, after session 19: a short workflow and four triggers for it, each
-  with a reason, and you pick the one that fits. About 3 minutes a question. Easier than
+- **offer as:** the quick check, after session 19: a short workflow and four triggers for it,
+  usually each with a reason, and you pick the one that fits. About 3 minutes a question. Easier than
   `a-argue-a-trigger`, since the options are written for you.
 
 ### `a-argue-noticing`
@@ -573,6 +578,7 @@ workflow may require both.
 - **artifact:** no external source. A described workflow that is started by an event, told in a
   short paragraph, with how it finds out about each event left open, from this activity's bank or
   written live per the generator below. About 3 minutes a question.
+- **verified:** 2026-11-04
 - **learner does:** reads the scenario and its one question; says in two or three sentences
   whether the workflow should find out about each new item by polling or through a webhook (a
   hook, where the source isn't a website), and why.
@@ -915,6 +921,7 @@ workflow may require both.
 - **artifact:** no external source. A described workflow, told in a short paragraph, that says how
   its work arrives and when its worker is available but not where the work waits, from this
   activity's bank or written live per the generator below. About 4 minutes a question.
+- **verified:** 2026-11-04
 - **learner does:** reads the scenario and its one question; says in two or three sentences where
   the work should wait until it can be done, or that it needn't wait anywhere, and why.
 - **tutor role:** examiner
@@ -947,7 +954,7 @@ workflow may require both.
     alert appears once and is gone);
   - what the workflow already leaves behind for each finished piece of work, if anything (a reply
     file saved beside each request; a line in a log naming each order shipped);
-  - whether losing an occasional piece of work matters, said through what the work is for (a
+  - whether losing some work matters, said through what the work is for (a
     display that each new reading replaces, or a request somebody is waiting on).
   Plus one irrelevant detail, said as plainly as the facts and bearing on no goal. The facts never
   use the words queue, waiting list, backlog, poll, hook, cron or trigger. **How pointed a fact may
@@ -1032,8 +1039,8 @@ workflow may require both.
     words. The natural kind is any of the four, its holding fact worded with the burst.
   - `no-queue` (`no-queue`): two variants, which the key names. `always-ready`: a quick program on
     a machine that is never off, with a few items an hour, each taking a second, so nothing ever
-    has to wait. `drop-ok`: losing some items does no harm, because the next one replaces
-    it (a display showing the latest reading, a count that each update corrects); its worker is
+    has to wait. `drop-ok`: losing some items does no harm, because each is replaced by
+    the next (a display showing the latest reading, a count that each update corrects); its worker is
     turned off at times, so `always-ready` doesn't hold. The key: no queue is needed, which
     condition holds and the fact that makes it hold, and why the other condition doesn't.
 
@@ -1122,7 +1129,8 @@ workflow may require both.
 - **doesn't show:** the workflow's facts are all in one short paragraph, so a pass doesn't show the
   learner would notice a fact they need is missing. Any workable kind of queue earns credit, so a
   pass doesn't show the learner would pick the simplest one, and in a `burst` question a list the
-  workflow keeps passes even where something already holds the work. Each scenario carries one reason for a queue, so a
+  workflow keeps passes even where something already holds the work, and so does the shared folder
+  named alone, without saying how finished items are told apart. Each scenario carries one reason for a queue, so a
   pass shows nothing about weighing two at once. Nothing here asks how the queue is stored or what
   happens when the worker fails partway, which are later topics. Scenarios keep their facts to
   their case, but a learner may still bring in a reason from outside the scenario; such an answer
@@ -1141,6 +1149,7 @@ workflow may require both.
   `a-place-the-waiting-work`, and one four-choice question offering four designs for it, each a
   place for the work to wait and a reason, from this activity's bank or written live per the
   generator below. About 3 minutes a question.
+- **verified:** 2026-11-04
 - **learner does:** reads the scenario, then picks which of four designs, each a place for the work
   to wait (or none) with its reason, fits it.
 - **tutor role:** examiner
@@ -1154,7 +1163,7 @@ workflow may require both.
 - **generator:** **A scenario** is written as in `a-place-the-waiting-work`: one made-up workflow in
   running prose, in the voice of the person who runs it, giving the same kinds of fact (how the work
   arrives, when the worker is available and how fast it can go, what the source keeps, what the
-  workflow already leaves behind for each finished item, whether losing an occasional item
+  workflow already leaves behind for each finished item, whether losing some items
   matters, and how soon a result is needed), plus one irrelevant detail, and by the same
   pointedness rule. Like that activity's, it never says where the work waits; that is what the
   question asks. Nothing is described with code, a command, a file format or a query, and the words
