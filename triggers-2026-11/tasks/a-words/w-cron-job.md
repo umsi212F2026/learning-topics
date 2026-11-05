@@ -14,8 +14,8 @@ In this workflow, what is the cron job?
 
 ### catch-missed
 
-A runner has a cron job on his laptop that builds a summary of his week's training at 6 a.m.
-every Monday. One Monday the laptop is turned off until 8. He says:
+A commuter has a cron job on his laptop that builds a summary of his week's travel costs at 6
+a.m. every Monday. One Monday the laptop is turned off until 8. He says:
 
 "That's fine. The cron job will see it missed 6 a.m. and run as soon as I turn the laptop on."
 

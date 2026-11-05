@@ -2,7 +2,7 @@
 
 ### vs-event-driven
 
-A community garden collects volunteer sign-ups through an online form service, and wants each new
+A public library collects volunteer sign-ups through an online form service, and wants each new
 volunteer added to the schedule soon after they sign up. It is choosing between two set-ups.
 
 - **Set-up A.** The coordinator enters a web address in the form service's settings, and the
