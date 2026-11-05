@@ -401,9 +401,8 @@ workflow may require both.
 - **supports:** attempt
 - **checks:** `c-choose-trigger`
 - **artifact:** no external source. A described workflow, its facts set out one to a sentence, and
-  one four-choice question offering four triggers for it, each with a reason, from this
+  one four-choice question offering four triggers for it, usually each with a reason, from this
   activity's bank or written live per the generator below. About 3 minutes a question.
-- **verified:** 2026-11-04
 - **learner does:** reads the scenario, then picks which of four options, each a trigger (a person,
   a schedule or an event) with its reason, fits the workflow.
 - **tutor role:** examiner
@@ -457,6 +456,20 @@ workflow may require both.
   needs to (a frequent schedule whose only fault is extra runs is never a near-miss unless the
   paragraph says each run is costly). Every fact a near-miss needs to be shown wrong is in the
   paragraph.
+
+  **Choices only.** When a wrong choice can't be given a reason that would naturally support it,
+  the question gives four bare choices instead, each one sentence saying the choice concretely with
+  no "because": the natural choice, and three near-misses, each ruled out by a stated fact. They
+  still split two and two by choice, and their lengths are still within ten words of each other.
+  The paragraph then has no neutral sentence, and the reasons move to the tutor note. For example,
+  `person-or-schedule`, variant `person`, the quilting guild: the paragraph gives "The guild meets
+  a few times a year, at no set dates", "The secretary types in her notes the morning after each
+  meeting", "She finishes at different times of the morning" and "She reads the minutes over as
+  soon as she has typed in her notes". Options: sound, "The secretary starts it by hand once her
+  notes are in"; "A schedule every morning at 9 a.m." (on a late morning it comes before her notes
+  are in); "The secretary starts it by hand on the first Monday of each month" (that can come weeks
+  after her notes are in); "A schedule at noon the day after each meeting" (with no set dates,
+  nobody can set it ahead of time). Two hand starts, two schedules.
 
   **Examples**, which obey the form rule above. The paragraph sentences are given in quotation marks.
   - `machine-off`. The paragraph gives "The laptop is turned off at 11 p.m.", "Members log runs at
@@ -533,6 +546,7 @@ workflow may require both.
 
   The rubric gives the `answer` (the 1-based choice) and, in a `tutor note`, the sentence that
   settles the sound option and, for each near-miss, which kind it is and the fact that rules it out.
+  For a choices-only question, it gives instead the fact that rules out each near-miss's choice.
   Credit: full for the sound option; none for the others.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. As
   `a-argue-a-trigger`'s, then the tutor sets four options for the same illustration in this
