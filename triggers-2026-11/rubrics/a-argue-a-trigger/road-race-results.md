@@ -28,7 +28,9 @@ Why the other kinds fit worse:
   times are ready only when she uploads them, which is the person starting it.
 
 Never accepted, by name: a regular weekly or monthly schedule, which mostly runs with no race to
-report; a fixed race-day time, which can fire before the last runner is in.
+report; a fixed race-day time before two (12:30, say), which can fire before the last runner is
+in; a fixed race-day time after two (2:30, say), which has to be set again for each race's changing
+date and leaves her waiting at the finish line after an early finish.
 
 The scenario does not say how reliably she remembers, or when the laptop is on. An answer resting
 on either brings in a fact from outside the scenario.
@@ -68,9 +70,13 @@ Examples of each kind of tied reason, for the person starting it:
   one the facts contradict is not tied. An answer listing two choices is ruled as choosing neither;
   a combined design is ruled by its main choice. Half when the answer chooses a schedule with a
   reason resting on a fact that bears on the choice (for example, "a schedule at 12:30 on race day,
-  because the last runner can finish at noon"), or chooses the person with a generic, untied or missing
+  because the last runner can finish at noon", or "a schedule at 2:30 on race day, because the last
+  runner is in by two"), or chooses the person with a generic, untied or missing
   reason. None when the choice is not accepted and the reason is generic, untied or missing, or no
   trigger is chosen.
 - **tutor note:** an answer that calls her upload "an event" and has it start the run describes the
   person starting it, and is ruled as that, so it is accepted. After the ruling, if it helps, point
-  out that the upload is her own step.
+  out that the upload is her own step. If the answer picks a fixed race-day time, ask about the end
+  of the window it misses: for 12:30, what the agent finds if the last runner comes in at 1:45; for
+  2:30, what she does at the finish line after a noon finish, and who sets the time for the next
+  race's date.

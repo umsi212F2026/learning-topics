@@ -24,8 +24,6 @@ Examples of each kind of tied reason, for no place:
 
 - What makes no place good here: "the front desk computer is never off and each booking takes a
   second, with only a few an hour, so every booking is done as soon as it arrives."
-- What would go wrong here with a place: "holding bookings for a later run would delay the
-  confirmation for swimmers already on their way over."
 - What would make a specific other place worse: "a list the program keeps would only ever hold one
   booking for a second, since the program is never off and never behind."
 
@@ -37,13 +35,22 @@ Examples of each kind of tied reason, for no place:
   computer is never turned off and each booking takes about a second, with only a few an hour, so
   no booking ever has to wait. Losing one would not be acceptable, since a swimmer counts on the
   lane, but nothing is ever lost or held up here.
-- **credit:** full when the answer says the work needn't wait anywhere and gives a reason tied to
-  this workflow of any of the three kinds: what makes having no place good here (the computer is
-  never off, and a second a booking at a few an hour never overloads it), what would go wrong here
-  with a place (the confirmation would come late for swimmers on their way), or what would make a
-  specific other place worse. A fact with no bearing on whether the work waits, one resting on the
+- **credit:** full when the answer says the work needn't wait anywhere and gives as the reason
+  that the program is always available and never overloaded, tied to the facts that make it hold,
+  with both halves: the front desk computer is never turned off, and a second a booking at a few
+  an hour never overloads it. A fact with no bearing on whether the work waits, one resting on the
   heated pool, or one the facts contradict ("losing a booking doesn't matter") is not a tied
-  reason. Half when the answer says no place is needed but the reason is generic, untied, missing
-  or contradicted. None when the answer names a place where the work should wait.
+  reason. Half when the answer says no place is needed but the reason is generic, not tied, or
+  missing, or names the condition that doesn't hold (dropping some bookings is acceptable); when
+  it says no place is needed with only half of the condition (the program is fast enough for a few
+  an hour, with nothing about the computer never being off, or the reverse); when it proposes a
+  place while correctly saying that the program is always available and never overloaded here; or
+  when it proposes a place with a "good here" reason that is true of this workflow (the website
+  sends every booking, so a list the program keeps would lose none), since a place is workable but
+  not needed. None when it proposes a place and names a loss the facts rule out, or with a reason
+  that is generic or not tied, or gives no reason.
 - **tutor note:** if the answer names a place, ask when a booking would ever be sitting there and
   for how long. If it says losing a booking is fine, ask what the swimmer finds when they arrive.
+  If it gives only that the program is fast, ask what would happen to a booking sent while the
+  computer was off; if it gives only that the computer is never off, ask how long the program
+  takes over each booking.

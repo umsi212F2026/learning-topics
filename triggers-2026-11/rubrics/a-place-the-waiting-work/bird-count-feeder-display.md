@@ -28,8 +28,6 @@ Examples of each kind of tied reason, for no place:
 - What makes no place good here: "each count replaces the last on a screen that is only for
   visitors, and the official tally is on paper, so missing the counts from while the laptop is off
   costs nothing."
-- What would go wrong here with a place: "the screen would spend the morning showing last night's
-  counts instead of the birds at the feeder now."
 - What would make a specific other place worse: "keeping the night's counts would save hundreds of
   numbers that the next count replaces anyway."
 
@@ -41,15 +39,19 @@ Examples of each kind of tied reason, for no place:
   laptop is off are simply skipped. Each new count replaces the last on a screen that is only for
   visitors, and the official tally is kept on paper, so a missed count costs nothing. The laptop is
   off every night and at times by day, so it is not always available, but it doesn't need to be.
-- **credit:** full when the answer says the work needn't wait anywhere and gives a reason tied to
-  this workflow of any of the three kinds: what makes having no place good here (each count
-  replaces the last, or the screen is for visitors and the official tally is on paper, so missing
-  some counts is acceptable), what would go wrong here with a place (the screen would show old
-  counts), or what would make a specific other place worse. A fact with no bearing on whether the
-  work waits, one resting on the chickadees, or one the facts contradict ("the laptop is always
-  on") is not a tied reason. Half when the answer says no place is needed but the reason is
-  generic, untied, missing or contradicted. None when the answer names a place where the work
-  should wait.
+- **credit:** full when the answer says the work needn't wait anywhere and gives as the reason
+  that dropping some counts is acceptable, tied to the fact that makes it hold: each new count
+  replaces the one before it, or the screen is for visitors and the official tally is on paper.
+  A fact with no bearing on whether the work waits, one resting on the chickadees, or one the facts
+  contradict ("the laptop is always on") is not a tied reason. Half when the answer says no place
+  is needed but the reason is generic, not tied, or missing, or names the condition that doesn't
+  hold (the laptop is always available and never overloaded); when it proposes a place while
+  correctly saying that dropping some counts is acceptable here; when it proposes a place with a
+  "good here" reason that is true of this workflow, since a place is workable but not needed; or
+  when it proposes a place for a loss that is
+  real but harmless (keeping every count so none is missed, when each is replaced by the next).
+  None when it proposes a place and names a loss the facts rule out, or with a reason that is
+  generic or not tied, or gives no reason.
 - **tutor note:** if the answer names a place for the night's counts, ask what the screen would
   do with them in the morning, and who needs them. If it says no place because the program is
   fast, ask what happens to the counts sent at midnight.
