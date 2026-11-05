@@ -230,6 +230,7 @@ workflow may require both.
     and unpredictably the work comes, which is also what rules out a person (a person would have to
     watch for forms all day, since they come at no set times, and the scenario says so in those
     terms), and what each run costs (a frequent schedule would mostly run for nothing, at a cost).
+    The cost fact is stated even when no near-miss is a schedule, since it is a defining fact.
     The key cites the watching fact for the person. The scenario doesn't say when the machine is
     on: "it is never turned off" would be a reason for an event resting on none of those. "New
     clients fill in a form on the service's website, a few a day at no set times, and the owner
@@ -355,8 +356,9 @@ workflow may require both.
   costly run only when something is new ("a schedule every ten minutes that checks for anything
   new and starts the agent only then") are an event choice, whatever the answer calls them. The
   ruling is on the design the answer commits to: an answer that lists two choices, outside a
-  question whose key accepts both, is ruled as choosing neither; a combined design ("an event, with
-  a weekly schedule as a backup") is ruled by its main choice. In an
+  question whose key accepts both, is ruled as choosing neither; in a question whose key accepts
+  both, an answer listing both without committing is accepted and ruled on its reason; a combined
+  design ("an event, with a weekly schedule as a backup") is ruled by its main choice. In an
   `unavailable` question the ruling is on whether the design the answer describes would actually
   run while the machine is on or the person there, and produce a result that isn't stale, by the
   scenario's facts; it is not on whether the reason uses the word "available". An answer that
@@ -728,8 +730,8 @@ workflow may require both.
   polling, and "the website pings the computer when a request comes in" is a webhook, whether or
   not the answer uses those words, and an answer that names one method but describes the other is
   ruled as the one it describes. The ruling is on the design the answer commits to: an answer that
-  lists both methods, outside a question whose key accepts both, is ruled as choosing neither; a
-  combined design ("a webhook, with a daily poll as a backup") is ruled by its main method. Half
+  lists both methods, outside a question whose key accepts both, is ruled as choosing neither; in
+  a question whose key accepts both, it is accepted and ruled on its reason; a combined design ("a webhook, with a daily poll as a backup") is ruled by its main method. Half
   when the method is one the key doesn't accept but the reason
   rests on a fact that bears on the method, or the method is accepted but the reason is generic,
   not tied, or missing. None when the answer chooses a webhook or hook for a source the scenario says
