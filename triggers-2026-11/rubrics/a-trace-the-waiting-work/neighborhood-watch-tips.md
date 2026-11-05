@@ -15,7 +15,7 @@ Two places, each twice, each time with a different reason; four reasons, each on
 - **answer:** 1
 - **credit:** full for 1 only; none for the others.
 - **tutor note:** Sound (1). Place and reason: "The office computer is never turned off" and "Tips
-  come a few an hour, well under the hundred a minute the program can handle", so the program is
+  come a few an hour, well under the fifty a minute the program can handle", so the program is
   always available and never overloaded, and no tip has to wait. 2 is wrong on both: a list isn't
   needed, and there is no burst, since tips come well under the program's limit. 3 has the right
   place but the wrong reason: "Each neighbor who sends a tip is waiting to hear, within a minute or
