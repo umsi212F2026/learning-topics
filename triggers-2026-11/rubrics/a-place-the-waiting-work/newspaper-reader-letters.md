@@ -19,10 +19,10 @@ Other places:
   supply.
 - A file the agent would newly save beside each finished letter, read against the folder:
   workable, though it only repeats what the log already says.
-- The shared folder named alone, with nothing about how finished letters are told apart: not
-  enough on its own, since every letter stays in the folder after it is done. Rule it workable
-  only when the answer says how the waiting ones are found (not in the log, or a new file per
-  finished letter).
+- The shared folder named alone, with nothing about how finished letters are told apart:
+  workable, as a place named only generically is in a burst question, though every letter stays
+  in the folder after it is done, so the tutor asks how the waiting ones are found (not in the
+  log, or a new file per finished letter).
 - Nowhere: not workable. Three hundred letters in a quarter hour, at twenty a minute, would overrun
   a provider that takes ten.
 
@@ -60,15 +60,14 @@ Examples of each kind of tied reason, for the folder read against the log:
   takes ten requests a minute.
 - **credit:** full when the answer names a workable place, said concretely for this workflow (the
   letter files in the shared folder not yet in the log, a file the agent would newly save beside
-  each finished letter, or a list the workflow keeps as each letter arrives), and gives a reason
-  tied to this workflow of any of the three kinds: what makes that place good here, what would go
-  wrong here without it, or what would make a specific other place worse. The shared folder named
-  with nothing about how the finished letters are told apart is not yet a workable place. A fact
+  each finished letter, a list the workflow keeps as each letter arrives, or the shared folder
+  named alone), and gives a reason tied to this workflow of any of the three kinds: what makes
+  that place good here, what would go wrong here without it, or what would make a specific other
+  place worse. A fact
   with no bearing on where the work waits, one resting on the size of the staff, or one the facts
   contradict is not a tied reason. A place named only generically ("put them in a queue") is ruled
   as a list the workflow keeps, which is workable here. Half when the place is workable but the
-  reason is generic, untied or missing, or when the reason is tied but the place is unworkable (the
-  folder alone, "because three hundred letters come at once"). None when the place is unworkable
+  reason is generic, untied or missing, or when the reason is tied but the place is unworkable. None when the place is unworkable
   and the reason is generic, untied or missing, or when the answer says no place is needed.
 - **tutor note:** if the answer names the shared folder alone, ask how the agent, halfway through
   the three hundred, tells which letters it has already thanked. If it says no place is needed

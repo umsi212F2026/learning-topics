@@ -995,6 +995,8 @@ workflow may require both.
     new (each request saved into a shared folder, with nothing marking which are done), and the
     workflow saves a file beside each finished item, so an item with no such file is waiting.
     The folder alone is not enough: it holds the items, but nothing in it marks which are finished.
+    In a `burst` question, though, the folder named alone is ruled workable, as a place named only
+    generically is, and the tutor asks how finished items are told apart.
   - `log`: as `files`, except that the workflow writes a line to a log for each finished item, so
     the waiting work is every held item not in the log.
   - `kept`: the source keeps nothing (an alert shown once and gone), and a program receives each
