@@ -9,8 +9,8 @@ whether anything has changed; a hook, being told, is the other. So the two are n
 an event-driven workflow may notice its events by polling. A program running with no person
 starting it is not enough to make a workflow event-driven: a run at set times is a schedule, even
 though nobody starts it. The reading's line "polling is a schedule doing an event trigger's job"
-describes the checks, which run on a schedule; the texts or slips they lead to are still started
-by the event.
+describes the checks, which run on a schedule; the texts they lead to are still started by the
+event.
 
 ### vs-schedule
 
@@ -26,16 +26,6 @@ by the event.
   patient, is started by the booking.
 - **tutor note:** a learner who picks 4 is reading the checks as what starts each text; ask what
   makes a particular patient get a booking text.
-
-### catch-pick
-
-- **goal:** `w-event-driven`
-- **move:** CATCH
-- **type:** mcq
-- **answer:** 2
-- **credit:** full for 2 only. Each text goes out because a patient booked, which is what
-  event-driven names. Choice 1 is started by a person, whenever she remembers. Choices 3 and 4 are
-  schedules: they run at set times whatever has happened, even though no person starts them.
 
 ### catch-backup
 

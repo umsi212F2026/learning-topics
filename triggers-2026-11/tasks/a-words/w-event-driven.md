@@ -16,15 +16,6 @@ Which of these is event-driven?
 3. Both, since the program starts each one with no person involved
 4. Neither, since both come from checks at set times
 
-### catch-pick
-
-Which of these is event-driven?
-
-1. A receptionist texts each patient whenever she remembers to check the bookings
-2. A program texts each patient within a minute of their booking
-3. A program texts every patient with an appointment tomorrow at 6 p.m.
-4. A program texts all patients a newsletter on the first of each month
-
 ### catch-backup
 
 An office manager describes the backup on the office's file server:
