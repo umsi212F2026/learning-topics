@@ -2,7 +2,7 @@
 
 The last reading followed a teaching assistant designing a grading workflow. This page takes up
 one more design decision from its list, what triggers a run, and a question that comes with it:
-where the work waits until something is ready to do it.
+where the work waits until something or someone is ready to do it.
 
 The TA still grades about 200 homework submissions a week. Homework is due Friday at midnight, and
 most submissions arrive in the last few hours before that.
@@ -31,7 +31,7 @@ Which matters most depends on facts about this workflow: how soon its result is 
 there is work, who would have to remember to start it, and whether the machine or person that does
 the work will be available when the trigger fires. For the TA, nobody needs feedback before the deadline, and
 nearly all the work arrives in one burst, so one scheduled run on Saturday morning fits. A course
-where students resubmit all week and want quick feedback would push toward an event.
+where students resubmit all week and want quick feedback would push toward an event-driven approach.
 
 ## Noticing an event
 
@@ -44,9 +44,8 @@ to be noticed. Polling is a schedule doing an event trigger's job.
 
 **Being told.** Some tools and services let you name a command to run when something happens
 inside them. That arrangement is a **hook**. Git, for example, can run a command of yours every time you
-make a commit. A service on the web usually tells you by sending a message to a web address you
-gave it, and then the hook is called a **webhook**: the course site might send one each time a
-student submits. Being told is quicker than polling and wastes nothing on empty looks. But the
+make a commit. A service on the Internet usually tells you by sending a message to a web address you
+gave it, in which case the hook is called a **webhook**. For example, Canvas might send one each time a student submits. Being told is quicker than polling and wastes no effort on empty looks. But the
 service has to offer a hook, and something has to be ready to receive the message.
 
 ## Schedules, and the laptop problem
@@ -65,15 +64,14 @@ command on the laptop has the same problem: if the event happens while the lapto
 asleep, nothing runs. A person can be unavailable too. If the TA has to approve each student's
 feedback before it is sent, and is away the weekend the run fires, the feedback sits unsent until
 they are back. So pick a time when the machine is reliably on, or let a person start the run, or
-make sure a missed run's work is still waiting for the next one. Where else a workflow could run
-comes in a later topic.
+make sure a missed run's work is still waiting for the next one.
 
 ## Where the work waits
 
 A trigger says when a run starts, not what it should work on. Submissions arrive at all hours, but
 the worker, whatever does the grading, is ready only some of the time. In between, the work waits
-somewhere, and the worker needs a way to find it. That is the **work queue**, a term this page
-uses loosely. There are three common kinds.
+somewhere, and the worker needs a way to find it. That is the **work queue**, a term this page and this course
+use loosely. There are three common kinds.
 
 - **A queue the workflow keeps.** Each time a submission arrives, a program adds it to a waiting
   list, and the grading run takes items off as it grades them. That program has to be running
@@ -83,11 +81,11 @@ uses loosely. There are three common kinds.
   extra is kept.
 - **A list worked out each time from the state of files.** Each graded submission gets a grade
   file next to it, so any submission with no grade file is still waiting. Nobody keeps a list; the
-  run works it out by looking.
+  run compites it by looking at all the files.
 
 A queue can also be worked out from a log. If the workflow logs a line each time it finishes a
 submission, the work still waiting is every submission not in the log. The log records what
-happened, and the queue comes from it; they needn't be two records.
+happened, and the queue is derived from it.
 
 **The worker taking work from a queue has a trigger of its own.** Putting work on a queue doesn't
 get it done. Something still has to start the worker: the TA by hand, a cron job, or an event such
@@ -108,11 +106,10 @@ overloaded: a quick program on a machine that is never off, with a few items an 
 a workflow where dropping some work is acceptable: if a program updates a count of submissions on
 a page the TA glances at, a missed update is fixed by the next one.
 
-Outside those two, a workflow with no queue loses work. A submission that arrives while the
+Outside those two situations, a workflow with no queue loses work. A submission that arrives while the
 laptop is off is never graded, and nobody notices until the student asks.
 
 ## Putting it to use
 
 Once these decisions have names, they are easy to tell an agent: "poll the course site every
-fifteen minutes," "treat any submission with no grade file as waiting." Each is a design decision,
-made on purpose.
+fifteen minutes," "treat any submission with no grade file as waiting."
