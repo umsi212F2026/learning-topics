@@ -188,7 +188,7 @@ narrowing anyone's access.
     see how prices move"); where a writer's action is described neutrally (see How hard), the
     contrary fact for an editing one: each entry holds one value ("each lens's entry shows one
     price, today's"). Where neither reason to only add fits (a `takes-turns` scenario, whose
-    writers never meet, or `a-pick-access`'s second writer in `runs-overlap-change`), the adding
+    writers never meet and whose other writer changes the entries it adds, or `a-pick-access`'s second writer in `runs-overlap-change`), the adding
     writer is described with a plain verb that says it only adds and never changes an entry
     ("adds a record for each new recording and never changes one"), never neutrally;
   - how many entries the kept thing holds, wherever a party reads it: where a party needs only
@@ -272,31 +272,33 @@ narrowing anyone's access.
   - `everyone-adds`, Hard: "Theo collects back issues of an old comic series. Two collector programs
     on his laptop each check a different seller's site for new listings: the 20-minute collector
     starts every 20 minutes and the 30-minute collector every 30, both starting on the hour, and each run takes about four minutes.
-    Each adds every new listing it finds on its site to the sightings record, with the price and
+    Each records the price of every new listing it finds on its site in the sightings record, with
     when it was seen, and Theo wants every past sighting kept as it was, to see how prices move.
     The record now holds about thirty thousand sightings. Each evening at 9 the deal agent, following a skill file listing the issues
     Theo wants and what he would pay, picks out only that day's sightings under his price and
-    writes him a short note about them." Key: each collector, append-only; the deal agent, query
-    it. Race: no. On the hour both collectors run, so they write at the same time, but both only
+    writes him a short note about them." Key: each collector, append-only (described neutrally;
+    the key cites "Theo wants every past sighting kept as it was"); the deal agent, query it. Race:
+    no. On the hour both collectors run, so they write at the same time, but both only
     add. Questions, in order: the 20-minute collector (`append-only`), the
     30-minute collector (`append-only`), the deal agent (`query`), race (`no-race`). A bank scenario
     with two parties of the same kind may ask about only one of them.
   - `runs-overlap-change`, Medium, in outline: Priya's price checker, an agent following her skill
-    file, starts every 30 minutes, usually takes 20, and on busy days takes 45, so on busy days a
-    run is still going when the next one starts. Each run replaces every tracked lens's price and
-    buy-or-wait verdict with today's, since only the current ones matter. Priya reads the whole
-    list, about sixty lenses, every Sunday. Key: the price checker, edit it; Priya, read it through
-    (`read-through`). Race: one run of the price checker and the next. Set for `a-pick-access`, it
-    adds the second writer that activity requires: Priya adds a new lens to track only on Saturday
-    mornings, when no runs happen, and never changes an entry; key for that question, append-only.
-    Its race pairs: one run and the next (the answer); Priya and the price checker's runs (their
-    times never meet); and, with a reading party added (a program that each Friday reads the whole
-    list to print it), that program and the price checker's runs.
+    file, starts every 30 minutes except on Saturday mornings, usually takes 20, and on busy days
+    takes 45, so on busy days a run is still going when the next one starts. Each run replaces
+    every tracked lens's price and buy-or-wait verdict with today's, since only the current ones
+    matter. Priya reads the whole list, about sixty lenses, every Sunday. Key: the price checker,
+    edit it; Priya, read it through (`read-through`). Race: one run of the price checker and the
+    next. Set for `a-pick-access`, Priya no longer reads the list; she is the second writer that
+    activity requires, adding a new lens to track only on Saturday mornings, when no runs happen,
+    and never changing an entry (key: append-only). The reading party is a print program that each
+    Friday reads the whole list to print it (key: read it through). Race pairs: one run and the
+    next (the answer); Priya and the price checker's runs (their times never meet); the print
+    program and the price checker's runs (it only reads).
   - `takes-turns`, Hard, in outline: each night, in one run that starts at 1 a.m. and is done by
     1:30, Sam's naming agent, following his skill file, takes the new bird-song recordings from a
     sharing site and adds a record for each to his recordings log, with the species it hears; it
-    never changes a record already there. Sam corrects species names by hand, only between 8 a.m.
-    and 6 p.m. Each morning a summary program picks out, from the forty thousand records, only last
+    never changes a record already there. Sam corrects species names by hand as he listens back over
+    that day's new records, only between 8 a.m. and 6 p.m. Each morning a summary program picks out, from the forty thousand records, only last
     night's. Key: the naming agent, append-only (the key cites "never changes a record already
     there"); Sam, edit it; the summary program, query it. Race: none, since the agent's and Sam's
     times never meet.
@@ -333,8 +335,8 @@ narrowing anyone's access.
   No domain from `a-pick-access`'s list.
 
   **The key**, per question. For a party question: the party's kind, the sentence that settles it,
-  and each other kind with the sentence that rules it out (an adding party's reason to only add
-  rules out edit; that it writes rules out read it through and query; that a changing party changes
+  and each other kind with the sentence that rules it out (an adding party's reason to only add,
+  or where there is none its plain verb saying it never changes an entry, rules out edit; that it writes rules out read it through and query; that a changing party changes
   entries already there rules out append-only; that a query party needs only particular entries,
   out of tens of thousands, rules out read it through; that a read-through party needs every entry
   rules out query; that a reading party never changes or adds anything rules out edit and
@@ -420,8 +422,8 @@ narrowing anyone's access.
   facts are
   not running prose. After one or two sentences saying what the workflow is for
   and what its steps are, a short paragraph headed "About this workflow:" gives the facts one
-  sentence each: what each party does with the kept thing, why each adding party should only add,
-  how many entries it holds where that bears, and each writer's times, and nothing else.
+  sentence each: what each party does with the kept thing, why each adding party should only add
+  (or that it never changes an entry, where no such reason fits), how many entries it holds where that bears, and each writer's times, and nothing else.
 
   **A party question** reads "What kind of access to the <kept thing> does <party> need?", then four
   numbered choices, always in this order: "Read it through", "Query it", "Edit it", "Only append
