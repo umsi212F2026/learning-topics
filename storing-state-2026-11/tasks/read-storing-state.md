@@ -123,6 +123,6 @@ hand them to your agent in plain words.
 So instead of "store the grades in JSON," which picks a format before you know what you need, you
 might tell your agent: "I'll edit the final scores by hand in a spreadsheet app. The posting program
 needs to find unposted rows. Runs may overlap, so make sure two writers can't overwrite each other's
-changes. What's a good data format?" The agent can pick a format and a store that meet those
+changes. What format and storage would you suggest?" The agent can pick a format and a store that meet those
 requirements. You can then check its choice against the list: if it picked a format you can't
 comfortably edit by hand, you know to push back.
