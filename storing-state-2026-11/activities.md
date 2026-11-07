@@ -5,10 +5,10 @@ with the learner.
 
 The initial study comes to about 40 minutes, inside the topic's 60-minute budget: about 13 for
 `a-read-storing-state` (the reading is about 1,500 words, 7 or 8 minutes on its own), about 3 a
-word for the five words, so 15, and meeting `c-choose-access`. Each scenario asks one access
-question per party that writes to or queries the kept thing, each carrying the one case its
-answer exercises (`edit`, `append-only` or `query`), and last a race question, carrying `race` or
-`no-race`. So two scenarios can meet all five cases, for example a `hand-edit-runs-add` with a
+word for the five words, so 15, and meeting `c-choose-access`. Each scenario asks one question
+about each party that touches the kept thing, each carrying the one case its answer exercises
+(`edit`, `append-only`, or `query` for a party that only reads, whether it queries or reads it
+through), and last a race question, carrying `race` or `no-race`. So two scenarios can meet all five cases, for example a `hand-edit-runs-add` with a
 query party (three party questions and its race question) and then only the race question of an
 `everyone-adds`, since its party questions are no longer needed. That is five questions: the
 first of a scenario takes about 3 minutes with the reading, each later one about 1 or 2, so about
@@ -48,7 +48,7 @@ narrowing anyone's access.
 | id                | Goal | Criterion: what gets examined, and what counts |
 | ----------------- | ---- | ---------------------------------------------- |
 | `o-orientation`   | get the shape of this area before working on any particular part of it | `orientation` |
-| `c-choose-access` | decide who gets which kind of access to each thing a workflow keeps | given a described workflow and one thing it keeps, names every person, program or agent that should access it and which kind of access each needs (read it through, query it, edit it, or only append to it), and says whether there is a danger of a race condition. The facts that bear on it include who needs to see or change it, whether several runs or entities may write to it at the same time, and whether anyone needs to find particular records without reading all of them. Cases: `edit`, `append-only`, `query`, `race`, `no-race` |
+| `c-choose-access` | decide who gets which kind of access to each thing a workflow keeps | given a described workflow and one thing it keeps, says for every person, program or agent that needs to access it which kind of access it needs (read it through, query it, edit it, or only append to it), and says whether there is a danger of a race condition, and if so between which writers. The facts that bear on it include who needs to see or change it, whether several runs or entities may write to it at the same time, and whether anyone needs to find particular records without reading all of them. Cases: `edit`, `append-only`, `query`, `race`, `no-race` |
 
 ## Coverage
 
@@ -147,12 +147,13 @@ narrowing anyone's access.
 - **supports:** attempt
 - **checks:** `c-choose-access`
 - **artifact:** no external source. A described personal workflow and one thing it keeps, told in a
-  short paragraph, with one question per party and then a race question, asked one at a time, from
-  this activity's bank or written live per the generator below. About 3 minutes for a scenario's
-  first question, with the reading, and 1 or 2 for each after.
+  short paragraph, with a question about each party that touches the kept thing (only one of two
+  parties that do the same thing) and then a race question, asked one at a time, from this
+  activity's bank or written live per the generator below. About 3 minutes for a scenario's first
+  question, with the reading, and 1 or 2 for each after.
 - **learner does:** reads the scenario, then answers its questions one at a time: for each party
   asked about, says in a short phrase or a sentence what kind of access to the kept thing it needs;
-  last, says whether there is a danger of a race condition on it, and if so between which writers.
+  last, says which writers, if any, are in danger of a race condition on it.
 - **tutor role:** examiner
 - **tutor does:** sets each question as served, in file order, without rewording it or hinting;
   never names the cases, which fact matters, or which kind or verdict the key expects. Gives help
@@ -181,7 +182,8 @@ narrowing anyone's access.
     query, edit, append or append-only;
   - for each party that only adds, why adding is all it should do: other writers write while it
     does, or past entries must stay as they were ("he wants every past sighting kept as it was, to
-    see how prices move");
+    see how prices move"); where a writer's action is described neutrally (see How hard), the
+    contrary fact for an editing one: only the current value is wanted;
   - how many entries the kept thing holds, wherever a party needs only particular entries (always
     thousands) or every entry;
   - for every writer, when it writes: when its runs start and how long one takes, or when the
@@ -199,24 +201,26 @@ narrowing anyone's access.
   that takes in every entry and changes nothing, read it through. No party both adds entries and
   changes ones already there, and no party that changes entries has to find them among thousands
   (the person picks hers as she looks the list over; an agent changes every entry its run checks).
-  A step that doesn't touch the kept thing may appear only where the paragraph says what it touches
-  instead ("saves each post into a folder"); no question is asked about it. A race scenario has
-  exactly one pair of writers in danger, and a no-race scenario none.
+  An adding party always finds what is new from its source ("the new listings on the site"), never
+  by searching the kept thing. A step that doesn't touch the kept thing may appear only where the
+  paragraph says what it touches instead ("saves each post into a folder"); no question is asked
+  about it. A race scenario has exactly one pair of writers in danger, and a no-race scenario none.
 
   **Questions**, each its own `###` question under the scenario's shared setup, never parts of a
-  compound, in this order: one party question for each party keyed edit, append-only or query, in
-  the order the paragraph introduces them, then the race question last. A party keyed read it
-  through gets no question, since it would carry no case; it stays in the scenario as a reader that
-  the race question's pairs can include. No question's text names another party's kind or says
+  compound, in this order: one party question for each party that touches the kept thing, in the
+  order the paragraph introduces them (where two parties do the same thing, the bank may ask about
+  only one), then the race question last. No question's text names another party's kind or says
   whether any two parties write at the same time.
 
   **A party question** reads: "What kind of access to the <kept thing> does <party> need? Answer in
   a short phrase or a sentence." It lists no kinds. Free response, `type: free`. Its rubric
-  `cases:` line lists the one case its key kind exercises: `edit`, `append-only` or `query`.
+  `cases:` line lists the one case its key kind exercises: `edit` for edit, `append-only` for
+  append-only, and `query` for both query and read it through, since either answer turns on
+  whether the party needs particular entries or every entry.
 
-  **The race question** reads: "Is there a danger of a race condition on the <kept thing>? If there
-  is, say between which writers. Answer in one or two sentences." Free response, `type: free`. It
-  carries `race` or `no-race`, by shape.
+  **The race question** reads: "Which writers, if any, are in danger of a race condition on the
+  <kept thing>? Answer 'none', or name them." Free response, `type: free`. It carries `race` or
+  `no-race`, by shape.
 
   **Shapes**, each with the case its race question carries; its party questions carry the access
   cases named. Between them every case is carried.
@@ -224,20 +228,21 @@ narrowing anyone's access.
     runs happen, and the runs only add entries. Parties: the person (edit), the adding step
     (append-only, because the person writes while it does), and optionally a third party that
     queries or reads it through. The pair in danger: the person and the adding step's runs. Access
-    cases `edit`, `append-only`, and `query` when there is a query party.
+    cases `edit`, `append-only`, and `query` when there is a reading party.
   - `runs-overlap-change` (`race`): runs of one step start on a schedule and some last past the next
     start, and each run changes the same entries (an agent updating every tracked item's current
     price and verdict, where only the current one is wanted). Parties: that step (edit), and a
     person who reads it through or a program that queries. The pair in danger: one run of the step
-    and the next. Access cases `edit`, and `query` when there is a query party.
+    and the next. Access cases `edit` and `query`.
   - `everyone-adds` (`no-race`): two or more writers only add, and some of them write at the same
     times (two collectors whose runs coincide, or runs that last past the next start). A third
-    party queries or reads it through. Access cases `append-only`, and `query` when there is a query
-    party.
+    party queries or reads it through. Access cases `append-only` and `query`.
   - `takes-turns` (`no-race`): two writers, at least one of them changing entries, whose stated
-    times never meet (the person changes entries only on Sunday afternoons, and the run starts at 6
-    a.m. and is done by 6:15; or each run is started by hand once the last has finished). Access
-    cases `edit`, and `append-only` when one writer only adds.
+    times never meet (the person changes entries only on Sunday afternoons, and the agent's run,
+    which fills in a verdict on each entry, starts at 6 a.m. and is done by 6:15; or the collector
+    adds entries in one run at 1 a.m. that is done by 1:30, and the person changes entries only in
+    the daytime). Access cases `edit`, `append-only` when one writer only adds, and `query` when
+    there is a reading party.
 
   **Illustrations**, not bank items; their domains are used by no bank in this topic.
   - `hand-edit-runs-add`, Medium: "Mira keeps a list of knitting patterns she might make, now over
@@ -267,17 +272,21 @@ narrowing anyone's access.
     with two parties of the same kind may ask about only one of them.
 
   **How hard.** Medium when the timing is said plainly (as above) and each party's need is said in
-  words close to its kind. Hard when the times must be compared (a run every hour that on some days
-  takes seventy minutes; the person changes entries "after dinner, until about nine", against runs
-  every hour from 7 a.m. to 11 p.m.), when writers that do write at once only add, as in the comics
-  illustration, or when an adding party's reason to only add is that past entries must stay as
-  they were. The question wording is unchanged.
+  words close to its kind ("adds an entry", "changes the status"). Hard when the times must be
+  compared (a run every hour that on some days takes seventy minutes; the person changes entries
+  "after dinner, until about nine", against runs every hour from 7 a.m. to 11 p.m.), when writers
+  that do write at once only add, as in the comics illustration, or when a writer's action is
+  described neutrally, so the verb gives nothing away: "records each listing's price as it finds
+  it", "records each lens's price on every run". Then a stated fact decides between append-only
+  and edit (past entries must stay as they were, or several write at once, against only the
+  current value being wanted), and the key cites that fact. Every bank has at least two neutrally
+  described writers, at least one keyed each way. The question wording is unchanged.
 
   **Spread across the bank.** A bank is six scenarios: `hand-edit-runs-add` and `everyone-adds`
   twice each, `runs-overlap-change` and `takes-turns` once each, half of them Hard. That is six race
-  questions and about fifteen party questions, at least three each carrying `edit`, `append-only`
+  questions and about sixteen party questions, at least three each carrying `edit`, `append-only`
   and `query`. A query party appears in at least three scenarios, at least one race and one
-  no-race, and a read-through party in at least two. At least three scenarios are trackers with acquire, assess
+  no-race, and a read-through party in at least two, so both reading answers are right somewhere. At least three scenarios are trackers with acquire, assess
   and extract steps. When the generator is run live, the tutor picks each next shape and its parties
   to carry a case the learner hasn't passed.
 
@@ -291,41 +300,44 @@ narrowing anyone's access.
   and each other kind with the sentence that rules it out (an adding party's reason to only add
   rules out edit; that it writes rules out read it through and query; that a changing party changes
   entries already there rules out append-only; that a query party needs only particular entries
-  among thousands rules out read it through). For race: the verdict; for `race`, the pair in danger, the ways of naming it that count
+  among thousands rules out read it through; that a read-through party needs every entry rules out
+  query; that a reading party never changes or adds anything rules out edit and append-only).
+  For race: the verdict; for `race`, the pair in danger, the ways of naming it that count
   (for the runs in `hand-edit-runs-add`, the adding step, its agent or "the runs"; in
   `runs-overlap-change`, "two runs of the price checker" or "one run and the next"), and the
   sentences giving each writer's times; and each other pair of parties with the fact that rules it
   out (one only reads, both only add, their times never meet).
 
   Credit, party question: full when the answer names the key kind, in any words that clearly name
-  it ("adds only" is append-only, "looks up the ones it needs" is query, "changes entries" is edit).
-  For an editing party, "reads it and edits it" is full, since changing an entry means seeing it.
-  None when it names a different kind, or offers two kinds without committing ("edit or
-  append-only"). There is no half.
+  it ("adds only" is append-only, "looks up the ones it needs" is query, "changes entries" is edit,
+  "goes through all of it" is read it through). A reading kind named beside the key writing kind is
+  fine ("reads it through and edits it", "queries it and edits it"), since changing records means
+  seeing them. None when the answer names a writing kind the party shouldn't have ("edits it", or
+  "appends and edits", for a party that should only append; "appends", for one that should edit;
+  any writing kind for a reading-only party), when for a reading-only party it names the wrong
+  reading kind or both without committing ("reads it through or queries it"), or when it offers two
+  kinds without committing to one. There is no half.
 
-  Credit, race question: in a `race` question, full when the answer says yes and names the pair in
-  danger; half when it says yes but names no pair, a pair the facts rule out, or the right pair
-  together with one the facts rule out; none when it says no. In a `no-race` question, full when it
-  says no; none when it says yes. The verdict is what is ruled: a reason given alongside it is not
-  marked, and an answer that commits to neither yes nor no is none.
+  Credit, race question: in a `race` question, full when the answer names the writers in danger,
+  and only them; none when it says "none", names a pair the facts rule out, or adds one to the
+  right pair. In a `no-race` question, full for "none" (in any words: "no writers", "there's no
+  danger"); none when it names any writers. A reason given alongside is not marked.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. The
   tutor works the illustration of the nearest shape aloud: for a party question, what that party
   does with the kept thing and which kind that is; for the race question, each writer's times, which writers write at once, and
   whether one of them changes entries already there. It never adds a fact the illustration leaves
   out. It may point to Four kinds of access, Who, and which kind, and When two writers collide in
   `tasks/read-storing-state.md`.
-- **doesn't show:** each party question names its party, so a pass doesn't show the learner would
-  name on their own every party that should access the kept thing, which the criterion asks;
-  nothing here checks that part. Every scenario also gives every writer's times, so a pass doesn't
-  show the learner would find a party or a timing nobody mentioned, as their own Problem Set 5
-  workflow will make them. A read-through party is never asked about, so "read it through" is
-  never a right answer. No reason is asked, so a pass, especially on a `no-race` question, can be
-  a guess. Nothing checks least privilege. Each scenario has at most one pair in danger, so a pass
+- **doesn't show:** every scenario names its parties and gives every writer's times, so a pass
+  doesn't show the learner would find a party or a timing nobody mentioned, as their own Problem
+  Set 5 workflow will make them. `query` is met by either reading answer, so a learner can meet it
+  having answered only read-through parties, or only query parties. No reason is asked, so a pass,
+  especially on a `no-race` question, can be a guess. Nothing checks least privilege. Each scenario has at most one pair in danger, so a pass
   shows nothing about finding two. Nothing checks turning the decisions into storage requirements
   for the agent, the reading's last section.
 - **offer as:** the write-it-yourself check: a short description of a personal workflow and one
-  thing it keeps; you say what kind of access each party needs, one party at a time, then whether
-  there is a danger of a race condition. About 3 minutes for a scenario's first question and 1 or 2
+  thing it keeps; you say what kind of access each party that touches it needs, one party at a
+  time, then which writers, if any, are in danger of a race condition. About 3 minutes for a scenario's first question and 1 or 2
   for each after. Harder than `a-pick-access`, since you name the kinds and the writers yourself.
 
 ### `a-pick-access`
@@ -334,12 +346,13 @@ narrowing anyone's access.
 - **supports:** attempt
 - **checks:** `c-choose-access`
 - **artifact:** no external source. A described personal workflow and one thing it keeps, its facts
-  set out one to a sentence, with one four-choice question per party and then a four-choice race
-  question, asked one at a time, from this activity's bank or written live per the generator
+  set out one to a sentence, with a four-choice question about each party that touches the kept
+  thing and then a four-choice race question, asked one at a time, from this activity's bank or written live per the generator
   below. About 2 or 3 minutes for a scenario's first question, with the reading, and about 1 for
   each after.
 - **learner does:** reads the scenario, then for each party asked about picks which of the four
-  kinds of access it needs, and last picks which of four answers about a race condition is right.
+  kinds of access it needs, and last picks which writers, if any, are in danger of a race
+  condition.
 - **tutor role:** examiner
 - **tutor does:** as `a-assign-access`'s, except that it labels a live run
   `a-pick-access/<shape>/<party>` or `a-pick-access/<shape>/race` and rules from the rubric's
@@ -348,9 +361,12 @@ narrowing anyone's access.
   sound option passes the case the question carries, and the others pass none. There is no half
   credit.
 - **generator:** **A scenario** uses `a-assign-access`'s shapes, party rules, pointedness rule and
-  question order (one question per party keyed edit, append-only or query, none for a read-through
-  party, then the race question last, each its own `###` question, never a compound), and its facts
-  are not running prose. After one or two sentences saying what the workflow is for
+  question order (a question about each party, then the race question last, each its own `###`
+  question, never a compound), with two differences. Every scenario has a reading party (one that
+  queries or reads it through), so the race question always has a reader pair to offer, and in
+  `runs-overlap-change` it also has a second writer whose times never meet the step's runs (the
+  person adds new items to track only on Sunday mornings, when no runs happen). And its facts are
+  not running prose. After one or two sentences saying what the workflow is for
   and what its steps are, a short paragraph headed "About this workflow:" gives the facts one
   sentence each: what each party does with the kept thing, why each adding party should only add,
   how many entries it holds where that bears, and each writer's times, and nothing else.
@@ -359,33 +375,40 @@ narrowing anyone's access.
   numbered choices, always in this order: "Read it through", "Query it", "Edit it", "Only append
   to it". `type: mcq`. Exactly one is right by the facts, and the scenario states the fact that
   rules out each other one, as listed under the key in `a-assign-access`. The question carries the
-  one case its answer exercises: `edit`, `append-only` or `query`.
+  one case its answer exercises, as there: `edit`, `append-only`, or `query` for either reading
+  kind.
 
-  **The race question** reads "Is there a danger of a race condition on the <kept thing>?", then four
-  numbered options: "No, there is no danger of a race condition." and three of the form "Yes,
-  between <writer> and <writer>." `type: mcq`. One run and the next run of a step count as a pair
-  ("Yes, between one run of the price checker and the next"). In a `race` question, one yes names
-  the pair in danger; one names a pair including a party that only reads; one names a pair that
-  both only add or whose times never meet. In a `no-race` question, "No" is the answer and all three
-  yes options name pairs the facts rule out, at least one of them a pair that does write at the
-  same time but only adds, or, in `takes-turns`, the two writers whose times come close. Every party
-  in an option is one the scenario names. The question carries `race` or `no-race`, by shape.
+  **The race question** reads "Which writers, if any, are in danger of a race condition on the <kept
+  thing>?", then four numbered options: "None" and three pairs, "<party> and <party>". `type: mcq`.
+  One run and the next run of a step count as a pair ("One run of the price checker and the
+  next"). Every party in an option is one the scenario names. The question carries `race` or
+  `no-race`, by shape. The three pairs, by shape:
+  - `hand-edit-runs-add`: the person and the adding step's runs (the answer); the reading party and
+    either writer (it only reads); one run of the adding step and the next (a run ends long before
+    the next starts, which the scenario states).
+  - `runs-overlap-change`: one run of the step and the next (the answer); the reading party and the
+    step's runs (it only reads); the second writer and the step's runs (their times never meet).
+  - `everyone-adds` ("None" is the answer): the two adding writers (both only add); the reading party
+    and one adding writer; the reading party and the other adding writer, or one run of an adding
+    writer and the next where runs can overlap (still only adding).
+  - `takes-turns` ("None" is the answer): the two writers (their times never meet, and come
+    closest of any pair); the reading party and each writer in turn (it only reads).
 
   **Example**, the knitting illustration in `a-assign-access` set this way. Three party questions,
   in order: "What kind of access to the pattern list does the judging agent need?" (answer 4, Only
   append to it, `append-only`), "... does Mira need?" (answer 3, Edit it, `edit`), "... does the
-  shopping program need?" (answer 2, Query it, `query`). Then the race question, whose options are "No, there is no danger of a race
-  condition"; "Yes, between Mira and the judging agent's runs" (the answer); "Yes, between the
-  judging agent's runs and the shopping program" (the shopping program only reads); "Yes, between
-  one run of the judging agent and the next" (a run takes ten minutes, once an hour).
+  shopping program need?" (answer 2, Query it, `query`). Then the race question, whose options are
+  "None"; "Mira and the judging agent's runs" (the answer); "The judging agent's runs and the
+  shopping program" (the shopping program only reads); "One run of the judging agent and the next"
+  (a run takes ten minutes, once an hour).
 
   **How hard**, as in `a-assign-access`. The question wording is unchanged.
 
   **Spread across the bank.** A bank is six scenarios, with `a-assign-access`'s spread of shapes,
   parties and party questions. A party question's choices are in a fixed order, so its answer's
   position follows from its kind and needs no spreading. Across the six race questions, the sound
-  option sits in at least three different positions, "No" in more than one, and the order of the
-  near-misses varies.
+  option sits in at least three different positions, "None" in more than one, and the order of
+  the near-misses varies.
 
   **Domains** are this activity's own, none repeating within the bank: an amateur astronomer's
   observing list, a newsletter reading list, a gardener's seed orders, a vintage camera price
@@ -400,16 +423,15 @@ narrowing anyone's access.
   illustration in this activity's style and goes through the options aloud, saying for each
   near-miss which fact rules it out.
 - **doesn't show:** the learner picks among four options rather than writing one, so a pass doesn't
-  show they would name the kinds or the pair themselves. Each party question names its party, so
-  nothing here checks that the learner would name every party that should access the kept thing,
-  which the criterion asks. A read-through party is never asked about, so "Read it through" is
-  never the right choice, and a learner who notices can guess right a third of the time rather than
-  a quarter. The race options name the candidate pairs, so a pass doesn't show the learner would
+  show they would name the kinds or the pair themselves; with four choices a guess is right a
+  quarter of the time. `query` is met by either reading choice, as in `a-assign-access`. The race
+  options name the candidate pairs, so a pass doesn't show the learner would
   find the pair unprompted. The facts are laid out one to a sentence under a heading, so a pass
   doesn't show the learner would find them in a looser description; `a-assign-access` gives them
   as running prose.
 - **offer as:** the quick check: a short personal workflow and one thing it keeps, then the kind of
-  access each party needs and an answer about a race condition, each picked from four. About 2 or
+  access each party needs and which writers, if any, are in danger of a race condition, each picked
+  from four. About 2 or
   3 minutes for a scenario's first question and about 1 for each after. Easier than
   `a-assign-access`, since the options are written for you.
 
