@@ -228,7 +228,8 @@ narrowing anyone's access.
   `read-through`.
 
   **The race question** reads: "Which pair of executors, if any, is in danger of a race condition
-  on the <kept thing>? Answer 'none', or name the pair." Free response, `type: free`. It carries `race` or
+  on the <kept thing>? (Two runs of the same executor count as a pair.) Answer 'none', or name the
+  pair." Free response, `type: free`. It carries `race` or
   `no-race`, by shape.
 
   **Shapes**, each with the case its race question carries; its executor questions carry the access
@@ -236,7 +237,9 @@ narrowing anyone's access.
   - `hand-edit-runs-add` (`race`): the person changes entries by hand at times that include when
     runs happen, and the runs only add entries. Executors: the person (edit), the adding step
     (append-only writes, because the person writes while it does), and optionally a third executor that
-    queries or reads it through. The pair in danger: the person and the adding step's runs. Access
+    queries or reads it through. The pair in danger: the person and the adding step's runs. The
+    race key states why: one writer changes what is already there while the other writes, so the
+    person's save can lose the step's new entries, even though the step only adds. Access
     cases `edit`, `append-only`, and `query` or `read-through` when there is a reading executor.
   - `runs-overlap-change` (`race`): runs of one step start on a schedule and some last past the next
     start, and each run changes the same entries (an agent updating every tracked item's current
@@ -267,7 +270,8 @@ narrowing anyone's access.
     wrong. Every Saturday morning the shopping program picks out only the entries marked 'queued'
     and makes her a yarn shopping list." Key: the judging agent, append-only writes; Mira, edit it; the
     shopping program, query it. The download program never touches the list. Race: yes, between
-    Mira and the judging agent's runs. Ruled out: the shopping program (it only reads), and one run
+    Mira and the judging agent's runs: Mira changes entries already there while a run writes, so
+    her save can lose the agent's new entries. Ruled out: the shopping program (it only reads), and one run
     and the next (a ten-minute run, once an hour). Questions, in order: the judging agent
     (`append-only`), Mira (`edit`), the shopping program (`query`), race (`race`).
   - `everyone-adds`, Hard: "Theo collects back issues of an old comic series. Two collector programs
@@ -347,8 +351,9 @@ narrowing anyone's access.
     must stay as they were, or, where neither fits, its plain verb saying it never changes an
     entry. For example: "It changes the list, so a reading kind alone is not enough. It only ever
     adds new entries and never needs to change one already there, so it doesn't need edit; and
-    since Mira changes entries while a run is going, holding it to appending keeps it from
-    overwriting her work."
+    since Mira changes entries while a run is going, the agent should leave entries already there
+    alone." The key never claims that holding a writer to appending prevents a race while another
+    writer edits: the race key for the same scenario still names that pair.
   - For a reading-only executor, "rules out" is literally true, and the key uses it: that it needs
     particular entries out of tens of thousands rules out read it through; that it needs every
     entry rules out query; that it never adds or changes anything rules out edit and append-only writes.
@@ -367,7 +372,8 @@ narrowing anyone's access.
   "only" is full: it names appending and no other writing kind, which is what "append-only writes"
   asks. A reading kind named beside the key writing kind is
   fine ("reads it through and edits it", "queries it and edits it"), since changing records means
-  seeing them. None when the answer names a writing kind the executor shouldn't have ("edits it", or
+  seeing them. For an editing executor, naming editing plus appending ("edits it and appends") is
+  also full. None when the answer names a writing kind the executor shouldn't have ("edits it", or
   "appends and edits", for an executor that should only append; "appends", for one that should edit;
   any writing kind for a reading-only executor), when for a reading-only executor it names the wrong
   reading kind or both without committing ("reads it through or queries it"), or when it offers two
@@ -451,7 +457,7 @@ narrowing anyone's access.
   one case its answer exercises, as there: `edit`, `append-only`, `query` or `read-through`.
 
   **The race question** reads "Which pair of executors, if any, is in danger of a race condition on
-  the <kept thing>?", then four numbered options: "None" and three pairs, "<executor> and <executor>".
+  the <kept thing>? (Two runs of the same executor count as a pair.)", then four numbered options: "None" and three pairs, "<executor> and <executor>".
   `type: mcq`. One run of a step and the next count as a pair ("One run of the price checker and
   the next"). Every executor in an option is one the scenario names, and each wrong pair is wrong for
   a stated fact: one of them only reads (a race needs two writers, as the reading says), both only
