@@ -335,14 +335,25 @@ narrowing anyone's access.
   board-game price watch, a household's bills from emailed statements, a family's photo sorting.
   No domain from `a-pick-access`'s list.
 
-  **The key**, per question. For a party question: the party's kind, the sentence that settles it,
-  and each other kind with the sentence that rules it out (an adding party's reason to only add,
-  or where there is none its plain verb saying it never changes an entry, rules out edit; that it writes rules out read it through and query; that a changing party changes
-  entries already there rules out append-only; that a query party needs only particular entries,
-  out of tens of thousands, rules out read it through; that a read-through party needs every entry
-  rules out query; that a reading party never changes or adds anything rules out edit and
-  append-only). The key notes that the question asks what the party needs to do as the scenario
-  describes it, not how the workflow could be redesigned.
+  **The key**, per question. For a party question: the party's kind, the sentences that settle it,
+  and why each other kind is wrong, citing the sentence that shows it.
+  - For a writing party, the key says three things. First, it changes the store, so a reading kind
+    alone is not enough (it doesn't say writing rules out reading: a writer may also read, and the
+    credit rules accept a reading kind beside its writing kind). Second, what it does to entries:
+    it adds new ones only and never needs to change one already there, so it doesn't need edit;
+    or it changes entries already there, so appending alone is not enough. Third, for append-only,
+    the reason it should be held to appending: other writers write while it does, or past entries
+    must stay as they were, or, where neither fits, its plain verb saying it never changes an
+    entry. For example: "It changes the list, so a reading kind alone is not enough. It only ever
+    adds new entries and never needs to change one already there, so it doesn't need edit; and
+    since Mira changes entries while a run is going, holding it to appending keeps it from
+    overwriting her work."
+  - For a reading-only party, "rules out" is literally true, and the key uses it: that it needs
+    particular entries out of tens of thousands rules out read it through; that it needs every
+    entry rules out query; that it never adds or changes anything rules out edit and append-only.
+
+  The key notes that the question asks what the party needs to do as the scenario describes it,
+  not how the workflow could be redesigned.
   For race: the verdict; for `race`, the pair in danger, the ways of naming it that count
   (for the runs in `hand-edit-runs-add`, the adding step, its agent or "the runs"; in
   `runs-overlap-change`, "two runs of the price checker" or "one run and the next"), and the
@@ -430,7 +441,13 @@ narrowing anyone's access.
   **A party question** reads "What kind of access to the <kept thing> does <party> need?", then four
   numbered choices, always in this order: "Read it through", "Query it", "Edit it", "Only append
   to it". `type: mcq`. Exactly one is right by the facts, and the scenario states the fact that
-  rules out each other one, as listed under the key in `a-assign-access`. The question carries the
+  makes each other one wrong, as the key in `a-assign-access` gives it. For a writing party: it
+  changes the store, so neither reading choice is enough; and what it does to entries separates
+  the two writing choices (an adding party never needs to change an entry and has its stated
+  reason to be held to appending, so "Edit it" is wrong; a changing party changes entries already
+  there, so "Only append to it" is wrong). For a reading-only party, the particular-versus-every
+  fact rules out the other reading choice, and that it never adds or changes anything rules out
+  both writing choices. The question carries the
   one case its answer exercises, as there: `edit`, `append-only`, `query` or `read-through`.
 
   **The race question** reads "Which writers, if any, are in danger of a race condition on the <kept
