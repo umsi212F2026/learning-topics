@@ -37,7 +37,7 @@ For each piece of state that is stored, ask two questions: who touches it, and w
   reading through to find the needed rows is fine. With 20,000, you'd rather have a query.
 - **Editing it.** Someone changes records that are already there. When the TA raises a drafted
   score from 7 to 8, that is an edit.
-- **Append-only.** Someone adds new records and never changes or removes old ones. The classic append-only store is a **log file**. Programs and servers keep logs of what they did,
+- **Append-only writes.** Someone adds new records and never changes or removes old ones. The classic append-only store is a **log file**. Programs and servers keep logs of what they did,
 one line per event, each new line added at the end. Nobody goes back and edits yesterday's lines,
 which is what makes a log trustworthy: what it says happened is what happened.
 
