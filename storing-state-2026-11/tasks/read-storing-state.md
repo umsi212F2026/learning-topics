@@ -98,11 +98,13 @@ there is no danger, and a simple file is fine.
 ## One place for each thing
 
 Suppose the final score is in the grades sheet, and also at the top of each feedback draft. The TA
-changes a score in the sheet and forgets the draft. Now the two disagree, and it's hard to know which one to believe.
+changes a score in the sheet and forgets the draft. Now the two disagree, and it's hard to know
+which one to believe.
 
-The fix is the intermediate goal the first workflow design reading named: a **single source of truth**
-for each thing, the one place it is kept and changed. Everything else is a copy taken from it. In the grading scenario, of the feedback draft needs to show the score, it
-is filled in from the sheet just before posting, never typed in separately.
+The fix is the intermediate goal the first workflow design reading named: a **single source of
+truth** for each thing, the one place it is kept and changed. Everything else is a copy taken from
+it. In the grading scenario, if the feedback draft needs to show the score, it is filled in from the
+sheet just before posting, never typed in separately.
 
 ## Telling your agent
 
@@ -119,8 +121,8 @@ hand them to your agent in plain words.
 | several writers edit the same records at once | handle simultaneous edits without losing any |
 
 So instead of "store the grades in JSON," which picks a format before you know what you need, you
-might tell your agent: "I'll edit the final scores by hand in a spreadsheet app. The posting
-program needs to find unposted rows. Runs may overlap, so make sure two writers can't overwrite
-each other's changes." The agent can pick a format and a store that meet those requirements. You
-can then check its choice against the list: if it picked a format you can't comfortably edit by
-hand, you know to push back.
+might tell your agent: "I'll edit the final scores by hand in a spreadsheet app. The posting program
+needs to find unposted rows. Runs may overlap, so make sure two writers can't overwrite each other's
+changes. What's a good data format?" The agent can pick a format and a store that meet those
+requirements. You can then check its choice against the list: if it picked a format you can't
+comfortably edit by hand, you know to push back.
