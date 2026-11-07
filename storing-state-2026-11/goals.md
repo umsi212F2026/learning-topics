@@ -82,8 +82,8 @@ have._
 
 ## Depth
 
-**Make one design decision and say why: who gets which kind of access to each thing a workflow
-keeps.** Enough to decide this for the workflow you build for Problem Set 5 and to tell your agent
+**Make one design decision: who gets which kind of access to each thing a workflow keeps, and
+whether that risks a race condition.** Enough to decide this for the workflow you build for Problem Set 5 and to tell your agent
 what the storage has to allow. Choosing file formats and databases is left to the agent.
 Everything here runs on your own laptop, so storing things in the cloud is left out. What each
 part of a workflow is allowed to touch, and what happens when a step fails, come in later topics.
@@ -271,19 +271,22 @@ part of a workflow is allowed to touch, and what happens when a step fails, come
 
 ### `c-choose-access`
 
-- **goal:** decide who gets which kind of access to each thing a workflow keeps, and say why
-- **criterion:** given a described workflow and one thing it keeps, says who should access it (a
-  person, a program or an agent) and which kind of access each should have (read it through,
-  query it, edit it, or only append to it), and why. The facts that bear on it include who needs
-  to see or change it, whether several runs or entities may write to it at the same time, and
-  whether anyone needs to find particular records without reading all of them. A reason that
-  doesn't refer to this workflow at all does not meet it.
+- **goal:** decide who gets which kind of access to each thing a workflow keeps
+- **criterion:** given a described workflow and one thing it keeps, names every person, program
+  or agent that should access it and which kind of access each needs (read it through, query it,
+  edit it, or only append to it), and says whether there is a danger of a race condition. The
+  facts that bear on it include who needs to see or change it, whether several runs or entities
+  may write to it at the same time, and whether anyone needs to find particular records without
+  reading all of them.
 - **cases:**
   - `edit`: someone should change records already there, such as a person marking a status by
     hand
   - `append-only`: writers should only add records, because several write at once or old records
     must not change
   - `query`: someone needs to find particular records rather than read the whole thing
+  - `race`: several writers can change the same records at the same time, so there is a danger
+  - `no-race`: several write, but there is no danger, because they only append or never run at
+    the same time
 
 ### `o-orientation`
 
