@@ -85,8 +85,8 @@ have._
 **Make one design decision: who gets which kind of access to each thing a workflow keeps, and
 whether that risks a race condition.** Enough to decide this for the workflow you build for Problem Set 5 and to tell your agent
 what the storage has to allow. Choosing file formats and databases is left to the agent.
-Everything here runs on your own laptop, so storing things in the cloud is left out. What each
-part of a workflow is allowed to touch, and what happens when a step fails, come in later topics.
+Everything here runs on your own laptop, so storing things in the cloud is left out. What happens
+when a step fails comes in a later topic.
 
 <!--
   Which of: recognize it / read it / modify something existing / author from scratch /
@@ -337,3 +337,12 @@ part of a workflow is allowed to touch, and what happens when a step fails, come
 - **what it names:** a fault in which the result depends on which of two things running at the
   same time gets there first, such as two runs each saving over the other's changes
 - **nearest confusable:** merge conflict
+
+### `w-least-privilege`
+
+- **goal:** least privilege
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** giving each part of a workflow only the access it needs, and no more
+- **nearest confusable:** authorization

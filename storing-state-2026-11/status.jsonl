@@ -5,3 +5,4 @@
 {"at":"2026-11-07T14:40:58.924Z","kind":"goal-added","goal":"w-query","needs":"curation"}
 {"at":"2026-11-07T14:40:59.159Z","kind":"goal-added","goal":"w-race-condition","needs":"curation"}
 {"at":"2026-11-07T14:41:29.449Z","kind":"goal-added","goal":"c-choose-access","needs":"curation"}
+{"at":"2026-11-07T15:11:25.311Z","kind":"goal-added","goal":"w-least-privilege","needs":"curation"}
