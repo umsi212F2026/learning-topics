@@ -83,11 +83,10 @@ have._
 ## Depth
 
 **Make one design decision and say why: who gets which kind of access to each thing a workflow
-keeps.** Enough to decide this for the workflow you build for Problem Set 5, to tell your agent
-what the storage has to allow, and to judge the choices in a classmate's design. Choosing file
-formats and databases is left to the agent. Everything here runs on your own laptop, so storing
-things in the cloud is left out. What each part of a workflow is allowed to touch, and what
-happens when a step fails, come in later topics.
+keeps.** Enough to decide this for the workflow you build for Problem Set 5 and to tell your agent
+what the storage has to allow. Choosing file formats and databases is left to the agent.
+Everything here runs on your own laptop, so storing things in the cloud is left out. What each
+part of a workflow is allowed to touch, and what happens when a step fails, come in later topics.
 
 <!--
   Which of: recognize it / read it / modify something existing / author from scratch /
@@ -275,12 +274,10 @@ happens when a step fails, come in later topics.
 - **goal:** decide who gets which kind of access to each thing a workflow keeps, and say why
 - **criterion:** given a described workflow and one thing it keeps, says who should access it (a
   person, a program or an agent) and which kind of access each should have (read it through,
-  query it, edit it, or only append to it), and why, with a reason tied to this workflow of any
-  of three kinds: what makes that access good here, what would go wrong here without it, or what
-  would make a specific other kind of access worse. The facts that bear on it include who needs to
-  see or change it, whether several runs may write to it at the same time, and whether anyone
-  needs to find particular records. A reason that doesn't refer to this workflow at all does not
-  meet it.
+  query it, edit it, or only append to it), and why. The facts that bear on it include who needs
+  to see or change it, whether several runs or entities may write to it at the same time, and
+  whether anyone needs to find particular records without reading all of them. A reason that
+  doesn't refer to this workflow at all does not meet it.
 - **cases:**
   - `edit`: someone should change records already there, such as a person marking a status by
     hand
