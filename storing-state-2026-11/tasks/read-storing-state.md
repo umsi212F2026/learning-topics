@@ -43,7 +43,7 @@ which is what makes a log trustworthy: what it says happened is what happened.
 
 ## Who, and which kind
 
-Often several parties access the same data store, and they need different kinds of access. Take the
+Often several executors access the same data store, and they need different kinds of access. Take the
 grades sheet.
 
 - The download program **appends** a row for each new submission.
@@ -58,7 +58,7 @@ TA edits by hand, so the sheet has to be something a person can open and change 
 posting program queries it, so particular rows have to be easy to find. You can rely on your agent to make reasonable decisions about that once you've clearly specified the access requirements. 
 
 Narrowing access is a decision too. Does the agent need to edit the grades sheet at all, or could
-it only append its drafts somewhere and let a program copy them in? The less each party is allowed
+it only append its drafts somewhere and let a program copy them in? The less each executor is allowed
 to do, the fewer ways things can go wrong. This is the intermediate goal the workflow design
 reading called **least privilege**: each part can touch only what it needs.
 
