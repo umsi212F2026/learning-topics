@@ -88,9 +88,9 @@ what is already there. So there are two ways to prevent one.
 An alternative to preventing a race is to notice the collision and recover from it. Git is a
 familiar example. Two branches can change the same lines of a file. The edits may be days apart,
 but they are effectively simultaneous: each was made on a copy that didn't include the other. When
-the branches are merged, Git notices the collision and, rather than letting one quietly win, stops
-with a **merge conflict** and asks the user (or their agent) to resolve it. A merge conflict is a
-race caught in time.
+the branches are merged, Git notices the collision and, rather than letting one quietly win the
+race, stops with a **merge conflict** and asks the user (or their agent) to resolve it. A merge
+conflict is a race detected rather than prevented.
 
 If writes never overlap, because only one writer exists or the writers never run at the same time,
 there is no danger, and a simple file is fine.
