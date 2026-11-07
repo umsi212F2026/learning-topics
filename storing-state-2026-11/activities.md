@@ -57,7 +57,7 @@ narrowing anyone's access.
 | goal              | checks | notes |
 | ----------------- | ------ | ----- |
 | `o-orientation`   | `a-read-storing-state` |       |
-| `c-choose-access` | `a-assign-access`, `a-pick-access` |       |
+| `c-choose-access` | `a-assign-access`, `a-pick-access` | Met means each of the six cases has had one unaided full-credit answer somewhere, not that the learner got every party of one scenario right; a scenario's party questions are skipped once their cases are passed. Both checks name every party and give every writer's times, so neither shows the learner would find a party or a timing nobody mentioned, which their own Problem Set 5 workflow will ask of them. |
 
 ---
 
@@ -153,6 +153,7 @@ narrowing anyone's access.
   do the same thing, it may ask about only one) and then a race question, asked one at a time, from this
   activity's bank or written live per the generator below. About 3 minutes for a scenario's first
   question, with the reading, and 1 or 2 for each after.
+- **verified:** 2026-11-07
 - **learner does:** reads the scenario, then answers its questions one at a time: for each party
   asked about, says in a short phrase or a sentence what kind of access to the kept thing it needs;
   last, says which writers, if any, are in danger of a race condition on it.
@@ -401,6 +402,7 @@ narrowing anyone's access.
   thing and then a four-choice race question, asked one at a time, from this activity's bank or written live per the generator
   below. About 2 or 3 minutes for a scenario's first question, with the reading, and about 1 for
   each after.
+- **verified:** 2026-11-07
 - **learner does:** reads the scenario, then for each party asked about picks which of the four
   kinds of access it needs, and last picks which writers, if any, are in danger of a race
   condition.
