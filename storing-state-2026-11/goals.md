@@ -275,7 +275,8 @@ when a step fails comes in a later topic.
 - **goal:** decide who gets which kind of access to each thing a workflow keeps
 - **criterion:** given a described workflow and one thing it keeps, says for every person, program
   or agent that needs to access it which kind of access it needs (read it through, query it, edit
-  it, or only append to it), and says whether there is a danger of a race condition. The
+  it, or only append to it), and says whether there is a danger of a race condition, and if so
+  between which writers. The
   facts that bear on it include who needs to see or change it, whether several runs or entities
   may write to it at the same time, and whether anyone needs to find particular records without
   reading all of them.
