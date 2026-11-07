@@ -98,11 +98,10 @@ there is no danger, and a simple file is fine.
 ## One place for each thing
 
 Suppose the final score is in the grades sheet, and also at the top of each feedback draft. The TA
-changes a score in the sheet and forgets the draft. Now the two disagree, and nothing says which one
-to believe.
+changes a score in the sheet and forgets the draft. Now the two disagree, and it's hard to know which one to believe.
 
-The fix is the intermediate goal the workflow design reading named: a **single source of truth**
-for each thing, the one place it is kept and changed. Everything else is a copy taken from it. If the feedback draft needs to show the score, it
+The fix is the intermediate goal the first workflow design reading named: a **single source of truth**
+for each thing, the one place it is kept and changed. Everything else is a copy taken from it. In the grading scenario, of the feedback draft needs to show the score, it
 is filled in from the sheet just before posting, never typed in separately.
 
 ## Telling your agent
@@ -113,7 +112,8 @@ hand them to your agent in plain words.
 | If you decide... | then the storage has to... |
 | --- | --- |
 | a person reads or edits it by hand | be something they can open and change in a tool they already use, like a spreadsheet app or a text editor |
-| an agent reads it | be plain text, split so the agent can read only the part it needs |
+| a program reads it | be structured data, with each piece of information in a field a program can pick out, not free-form text |
+| an agent reads it | be either structured data or natural-language text, since an agent can work with both |
 | several writers only append | let each writer add records without touching the ones already there |
 | someone queries it | let particular records be found without reading everything |
 | several writers edit the same records at once | handle simultaneous edits without losing any |
