@@ -88,6 +88,7 @@ narrowing anyone's access.
   topic: state, the other three kinds of access, log file, the grades sheet parties' kinds, merge
   conflict. It names no real product other than Git, a spreadsheet app and a text editor, and says
   nothing about storing things in the cloud or what happens when a step fails.
+- **verified:** 2026-11-07
 - **learner does:** reads the page once, top to bottom, and stops once, in Who, and which kind,
   after "Take the grades sheet." and before the four bullets, answering before reading on ("I don't
   know yet" is an honest answer): who touches the grades sheet, and which kind of access does each

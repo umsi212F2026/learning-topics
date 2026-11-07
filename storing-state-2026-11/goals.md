@@ -83,8 +83,9 @@ have._
 ## Depth
 
 **Make one design decision: who gets which kind of access to each thing a workflow keeps, and
-whether that risks a race condition.** Enough to decide this for the workflow you build for Problem Set 5 and to tell your agent
-what the storage has to allow. Choosing file formats and databases is left to the agent.
+whether that risks a race condition.** Enough to make this decision for the workflow you build for
+Problem Set 5 and tell your agent what you decided, so it can choose storage that fits. Choosing
+file formats and databases is left to the agent.
 Everything here runs on your own laptop, so storing things in the cloud is left out. What happens
 when a step fails comes in a later topic.
 
@@ -272,9 +273,9 @@ when a step fails comes in a later topic.
 ### `c-choose-access`
 
 - **goal:** decide who gets which kind of access to each thing a workflow keeps
-- **criterion:** given a described workflow and one thing it keeps, names every person, program
-  or agent that should access it and which kind of access each needs (read it through, query it,
-  edit it, or only append to it), and says whether there is a danger of a race condition. The
+- **criterion:** given a described workflow and one thing it keeps, says for every person, program
+  or agent that needs to access it which kind of access it needs (read it through, query it, edit
+  it, or only append to it), and says whether there is a danger of a race condition. The
   facts that bear on it include who needs to see or change it, whether several runs or entities
   may write to it at the same time, and whether anyone needs to find particular records without
   reading all of them.
