@@ -3,7 +3,7 @@
 Candidate activities for the study phase. More than will be used; the tutor chooses among them
 with the learner.
 
-The initial study comes to about 42 minutes, inside the topic's 60-minute budget: about 13 for
+The initial study comes to about 40 minutes, inside the topic's 60-minute budget: about 13 for
 `a-read-storing-state` (the reading is about 1,500 words, 7 or 8 minutes on its own), about 3 a
 word for the five words, so 15, and meeting `c-choose-access`. Each scenario asks one question
 about each party that touches the kept thing, each carrying the one case its answer exercises
@@ -12,8 +12,9 @@ about each party that touches the kept thing, each carrying the one case its ans
 (three party questions and its race question), then an `everyone-adds` with a read-through party,
 where the tutor skips the adding parties' questions, whose case is already passed, and sets only
 the read-through party's question and the race question. That is six questions: the first of a
-scenario takes about 3 minutes with the reading, each later one about 1 or 2, so about 14 minutes
-through `a-assign-access` and about 11 through `a-pick-access`. The rest of the hour is room for
+scenario takes about 3 minutes with the reading (2 or 3 in `a-pick-access`), each later one about
+1 or 2 in `a-assign-access` and about 1 in `a-pick-access`, so about 12 minutes through `a-assign-access` and about 9 through
+`a-pick-access`. The rest of the hour is room for
 missed questions.
 
 Every question asks for one thing and works on its own as a bank question, never relying on a
@@ -114,8 +115,8 @@ narrowing anyone's access.
   conflict, least privilege and authorization), or to correct a misused sentence. Does not set or
   rehearse a question from this topic's capability activities for any workflow beyond the one the
   reading works through; if the learner asks how to do that, says that is what `a-assign-access`
-  and `a-pick-access` are for. Says that building a workflow is Problem Set 5's work, not this
-  topic's; that choosing a format or storage is left to the agent, so the Telling your agent table
+  and `a-pick-access` are for. Before the learner starts reading, not during it, says briefly
+  four things: that building a workflow is Problem Set 5's work, not this topic's; that choosing a format or storage is left to the agent, so the Telling your agent table
   is there for Problem Set 5 and no question turns on it; that no question asks how a race should
   be handled, only whether there is a danger of one; and that what happens when a step fails comes
   in a later topic. At the close, puts the readiness question as written above and rules on the
@@ -148,8 +149,8 @@ narrowing anyone's access.
 - **supports:** attempt
 - **checks:** `c-choose-access`
 - **artifact:** no external source. A described personal workflow and one thing it keeps, told in a
-  short paragraph, with a question about each party that touches the kept thing (only one of two
-  parties that do the same thing) and then a race question, asked one at a time, from this
+  short paragraph, with a question about each party that touches the kept thing (where two parties
+  do the same thing, it may ask about only one) and then a race question, asked one at a time, from this
   activity's bank or written live per the generator below. About 3 minutes for a scenario's first
   question, with the reading, and 1 or 2 for each after.
 - **learner does:** reads the scenario, then answers its questions one at a time: for each party
@@ -185,7 +186,11 @@ narrowing anyone's access.
   - for each party that only adds, why adding is all it should do: other writers write while it
     does, or past entries must stay as they were ("he wants every past sighting kept as it was, to
     see how prices move"); where a writer's action is described neutrally (see How hard), the
-    contrary fact for an editing one: only the current value is wanted;
+    contrary fact for an editing one: each entry holds one value ("each lens's entry shows one
+    price, today's"). Where neither reason to only add fits (a `takes-turns` scenario, whose
+    writers never meet, or `a-pick-access`'s second writer in `runs-overlap-change`), the adding
+    writer is described with a plain verb that says it only adds and never changes an entry
+    ("adds a record for each new recording and never changes one"), never neutrally;
   - how many entries the kept thing holds, wherever a party reads it: where a party needs only
     particular entries, always tens of thousands (20,000 or more, where the reading says a query
     is better); where a party needs every entry, any size;
@@ -265,8 +270,8 @@ narrowing anyone's access.
     and the next (a ten-minute run, once an hour). Questions, in order: the judging agent
     (`append-only`), Mira (`edit`), the shopping program (`query`), race (`race`).
   - `everyone-adds`, Hard: "Theo collects back issues of an old comic series. Two collector programs
-    on his laptop each check a different seller's site for new listings: one starts every 20
-    minutes, the other every 30, both starting on the hour, and each run takes about four minutes.
+    on his laptop each check a different seller's site for new listings: the 20-minute collector
+    starts every 20 minutes and the 30-minute collector every 30, both starting on the hour, and each run takes about four minutes.
     Each adds every new listing it finds on its site to the sightings record, with the price and
     when it was seen, and Theo wants every past sighting kept as it was, to see how prices move.
     The record now holds about thirty thousand sightings. Each evening at 9 the deal agent, following a skill file listing the issues
@@ -277,19 +282,24 @@ narrowing anyone's access.
     30-minute collector (`append-only`), the deal agent (`query`), race (`no-race`). A bank scenario
     with two parties of the same kind may ask about only one of them.
   - `runs-overlap-change`, Medium, in outline: Priya's price checker, an agent following her skill
-    file, starts every 30 minutes, usually takes 20, and on busy days takes 45; each run replaces
-    every tracked lens's price and buy-or-wait verdict with today's, since only the current ones
-    matter. Priya reads the whole list, about sixty lenses, every Sunday. Key: the price checker,
-    edit it; Priya, read it through (`read-through`). Race: one run of the price checker and the
-    next.
+    file, starts every 30 minutes, usually takes 20, and on busy days takes 45, so on busy days a
+    run is still going when the next one starts. Each run replaces every tracked lens's price and
+    buy-or-wait verdict with today's, since only the current ones matter. Priya reads the whole
+    list, about sixty lenses, every Sunday. Key: the price checker, edit it; Priya, read it through
+    (`read-through`). Race: one run of the price checker and the next. Set for `a-pick-access`, it
+    adds the second writer that activity requires: Priya adds a new lens to track only on Saturday
+    mornings, when no runs happen, and never changes an entry; key for that question, append-only.
+    Its race pairs: one run and the next (the answer); Priya and the price checker's runs (their
+    times never meet); and, with a reading party added (a program that each Friday reads the whole
+    list to print it), that program and the price checker's runs.
   - `takes-turns`, Hard, in outline: each night, in one run that starts at 1 a.m. and is done by
     1:30, Sam's naming agent, following his skill file, takes the new bird-song recordings from a
-    sharing site and records each one in his recordings log with the species it hears (a neutral
-    action), and Sam wants every night's records kept as they were. Sam corrects species names by
-    hand, only between 8 a.m. and 6 p.m. A summary program picks out, from the forty thousand
-    records, only those of species he hasn't logged before. Key: the naming agent, append-only (the
-    key cites "kept as they were"); Sam, edit it; the summary program, query it. Race: none, since
-    the agent's and Sam's times never meet.
+    sharing site and adds a record for each to his recordings log, with the species it hears; it
+    never changes a record already there. Sam corrects species names by hand, only between 8 a.m.
+    and 6 p.m. Each morning a summary program picks out, from the forty thousand records, only last
+    night's. Key: the naming agent, append-only (the key cites "never changes a record already
+    there"); Sam, edit it; the summary program, query it. Race: none, since the agent's and Sam's
+    times never meet.
 
   **How hard.** Medium when the timing is said plainly (as above) and each party's need is said in
   words close to its kind ("adds an entry", "changes the status"). Hard when the times must be
@@ -298,10 +308,12 @@ narrowing anyone's access.
   that do write at once only add, as in the comics illustration, or when a writer's action is
   described neutrally, so the verb gives nothing away: "records each listing's price as it finds
   it", "records each lens's price on every run". Then a stated fact decides between append-only
-  and edit (past entries must stay as they were, or several write at once, against only the
-  current value being wanted), and the key cites that fact. A neutrally described writer keyed edit
-  appears only in `takes-turns`, or as the person in `hand-edit-runs-add`, never in overlapping
-  runs (see `runs-overlap-change`); one keyed append-only may appear in any shape. Every bank has
+  and edit (past entries must stay as they were, or several write at once, against each entry
+  holding one value, "each lens's entry shows one price, today's"), and the key cites that fact.
+  A neutrally described writer keyed edit appears only in `takes-turns`, or as the person in
+  `hand-edit-runs-add`, never in overlapping runs (see `runs-overlap-change`); one keyed
+  append-only appears only in `hand-edit-runs-add` or `everyone-adds`, where a reason to only add
+  fits. Every bank has
   at least two neutrally described writers, at least one keyed each way. The question wording is
   unchanged.
 
@@ -316,7 +328,7 @@ narrowing anyone's access.
 
   **Domains** vary by scenario, none repeating within the bank: a home cook's recipes from food
   blogs she follows, a used-bike watch on the local classified ads site, a houseplant watering
-  log, a podcast listening list, a birder's sightings from the regional birding mailing list, a
+  log, a podcast listening list, a quilter's fabric stash inventory, a
   board-game price watch, a household's bills from emailed statements, a family's photo sorting.
   No domain from `a-pick-access`'s list.
 
@@ -344,7 +356,10 @@ narrowing anyone's access.
   "appends and edits", for a party that should only append; "appends", for one that should edit;
   any writing kind for a reading-only party), when for a reading-only party it names the wrong
   reading kind or both without committing ("reads it through or queries it"), or when it offers two
-  kinds without committing to one. There is no half.
+  kinds without committing to one. A bare reading answer ("reads it", "read access", "read-only")
+  is none for a query party, since it doesn't say the party finds particular entries; for a
+  read-through party it is full only when it says the party takes in all of it ("reads the whole
+  list"), and none as bare "read access". There is no half.
 
   Credit, race question: in a `race` question, full when the answer names the writers in danger,
   and only them; none when it says "none", names a pair the facts rule out, or adds one to the
@@ -399,7 +414,8 @@ narrowing anyone's access.
   question, never a compound), with two differences. Every scenario has a reading party (one that
   queries or reads it through), so the race question always has a reader pair to offer, and in
   `runs-overlap-change` it also has a second writer whose times never meet the step's runs (the
-  person adds new items to track only on Sunday mornings, when no runs happen); in `everyone-adds`
+  person adds new items to track only on Sunday mornings, when no runs happen, and never changes
+  an entry, said with that plain verb as `a-assign-access` requires); in `everyone-adds`
   it always has two distinct adding parties (two collectors, not one collector's runs). And its
   facts are
   not running prose. After one or two sentences saying what the workflow is for
@@ -445,8 +461,8 @@ narrowing anyone's access.
   the near-misses varies.
 
   **Domains** are this activity's own, none repeating within the bank: an amateur astronomer's
-  observing list, a newsletter reading list, a gardener's seed orders, a vintage camera price
-  watch, a trail-conditions tracker from hiking forum posts, a stamp collector's auction watch, a
+  observing list, a newsletter reading list, a gardener's seed orders, a home brewer's batch
+  log, a trail-conditions tracker from hiking forum posts, a stamp collector's auction watch, a
   record collector's wish list, a hobby beekeeper's hive inspection log. No domain from `a-assign-access`'s list.
 
   The rubric gives the `answer` (the 1-based choice) and, in a `tutor note`, the sentence that
