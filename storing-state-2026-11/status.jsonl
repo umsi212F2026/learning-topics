@@ -1,2 +1,7 @@
 {"at":"2026-11-07T14:07:15.508Z","kind":"created"}
 {"at":"2026-11-07T14:07:15.510Z","kind":"goal-added","goal":"o-orientation","needs":"curation"}
+{"at":"2026-11-07T14:40:58.374Z","kind":"goal-added","goal":"w-single-source-truth","needs":"curation"}
+{"at":"2026-11-07T14:40:58.683Z","kind":"goal-added","goal":"w-append-only","needs":"curation"}
+{"at":"2026-11-07T14:40:58.924Z","kind":"goal-added","goal":"w-query","needs":"curation"}
+{"at":"2026-11-07T14:40:59.159Z","kind":"goal-added","goal":"w-race-condition","needs":"curation"}
+{"at":"2026-11-07T14:41:29.449Z","kind":"goal-added","goal":"c-choose-access","needs":"curation"}

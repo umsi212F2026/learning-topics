@@ -1,5 +1,7 @@
 # Learning goals: storing state
 
+**origin:** course
+
 **What I want to be able to do, and what would count as having gotten there.**
 
 <!--
@@ -52,9 +54,13 @@
 
 ## Where this came from
 
+_Yours to fill in. Nobody can answer this one for you._
+
 <!-- Which of A / B / C / D, and the answer to the follow-up. -->
 
 ## What I already have
+
+_Yours to fill in. Say where your knowledge stops, not what you have heard of._
 
 <!--
   The nearest thing already known well, and where it stops.
@@ -64,6 +70,10 @@
 
 ## What I'll use it for
 
+_Yours to fill in. The course supplies one occasion: Problem Set 5, where you build a small
+workflow that runs on your own machine and keeps track of what it has done. Name any others you
+have._
+
 <!--
   The use, and a concrete occasion.
   If several uses apply, rank them: the top one sets the depth, the rest are cut first
@@ -71,6 +81,13 @@
 -->
 
 ## Depth
+
+**Make one design decision and say why: who gets which kind of access to each thing a workflow
+keeps.** Enough to decide this for the workflow you build for Problem Set 5, to tell your agent
+what the storage has to allow, and to judge the choices in a classmate's design. Choosing file
+formats and databases is left to the agent. Everything here runs on your own laptop, so storing
+things in the cloud is left out. What each part of a workflow is allowed to touch, and what
+happens when a step fails, come in later topics.
 
 <!--
   Which of: recognize it / read it / modify something existing / author from scratch /
@@ -253,6 +270,24 @@
   beside a capability entry.
 -->
 
+### `c-choose-access`
+
+- **goal:** decide who gets which kind of access to each thing a workflow keeps, and say why
+- **criterion:** given a described workflow and one thing it keeps, says who should access it (a
+  person, a program or an agent) and which kind of access each should have (read it through,
+  query it, edit it, or only append to it), and why, with a reason tied to this workflow of any
+  of three kinds: what makes that access good here, what would go wrong here without it, or what
+  would make a specific other kind of access worse. The facts that bear on it include who needs to
+  see or change it, whether several runs may write to it at the same time, and whether anyone
+  needs to find particular records. A reason that doesn't refer to this workflow at all does not
+  meet it.
+- **cases:**
+  - `edit`: someone should change records already there, such as a person marking a status by
+    hand
+  - `append-only`: writers should only add records, because several write at once or old records
+    must not change
+  - `query`: someone needs to find particular records rather than read the whole thing
+
 ### `o-orientation`
 
 - **goal:** get the shape of this area before working on any particular part of it
@@ -261,3 +296,44 @@
 - **recurrence:** never
 - **is_required:** no
 - **group:** orientation
+
+### `w-single-source-truth`
+
+- **goal:** single source of truth
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the one place a piece of information is kept and changed, which every copy or
+  view of it is taken from, so there is never a question of which version to believe
+- **nearest confusable:** backup
+- **synonyms:** system of record
+
+### `w-append-only`
+
+- **goal:** append-only
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a store that is only ever added to, so nothing already in it is changed or
+  removed
+- **nearest confusable:** read-only
+
+### `w-query`
+
+- **goal:** query
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** asking a store for just the records that match, rather than reading through
+  all of it
+- **nearest confusable:** search
+
+### `w-race-condition`
+
+- **goal:** race condition
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a fault in which the result depends on which of two things running at the
+  same time gets there first, such as two runs each saving over the other's changes
+- **nearest confusable:** merge conflict
