@@ -75,7 +75,7 @@ gets there first. It can happen between a person and a program, or between two r
 workflow, when one run is still going as the next one starts.
 
 A race needs two things: more than one writer at the same time, and at least one of them changing
-what is already there. So there are two ways to be safe.
+what is already there. So there are two ways to prevent one.
 
 - **Make the writers append.** If every writer only adds new records, one writer can't wipe out
   another's work. Several runs can add lines to the run record without trouble. This is a big part
@@ -84,6 +84,13 @@ what is already there. So there are two ways to be safe.
   records at the same time, the storage has to handle it, so that each change is made whole and
   none is lost. A database does this, and a plain file usually doesn't. Your job is to notice that
   the danger exists and say so. Choosing how to handle it is your agent's.
+
+An alternative to preventing a race is to notice the collision and recover from it. Git is a
+familiar example. Two branches can change the same lines of a file. The edits may be days apart,
+but they are effectively simultaneous: each was made on a copy that didn't include the other. When
+the branches are merged, Git notices the collision and, rather than letting one quietly win, stops
+with a **merge conflict** and asks the user (or their agent) to resolve it. A merge conflict is a
+race caught in time.
 
 If writes never overlap, because only one writer exists or the writers never run at the same time,
 there is no danger, and a simple file is fine.
