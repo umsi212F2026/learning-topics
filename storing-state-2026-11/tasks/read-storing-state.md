@@ -30,11 +30,11 @@ For each piece of state that is stored, ask two questions: who touches it, and w
 
 ## Four kinds of access
 
-- **Reading it through.** Someone takes in the whole thing, start to end. For example, the agent reads the
+- **Full scan.** Someone goes over the whole thing, start to end. For example, the agent reads the
   whole rubric before drafting any feedback.
 - **Querying it.** Someone asks for just the records that match, rather than reading everything.
   "Which submissions have a drafted score but no final score yet?" is a **query**. With 200 rows,
-  reading through to find the needed rows is fine. With 20,000, you'd rather have a query.
+  a full scan to find the needed rows is fine. With 20,000, you'd rather have a query.
 - **Editing it.** Someone changes records that are already there. When the TA raises a drafted
   score from 7 to 8, that is an edit.
 - **Append-only writes.** Someone adds new records and never changes or removes old ones. The classic append-only store is a **log file**. Programs and servers keep logs of what they did,
@@ -49,7 +49,7 @@ grades sheet.
 - The download program **appends** a row for each new submission.
 - The agent's step **edits** a row to fill in the drafted score. (Or, with the propose-apply pattern,
   the agent proposes a score and a program writes it in. Either way, something edits the row.)
-- The TA reads it through and **edits** by hand, changing final scores.
+- The TA does a **full scan**, looking over every row, and **edits** by hand, changing final scores.
 - The posting program **queries** it for rows with a final score that haven't been posted, posts
   them, and **edits** each row to mark it posted.
 

@@ -274,19 +274,18 @@ when a step fails comes in a later topic.
 
 - **goal:** decide who gets which kind of access to each thing a workflow keeps
 - **criterion:** given a described workflow and one thing it keeps, says for every person, program
-  or agent that needs to access it which kind of access it needs (read it through, query it, edit
-  it, or append-only writes), and says whether there is a danger of a race condition, and if so
-  between which writers. The
-  facts that bear on it include who needs to see or change it, whether several runs or entities
-  may write to it at the same time, and whether anyone needs to find particular records without
-  reading all of them.
+  or agent that needs to access it which kind of access it needs (full scan, query, edit, or
+  append-only writes), and says whether there is a danger of a race condition, and if so between
+  which writers. The facts that bear on it include who needs to see or change it, whether several
+  runs or executors may write to it at the same time, and whether anyone needs to find particular
+  records without reading all of them.
 - **cases:**
   - `edit`: someone should change records already there, such as a person marking a status by
     hand
   - `append-only`: writers should only add records, because several write at once or old records
     must not change
   - `query`: someone needs to find particular records rather than read the whole thing
-  - `read-through`: someone needs every record, so reading the whole thing is right
+  - `read-through`: someone needs every record, so a full scan is right
   - `race`: several writers can change the same records at the same time, so there is a danger
   - `no-race`: several write, but there is no danger, because they only append or never run at
     the same time
@@ -329,7 +328,7 @@ when a step fails comes in a later topic.
 - **group:** vocabulary
 - **what it names:** asking a store for just the records that match, rather than reading through
   all of it
-- **nearest confusable:** search
+- **nearest confusable:** full scan
 
 ### `w-race-condition`
 
