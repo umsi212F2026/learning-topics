@@ -24,7 +24,7 @@ to do as the scenario describes it, not how the workflow could be redesigned.
 ### kofi
 
 - **goal:** `c-choose-access`
-- **cases:** read-through
+- **cases:** full-scan
 - **type:** free
 - **answer:** Full scan. He "reads the whole game list, all forty entries", so he needs every
   entry, which rules out query. He "never changes or adds anything in it", which rules out edit and

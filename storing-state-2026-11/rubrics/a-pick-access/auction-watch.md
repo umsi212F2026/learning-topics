@@ -37,7 +37,7 @@ redesigned.
 ### report-program
 
 - **goal:** `c-choose-access`
-- **cases:** read-through
+- **cases:** full-scan
 - **type:** mcq
 - **answer:** 1
 - **credit:** full for 1 only; none for the others.

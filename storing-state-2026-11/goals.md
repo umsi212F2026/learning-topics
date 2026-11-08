@@ -285,7 +285,7 @@ when a step fails comes in a later topic.
   - `append-only`: writers should only add records, because several write at once or old records
     must not change
   - `query`: someone needs to find particular records rather than read the whole thing
-  - `read-through`: someone needs every record, so a full scan is right
+  - `full-scan`: someone needs every record, so a full scan is right
   - `race`: several writers can change the same records at the same time, so there is a danger
   - `no-race`: several write, but there is no danger, because they only append or never run at
     the same time

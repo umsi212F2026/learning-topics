@@ -42,7 +42,7 @@ the scenario describes it, not how the workflow could be redesigned.
 ### budget-program
 
 - **goal:** `c-choose-access`
-- **cases:** read-through
+- **cases:** full-scan
 - **type:** free
 - **answer:** Full scan. It "goes over the whole bills record" to add up "what the household
   has spent in each category so far this year", and the record holds only this year's bills, so it

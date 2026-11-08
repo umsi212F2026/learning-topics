@@ -40,7 +40,7 @@ as the scenario describes it, not how the workflow could be redesigned.
 ### summary-program
 
 - **goal:** `c-choose-access`
-- **cases:** read-through
+- **cases:** full-scan
 - **type:** free
 - **answer:** Full scan. It "goes over the whole bike list" to make a table "of every bike on
   it", so it needs every entry, which rules out query. It "never changes or adds anything in the

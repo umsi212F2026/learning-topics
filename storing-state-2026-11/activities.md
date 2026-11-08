@@ -7,11 +7,11 @@ The initial study comes to about 40 minutes, inside the topic's 60-minute budget
 `a-read-storing-state` (the reading is about 1,500 words, 7 or 8 minutes on its own), about 3 a
 word for the five words, so 15, and meeting `c-choose-access`. Each scenario asks one question
 about each executor that touches the kept thing, each carrying the one case its answer exercises
-(`edit`, `append-only`, `query` or `read-through`), and last a race question, carrying `race` or
+(`edit`, `append-only`, `query` or `full-scan`), and last a race question, carrying `race` or
 `no-race`. So two scenarios can meet all six cases: a `hand-edit-runs-add` with a query executor
-(three executor questions and its race question), then an `everyone-adds` with a read-through executor,
+(three executor questions and its race question), then an `everyone-adds` with a full-scan executor,
 where the tutor skips the adding executors' questions, whose case is already passed, and sets only
-the read-through executor's question and the race question. That is six questions: the first of a
+the full-scan executor's question and the race question. That is six questions: the first of a
 scenario takes about 3 minutes with the reading (2 or 3 in `a-pick-access`), each later one about
 1 or 2 in `a-assign-access` and about 1 in `a-pick-access`, so about 12 minutes through `a-assign-access` and about 9 through
 `a-pick-access`. The rest of the hour is room for
@@ -50,7 +50,7 @@ narrowing anyone's access.
 | id                | Goal | Criterion: what gets examined, and what counts |
 | ----------------- | ---- | ---------------------------------------------- |
 | `o-orientation`   | get the shape of this area before working on any particular part of it | `orientation` |
-| `c-choose-access` | decide who gets which kind of access to each thing a workflow keeps | given a described workflow and one thing it keeps, says for every person, program or agent that needs to access it which kind of access it needs (full scan, query, edit, or append-only writes), and says whether there is a danger of a race condition, and if so between which writers. The facts that bear on it include who needs to see or change it, whether several runs or executors may write to it at the same time, and whether anyone needs to find particular records without reading all of them. Cases: `edit`, `append-only`, `query`, `read-through`, `race`, `no-race` |
+| `c-choose-access` | decide who gets which kind of access to each thing a workflow keeps | given a described workflow and one thing it keeps, says for every person, program or agent that needs to access it which kind of access it needs (full scan, query, edit, or append-only writes), and says whether there is a danger of a race condition, and if so between which writers. The facts that bear on it include who needs to see or change it, whether several runs or executors may write to it at the same time, and whether anyone needs to find particular records without reading all of them. Cases: `edit`, `append-only`, `query`, `full-scan`, `race`, `no-race` |
 
 ## Coverage
 
@@ -225,7 +225,7 @@ narrowing anyone's access.
   **An executor question** reads: "What kind of access to the <kept thing> does <executor> need? Answer in
   a short phrase or a sentence." It lists no kinds. Free response, `type: free`. Its rubric
   `cases:` line lists the one case its key kind exercises: `edit`, `append-only`, `query` or
-  `read-through`.
+  `full-scan`.
 
   **The race question** reads: "Which pair of executors, if any, is in danger of a race condition
   on the <kept thing>? (Two runs of the same executor count as a pair.) Answer 'none', or name the
@@ -240,7 +240,7 @@ narrowing anyone's access.
     queries or does a full scan. The pair in danger: the person and the adding step's runs. The
     race key states why: one writer changes what is already there while the other writes, so the
     person's save can lose the step's new entries, even though the step only adds. Access
-    cases `edit`, `append-only`, and `query` or `read-through` when there is a reading executor.
+    cases `edit`, `append-only`, and `query` or `full-scan` when there is a reading executor.
   - `runs-overlap-change` (`race`): runs of one step start on a schedule and some last past the next
     start, and each run changes the same entries (an agent updating every tracked item's current
     price and verdict, where only the current one is wanted). The step's action is always said in
@@ -248,16 +248,16 @@ narrowing anyone's access.
     never neutrally, since a neutral writer in overlapping runs could reasonably be told to only
     append. Executors: that step (edit), and a person who does a full scan or a program that
     queries. The pair in danger: one run of the step and the next. Access cases `edit`, and
-    `query` or `read-through`.
+    `query` or `full-scan`.
   - `everyone-adds` (`no-race`): two or more writers only add, and some of them write at the same
     times (two collectors whose runs coincide, or runs that last past the next start). A third
-    executor queries or does a full scan. Access cases `append-only`, and `query` or `read-through`.
+    executor queries or does a full scan. Access cases `append-only`, and `query` or `full-scan`.
   - `takes-turns` (`no-race`): two writers, at least one of them changing entries, whose stated
     times never meet (the person changes entries only on Sunday afternoons, and the agent's run,
     which fills in a verdict on each entry, starts at 6 a.m. and is done by 6:15; or the collector
     adds entries in one run at 1 a.m. that is done by 1:30, and the person changes entries only in
     the daytime). Access cases `edit`, `append-only` when one writer only adds, and `query` or
-    `read-through` when there is a reading executor.
+    `full-scan` when there is a reading executor.
 
   **Illustrations**, not bank items; their domains are used by no bank in this topic.
   - `hand-edit-runs-add`, Medium: "Mira has kept a list of knitting patterns she might make for
@@ -292,7 +292,7 @@ narrowing anyone's access.
     takes 45, so on busy days a run is still going when the next one starts. Each run replaces
     every tracked lens's price and buy-or-wait verdict with today's, since only the current ones
     matter. Priya reads the whole list, about sixty lenses, every Sunday. Key: the price checker,
-    edit it; Priya, full scan (`read-through`). Race: one run of the price checker and the
+    edit it; Priya, full scan (`full-scan`). Race: one run of the price checker and the
     next. Set for `a-pick-access`, Priya no longer reads the list; she is the second writer that
     activity requires, adding a new lens to track only on Saturday mornings, when no runs happen,
     and never changing an entry (key: append-only writes). The reading executor is a print program
@@ -328,7 +328,7 @@ narrowing anyone's access.
   **Spread across the bank.** A bank is six scenarios: `hand-edit-runs-add` and `everyone-adds`
   twice each, `runs-overlap-change` and `takes-turns` once each, half of them Hard. That is six race
   questions and about sixteen executor questions, at least three each carrying `edit`, `append-only`,
-  `query` and `read-through`, so a query executor and a read-through executor each appear in at least
+  `query` and `full-scan`, so a query executor and a full-scan executor each appear in at least
   three scenarios, each kind in at least one race and one no-race scenario. At least three
   scenarios are trackers with acquire, assess
   and extract steps. When the generator is run live, the tutor picks each next shape and its executors
@@ -379,7 +379,7 @@ narrowing anyone's access.
   reading kind or both without committing ("a full scan or a query"), or when it offers two
   kinds without committing to one. A bare reading answer ("reads it", "read access", "read-only")
   is none for a query executor, since it doesn't say the executor finds particular entries; for a
-  read-through executor it is full only when it says the executor takes in all of it ("reads the whole
+  full-scan executor it is full only when it says the executor takes in all of it ("reads the whole
   list"), and none as bare "read access". There is no half.
 
   Credit, race question: in a `race` question, full when the answer names the pair in danger, and
@@ -454,7 +454,7 @@ narrowing anyone's access.
   there, so "Append-only writes" is wrong). For a reading-only executor, the particular-versus-every
   fact rules out the other reading choice, and that it never adds or changes anything rules out
   both writing choices. The question carries the
-  one case its answer exercises, as there: `edit`, `append-only`, `query` or `read-through`.
+  one case its answer exercises, as there: `edit`, `append-only`, `query` or `full-scan`.
 
   **The race question** reads "Which pair of executors, if any, is in danger of a race condition on
   the <kept thing>? (Two runs of the same executor count as a pair.)", then four numbered options: "None" and three pairs, "<executor> and <executor>".
@@ -484,7 +484,7 @@ narrowing anyone's access.
   **How hard**, as in `a-assign-access`. The question wording is unchanged.
 
   **Spread across the bank.** A bank is six scenarios, with `a-assign-access`'s spread of shapes,
-  executors and executor questions, with a reading executor in all six (three query, three read-through,
+  executors and executor questions, with a reading executor in all six (three query, three full-scan,
   which meets that spread). An executor question's choices are in a fixed order, so its answer's
   position follows from its kind and needs no spreading. Across the six race questions, the sound
   option sits in at least three different positions, "None" in more than one, and the order of
