@@ -111,7 +111,7 @@ narrowing anyone's access.
   question ("does the download program ever need to change a row that's already there?"). Does not
   set or rehearse any word question from `a-words`: does not ask the learner to define any of the
   five words, to say what separates a word from its nearest confusable in goals.md (single source
-  of truth and a backup, append-only and read-only, query and search, race condition and merge
+  of truth and a backup, append-only and read-only, query and full scan, race condition and merge
   conflict, least privilege and authorization), or to correct a misused sentence. Does not set or
   rehearse a question from this topic's capability activities for any workflow beyond the one the
   reading works through; if the learner asks how to do that, says that is what `a-assign-access`
@@ -182,7 +182,7 @@ narrowing anyone's access.
   never under labels, are these facts:
   - for each executor, what it does with the kept thing, as a need in plain words ("adds an entry for
     each pattern worth keeping", "changes an entry's status to 'knitted'", "picks out only the
-    entries marked 'queued'", "goes over the whole list"), never with the words read through,
+    entries marked 'queued'", "goes over the whole list"), never with the words full scan, read through,
     query, edit, append or append-only;
   - for each executor that only adds, why adding is all it should do: other writers write while it
     does, or past entries must stay as they were ("he wants every past sighting kept as it was, to

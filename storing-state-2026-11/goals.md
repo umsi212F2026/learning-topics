@@ -326,7 +326,7 @@ when a step fails comes in a later topic.
 - **criterion:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
-- **what it names:** asking a store for just the records that match, rather than reading through
+- **what it names:** asking a store for just the records that match, rather than going over
   all of it
 - **nearest confusable:** full scan
 
