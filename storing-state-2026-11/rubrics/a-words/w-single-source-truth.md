@@ -39,9 +39,9 @@ does nothing to protect against losing it, which is what a backup is for.
 - **goal:** `w-single-source-truth`
 - **move:** CATCH
 - **type:** mcq
-- **answer:** 2
-- **credit:** full for 2 only. The coordinator's spreadsheet is the one place the shifts are kept
-  and changed, and the door sheet is printed from it. Choice 1 stretches the term to the copy people
+- **answer:** 1
+- **credit:** full for 1 only. The coordinator's spreadsheet is the one place the shifts are kept
+  and changed, and the door sheet is printed from it. Choice 2 stretches the term to the copy people
   read most; being read is not being the place changes are made. Choice 3 takes "single" to mean no
   copies may exist; a copy taken from the source, as the door sheet is, leaves the source single.
   Choice 4 reads the term as its confusable: knowing which version to believe does nothing if the

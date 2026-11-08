@@ -2,13 +2,12 @@
 
 ### vs-search
 
-Rosa runs a dog-walking business. Every walk goes into a store of records, one per walk, with the
-date, the dog, the client and whether the walk has been billed. She also keeps a free-form notes
-file where she types whatever she notices about each dog.
+Kwame runs a dog-walking business. Every walk goes into a store of records, one per walk, with the
+date, the dog, the client and whether the walk has been billed.
 
 Each Friday evening, a billing program asks the store for every walk from that week that hasn't
-been billed, and gets back just those walks. When a client mentions that her dog has been limping,
-Rosa opens the notes file and jumps through every place the word "limp" appears.
+been billed, and gets back just those walks. When a client asks how many times her dog was walked
+in March, Kwame asks the store for that dog's March walks and gets back just those.
 
 #### a
 
@@ -20,7 +19,7 @@ Which term best describes what the billing program does?
 
 #### b
 
-Which term best describes what Rosa does in the notes file?
+Which term best describes what Kwame does for the client?
 
 1. A search
 2. A query

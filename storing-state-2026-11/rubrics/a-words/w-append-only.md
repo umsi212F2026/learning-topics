@@ -15,12 +15,14 @@ adding nor changing. An append-only writer writes, but only new records.
 - **goal:** `w-append-only`
 - **move:** DISTINGUISH
 - **type:** compound
-- **tutor note:** the watering record is written append-only: the program adds lines and never
-  changes or removes one. The care guide is read-only to the program: it reads the guide and never
-  writes to it at all. A learner who calls the record read-only may be reading "nothing is changed"
-  as "nothing is written"; ask what the program does after a plant is watered. One who calls the
-  guide append-only may think any store that isn't edited is append-only; ask what the program ever
-  adds to the guide.
+- **tutor note:** the program's access to the watering record is append-only: it adds lines and
+  never changes or removes one. Its access to the plant list is neither: it changes a plant's room
+  in place, so it is editing, which is not append-only, and it writes, so it is not read-only. A
+  learner who calls the record read-only may be reading "nothing is changed" as "nothing is
+  written"; ask what the program does after a plant is watered. One who calls the plant list
+  append-only may think any store the program writes to is append-only; ask what happens to the old
+  room when a plant moves. One who calls it read-only may be thinking of how Odette looks at it;
+  ask what the program does when she moves a plant.
 
 #### a
 
@@ -30,7 +32,7 @@ adding nor changing. An append-only writer writes, but only new records.
 #### b
 
 - **type:** mcq
-- **answer:** 2
+- **answer:** 3
 
 ### catch-pick
 

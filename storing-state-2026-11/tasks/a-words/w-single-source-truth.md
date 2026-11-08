@@ -31,8 +31,8 @@ night, a copy of the spreadsheet is saved to a second drive in case the first on
 
 Which of these uses the term single source of truth correctly?
 
-1. The door sheet is the single source of truth, since it is what volunteers read.
-2. The coordinator's spreadsheet is the single source of truth for the shifts.
+1. The coordinator's spreadsheet is the single source of truth for the shifts.
+2. The door sheet is the single source of truth, since it is what volunteers read.
 3. Printing the door sheet means the pantry no longer has a single source of truth.
 4. With a single source of truth, the pantry has no need for the nightly copy.
 

@@ -17,12 +17,14 @@ whose records have parts, like a date or a billed flag, to match on.
 - **goal:** `w-query`
 - **move:** DISTINGUISH
 - **type:** compound
-- **tutor note:** the billing program makes a query: it asks the store for the records that meet a
-  condition (this week, not billed) and gets back only those. Rosa does a search: she looks through
-  free-form text for every place a word appears. A learner who calls the billing program a search
-  may be reading the two words as the same thing; ask what the program asked for and what came back.
-  One who calls Rosa's step a query may think any looking-up is a query; ask what records the notes
-  file has for a condition to match.
+- **tutor note:** both parts are queries, and neither is a search. The billing program asks the
+  store for the records that meet a condition (this week, not billed) and gets back only those.
+  Kwame does the same thing by hand: he asks for the records that meet a condition (this dog, in
+  March) and gets back only those. That a person does it, to answer a question, doesn't make it a
+  search; a search would be looking through text for the places a word appears. A learner who
+  answers search for Kwame may be taking any looking-up by a person as a search; ask what he asked
+  the store for and what came back. One who answers search for both may be reading the two words
+  as the same thing.
 
 #### a
 
@@ -32,7 +34,7 @@ whose records have parts, like a date or a billed flag, to match on.
 #### b
 
 - **type:** mcq
-- **answer:** 1
+- **answer:** 2
 
 ### catch-pick
 

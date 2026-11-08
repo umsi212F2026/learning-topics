@@ -2,14 +2,15 @@
 
 ### vs-read-only
 
-Ana runs a small program on her laptop that keeps track of her houseplants. Each morning it reads a
-care guide she downloaded, which lists how often each kind of plant needs water, and it never
-changes the guide. When she waters a plant, the program adds a line to a watering record with the
-date and the plant. No line already in the record is ever changed or removed.
+Odette runs a small program on her laptop that keeps track of her houseplants. It keeps a plant
+list with each plant's name and the room it sits in, and when she moves a plant, the program
+changes that plant's room in the list. When she waters a plant, the program adds a line to a
+watering record with the date and the plant. No line already in the record is ever changed or
+removed.
 
 #### a
 
-Which term best describes how the program writes to the watering record?
+Which term best describes the program's access to the watering record?
 
 1. Append-only
 2. Read-only
@@ -17,7 +18,7 @@ Which term best describes how the program writes to the watering record?
 
 #### b
 
-Which term best describes the program's access to the care guide?
+Which term best describes the program's access to the plant list?
 
 1. Append-only
 2. Read-only
