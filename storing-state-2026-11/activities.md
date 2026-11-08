@@ -50,7 +50,7 @@ narrowing anyone's access.
 | id                | Goal | Criterion: what gets examined, and what counts |
 | ----------------- | ---- | ---------------------------------------------- |
 | `o-orientation`   | get the shape of this area before working on any particular part of it | `orientation` |
-| `c-choose-access` | decide who gets which kind of access to each thing a workflow keeps | given a described workflow and one thing it keeps, says for every person, program or agent that needs to access it which kind of access it needs (read it through, query it, edit it, or append-only writes), and says whether there is a danger of a race condition, and if so between which writers. The facts that bear on it include who needs to see or change it, whether several runs or entities may write to it at the same time, and whether anyone needs to find particular records without reading all of them. Cases: `edit`, `append-only`, `query`, `read-through`, `race`, `no-race` |
+| `c-choose-access` | decide who gets which kind of access to each thing a workflow keeps | given a described workflow and one thing it keeps, says for every person, program or agent that needs to access it which kind of access it needs (full scan, query, edit, or append-only writes), and says whether there is a danger of a race condition, and if so between which writers. The facts that bear on it include who needs to see or change it, whether several runs or executors may write to it at the same time, and whether anyone needs to find particular records without reading all of them. Cases: `edit`, `append-only`, `query`, `read-through`, `race`, `no-race` |
 
 ## Coverage
 
@@ -77,7 +77,7 @@ narrowing anyone's access.
   Sections: an untitled opening (how things are stored was left for later; the decision here is
   who touches each kept thing and how, while formats and databases are the agent's); What a
   workflow stores (state, and the five things the TA's workflow keeps); Four kinds of access
-  (reading it through, querying it, editing it, append-only writes, with a log file as the classic
+  (a full scan, querying it, editing it, append-only writes, with a log file as the classic
   append-only store); Who, and which kind (the grades sheet's four executors and the kind each needs,
   why that drives format and storage, and narrowing access as least privilege); When two writers
   collide (the posting program saving over the TA's three changes, the two things a race needs, the
@@ -207,7 +207,7 @@ narrowing anyone's access.
   **Executors.** Each executor's need is exactly one kind: an executor that changes entries already there
   (fills in a field, changes a status, deletes one) is keyed edit; one that only adds new entries,
   append-only writes; one that needs only particular entries from tens of thousands and changes nothing,
-  query; one that takes in every entry and changes nothing, read it through. No executor both adds
+  query; one that takes in every entry and changes nothing, full scan. No executor both adds
   entries and changes ones already there, and no executor that changes entries has to find them
   among many
   (the person picks hers as she looks the list over; an agent changes every entry its run checks).
@@ -237,7 +237,7 @@ narrowing anyone's access.
   - `hand-edit-runs-add` (`race`): the person changes entries by hand at times that include when
     runs happen, and the runs only add entries. Executors: the person (edit), the adding step
     (append-only writes, because the person writes while it does), and optionally a third executor that
-    queries or reads it through. The pair in danger: the person and the adding step's runs. The
+    queries or does a full scan. The pair in danger: the person and the adding step's runs. The
     race key states why: one writer changes what is already there while the other writes, so the
     person's save can lose the step's new entries, even though the step only adds. Access
     cases `edit`, `append-only`, and `query` or `read-through` when there is a reading executor.
@@ -246,12 +246,12 @@ narrowing anyone's access.
     price and verdict, where only the current one is wanted). The step's action is always said in
     plain words that change entries already there ("replaces each lens's price with today's"),
     never neutrally, since a neutral writer in overlapping runs could reasonably be told to only
-    append. Executors: that step (edit), and a person who reads it through or a program that
+    append. Executors: that step (edit), and a person who does a full scan or a program that
     queries. The pair in danger: one run of the step and the next. Access cases `edit`, and
     `query` or `read-through`.
   - `everyone-adds` (`no-race`): two or more writers only add, and some of them write at the same
     times (two collectors whose runs coincide, or runs that last past the next start). A third
-    executor queries or reads it through. Access cases `append-only`, and `query` or `read-through`.
+    executor queries or does a full scan. Access cases `append-only`, and `query` or `read-through`.
   - `takes-turns` (`no-race`): two writers, at least one of them changing entries, whose stated
     times never meet (the person changes entries only on Sunday afternoons, and the agent's run,
     which fills in a verdict on each entry, starts at 6 a.m. and is done by 6:15; or the collector
@@ -292,11 +292,11 @@ narrowing anyone's access.
     takes 45, so on busy days a run is still going when the next one starts. Each run replaces
     every tracked lens's price and buy-or-wait verdict with today's, since only the current ones
     matter. Priya reads the whole list, about sixty lenses, every Sunday. Key: the price checker,
-    edit it; Priya, read it through (`read-through`). Race: one run of the price checker and the
+    edit it; Priya, full scan (`read-through`). Race: one run of the price checker and the
     next. Set for `a-pick-access`, Priya no longer reads the list; she is the second writer that
     activity requires, adding a new lens to track only on Saturday mornings, when no runs happen,
     and never changing an entry (key: append-only writes). The reading executor is a print program
-    that each Friday reads the whole list to print it (key: read it through). Race options: "None";
+    that each Friday reads the whole list to print it (key: full scan). Race options: "None";
     one run of the price checker and the next (the answer); Priya and the price checker's runs
     (their times never meet); the print program and the price checker's runs (a race needs two
     writers, and the print program only reads).
@@ -355,7 +355,7 @@ narrowing anyone's access.
     alone." The key never claims that holding a writer to appending prevents a race while another
     writer edits: the race key for the same scenario still names that pair.
   - For a reading-only executor, "rules out" is literally true, and the key uses it: that it needs
-    particular entries out of tens of thousands rules out read it through; that it needs every
+    particular entries out of tens of thousands rules out full scan; that it needs every
     entry rules out query; that it never adds or changes anything rules out edit and append-only writes.
 
   The key notes that the question asks what the executor needs to do as the scenario describes it,
@@ -368,15 +368,15 @@ narrowing anyone's access.
 
   Credit, executor question: full when the answer names the key kind, in any words that clearly name
   it ("adds only" is append-only writes, "looks up the ones it needs" is query, "changes entries" is edit,
-  "goes through all of it" is read it through). For an adding executor, "adds new entries" without
+  "goes through all of it" is a full scan, as is "full scan" itself or any answer saying the executor reads, goes over or looks at all of it). For an adding executor, "adds new entries" without
   "only" is full: it names appending and no other writing kind, which is what "append-only writes"
   asks. A reading kind named beside the key writing kind is
-  fine ("reads it through and edits it", "queries it and edits it"), since changing records means
+  fine ("does a full scan and edits it", "queries it and edits it"), since changing records means
   seeing them. For an editing executor, naming editing plus appending ("edits it and appends") is
   also full. None when the answer names a writing kind the executor shouldn't have ("edits it", or
   "appends and edits", for an executor that should only append; "appends", for one that should edit;
   any writing kind for a reading-only executor), when for a reading-only executor it names the wrong
-  reading kind or both without committing ("reads it through or queries it"), or when it offers two
+  reading kind or both without committing ("a full scan or a query"), or when it offers two
   kinds without committing to one. A bare reading answer ("reads it", "read access", "read-only")
   is none for a query executor, since it doesn't say the executor finds particular entries; for a
   read-through executor it is full only when it says the executor takes in all of it ("reads the whole
@@ -434,7 +434,7 @@ narrowing anyone's access.
 - **generator:** **A scenario** uses `a-assign-access`'s shapes, executor rules, pointedness rule and
   question order (a question about each executor, then the race question last, each its own `###`
   question, never a compound), with two differences. First, every scenario has a reading executor (one
-  that queries or reads it through), so the race question always has a reader pair to offer; in
+  that queries or does a full scan), so the race question always has a reader pair to offer; in
   `runs-overlap-change` it also has a second writer whose times never meet the step's runs (the
   person adds new items to track only on Saturday mornings, when no runs happen, and never changes
   an entry, said with that plain verb as `a-assign-access` requires); in `everyone-adds` it always
@@ -445,7 +445,7 @@ narrowing anyone's access.
   (or that it never changes an entry, where no such reason fits), how many entries it holds where that bears, and each writer's times, and nothing else.
 
   **An executor question** reads "What kind of access to the <kept thing> does <executor> need?", then four
-  numbered choices, always in this order: "Read it through", "Query it", "Edit it", "Append-only
+  numbered choices, always in this order: "Full scan", "Query it", "Edit it", "Append-only
   writes". `type: mcq`. Exactly one is right by the facts, and the scenario states the fact that
   makes each other one wrong, as the key in `a-assign-access` gives it. For a writing executor: it
   changes the store, so neither reading choice is enough; and what it does to entries separates
