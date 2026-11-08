@@ -6,25 +6,24 @@ help (it is recorded as helped and doesn't count), then come back to a productio
 Least privilege is giving each part of a workflow only the access it needs, and no more. It is a
 choice made when access is handed out, measured against the job: a part that needs to touch two
 things gets both, and one that needs to write gets to write. Authorization is the course's
-contrast: the check, each time something tries to act, of whether it has been given permission to
-do so, or that permission itself. Authorization says whether access was granted; least privilege
-says how much should have been. A program can be fully authorized to do far more than it needs,
-and then least privilege is broken.
+contrast: deciding what someone may do, whether in setting permissions or in checking them when
+something tries to act. Authorization is any such decision; least privilege is the principle that
+says how much it should allow. A program can be fully authorized to do far more than it needs, and
+then least privilege is broken.
 
 ### vs-authorization
 
 - **goal:** `w-least-privilege`
 - **move:** DISTINGUISH
 - **type:** compound
-- **tutor note:** the laptop's check and refusal is best called authorization: at the moment the
-  program tries to act, the laptop checks what it was granted. Jun's choice is best called least
-  privilege: he gave the program only what sorting needs and held back the rest. Granting
-  permission is arguably part of authorization too, which is why the question asks for the best
-  term; what makes least privilege the better one is that Jun matched the access to the job. A
-  learner who calls the laptop's check least privilege may be reading the term as whatever enforces
-  limits; ask what decided which permissions the program had. One who calls Jun's choice
-  authorization has seen the granting but not the "only what it needs"; ask why he left deleting
-  out.
+- **tutor note:** the laptop deciding, at the moment the program tries to delete, whether it may is
+  authorization. Jun's choice follows least privilege: sorting photos into albums needs reading the
+  photos and adding album entries, and never deleting a photo, so he gave the program exactly what
+  its job needs and no more. A learner who calls the laptop's decision least privilege may be
+  reading the term as whatever enforces limits; ask what decided which permissions the program
+  had. One who says No to part b may think withholding delete is too restrictive; ask what sorting
+  into albums needs. One who says No because the program later tried to delete may be judging the
+  choice by the program's behavior; ask whether that delete was part of sorting.
 
 #### a
 
@@ -34,7 +33,7 @@ and then least privilege is broken.
 #### b
 
 - **type:** mcq
-- **answer:** 2
+- **answer:** 1
 
 ### catch-pick
 
@@ -47,7 +46,7 @@ and then least privilege is broken.
   possible": writing captions is the agent's job, so the access it needs is no breach. Choice 3
   stretches the term to a fixed count; the agent needs two things here and gets both. Choice 4 reads
   the term as its confusable: the check made each time is authorization, while least privilege is
-  the choice of what to grant.
+  the principle for how much to grant.
 
 ### catch-newsletter
 

@@ -3,14 +3,14 @@
 ### vs-authorization
 
 Jun sets up a program on his laptop that sorts his family's photos into albums. When he installs
-it, he lets it read the photo folder and add entries to the album list, but not delete photos,
-since sorting never needs to. Later, an update to the program tries to delete a blurry photo. The
-laptop checks the permissions the program was given, finds that deleting isn't among them, and
-refuses.
+it, he lets it read the photo folder and add entries to the album list, but not delete photos.
+Later, after an update, the program tries to delete a blurry photo. The laptop checks the
+permissions the program was given, finds that deleting isn't among them, and refuses.
 
 #### a
 
-Which term best describes the laptop checking the program's permissions and refusing the delete?
+When the program tries to delete the photo, the laptop decides whether it may. Which term best
+describes that?
 
 1. Authorization
 2. Least privilege
@@ -18,12 +18,10 @@ Which term best describes the laptop checking the program's permissions and refu
 
 #### b
 
-Which term best describes Jun's choice to let the program read photos and add to the album list,
-but not delete?
+Did Jun's choice about what to let the program do follow the principle of least privilege?
 
-1. Authorization
-2. Least privilege
-3. Neither
+1. Yes
+2. No
 
 ### catch-pick
 
