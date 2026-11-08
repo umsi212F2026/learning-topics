@@ -33,20 +33,21 @@ as the scenario describes it, not how the workflow could be redesigned.
   there, so appending alone is not enough. He finds them by going "down the bike list from the
   top", a list of about sixty, not by searching it.
 - **credit:** full when the answer names editing, in any words ("changes entries", "updates their
-  status"); a reading kind named beside it is fine ("reads it and edits it"), and so is editing plus appending ("edits it and appends"). None when it names
-  only appending, names only a reading kind, or offers two kinds without committing to one.
+  status"); a reading kind named beside it is fine ("reads it and edits it"), and so is editing plus
+  appending ("edits it and appends"). None when it names only appending, names only a reading kind,
+  or offers two kinds without committing to one.
 
 ### summary-program
 
 - **goal:** `c-choose-access`
 - **cases:** read-through
 - **type:** free
-- **answer:** Read it through. It "goes over the whole bike list" to make a table "of every bike on
+- **answer:** Full scan. It "goes over the whole bike list" to make a table "of every bike on
   it", so it needs every entry, which rules out query. It "never changes or adds anything in the
   bike list", which rules out edit and append-only writes.
-- **credit:** full when the answer says the program takes in the whole list, in any words ("reads
-  all of it", "goes through every entry"). None for a bare "read access" or "read-only", for
-  querying or picking out particular entries, for "reads it through or queries it" without
+- **credit:** full when the answer says the program takes in the whole list, in any words ("a full
+  scan", "reads all of it", "goes through every entry"). None for a bare "read access" or
+  "read-only", for querying or picking out particular entries, for "a full scan or a query" without
   committing, or for any writing kind.
 
 ### race
@@ -54,14 +55,13 @@ as the scenario describes it, not how the workflow could be redesigned.
 - **goal:** `c-choose-access`
 - **cases:** race
 - **type:** free
-- **answer:** Omar and the bike agent's runs. The runs start "every hour from 7 a.m. to 11 p.m."
-  and each "takes about ten minutes"; Omar changes entries "from about 7:30 until about nine", so
-  the 8 o'clock run is going while he works. One writer changes what is already there while the
-  other writes, so Omar's save can lose the agent's new entries, even though the agent only adds.
-  Naming the bike agent,
-  its runs, or "the runs" for that writer all count. Ruled out: the summary program with either
-  writer, since it "never changes or adds anything"; and one run of the bike agent and the next,
-  since a ten-minute run ends long before the next starts an hour later.
+- **answer:** Omar and the bike agent's runs. The runs start "every hour from 7 a.m. to 11 p.m." and
+  each "takes about ten minutes"; Omar changes entries "from about 7:30 until about nine", so the 8
+  o'clock run is going while he works. One writer changes what is already there while the other
+  writes, so Omar's save can lose the agent's new entries, even though the agent only adds. Naming
+  the bike agent, its runs, or "the runs" for that writer all count. Ruled out: the summary program
+  with either writer, since it "never changes or adds anything"; and one run of the bike agent and
+  the next, since a ten-minute run ends long before the next starts an hour later.
 - **credit:** full when the answer names Omar and the bike agent (or its runs) as the pair, and
   only that pair. None when it says "none", names a pair the facts rule out, or adds the summary
   program or the download program to the right pair. A reason given alongside is not marked.

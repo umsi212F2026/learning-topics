@@ -44,13 +44,13 @@ the scenario describes it, not how the workflow could be redesigned.
 - **goal:** `c-choose-access`
 - **cases:** read-through
 - **type:** free
-- **answer:** Read it through. It "goes over the whole bills record" to add up "what the household
+- **answer:** Full scan. It "goes over the whole bills record" to add up "what the household
   has spent in each category so far this year", and the record holds only this year's bills, so it
   needs every entry, which rules out query. It "never changes or adds anything in the bills
   record", which rules out edit and append-only writes.
-- **credit:** full when the answer says the program takes in the whole record, in any words ("reads
-  all of it", "goes through every entry"). None for a bare "read access" or "read-only", for
-  querying or picking out particular entries, for "reads it through or queries it" without
+- **credit:** full when the answer says the program takes in the whole record, in any words ("a full
+  scan", "reads all of it", "goes through every entry"). None for a bare "read access" or
+  "read-only", for querying or picking out particular entries, for "a full scan or a query" without
   committing, or for any writing kind.
 
 ### race

@@ -17,22 +17,22 @@ to do as the scenario describes it, not how the workflow could be redesigned.
   appending alone is not enough. It works on every entry, all forty, so it finds them without
   searching.
 - **credit:** full when the answer names editing, in any words ("changes entries", "updates each
-  game's price and verdict"); a reading kind named beside it is fine ("reads it and edits it"), and so is editing plus appending ("edits it and appends").
-  None when it names only appending, names only a reading kind, or offers two kinds without
-  committing to one.
+  game's price and verdict"); a reading kind named beside it is fine ("reads it and edits it"), and
+  so is editing plus appending ("edits it and appends"). None when it names only appending, names
+  only a reading kind, or offers two kinds without committing to one.
 
 ### kofi
 
 - **goal:** `c-choose-access`
 - **cases:** read-through
 - **type:** free
-- **answer:** Read it through. He "reads the whole game list, all forty entries", so he needs every
+- **answer:** Full scan. He "reads the whole game list, all forty entries", so he needs every
   entry, which rules out query. He "never changes or adds anything in it", which rules out edit and
   append-only writes.
-- **credit:** full when the answer says Kofi takes in the whole list, in any words ("reads all of
-  it", "goes through every entry"). None for a bare "read access" or "read-only", for querying or
-  picking out particular entries, for "reads it through or queries it" without committing, or for
-  any writing kind.
+- **credit:** full when the answer says Kofi takes in the whole list, in any words ("a full scan",
+  "reads all of it", "goes through every entry"). None for a bare "read access" or "read-only", for
+  querying or picking out particular entries, for "a full scan or a query" without committing, or
+  for any writing kind.
 
 ### race
 

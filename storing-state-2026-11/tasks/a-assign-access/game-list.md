@@ -19,4 +19,5 @@ What kind of access to the game list does Kofi need? Answer in a short phrase or
 
 ### race
 
-Which pair of executors, if any, is in danger of a race condition on the game list? (Two runs of the same executor count as a pair.) Answer 'none', or name the pair.
+Which pair of executors, if any, is in danger of a race condition on the game list? (Two runs of the
+same executor count as a pair.) Answer 'none', or name the pair.

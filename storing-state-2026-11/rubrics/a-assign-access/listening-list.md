@@ -35,8 +35,9 @@ describes it, not how the workflow could be redesigned.
   not by searching it.
 - **credit:** full when the answer names editing, in any words ("changes entries", "fills in or
   updates the rating in each entry", "writes her rating into the episode's entry"); a reading kind
-  named beside it is fine ("reads it and edits it"), and so is editing plus appending ("edits it and appends"). None when it names only appending or adding
-  new entries, names only a reading kind, or offers two kinds without committing to one.
+  named beside it is fine ("reads it and edits it"), and so is editing plus appending ("edits it and
+  appends"). None when it names only appending or adding new entries, names only a reading kind, or
+  offers two kinds without committing to one.
 - **tutor note:** "records" gives nothing away here; the facts that settle it are that the rating
   goes into the episode's own entry and that an entry shows one rating, her latest.
 
@@ -47,12 +48,12 @@ describes it, not how the workflow could be redesigned.
 - **type:** free
 - **answer:** Query it. It "picks out only that week's episodes she rated four or five" from a list
   of "about twenty-five thousand entries", so it needs particular entries out of tens of thousands,
-  which rules out read it through. It "never changes or adds anything in the listening list", which
+  which rules out a full scan. It "never changes or adds anything in the listening list", which
   rules out edit and append-only writes.
 - **credit:** full when the answer says the program finds or picks out particular entries, in any
   words ("looks up the episodes rated four or five", "searches for them"). None for a bare reading
-  answer ("reads it", "read access", "read-only"), for reading the whole list, for "reads it
-  through or queries it" without committing, or for any writing kind.
+  answer ("reads it", "read access", "read-only"), for reading the whole list, for "a full scan or a
+  query" without committing, or for any writing kind.
 
 ### race
 

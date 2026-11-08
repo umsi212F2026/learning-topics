@@ -32,8 +32,9 @@ could be redesigned.
   are changes to entries already there, so appending alone is not enough. She finds them by looking
   over "that day's new entries at the end of the list", not by searching the whole list.
 - **credit:** full when the answer names editing, in any words ("changes entries", "updates them");
-  a reading kind named beside it is fine ("reads it and edits it"), and so is editing plus appending ("edits it and appends"). None when it names only
-  appending, names only a reading kind, or offers two kinds without committing to one.
+  a reading kind named beside it is fine ("reads it and edits it"), and so is editing plus appending
+  ("edits it and appends"). None when it names only appending, names only a reading kind, or offers
+  two kinds without committing to one.
 
 ### planning-program
 
@@ -42,12 +43,12 @@ could be redesigned.
 - **type:** free
 - **answer:** Query it. It "picks out only the entries marked 'this week'" from a list of "about
   twenty-two thousand entries", so it needs particular entries out of tens of thousands, which
-  rules out read it through. It "never changes or adds anything in the recipe list", which rules
+  rules out a full scan. It "never changes or adds anything in the recipe list", which rules
   out edit and append-only writes.
 - **credit:** full when the answer says the program finds or picks out particular entries, in any
   words ("looks up the ones marked 'this week'", "searches for them"). None for a bare reading
-  answer ("reads it", "read access", "read-only"), for reading the whole list, for "reads it
-  through or queries it" without committing, or for any writing kind.
+  answer ("reads it", "read access", "read-only"), for reading the whole list, for "a full scan or a
+  query" without committing, or for any writing kind.
 
 ### race
 
@@ -56,11 +57,11 @@ could be redesigned.
 - **type:** free
 - **answer:** Lena and the recipe agent's runs. The runs start "every two hours from 7 a.m. to 11
   p.m." and each "takes about fifteen minutes"; Lena makes her changes "most evenings, often while a
-  run is going". One writer changes what is already there while the other writes, so Lena's save
-  can lose the agent's new entries, even though the agent only adds. Naming the recipe agent, its runs, or "the runs" for that writer all count. Ruled
-  out: the planning program with either writer, since the planning program "never changes or adds
-  anything"; and one run of the recipe agent and the next, since a fifteen-minute run ends long
-  before the next starts two hours later.
+  run is going". One writer changes what is already there while the other writes, so Lena's save can
+  lose the agent's new entries, even though the agent only adds. Naming the recipe agent, its runs,
+  or "the runs" for that writer all count. Ruled out: the planning program with either writer, since
+  the planning program "never changes or adds anything"; and one run of the recipe agent and the
+  next, since a fifteen-minute run ends long before the next starts two hours later.
 - **credit:** full when the answer names Lena and the recipe agent (or its runs) as the pair, and
   only that pair. None when it says "none", names a pair the facts rule out, or adds the planning
   program or the download program to the right pair. A reason given alongside is not marked.

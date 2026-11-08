@@ -30,14 +30,14 @@ redesigned.
 - **goal:** `c-choose-access`
 - **cases:** query
 - **type:** free
-- **answer:** Query it. It "picks out only that year's photos tagged with both of Mei's
+- **answer:** Query it. It "picks out only that year's photos tagged with both of Greta's
   grandchildren" from a catalog of "about seventy thousand", so it needs particular entries out of
-  tens of thousands, which rules out read it through. It "never changes or adds anything in the
+  tens of thousands, which rules out a full scan. It "never changes or adds anything in the
   photo catalog", which rules out edit and append-only writes.
 - **credit:** full when the answer says the program finds or picks out particular entries, in any
   words ("looks up the photos with both grandchildren", "searches for them"). None for a bare
   reading answer ("reads it", "read access", "read-only"), for reading the whole catalog, for
-  "reads it through or queries it" without committing, or for any writing kind.
+  "a full scan or a query" without committing, or for any writing kind.
 
 ### race
 

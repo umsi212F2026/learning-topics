@@ -25,4 +25,5 @@ a sentence.
 
 ### race
 
-Which pair of executors, if any, is in danger of a race condition on the recipe list? (Two runs of the same executor count as a pair.) Answer 'none', or name the pair.
+Which pair of executors, if any, is in danger of a race condition on the recipe list? (Two runs of
+the same executor count as a pair.) Answer 'none', or name the pair.
