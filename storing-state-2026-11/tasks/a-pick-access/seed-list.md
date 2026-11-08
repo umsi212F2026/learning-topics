@@ -43,7 +43,7 @@ What kind of access to the seed list does the planting agent need?
 
 ### race
 
-Which pair of executors, if any, is in danger of a race condition on the seed list?
+Which pair of executors, if any, is in danger of a race condition on the seed list? (Two runs of the same executor count as a pair.)
 
 1. One run of the catalog agent and the next
 2. Hana and the catalog agent's runs

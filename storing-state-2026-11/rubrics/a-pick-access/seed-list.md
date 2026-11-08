@@ -18,8 +18,8 @@ needs to do as the scenario describes it, not how the workflow could be redesign
   never changes an entry already on the list." It changes the list, so a reading choice alone,
   Read it through (1) or Query it (2), is not enough. It only ever adds new entries and never needs
   to change one already there, so it doesn't need Edit it (3). And since Hana changes entries
-  "from about seven until nine" on most evenings, while runs start every hour until 11 p.m.,
-  holding it to appending keeps it from writing over her changes.
+  while a run is going (she works "from about seven until nine" on most evenings, while runs start
+  every hour until 11 p.m.), the agent should leave entries already there alone.
 
 ### hana
 
@@ -56,8 +56,10 @@ needs to do as the scenario describes it, not how the workflow could be redesign
 - **credit:** full for 2 only; none for the others.
 - **tutor note:** settled by comparing the writers' times: runs start "every hour from 7 a.m. to
   11 p.m." and Hana changes entries "most evenings, from about seven until nine", so the 7, 8 and
-  9 p.m. runs write while she is changing entries already there. Hana and the catalog agent's runs
-  (2) are in danger, so None (3) is wrong. One run of the catalog agent and the next (1) is wrong
+  9 p.m. runs write while she is changing entries already there. One writer, Hana, changes what is
+  already there while the other, a run, writes, so Hana's save can lose the agent's new entries,
+  even though the agent only adds. Hana and the catalog agent's runs (2) are in danger, so None (3)
+  is wrong. One run of the catalog agent and the next (1) is wrong
   because a run "takes about ten minutes" and the next starts an hour later, so one run ends long
   before the next starts. The planting agent and the catalog agent's runs (4) is wrong because a
   race needs two writers and the planting agent only reads.

@@ -43,7 +43,7 @@ What kind of access to the watch list does the report program need?
 
 ### race
 
-Which pair of executors, if any, is in danger of a race condition on the watch list?
+Which pair of executors, if any, is in danger of a race condition on the watch list? (Two runs of the same executor count as a pair.)
 
 1. Gus and the bid-watch agent's runs
 2. None

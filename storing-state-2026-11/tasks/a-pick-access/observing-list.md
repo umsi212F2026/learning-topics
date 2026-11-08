@@ -42,7 +42,7 @@ What kind of access to the observing list does the print program need?
 
 ### race
 
-Which pair of executors, if any, is in danger of a race condition on the observing list?
+Which pair of executors, if any, is in danger of a race condition on the observing list? (Two runs of the same executor count as a pair.)
 
 1. None
 2. The finder agent and the print program

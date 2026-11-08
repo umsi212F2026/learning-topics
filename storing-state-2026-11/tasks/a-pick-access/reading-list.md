@@ -42,7 +42,7 @@ What kind of access to the reading list does the digest program need?
 
 ### race
 
-Which pair of executors, if any, is in danger of a race condition on the reading list?
+Which pair of executors, if any, is in danger of a race condition on the reading list? (Two runs of the same executor count as a pair.)
 
 1. The digest program and the newsletter agent
 2. None
