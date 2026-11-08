@@ -16,8 +16,8 @@ as the scenario describes it, not how the workflow could be redesigned.
 - **answer:** Append-only writes. It "adds an entry to the bike list for each one worth a look", so
   it changes the list, and a reading kind alone is not enough. It only ever adds new entries and
   never needs to change one already there, so it doesn't need edit. And since Omar changes entries
-  "from about 7:30 until about nine" while the 8 o'clock run is going, holding the agent to
-  appending keeps it from writing over his changes.
+  "from about 7:30 until about nine" while the 8 o'clock run is going, the agent should leave
+  entries already there alone.
 - **credit:** full when the answer names appending as the agent's only writing kind, in any words
   ("adds only", "adds new entries"); a reading kind named beside it is fine. None when it names
   editing or changing entries (alone or with appending), names only a reading kind, or offers two
@@ -33,7 +33,7 @@ as the scenario describes it, not how the workflow could be redesigned.
   there, so appending alone is not enough. He finds them by going "down the bike list from the
   top", a list of about sixty, not by searching it.
 - **credit:** full when the answer names editing, in any words ("changes entries", "updates their
-  status"); a reading kind named beside it is fine ("reads it and edits it"). None when it names
+  status"); a reading kind named beside it is fine ("reads it and edits it"), and so is editing plus appending ("edits it and appends"). None when it names
   only appending, names only a reading kind, or offers two kinds without committing to one.
 
 ### summary-program
@@ -56,7 +56,9 @@ as the scenario describes it, not how the workflow could be redesigned.
 - **type:** free
 - **answer:** Omar and the bike agent's runs. The runs start "every hour from 7 a.m. to 11 p.m."
   and each "takes about ten minutes"; Omar changes entries "from about 7:30 until about nine", so
-  the 8 o'clock run is going while he works. Naming the bike agent,
+  the 8 o'clock run is going while he works. One writer changes what is already there while the
+  other writes, so Omar's save can lose the agent's new entries, even though the agent only adds.
+  Naming the bike agent,
   its runs, or "the runs" for that writer all count. Ruled out: the summary program with either
   writer, since it "never changes or adds anything"; and one run of the bike agent and the next,
   since a ten-minute run ends long before the next starts an hour later.

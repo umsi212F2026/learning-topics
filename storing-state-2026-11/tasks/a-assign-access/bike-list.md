@@ -26,5 +26,4 @@ sentence.
 
 ### race
 
-Which pair of executors, if any, is in danger of a race condition on the bike list? Answer
-'none', or name the pair.
+Which pair of executors, if any, is in danger of a race condition on the bike list? (Two runs of the same executor count as a pair.) Answer 'none', or name the pair.

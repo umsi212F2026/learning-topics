@@ -35,7 +35,7 @@ describes it, not how the workflow could be redesigned.
   not by searching it.
 - **credit:** full when the answer names editing, in any words ("changes entries", "fills in or
   updates the rating in each entry", "writes her rating into the episode's entry"); a reading kind
-  named beside it is fine ("reads it and edits it"). None when it names only appending or adding
+  named beside it is fine ("reads it and edits it"), and so is editing plus appending ("edits it and appends"). None when it names only appending or adding
   new entries, names only a reading kind, or offers two kinds without committing to one.
 - **tutor note:** "records" gives nothing away here; the facts that settle it are that the rating
   goes into the episode's own entry and that an entry shows one rating, her latest.

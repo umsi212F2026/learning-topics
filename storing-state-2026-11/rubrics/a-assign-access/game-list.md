@@ -17,7 +17,7 @@ to do as the scenario describes it, not how the workflow could be redesigned.
   appending alone is not enough. It works on every entry, all forty, so it finds them without
   searching.
 - **credit:** full when the answer names editing, in any words ("changes entries", "updates each
-  game's price and verdict"); a reading kind named beside it is fine ("reads it and edits it").
+  game's price and verdict"); a reading kind named beside it is fine ("reads it and edits it"), and so is editing plus appending ("edits it and appends").
   None when it names only appending, names only a reading kind, or offers two kinds without
   committing to one.
 

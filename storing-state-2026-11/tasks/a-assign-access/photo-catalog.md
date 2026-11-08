@@ -20,5 +20,4 @@ or a sentence.
 
 ### race
 
-Which pair of executors, if any, is in danger of a race condition on the photo catalog? Answer
-'none', or name the pair.
+Which pair of executors, if any, is in danger of a race condition on the photo catalog? (Two runs of the same executor count as a pair.) Answer 'none', or name the pair.

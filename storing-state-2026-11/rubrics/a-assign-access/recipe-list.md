@@ -15,8 +15,8 @@ could be redesigned.
 - **answer:** Append-only writes. It "adds an entry at the end of the recipe list for each one worth
   keeping", so it changes the list, and a reading kind alone is not enough. It only ever adds new
   entries and never needs to change one already there, so it doesn't need edit. And since Lena
-  changes entries "often while a run is going", holding it to appending keeps it from writing over
-  her work.
+  changes entries "often while a run is going", the agent should leave entries already there
+  alone.
 - **credit:** full when the answer names appending as the agent's only writing kind, in any words
   ("adds only", "adds new entries"); a reading kind named beside it is fine. None when it names
   editing or changing entries (alone or with appending), names only a reading kind, or offers two
@@ -32,7 +32,7 @@ could be redesigned.
   are changes to entries already there, so appending alone is not enough. She finds them by looking
   over "that day's new entries at the end of the list", not by searching the whole list.
 - **credit:** full when the answer names editing, in any words ("changes entries", "updates them");
-  a reading kind named beside it is fine ("reads it and edits it"). None when it names only
+  a reading kind named beside it is fine ("reads it and edits it"), and so is editing plus appending ("edits it and appends"). None when it names only
   appending, names only a reading kind, or offers two kinds without committing to one.
 
 ### planning-program
@@ -56,7 +56,8 @@ could be redesigned.
 - **type:** free
 - **answer:** Lena and the recipe agent's runs. The runs start "every two hours from 7 a.m. to 11
   p.m." and each "takes about fifteen minutes"; Lena makes her changes "most evenings, often while a
-  run is going". Naming the recipe agent, its runs, or "the runs" for that writer all count. Ruled
+  run is going". One writer changes what is already there while the other writes, so Lena's save
+  can lose the agent's new entries, even though the agent only adds. Naming the recipe agent, its runs, or "the runs" for that writer all count. Ruled
   out: the planning program with either writer, since the planning program "never changes or adds
   anything"; and one run of the recipe agent and the next, since a fifteen-minute run ends long
   before the next starts two hours later.
