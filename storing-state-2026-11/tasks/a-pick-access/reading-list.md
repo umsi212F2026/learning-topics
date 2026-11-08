@@ -17,7 +17,7 @@ it. The list now holds about twenty-four thousand entries, from four years of re
 
 What kind of access to the reading list does the newsletter agent need?
 
-1. Read it through
+1. Full scan
 2. Query it
 3. Edit it
 4. Append-only writes
@@ -26,7 +26,7 @@ What kind of access to the reading list does the newsletter agent need?
 
 What kind of access to the reading list does the feed program need?
 
-1. Read it through
+1. Full scan
 2. Query it
 3. Edit it
 4. Append-only writes
@@ -35,14 +35,15 @@ What kind of access to the reading list does the feed program need?
 
 What kind of access to the reading list does the digest program need?
 
-1. Read it through
+1. Full scan
 2. Query it
 3. Edit it
 4. Append-only writes
 
 ### race
 
-Which pair of executors, if any, is in danger of a race condition on the reading list? (Two runs of the same executor count as a pair.)
+Which pair of executors, if any, is in danger of a race condition on the reading list? (Two runs of
+the same executor count as a pair.)
 
 1. The digest program and the newsletter agent
 2. None

@@ -18,7 +18,7 @@ list now holds about three hundred entries.
 
 What kind of access to the seed list does the catalog agent need?
 
-1. Read it through
+1. Full scan
 2. Query it
 3. Edit it
 4. Append-only writes
@@ -27,7 +27,7 @@ What kind of access to the seed list does the catalog agent need?
 
 What kind of access to the seed list does Hana need?
 
-1. Read it through
+1. Full scan
 2. Query it
 3. Edit it
 4. Append-only writes
@@ -36,14 +36,15 @@ What kind of access to the seed list does Hana need?
 
 What kind of access to the seed list does the planting agent need?
 
-1. Read it through
+1. Full scan
 2. Query it
 3. Edit it
 4. Append-only writes
 
 ### race
 
-Which pair of executors, if any, is in danger of a race condition on the seed list? (Two runs of the same executor count as a pair.)
+Which pair of executors, if any, is in danger of a race condition on the seed list? (Two runs of the
+same executor count as a pair.)
 
 1. One run of the catalog agent and the next
 2. Hana and the catalog agent's runs

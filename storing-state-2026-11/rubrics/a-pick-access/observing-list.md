@@ -15,7 +15,7 @@ could be redesigned.
 - **credit:** full for 4 only; none for the others.
 - **tutor note:** settled by "adds an entry to the observing list for each one worth looking
   for" and "The finder agent never changes an entry already on the list." It changes the list,
-  so a reading choice alone, Read it through (1) or Query it (2), is not enough. It only ever
+  so a reading choice alone, Full scan (1) or Query it (2), is not enough. It only ever
   adds new entries and never needs to change one already there, so it doesn't need Edit it (3).
   No other writer writes while it runs and no rule keeps past entries as they were; what holds it
   to appending is that plain statement that it never changes an entry.
@@ -28,8 +28,8 @@ could be redesigned.
 - **answer:** 3
 - **credit:** full for 3 only; none for the others.
 - **tutor note:** settled by "Dara changes entries only on Saturday nights, ... marking each
-  object she found that night as 'seen'." She changes the list, so a reading choice alone, Read
-  it through (1) or Query it (2), is not enough. She changes entries already there rather than
+  object she found that night as 'seen'." She changes the list, so a reading choice alone, Full scan
+  (1) or Query it (2), is not enough. She changes entries already there rather than
   adding new ones, so Append-only writes (4) is not enough. She finds her entries as she looks
   the list over, so she needs no search among many.
 

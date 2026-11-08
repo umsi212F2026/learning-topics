@@ -15,7 +15,7 @@ describes it, not how the workflow could be redesigned.
 - **credit:** full for 4 only; none for the others.
 - **tutor note:** settled by "adds an entry to the reading list for each one" and "Neither the
   newsletter agent nor the feed program ever changes an entry already on the list." It changes
-  the list, so a reading choice alone, Read it through (1) or Query it (2), is not enough. It only
+  the list, so a reading choice alone, Full scan (1) or Query it (2), is not enough. It only
   ever adds new entries and never needs to change one already there, so it doesn't need Edit it
   (3). And since the feed program writes at the same time ("on the hour both are adding entries at
   once"), holding it to appending keeps it from writing over the other's entries.
@@ -29,7 +29,7 @@ describes it, not how the workflow could be redesigned.
 - **credit:** full for 4 only; none for the others.
 - **tutor note:** settled by "the feed program adds an entry to the reading list for each new
   post" and "Neither the newsletter agent nor the feed program ever changes an entry already on
-  the list." It changes the list, so a reading choice alone, Read it through (1) or Query it (2),
+  the list." It changes the list, so a reading choice alone, Full scan (1) or Query it (2),
   is not enough. It only ever adds new entries and never needs to change one already there, so it
   doesn't need Edit it (3). And since the newsletter agent writes at the same time ("on the hour
   both are adding entries at once"), holding it to appending keeps it from writing over the
@@ -44,7 +44,7 @@ describes it, not how the workflow could be redesigned.
 - **credit:** full for 2 only; none for the others.
 - **tutor note:** settled by "the digest program picks out only the past week's entries" and "The
   list now holds about twenty-four thousand entries." That it needs particular entries out of tens
-  of thousands rules out Read it through (1). "The digest program changes nothing on the list and
+  of thousands rules out Full scan (1). "The digest program changes nothing on the list and
   adds nothing to it" rules out Edit it (3) and Append-only writes (4).
 
 ### race

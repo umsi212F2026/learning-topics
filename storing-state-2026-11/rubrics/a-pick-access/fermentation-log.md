@@ -16,7 +16,7 @@ do as the scenario describes it, not how the workflow could be redesigned.
 - **credit:** full for 4 only; none for the others.
 - **tutor note:** settled by "The temperature program records the fermenter's temperature in the
   fermentation log every fifteen minutes" and "Yusuf wants every past reading kept as it was." It
-  changes the log, so a reading choice alone, Read it through (1) or Query it (2), is not enough.
+  changes the log, so a reading choice alone, Full scan (1) or Query it (2), is not enough.
   Each reading is a new one and no past reading may change, so it only ever adds and never needs
   to change one already there, so it doesn't need Edit it (3). That past readings must stay as
   they were is what holds it to appending.
@@ -30,7 +30,7 @@ do as the scenario describes it, not how the workflow could be redesigned.
 - **credit:** full for 4 only; none for the others.
 - **tutor note:** settled by "The gravity program records the beer's gravity ... in the
   fermentation log once an hour" and "Yusuf wants every past reading kept as it was." It changes
-  the log, so a reading choice alone, Read it through (1) or Query it (2), is not enough. Each
+  the log, so a reading choice alone, Full scan (1) or Query it (2), is not enough. Each
   reading is a new one and no past reading may change, so it only ever adds and never needs to
   change one already there, so it doesn't need Edit it (3). That past readings must stay as they
   were is what holds it to appending; the temperature program also writes on the hour, while it
@@ -45,7 +45,7 @@ do as the scenario describes it, not how the workflow could be redesigned.
 - **credit:** full for 2 only; none for the others.
 - **tutor note:** settled by "the brewing agent picks out only the past day's readings for the
   batch now in the fermenter" and "The log now holds about fifty thousand readings." That it needs
-  particular readings out of tens of thousands rules out Read it through (1). "The brewing agent
+  particular readings out of tens of thousands rules out Full scan (1). "The brewing agent
   changes nothing in the log and adds nothing to it" rules out Edit it (3) and Append-only writes
   (4).
 

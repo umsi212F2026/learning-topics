@@ -16,7 +16,7 @@ redesigned.
 - **credit:** full for 3 only; none for the others.
 - **tutor note:** settled by "Each run checks every lot on the watch list and replaces each lot's
   current bid and its bid-or-pass verdict with the latest ones" and "Each lot's entry shows one
-  current bid and one verdict." It changes the list, so a reading choice alone, Read it through
+  current bid and one verdict." It changes the list, so a reading choice alone, Full scan
   (1) or Query it (2), is not enough. It changes entries already there rather than adding new
   ones, so Append-only writes (4) is not enough. It changes every entry its run checks, so it
   needs no search among many.
@@ -29,7 +29,7 @@ redesigned.
 - **answer:** 4
 - **credit:** full for 4 only; none for the others.
 - **tutor note:** settled by "Gus adds new lots to the watch list ... and never changes an entry."
-  He changes the list, so a reading choice alone, Read it through (1) or Query it (2), is not
+  He changes the list, so a reading choice alone, Full scan (1) or Query it (2), is not
   enough. He only ever adds new entries and never needs to change one already there, so he doesn't
   need Edit it (3). No other writer writes while he does and no rule keeps past entries as they
   were; what holds him to appending is that plain statement that he never changes an entry.

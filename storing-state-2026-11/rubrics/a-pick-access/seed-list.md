@@ -16,7 +16,7 @@ needs to do as the scenario describes it, not how the workflow could be redesign
 - **credit:** full for 4 only; none for the others.
 - **tutor note:** settled by "adds an entry to the seed list for each one" and "The catalog agent
   never changes an entry already on the list." It changes the list, so a reading choice alone,
-  Read it through (1) or Query it (2), is not enough. It only ever adds new entries and never needs
+  Full scan (1) or Query it (2), is not enough. It only ever adds new entries and never needs
   to change one already there, so it doesn't need Edit it (3). And since Hana changes entries
   while a run is going (she works "from about seven until nine" on most evenings, while runs start
   every hour until 11 p.m.), the agent should leave entries already there alone.
@@ -30,7 +30,7 @@ needs to do as the scenario describes it, not how the workflow could be redesign
 - **credit:** full for 3 only; none for the others.
 - **tutor note:** settled by "Hana goes down the list and records each variety's order status" and
   "Each variety's entry shows one order status, its current one." She changes the list, so a
-  reading choice alone, Read it through (1) or Query it (2), is not enough. Since each entry shows
+  reading choice alone, Full scan (1) or Query it (2), is not enough. Since each entry shows
   only its current status, recording a new one changes an entry already there rather than adding a
   new entry, so Append-only writes (4) is not enough. She finds the entries she changes by going
   down the list, about three hundred entries, so she needs no search among many.

@@ -15,7 +15,7 @@ log now holds about fifty thousand readings, from five years of batches.
 
 What kind of access to the fermentation log does the temperature program need?
 
-1. Read it through
+1. Full scan
 2. Query it
 3. Edit it
 4. Append-only writes
@@ -24,7 +24,7 @@ What kind of access to the fermentation log does the temperature program need?
 
 What kind of access to the fermentation log does the gravity program need?
 
-1. Read it through
+1. Full scan
 2. Query it
 3. Edit it
 4. Append-only writes
@@ -33,14 +33,15 @@ What kind of access to the fermentation log does the gravity program need?
 
 What kind of access to the fermentation log does the brewing agent need?
 
-1. Read it through
+1. Full scan
 2. Query it
 3. Edit it
 4. Append-only writes
 
 ### race
 
-Which pair of executors, if any, is in danger of a race condition on the fermentation log? (Two runs of the same executor count as a pair.)
+Which pair of executors, if any, is in danger of a race condition on the fermentation log? (Two runs
+of the same executor count as a pair.)
 
 1. The temperature program and the gravity program
 2. The brewing agent and the gravity program

@@ -17,7 +17,7 @@ list and adds nothing to it. The list now holds about four hundred entries.
 
 What kind of access to the observing list does the finder agent need?
 
-1. Read it through
+1. Full scan
 2. Query it
 3. Edit it
 4. Append-only writes
@@ -26,7 +26,7 @@ What kind of access to the observing list does the finder agent need?
 
 What kind of access to the observing list does Dara need?
 
-1. Read it through
+1. Full scan
 2. Query it
 3. Edit it
 4. Append-only writes
@@ -35,14 +35,15 @@ What kind of access to the observing list does Dara need?
 
 What kind of access to the observing list does the print program need?
 
-1. Read it through
+1. Full scan
 2. Query it
 3. Edit it
 4. Append-only writes
 
 ### race
 
-Which pair of executors, if any, is in danger of a race condition on the observing list? (Two runs of the same executor count as a pair.)
+Which pair of executors, if any, is in danger of a race condition on the observing list? (Two runs
+of the same executor count as a pair.)
 
 1. None
 2. The finder agent and the print program

@@ -19,7 +19,7 @@ years of posts.
 
 What kind of access to the conditions record does the conditions agent need?
 
-1. Read it through
+1. Full scan
 2. Query it
 3. Edit it
 4. Append-only writes
@@ -28,7 +28,7 @@ What kind of access to the conditions record does the conditions agent need?
 
 What kind of access to the conditions record does Rafael need?
 
-1. Read it through
+1. Full scan
 2. Query it
 3. Edit it
 4. Append-only writes
@@ -37,14 +37,15 @@ What kind of access to the conditions record does Rafael need?
 
 What kind of access to the conditions record does the planning program need?
 
-1. Read it through
+1. Full scan
 2. Query it
 3. Edit it
 4. Append-only writes
 
 ### race
 
-Which pair of executors, if any, is in danger of a race condition on the conditions record? (Two runs of the same executor count as a pair.)
+Which pair of executors, if any, is in danger of a race condition on the conditions record? (Two
+runs of the same executor count as a pair.)
 
 1. None
 2. Rafael and the planning program
