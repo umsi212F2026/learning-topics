@@ -298,7 +298,7 @@ topics.
 - **cases:**
   - `hook`: a workflow best told through a hook
   - `poll`: a workflow best served by polling
-- **taught elsewhere:** session 19 class
+- **taught elsewhere:** not covered this term. The course dropped it, and it will not be on quizzes or the final exam, so the learner may retire it.
 
 ### `c-when-to-queue`
 
