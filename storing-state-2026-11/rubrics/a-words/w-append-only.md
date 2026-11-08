@@ -21,8 +21,8 @@ adding nor changing. An append-only writer writes, but only new records.
   learner who calls the record read-only may be reading "nothing is changed" as "nothing is
   written"; ask what the program does after a plant is watered. One who calls the plant list
   append-only may think any store the program writes to is append-only; ask what happens to the old
-  room when a plant moves. One who calls it read-only may be thinking of how Odette looks at it;
-  ask what the program does when she moves a plant.
+  room when a plant moves. One who calls it read-only may have missed that the program writes
+  to it; ask what the program does when she moves a plant.
 
 #### a
 

@@ -1,28 +1,30 @@
 # Query
 
-### vs-search
+### vs-full-scan
 
 Kwame runs a dog-walking business. Every walk goes into a store of records, one per walk, with the
-date, the dog, the client and whether the walk has been billed.
+date, the dog, the client, the price and whether the walk has been billed. After several years in
+business, the store holds about 30,000 walks.
 
-Each Friday evening, a billing program asks the store for every walk from that week that hasn't
-been billed, and gets back just those walks. When a client asks how many times her dog was walked
-in March, Kwame asks the store for that dog's March walks and gets back just those.
+Each Friday evening, a billing program sends each client a bill for that week's walks that haven't
+been billed yet. This month Kwame is moving to new bookkeeping software, and a one-time program
+copies every walk in the store, old and new, into it.
 
 #### a
 
-Which term best describes what the billing program does?
+Which term best describes what the copying program needs to do with the store?
 
-1. A search
-2. A query
+1. A query
+2. A full scan
 3. Neither
 
 #### b
 
-Which term best describes what Kwame does for the client?
+Which term best describes the right way for the billing program to get the walks it bills each
+Friday?
 
-1. A search
-2. A query
+1. A query
+2. A full scan
 3. Neither
 
 ### catch-pick
