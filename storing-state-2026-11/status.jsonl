@@ -1,0 +1,15 @@
+{"at":"2026-11-07T14:07:15.508Z","kind":"created"}
+{"at":"2026-11-07T14:07:15.510Z","kind":"goal-added","goal":"o-orientation","needs":"curation"}
+{"at":"2026-11-07T14:40:58.374Z","kind":"goal-added","goal":"w-single-source-truth","needs":"curation"}
+{"at":"2026-11-07T14:40:58.683Z","kind":"goal-added","goal":"w-append-only","needs":"curation"}
+{"at":"2026-11-07T14:40:58.924Z","kind":"goal-added","goal":"w-query","needs":"curation"}
+{"at":"2026-11-07T14:40:59.159Z","kind":"goal-added","goal":"w-race-condition","needs":"curation"}
+{"at":"2026-11-07T14:41:29.449Z","kind":"goal-added","goal":"c-choose-access","needs":"curation"}
+{"at":"2026-11-07T15:11:25.311Z","kind":"goal-added","goal":"w-least-privilege","needs":"curation"}
+{"at":"2026-11-08T14:36:25.326Z","kind":"curated","goal":"o-orientation"}
+{"at":"2026-11-08T14:36:25.403Z","kind":"curated","goal":"c-choose-access"}
+{"at":"2026-11-08T14:36:25.466Z","kind":"curated","goal":"w-single-source-truth"}
+{"at":"2026-11-08T14:36:25.527Z","kind":"curated","goal":"w-append-only"}
+{"at":"2026-11-08T14:36:25.574Z","kind":"curated","goal":"w-query"}
+{"at":"2026-11-08T14:36:25.624Z","kind":"curated","goal":"w-race-condition"}
+{"at":"2026-11-08T14:36:25.665Z","kind":"curated","goal":"w-least-privilege"}
