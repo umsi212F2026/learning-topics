@@ -7,3 +7,6 @@
 {"at":"2026-11-13T22:39:46.642Z","kind":"goal-added","goal":"c-spot-excess","needs":"curation"}
 {"at":"2026-11-13T22:39:51.461Z","kind":"goal-added","goal":"c-spot-injection","needs":"curation"}
 {"at":"2026-11-13T22:39:51.729Z","kind":"goal-added","goal":"c-judge-limits","needs":"curation"}
+{"at":"2026-11-13T23:16:40.444Z","kind":"goal-added","goal":"w-allowlist","needs":"curation"}
+{"at":"2026-11-13T23:16:40.948Z","kind":"goal-added","goal":"w-human-in-loop","needs":"curation"}
+{"at":"2026-11-13T23:16:41.206Z","kind":"goal-added","goal":"w-blast-radius","needs":"curation"}

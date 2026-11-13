@@ -102,6 +102,7 @@ Words and capabilities from earlier topics that this one uses without teaching a
 
 - `w-least-privilege`, from storing-state-2026-11
 - `w-context`, from coding-agents-2026-09
+- `w-secret`, from deploy-config-2026-10
 - `w-workflow-step`, `w-executor`, `w-ai-agent` and `w-skill`, from understanding-workflows-2026-10
 
 ## Sequence
@@ -368,7 +369,38 @@ Words and capabilities from earlier topics that this one uses without teaching a
 - **criterion:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
-- **what it names:** a credential that lets its holder do only certain things with an account, not
+- **what it names:** a secret that lets its holder do only certain things with an account, not
   everything the account can do
 - **nearest confusable:** password
 - **synonyms:** fine-grained token
+- **watch for:** reads token as the unit of text a model reads and writes
+
+### `w-allowlist`
+
+- **goal:** allowlist
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** the list of actions an agent or program may take without asking first, so
+  anything not on it is refused or needs approval
+- **nearest confusable:** blocklist
+
+### `w-human-in-loop`
+
+- **goal:** human in the loop
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a person checking or approving what an automated step produced before it takes
+  effect
+- **nearest confusable:** a person trigger
+
+### `w-blast-radius`
+
+- **goal:** blast radius
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** how much harm a step could do if it went wrong, which depends on what it can
+  reach
+- **nearest confusable:** likelihood of failure
