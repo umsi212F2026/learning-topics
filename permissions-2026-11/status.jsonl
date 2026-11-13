@@ -1,2 +1,9 @@
 {"at":"2026-11-13T21:53:06.645Z","kind":"created"}
 {"at":"2026-11-13T21:53:06.646Z","kind":"goal-added","goal":"o-orientation","needs":"curation"}
+{"at":"2026-11-13T22:34:01.109Z","kind":"goal-added","goal":"w-prompt-injection","needs":"curation"}
+{"at":"2026-11-13T22:34:01.371Z","kind":"goal-added","goal":"w-untrusted-input","needs":"curation"}
+{"at":"2026-11-13T22:34:01.600Z","kind":"goal-added","goal":"w-sandbox","needs":"curation"}
+{"at":"2026-11-13T22:34:01.835Z","kind":"goal-added","goal":"w-scoped-token","needs":"curation"}
+{"at":"2026-11-13T22:39:46.642Z","kind":"goal-added","goal":"c-spot-excess","needs":"curation"}
+{"at":"2026-11-13T22:39:51.461Z","kind":"goal-added","goal":"c-spot-injection","needs":"curation"}
+{"at":"2026-11-13T22:39:51.729Z","kind":"goal-added","goal":"c-judge-limits","needs":"curation"}

@@ -1,5 +1,7 @@
 # Learning goals: permissions
 
+**origin:** course
+
 **What I want to be able to do, and what would count as having gotten there.**
 
 <!--
@@ -52,9 +54,13 @@
 
 ## Where this came from
 
+_Yours to fill in. Nobody can answer this one for you._
+
 <!-- Which of A / B / C / D, and the answer to the follow-up. -->
 
 ## What I already have
+
+_Yours to fill in. Say where your knowledge stops, not what you have heard of._
 
 <!--
   The nearest thing already known well, and where it stops.
@@ -64,6 +70,10 @@
 
 ## What I'll use it for
 
+_Yours to fill in. The course supplies one occasion: Problem Set 5, where you build a small
+workflow that runs on your own laptop, with at least one step done by an agent following a skill
+file. Name any others you have._
+
 <!--
   The use, and a concrete occasion.
   If several uses apply, rank them: the top one sets the depth, the rest are cut first
@@ -72,10 +82,27 @@
 
 ## Depth
 
+**Spot two problems in a workflow's steps, and judge proposed limits that would fix them: an
+executor that can reach more than its step needs, and an agent that could take text from outside
+the workflow as instructions.** Enough to look over the workflow you build for Problem Set 5, ask
+your agent what each step can reach and what limits could fix a problem you find, and judge from
+what it tells you whether each would remove the problem and still let the step do its work.
+Knowing the options without being told, and setting the limit up, are left to the agent. What a
+workflow does when a step fails comes in the failure-handling topic, and who may do what inside a
+web app was sign-in-and-permissions.
+
 <!--
   Which of: recognize it / read it / modify something existing / author from scratch /
   judge someone else's work. One line on why that's enough.
 -->
+
+## Builds on
+
+Words and capabilities from earlier topics that this one uses without teaching again.
+
+- `w-least-privilege`, from storing-state-2026-11
+- `w-context`, from coding-agents-2026-09
+- `w-workflow-step`, `w-executor`, `w-ai-agent` and `w-skill`, from understanding-workflows-2026-10
 
 ## Sequence
 
@@ -114,7 +141,8 @@
 
 1. orientation
 2. vocabulary
-3. capabilities
+3. `c-spot-excess`, `c-spot-injection`
+4. `c-judge-limits`
 
 ## Goals
 
@@ -253,6 +281,49 @@
   beside a capability entry.
 -->
 
+### `c-spot-excess`
+
+- **goal:** spot a workflow step whose executor can reach more than the step needs
+- **criterion:** given a described workflow step, who or what runs it (a program, an agent or a
+  person), and what that executor can reach (files, shell commands, the network, or accounts), says
+  whether it can reach anything the step does not need.
+- **cases:**
+  - `excess`: the executor can reach something the step does not need
+  - `no-excess`: the executor can reach only what the step needs
+
+### `c-spot-injection`
+
+- **goal:** spot where an agent could take text from outside the workflow as instructions
+- **criterion:** given a described workflow step done by an agent, says whether text that someone
+  outside the workflow could have written ends up in what the agent reads (its context), where it
+  could be taken as instructions. Text the step only moves along, or that a program reduces to
+  something it produced itself before the agent sees it, does not end up in the agent's context.
+- **cases:**
+  - `outside-text`: text from outside the workflow, such as a job posting, reaches the agent's
+    context
+  - `owner-only`: the agent reads only material from the workflow's owner
+  - `shielded`: outside text is handled by a program, and the agent sees only what the program
+    produced, such as a count or a yes or no
+  - `passed-through`: a program handles the outside text but hands some of it, such as a
+    posting's description, to the agent
+
+### `c-judge-limits`
+
+- **goal:** judge whether a limit an agent proposes would remove a problem and still let the step
+  do its work
+- **criterion:** given a described workflow step, one problem with it (its executor can reach
+  something the step does not need, or text from outside the workflow reaches an agent's context),
+  and an agent's description of one limit that could be put in place (such as the agent's
+  permission settings, a folder or sandbox it cannot leave, read-only access, a narrowly scoped
+  token or account, a program that handles outside text so the agent never sees it, or the agent
+  proposing a change that a program checks and applies), says whether that limit would remove this
+  problem, and says whether the step could still do its work under it. Both answers must be right.
+- **cases:**
+  - `stops-work`: a limit that removes the problem but would also stop the step from doing its
+    work
+  - `leaves-open`: a limit that lets the step work but leaves this problem in place
+  - `sound-limit`: a limit that removes the problem and lets the step do its work
+
 ### `o-orientation`
 
 - **goal:** get the shape of this area before working on any particular part of it
@@ -261,3 +332,43 @@
 - **recurrence:** never
 - **is_required:** no
 - **group:** orientation
+
+### `w-prompt-injection`
+
+- **goal:** prompt injection
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** text in something an agent reads that steers it as though it were
+  instructions from its user
+- **nearest confusable:** jailbreak
+
+### `w-untrusted-input`
+
+- **goal:** untrusted input
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** anything a step reads that someone outside the workflow could have written or
+  changed
+- **nearest confusable:** invalid input
+
+### `w-sandbox`
+
+- **goal:** sandbox
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a closed-off place where a program or agent runs, which it cannot reach out of
+- **nearest confusable:** read-only access
+
+### `w-scoped-token`
+
+- **goal:** scoped token
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a credential that lets its holder do only certain things with an account, not
+  everything the account can do
+- **nearest confusable:** password
+- **synonyms:** fine-grained token
