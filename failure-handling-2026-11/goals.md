@@ -1,5 +1,7 @@
 # Learning goals: failure handling
 
+**origin:** course
+
 **What I want to be able to do, and what would count as having gotten there.**
 
 <!--
@@ -52,9 +54,13 @@
 
 ## Where this came from
 
+_Yours to fill in. Nobody can answer this one for you._
+
 <!-- Which of A / B / C / D, and the answer to the follow-up. -->
 
 ## What I already have
+
+_Yours to fill in. Say where your knowledge stops, not what you have heard of._
 
 <!--
   The nearest thing already known well, and where it stops.
@@ -64,6 +70,10 @@
 
 ## What I'll use it for
 
+_Yours to fill in. The course supplies one occasion: Problem Set 5, where you run a small workflow
+on real inputs and then, in class on Tuesday Nov 17, critique what broke and what it got wrong
+without saying so. Name any others you have._
+
 <!--
   The use, and a concrete occasion.
   If several uses apply, rank them: the top one sets the depth, the rest are cut first
@@ -71,6 +81,12 @@
 -->
 
 ## Depth
+
+**Judge two things about each step of a workflow: whether it is safe to run again after a run
+stops partway, and whether a mistake made while running it would be noticed.** Enough to critique
+your Problem Set 5 workflow after it has run on real inputs, and to tell your agent what worries
+you. What each part of a workflow can reach, and how to limit it, is the permissions
+topic.
 
 <!--
   Which of: recognize it / read it / modify something existing / author from scratch /
@@ -253,6 +269,39 @@
   beside a capability entry.
 -->
 
+### `c-judge-rerunnable`
+
+- **goal:** judge whether a step is safe to run again after a run stops partway
+- **criterion:** given a described step and a run that stopped partway through it, says whether
+  running the step again from the start would be safe, and if not, which of these would go wrong:
+  items done a second time, a store left half-written, or a different outcome from one that a later
+  step or a person has already used or checked.
+- **cases:**
+  - `duplicates`: rerunning would do some items a second time, adding duplicate records or
+    repeating an action outside the workflow, such as sending a message twice
+  - `half-written`: the run stopped while writing a result, leaving a partial record that a rerun
+    would trust or trip over
+  - `replaces-used`: rerunning may give a different outcome from one that a later step or a person
+    has already used or checked, so they no longer agree
+  - `already-safe`: a step that is already safe to rerun. If it skips items already done, its test
+    for what is done is one the stopped run cannot fool
+
+### `c-judge-detection`
+
+- **goal:** judge whether a mistake made while running a step would be noticed
+- **criterion:** given a described workflow, one of its steps, and a mistake that step could make,
+  says whether the mistake would be noticed, and if not, which of these is why: the step can tell
+  something went wrong but says so only somewhere nobody will look, or not at all; or the step
+  produces a wrong result that looks like a right one and no check in the workflow would catch it.
+- **cases:**
+  - `unheard`: the step can tell something went wrong, but says so only somewhere nobody will
+    look, such as a log nobody reads, or not at all, such as by skipping the item
+  - `looks-right`: the step produces a wrong result that looks like a right one, such as a
+    misread field or a wrong verdict, and no check in the workflow would catch it, either because
+    there is none or because the checks there look at something else
+  - `detected`: a mistake that would be noticed, because the run stops, or because a check or a
+    person's review would catch this particular mistake
+
 ### `o-orientation`
 
 - **goal:** get the shape of this area before working on any particular part of it
@@ -261,3 +310,30 @@
 - **recurrence:** never
 - **is_required:** no
 - **group:** orientation
+
+### `w-idempotent`
+
+- **goal:** idempotent
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a step that leaves things the same whether it runs once or several times
+- **nearest confusable:** deterministic
+
+### `w-silent-failure`
+
+- **goal:** silent failure
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** something going wrong with nothing to say so, so the run looks as if it worked
+
+### `w-fail-loudly`
+
+- **goal:** fail loudly
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** making sure that when something goes wrong, it is reported where a person will
+  see it
+- **nearest confusable:** fail fast
