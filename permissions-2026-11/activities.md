@@ -118,10 +118,12 @@ with the learner.
   here doesn't match one there, this file is the one that's wrong.
 -->
 
-| id                      | Goal | Criterion: what gets examined, and what counts  |
-| ----------------------- | ---- | ----------------------------------------------- |
-| `o-orientation`         |      | `orientation`                                   |
-| `c-read-unseen-diagram` |      |                                                 |
+| id                 | Goal | Criterion: what gets examined, and what counts |
+| ------------------ | ---- | ---------------------------------------------- |
+| `o-orientation`    | get the shape of this area before working on any particular part of it | `orientation` |
+| `c-spot-excess`    | spot a workflow step whose executor can reach more than the step needs | given a described workflow step, who or what runs it (a program, an agent or a person), and what that executor can reach (files, shell commands, the network, or accounts), says whether it can reach anything the step does not need. Cases: `excess`, `no-excess` |
+| `c-spot-injection` | spot where an agent could take text from outside the workflow as instructions | given a described workflow step done by an agent, says whether text that someone outside the workflow could have written ends up in what the agent reads (its context), where it could be taken as instructions. Text the step only moves along, or that a program reduces to something it produced itself before the agent sees it, does not end up in the agent's context. Cases: `outside-text`, `owner-only`, `shielded`, `passed-through` |
+| `c-judge-limits`   | judge whether a limit an agent proposes would significantly reduce the risk of a harm and still let the step do its work | given a described workflow step, a specific harm that could follow from one of its problems (its executor can reach something the step does not need, or text from outside the workflow reaches an agent's context), and an agent's description of one limit that could be put in place (such as the agent's permission settings, a folder or sandbox it cannot leave, read-only access, a narrowly scoped token or account, a program that handles outside text so the agent never sees it, the agent proposing a change that a program checks and applies, or a person who checks the step's output before it takes effect), says whether that limit would significantly reduce the risk of that harm, and says whether the step could still do its work under it. Both answers must be right. Cases: `stops-work`, `no-effect`, `sound-limit` |
 
 ## Coverage
 
@@ -162,10 +164,12 @@ with the learner.
   `n/a: already oriented` in `checks` and leave it. That's a complete row too.
 -->
 
-| goal                    | checks | notes |
-| ----------------------- | ------ | ----- |
-| `o-orientation`         |        |       |
-| `c-read-unseen-diagram` |        |       |
+| goal               | checks | notes |
+| ------------------ | ------ | ----- |
+| `o-orientation`    |        |       |
+| `c-spot-excess`    |        |       |
+| `c-spot-injection` |        |       |
+| `c-judge-limits`   |        |       |
 
 ---
 
@@ -358,3 +362,12 @@ with the learner.
 - **checks:**
 - **worked example:**
 - **doesn't show:**
+
+### `a-words`
+
+- **serves:** group vocabulary
+- **generator:** the five moves in `workflows/learn/skills/goal-setting/references/vocabulary-moves.md`, set for one word at a time from its `what it names`, `nearest confusable` and `synonyms`. Each question names that word's goal and carries its move.
+- **learner does:** answers one short question about one word
+- **tutor role:** examiner
+- **tutor does:** sets the question as served, without rewording it or hinting; when the bank has nothing for the word, sets one move live, as vocabulary-moves.md describes
+- **offer as:** not offered as a choice; a word's question is set when that word is studied or due
