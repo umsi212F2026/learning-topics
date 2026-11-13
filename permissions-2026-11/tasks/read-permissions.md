@@ -133,13 +133,14 @@ to write feedback on what the student wrote.
 A limit is a good one when both answers are yes. Often it takes more than one, because each one
 reduces the risk of a different harm. For the grading agent, a sandbox holding only the rubric, the
 submissions and the drafts, with shell commands and the network turned off, takes care of the token
-and the other students' work, and still lets it write feedback. Prompt injection stays possible, so
-the TA's review of every draft stays in the workflow too.
+and the other students' work, and still lets it write feedback. It doesn't solve the prompt injection possibility, so it's a good idea to keep
+the TA's review of every draft in the workflow.
 
 ## Talking to your agent
 
-You won't usually be handed a list of what a step can reach. Ask: "What can this step read, change
-or run? Which accounts or tokens can it use?" Then, for anything it reaches that the step doesn't
-need, or any untrusted input that ends up in an agent's context, ask what harm it could lead to,
-what limits could reduce the risk of that harm, and what each would cost. Your agent knows the options and how to set them up. Your part is to ask, and
-to check each answer against the two questions.
+You won't usually be handed a list of what each step can reach. Ask your agent to audit the
+workflow: "For each step, what can its program or agent read, change or run? Which accounts or
+tokens can it use? Where does text from outside the workflow end up in an agent's context?" For
+each problem the audit turns up, ask what harm it could lead to, what limits could reduce the risk
+of that harm, and what each would cost. Your agent knows the options and how to set them up. Your
+part is to ask, and to judge each limit it proposes against the two questions.
