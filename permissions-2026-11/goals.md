@@ -86,7 +86,8 @@ file. Name any others you have._
 executor that can reach more than its step needs, and an agent that could take text from outside
 the workflow as instructions.** Enough to look over the workflow you build for Problem Set 5, ask
 your agent what each step can reach and what limits could fix a problem you find, and judge from
-what it tells you whether each would remove the problem and still let the step do its work.
+what it tells you whether each would significantly reduce the risk of harm and still let the step
+do its work.
 Knowing the options without being told, and setting the limit up, are left to the agent. What a
 workflow does when a step fails comes in the failure-handling topic, and who may do what inside a
 web app was sign-in-and-permissions.
@@ -310,20 +311,22 @@ Words and capabilities from earlier topics that this one uses without teaching a
 
 ### `c-judge-limits`
 
-- **goal:** judge whether a limit an agent proposes would remove a problem and still let the step
-  do its work
-- **criterion:** given a described workflow step, one problem with it (its executor can reach
-  something the step does not need, or text from outside the workflow reaches an agent's context),
-  and an agent's description of one limit that could be put in place (such as the agent's
-  permission settings, a folder or sandbox it cannot leave, read-only access, a narrowly scoped
-  token or account, a program that handles outside text so the agent never sees it, or the agent
-  proposing a change that a program checks and applies), says whether that limit would remove this
-  problem, and says whether the step could still do its work under it. Both answers must be right.
+- **goal:** judge whether a limit an agent proposes would significantly reduce the risk of a harm
+  and still let the step do its work
+- **criterion:** given a described workflow step, a specific harm that could follow from one of its
+  problems (its executor can reach something the step does not need, or text from outside the
+  workflow reaches an agent's context), and an agent's description of one limit that could be put
+  in place (such as the agent's permission settings, a folder or sandbox it cannot leave, read-only
+  access, a narrowly scoped token or account, a program that handles outside text so the agent
+  never sees it, the agent proposing a change that a program checks and applies, or a person who
+  checks the step's output before it takes effect), says whether that limit would significantly
+  reduce the risk of that harm, and says whether the step could still do its work under it. Both
+  answers must be right.
 - **cases:**
-  - `stops-work`: a limit that removes the problem but would also stop the step from doing its
-    work
-  - `leaves-open`: a limit that lets the step work but leaves this problem in place
-  - `sound-limit`: a limit that removes the problem and lets the step do its work
+  - `stops-work`: a limit that significantly reduces the risk but would also stop the step from
+    doing its work
+  - `no-effect`: a limit that lets the step work but does little or nothing about this harm
+  - `sound-limit`: a limit that significantly reduces the risk and lets the step do its work
 
 ### `o-orientation`
 
@@ -401,6 +404,6 @@ Words and capabilities from earlier topics that this one uses without teaching a
 - **criterion:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
-- **what it names:** how much harm a step could do if it went wrong, which depends on what it can
-  reach
-- **nearest confusable:** likelihood of failure
+- **what it names:** how much harm a step could do if it went wrong, limited by what it can reach
+  and shrunk by safeguards such as a person checking its output
+- **nearest confusable:** reach; likelihood of failure
