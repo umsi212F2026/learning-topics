@@ -3,15 +3,17 @@
 Candidate activities for the study phase. More than will be used; the tutor chooses among them
 with the learner.
 
-The initial study comes to about 53 to 57 minutes, inside the topic's 60-minute budget: about 13
-for `a-read-permissions` (the reading is about 1,700 words, 8 or 9 minutes on its own), about 3 a
+The initial study comes to about 53 to 60 minutes, inside the topic's 60-minute budget: about 13
+for `a-read-permissions` (the reading is about 1,800 words, 8 or 9 minutes on its own), about 3 a
 word for the seven words, so 21, and meeting the three capabilities. `c-spot-excess` and
-`c-spot-injection` are met together, from scenarios that ask about each executor in turn: two
-scenarios can carry all six of their cases (`excess` and `no-excess`, then `outside-text`,
-`owner-only`, `shielded` and `passed-through`), and the tutor skips any question whose case is
-already passed, so about eight questions. The first of a scenario takes about 3 minutes with the
-reading and each later one about 1, so about 12 minutes through `a-look-over-steps` and about 10
-through `a-read-agent-audit`, whose facts are laid out step by step. `c-judge-limits` needs three
+`c-spot-injection` are met together, from scenarios that ask about each executor in turn. Each
+bank holds at least one pair of scenarios that between them carry all six of those cases
+(`excess` and `no-excess`, then `outside-text`, `owner-only`, `shielded` and `passed-through`),
+and the tutor skips any question whose case is already passed, so a learner who meets such a pair
+needs about eight questions. The first of a scenario takes about 3 minutes with the reading and
+each later one about 1, so about 12 minutes through `a-look-over-steps` and about 10 through
+`a-read-agent-audit`, whose facts are laid out step by step. A learner served two scenarios that
+leave a case uncarried needs a third, about 3 minutes more. `c-judge-limits` needs three
 compound questions, one per case (`sound-limit`, `stops-work`, `no-effect`): about 3 or 4 minutes
 each in `a-weigh-one-limit`, so about 11, or about 9 through `a-weigh-proposals`, whose questions
 after the first share a scenario. The rest of the hour is room for missed questions.
@@ -75,7 +77,7 @@ limit prevents.
 - **supports:** orient
 - **checks:** `o-orientation`
 - **artifact:** a reading the course wrote for this topic, `tasks/read-permissions.md` in this
-  folder, "What each step can reach, and whose instructions it follows" (about 1,700 words, about 8
+  folder, "What each step can reach, and whose instructions it follows" (about 1,800 words, about 8
   or 9 minutes). No external reading is used: the instructor wanted a course-written one. It
   continues the made-up example of the last topics' readings, a teaching assistant who grades about
   200 homework submissions a week: a program downloads each submission, an agent following a skill
@@ -235,12 +237,14 @@ limit prevents.
   key names each such thing: every file in the home folder for a step that uses one folder; a token
   that can also change, delete, send or move money for a step that only reads; a folder it can read
   that holds something it never uses (a settings file with a login in it, other personal files);
-  the internet for a step that works only on files already on the laptop. Shell commands are never
-  the only unneeded thing, since whether a step needs one can turn on how the agent works. An
-  executor keyed `no-excess` uses everything it can reach: it can read only the folders it reads,
-  change only what it writes, reach the internet only if it fetches (and then perhaps only the sites
-  it fetches from), run shell commands only if its step runs a named program, and hold only a token
-  whose permissions its step uses. Its reach is said as a plain fact ("it runs in a sandbox holding
+  the internet for a step that works only on files already on the laptop; the whole internet for a
+  step that fetches from named sites. Shell commands are never the only unneeded thing, since
+  whether a step needs one can turn on how the agent works; but where an `excess` executor can also
+  run shell commands and its step runs no named program, the key lists them beside the other
+  unneeded things. An executor keyed `no-excess` uses everything it can reach: it can read only the
+  folders it reads, change only what it writes, reach on the internet only the sites it fetches
+  from (and nothing on the internet if it fetches nothing), run shell commands only if its step runs
+  a named program, and hold only a token whose permissions its step uses. Its reach is said as a plain fact ("it runs in a sandbox holding
   only the posts folder and the picks file"; "it is set up so that it can change only the posts
   folder and read nothing else"). Since a sandbox or a narrow setup must not mark the answer, at
   least two `excess` executors in a bank are also described as running in a sandbox or a narrow
@@ -254,7 +258,8 @@ limit prevents.
     fetches, a shared document others can edit, or a list into which a program earlier copied such
     text word for word.
   - `owner-only`: everything the agent reads is the person's own and nobody else can change it: the
-    skill file, notes or lists she typed herself, her own calendar, numbers she entered. Where the
+    skill file, notes or lists she typed herself, numbers she entered. Never a calendar, inbox or
+    anything else others can add to. Where the
     workflow collects outside text elsewhere, this agent never reads it or anything copied from it.
     Never an agent that reads another agent's summary of outside text: whether that summary carries
     the outside words is not a clear call.
@@ -275,8 +280,8 @@ limit prevents.
   numbered choices, "Yes" and "No", in that order. `type: mcq`. Its rubric `goal:` is
   `c-spot-excess`, and its `cases:` line lists `excess` (answer 1) or `no-excess` (answer 2).
 
-  **A context question** reads "Does untrusted input end up in <agent>'s context?", then two numbered
-  choices, "Yes" and "No", in that order. `type: mcq`. Its rubric `goal:` is `c-spot-injection`, and
+  **A context question** reads "Does untrusted input end up in <agent>'s context while it does its
+  step?", then two numbered choices, "Yes" and "No", in that order. `type: mcq`. Its rubric `goal:` is `c-spot-injection`, and
   its `cases:` line lists `outside-text` or `passed-through` (answer 1), or `owner-only` or
   `shielded` (answer 2).
 
@@ -291,45 +296,51 @@ limit prevents.
   home folder, so it can read and change every file there, run shell commands and reach the
   internet, and her email login is saved in a settings file in that folder. On Sunday evenings the
   planning agent, also following a skill file Lena wrote, reads the list of shifts she has signed up
-  for, which she types herself, and her calendar, and writes a draft plan for the week into a file
-  called plan. It runs in a sandbox holding only those four files, can't run shell commands or reach
+  for and her list of other plans for the week, both of which she types herself, and writes a draft
+  plan for the week into a file called plan. It runs in a sandbox holding only those four files, can't run shell commands or reach
   the internet, and uses no account." Questions and keys, in order: the fetcher's reach, No
   (`no-excess`: it fetches from the board and writes into the posts folder, and can do nothing
   else); the sorting agent's reach, Yes (`excess`: its step reads the posts and Lena's list and
   writes picks, but it can read every file in her home folder, including the settings file with her
-  email login, and reach the internet, which a step working on saved posts never uses); the sorting
+  email login, run shell commands and reach the internet, none of which a step working on saved
+  posts and running no program uses); the sorting
   agent's context, Yes (`outside-text`: it reads the posts, which any organization can write); the
   planning agent's reach, No (`no-excess`: the sandbox holds the skill file, the two files it reads
   and the plan it writes); the planning agent's context, No (`owner-only`: it reads only the skill
-  file, the list Lena types and her calendar). A `shielded` variant: the fetcher also counts how
-  many new posts fall on a weekend and writes only that number into a file in the posts folder, and
-  the planning agent instead reads only that file and Lena's calendar; key No. A `passed-through`
+  file and the two lists Lena types). A `shielded` variant: the fetcher also counts how many new
+  posts fall on a weekend and writes only that number into a file in the posts folder, and the
+  planning agent instead reads only that file and Lena's list of other plans; key No. A `passed-through`
   variant: the fetcher writes each post's title into a file that the planning agent reads; key Yes.
 
   **How hard.** Medium when the excess is plain (an agent with its default settings in the home
   folder, against a step that uses one folder), a `no-excess` executor's reach plainly matches its
   step, and the outside text is plainly someone else's (listings any landlord can post). Hard when
   the excess is one item among things the step does use (a token that can also delete, for a step
-  that only reads; the internet, for a step that works on saved files; a sandbox that also holds the
-  settings file), when a `no-excess` executor's reach looks broad but is all used (the internet,
-  for a step that fetches pages), when outside text arrives indirectly (copied into a list earlier
+  that only reads; the internet, for a step that works on saved files; the whole internet, for a
+  step that fetches from two named sites; a sandbox that also holds the settings file), when a
+  `no-excess` executor's reach looks broad but is all used (a token that can change entries, for a
+  step that changes them; several folders, each of which the step reads), when outside text arrives indirectly (copied into a list earlier
   by a program; a message the person forwarded to herself; a shared document others can edit; only
   titles passed through), when an `owner-only` agent can reach the internet or the workflow collects
   outside text elsewhere that this agent never reads, or when a `shielded` program reads a great
   deal of outside text and hands over only a count. The question wording is unchanged.
 
-  **Spread across the bank.** A bank is six scenarios, about sixteen questions, half of them Hard.
-  At least three scenarios have two agents, so there are at least nine context questions: at least
-  three `outside-text` and at least two each of `owner-only`, `shielded` and `passed-through`. At
-  least five reach questions carry each of `excess` and `no-excess`, and at least four scenarios
-  have both reach answers among their questions. At least three scenarios are trackers with
-  acquire, assess and extract steps. When the generator is run live, the tutor picks each next
+  **Spread across the bank.** A bank is six scenarios and 24 questions, half of the scenarios Hard.
+  Three scenarios have three executors, two agents and a program (three reach questions and two
+  context questions each), and three have two executors, an agent and a program (two reach
+  questions and one context question each). That is fifteen reach questions, at least six carrying
+  each of `excess` and `no-excess`, and nine context questions: three `outside-text` and two each of
+  `owner-only`, `shielded` and `passed-through`. At least four scenarios have both reach answers
+  among their questions. Two of the three-executor scenarios form a pair that between them carry
+  all six cases: both reach cases in the first of them, and the four context cases across their
+  four agents. At least three scenarios are trackers with acquire, assess and extract steps. When the generator is run live, the tutor picks each next
   scenario to carry a case the learner hasn't passed.
 
   **Domains** vary by scenario, none repeating within the bank: an apartment hunt from a rentals
   site, a scholarship deadlines tracker from university pages, a concert ticket watch, a freelance
   translation gig finder, a book club's suggestion inbox, a research paper alert digest, a farmers
-  market vendor list, a household's receipts for taxes. No domain from `a-read-agent-audit`'s list.
+  market vendor list, a household's receipts for taxes. No domain from any other activity's list
+  or illustration in this topic.
 
   **The key**, per question. For a reach question: the verdict; for `excess`, each thing the executor
   can reach that its step never uses, with the sentence saying it can reach it and the sentence
@@ -405,15 +416,20 @@ limit prevents.
   the skill file and your list, which you wrote, and the posts, which organizations put on the
   volunteering board." Same questions and keys.
 
-  **How hard**, as in `a-look-over-steps`, except that laying the facts out lowers it a step: the Hard
-  scenarios here are those whose facts would be Hard there. The question wording is unchanged.
+  **How hard**, labeled exactly as in `a-look-over-steps`, by the facts: a scenario is Hard here
+  when its facts would make it Hard there. The layout makes every question somewhat easier than the
+  same facts in prose, which `offer as` and `doesn't show` say; it doesn't change the label. The
+  question wording is unchanged.
 
-  **Spread across the bank**, as in `a-look-over-steps`: six scenarios, about sixteen questions.
+  **Spread across the bank**, as in `a-look-over-steps`: six scenarios and 24 questions, with the
+  same mix of executors, the same case counts, and the same pair of scenarios carrying all six
+  cases.
 
   **Domains** are this activity's own, none repeating within the bank: a conference call-for-talks
   tracker, a summer camp openings watch, a neighborhood association's email digest, a community
   grants finder, a tutor's new-student inquiries, a podcast's guest requests, a thrift store
-  furniture watch, a running race sign-up watch. No domain from `a-look-over-steps`'s list.
+  furniture watch, a running race sign-up watch. No domain from any other activity's list or
+  illustration in this topic.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. As
   `a-look-over-steps`'s, using the example above, reading each block's reach sentences against its
   first sentence, what the step does.
@@ -444,7 +460,8 @@ limit prevents.
   cases, which fact matters, or which answers the key expects. Gives help whenever it is asked for,
   and records the attempt as helped. When the generator is run live, writes the key and the case
   into the record before showing the question. Labels the attempt with the question's path, or
-  `a-weigh-one-limit/<case>` when run live, and records the case with `--cases`. Rules each part
+  `a-weigh-one-limit/<domain>-<case>` when run live (the scenario's domain in a few hyphenated words,
+  such as `a-weigh-one-limit/textbook-watch-no-effect`), and records the case with `--cases`. Rules each part
   from its choice alone; the question passes its case only when both parts are right. If the
   learner asks how the limit would be set up, or which limit would be best, says that is the agent's
   to work out and this question doesn't ask it. Never says what is wrong with an answer before both
@@ -486,7 +503,9 @@ limit prevents.
   an allowlist that still allows the harmful action. Every limit is set up as the agent describes it
   and works as described. Whether the step can still work is as clear: a limit that stops the work
   takes away something the paragraph says the step uses, and any other limit leaves everything the
-  step uses.
+  step uses. A limit that turns off the internet always covers everything the executor runs: either
+  the proposal says so ("for the agent and every command it runs") or the paragraph says the
+  executor can't run shell commands, so nobody need wonder whether a command could still reach out.
 
   **A question** is a compound: the `###` stem is the paragraph and the two framed sentences, then
   two mcq parts.
@@ -529,8 +548,8 @@ limit prevents.
     holding only the skill file and the shortlist, still able to fetch pages from the internet.'" a
     Yes (the login isn't in the sandbox, so the agent can't read it to send it); b Yes (it still
     reads its skill file, fetches the listings and writes the shortlist).
-  - `stops-work`, Medium: "His agent proposes: 'I can turn off the matching agent's internet
-    access.'" a Yes (it can't send anything anywhere); b No (it fetches the listings from the
+  - `stops-work`, Medium: "His agent proposes: 'I can turn off internet access for the matching
+    agent and every command it runs.'" a Yes (it can't send anything anywhere); b No (it fetches the listings from the
     shelter websites).
   - `no-effect`, Hard: "His agent proposes: 'You could look over the shortlist each morning before
     contacting any shelter.'" a No (the login would be sent during the evening run, before Omar
@@ -551,10 +570,10 @@ limit prevents.
   none more than twice, and at least one is a person checking every output. When the generator is
   run live, the tutor picks each next case to be one the learner hasn't passed.
 
-  **Domains** vary by scenario, none repeating within the bank: a family's tax receipts sorter, a
-  pet adoption listings watch for dogs, a used-textbook marketplace watch, an online course reviews
-  summarizer, a club treasurer's reimbursement requests, a graduate program applications tracker, a
-  hiking group's trip sign-ups. No domain from `a-weigh-proposals`'s list.
+  **Domains** vary by scenario, none repeating within the bank: a wedding's RSVP inbox, a vintage
+  camera auction watch, a used-textbook marketplace watch, an online course reviews summarizer, a
+  club treasurer's reimbursement requests, a graduate program applications tracker, a hiking
+  group's trip sign-ups. No domain from any other activity's list or illustration in this topic.
 
   **The key** gives both answers. For part a: the harm's route (what the executor would have to
   read, reach, use or do for the harm to happen, and when it would take effect), citing the
@@ -575,8 +594,11 @@ limit prevents.
   wrong, which the instructor left to the agent. One limit at a time, so a pass shows nothing about
   combining limits, which the reading says often takes more than one. The agent's proposal is given,
   so a pass doesn't show the learner would think of a limit, which is the agent's work here. Each
-  part is a yes or no, so guessing passes a question a quarter of the time. The harm is named for
-  the learner, so a pass doesn't show they would name it themselves.
+  part is a yes or no, so guessing passes a question a quarter of the time. No question has both
+  answers No (a limit that misses the harm and also takes away something the step uses), since the
+  goal's three cases don't include one; so a learner who has settled that the step can't work may
+  answer part a Yes without judging it, and in a `stops-work` question one judgment can stand in for
+  two. The harm is named for the learner, so a pass doesn't show they would name it themselves.
 - **offer as:** the one-at-a-time check: a fresh step, harm and proposed limit each time, and you
   say whether the limit would significantly reduce the risk and whether the step could still work.
   About 3 or 4 minutes a question. Harms vary from question to question, so each one is read from
@@ -605,19 +627,24 @@ limit prevents.
 - **generator:** **A scenario** uses `a-weigh-one-limit`'s paragraph, harm sentence, clear-calls
   rule, cases, parts, key and credit, with one difference: the shared setup ends with "<Name> asks
   her agent what limits could reduce the risk of that harm. It proposes several; each question
-  below gives one." Each `###` question's body is "Proposal: '<limit>'", in the agent's words as
+  below gives one. Each proposal changes only what it names; everything else stays as described
+  above." Each `###` question's body is "Proposal: '<limit>'", in the agent's words as
   `a-weigh-one-limit` describes, then the two parts. A scenario has two or three proposals. Each
   proposal stands on its own: none refers to another ("instead", "as well", "on top of the
-  sandbox"), and none is judged as combined with another.
+  sandbox"), and none is judged as combined with another. No question's text gives away another's
+  answer: a proposal names only what it changes, never what it leaves as it was ("still able to
+  fetch pages" would tell the learner that fetching matters, which is another proposal's part b).
 
   **Cases within a scenario** follow no fixed pattern: a scenario may carry the same case twice, and
   at least two of a bank's scenarios do not carry one of each, so the learner can't count their way
   to an answer.
 
   **Example**, the cat adoption illustration in `a-weigh-one-limit` set as one scenario: the
-  paragraph and the harm, then three proposals in this order: no internet for the matching agent
-  (`stops-work`), Omar looking over the shortlist each morning (`no-effect`), a sandbox holding only
-  the skill file and the shortlist, still able to fetch pages (`sound-limit`). A bank scenario would
+  paragraph and the harm, then three proposals in this order: "I can turn off internet access for
+  the matching agent and every command it runs" (`stops-work`); "You could look over the shortlist
+  each morning before contacting any shelter" (`no-effect`); "I can set the matching agent up so it
+  can read and change only the files in a folder holding the skill file and the shortlist"
+  (`sound-limit`, since the internet stays as the paragraph describes it). A bank scenario would
   break that one-of-each pattern in at least two of its four scenarios.
 
   **How hard**, as in `a-weigh-one-limit`. The question wording is unchanged.
@@ -629,8 +656,8 @@ limit prevents.
 
   **Domains** are this activity's own, none repeating within the bank: a seed swap forum watch, a
   newsletter digest from the person's subscriptions, a band's gig inquiries, a language-exchange
-  partner finder, a sublet search, a home repair quotes comparison. No domain from
-  `a-weigh-one-limit`'s list.
+  partner finder, a used kayak watch, a home repair quotes comparison. No domain from any other
+  activity's list or illustration in this topic.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. As
   `a-weigh-one-limit`'s, working the proposal of the same case from the example above.
 - **doesn't show:** as `a-weigh-one-limit`'s. Every proposal in a scenario is judged against one harm,
