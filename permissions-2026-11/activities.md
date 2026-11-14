@@ -48,6 +48,11 @@ limit prevents.
 
 ## Check notes
 
+Within each capability the two checks are the same kind of task, judging a described instance, and
+differ in layout: a story against an agent's audit for spotting excess reach and untrusted input,
+and a fresh harm each time against one harm with several proposals for judging limits. Choose
+between them by which layout the learner will meet in Problem Set 5, or which they find harder,
+rather than for a different kind of practice.
 
 ## Goals
 
@@ -63,9 +68,9 @@ limit prevents.
 | goal               | checks | notes |
 | ------------------ | ------ | ----- |
 | `o-orientation`    | `a-read-permissions` |       |
-| `c-spot-excess`    | `a-look-over-steps`, `a-read-agent-audit` |       |
+| `c-spot-excess`    | `a-look-over-steps`, `a-read-agent-audit` | Neither check asks about a step a person does by hand, though the criterion counts a person as a possible executor; a pass rests on program and agent steps only. |
 | `c-spot-injection` | `a-look-over-steps`, `a-read-agent-audit` |       |
-| `c-judge-limits`   | `a-weigh-one-limit`, `a-weigh-proposals` |       |
+| `c-judge-limits`   | `a-weigh-one-limit`, `a-weigh-proposals` | In both checks a No on part b always comes with a Yes on part a, so a `stops-work` pass may rest on one judgment; part a is judged on its own only in `sound-limit` and `no-effect` questions. Both checks also name the harm and offer only clear calls, so neither shows the learner naming a harm or weighing a borderline limit. |
 
 ---
 
@@ -369,6 +374,21 @@ limit prevents.
   by step, whether each executor can reach anything it doesn't need and whether untrusted input ends
   up in each agent's context, each a yes or no. About 3 minutes for a scenario's first question and 1
   for each after. Harder than `a-read-agent-audit`, since the facts are mixed through the prose.
+- **check note:** Skip only at the end of a scenario, as `tutor does` says, never question by
+  question as the opening paragraph's "skips any question whose case is already passed" could be
+  read: once `excess` is passed, skipping single reach questions would leave only No answers. Even
+  at a scenario's end, a last question asked only because its case is unpassed gives its answer
+  away to a learner who notices the pattern, so when only one question would remain, ask it anyway
+  or move to a fresh scenario.
+
+  When writing or recording a context question live, treat a list into which a program copied
+  outside text word for word as `outside-text`, as the generator lists it, and keep
+  `passed-through` for a program that hands over only part of the text, such as titles or
+  descriptions.
+
+  The `shielded` and `passed-through` variants change what the planning agent reads. When working
+  one aloud as help, say that its sandbox holds the file the fetcher writes in place of the shifts
+  list; that is the only fact the variant implies.
 
 ### `a-read-agent-audit`
 
@@ -442,6 +462,8 @@ limit prevents.
   an agent's audit lays it out, one block per step. About 2 or 3 minutes for a scenario's first
   question and 1 for each after. Easier than `a-look-over-steps`, and closer to what Problem Set 5
   will hand you.
+- **check note:** This entry runs as `a-look-over-steps` does, so the notes there on skipping and on
+  recording copied text apply here too.
 
 ### `a-weigh-one-limit`
 
@@ -603,6 +625,10 @@ limit prevents.
   say whether the limit would significantly reduce the risk and whether the step could still work.
   About 3 or 4 minutes a question. Harms vary from question to question, so each one is read from
   scratch.
+- **check note:** A limit on what files, folders or accounts an agent can use covers every command
+  it runs, just as the generator says outright for turning off the internet. If a learner asks
+  whether a shell command could get around such a limit, say no: that is a fact of the scenario,
+  not a hint.
 
 ### `a-weigh-proposals`
 
@@ -667,6 +693,11 @@ limit prevents.
 - **offer as:** the conversation-shaped check: one step and one harm, then the several limits an
   agent proposes, judged one at a time. About 4 minutes for the first and 2 for each after. Closer to
   how Problem Set 5 will go than `a-weigh-one-limit`, but every question shares one harm.
+- **check note:** The notes on `a-weigh-one-limit` and on skipping in `a-look-over-steps` apply
+  here. In particular, a scenario's last proposal asked only because its case is still unpassed
+  gives away its two answers to a learner who notices the pattern; when only one proposal would
+  remain, ask it anyway or move to a fresh scenario. The example's folder-only proposal covers the
+  commands the matching agent runs, so it cannot read the bank login by any route.
 
 ### `a-words`
 
