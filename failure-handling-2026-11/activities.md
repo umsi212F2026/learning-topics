@@ -3,358 +3,579 @@
 Candidate activities for the study phase. More than will be used; the tutor chooses among them
 with the learner.
 
-<!--
-  WHO THIS IS FOR. Written by the curation agent, read by the tutor agent. A human can read
-  it and occasionally will (someone debugging the workflow, or the learner if they ask),
-  so keep it legible. But write for the tutor: fields over prose, and everything it needs to
-  actually run an activity rather than describe one.
+The initial study comes to about 35 minutes, inside the 40 the lesson plan allows: about 12 for
+`a-read-failure-handling` (the reading is about 1,450 words, about 7 minutes on its own), about 3 a
+word for the three words, so 9, and meeting both capabilities. That takes seven questions, one per
+case: four for `c-judge-rerunnable` and three for `c-judge-detection`. Through the two quick checks,
+`a-pick-rerun-outcome` and `a-pick-noticed-or-not`, a question takes about 2 minutes, so about 14.
+Through `a-critique-a-workflow`, one scenario's six questions carry six of the seven cases in about
+12 minutes, and the tutor sets one quick-check question for the case left over.
 
-  Delete these comments as you fill the file. Not for tidiness: they cost the tutor
-  context on every read.
+Every question is multiple choice, asks one thing, names one goal and carries one case. A rerun
+question always offers all four cases of `c-judge-rerunnable` as its options, and a detection
+question always offers all three cases of `c-judge-detection`, each in a fixed order, worded as the
+generators below give them. No question asks for a reason, for a fix, or for what to tell an agent.
+No question's text gives away another's answer. Learner-facing text states the task, never the
+scoring.
 
-  This is the layout for <area>-<yyyy>-<mm>/activities.md in your learning-topics repository,
-  which is created blank by
-  workflows/learn/tools/new-topic.mjs before any phase runs. Don't edit this file; edit the copy.
+In this topic's banks and live questions, every workflow is a made-up one described in words,
+running on one person's laptop, with at least one step done by an agent following a skill file the
+person wrote. Never the learner's own app, repo, machine, project or Problem Set 5 workflow; never
+an internship or job postings tracker; never the reading's grading example (its TA, drafts, grades
+sheet or posting program) or any other homework or grading workflow. Every scenario states every
+fact its answer needs: what each step does with each item, any test a step uses to pass over items
+already done, where a run stopped, what has happened to the results since, every check and review
+in the workflow and exactly what each one looks at, and where a step reports trouble and whether
+anyone looks there. No scenario contains code, a query, SQL or a command; a kept thing is called by
+what it holds ("the listings list", "a notes file for each listing"), with no file format, database
+or storage product named. No real product, site or brand is named; a source is "a rental site", "a
+newsletter she subscribes to". The topic's words idempotent and silent failure appear in the fixed
+option wording, with no gloss; scenarios never use them, or fail loudly, since in a scenario each
+would point at an answer.
 
-  ONE FLAT LIST. No sections per goal: an activity can serve several, and orienting
-  activities just serve all of them. The `serves` and `supports` fields are how the tutor
-  narrows down.
-
-  IDs are `a-` plus two to four kebab-case words, readable on their own:
-  `a-read-unseen-diagram`, not `a-1`. The `a-` prefix is the one namespace rule that is
-  load-bearing: goals.md's ids never start with it, and workflows/learn/tools/survey.mjs checks that.
-
-  UNIQUE ACROSS THE TOPIC, not just across this file: these entries and every goal in
-  goals.md. Nothing checks as you write: workflows/learn/tools/survey.mjs reports a duplicate the next time
-  it walks the folder, by which point attempts point at it.
-
-  They are STABLE. An id assigned once never changes, even if the wording it was derived from
-  gets reworded later. If something is genuinely replaced rather than reworded, the
-  replacement gets a new id and the old one gets `status: dropped`.
-
-  VOCABULARY IS ONE ACTIVITY, `a-words`, an ordinary entry that serves every word through its
-  group, those added later included. Curation writes it, exactly as below, when the topic has
-  words and no such entry; its generator is
-  workflows/learn/skills/goal-setting/references/vocabulary-moves.md, and a course topic's bank
-  holds one scenario file per word, tasks/a-words/<goal-id>.md:
-
-      ### `a-words`
-
-      - **serves:** group vocabulary
-      - **generator:** the five moves in `workflows/learn/skills/goal-setting/references/vocabulary-moves.md`, set for one word at a time from its `what it names`, `nearest confusable` and `synonyms`. Each question names that word's goal and carries its move.
-      - **learner does:** answers one short question about one word
-      - **tutor role:** examiner
-      - **tutor does:** sets the question as served, without rewording it or hinting; when the bank has nothing for the word, sets one move live, as vocabulary-moves.md describes
-      - **offer as:** not offered as a choice; a word's question is set when that word is studied or due
-
-  LEGACY STAMPS. An older file may hold entries carrying `origin: generated`, placeholders that
-  curation once stamped for each word. They are retired: nothing serves from one, survey skips
-  them, and workflows/learn/tools/migrate-words.mjs removes them. Never write one; leave an old
-  one alone until that tool runs.
-
-  AN ACTIVITY IS THE ORIENTATION, OR A SOURCE OF QUESTIONS, banked or set live. Every question
-  has a rubric (a live one's is its generator's criterion) and names at least one goal, so every
-  activity carries `checks` and anything a learner does can move a goal to met. Any question can
-  be attempted with help, so nothing needs a separate place to practice first. Outside the
-  orientation, a reading, a video or a worked example is not an activity: it is help on a
-  question, the first level of it, in that activity's `worked example`.
-
-  Every entry says what the LEARNER DOES. A resource is not an activity: "read chapter 3"
-  is not an entry, "read chapter 3 writing a one-line gloss for each unfamiliar term" is, and
-  then only as the orientation.
-
-  ONE SCENARIO MAY SPAN GOALS. An exercise of many items (sort these, judge each, critique this)
-  is a scenario with one question per item, so repeats count and the learner stops once the goal
-  is met; and where the method is the same, one scenario may carry questions on several goals,
-  in different capabilities.
-
-  CANDIDATES, deliberately more than will be used: you can't tell whether an artifact will
-  orient someone until they try it. Don't rank them; characterize them, so the tutor can
-  offer a real choice.
-
-  Entries serving the same goal are SUBSTITUTES. The learner does one, not all of them, and
-  for checks an unaided pass on either one meets the goal's bar. A goal that genuinely needs
-  two different things done is a goal that should have been two, and the fix belongs in
-  goals.md.
-
-  Curation is agent-driven. Nothing here is negotiated with the learner.
-
-  goals.md is authoritative. If a criterion here disagrees with the one there, fix this file.
--->
+**No matching words to a case.** A scenario never uses an option's own words or the goal's example
+phrases: in a rerun scenario, not "twice", "second", "again", "duplicate", "half", "partly",
+"incomplete", "used", "checked" or "different"; in a detection scenario, not "silent", "notice",
+"hear", "looks right", "catch" or "log". An action outside the workflow is never sending a message,
+an email or a text; it is placing a hold, adding a calendar event, submitting a form, putting in an
+order or posting to a shared board. A mistake that looks like a right result is never called a
+misread; it is said as what came out ("took the move-in date as the rent due date", "rated the
+listing 'skip' though it meets every one of her needs"). The facts that point at one case in one
+scenario point at another elsewhere, as each generator's spread requires: a stop in the middle of
+writing appears in scenarios keyed safe and keyed replaced as well as half-written; a person who
+has already looked over results appears in scenarios keyed safe as well as replaced; a check or a
+review appears in scenarios keyed not noticed as well as noticed, because it looks at something
+other than the mistake; and a file of problems appears in a scenario keyed noticed, because the
+person reads it.
 
 ## Check notes
 
-<!--
-  Authored by curation/critique and placed by the orchestrator. Rewritten wholesale each pass,
-  so don't edit it. It will be replaced.
-
-  Dated, and short. What the tutor should know about this file as a whole before using it:
-  the menu skews toward reading, two capabilities are thinner than they look, the depth
-  runs heavier than goals.md asks for. Only things that survived the revision round.
-  Anything that got fixed doesn't belong here.
-
-  Empty is a legitimate and good outcome. Say "nothing at file level" rather than inventing
-  an observation.
--->
-
 ## Goals
 
-<!--
-  Copied from goals.md so the tutor doesn't need both files open. ONE ROW PER GOAL CURATION
-  SERVES: every goal except the words. That is what this phase is for: finding real things for
-  a learner to do.
-
-  A word is NOT copied here and gets no Coverage row. The `a-words` entry serves it through
-  its group, with a generator that is fixed, so there is nothing to choose among and no gap a
-  Coverage row could show.
-
-  The `criterion` column is COPIED, and for a goal whose criterion is a reference rather than
-  the learner's own text (`vocabulary`, `orientation`), copy the reference name. The
-  sentence it points at is in workflows/learn/skills/goal-setting/references/slots.md and doesn't belong here
-  in two places.
-
-  The ids here are what `serves` refers to. They are COPIED FROM goals.md, not assigned here:
-  goals.md is where a goal is named, and this table is a convenience copy of it. If an id
-  here doesn't match one there, this file is the one that's wrong.
--->
-
-| id                      | Goal | Criterion: what gets examined, and what counts  |
-| ----------------------- | ---- | ----------------------------------------------- |
-| `o-orientation`         |      | `orientation`                                   |
-| `c-read-unseen-diagram` |      |                                                 |
+| id                   | Goal | Criterion: what gets examined, and what counts |
+| -------------------- | ---- | ---------------------------------------------- |
+| `o-orientation`      | get the shape of this area before working on any particular part of it | `orientation` |
+| `c-judge-rerunnable` | judge whether a step is safe to run again after a run stops partway | given a described step and a run that stopped partway through it, says whether running the step again from the start would be safe, and if not, which of these would go wrong: items done a second time, a store left half-written, or a different outcome from one that a later step or a person has already used or checked. Cases: `duplicates`, `half-written`, `replaces-used`, `already-safe` |
+| `c-judge-detection`  | judge whether a mistake made while running a step would be noticed | given a described workflow, one of its steps, and a mistake that step could make, says whether the mistake would be noticed, and if not, which of these is why: the step can tell something went wrong but says so only somewhere nobody will look, or not at all; or the step produces a wrong result that looks like a right one and no check in the workflow would catch it. Cases: `unheard`, `looks-right`, `detected` |
 
 ## Coverage
 
-<!--
-  DERIVED. Every cell here is computed from the `checks` fields of the activities below and
-  the rubric `goal:` lines of their banks; this table declares nothing. If the two disagree,
-  the activities win and this table is stale.
-
-  Regenerate it whenever activities are added, dropped, or re-tagged. It exists to restore
-  the coverage view that was lost when activities became one flat list, and it's the first
-  thing to read when deciding what's missing.
-
-  ONE ROW PER GOAL IN THE TABLE ABOVE, in the same order. `a-words` doesn't appear here and
-  neither do the words it serves; nothing is ever missing for those.
-
-  checks  live activities whose `checks` names this goal, or whose bank holds a question
-          whose rubric `goal:` names it
-  notes   authored by curation/critique, placed by the orchestrator. Usually empty. For deficiencies an empty cell can't
-          express: most often that every check for this goal shares the same
-          `doesn't show`, so the coverage is only apparent.
-
-  Dropped activities don't appear. An empty `checks` cell is a gap, and that's the whole
-  point of the table. A goal with cases has a second kind of gap the table can't show, a case
-  no question exercises; curation/verify looks for that one.
-
-  A cell may instead read `blocked: <why>`, meaning curation tried and couldn't: no
-  verifiable artifact exists, or the criterion can't be examined by anything constructible.
-  That's a defect in goals.md rather than here, and it needs the learner to resolve.
-
-  THE ORIENTATION GOAL is an ordinary row and always first, because it is first in goals.md.
-  It is a goal like any other, with a criterion and a bar. A row naming no
-  goal could never finish. Its `checks` cell is filled like any other, with the activity whose
-  `checks` names it: the one that gives the learner the shape of the thing before any
-  particular part is in play.
-
-  If `goals.md` says the learner is already oriented, its entry there will have been deleted
-  and this row won't exist. If the entry is there but `what I already have` settles it, write
-  `n/a: already oriented` in `checks` and leave it. That's a complete row too.
--->
-
-| goal                    | checks | notes |
-| ----------------------- | ------ | ----- |
-| `o-orientation`         |        |       |
-| `c-read-unseen-diagram` |        |       |
+| goal                 | checks | notes |
+| -------------------- | ------ | ----- |
+| `o-orientation`      | `a-read-failure-handling` |       |
+| `c-judge-rerunnable` | `a-pick-rerun-outcome`, `a-critique-a-workflow` |       |
+| `c-judge-detection`  | `a-pick-noticed-or-not`, `a-critique-a-workflow` |       |
 
 ---
 
 ## Activities
 
-<!--
-  One heading per activity, one bullet per field, not a table row. Several values run to a
-  sentence or more, which table cells can't hold. The Goals block above is a table for the
-  opposite reason: short values, same shape every row.
+### `a-read-failure-handling`
 
-  FIELDS. Every activity has `serves` through `offer as`, and the block at the end, `checks`
-  through `doesn't show`; one that sets questions has a `generator`. `status` appears only once
-  the activity is dead, and `origin` only on a legacy stamp, which nothing writes now.
+- **serves:** `all`
+- **supports:** orient
+- **checks:** `o-orientation`
+- **artifact:** a reading the course wrote for this topic, `tasks/read-failure-handling.md` in this
+  folder, "When a step goes wrong" (about 1,450 words, about 7 minutes). No external reading is
+  used: the instructor wanted a course-written one. It continues the made-up example of the last
+  three topics' readings, a teaching assistant who grades about 200 homework submissions a week.
+  It is a draft the instructor has not yet reviewed, so this entry relies only on its section names
+  and the words it bolds. Sections: an untitled opening (two judgments to make about each step, and
+  the TA's workflow); Two places a failure can be; When a run stops partway; Would anyone notice?;
+  Failing loudly; Telling your agent. Words in place, each in bold where introduced: idempotent,
+  silent failure, fails loudly (the word's form here is fail loudly). Also in bold, though none is
+  a word of this topic: the labels of the three ways a rerun goes wrong (items done a second time,
+  a store left half-written, a different outcome replacing one already used) and of the two reasons
+  a mistake goes unnoticed (the step could tell, but nobody hears; the result looks right, and
+  nothing checks it). Once the instructor has reviewed the reading, confirm that the stop below
+  still falls just before the page gives its own answer.
+- **learner does:** reads the page once, top to bottom, and stops once, in When a run stops partway,
+  at the end of its opening paragraph and before its bulleted list, answering before reading on ("I
+  don't know yet" is an honest answer): if the TA runs the stopped step again from the start, what
+  could go wrong? The bulleted list gives the page's own answer, which the learner then reads. Then
+  the close, about 2 minutes, with the reading still beside them: answers the one question the tutor
+  puts: with this page beside you, could you now take a short description of a workflow step, say
+  whether it would be safe to run again after a run stopped partway through it, and say whether a
+  mistake it made would be noticed?
+- **tutor role:** explainer
+- **tutor does:** puts the reading in front of the learner by opening the file
+  `tasks/read-failure-handling.md` from the topic folder on the local filesystem, so the learner's
+  agent shows it formatted in a sidebar; does not paste it into the chat. Stays quiet through the
+  reading except at the stop and when asked. At the stop, takes the learner's answer first and
+  replies with one near-miss question rather than a verdict, then lets the learner read on to the
+  page's own answer. What the tutor looks for is something specific to the stopped step that a
+  rerun could spoil: submissions done over, an unfinished result, or results someone has already
+  acted on changing. The answer need not match the list. An answer of "nothing, just run it again"
+  gets one near-miss question ("what happens to the submissions it had already finished?"). Does not
+  set or rehearse any word question from `a-words`: does not ask the learner to define any of the
+  three words, to say what separates a word from its nearest confusable in goals.md (idempotent and
+  deterministic, fail loudly and fail fast), or to correct a misused sentence. Does not set or
+  rehearse a question from this topic's capability activities for any workflow beyond the one the
+  reading works through; if the learner asks how to do that, says that is what
+  `a-pick-rerun-outcome`, `a-pick-noticed-or-not` and `a-critique-a-workflow` are for. Before the
+  learner starts reading, not during it, says briefly three things: that fixing what they find is
+  their agent's work, so the Telling your agent table is there for Problem Set 5 and the Nov 17
+  class, and no question turns on it; that no question asks how to fix a step, only what would go
+  wrong and whether a mistake would be noticed; and that the difference between failing loudly and
+  failing fast is a word question, never a capability one. At the close, puts the readiness question
+  as written above and rules on the answer.
+- **done when:** criterion met. The bar for this goal is did it once and help is expected
+  throughout, so the ruling is on the learner's answer to the readiness question, not on the stop
+  or on whether the tutor thinks they are ready. A plain yes is `criterion: met`. A hedge, with no
+  plain no, is `criterion: unclear`: ask which judgment feels shaky, go over its section once more
+  (When a run stops partway, or Would anyone notice?), and put the question again. A second hedge
+  stays `unclear`: the tutor offers one of the capability activities with help as the next step. A
+  plain no is `criterion: not met`: record it, ask what is missing, and offer to go back over the
+  section that bears on it; don't put the question again in the same sitting. This goal isn't
+  required, so a no never blocks anything else the learner wants to try.
+- **worked example:** n/a
+- **doesn't show:** an indication of readiness is all this goal asks for and all this shows. It
+  shows nothing about the three words, which have their own supply in `a-words`, and nothing about
+  either capability: the reading works one example, the stop is helped, ungraded and answered just
+  before the page gives its own answer, and the readiness question asks only whether the learner
+  thinks they could do the same. The reading is one course-written page built on one grading
+  workflow, so it shows nothing of a workflow in another domain, such as the personal trackers the
+  capability activities use.
+- **offer as:** this topic's orientation: one short page the course wrote, following the same
+  grading workflow as the last topics' readings, from the two places a failure can be, through what
+  a rerun can spoil and why a mistake goes unnoticed, to failing loudly. One short stop and a
+  one-question close. About 12 minutes.
 
-  serves        goal ids from the table above, or `all`: which goals this helps with. An item
-                may also be `group <name>`, which stands for every goal in that group, those
-                added later included. A group no goal is in is reported by survey.
-  supports      one or more of:
-                  orient   first pass; get the shape of the thing
-                  deepen   build up a specific part, or connect it to what's known
-                  attempt  do the real thing, with help available if asked for
+### `a-pick-rerun-outcome`
 
-                There is no separate "check" value. Every attempt is made the same way, with
-                the tutor helping on request; whether an attempt turns out to have been
-                unaided is an outcome, not a setting. What an unaided pass can *finish* is
-                the `checks` field below.
-  artifact      what it is and where, and roughly how long it takes
-  verified      the date curation/verify confirmed this artifact is real and
-                is what the entry says it is. `NOT VERIFIED: <what couldn't be confirmed>`
-                if it couldn't. Absent means nobody has looked yet.
+- **serves:** `c-judge-rerunnable`
+- **supports:** attempt
+- **checks:** `c-judge-rerunnable`
+- **artifact:** no external source. A described step of a personal workflow and a run that stopped
+  partway through it, told in a short paragraph, with one four-choice question, from this
+  activity's bank or written live per the generator below. About 2 minutes a question.
+- **learner does:** reads the scenario, then picks which of four outcomes running the step again
+  from the start would have: nothing goes wrong, or one of the three things that can.
+- **tutor role:** examiner
+- **tutor does:** sets the question as served, without rewording it or hinting; never names the
+  cases, which fact matters, or which option the key expects, and never says what is wrong with an
+  option before the learner has chosen. Gives help whenever it is asked for, and records the attempt
+  as helped. When the generator is run live, writes the key and the case into the record before
+  showing the question. Labels the attempt with the question's path, or
+  `a-pick-rerun-outcome/<shape>` when run live, and records the case with `--cases`. Rules from the
+  rubric's `answer`. If the learner asks how the step should be fixed, says that is the agent's to
+  choose once the learner can say what worries them, and this question doesn't ask it.
+- **done when:** the criterion met with no help, case by case. Each question gets one ruling: the
+  sound option passes the case the question carries, and the others pass none. There is no half
+  credit.
+- **generator:** **A scenario** is one made-up personal workflow on one person's laptop, told in one
+  paragraph of running prose, five to eight sentences, in the third person about that person, who
+  is named. It says in a sentence or two what the workflow is for and what its steps are, then
+  turns to one step, "the step" below, which it names with a short handle ("the assessing agent",
+  "the hold program"). At least half of a bank's scenarios are a small personal tracker with
+  acquire, assess and extract steps (a program collects items from somewhere, an agent judges each
+  one, some step pulls out fields), and the step is one of those three; the rest are other personal
+  workflows (a household's receipts, a club's sign-ups). Mixed through the paragraph, never under
+  labels, are these facts:
+  - what the step does with each item, in plain words: adds a new entry for it to a kept thing
+    ("adds a line for each new listing to the listings list"); writes the item's own result in
+    place, replacing whatever is there ("writes each listing's rating into its row, over any rating
+    already there"; "writes a notes file for each listing"); or does something outside the workflow
+    for it ("places a hold at the library for each book", "adds an event to the family's shared
+    calendar for each game");
+  - who does the step: an agent following the person's skill file, or a program. Where a program
+    writes results in place, what it works from, and that those inputs stay as they were ("the
+    saved pages are never changed after they are saved");
+  - whether the step passes over items already done, and if so its test for done, said plainly
+    and never judged ("it passes over any listing that already has a notes file"; "it passes over
+    any listing on its finished list, which it saves when a run ends"; "it passes over any listing
+    marked 'rated', a mark it adds only after the whole rating is written");
+  - where the run stopped, and why, in one sentence: between two items ("the laptop's battery ran
+    out just after it finished the 40th of 70 listings") or in the middle of writing one item's
+    result ("while it was writing the notes for the 41st");
+  - what has happened to the results so far since the stop: nothing ("nobody has opened the list
+    since"), or a person or a later step has acted on some of them ("Lena has gone through the
+    first 25 ratings and booked viewings for three of them"; "at noon the digest step put the first
+    30 ratings into the week's shortlist").
 
-                Anyone editing the artifact clears this: a marker attached to a different
-                source than the one it was granted for is worse than none.
-  learner does  the obligation, not just the resource: this is the field that makes it an
-                activity rather than a reading list
-  tutor role    the stance to take while this runs: explainer, socratic questioner,
-                critique target, critic, role-play partner, examiner (sets a question cold and
-                rules on the answer afterwards), or none (the learner works
-                alone and you wait)
-  tutor does    during, and afterward
-  done when     the criterion of a goal in `checks` met with no help. For the orientation,
-                that is the learner able to attempt the real thing with the artifact still
-                beside them.
-  offer as      what makes this one different from its neighbors: fastest, most thorough,
-                assumes more background, hands-on rather than expository. This is what you
-                say when presenting a choice, so make it a real distinction.
-  check note    authored by curation/critique, placed by the orchestrator. Present only when there is
-                something the tutor should know that the entry itself doesn't say: a
-                generator whose difficulty is underspecified, an artifact that's real but
-                harder going than it looks, a task that works but only once.
+  **Exactly one outcome.** Every scenario is built so that exactly one option is right, and states
+  the fact that rules out each other option, as the key gives it. A step that adds entries never
+  stops in the middle of writing one (or it would leave a partial entry as well as adding more), and
+  nobody has acted on its results. A step that writes results in place never adds entries and does
+  nothing outside the workflow. A step that acts outside the workflow writes nothing a later step or
+  person relies on, and stops between items.
 
-                Only for what survived the revision round; anything fixed leaves no note.
-                curation/generate may delete a note whose cause it has fixed, and must not
-                otherwise edit one. Each check pass rewrites them.
+  **The question** reads: "If <person> runs <the step> again from the start, which of these
+  happens?", then four numbered options, always in this order and these words:
+  1. "Nothing goes wrong: as it stands, the step is idempotent."
+  2. "Some items get done a second time."
+  3. "A partly written result gets trusted or tripped over."
+  4. "A different result replaces one that a person or a later step has already used or checked."
 
-  generator     the instruction for producing a fresh question: what varies, what is held
-                fixed, how hard, and which of the goals in `checks` a question bears on. For
-                a goal with cases, it also says which cases each shape of question carries,
-                so the tutor can record them, and between its shapes every case is carried.
-                Every activity that sets questions has one. Precise enough to run, or to
-                draft a bank from, without asking the curator anything. Where there is no
-                bank the tutor runs it live, so every attempt is a new question.
+  `type: mcq`. The question carries the one case its answer exercises: answer 1 `already-safe`,
+  answer 2 `duplicates`, answer 3 `half-written`, answer 4 `replaces-used`.
 
-  origin        omit. `generated` marks a legacy stamp from before `a-words`; see the note
-                at the head of this file. Nothing serves from one and nothing new carries it.
+  **Shapes**, each with the case it carries. Between them every case is carried.
+  - `adds-again` (`duplicates`): the step adds a new entry for each item and either has no test
+    for done or has one the stopped run fools because the record it tests is written only when a
+    run ends ("it passes over any listing on its finished list, which it saves when a run ends").
+    The run stopped between items. Nobody has acted on the results. Key: the items before the stop
+    get a second entry; not half-written, since the stop came between items; not replaced, since
+    adding leaves the first entries as they were and nobody has acted on them.
+  - `acts-again` (`duplicates`): the step does something outside the workflow for each item (places
+    a hold, adds a calendar event, submits a form, puts in an order, posts to a shared board), with
+    no test for done or one the stopped run fools as above. The run stopped between items. Key: the
+    items before the stop get the outside action a second time, which no later run can take back;
+    not half-written, since the stop came between items; not replaced, since nothing in the workflow
+    is rewritten.
+  - `trusts-partial` (`half-written`): the step writes each item's own result (a notes file, a
+    field in the item's entry) and passes over any item that already has one, by a test the partial
+    result passes ("already has a notes file"; "whose summary field isn't empty"). The run stopped
+    in the middle of writing one item's result. Nobody has acted on the results. Key: the item the
+    run stopped on has only part of its result, and the rerun passes over it; not done a second
+    time, since the finished items are passed over and each item has one result; not replaced,
+    since finished items are passed over and nobody has acted on them.
+  - `redoes-acted-on` (`replaces-used`): an agent writes each item's result in place, over any
+    result already there, with no test for done. Since the stop, a person or a later step has acted
+    on some of the results. The run stopped between items or in the middle of writing one. Key: the
+    agent may judge an item differently when asked a second time, and its new result overwrites one
+    the person or later step has already acted on, so they no longer agree; not done a second time
+    in the sense of adding, since each item keeps one result; not half-written, since the rerun
+    rewrites every item, the unfinished one included.
+  - `already-safe` (`already-safe`): three variants, which the key names. `sound-skip`: the step
+    passes over items already done, and its test is one the stopped run cannot fool (a mark added
+    only after the whole result is written); the run stopped in the middle of writing one item's
+    result, which the rerun therefore does over from the start. `same-inputs`: a program writes
+    each item's result in place from saved inputs that never change, so it writes the same result
+    each time; the person has already looked over some results. `nobody-yet`: an agent writes each
+    item's result in place with no test for done, and nobody and nothing has acted on any result.
+    Key: why each of the three things that can go wrong doesn't, citing the sentence for each.
 
-  status        omit while the activity is live: that's the default and needs no saying.
-                When it stops being a candidate, `dropped: <why, and who>`: the curator
-                writing it off as unworkable before anyone tried, or the tutor after it
-                failed in practice (a source that oriented nobody, a task that turned out
-                to test the wrong thing).
+  **Illustrations**, not bank items; their domains are used by no bank in this topic.
+  - `trusts-partial`, Medium: "Nadia is hunting for an apartment near her new job. Every morning a
+    program saves the new listings from a rental site into a folder. Then the assessing agent,
+    following a skill file Nadia wrote, reads each listing and writes a notes file for it with its
+    rent, its size and whether it allows cats. It passes over any listing that already has a notes
+    file. On Tuesday her laptop's battery ran out while the agent was writing the notes for the
+    31st of 52 new listings. Nadia hasn't opened any of the notes since." Question: "If Nadia runs
+    the assessing agent again from the start, which of these happens?" Answer 3 (`half-written`):
+    the 31st listing's notes file holds only part of its notes, and the rerun passes over it
+    because the file exists. Not 1, because of the 31st. Not 2, because listings 1 to 30 have notes
+    files and are passed over, and each listing has its own file. Not 4, because finished listings
+    are passed over and Nadia hasn't opened any notes.
+  - `already-safe`, variant `same-inputs`, Hard: "Jun watches an auction site for old film cameras.
+    A program saves each new listing's page into a folder, and the saved pages are never changed
+    after that. An agent following Jun's skill file decides which listings are worth a bid. Then
+    the details program pulls the price and the condition out of each saved page and writes them
+    into that listing's price and condition fields, over whatever is there. On Sunday the details
+    program stopped after 70 of 120 listings when the laptop restarted for an update. Since then
+    Jun has looked over the first 70 and marked three to bid on." Answer 1 (`already-safe`): a
+    program working from pages that never change writes the same price and condition it wrote
+    before, so what Jun looked over stays as it was. Not 2, since it writes each listing's own
+    fields rather than adding. Not 3, since the stop came between listings and the rerun rewrites
+    every listing anyway. Not 4, since the result written is the same.
+  - `acts-again`, Hard, in outline: Ruth's agent, following her skill file, reads the weekly
+    newsletter of a book-review site and places a library hold for each book that fits her list of
+    authors and topics. It passes over any book on its finished list, which it saves when a run
+    ends. The run stopped after placing holds for 9 of 15 books, when she closed the laptop's lid
+    and it went to sleep. Answer 2 (`duplicates`): the finished list was never saved, so the rerun
+    places holds for the first 9 books a second time.
 
-                Not progress. What's been attempted and how it went lives in
-                evidence/attempts.jsonl; this field is only about whether the candidate is
-                still worth offering, and it is the only place that question is answered.
+  **How hard.** Medium when the deciding fact is said plainly: no test for done, a test a partial
+  result plainly passes, a person who has acted on results an agent will rewrite. Hard when it must
+  be worked out: a test for done fooled because its record is written only at the end of a run; a
+  `sound-skip` test where the stop came in the middle of writing; a `same-inputs` program whose
+  results the person has already looked over; a `redoes-acted-on` scenario where the one acting on
+  results is a later step rather than the person. The question wording is unchanged.
 
-                Dropped entries stay in the file. Deleting one means it gets regenerated
-                next time curation runs, and this field is the only feedback curation
-                receives. Trim a dead entry to its id, a line saying what it was, and this
-                field; the rest is dead weight in the tutor's context.
+  **Spread across the bank.** A bank is eight scenarios, eight questions: `adds-again` and
+  `acts-again` once each, so `duplicates` twice; `trusts-partial` twice; `redoes-acted-on` twice,
+  once with a person acting on results and once with a later step; `already-safe` twice, once
+  `sound-skip` and once `same-inputs`. Half of them Hard. At least one of the two `duplicates`
+  scenarios has a test for done that the stopped run fools. The run stops in the middle of writing
+  in both `trusts-partial` scenarios, at least one `redoes-acted-on` scenario and the `sound-skip`
+  scenario. At least five scenarios are trackers with acquire, assess and extract steps, and at
+  least two of the step's executors are programs. An option's position follows from its case, so
+  the answer's position needs no spreading. When the generator is run live, the tutor picks each
+  next shape to carry a case the learner hasn't passed, and may use `nobody-yet`.
 
-  WHAT AN ACTIVITY CAN FINISH, on every activity
+  **Domains** vary by scenario, none repeating within the bank: a concert-ticket resale watch, a
+  used-furniture watch on a neighborhood swap site, a local events calendar built from venue
+  newsletters, a youth soccer team's game schedule, a scholarship deadlines tracker, a family's
+  receipts for taxes, a sneaker release tracker, a hiking-permit lottery tracker, a vintage-postcard
+  watch. No domain from the other two question activities' lists.
 
-  checks          the goals an unaided attempt at this activity's questions can establish:
-                  one id or several, comma-separated, and always a subset of `serves`. An
-                  activity can help with several goals while settling fewer. This is the
-                  generator's declaration of what its questions bear on; in a bank, each
-                  question's rubric `goal:` line narrows it to the ones that question bears
-                  on, and `checks` includes every goal its rubrics name. A live activity has
-                  no rubrics, so this is its only declaration. The pass condition is each
-                  goal's criterion from the table above, applied as written; don't restate it
-                  here or the two will drift.
+  The rubric gives the `answer` (the 1-based choice) and, in a `tutor note`, the sentence that
+  settles the sound option and, for each other option, the fact that rules it out. Credit: full for
+  the sound option; none for the others.
+- **worked example:** shown only as help when asked for, which records the attempt as helped. The
+  tutor works the illustration nearest the question's shape aloud (each illustration covers one
+  shape; for a shape without one, the tutor works `trusts-partial` and says which fact would change
+  the outcome), from the facts to the option: what the step does to each item, whether it passes
+  over items done and whether the stopped run could fool its test, where the run stopped, and what
+  has happened to the results since; then why each other option is ruled out. It never adds a fact
+  the illustration leaves out. It may point to When a run stops partway in
+  `tasks/read-failure-handling.md`.
+- **doesn't show:** the learner picks among four options rather than saying what would go wrong, so
+  a pass doesn't show they would name it unprompted; with four choices a guess is right a quarter
+  of the time. Every scenario states the step's test for done, where the run stopped and who has
+  acted on what, so a pass doesn't show the learner would find those facts in their own workflow,
+  as the Nov 17 critique will ask. Each scenario has exactly one thing that goes wrong, so a pass
+  shows nothing about a step where two would. Nothing checks what to tell an agent to fix it.
+- **offer as:** the quick check for rerunning: one step of a short personal workflow, a run that
+  stopped partway through it, and you pick what running it again from the start would do. About 2
+  minutes a question.
 
-                  Never omit it (`a-words` aside: its questions name their words, and it
-                  serves them through their group). Something whose unaided attempt still
-                  wouldn't establish a criterion, because it does part of the work itself
-                  (completing a partial instance doesn't show they could produce one from
-                  nothing), is not an activity: it is help on some activity's questions. An
-                  older entry with no `checks` stays as it is until it is converted: on a
-                  course topic at curation's next course-path run, on a student's own topic
-                  when its learner next curates it.
+### `a-pick-noticed-or-not`
 
-                  THE ORIENTATION'S ENTRY CARRIES `checks: o-orientation`. It sets no
-                  questions, so it has no bank, no rubric and no generator: the tutor rules
-                  the orientation's `did it once` bar from the learner saying they could now
-                  attempt the real thing. Its `worked example` and `doesn't show` may read
-                  `n/a`. An older orientation entry with no `checks` converts by gaining that
-                  line, and nothing else about it changes.
+- **serves:** `c-judge-detection`
+- **supports:** attempt
+- **checks:** `c-judge-detection`
+- **artifact:** no external source. A described personal workflow, one of its steps and one mistake
+  that step makes, told in a short paragraph, with one three-choice question, from this activity's
+  bank or written live per the generator below. About 2 minutes a question.
+- **learner does:** reads the scenario, then picks whether the mistake would be noticed, and if
+  not, which of the two reasons applies.
+- **tutor role:** examiner
+- **tutor does:** as `a-pick-rerun-outcome`'s, except that it labels a live run
+  `a-pick-noticed-or-not/<shape>`.
+- **done when:** the criterion met with no help, case by case. Each question gets one ruling: the
+  sound option passes the case the question carries, and the others pass none. There is no half
+  credit.
+- **generator:** **A scenario** is one made-up personal workflow on one person's laptop, told in one
+  paragraph of running prose, six to nine sentences, in the third person about that person, who is
+  named. It says what the workflow is for and what each step does, in plain words, and ends with
+  one sentence saying what goes wrong in one step on one run. At least half of a bank's scenarios
+  are a small personal tracker with acquire, assess and extract steps, and at least one step is
+  done by an agent following the person's skill file. Mixed through the paragraph, never under
+  labels, are these facts:
+  - every check in the workflow (a program or an agent that looks over results) and exactly what it
+    looks at ("a program confirms that every saved listing has an entry"; "a program flags any
+    entry whose price field is empty"); a scenario may have none;
+  - every review the person does, what it covers and what it doesn't ("each evening Marta reads
+    every entry marked 'worth a look', with the listing open beside it"; "she skims each entry's
+    one-line summary");
+  - where each step that can tell something went wrong says so: it stops and shows an error on the
+    screen while the person is there to see it; it adds the item to a list of problems that the
+    scenario says the person reads before using the results; it writes a note somewhere the scenario
+    says nobody opens ("a problems file in a folder she never opens"; "an 'errors' column she hid
+    months ago"); it shows a warning in a window that closes when the run ends, on a run that
+    happens while nobody is at the laptop; or it says nothing and goes on to the next item;
+  - when runs happen, and whether the person is at the laptop then;
+  - the mistake, in the last sentence, said as what happened, never judged: either one the step can
+    tell happened (a page that won't open, a site that doesn't answer, a photo that won't load, a
+    date in no form the program knows) and what the step does then; or one the step cannot tell
+    happened, said as what came out ("took the posted date as the deadline", "rated the listing
+    'skip' though it meets every one of her needs", "filed a grocery receipt under 'medical'",
+    "treated two different listings as one").
 
-  worked example  what to show at the first level of help: a solved instance, or an
-                  instruction to work one live and narrate the decisions. It may cite a
-                  reading or a video, named as precisely as an `artifact` is; that is where
-                  readings and walkthroughs live now that they are not activities.
-  doesn't show    what a pass here still leaves open, stated as a claim the checker can
-                  contest. Both kinds belong: part of the criterion this activity doesn't
-                  exercise, and what the criterion can't settle even when fully met: "only
-                  one instance exists, so this doesn't show they could do it again."
+  **The question** reads: "Would this mistake be noticed?", then three numbered options, always in
+  this order and these words:
+  1. "Yes, it would be noticed."
+  2. "No, a silent failure: the step can tell something went wrong, but no one would hear about
+     it."
+  3. "No, a silent failure: the result looks like a right one, and nothing in the workflow would
+     catch it."
 
-                  "Nothing" is a legitimate entry. It's also a strong claim, so expect
-                  curation/critique to test it.
+  `type: mcq`. The question carries the one case its answer exercises: answer 1 `detected`, answer
+  2 `unheard`, answer 3 `looks-right`.
 
-  BANKS. An activity has a bank when tasks/<activity-id>/ and rubrics/<activity-id>/ exist (a
-  tasks folder alone is an older study artifact, and is not read as a bank); the folders are the
-  whole declaration, and the entry says nothing about them. Course topics have them, drafted
-  from the generator and reviewed by the instructor at curation; a student's own topic runs its
-  generators live. On a course topic any question activity may be banked, except one whose
-  generator picks from real items or the learner's own work, and an orientation rehearsal: those
-  stay live, since the picker serves a bank whenever one exists. One file per scenario, with a
-  twin under rubrics/:
+  **Exactly one outcome.** A mistake the step can tell happened is keyed `detected` or `unheard`,
+  never `looks-right`; one it cannot tell is keyed `detected` or `looks-right`, never `unheard`. A
+  scenario keyed `detected` names the one thing that would bring the mistake to the person's
+  attention (the stop seen on screen, the problems list read before the results are used, the check
+  or review aimed at it). A scenario keyed `unheard` or `looks-right` states every check and review
+  in the workflow, so the key can say why each misses this mistake.
 
-      tasks/<activity-id>/<scenario-id>.md     the setup, then one `### <question-id>` per question
-      rubrics/<activity-id>/<scenario-id>.md   the key, then one `### <question-id>` per question
+  **Shapes**, each with the case it carries. Between them every case is carried.
+  - `heard` (`detected`): four variants, which the key names. `stops-in-view`: the step stops with
+    an error on screen, and the scenario says the person starts each run herself and waits for it
+    to finish. `listed`: the step puts the item on a list of problems the person reads before using
+    the results. `aimed-check`: a check looks at exactly what went wrong (a program that compares
+    the number of entries with the number of saved listings, when the step passed over a listing;
+    a program that compares each entry's price with the price on the saved page, when the step took
+    the wrong figure). `aimed-review`: the person's review covers what went wrong (she reads every
+    listing marked 'worth a look' in full, and the mistake is a listing wrongly marked 'worth a
+    look').
+  - `unheard` (`unheard`): three variants. `goes-on-quietly`: the step passes over the item and
+    says nothing, and any check in the workflow looks only at entries that exist (that every entry
+    has a price, say), so the missing one gives it nothing to flag. `unopened-note`: the step writes
+    what went wrong somewhere the scenario says nobody opens. `unwatched-window`: the step shows a
+    warning in a window that closes when the run ends, on a run that happens while nobody is at the
+    laptop. In none of them does the run stop.
+  - `looks-right` (`looks-right`): three variants. `no-check`: nothing in the workflow looks over
+    this step's results. `check-elsewhere`: a check exists and looks at something other than the
+    mistake (that every entry has a deadline, when the deadline is the wrong date; that the entries
+    match the saved listings in number, when one listing got the wrong rating). `review-elsewhere`:
+    the person reviews, but not this (she reads only the listings marked 'worth a look', and the
+    mistake is one wrongly marked 'skip'; she reads the summaries, and the mistake is in a figure the
+    summary leaves out).
 
-  A file's top part, before its first `###`, is shared by that scenario's questions; nothing is
-  shared across files. `main-bank` is the reserved scenario name for questions with no shared
-  setup. Scenario files are named for their content (`crumbs.md`), question ids are unique
-  within their scenario, and a question's label everywhere is its path,
-  `<activity-id>/<scenario-id>/<question-id>`. workflows/learn/tools/next-item.mjs serves from
-  banks, unseen questions first; workflows/learn/tools/survey.mjs reports a malformed bank, and
-  a bank folder with no entry here.
+  **Illustrations**, not bank items; their domains are used by no bank in this topic.
+  - `review-elsewhere`, Medium: "Marta is looking for a used cargo bike. Every two hours a program
+    saves the new listings from two classified sites into a folder. Then the judging agent,
+    following a skill file Marta wrote, reads each listing and marks it 'worth a look' or 'skip'
+    against her budget and the features she needs. A program then confirms that every saved listing
+    has a mark. Each evening Marta reads every listing marked 'worth a look' in full, with its
+    photos. On Thursday the agent marked 'skip' a bike that is under her budget and has every
+    feature she needs." Answer 3 (`looks-right`): a 'skip' mark is a plausible result; the program
+    looks only at whether each listing has a mark, and Marta reads only the 'worth a look' ones. Not
+    2, since the agent has no way to tell its mark is wrong. Not 1, since neither the check nor the
+    review looks at listings marked 'skip'.
+  - `aimed-review`, Medium: the same workflow, ending instead "On Thursday the agent marked 'worth
+    a look' a bike that costs twice her budget." Answer 1 (`detected`): Marta reads every 'worth a
+    look' listing in full, so she will see the price. This pair shows why a review counts only for
+    what it looks at; a bank uses such a pair in two domains, never one.
+  - `goes-on-quietly`, Hard, in outline: Eli's program saves the menus of restaurants he wants to
+    try from a city food site each week, and an agent pulls each menu's price range and opening
+    days into his list. A program then flags any entry with an empty price range. One week the site
+    doesn't answer for one restaurant, and the saving program goes on to the next without a word.
+    Answer 2 (`unheard`): the program could tell the site didn't answer, but said nothing, and the
+    flagging program looks only at entries that exist, so a restaurant with no entry gives it
+    nothing to flag.
 
-  WRITE A SCENARIO IN STUDY ORDER. Study serves its questions in file order, skipping one no
-  longer needed, so a later question may give away an earlier one's answer, never the reverse.
+  **How hard.** Medium when one fact settles it and no check or review is near the mistake. Hard
+  when a check or review is near it and the learner must see what it looks at (`aimed-check`,
+  `check-elsewhere`, `review-elsewhere` with a review that covers the same step, `goes-on-quietly`
+  with a check present), or when a file of problems is read (`listed`). The question wording is
+  unchanged.
 
-  Each rubric question section carries:
+  **Spread across the bank.** A bank is seven scenarios, seven questions: `heard` twice, once
+  `listed` and once `aimed-check` or `aimed-review`; `unheard` twice, once `goes-on-quietly` with a
+  check present and once `unopened-note` or `unwatched-window`; `looks-right` three times, once in
+  each variant. At least four scenarios have a check or a review, and in at least three of them it
+  looks at something other than the mistake. At least one pair of scenarios has the same kind of
+  review or check and is keyed differently, as the Marta pair is. Half of them Hard. An option's
+  position follows from its case. When the generator is run live, the tutor picks each next shape to
+  carry a case the learner hasn't passed.
 
-      goal:        ids from `checks`, comma-separated; at least one, always
-      cases:       for each goal named that has cases, the ones this question exercises:
-                   `x, y` when it names one goal, `c-a: x, y; c-b: z` per goal otherwise. A
-                   pass passes every case listed and a miss none, so cases a learner could
-                   get one right and one wrong on belong in separate questions
-      answer:      what a complete answer says
-      credit:      what full and half credit mean. A question naming two or more goals lists
-                   one statement per goal, each starting `<goal-id>`: with the id in backticks
-      type:        free (the default), mcq or compound; an mcq's question ends in a numbered
-                   list and `answer` is the 1-based choice
-      move:        for a word's question, its move
-      tutor note:  optional; follow-ups for this one question, for the tutor only
+  **Domains** are this activity's own, none repeating within the bank: a campsite availability
+  watch, a used-textbook price tracker, a volunteer opportunities tracker from community
+  newsletters, a pet adoption listings watch, a farmers market vendor list, a running-race sign-up
+  tracker, a houseplant cuttings swap board, a neighborhood lost-and-found tracker. No domain from
+  the other two question activities' lists.
 
-  A COMPOUND is one question asked in lettered parts that share its stem and are judged
-  separately. Under the `###` question in both files, each part is a `#### a`, `#### b` heading
-  (a single lowercase letter, in order, at least two). The `###` task body is the stem and
-  carries any image; a part's own text follows its heading, with its numbered choices if it is an
-  mcq. The `###` rubric entry holds the question's `goal` (exactly one) and `cases`, with
-  `type: compound`. Each `####` rubric part takes `type` (mcq or free, free by default), `answer`,
-  `credit` (a free part), and an optional `tutor note`, and never a `goal` or `cases`. The entry
-  itself may carry a `tutor note` about the whole question, but an `answer` or `credit` on it is
-  a bank problem, since each part carries its own.
+  The rubric gives the `answer` (the 1-based choice) and, in a `tutor note`, the sentence that
+  settles the sound option, whether the step could tell something went wrong, and every check and
+  review in the scenario with what it looks at and why it does or doesn't reach this mistake.
+  Credit: full for the sound option; none for the others.
+- **worked example:** shown only as help when asked for, which records the attempt as helped. The
+  tutor works the illustration nearest the question's shape aloud: whether the step could tell
+  something went wrong, where it says so and whether anyone looks there, then each check and review
+  and what it looks at, and whether any of them reaches this mistake. It never adds a fact the
+  illustration leaves out. It may point to Would anyone notice? in `tasks/read-failure-handling.md`.
+- **doesn't show:** the learner picks among three options rather than saying why a mistake would
+  go unnoticed, so a pass doesn't show they would name the reason unprompted; with three choices a
+  guess is right a third of the time. Every scenario states every check and review and what each
+  looks at, and whether anyone opens where a step reports trouble, so a pass doesn't show the
+  learner would find these out about their own workflow, or think of a mistake a step could make;
+  the mistake is always given. Nothing checks what to add so that a step fails loudly.
+- **offer as:** the quick check for noticing: a short personal workflow and one mistake in one of
+  its steps, and you pick whether it would be noticed, and if not, why. About 2 minutes a question.
 
-  What holds for every question stays in the entry here. A note about one scenario goes in its
-  key, and a note about one question in its `tutor note`.
+### `a-critique-a-workflow`
 
-  RETIRED: `kind` and `bank`. An older entry may still carry `kind: generator | bank | single
-  instance` or a `bank:` line; ignore both. When curation converts the entry, any substance in a
-  `bank:` line (where the items live, how they are named, how to pick) moves into `generator`,
-  and a bare path or a `kind:` line is simply deleted. What was a single authored instance is a
-  bank with one scenario, and if that is all a check has, say so in `doesn't show`.
--->
+- **serves:** `c-judge-rerunnable`, `c-judge-detection`
+- **supports:** attempt
+- **checks:** `c-judge-rerunnable`, `c-judge-detection`
+- **artifact:** no external source. One whole personal tracker workflow, three or four steps told in
+  two short paragraphs, then six questions about it, asked one at a time: three about rerunning a
+  different step after a stopped run, then three about a mistake in one step. From this activity's
+  bank or written live per the generator below. About 4 minutes to read the scenario and answer the
+  first question, and under 2 for each after, so about 12 for a scenario.
+- **learner does:** reads the workflow once, then answers its questions one at a time, each a pick
+  from the same options as the quick checks: for a stopped run, what running that step again from
+  the start would do; for a mistake, whether it would be noticed, and if not, why. This is the
+  shape of the Nov 17 class's critique, on a workflow that isn't theirs.
+- **tutor role:** examiner
+- **tutor does:** sets each question as served, in file order, without rewording it or hinting;
+  never names the cases, which fact matters, or which option the key expects, and never says what
+  is wrong with an option before the learner has chosen. Gives help whenever it is asked for, and
+  records the attempt as helped. When the generator is run live, writes the key, goal and case into
+  the record before showing each question. Labels the attempt with the question's path, or
+  `a-critique-a-workflow/<domain>/<question>` when run live, and records the case with `--cases`.
+  Once a scenario's remaining questions would carry only cases the learner has already passed, skips
+  them, as study skips questions no longer needed. Rules from the rubric's `answer`.
+- **done when:** the criterion met with no help, case by case, for each goal separately: a
+  question's sound option passes the one case it carries, of the one goal it names.
+- **generator:** **A scenario** is one made-up personal tracker on one person's laptop, with
+  acquire, assess and extract steps and optionally a fourth step that uses their results (a weekly
+  shortlist, a calendar event for each pick, an order). It is told in two short paragraphs of
+  running prose, ten to fourteen sentences in all, in the third person about the person, who is
+  named; each step has a short handle. The assess step, at least, is done by an agent following a
+  skill file the person wrote. For each step the paragraphs state, in plain words and never under
+  labels, the facts `a-pick-rerun-outcome` and `a-pick-noticed-or-not` require: who does it, what it
+  does with each item, any test it uses to pass over items already done, what it writes and where,
+  where it says so when it can tell something went wrong, and when runs happen; and for the whole
+  workflow, every check and every review the person does, and exactly what each looks at. The
+  scenario says nothing about any stop or mistake; those come in the questions. It follows both
+  quick checks' rules on words.
 
-### `<activity-id>`
+  **Questions**, each its own `###` question under the scenario's shared setup, never parts of a
+  compound, in this order:
+  - three rerun questions, each about a different step, in the order the steps run. Each begins
+    with one or two sentences supposing a stop and what has happened since ("Suppose the
+    extracting agent stops while it is writing the notes for the 12th of 30 listings, and nobody
+    opens the notes before Sam runs it again."), then reads "If <person> runs <step> again from
+    the start, which of these happens?" with `a-pick-rerun-outcome`'s four options, in its order and
+    words. `type: mcq`; goal `c-judge-rerunnable`; it carries the case of its answer.
+  - three detection questions, each about a mistake in one step. Each begins with one sentence
+    saying what goes wrong, said as `a-pick-noticed-or-not` says a mistake ("Suppose one week the
+    collecting program can't open one site's page."), then reads "Would this mistake be noticed?"
+    with that activity's three options, in its order and words. `type: mcq`; goal
+    `c-judge-detection`; it carries the case of its answer.
 
-- **serves:**
-- **supports:**
-- **artifact:**
-- **learner does:**
-- **tutor role:**
-- **tutor does:**
-- **done when:**
-- **offer as:**
-- **checks:**
-- **worked example:**
-- **doesn't show:**
+  Every fact a question's answer needs is either in the shared setup or in that question's own
+  supposition. A supposition never states a fact about the workflow that bears on another question
+  (it adds only where a run stopped, what has happened to results since, or what went wrong), so
+  no question gives away another's answer. Each question's step and supposition must give exactly
+  one sound option, under the "Exactly one outcome" rules of the quick check it borrows from.
+
+  **Cases.** A scenario's three rerun questions carry three different cases of
+  `c-judge-rerunnable`, and its three detection questions carry all three cases of
+  `c-judge-detection`, one each. The workflow is written so this falls out of the steps as they
+  are: for example, a collecting program that adds an entry for each new item with no test for
+  done (`duplicates`), an assessing agent that passes over any item that already has a notes file
+  (`half-written`, when it stops while writing), and an extracting program that works from saved
+  pages that never change (`already-safe`, even after the person has looked over its results).
+  For detection: a check that compares the number of entries with the number of saved items
+  (`detected`, for an item the collecting program passed over), a problems file in a folder the
+  person never opens (`unheard`), and a review of only the items rated worth applying for, with
+  the mistake an item wrongly rated not worth it (`looks-right`). At least one detection question
+  per scenario is keyed `unheard` or `looks-right` despite a check or review in the workflow, which
+  looks at something other than its mistake.
+
+  **How hard.** Each question is Medium or Hard by the rules of the quick check it borrows from;
+  each scenario has at least two Hard questions. Two paragraphs of facts about several steps, only
+  some of which bear on a given question, make every scenario harder than a quick-check one.
+
+  **Spread across the bank.** A bank is three scenarios, eighteen questions. Across them each
+  case of `c-judge-rerunnable` is carried at least twice, and each case of `c-judge-detection`
+  three times, once per scenario. An option's position follows from its case.
+
+  **Domains** are this activity's own, none repeating within the bank: a cheap-flights tracker
+  built from deal newsletters, a research article alert tracker for a class project, a sublet
+  listings tracker for a summer away, a local art fair vendor tracker. No domain from the other two
+  question activities' lists.
+
+  The rubric gives each question's `goal`, `cases`, and `answer` (the 1-based choice), and in a
+  `tutor note`, the sentences that settle the sound option and the fact that rules out each other
+  option, as the quick checks' rubrics do. Credit: full for the sound option; none for the others.
+- **worked example:** shown only as help when asked for, which records the attempt as helped. The
+  tutor works one question of the same kind aloud on the matching quick check's illustration, as
+  that activity's worked example does, then points the learner back to their own question's step
+  and the facts about it in the setup. It may point to When a run stops partway and Would anyone
+  notice? in `tasks/read-failure-handling.md`.
+- **doesn't show:** as both quick checks', and more: the questions supply each stop and each
+  mistake, so a pass doesn't show the learner would think of which stops and mistakes to worry
+  about in a workflow, which the Nov 17 critique asks of them; and every check and review is named
+  in the setup. A scenario carries only three of the four rerun cases, so meeting `c-judge-rerunnable`
+  through this activity takes a second scenario or one quick-check question.
+- **offer as:** the critique check, closest to the Nov 17 class: one whole tracker workflow and six
+  questions about it, three on rerunning a step after a stop and three on whether a mistake would be
+  noticed, each picked from the same options as the quick checks. About 12 minutes. Harder than the
+  quick checks, since the facts for each question sit among facts about other steps.
+
+### `a-words`
+
+- **serves:** group vocabulary
+- **generator:** the five moves in `workflows/learn/skills/goal-setting/references/vocabulary-moves.md`, set for one word at a time from its `what it names`, `nearest confusable` and `synonyms`. Each question names that word's goal and carries its move.
+- **learner does:** answers one short question about one word
+- **tutor role:** examiner
+- **tutor does:** sets the question as served, without rewording it or hinting; when the bank has nothing for the word, sets one move live, as vocabulary-moves.md describes
+- **offer as:** not offered as a choice; a word's question is set when that word is studied or due
