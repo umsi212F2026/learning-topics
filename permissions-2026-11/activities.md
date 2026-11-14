@@ -103,6 +103,7 @@ limit prevents.
   topic), the other limits' labels and the two judging questions. Least privilege is named, not
   bold. It names no real product, site or brand, and says nothing about what a workflow does when a
   step fails or who may do what inside a web app.
+- **verified:** 2026-11-13
 - **learner does:** reads the page once, top to bottom, and stops once, at the reading's own stop in
   When data becomes instructions, right after "The instructions and the data never mix.", answering
   its question before reading on ("I don't know yet" is an honest answer): if the grading agent
@@ -177,6 +178,7 @@ limit prevents.
   prose, with a yes-or-no question about each executor's reach and, for each agent, one about its
   context, asked one at a time, from this activity's bank or written live per the generator below.
   About 3 minutes for a scenario's first question, with the reading, and about 1 for each after.
+- **verified:** 2026-11-13
 - **learner does:** reads the scenario, then answers its questions one at a time, each by picking
   yes or no: whether an executor can reach anything its step does not need, and, for an agent,
   whether untrusted input ends up in its context.
@@ -367,6 +369,7 @@ limit prevents.
   `a-look-over-steps`, asked one at a time, from this activity's bank or written live per the
   generator below. About 2 or 3 minutes for a scenario's first question, with the reading, and about
   1 for each after.
+- **verified:** 2026-11-13
 - **learner does:** reads the workflow's description and the agent's answer, then answers the
   questions one at a time, each by picking yes or no: whether an executor can reach anything its
   step does not need, and, for an agent, whether untrusted input ends up in its context.
@@ -432,6 +435,7 @@ limit prevents.
 - **artifact:** no external source. A described workflow step, a named harm, and one limit an agent
   proposes, with one compound question of two yes-or-no parts, from this activity's bank or written
   live per the generator below. Each question is a fresh scenario. About 3 or 4 minutes a question.
+- **verified:** 2026-11-13
 - **learner does:** reads the scenario, the harm and the proposed limit, then answers two yes-or-no
   parts: would this limit significantly reduce the risk of this harm, and could the step still do
   its work under it.
@@ -588,6 +592,7 @@ limit prevents.
   question of two yes-or-no parts, asked one at a time, from this activity's bank or written live
   per the generator below. About 4 minutes for a scenario's first question and about 2 for each
   after.
+- **verified:** 2026-11-13
 - **learner does:** reads the scenario and the harm once, then, for each proposal in turn, answers
   two yes-or-no parts: would this limit significantly reduce the risk of this harm, and could the
   step still do its work under it.
