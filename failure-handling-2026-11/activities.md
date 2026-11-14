@@ -51,6 +51,12 @@ person reads it.
 
 ## Check notes
 
+2026-11-13. Every check in this file supplies the stop or the mistake and states every fact the
+answer needs, and every check is a pick from fixed options. Meeting both capabilities shows the
+learner can judge a step once it is fully described. It does not show they can find those facts in
+a workflow of their own, or decide which stops and mistakes are worth worrying about. Those are
+what the Problem Set 5 critique and the Nov 17 class ask for.
+
 ## Goals
 
 | id                   | Goal | Criterion: what gets examined, and what counts |
@@ -91,6 +97,7 @@ person reads it.
   a mistake goes unnoticed (the step could tell, but nobody hears; the result looks right, and
   nothing checks it). Once the instructor has reviewed the reading, confirm that the stop below
   still falls just before the page gives its own answer.
+- **verified:** 2026-11-13
 - **learner does:** reads the page once, top to bottom, and stops once, in When a run stops partway,
   at the end of its opening paragraph and before its bulleted list, answering before reading on ("I
   don't know yet" is an honest answer): if the TA runs the stopped step again from the start, what
@@ -142,6 +149,9 @@ person reads it.
   grading workflow as the last topics' readings, from the two places a failure can be, through what
   a rerun can spoil and why a mistake goes unnoticed, to failing loudly. One short stop and a
   one-question close. About 12 minutes.
+- **check note:** The stop sits right after the sentence "Here are three ways it can go wrong", so
+  the learner already knows there are three. An answer that names only one of them is still a good
+  answer at the stop. Take it and move on.
 
 ### `a-pick-rerun-outcome`
 
@@ -316,7 +326,10 @@ person reads it.
   over items done and whether the stopped run could fool its test, where the run stopped, and what
   has happened to the results since; then why each other option is ruled out. It never adds a fact
   the illustration leaves out. It may point to When a run stops partway in
-  `tasks/read-failure-handling.md`.
+  `tasks/read-failure-handling.md`. For an `adds-again` question, which has no illustration, the
+  worked example is that section's bullet "Items done a second time"; for a `redoes-acted-on`
+  question, its bullet "A different outcome replacing one already used". The tutor walks the
+  learner through the bullet, adding no fact about the question's scenario.
 - **doesn't show:** the learner picks among four options rather than saying what would go wrong, so
   a pass doesn't show they would name it unprompted; with four choices a guess is right a quarter
   of the time. Every scenario states the step's test for done, where the run stopped and who has
@@ -328,6 +341,9 @@ person reads it.
 - **offer as:** the quick check for rerunning: one step of a short personal workflow, a run that
   stopped partway through it, and you pick what running it again from the start would do. About 2
   minutes a question.
+- **check note:** On a `redoes-acted-on` question, a learner may argue for option 1 because the
+  agent might give the same answer. Option 1 says the step is idempotent, and an agent that
+  rewrites every result with no test for done is not, whatever it happens to answer this time.
 
 ### `a-pick-noticed-or-not`
 
@@ -399,16 +415,19 @@ person reads it.
     an error on screen, and the scenario says the person starts each run herself and waits for it
     to finish. `listed`: the step puts the item on a list of problems the person reads before using
     the results. `aimed-check`: a check looks at exactly what went wrong, and reports where the
-    person sees it before using the results (a program that compares the number of entries with the
-    number of saved listings, when a step that works from the saved listings, never the saving
-    step itself, passed over one; a program that compares each entry's price with the price on the
-    saved page, when the step took the wrong figure). A count is always against something the
-    skipping step didn't make: the saved items, or the number the source itself lists. `aimed-review`: the person's review covers what went wrong (she reads every
+    person sees it before using the results (a program that compares the number of entries the
+    assessing agent made with the number of saved listings, when that agent, which works from the
+    saved listings and adds one entry per listing, passed over one; a program that compares each
+    entry's price with the price on the saved page, when the step took the wrong figure). A count
+    always counts what the skipping step itself produces, against something that step didn't make:
+    the saved items, or the number the source itself lists. `aimed-review`: the person's review covers what went wrong (she reads every
     listing marked 'worth a look' in full, and the mistake is a listing wrongly marked 'worth a
     look').
   - `unheard` (`unheard`): three variants. `goes-on-quietly`: the step passes over the item and
     says nothing, and any check in the workflow looks only at entries that exist (that every entry
-    has a price, say), so the missing one gives it nothing to flag. `unopened-note`: the step writes
+    has a price, say), so the missing one gives it nothing to flag. The scenario always says that
+    the kept thing gets an entry only for an item that was saved or processed ("the agent adds an
+    entry for each saved menu"), so it plainly holds no entry for the skipped item. `unopened-note`: the step writes
     what went wrong somewhere the scenario says nobody opens. `unwatched-window`: the step shows a
     warning in a window that closes when the run ends, on a run that happens while nobody is at the
     laptop. In none of them does the run stop.
@@ -436,8 +455,9 @@ person reads it.
     look' listing in full, so she will see the price. This pair shows why a review counts only for
     what it looks at; a bank uses such a pair in two domains, never one.
   - `goes-on-quietly`, Hard, in outline: Eli's program saves the menus of restaurants he wants to
-    try from a city food site each week, and an agent pulls each menu's price range and opening
-    days into his list. A program then flags any entry with an empty price range, at the top of the list Eli reads
+    try from a city food site each week, and an agent adds an entry to his list for each saved menu,
+    with its price range and opening days; a restaurant whose menu wasn't saved gets no entry. A
+    program then flags any entry with an empty price range, at the top of the list Eli reads
     before choosing where to eat. One week the site
     doesn't answer for one restaurant, and the saving program goes on to the next without a word.
     Answer 2 (`unheard`): the program could tell the site didn't answer, but said nothing, and the
@@ -484,6 +504,11 @@ person reads it.
   fails loudly.
 - **offer as:** the quick check for noticing: a short personal workflow and one mistake in one of
   its steps, and you pick whether it would be noticed, and if not, why. About 2 minutes a question.
+- **check note:** The reading's Would anyone notice? section says a check that every row of the
+  grades sheet has a score would catch a skipped submission. That holds only because the TA's sheet
+  already has a row for each submission. In this activity's scenarios, a check over the entries
+  catches a skipped item only if the scenario says an entry exists for it. If a learner cites the
+  reading on a `goes-on-quietly` question, say this.
 
 ### `a-critique-a-workflow`
 
@@ -550,13 +575,14 @@ person reads it.
   done (`duplicates`), an assessing agent that passes over any item that already has a notes file
   (`half-written`, when it stops while writing), and an extracting program that works from saved
   pages that never change (`already-safe`, even after the person has looked over its results).
-  For detection: a check that compares the number of entries with the number of saved items and
-  puts any shortfall where the person sees it before using the results (`detected`, for a saved
-  item the assessing agent passed over because it couldn't open it), a problems file in a folder
-  the person never opens (`unheard`), and a review of only the items rated 'worth a look', with
-  the mistake an item wrongly rated 'skip' (`looks-right`). As in `a-pick-noticed-or-not`, every
-  check reports where the person sees it, and a count check never counts against what the skipping
-  step itself made. At least one detection question
+  For detection: a check that counts the assessing agent's own output (its notes files, or the
+  entries carrying its rating) against the number of saved items, and puts any shortfall where the
+  person sees it before using the results (`detected`, for a saved item the assessing agent passed
+  over because it couldn't open it: that item has no notes file or rating, so the counts differ),
+  a problems file in a folder the person never opens (`unheard`), and a review of only the items
+  rated 'worth a look', with the mistake an item wrongly rated 'skip' (`looks-right`). As in
+  `a-pick-noticed-or-not`, every check reports where the person sees it, and a count check always
+  counts what the skipping step itself produces, against something that step didn't make. At least one detection question
   per scenario is keyed `unheard` or `looks-right` despite a check or review in the workflow, which
   looks at something other than its mistake.
 
