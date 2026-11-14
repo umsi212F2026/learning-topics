@@ -35,10 +35,11 @@ would point at an answer.
 
 **No matching words to a case.** A scenario never uses an option's own words or the goal's example
 phrases: in a rerun scenario, not "twice", "second", "again", "duplicate", "half", "partly",
-"incomplete", "used", "checked" or "different"; in a detection scenario, not "silent", "notice",
-"hear", "looks right", "catch" or "log". An action outside the workflow is never sending a message,
-an email or a text; it is placing a hold, adding a calendar event, submitting a form, putting in an
-order or posting to a shared board. A mistake that looks like a right result is never called a
+"incomplete", "repeat", "used", "checked" or "different"; in a detection scenario, not "silent",
+"notice", "hear", "looks right", "catch" or "log". An action outside the workflow is never sending
+a message, an email or a text, and never one with an obvious guard against repeats (a library hold,
+a sign-up that refuses a second try); it is adding a calendar event, putting in an order or posting
+to a shared board. A mistake that looks like a right result is never called a
 misread; it is said as what came out ("took the move-in date as the rent due date", "rated the
 listing 'skip' though it meets every one of her needs"). The facts that point at one case in one
 scenario point at another elsewhere, as each generator's spread requires: a stop in the middle of
@@ -82,8 +83,9 @@ person reads it.
   It is a draft the instructor has not yet reviewed, so this entry relies only on its section names
   and the words it bolds. Sections: an untitled opening (two judgments to make about each step, and
   the TA's workflow); Two places a failure can be; When a run stops partway; Would anyone notice?;
-  Failing loudly; Telling your agent. Words in place, each in bold where introduced: idempotent,
-  silent failure, fails loudly (the word's form here is fail loudly). Also in bold, though none is
+  Failing loudly; Telling your agent. Words in place, each in bold at its definition: idempotent,
+  silent failure, fails loudly (the word's form here is fail loudly; "failing loudly" appears
+  earlier, unbolded, in the opening and in a heading). Also in bold, though none is
   a word of this topic: the labels of the three ways a rerun goes wrong (items done a second time,
   a store left half-written, a different outcome replacing one already used) and of the two reasons
   a mistake goes unnoticed (the step could tell, but nobody hears; the result looks right, and
@@ -167,7 +169,7 @@ person reads it.
   paragraph of running prose, five to eight sentences, in the third person about that person, who
   is named. It says in a sentence or two what the workflow is for and what its steps are, then
   turns to one step, "the step" below, which it names with a short handle ("the assessing agent",
-  "the hold program"). At least half of a bank's scenarios are a small personal tracker with
+  "the ordering program"). At least half of a bank's scenarios are a small personal tracker with
   acquire, assess and extract steps (a program collects items from somewhere, an agent judges each
   one, some step pulls out fields), and the step is one of those three; the rest are other personal
   workflows (a household's receipts, a club's sign-ups). Mixed through the paragraph, never under
@@ -176,8 +178,9 @@ person reads it.
     ("adds a line for each new listing to the listings list"); writes the item's own result in
     place, replacing whatever is there ("writes each listing's rating into its row, over any rating
     already there"; "writes a notes file for each listing"); or does something outside the workflow
-    for it ("places a hold at the library for each book", "adds an event to the family's shared
-    calendar for each game");
+    for it ("puts in an order for each seed packet", "adds an event to the family's shared
+    calendar for each game"), always one with no stated guard against repeats (never a library
+    hold or a sign-up that refuses a second try);
   - who does the step: an agent following the person's skill file, or a program. Where a program
     writes results in place, what it works from, and that those inputs stay as they were ("the
     saved pages are never changed after they are saved");
@@ -203,7 +206,7 @@ person reads it.
   **The question** reads: "If <person> runs <the step> again from the start, which of these
   happens?", then four numbered options, always in this order and these words:
   1. "Nothing goes wrong: as it stands, the step is idempotent."
-  2. "Some items get done a second time."
+  2. "Duplicate records get added, or an action outside the workflow gets repeated."
   3. "A partly written result gets trusted or tripped over."
   4. "A different result replaces one that a person or a later step has already used or checked."
 
@@ -215,36 +218,39 @@ person reads it.
     for done or has one the stopped run fools because the record it tests is written only when a
     run ends ("it passes over any listing on its finished list, which it saves when a run ends").
     The run stopped between items. Nobody has acted on the results. Key: the items before the stop
-    get a second entry; not half-written, since the stop came between items; not replaced, since
+    get a duplicate entry; not half-written, since the stop came between items; not replaced, since
     adding leaves the first entries as they were and nobody has acted on them.
-  - `acts-again` (`duplicates`): the step does something outside the workflow for each item (places
-    a hold, adds a calendar event, submits a form, puts in an order, posts to a shared board), with
-    no test for done or one the stopped run fools as above. The run stopped between items. Key: the
-    items before the stop get the outside action a second time, which no later run can take back;
+  - `acts-again` (`duplicates`): the step does something outside the workflow for each item (adds a
+    calendar event, puts in an order, posts to a shared board), with no test for done or one the
+    stopped run fools as above. The run stopped between items. Key: the items before the stop get
+    the outside action repeated, which no later run can take back;
     not half-written, since the stop came between items; not replaced, since nothing in the workflow
     is rewritten.
   - `trusts-partial` (`half-written`): the step writes each item's own result (a notes file, a
     field in the item's entry) and passes over any item that already has one, by a test the partial
     result passes ("already has a notes file"; "whose summary field isn't empty"). The run stopped
     in the middle of writing one item's result. Nobody has acted on the results. Key: the item the
-    run stopped on has only part of its result, and the rerun passes over it; not done a second
-    time, since the finished items are passed over and each item has one result; not replaced,
+    run stopped on has only part of its result, and the rerun passes over it; no duplicates, since
+    the finished items are passed over and each item has one result; not replaced,
     since finished items are passed over and nobody has acted on them.
   - `redoes-acted-on` (`replaces-used`): an agent writes each item's result in place, over any
     result already there, with no test for done. Since the stop, a person or a later step has acted
     on some of the results. The run stopped between items or in the middle of writing one. Key: the
     agent may judge an item differently when asked a second time, and its new result overwrites one
-    the person or later step has already acted on, so they no longer agree; not done a second time
-    in the sense of adding, since each item keeps one result; not half-written, since the rerun
-    rewrites every item, the unfinished one included.
-  - `already-safe` (`already-safe`): three variants, which the key names. `sound-skip`: the step
-    passes over items already done, and its test is one the stopped run cannot fool (a mark added
-    only after the whole result is written); the run stopped in the middle of writing one item's
-    result, which the rerun therefore does over from the start. `same-inputs`: a program writes
-    each item's result in place from saved inputs that never change, so it writes the same result
-    each time; the person has already looked over some results. `nobody-yet`: an agent writes each
-    item's result in place with no test for done, and nobody and nothing has acted on any result.
-    Key: why each of the three things that can go wrong doesn't, citing the sentence for each.
+    the person or later step has already acted on, so they no longer agree; no duplicates, since
+    each item keeps one result and nothing outside the workflow happens; not half-written, since
+    the rerun rewrites every item, the unfinished one included.
+  - `already-safe` (`already-safe`): two variants, which the key names. In both the step is
+    idempotent, which option 1 says, so an agent that rewrites results with no test for done is
+    never keyed here, even when nobody has acted on its results. `sound-skip`: the step passes over
+    items already done, and its test is one the stopped run cannot fool (a mark added only after
+    the whole result is written); the scenario says the step writes each item's result over
+    whatever is there ("writes each listing's notes file, replacing any notes already in it"), so
+    the item it stopped on, which has no mark, gets its result written whole from the start.
+    `same-inputs`: a program writes each item's result in place from saved inputs that never
+    change, so it writes the same result each time; the person has already looked over some
+    results. Key: why each of the three things that can go wrong doesn't, citing the sentence for
+    each.
 
   **Illustrations**, not bank items; their domains are used by no bank in this topic.
   - `trusts-partial`, Medium: "Nadia is hunting for an apartment near her new job. Every morning a
@@ -269,12 +275,12 @@ person reads it.
     before, so what Jun looked over stays as it was. Not 2, since it writes each listing's own
     fields rather than adding. Not 3, since the stop came between listings and the rerun rewrites
     every listing anyway. Not 4, since the result written is the same.
-  - `acts-again`, Hard, in outline: Ruth's agent, following her skill file, reads the weekly
-    newsletter of a book-review site and places a library hold for each book that fits her list of
-    authors and topics. It passes over any book on its finished list, which it saves when a run
-    ends. The run stopped after placing holds for 9 of 15 books, when she closed the laptop's lid
-    and it went to sleep. Answer 2 (`duplicates`): the finished list was never saved, so the rerun
-    places holds for the first 9 books a second time.
+  - `acts-again`, Hard, in outline: Ruth's agent, following her skill file, reads a seed company's
+    weekly newsletter and puts in an order for each seed packet that fits her garden plan. It
+    passes over any packet on its finished list, which it saves when a run ends. The run stopped
+    after ordering 9 of 15 packets, when she closed the laptop's lid and it went to sleep. Answer 2
+    (`duplicates`): the finished list was never saved, so the rerun orders the first 9 packets
+    again.
 
   **How hard.** Medium when the deciding fact is said plainly: no test for done, a test a partial
   result plainly passes, a person who has acted on results an agent will rewrite. Hard when it must
@@ -292,7 +298,7 @@ person reads it.
   scenario. At least five scenarios are trackers with acquire, assess and extract steps, and at
   least two of the step's executors are programs. An option's position follows from its case, so
   the answer's position needs no spreading. When the generator is run live, the tutor picks each
-  next shape to carry a case the learner hasn't passed, and may use `nobody-yet`.
+  next shape to carry a case the learner hasn't passed.
 
   **Domains** vary by scenario, none repeating within the bank: a concert-ticket resale watch, a
   used-furniture watch on a neighborhood swap site, a local events calendar built from venue
@@ -316,7 +322,9 @@ person reads it.
   of the time. Every scenario states the step's test for done, where the run stopped and who has
   acted on what, so a pass doesn't show the learner would find those facts in their own workflow,
   as the Nov 17 critique will ask. Each scenario has exactly one thing that goes wrong, so a pass
-  shows nothing about a step where two would. Nothing checks what to tell an agent to fix it.
+  shows nothing about a step where two would. No scenario has an agent rewriting results that
+  nobody has acted on yet, which is safe for now without being idempotent, since option 1 claims
+  idempotence. Nothing checks what to tell an agent to fix it.
 - **offer as:** the quick check for rerunning: one step of a short personal workflow, a run that
   stopped partway through it, and you pick what running it again from the start would do. About 2
   minutes a question.
@@ -346,7 +354,11 @@ person reads it.
   labels, are these facts:
   - every check in the workflow (a program or an agent that looks over results) and exactly what it
     looks at ("a program confirms that every saved listing has an entry"; "a program flags any
-    entry whose price field is empty"); a scenario may have none;
+    entry whose price field is empty"); a scenario may have none. Every check also says where it
+    reports what it finds, and that place is always one the person sees before using the results
+    ("puts any listing it flags at the top of the list Marta reads each evening"), so whether a
+    check helps turns only on what it looks at. A check whose findings go somewhere nobody looks is
+    never written: it would blur `unheard`, which is about the step, with a check;
   - every review the person does, what it covers and what it doesn't ("each evening Marta reads
     every entry marked 'worth a look', with the listing open beside it"; "she skims each entry's
     one-line summary");
@@ -386,10 +398,12 @@ person reads it.
   - `heard` (`detected`): four variants, which the key names. `stops-in-view`: the step stops with
     an error on screen, and the scenario says the person starts each run herself and waits for it
     to finish. `listed`: the step puts the item on a list of problems the person reads before using
-    the results. `aimed-check`: a check looks at exactly what went wrong (a program that compares
-    the number of entries with the number of saved listings, when the step passed over a listing;
-    a program that compares each entry's price with the price on the saved page, when the step took
-    the wrong figure). `aimed-review`: the person's review covers what went wrong (she reads every
+    the results. `aimed-check`: a check looks at exactly what went wrong, and reports where the
+    person sees it before using the results (a program that compares the number of entries with the
+    number of saved listings, when a step that works from the saved listings, never the saving
+    step itself, passed over one; a program that compares each entry's price with the price on the
+    saved page, when the step took the wrong figure). A count is always against something the
+    skipping step didn't make: the saved items, or the number the source itself lists. `aimed-review`: the person's review covers what went wrong (she reads every
     listing marked 'worth a look' in full, and the mistake is a listing wrongly marked 'worth a
     look').
   - `unheard` (`unheard`): three variants. `goes-on-quietly`: the step passes over the item and
@@ -411,7 +425,7 @@ person reads it.
     saves the new listings from two classified sites into a folder. Then the judging agent,
     following a skill file Marta wrote, reads each listing and marks it 'worth a look' or 'skip'
     against her budget and the features she needs. A program then confirms that every saved listing
-    has a mark. Each evening Marta reads every listing marked 'worth a look' in full, with its
+    has a mark, and puts any that doesn't at the top of the page Marta reads. Each evening Marta reads every listing marked 'worth a look' in full, with its
     photos. On Thursday the agent marked 'skip' a bike that is under her budget and has every
     feature she needs." Answer 3 (`looks-right`): a 'skip' mark is a plausible result; the program
     looks only at whether each listing has a mark, and Marta reads only the 'worth a look' ones. Not
@@ -423,7 +437,8 @@ person reads it.
     what it looks at; a bank uses such a pair in two domains, never one.
   - `goes-on-quietly`, Hard, in outline: Eli's program saves the menus of restaurants he wants to
     try from a city food site each week, and an agent pulls each menu's price range and opening
-    days into his list. A program then flags any entry with an empty price range. One week the site
+    days into his list. A program then flags any entry with an empty price range, at the top of the list Eli reads
+    before choosing where to eat. One week the site
     doesn't answer for one restaurant, and the saving program goes on to the next without a word.
     Answer 2 (`unheard`): the program could tell the site didn't answer, but said nothing, and the
     flagging program looks only at entries that exist, so a restaurant with no entry gives it
@@ -464,7 +479,9 @@ person reads it.
   guess is right a third of the time. Every scenario states every check and review and what each
   looks at, and whether anyone opens where a step reports trouble, so a pass doesn't show the
   learner would find these out about their own workflow, or think of a mistake a step could make;
-  the mistake is always given. Nothing checks what to add so that a step fails loudly.
+  the mistake is always given. Every check reports where the person sees it, so a pass shows
+  nothing about a check whose own findings go unread. Nothing checks what to add so that a step
+  fails loudly.
 - **offer as:** the quick check for noticing: a short personal workflow and one mistake in one of
   its steps, and you pick whether it would be noticed, and if not, why. About 2 minutes a question.
 
@@ -533,10 +550,13 @@ person reads it.
   done (`duplicates`), an assessing agent that passes over any item that already has a notes file
   (`half-written`, when it stops while writing), and an extracting program that works from saved
   pages that never change (`already-safe`, even after the person has looked over its results).
-  For detection: a check that compares the number of entries with the number of saved items
-  (`detected`, for an item the collecting program passed over), a problems file in a folder the
-  person never opens (`unheard`), and a review of only the items rated worth applying for, with
-  the mistake an item wrongly rated not worth it (`looks-right`). At least one detection question
+  For detection: a check that compares the number of entries with the number of saved items and
+  puts any shortfall where the person sees it before using the results (`detected`, for a saved
+  item the assessing agent passed over because it couldn't open it), a problems file in a folder
+  the person never opens (`unheard`), and a review of only the items rated 'worth a look', with
+  the mistake an item wrongly rated 'skip' (`looks-right`). As in `a-pick-noticed-or-not`, every
+  check reports where the person sees it, and a count check never counts against what the skipping
+  step itself made. At least one detection question
   per scenario is keyed `unheard` or `looks-right` despite a check or review in the workflow, which
   looks at something other than its mistake.
 
