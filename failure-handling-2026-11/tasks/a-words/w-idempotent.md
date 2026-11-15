@@ -39,4 +39,9 @@ Jun tracks his spending in a sheet. Every Sunday evening, a program reads the sh
 
 "That step is idempotent, since it only reads the sheet and never changes it."
 
-What is wrong with that? Answer in two or three sentences, in your own words.
+What is wrong with Jun's claim?
+
+1. Nothing. A step that changes nothing it reads is idempotent.
+2. Running it a second time sends Jun a second email, so two runs don't leave things the same as one.
+3. The summary could be wrong, so the step can't be idempotent.
+4. Its summary is different every week, so the step isn't idempotent.
