@@ -37,7 +37,7 @@ Which of these uses the term prompt injection correctly?
 
 ### catch-own-request
 
-Omar has an agent tidy his photo folder. He types: "Clean out everything I don't need." The agent reads nothing but his request and the folder's file names, and it deletes a folder of scanned receipts that Omar wanted to keep. He says:
+Tomás has an agent tidy his photo folder. He types: "Clean out everything I don't need." The agent reads nothing but his request and the folder's file names, and it deletes a folder of scanned receipts that Tomás wanted to keep. He says:
 
 "That was prompt injection. The agent took an instruction and did something harmful with it."
 
