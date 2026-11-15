@@ -4,12 +4,12 @@ Callum will spend June to August in another city for a summer program, and he ne
 - Next the assessing agent, following a skill file Callum wrote, reads each page saved that night and writes into that listing's entry a rating of 'worth a look' or 'skip' and a few lines on how well it fits his budget, his dates and his need for a quiet place to work, overwriting any rating already there. When it can't open a saved page, it leaves the entry's rating blank and goes on.
 - Then the extracting program pulls the rent, the move-in date and the move-out date out of each saved page and writes them into a details file for that listing. It passes over any listing that already has a details file. When it finds no rent on a page, it adds the listing to the problems list and goes on.
 - Once the extracting program finishes, a flagging program looks for any entry with no rating and puts it at the top of the sublets list.
-- Each day at noon the viewing program goes through the listings collected the night before, and for each one rated 'worth a look' it adds an event to Callum's calendar for that evening, to write to its owner. When the calendar won't take an event, the program adds the listing to the problems list.
+- Each day at noon the viewing program goes through the listings collected the night before, and for each one rated 'worth a look' it emails the listing's owner, from Callum's address, asking to arrange a viewing. When an email won't send, the program adds the listing to the problems list.
 - Each morning Callum reads the problems list, then any entries at the top of the sublets list, then the details file of each listing rated 'worth a look'.
 
 ### rerun-assessing
 
-Suppose the assessing agent stops just after it finishes the 11th of 20 new listings, when the laptop restarts for an update. At noon the viewing program added calendar events for the three of those 11 listings that the agent had rated 'worth a look'.
+Suppose the assessing agent stops just after it finishes the 11th of 20 new listings, when the laptop restarts for an update. At noon the viewing program emailed the owners of the three of those 11 listings that the agent had rated 'worth a look'.
 
 If Callum runs the assessing agent again from the start, which of these happens?
 
@@ -33,7 +33,7 @@ If Callum runs the extracting program again from the start, which of these happe
 
 ### rerun-viewing
 
-Suppose the viewing program stops after adding events for 2 of the 5 listings rated 'worth a look', when the laptop goes to sleep. Callum hasn't opened his calendar since.
+Suppose the viewing program stops after emailing the owners of 2 of the 5 listings rated 'worth a look', when the laptop goes to sleep.
 
 If Callum runs the viewing program again from the start, which of these happens?
 
