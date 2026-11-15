@@ -35,6 +35,6 @@ A step is idempotent when running it several times leaves things the same as run
 - **goal:** `w-idempotent`
 - **move:** CATCH
 - **type:** mcq
-- **answer:** 2
-- **credit:** full for 2 only. Leaving the sheet alone doesn't make the step idempotent: a rerun sends Jun a second email, so two runs don't leave things the same as one. Idempotent is about everything the step does, including actions outside the sheet. Choice 1 agrees with Jun, reading idempotent as "changes no stored data". Choice 3 is a different quibble: a wrong summary is a mistake, not a rerun problem. Choice 4 reads idempotent as its confusable: a summary that changes with the week's spending says nothing about what a second run on the same Sunday does.
+- **answer:** 3
+- **credit:** full for 3 only. Leaving the sheet alone doesn't make the step idempotent: a rerun sends Jun a second email, so two runs don't leave things the same as one. Idempotent is about everything the step does, including actions outside the sheet. Choice 1 agrees with Jun, reading idempotent as "changes no stored data". Choice 2 is a different quibble: a wrong summary is a mistake, not a rerun problem. Choice 4 reads idempotent as its confusable: a summary that changes with the week's spending says nothing about what a second run on the same Sunday does.
 - **tutor note:** a learner who picks 1 is reading idempotent as "changes no stored data"; ask what Jun's inbox holds after the step runs twice.

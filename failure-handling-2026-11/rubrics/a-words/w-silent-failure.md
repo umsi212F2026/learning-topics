@@ -17,6 +17,6 @@ A silent failure is something going wrong with nothing to say so, so the run loo
 - **goal:** `w-silent-failure`
 - **move:** CATCH
 - **type:** mcq
-- **answer:** 2
-- **credit:** full for 2 only. Malik's routine is the list; nothing sends him to the log, so an error written only there reaches no one, and the failure is silent. Choice 1 agrees with Malik, taking "written down" for "reported". Choice 3 ties the word to stopping; a step that goes on can fail silently, and one that stops can too if nobody sees it. Choice 4 makes length the issue; a short log nobody reads tells no one either.
+- **answer:** 4
+- **credit:** full for 4 only. Malik's routine is the list; nothing sends him to the log, so an error written only there reaches no one, and the failure is silent. Choice 1 agrees with Malik, taking "written down" for "reported". Choice 2 ties the word to stopping; a step that goes on can fail silently, and one that stops can too if nobody sees it. Choice 3 makes length the issue; a short log nobody reads tells no one either.
 - **tutor note:** a learner who picks 1 is taking any record as a report; ask who would see the error, and when. If time allows after a pass, ask what would happen if the agent called a dry plant fine, to bring out the second way a failure goes unnoticed.

@@ -45,7 +45,7 @@ A hiking club's treasurer runs a program each night that matches members' paymen
 
 What is wrong with the treasurer's claim?
 
-1. Nothing. A large red warning is as loud as a report can be.
-2. The warning is gone before anyone looks, so it reaches no one: the step doesn't fail loudly.
-3. The program goes on to the next payment; to fail loudly it would have to stop.
+1. The warning is gone before anyone looks, so the step doesn't fail loudly.
+2. Nothing. A big red warning fails loudly; nobody could miss it.
+3. To fail loudly the program would have to stop, not go on.
 4. A warning fails loudly only if it also makes a sound.
