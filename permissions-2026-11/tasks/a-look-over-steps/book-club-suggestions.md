@@ -7,7 +7,7 @@ Dalia runs a neighborhood book club, and she wants a shortlist of books for each
   - it holds a scoped token for the club's email account that reads messages and moves them between folders.
 - Then the picking agent, following a skill file Dalia wrote, reads the suggestions file and her list of the books the club has already read, which she typed, and writes a shortlist of five books for the next vote into a file called shortlist.
   - Her home folder holds the skill files, the suggestions file, her list of books, the shortlist file, her tax returns, her household budget and a settings file with her email login.
-  - It holds no logins, keys or tokens of its own.
+  - The picking agent is given no login, key or token of its own.
 
 ### sorter-reach
 

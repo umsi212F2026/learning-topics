@@ -3,7 +3,7 @@ Uma plays bass in a band and handles its bookings, and one step of her workflow 
 - Each evening the reply agent, following a skill file Uma wrote, reads the new messages that a program she wrote copies from the band's booking inbox into a folder called inquiries, checks each against the band's calendar of booked dates and usual fees, which she types herself, and writes a reply to each message, offering a date and a fee, into a folder called replies.
   - Anyone can write to the booking inbox, whose address is on the band's website.
   - Her home folder holds the skill file, the inquiries folder, the calendar, the replies folder, the band's recordings and a settings file with the band's email login.
-  - It holds no logins, keys or tokens of its own.
+  - The reply agent is given no login, key or token of its own.
   - Nobody looks over the replies: each morning a program Uma wrote sends each one from the band's email account.
 
 The harm Uma is worried about: a hidden line in a message makes the agent write a reply agreeing to play a three-hour wedding for no fee, and it is sent.

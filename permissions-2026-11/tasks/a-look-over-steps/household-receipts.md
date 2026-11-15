@@ -5,7 +5,7 @@ Emeka keeps his household's receipts in order for his taxes, and he wants the re
   - Its token, saved in that settings file, reads his messages and sends mail as him.
 - Then the sorting agent, following a skill file Emeka wrote, reads each new receipt, which the shop that sent it wrote, and adds a row with its date, shop, amount and tax category to a file called the tax sheet.
   - His home folder holds the skill file, the receipts folder, the tax sheet, his family photos, his past tax returns, a scan of his passport and a settings file where the collector's email token is saved.
-  - It holds no logins, keys or tokens of its own.
+  - The sorting agent is given no login, key or token of its own.
 
 ### collector-reach
 

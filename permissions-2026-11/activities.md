@@ -246,7 +246,7 @@ rather than for a different kind of practice.
     files, the pages folder, her profile, the matches file, a folder of her essay drafts, her
     financial aid forms and a settings file with her bank login."; "The shared folder it has been
     given also holds her tax returns."), and, for an executor with no limit, what secrets it holds of
-    its own, saying why where the step reaches a site ("It is given no login, key or token, since reading the forum doesn't require one."; "It holds no logins, keys or tokens of its own."). An executor with no limit gets fact
+    its own, saying why where the step reaches a site ("It is given no login, key or token, since reading the forum doesn't require one."; "The checking agent is given no login, key or token of its own.", naming the executor, so the line is not read as being about the place in the sub-bullet before it). An executor with no limit gets fact
     sub-bullets and no restriction sub-bullets. Who writes something an agent reads may also go in a fact sub-bullet instead of the step bullet when it would make the step bullet long ("On the website, anyone with an account can post. Anyone can read without logging in.").
 
   **How pointed a fact may be.** A fact states what an executor does, how it runs, what limits it
@@ -336,7 +336,7 @@ rather than for a different kind of practice.
   >   - it holds no logins, keys or tokens.
   > - Then the sorting agent, following a skill file Lena wrote, reads each new post and her own list of what she likes doing and when she is free, which she typed, and writes a one-line verdict on each post into a file called picks.
   >   - Her home folder holds the skill files, the posts folder, her list, the picks file, her tax returns and a settings file with her email login.
-  >   - It holds no logins, keys or tokens of its own.
+  >   - The sorting agent is given no login, key or token of its own.
   > - On Sunday evenings the planning agent, also following a skill file Lena wrote, reads the list of shifts she has signed up for and her list of other plans for the week, both of which she types herself, and writes a draft plan for the week into a file called plan. It runs in a sandbox with the following restrictions:
   >   - it allows access to only its skill file, those two lists and the plan file, all read-only except the plan file;
   >   - shell commands are turned off;
@@ -590,7 +590,7 @@ rather than for a different kind of practice.
   >
   > - Each evening the matching agent, following a skill file Omar wrote, fetches the new listings from three shelter websites, where any shelter can post, reads each one, and writes the promising ones, with a short note on each, into a file called shortlist.
   >   - His home folder holds the skill file, the shortlist, his photos and a settings file with his bank login.
-  >   - It holds no logins, keys or tokens of its own.
+  >   - The matching agent is given no login, key or token of its own.
   >   - Nobody looks over the shortlist before Omar emails shelters from it the next morning.
   >
   > The harm Omar is worried about: a hidden line in a listing makes the agent send his bank login to a web address.

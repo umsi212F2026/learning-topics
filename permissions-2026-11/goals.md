@@ -106,6 +106,7 @@ Words and capabilities from earlier topics that this one uses without teaching a
 - `w-secret`, from deploy-config-2026-10
 - `w-workflow-step`, `w-executor`, `w-ai-agent` and `w-skill`, from understanding-workflows-2026-10
 - the propose-apply pattern (`w-design-pattern`), from workflow-steps-design-2026-10
+- a person trigger, from triggers-2026-11
 
 ## Sequence
 

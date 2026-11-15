@@ -5,7 +5,7 @@ Kofi organizes Saturday hikes for a walking group, and one step of his workflow 
 - Each Thursday evening the sign-up agent, following a skill file Kofi wrote, fetches the week's new posts from the group's message board on a hiking website, reads each post, and writes the names of the people coming on Saturday, with whether each needs a ride, into a file called roster in his hikes folder.
   - On the website, anyone with an account can post. Anyone can read without logging in.
   - His home folder holds the skill files, the hikes folder, a photos folder with pictures from every hike he has led, his tax returns and a settings file with his bank login.
-  - It holds no logins, keys or tokens of its own.
+  - The sign-up agent is given no login, key or token of its own.
   - Nobody looks over the roster before Kofi texts it to the drivers on Friday morning.
 
 The harm Kofi is worried about: a hidden line in a post makes the agent delete the pictures in his photos folder.

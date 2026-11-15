@@ -7,7 +7,7 @@ Nadia is a high school senior who has applied to four universities, and she want
   - it holds no logins, keys or tokens.
 - Then the checking agent, following a skill file Nadia wrote, reads each new page and her own profile, which she typed, with her grades, her planned major and her activities, and writes each scholarship she qualifies for, with its deadline, into a file called matches.
   - Her home folder holds the skill files, the pages folder, her profile, the matches file, a folder of her essay drafts, her financial aid forms and a settings file with her bank login.
-  - It holds no logins, keys or tokens of its own.
+  - The checking agent is given no login, key or token of its own.
 - On Sunday evenings the essay agent, also following a skill file Nadia wrote, reads the drafts in her essays folder, and her class schedule, which she types herself, and writes a plan for which draft to work on each evening into a file called plan. It runs in a sandbox with the following restrictions:
   - it allows access to only its skill file, the essays folder, her class schedule and the plan file, all read-only except the plan file;
   - shell commands are turned off;
