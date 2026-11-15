@@ -243,14 +243,14 @@ rather than for a different kind of practice.
     secrets ("it holds a scoped token that reads her calendar;"; "it holds a token for her bank that
     reads her balance and moves money;"; "it holds no logins, keys or tokens."). A harness's
     restrictions are said the same way ("it allows reading and writing files in the posts folder;";
-    "shell commands are refused;").
+    "shell commands are refused;"; "shell commands run without asking;"). Where an agent with no other limit has had its harness set to let shell commands run without asking, that is a fact sub-bullet instead ("Omar has set its harness's permission settings to let it run shell commands without asking.").
   - **Fact sub-bullets**, each a full sentence starting with a capital and ending with a full stop,
     state plainly what sits in places the executor could get to ("Her home folder holds the skill
     files, the pages folder, her profile, the matches file, a folder of her essay drafts, her
     financial aid forms and a settings file with her bank login."; "The shared folder it has been
     given also holds her tax returns."), and, for an executor with no limit, what secrets it holds of
     its own ("It holds no logins, keys or tokens of its own."). An executor with no limit gets fact
-    sub-bullets and no restriction sub-bullets.
+    sub-bullets and no restriction sub-bullets. Who writes something an agent reads may also go in a fact sub-bullet instead of the step bullet when it would make the step bullet long ("On the website, anyone with an account can post. Anyone can read without logging in.").
 
   **How pointed a fact may be.** A fact states what an executor does, how it runs, what limits it
   runs under, what sits where, what it reads and who wrote that. The scenario never spells out what
@@ -451,7 +451,6 @@ rather than for a different kind of practice.
 - **supports:** attempt
 - **checks:** `c-spot-excess`, `c-spot-injection`
 - **artifact:** no external source. A described personal workflow given as the answer an agent wrote when asked to describe each step, one bullet per step with labeled sub-bullets for what its executor can reach, with the same yes-or-no questions as `a-look-over-steps`, asked one at a time, from this activity's bank or written live per the generator below. About 2 or 3 minutes for a scenario's first question, with the reading, and about 1 for each after.
-- **verified:** 2026-11-13
 - **learner does:** reads the workflow's description and the agent's answer, then answers the
   questions one at a time, each by picking yes or no: whether an executor can reach anything its
   step does not need, and, for an agent, whether untrusted input ends up in its context.
@@ -520,10 +519,7 @@ rather than for a different kind of practice.
 - **serves:** `c-judge-limits`
 - **supports:** attempt
 - **checks:** `c-judge-limits`
-- **artifact:** no external source. A described workflow step, a named harm, and one limit an agent
-  proposes, with one compound question of two yes-or-no parts, from this activity's bank or written
-  live per the generator below. Each question is a fresh scenario. About 3 or 4 minutes a question.
-- **verified:** 2026-11-13
+- **artifact:** no external source. A described workflow step, a short opening and then one bullet per step the harm needs with sub-bullets saying how its executor runs, then a named harm and one limit an agent proposes, with one compound question of two yes-or-no parts, from this activity's bank or written live per the generator below. Each question is a fresh scenario. About 3 or 4 minutes a question.
 - **learner does:** reads the scenario, the harm and the proposed limit, then answers two yes-or-no
   parts: would this limit significantly reduce the risk of this harm, and could the step still do
   its work under it.
@@ -540,23 +536,7 @@ rather than for a different kind of practice.
   parts are answered.
 - **done when:** the criterion met with no help, case by case: both parts right passes the case the
   question carries.
-- **generator:** **A scenario** is one step of a made-up personal workflow on one person's laptop,
-  with only as much of the workflow around it as the harm needs, told in one paragraph of running
-  prose, five to eight sentences, in the third person about that person, who is named. It says what
-  the step does and what it uses (what it reads and writes, whether it fetches anything from the
-  internet, which account it acts on and what it does there); who runs it (in at least four of a
-  bank's six scenarios, an agent following a skill file the person wrote; otherwise a program); how
-  that executor runs (as which user, and with which limits, if any, including, for an agent, what
-  its harness lets it run without asking; an executor with no limit is described only by who starts
-  it, "Omar starts it himself", never as running with default settings or its harness's default
-  settings, which the reading says vary between harnesses, and never with a starting folder named as
-  if it were a boundary) and what it can reach as a result, in all four kinds
-  (files, including secrets saved in them; shell commands; the network; what its secrets let it
-  do), stated as the reading's rule gives it; and, for an agent, what it reads and who wrote each
-  part. Where a person already checks anything, the paragraph says so, and where nobody does, it
-  says what happens to the step's output (it goes straight onto the list she calls from; the reply
-  is sent). The paragraph is written as one long line, never hard-wrapped. Then two sentences in
-  fixed frames, each its own paragraph and likewise one long line:
+- **generator:** **A scenario** is one step of a made-up personal workflow on one person's laptop, with only as much of the workflow around it as the harm needs, in the third person about that person, who is named, laid out as `a-look-over-steps`'s scenarios are. One or two short opening sentences say who the person is and what the workflow is for. Then comes one top-level bullet per step the harm needs, in order, usually just one. Each follows `a-look-over-steps`'s step bullet, restriction sub-bullet and fact sub-bullet rules exactly: the step bullet says what the step does and what it uses, who runs it and, for an agent, everything it reads and who wrote each part, and its last sentence says how the executor runs in that entry's fixed forms; a limited executor's restrictions follow as restriction sub-bullets; fact sub-bullets say what sits in places the executor could get to and, for an executor with no limit, what secrets it holds of its own. The step the harm turns on is run, in at least four of a bank's six scenarios, by an agent following a skill file the person wrote, and otherwise by a program. Where a person already checks the step's output, or where nobody does and the output goes straight on, that is a fact sub-bullet under the step ("Nobody looks over the roster before Kofi texts it to the drivers on Friday morning."; "Priya reads every reply before it is sent."). The scenario states how each executor runs, its limits and what sits where, and never what that means for reach: `a-look-over-steps`'s "How pointed a fact may be" rule applies, so no "so it can read and change all his files, run shell commands and reach the internet"; the learner works out reach from the reading's rule that an executor can do whatever its user can, unless something narrows it. Write the opening and each bullet and sub-bullet as one long line; never hard-wrap the scenario's prose. Then two sentences in fixed frames, each its own paragraph below the bullets and likewise one long line:
   - "The harm <Name> is worried about: <harm>." One specific harm, one thing that could go wrong,
     following from one of the step's problems: its executor can reach something the step does not
     need, or untrusted input reaches an agent's context, or both, where text steers an agent into
@@ -579,28 +559,9 @@ rather than for a different kind of practice.
     Never an agent's approval prompts, which the reading calls a weak check, so their effect is
     not a clear call.
 
-  **Clear calls only.** Each limit either clearly cuts off the harm's route or adds a check on every
-  change before it takes effect, or clearly has little or nothing to do with the harm. Never a limit
-  that cuts the route only partly, a person who checks only some outputs or might not look, or a
-  limit whose effect turns on how carefully it was set up. Never a limit of the right kind built
-  wrong: a sandbox that still holds the login, a scoped token that still has the harmful permission,
-  an allowlist that still allows the harmful action. Every limit is set up as the agent describes it
-  and works as described. Whether the step can still work is as clear: a limit that stops the work
-  takes away something the paragraph says the step uses, and any other limit leaves everything the
-  step uses. **How a limit is imposed settles what it covers**, as the reading says: a sandbox, a
-  separate user or a scoped token covers everything the executor runs, and the harness's permission
-  settings cover only what the agent asks the harness to do. So wherever a proposal uses the
-  harness's permission settings, the paragraph says what the harness lets the agent run without
-  asking (no shell commands, or shell commands, because its step runs a named program), and nobody
-  need wonder whether a command could get around it. The one limit that works as described and is
-  still got around is this one, which the reading teaches: a file or network limit in the harness's
-  permission settings, when the paragraph says the harness lets the agent run shell commands without
-  asking and the harm's route can go through a command (network left off the harness allowlist,
-  while the step runs an allowed download program and any command it runs still reaches the
-  network). That limit is keyed `no-effect`.
+  **Clear calls only.** Each limit either clearly cuts off the harm's route or adds a check on every change before it takes effect, or clearly has little or nothing to do with the harm. Never a limit that cuts the route only partly, a person who checks only some outputs or might not look, or a limit whose effect turns on how carefully it was set up. Never a limit of the right kind built wrong: a sandbox that still holds the login, a scoped token that still has the harmful permission, an allowlist that still allows the harmful action. Every limit is set up as the agent describes it and works as described. Whether the step can still work is as clear: a limit that stops the work takes away something the step bullet says the step uses, and any other limit leaves everything the step uses. **How a limit is imposed settles what it covers**, as the reading says: a sandbox, a separate user or a scoped token covers everything the executor runs, and the harness's permission settings cover only what the agent asks the harness to do. So wherever a proposal uses the harness's permission settings, a sub-bullet under the step says what the harness lets the agent run without asking (no shell commands, or shell commands, because its step runs a named program): a restriction sub-bullet where the harness already sets restrictions ("shell commands are refused;"; "shell commands run without asking;"), otherwise a fact sub-bullet ("Omar has set its harness's permission settings to let it run shell commands without asking."), and nobody need wonder whether a command could get around it. The one limit that works as described and is still got around is this one, which the reading teaches: a file or network limit in the harness's permission settings, when a sub-bullet says the harness lets the agent run shell commands without asking and the harm's route can go through a command (network left off the harness allowlist, while the step runs an allowed download program and any command it runs still reaches the network). That limit is keyed `no-effect`.
 
-  **A question** is a compound: the `###` stem is the paragraph and the two framed sentences, then
-  two mcq parts.
+  **A question** is a compound: the `###` stem is the scenario (the opening, the step bullets and the two framed sentences), then two mcq parts.
   - `#### a`: "Would this limit significantly reduce the risk of this harm?", then "1. Yes", "2. No".
   - `#### b`: "Could <step handle> still do its work under this limit?", then "1. Yes", "2. No".
   The rubric's `###` entry has `goal: c-judge-limits`, `type: compound` and one case; each part has
@@ -614,11 +575,7 @@ rather than for a different kind of practice.
     only read) or checks every change before it takes effect (the person approves every reply before
     it is sent; a program applies only one kind of change, so a steered agent can't delete entries),
     and leaves the executor everything its step uses.
-  - `stops-work` (a Yes, b No): the limit cuts off the harm's route in one of those ways, and also
-    takes away something the paragraph says the step uses: read-only access to the folder the step
-    writes into; no internet for a step that fetches pages; a program that hands over only a count,
-    when the step's job is to write about what the text says; a sandbox that leaves out a file the
-    step reads; a token that can only read, for a step that sends.
+  - `stops-work` (a Yes, b No): the limit cuts off the harm's route in one of those ways, and also takes away something the step bullet says the step uses: read-only access to the folder the step writes into; no internet for a step that fetches pages; a program that hands over only a count, when the step's job is to write about what the text says; a sandbox that leaves out a file the step reads; a token that can only read, for a step that sends.
   - `no-effect` (a No, b Yes): the limit leaves everything the step uses and does nothing about the
     harm's route. It limits something the harm doesn't pass through (read-only access to a folder the
     harm never touches; no internet, when the harm happens entirely in files on the laptop; a narrower
@@ -631,29 +588,22 @@ rather than for a different kind of practice.
     permission settings, when the harness lets the agent run shell commands without asking and the
     harm's route goes through a command).
 
-  **Illustrations**, not bank items; their domain is used by no bank in this topic. The paragraph:
-  "Omar is looking for a cat to adopt. Each evening the matching agent, following a skill file Omar
-  wrote, fetches the new listings from three shelter websites, where any shelter can post, reads
-  each one, and writes the promising ones, with a short note on each, into a file called shortlist.
-  Omar starts it himself, so it can read and change his files, run shell commands and reach the
-  internet, and his bank login is saved in a settings file in his home folder. The harm Omar is worried about: a hidden line in a listing makes the agent send
-  his bank login to a web address." Then one of these, each a separate scenario:
-  - `sound-limit`, Medium: "His agent proposes: 'I can run the matching step in a sandbox folder
-    holding only the skill file and the shortlist, still able to fetch pages from the internet.'" a
-    Yes (the login isn't in the sandbox, so the agent can't read it to send it); b Yes (it still
-    reads its skill file, fetches the listings and writes the shortlist).
-  - `stops-work`, Medium: "His agent proposes: 'I can run the matching agent in a sandbox with the
-    network turned off.'" a Yes (it can't send anything anywhere); b No (it fetches the listings
-    from the shelter websites).
-  - `no-effect`, Hard: "His agent proposes: 'You could look over the shortlist each morning before
-    contacting any shelter.'" a No (the login would be sent during the evening run, before Omar
-    looks at anything, and the shortlist needn't show it); b Yes (the step runs as before).
-  - `no-effect`, Hard, a variant of the paragraph: the agent fetches the listings by running a
-    download program Omar wrote, and Omar set its harness's permission settings to let it run
-    shell commands without asking. "His agent proposes: 'I can leave the network off the matching
-    agent's allowlist in its harness's permission settings.'" a No (the harness checks only what the
-    agent asks it to do; a command the agent runs can still read the login and reach the internet
-    to send it); b Yes (it still runs the download program, which still fetches the listings).
+  **Illustrations**, not bank items; their domain is used by no bank in this topic. The scenario, up to the harm:
+
+  > Omar is looking for a cat to adopt, and his workflow keeps a shortlist of promising ones.
+  >
+  > - Each evening the matching agent, following a skill file Omar wrote, fetches the new listings from three shelter websites, where any shelter can post, reads each one, and writes the promising ones, with a short note on each, into a file called shortlist. Omar starts it himself.
+  >   - His home folder holds the skill file, the shortlist, his photos and a settings file with his bank login.
+  >   - It holds no logins, keys or tokens of its own.
+  >   - Nobody looks over the shortlist before Omar emails shelters from it the next morning.
+  >
+  > The harm Omar is worried about: a hidden line in a listing makes the agent send his bank login to a web address.
+
+  Then one of these, each a separate scenario:
+  - `sound-limit`, Medium: "His agent proposes: 'I can run the matching step in a sandbox folder holding only the skill file and the shortlist, still able to fetch pages from the internet.'" a Yes (nothing narrows the agent now, so by the reading's rule it can do whatever Omar can, including reading the settings file and reaching the internet; the login isn't in the sandbox, so the agent can't read it to send it); b Yes (it still reads its skill file, fetches the listings and writes the shortlist).
+  - `stops-work`, Medium: "His agent proposes: 'I can run the matching agent in a sandbox with the network turned off.'" a Yes (it can't send anything anywhere); b No (it fetches the listings from the shelter websites).
+  - `no-effect`, Hard: "His agent proposes: 'You could look over the shortlist each morning before contacting any shelter.'" a No (by the reading's rule the agent can read the login and reach the internet, so the login would be sent during the evening run, before Omar looks at anything, and the shortlist needn't show it); b Yes (the step runs as before).
+  - `no-effect`, Hard, a variant of the scenario: the step bullet says the agent fetches the listings by running a download program Omar wrote, and a fact sub-bullet reads "Omar has set its harness's permission settings to let it run shell commands without asking." "His agent proposes: 'I can leave the network off the matching agent's allowlist in its harness's permission settings.'" a No (the harness checks only what the agent asks it to do; a command the agent runs can still do whatever Omar can, so it can read the login and reach the internet to send it); b Yes (it still runs the download program, which still fetches the listings).
 
   **How hard.** Medium when the limit plainly closes or plainly misses the harm's route (a sandbox
   without the login, against sending the login; read-only access to a folder the harm never
@@ -680,20 +630,8 @@ rather than for a different kind of practice.
   club treasurer's reimbursement requests, a graduate program applications tracker, a hiking
   group's trip sign-ups. No domain from any other activity's list or illustration in this topic.
 
-  **The key** gives both answers. For part a: the harm's route (what the executor would have to
-  read, reach, use or do for the harm to happen, and when it would take effect), citing the
-  sentences, and whether the limit, as it is imposed, cuts that route, checks every change before
-  it takes effect, or leaves the route as it was. For part b: what the step uses, citing the sentence, and whether the
-  limit leaves it. Credit, per part: full for the key's choice, none for the other; the question
-  passes its case only when both parts are right. A `tutor note` on the entry gives, for a
-  `no-effect` question, what the limit does do, so the tutor can say afterward that it isn't
-  useless, only not aimed at this harm.
-- **worked example:** shown only as help when asked for, which records the attempt as helped. The
-  tutor works the illustration of the same case aloud: traces the harm's route from the paragraph
-  (what the agent would have to read and reach, and when it would happen), asks whether the limit
-  closes that route or checks every change before it takes effect, then lists what the step uses
-  and asks whether the limit leaves it. It never adds a fact the illustration leaves out. It may
-  point to Limits you can put on a step and Judging a proposed limit in `tasks/read-permissions.md`.
+  **The key** gives both answers. For part a: the harm's route (what the executor would have to read, reach, use or do for the harm to happen, and when it would take effect), citing the sentences and, wherever the route depends on what an executor can reach with nothing narrowing it, the reading's rule that an executor can do whatever its user can, unless something narrows it; and whether the limit, as it is imposed, cuts that route, checks every change before it takes effect, or leaves the route as it was. For part b: what the step uses, citing the sentence, and whether the limit leaves it. Credit, per part: full for the key's choice, none for the other; the question passes its case only when both parts are right. A `tutor note` on the entry gives, for a `no-effect` question, what the limit does do, so the tutor can say afterward that it isn't useless, only not aimed at this harm; any tutor note that turns on what an executor can reach with nothing narrowing it cites the same rule.
+- **worked example:** shown only as help when asked for, which records the attempt as helped. The tutor works the illustration of the same case aloud: traces the harm's route from the scenario (what the agent would have to read and reach, starting from the reading's rule that it can do whatever its user can unless something narrows it, and when it would happen), asks whether the limit closes that route or checks every change before it takes effect, then lists what the step uses and asks whether the limit leaves it. It never adds a fact the illustration leaves out; for the harness variant, it fills the variant out into bullets in this activity's layout, adding no fact. It may point to What a step can reach, Limits you can put on a step and Judging a proposed limit in `tasks/read-permissions.md`.
 - **doesn't show:** every limit is clearly on one side of "significantly", and every limit works as
   described, so a pass shows nothing about the borderline calls or about catching a limit built
   wrong, which the instructor left to the agent; the one way a limit is got around that a question
@@ -710,11 +648,7 @@ rather than for a different kind of practice.
   say whether the limit would significantly reduce the risk and whether the step could still work.
   About 3 or 4 minutes a question. Harms vary from question to question, so each one is read from
   scratch.
-- **check note:** A limit imposed by a sandbox, a separate user or a scoped token covers every
-  command the executor runs. If a learner asks whether a shell command could get around one, say
-  no: that is a fact of the scenario, not a hint. For a limit in the harness's permission settings,
-  don't answer that question, since it is what part a judges; point to the paragraph's sentence on
-  what the harness lets the agent run without asking.
+- **check note:** A limit imposed by a sandbox, a separate user or a scoped token covers every command the executor runs. If a learner asks whether a shell command could get around one, say no: that is a fact of the scenario, not a hint. For a limit in the harness's permission settings, don't answer that question, since it is what part a judges; point to the sub-bullet on what the harness lets the agent run without asking.
 
 ### `a-weigh-proposals`
 
@@ -736,12 +670,12 @@ rather than for a different kind of practice.
   once they would carry only cases the learner has already passed.
 - **done when:** the criterion met with no help, case by case: both parts right passes the case the
   question carries.
-- **generator:** **A scenario** uses `a-weigh-one-limit`'s paragraph, harm sentence, clear-calls
+- **generator:** **A scenario** uses `a-weigh-one-limit`'s layout (the opening, the step bullets and their sub-bullets), harm sentence, clear-calls
   rule, cases, parts, key and credit, with one difference: the shared setup ends with "<Name> asks
   her agent what limits could reduce the risk of that harm. It proposes several; each question
   below gives one. Each proposal changes only what it names; everything else stays as described
   above." Each `###` question's body is "Proposal: '<limit>'", in the agent's words as
-  `a-weigh-one-limit` describes, then the two parts. The paragraph, the harm sentence, the shared
+  `a-weigh-one-limit` describes, then the two parts. The opening, each bullet and sub-bullet, the harm sentence, the shared
   setup's closing sentences and each proposal are each written as one long line, never
   hard-wrapped. A scenario has two or three proposals. Each
   proposal stands on its own: none refers to another ("instead", "as well", "on top of the
@@ -754,12 +688,12 @@ rather than for a different kind of practice.
   to an answer.
 
   **Example**, the cat adoption illustration in `a-weigh-one-limit` set as one scenario: the
-  paragraph and the harm, then three proposals in this order: "I can run the matching agent in a
+  opening, the step bullet and the harm, then three proposals in this order: "I can run the matching agent in a
   sandbox with the network turned off" (`stops-work`); "You could look over the shortlist each
   morning before contacting any shelter" (`no-effect`); "I can run the matching agent as a separate
   user that has been given the skill file and the shortlist" (`sound-limit`, since the operating
   system then keeps it and every command it runs from the settings file with the login, and the
-  internet stays as the paragraph describes it). A bank scenario would
+  internet stays open, since nothing narrows its network). A bank scenario would
   break that one-of-each pattern in at least two of its four scenarios.
 
   **How hard**, as in `a-weigh-one-limit`. The question wording is unchanged.
