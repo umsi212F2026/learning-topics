@@ -12,7 +12,7 @@ Some failures stop things. The download program can't reach the course site, and
 
 Other failures don't stop anything. The agent misreads the test results and drafts full credit for code that failed half its tests, with confident, friendly feedback to match. Nothing crashed. The run finished. The grades sheet has a score in every row. Only the score is wrong.
 
-The first kind raises the question of rerunning: the run stopped, so what happens when you start it again? The second kind raises the question of noticing: nothing stopped, so who will find out? A workflow with an agent in it has more of the second kind, because an agent's mistakes are often substantive ones: it looks right but doesn't make sense when you think about it more closely.
+The first kind raises the question of rerunning: the run stopped, so what happens when you start it again? The second kind raises the question of noticing: nothing stopped, so who will find out? A workflow with an agent in it has more of the second kind, because an agent's mistakes are often substantive ones: they look right but don't make sense when you think about them more closely.
 
 ## When a run stops partway
 
@@ -31,9 +31,9 @@ Three elements can contribute to idempotency: the process checks what is already
 A **silent failure** is a mistake that nothing reports, so the run looks as if it worked. There are two reasons a mistake goes unnoticed, and they hold whoever does the step: a program, an agent, or a person.
 
 - **The step could tell, but nobody hears.** The test runner can't build submission 87, so it writes "build failed" to a log file and moves on to 88. The step knew something went wrong and said so, but only in a log that nobody reads. A step that says nothing at all is worse: the download program can't open one submission, skips it, and the student simply never gets a grade.
-- **The result looks right, and nothing checks it.** The agent's full marks for failing code is an example. It is a plausible score, in the right place, with feedback that reads well. Unless something compares it with the test results, nobody will know.
+- **The result looks right, and nothing checks it.** The agent's full credit for failing code is an example. It is a plausible score, in the right place, with feedback that reads well. Unless something compares it with the test results, nobody will know.
 
-A check only helps if it looks at the thing that went wrong. Suppose the TA adds a program that confirms every row in the grades sheet has a drafted score. That check is worth having: it would catch the skipped submission. It would not catch the full marks, because that is a legitimate score (just wrong for this student). A mistake is noticed only if the run stops, or if some check or some person's review would catch this particular mistake.
+A check only helps if it looks at the thing that went wrong. Suppose the TA adds a program that confirms every row in the grades sheet has a drafted score (the sheet has a row for every submission, whether or not it was downloaded). That check is worth having: it would catch the skipped submission. It would not catch the full credit, because that is a legitimate score (just wrong for this student). A mistake is noticed only if the run stops, or if some check or some person's review would catch this particular mistake.
 
 The TA's own review is a check too, and the same question applies to it. A TA who reads each draft's feedback but not anything from the student's work being graded will catch feedback that is rude or confusing, and miss a score that disagrees with the tests.
 
