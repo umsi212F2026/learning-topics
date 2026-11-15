@@ -6,6 +6,7 @@ Mei is getting married in June, and one step of her workflow answers the emails 
   - Anyone who knows the wedding's address can send an email to it.
   - Her home folder holds the skill files, the rsvps folder, the details file, the outbox, her guest list, a folder of photos and a settings file with her bank login.
   - The reply agent is given no login, key or token of its own.
+  - Mei signs in to the wedding's email account on her phone, and its login is not saved on the laptop.
   - Each morning Mei sends the replies in the outbox from the wedding's email account without reading them.
 
 The harm Mei is worried about: a hidden line in one email makes the agent add a stranger's payment link to its replies to other guests, and the replies are sent.
