@@ -667,12 +667,9 @@ rather than for a different kind of practice.
 - **done when:** the criterion met with no help, case by case: both parts right passes the case the
   question carries.
 - **generator:** **A scenario** uses `a-weigh-one-limit`'s layout (the opening, the step bullets and their sub-bullets), harm sentence, clear-calls
-  rule, cases, parts, key and credit, with one difference: the shared setup ends with "<Name> asks
-  her agent what limits could reduce the risk of that harm. It proposes several; each question
-  below gives one. Each proposal changes only what it names; everything else stays as described
-  above." Each `###` question's body is "Proposal: '<limit>'", in the agent's words as
+  rule, cases, parts, key and credit, with one difference: the shared setup ends with "<Name> asks her agent what limits could reduce the risk of that harm.", and a `## Framing` section after it reads "The agent proposes several limits, and each question below gives one. Each proposal changes only what it names; everything else stays as described above." Each `###` question's body is "Proposal: '<limit>'", in the agent's words as
   `a-weigh-one-limit` describes, then the two parts. The opening, each bullet and sub-bullet, the harm sentence, the shared
-  setup's closing sentences and each proposal are each written as one long line, never
+  setup's closing sentence, the framing and each proposal are each written as one long line, never
   hard-wrapped. A scenario has two or three proposals. Each
   proposal stands on its own: none refers to another ("instead", "as well", "on top of the
   sandbox"), and none is judged as combined with another. No question's text gives away another's

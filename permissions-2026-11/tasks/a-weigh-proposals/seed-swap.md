@@ -8,11 +8,11 @@ Hana grows vegetables and trades seeds with other gardeners, and one step of her
 
 The harm Hana is worried about: a hidden line in a post makes the agent delete her planting records folder.
 
-Hana asks her agent what limits could reduce the risk of that harm. It proposes several. Each proposal changes only what it names; everything else stays as described above.
+Hana asks her agent what limits could reduce the risk of that harm.
 
 ## Framing
 
-Each question below gives one of the agent's proposals.
+The agent proposes several limits, and each question below gives one. Each proposal changes only what it names; everything else stays as described above.
 
 ### sandbox
 
