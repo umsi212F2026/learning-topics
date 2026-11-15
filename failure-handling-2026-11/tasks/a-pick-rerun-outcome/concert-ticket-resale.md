@@ -1,7 +1,7 @@
 Ines is hunting for resale tickets to a sold-out concert tour that reaches her city in March.
 
 - Each morning a program adds a row to the listings list for each new listing on a ticket resale site.
-- Then the rating agent, following a skill file Ines wrote, reads every listing in the list, passing over none, and writes a rating of 'buy now', 'maybe' or 'skip' into the listing's row, with a sentence of reasons, overwriting any rating already there.
+- Then the rating agent, following a skill file Ines wrote, reads every listing in the list and writes a rating of 'buy now', 'maybe' or 'skip' into the listing's row, with a sentence of reasons, overwriting any rating already there.
 - Then a details program pulls each listing's price, date and section into its row.
 - At noon each day the shortlist program copies every listing rated 'buy now' onto that day's shortlist, which Ines reads each evening.
 
