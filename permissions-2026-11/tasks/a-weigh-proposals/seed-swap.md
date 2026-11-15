@@ -12,7 +12,7 @@ Hana asks her agent what limits could reduce the risk of that harm.
 
 ## Framing
 
-The agent proposes several limits, and each question below gives one. Each proposal changes only what it names; everything else stays as described above.
+The agent proposes several limits, and each question below gives one.
 
 ### sandbox
 

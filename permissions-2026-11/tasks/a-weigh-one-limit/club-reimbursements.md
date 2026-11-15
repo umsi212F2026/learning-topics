@@ -10,7 +10,7 @@ Jonas is the treasurer of a chess club, and one step of his workflow sorts the r
 
 The harm Jonas is worried about: a hidden line in a request makes the agent write that a made-up expense has room in the budget, and Jonas pays it.
 
-His agent proposes: 'I can have a program read the requests and hand the ledger agent only the amount and the date of each one.'
+His agent proposes: 'I can have a program read the requests and hand the ledger agent only whether each one's total is over or under the club's fifty-dollar limit.'
 
 #### a
 

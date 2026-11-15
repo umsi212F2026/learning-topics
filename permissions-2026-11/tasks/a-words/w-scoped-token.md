@@ -28,7 +28,7 @@ A tenants' association has an agent post a weekly notice to the association's gr
 
 Which of these uses the term scoped token correctly?
 
-1. The scoped token is the page's password, so the agent can do whatever an admin can.
-2. The scoped token limits how many words of each notice the agent may read.
-3. The scoped token lets the agent post notices, but not remove the page's members.
+1. The scoped token lets the agent post notices, but not remove the page's members.
+2. The scoped token is the page's password, so the agent can do whatever an admin can.
+3. The scoped token limits how many words of each notice the agent may read.
 4. The scoped token keeps the agent from opening other files on its laptop.

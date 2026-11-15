@@ -26,5 +26,5 @@ A scoped token is a secret that lets its holder do only certain things with an a
 - **goal:** `w-scoped-token`
 - **move:** CATCH
 - **type:** mcq
-- **answer:** 3
-- **credit:** full for 3 only. The token can create posts and nothing else, so removing members is beyond it. Choice 1 reads the term as its confusable: a password would let the agent do anything the account can, and this token is limited to posting. Choice 2 reads token as the unit of text a model reads and writes. Choice 4 stretches the term past what it names: a scoped token limits what can be done with the group page's account, and says nothing about files on the laptop.
+- **answer:** 1
+- **credit:** full for 1 only. The token can create posts and nothing else, so removing members is beyond it. Choice 2 reads the term as its confusable: a password would let the agent do anything the account can, and this token is limited to posting. Choice 3 reads token as the unit of text a model reads and writes. Choice 4 stretches the term past what it names: a scoped token limits what can be done with the group page's account, and says nothing about files on the laptop.

@@ -35,7 +35,7 @@ A running club has an agent that fetches the weekend forecast and writes a note 
 
 Which of these uses the term allowlist correctly?
 
-1. The allowlist keeps the agent from opening the club's member list on the laptop.
-2. The allowlist lets the agent reach any site that isn't known to be harmful.
-3. The allowlist lets it reach the weather site and refuses any other site.
+1. The allowlist lets it reach the weather site and refuses any other site.
+2. The allowlist keeps the agent from opening the club's member list on the laptop.
+3. The allowlist lets the agent reach any site that isn't known to be harmful.
 4. The allowlist means nothing on the weather site's page can steer the agent.
