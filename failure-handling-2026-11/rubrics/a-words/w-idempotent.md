@@ -4,6 +4,8 @@ If the learner misses a question here, set a DEFINE or INTERPRET move for idempo
 
 A step is idempotent when running it several times leaves things the same as running it once, so it is safe to run again after a run stops partway. "Things" includes what the step does outside the workflow: a step that sends a message sends it again on a rerun, even if it changes no file. Changing nothing on a second run is not the same as changing nothing at all; an idempotent step may write plenty the first time. Deterministic is the course's contrast: a deterministic step gives the same output from the same input every time. The two are separate. In the reading's words, a step can be idempotent even when its executor is not predictable, because a step that skips what is already done never asks the agent twice. And a perfectly predictable step that adds to a total is not idempotent, because every run adds again.
 
+Two DISTINGUISH questions against deterministic, kept on purpose (instructor's decision, 2026-11-15): `vs-deterministic-hana` is idempotent but not deterministic, `vs-deterministic-dues` the reverse, so between them they show the two words come apart both ways. They were one compound question until it was split because the two scenarios share nothing.
+
 ### vs-deterministic-hana
 
 - **goal:** `w-idempotent`
