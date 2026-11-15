@@ -25,7 +25,7 @@ Three steps and one check. The collecting program adds an entry for every deal i
 - **type:** mcq
 - **answer:** 1
 - **credit:** full for 1 only.
-- **tutor note:** Hard, shape `already-safe`, variant `same-inputs`. Settled by "a saved page is never changed after it is saved" with "writes them into that deal's fare and airline fields in the deals list, overwriting whatever is there": a program working from the same pages writes the same fares and airlines it wrote before, so the six fares Owen read stay as they were. Not 2, because it writes each deal's own fields rather than adding entries. Not 3, because it does nothing outside the workflow. Not 4, because the stop came between deals, and the rerun rewrites every deal anyway. Not 5, because the values written are the same. A learner who picks 5 because Owen has read results is reading "has been read" as "will change"; ask what the program works from and whether that has changed.
+- **tutor note:** Hard, shape `already-safe`, variant `same-inputs`. Settled by "Nothing changes a saved page after it is saved" with "writes them into that deal's fare and airline fields in the deals list, overwriting whatever is there": a program working from the same pages writes the same fares and airlines it wrote before, so the six fares Owen read stay as they were. Not 2, because it writes each deal's own fields rather than adding entries. Not 3, because it does nothing outside the workflow. Not 4, because the stop came between deals, and the rerun rewrites every deal anyway. Not 5, because the values written are the same. A learner who picks 5 because Owen has read results is reading "has been read" as "will change"; ask what the program works from and whether that has changed.
 
 ### detect-collecting
 
