@@ -52,9 +52,13 @@
 
 ## Where this came from
 
+_Yours to fill in. Nobody can answer this one for you._
+
 <!-- Which of A / B / C / D, and the answer to the follow-up. -->
 
 ## What I already have
+
+_Yours to fill in. Say where your knowledge stops, not what you have heard of._
 
 <!--
   The nearest thing already known well, and where it stops.
@@ -64,6 +68,10 @@
 
 ## What I'll use it for
 
+_Yours to fill in. The course supplies one occasion: a final project that moves a workflow like
+the one you built for Problem Set 5 off your laptop, so other people can use it. Name any others
+you have._
+
 <!--
   The use, and a concrete occasion.
   If several uses apply, rank them: the top one sets the depth, the rest are cut first
@@ -71,6 +79,12 @@
 -->
 
 ## Depth
+
+**Compare plans for a workflow other people will use, by where its agent steps run and who pays
+for them, and say which does better on cost, privacy, access or correctness.** That is
+enough to weigh the options for a final project that moves a workflow like your Problem Set 5 one off your
+laptop, and to tell your agent what you decided. Deploying the app around it is not taught again:
+the cloud hosting, deploy config, deploy pipeline and database hosting topics covered that.
 
 <!--
   Which of: recognize it / read it / modify something existing / author from scratch /
@@ -253,6 +267,43 @@
   beside a capability entry.
 -->
 
+### `c-weigh-cloud-plan`
+
+- **goal:** say what a plan for where a workflow's agent steps run, and who pays for them, does
+  to one goal
+- **criterion:** given a described workflow with at least one agent step, two plans for where
+  that step runs and who pays for it, and one named goal (cost, privacy, access or correctness),
+  says which plan does better on that goal, or that they do about as well on it, and why, with a
+  reason tied to something
+  about this workflow, such as who its users are and how many runs they will make, whose data the
+  agent step sees and which companies would then see it, who needs to start it or see its
+  results, or whether the step needs a model as capable as the ones model companies sell. The
+  plans are drawn from five: each user runs it on their own machine under their own subscription;
+  it runs in the cloud on each user's own API key; it runs in the cloud and the service pays a
+  model company from its own account; the service runs an open-weight model on servers it pays
+  for; or an open-weight model runs in each user's browser. A reason that doesn't refer to this
+  workflow at all, such as "the cloud is less private", does not meet it.
+- **cases:**
+  - `cost-who-bears`: cost, the service paying a model company against each user's own API key,
+    where some users run it far more than others
+  - `cost-fixed-servers`: cost, the service running an open-weight model against the service
+    paying a model company, where the number of runs decides which is cheaper
+  - `privacy-own-device`: privacy, an open-weight model in the browser against one the service
+    runs, where the data should not leave the user's device
+  - `privacy-no-vendor`: privacy, the service running an open-weight model against the service
+    paying a model company, where the data may reach the service but no model company
+  - `privacy-own-machine`: privacy, each user's own machine and subscription against the cloud on
+    each user's own API key, where the data reaches a model company either way and the cloud plan
+    also lets the service see it
+  - `access-no-subscription`: access, the service paying against each user's own machine and
+    subscription, where many users have no subscription or no laptop to run it on
+  - `correctness-capable`: correctness, an open-weight plan against a model company's model, where
+    the step needs the most capable model
+  - `correctness-enough`: correctness, an open-weight plan against a model company's model, where
+    the step is simple enough that an open-weight model does it well, so the two do about as well
+    on correctness
+- **taught elsewhere:** session 23 class
+
 ### `o-orientation`
 
 - **goal:** get the shape of this area before working on any particular part of it
@@ -261,3 +312,59 @@
 - **recurrence:** never
 - **is_required:** no
 - **group:** orientation
+
+### `w-open-weight-model`
+
+- **goal:** open-weight model
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a model whose trained weights are published, so anyone may run it on hardware
+  of their own choosing
+- **nearest confusable:** free tier
+- **synonyms:** open-source model, open model
+
+### `w-api-key`
+
+- **goal:** API key
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** a secret a program sends with each request to a provider, which tells the
+  provider whose account the request is billed to
+- **nearest confusable:** subscription, password
+- **watch for:** thinks a subscription to a model company's chat app also pays for calls made
+  with an API key
+
+### `w-byok`
+
+- **goal:** BYOK
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** an arrangement in which each user gives a service their own API key, so the
+  model calls made for them are billed to them rather than to the service
+- **nearest confusable:** sign-in
+- **synonyms:** bring your own key
+
+### `w-usage-pricing`
+
+- **goal:** usage-based pricing
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** paying according to how much is used, such as per token or per run, rather
+  than a fixed amount each month
+- **nearest confusable:** subscription, overage
+- **synonyms:** pay-as-you-go, metered billing
+
+### `w-data-retention`
+
+- **goal:** data retention
+- **criterion:** vocabulary
+- **bar:** one production pass
+- **group:** vocabulary
+- **what it names:** how long a company keeps the prompts and other data sent to it before
+  deleting them
+- **nearest confusable:** training on user data, backup
+- **synonyms:** retention policy

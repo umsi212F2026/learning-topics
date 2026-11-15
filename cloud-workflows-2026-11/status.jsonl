@@ -1,2 +1,8 @@
 {"at":"2026-11-13T21:53:07.682Z","kind":"created"}
 {"at":"2026-11-13T21:53:07.683Z","kind":"goal-added","goal":"o-orientation","needs":"curation"}
+{"at":"2026-11-15T16:54:41.823Z","kind":"goal-added","goal":"w-open-weight-model","needs":"curation"}
+{"at":"2026-11-15T16:54:48.304Z","kind":"goal-added","goal":"w-api-key","needs":"curation"}
+{"at":"2026-11-15T16:54:48.579Z","kind":"goal-added","goal":"w-byok","needs":"curation"}
+{"at":"2026-11-15T16:54:48.853Z","kind":"goal-added","goal":"w-usage-pricing","needs":"curation"}
+{"at":"2026-11-15T16:54:49.136Z","kind":"goal-added","goal":"w-data-retention","needs":"curation"}
+{"at":"2026-11-15T16:55:29.404Z","kind":"goal-added","goal":"c-weigh-cloud-plan","needs":"curation"}
