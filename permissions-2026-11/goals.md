@@ -288,8 +288,9 @@ Words and capabilities from earlier topics that this one uses without teaching a
 
 - **goal:** spot a workflow step whose executor can reach more than the step needs
 - **criterion:** given a described workflow step, who or what runs it (a program, an agent or a
-  person), and what that executor can reach (files, shell commands, the network, or accounts), says
-  whether it can reach anything the step does not need.
+  person), how that executor runs (as which user, and with which limits, if any), and what is in
+  the places it could get to, says whether it can reach anything the step does not need (files,
+  shell commands, the network, or what its secrets let it do).
 - **cases:**
   - `excess`: the executor can reach something the step does not need
   - `no-excess`: the executor can reach only what the step needs
@@ -317,10 +318,7 @@ Words and capabilities from earlier topics that this one uses without teaching a
 - **criterion:** given a described workflow step, a specific harm that could follow from one of its
   problems (its executor can reach something the step does not need, or text from outside the
   workflow reaches an agent's context), and an agent's description of one limit that could be put
-  in place (such as the agent's permission settings, a folder or sandbox it cannot leave, read-only
-  access, a narrowly scoped token or account, a program that handles outside text so the agent
-  never sees it, the agent proposing a change that a program checks and applies, or a person who
-  checks the step's output before it takes effect), says whether that limit would significantly
+  in place, saying what it would restrict or check and how it would be imposed, says whether that limit would significantly
   reduce the risk of that harm, and says whether the step could still do its work under it. Both
   answers must be right.
 - **cases:**
@@ -385,8 +383,8 @@ Words and capabilities from earlier topics that this one uses without teaching a
 - **criterion:** vocabulary
 - **bar:** one production pass
 - **group:** vocabulary
-- **what it names:** the list of actions an agent or program may take without asking first, so
-  anything not on it is refused or needs approval
+- **what it names:** a list of what an executor is allowed to do or reach, such as certain
+  folders, commands or sites, so that anything not on it is refused
 - **nearest confusable:** blocklist
 
 ### `w-human-in-loop`
