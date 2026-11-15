@@ -450,11 +450,7 @@ rather than for a different kind of practice.
 - **serves:** `c-spot-excess`, `c-spot-injection`
 - **supports:** attempt
 - **checks:** `c-spot-excess`, `c-spot-injection`
-- **artifact:** no external source. A described personal workflow given as the answer an agent wrote
-  when asked to describe each step, one short block per step, with the same yes-or-no questions as
-  `a-look-over-steps`, asked one at a time, from this activity's bank or written live per the
-  generator below. About 2 or 3 minutes for a scenario's first question, with the reading, and about
-  1 for each after.
+- **artifact:** no external source. A described personal workflow given as the answer an agent wrote when asked to describe each step, one bullet per step with labeled sub-bullets for what its executor can reach, with the same yes-or-no questions as `a-look-over-steps`, asked one at a time, from this activity's bank or written live per the generator below. About 2 or 3 minutes for a scenario's first question, with the reading, and about 1 for each after.
 - **verified:** 2026-11-13
 - **learner does:** reads the workflow's description and the agent's answer, then answers the
   questions one at a time, each by picking yes or no: whether an executor can reach anything its
@@ -465,79 +461,57 @@ rather than for a different kind of practice.
   `a-read-agent-audit/<scenario>/<agent>-context`.
 - **done when:** the criterion of each goal met with no help, case by case: a right answer passes
   the case its question carries.
-- **generator:** **A scenario** uses `a-look-over-steps`'s executors, reach rules, context cases,
-  pointedness rule, questions, question order, key and credit, with one difference: the learner is
-  told each executor's reach instead of working it out. One or two sentences say what the workflow
-  is for and that the person asked her agent to describe each step: what it does, what runs it,
-  how it runs, what it can read, change, run and reach, what its secrets let it do, and what each
-  agent step reads. Then comes the agent's answer, one short block per step, each headed by the
-  step's handle, giving one sentence each, in this order: what the step does (what it reads and
-  writes, what it fetches, what it does with an account); what runs it (a program, or an agent
-  following the person's skill file); how it runs (as which user, and with which limits, if any;
-  for an executor with no limit, only who starts it, "You start it yourself.", never default
-  settings or its harness's default settings, which the reading says vary between harnesses, and
-  never a starting folder as if it were a boundary); what it can reach, one sentence per kind
-  (files, including any secrets saved in them; shell commands; the network; what its secrets let it
-  do); and, for an agent, what it reads, saying who wrote each part wherever the source could be
-  unclear (the skill file, anything others write, a list or profile the person typed, anything a
-  program writes) and not for material plainly the person's own (her essay drafts in her own
-  folder). Each reach sentence agrees with the reading's rule applied to how the executor
-  runs: whatever its user can do, unless a stated limit narrows it, with a harness limit not
-  covering shell commands the harness lets run without asking. The reach sentences name places and
-  what is in them, under the same wording rule as `a-look-over-steps` (no "just" or "nothing else"
-  for a limited executor, and "only" solely in the phrase "it allows access to only <files>" in its
-  how-it-runs sentence; no "every", "whole", "all" or "any" for an unlimited one). Write the opening
-  and each block as one long line; never hard-wrap the scenario's prose. The
-  answer states facts only. It never says whether reach is more than the step needs
-  and never says whether untrusted input reaches an agent: the person did not ask that, so the
-  reading's third audit question ("Where does text from outside the workflow end up in an agent's
-  context?") is never answered here. A step the person does by hand gets one sentence and no
-  question.
+- **generator:** **A scenario** uses `a-look-over-steps`'s executors, reach rules, context cases, pointedness rule, questions, question order, key and credit, with one difference: the learner is told each executor's reach instead of working it out. One or two sentences say what the workflow is for and that the person asked her agent to describe each step: what it does, what runs it, how it runs, what it can read, change, run and reach, what its secrets let it do, and what each agent step reads. Then comes the agent's answer, laid out as `tasks/a-look-over-steps/scholarship-deadlines.md` is, addressing the person as "you": one top-level bullet per step, in order, then labeled sub-bullets under it.
+  - **The step bullet** opens with the step's handle in bold, then in the same sentence says what runs it (a program, or an agent following your skill file) and what the step does (what it reads and writes, what it fetches and from where, what it does with an account): "**The fetcher**, a program, downloads ...". Then comes how it runs, as its own short sentence: "It runs in a sandbox." for a sandboxed executor, "It runs as a separate user you set up for it." for one running as a separate user, "Its harness's permission settings limit it." for an agent limited by its harness, and "You start it yourself." for an executor with no limit, never default settings or its harness's default settings, which the reading says vary between harnesses, and never a starting folder as if it were a boundary. The limits are not listed in the step bullet: the reach sub-bullets are where they show, so nothing is said twice.
+  - **The sub-bullets**, in this order: "Files:", "Shell commands:", "Network:", "Secrets:", and for an agent only "Reads:". Each is one sentence starting lowercase after the label and ending with a full stop. Files says what it can read and what it can read and change, including any secrets saved there ("it can read its skill file, the races folder and your list, and it can read and change the shortlist file."; "it can read and change your files; your home folder holds the skill files, ... and the settings file where your email login is saved."). Shell commands says whether it can run them ("they are turned off."; "it can run them, with no limit set."). Network says what it can reach ("it is turned off."; "it can reach the race calendar's site, which is on the sandbox's network allowlist."; "it can reach the internet, with no limit set."). Secrets states as a fact what each secret lets its holder do ("it holds none."; "it holds your token for the race calendar site, which lets its holder read listings and delete the account."; "it holds none of its own, but it can read your email login in that settings file, which lets its holder send mail as you."), never phrased as what the executor would or might do with it. Reads, for an agent, says what it reads, saying who wrote each part wherever the source could be unclear (the skill file, anything others write, a list or profile the person typed, anything a program writes) and not for material plainly the person's own (her essay drafts in her own folder).
+  - **Each reach sub-bullet agrees** with the reading's rule applied to how the executor runs: whatever its user can do, unless a stated limit narrows it, with a harness limit not covering shell commands the harness lets run without asking. The reach sub-bullets name places and what is in them, with no "only", "just" or "nothing else" for a limited executor and no "every", "whole", "all" or "any" for an unlimited one; the sub-bullets of `excess` and `no-excess` executors take the same forms. Write the opening, each bullet and each sub-bullet as one long line; never hard-wrap the scenario's prose.
+  - **The answer states facts only.** It never says whether reach is more than the step needs and never says whether untrusted input reaches an agent: the person did not ask that, so the reading's third audit question ("Where does text from outside the workflow end up in an agent's context?") is never answered here. A step the person does by hand gets a bullet with no sub-bullets and no question.
 
-  **Example**, the volunteering illustration in `a-look-over-steps` set this way. "Lena's workflow
-  finds weekend volunteer shifts near her apartment. She asked her agent to describe each step, and this
-  is its answer." Then three blocks. The sorting agent's block reads: "**The sorting agent.** Reads
-  each new post in the posts folder and your list of what you like doing and when you are free, and
-  writes a one-line verdict on each post into the picks file. An agent following your skill file.
-  You start it yourself. Files: it can read and change your files; your home folder holds the skill
-  files, the posts folder, your list, the picks file, your tax returns and the settings file where
-  your email login is saved. Shell commands: it can run them, with no limit set. Network: it can reach the internet,
-  with no limit set. Secrets: it holds none of its own, but it can read your email login in that
-  settings file, which would let it send mail as you. It reads the skill file and your list, which
-  you wrote, and the posts, which organizations put on the volunteering board." The fetcher's block
-  says it runs in a sandbox that allows access to only the posts folder, with shell commands turned
-  off, and then, kind
-  by kind, that it can change the posts folder, that shell commands are off, that it can reach the
-  volunteering board's site, which is on the sandbox's network allowlist, and that it holds no
-  secrets. Same questions and keys.
+  **Example**, the volunteering illustration in `a-look-over-steps` set this way; not a bank item.
+
+  > Lena's workflow finds weekend volunteer shifts near her apartment. She asked her agent to describe each step: what it does, what runs it, how it runs, what it can read, change, run and reach, what its secrets let it do, and what each agent step reads. This is its answer.
+  >
+  > - **The fetcher**, a program, downloads the new posts every morning from a community volunteering board, where any organization can post, and saves them in a folder called posts. It runs in a sandbox.
+  >   - Files: it can read and change the posts folder.
+  >   - Shell commands: they are turned off.
+  >   - Network: it can reach the volunteering board's site and a file-sharing site, which are both on the sandbox's network allowlist.
+  >   - Secrets: it holds none.
+  > - **The sorting agent**, following your skill file, reads each new post in the posts folder and your list of what you like doing and when you are free, and writes a one-line verdict on each post into a file called picks. You start it yourself.
+  >   - Files: it can read and change your files; your home folder holds the skill files, the posts folder, your list, the picks file, your tax returns and the settings file where your email login is saved.
+  >   - Shell commands: it can run them, with no limit set.
+  >   - Network: it can reach the internet, with no limit set.
+  >   - Secrets: it holds none of its own, but it can read your email login in that settings file, which lets its holder send mail as you.
+  >   - Reads: the skill file and your list, which you wrote, and the posts, which organizations put on the volunteering board.
+  > - **The planning agent**, following your skill file, reads the list of shifts you have signed up for and your list of other plans for the week on Sunday evenings, and writes a draft plan for the week into a file called plan. It runs in a sandbox.
+  >   - Files: it can read its skill file and your two lists, and it can read and change the plan file.
+  >   - Shell commands: they are turned off.
+  >   - Network: it is turned off.
+  >   - Secrets: it holds none.
+  >   - Reads: the skill file and your two lists, which you type yourself.
+
+  Same questions as the illustration in `a-look-over-steps`, and the same keys except the fetcher's: the file-sharing site is on its allowlist though its step only downloads from the volunteering board, so its key is Yes, and the keys read Yes, Yes, Yes, No, No.
 
   **How hard**, labeled exactly as in `a-look-over-steps`, by the facts: a scenario is Hard here
   when its facts would make it Hard there. The layout makes every question somewhat easier than the
   same facts in prose, which `offer as` and `doesn't show` say; it doesn't change the label. The
   question wording is unchanged.
 
-  **Spread across the bank**, as in `a-look-over-steps`: six scenarios and 24 questions, with the
-  same mix of executors, the same case counts, and the same pair of scenarios carrying all six
-  cases.
+  **Spread across the bank**, as in `a-look-over-steps`: six scenarios and 24 questions, with the same mix of executors, the same case counts, and the same pair of scenarios carrying all six cases.
+
+  **Answer patterns.** A learner meets this bank after `a-look-over-steps`, so no scenario here has the same sequence of keys, by question position, as any scenario in `a-look-over-steps`'s bank (its `scholarship-deadlines` reads No, Yes, Yes, No, No). Across this bank, at least three of the six scenarios have an `excess` case on a limited executor (a sandbox wider than the step needs, a token broader than the step needs, a site on the allowlist the step never uses), and at least three have a limited agent whose context case is `outside-text` or `passed-through`, so "sandboxed means No" never works as a shortcut. Since the two banks may be drafted at the same time and either may grow later, bank-check compares every scenario's key sequence here with every scenario's in `a-look-over-steps` each time it runs, and reports any match.
 
   **Domains** are this activity's own, none repeating within the bank: a conference call-for-talks
   tracker, a summer camp openings watch, a neighborhood association's email digest, a community
   grants finder, a tutor's new-student inquiries, a podcast's guest requests, a thrift store
   furniture watch, a running race sign-up watch. No domain from any other activity's list or
   illustration in this topic.
-- **worked example:** shown only as help when asked for, which records the attempt as helped. As
-  `a-look-over-steps`'s, using the example above, reading each block's reach sentences against its
-  first sentence, what the step does.
+- **worked example:** shown only as help when asked for, which records the attempt as helped. As `a-look-over-steps`'s, using the example above, reading each step's reach sub-bullets against its step bullet, what the step does.
 - **doesn't show:** as `a-look-over-steps`'s, and the agent states each executor's reach, so a pass
   doesn't show the learner would work out reach from how an executor runs; `a-look-over-steps`
   asks for that. Problem Set 5's agent audit will look more like this
   than like a story, but a real agent's answer may leave out a kind of reach or call something safe,
   which no scenario here does.
-- **offer as:** the read-the-audit check: the same questions, asked of a workflow described the way
-  an agent's audit lays it out, one block per step. About 2 or 3 minutes for a scenario's first
-  question and 1 for each after. Easier than `a-look-over-steps`, since the agent says what each
-  executor can reach and you compare it with the step, and closer to what Problem Set 5 will hand
-  you.
+- **offer as:** the read-the-audit check: the same questions, asked of a workflow described the way an agent's audit lays it out, one bullet per step with its reach under labeled sub-bullets. About 2 or 3 minutes for a scenario's first question and 1 for each after. Easier than `a-look-over-steps`, since the agent says what each executor can reach and you compare it with the step, and closer to what Problem Set 5 will hand you.
 - **check note:** This entry runs as `a-look-over-steps` does, so the notes there on skipping and on
   recording copied text apply here too.
 
