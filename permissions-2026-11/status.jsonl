@@ -10,3 +10,14 @@
 {"at":"2026-11-13T23:16:40.444Z","kind":"goal-added","goal":"w-allowlist","needs":"curation"}
 {"at":"2026-11-13T23:16:40.948Z","kind":"goal-added","goal":"w-human-in-loop","needs":"curation"}
 {"at":"2026-11-13T23:16:41.206Z","kind":"goal-added","goal":"w-blast-radius","needs":"curation"}
+{"at":"2026-11-15T16:20:44.497Z","kind":"curated","goal":"o-orientation"}
+{"at":"2026-11-15T16:20:44.585Z","kind":"curated","goal":"w-prompt-injection"}
+{"at":"2026-11-15T16:20:44.644Z","kind":"curated","goal":"w-untrusted-input"}
+{"at":"2026-11-15T16:20:44.696Z","kind":"curated","goal":"w-sandbox"}
+{"at":"2026-11-15T16:20:44.795Z","kind":"curated","goal":"w-scoped-token"}
+{"at":"2026-11-15T16:20:44.852Z","kind":"curated","goal":"w-allowlist"}
+{"at":"2026-11-15T16:20:44.898Z","kind":"curated","goal":"w-human-in-loop"}
+{"at":"2026-11-15T16:20:44.946Z","kind":"curated","goal":"w-blast-radius"}
+{"at":"2026-11-15T16:20:44.994Z","kind":"curated","goal":"c-spot-excess"}
+{"at":"2026-11-15T16:20:45.043Z","kind":"curated","goal":"c-spot-injection"}
+{"at":"2026-11-15T16:20:45.093Z","kind":"curated","goal":"c-judge-limits"}
