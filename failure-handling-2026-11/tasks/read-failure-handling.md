@@ -1,8 +1,6 @@
 # When a step goes wrong
 
-The reading on workflow design listed two intermediate goals that this page takes up: steps that are safe to rerun, and failing loudly. Both are about what happens when something goes wrong, such as a workflow that runs on real inputs meets a file it can't open, a network that drops, or an agent that misreads what it was given.
-
-This page asks you to judge two things about each step of a workflow. First, if a run stops partway through the step, is it safe to run the step again? Second, if the step makes a mistake, would anyone notice? Fixing anything you find will mostly be your agent's work, once you can say what worries you.
+The reading on workflow design listed two intermediate goals that we take up now. The first is idempotency, whether a step, or the whole workflow, is safe to run again if it completed only partially the first time. The second is whether, when a step makes a mistake, it fails silently or loudly. Fixing anything you find will mostly be your agent's work, once you can say what worries you.
 
 Our scenario. The teaching assistant from the last three readings is still grading about 200 homework submissions a week. A program downloads each submission and runs its tests. An agent, following a skill file, drafts a score and feedback for each one, and its score goes into the grades sheet. The TA reviews the drafts, changes some, and a program posts the final grades to the course site.
 
