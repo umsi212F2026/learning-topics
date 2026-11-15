@@ -20,6 +20,6 @@ Malik keeps a list of which of his houseplants need water today, and he waters w
 What is wrong with Malik's claim?
 
 1. Nothing. An error that is written down somewhere isn't a silent failure.
-2. Nobody reads the log, so an error that goes only there still reaches no one: it is a silent failure.
+2. Malik reads only the list, so an error that goes only to the log reaches no one: it is a silent failure.
 3. Only a failure that stops the step can be silent, and this step goes on.
 4. A log turns errors into silent failures only once it is too long to read.

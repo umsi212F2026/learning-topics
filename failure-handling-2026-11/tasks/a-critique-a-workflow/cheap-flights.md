@@ -44,7 +44,7 @@ If Owen runs the extracting program again from the start, which of these happens
 
 ### detect-collecting
 
-Suppose one night the travel site doesn't answer when the collecting program tries to save one deal's page.
+Suppose one night one deal's page won't open when the collecting program tries to save it.
 
 Would this mistake be noticed?
 

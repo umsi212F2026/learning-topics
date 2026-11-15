@@ -4,7 +4,7 @@ Tomas wants a cheap desk and a bookshelf for his new apartment.
 - Then the sizing agent, following a skill file Tomas wrote, reads each entry and writes a verdict of 'fits' or 'too big' into it, from the measurements of his room.
 - Then a details program pulls each post's asking price and pickup street into its entry.
 
-On Monday evening the collecting program stopped when the laptop's wifi dropped, just after it added the entry for the 22nd of 35 posts. Nobody has opened the furniture list since.
+On Monday evening the collecting program stopped when the laptop's wifi dropped, just after it added the entry for the 22nd of 35 posts. Tomas wants to run it again that same evening. Nobody has opened the furniture list since.
 
 ### q1
 
