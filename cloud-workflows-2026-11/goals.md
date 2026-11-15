@@ -273,16 +273,14 @@ the cloud hosting, deploy config, deploy pipeline and database hosting topics co
   to one goal
 - **criterion:** given a described workflow with at least one agent step, two plans for where
   that step runs and who pays for it, and one named goal (cost, privacy, access or correctness),
-  says which plan does better on that goal, or that they do about as well on it, and why, with a
-  reason tied to something
-  about this workflow, such as who its users are and how many runs they will make, whose data the
-  agent step sees and which companies would then see it, who needs to start it or see its
-  results, or whether the step needs a model as capable as the ones model companies sell. The
-  plans are drawn from five: each user runs it on their own machine under their own subscription;
-  it runs in the cloud on each user's own API key; it runs in the cloud and the service pays a
-  model company from its own account; the service runs an open-weight model on servers it pays
-  for; or an open-weight model runs in each user's browser. A reason that doesn't refer to this
-  workflow at all, such as "the cloud is less private", does not meet it.
+  says which plan does better on that goal, or that they do about as well on it. The facts about
+  the workflow that decide it include who its users are and how many runs they will make, whose
+  data the agent step sees and which companies would then see it, who needs to start it or see
+  its results, and whether the step needs a model as capable as the ones model companies sell.
+  The plans are drawn from five: each user runs it on their own machine under their own
+  subscription; it runs in the cloud on each user's own API key; it runs in the cloud and the
+  service pays a model company from its own account; the service runs an open-weight model on
+  servers it pays for; or an open-weight model runs in each user's browser.
 - **cases:**
   - `cost-who-bears`: cost, the service paying a model company against each user's own API key,
     where some users run it far more than others
