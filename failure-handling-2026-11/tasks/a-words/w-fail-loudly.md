@@ -4,9 +4,9 @@
 
 Two steps from Rosa's photo workflow.
 
-Each night, a step copies the day's photos from her phone to a backup drive. When a photo won't copy, the step stops right there, leaving the rest of the day's photos uncopied, and writes the reason to a log file on the drive. Rosa has never opened that file.
+Each night, a program copies the day's photos from her phone to a backup drive. When a photo won't copy, the program stops right there, leaving the rest of the day's photos uncopied, and writes the reason to a log file on the drive.
 
-Each morning, a step has an agent write a caption for each photo backed up the night before. When a photo can't be read, the step skips it, captions the rest, and adds the skipped photo's name to a short list that is emailed to Rosa. She reads that email every morning.
+Each morning, an agent writes a caption for each photo backed up the night before. When a photo can't be read, the agent skips it, captions the rest, and adds the skipped photo's name to a short list that is emailed to Rosa. She reads that email every morning.
 
 #### a
 
@@ -28,7 +28,7 @@ Which best describes the captioning step?
 
 ### catch-pick
 
-Each night, a step reads the day's runs from Sam's watch export and adds them to his training sheet. When one run's record is damaged, the step stops at once, so the rest of that night's runs are not added, and it writes "bad record" in a file in a folder Sam never opens.
+Each night, a program reads the day's runs from Sam's watch export and adds them to his training sheet, which Sam looks over each weekend. When one run's record is damaged, the program stops at once, so the rest of that night's runs are not added, and it writes "bad record" in a file in another folder.
 
 Which of these uses the term fail loudly correctly?
 
@@ -39,8 +39,13 @@ Which of these uses the term fail loudly correctly?
 
 ### catch-red-warning
 
-A hiking club matches members' payments to their names each night. The step runs at 2 a.m. on a computer in the club's storage closet that nobody logs into. When a payment can't be matched, the step shows a large red warning on that computer's screen and goes on to the next payment. The treasurer says:
+A hiking club matches members' payments to their names each night. A program does the matching at 2 a.m. on a computer in the club's storage closet. When a payment can't be matched, the program shows a large red warning on that computer's screen and goes on to the next payment. The treasurer, who works from home, says:
 
 "That step fails loudly. Nobody could miss a warning like that."
 
-What is wrong with that? Answer in two or three sentences, in your own words.
+What is wrong with the treasurer's claim?
+
+1. Nothing. A large red warning is as loud as a report can be.
+2. Nobody has a reason to be at that computer, so the warning reaches no one: the step doesn't fail loudly.
+3. The program goes on to the next payment; to fail loudly it would have to stop.
+4. A warning fails loudly only if it also makes a sound.

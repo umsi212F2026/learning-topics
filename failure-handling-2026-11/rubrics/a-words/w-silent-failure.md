@@ -16,6 +16,7 @@ A silent failure is something going wrong with nothing to say so, so the run loo
 
 - **goal:** `w-silent-failure`
 - **move:** CATCH
-- **answer:** Writing an error to a log doesn't stop it being a silent failure if nobody reads the log, and Malik never opens it, so a sensor that doesn't answer still goes unnoticed. And some failures never reach the log at all: if the agent misreads a reading and says a dry plant is fine, that isn't an error the step hits, and the list looks right.
-- **credit:** full for either reason, explained: that an error written only to a log nobody reads is still a silent failure, since nothing reaches a person; or that a wrong result that looks right, such as the agent misjudging a plant, is never logged as an error, so it goes unreported. Both is welcome, not required. Half for "he never reads the log" or "the agent could get it wrong" with nothing tying it to why the failure would go unnoticed. None for a different quibble alone, such as that the sensors should be more reliable.
-- **tutor note:** a learner who gives only the log reason has passed; if time allows, ask what would happen if the agent called a dry plant fine, to bring out the second way.
+- **type:** mcq
+- **answer:** 2
+- **credit:** full for 2 only. Malik's routine is the list; nothing sends him to the log, so an error written only there reaches no one, and the failure is silent. Choice 1 agrees with Malik, taking "written down" for "reported". Choice 3 ties the word to stopping; a step that goes on can fail silently, and one that stops can too if nobody sees it. Choice 4 makes length the issue; a short log nobody reads tells no one either.
+- **tutor note:** a learner who picks 1 is taking any record as a report; ask who would see the error, and when. If time allows after a pass, ask what would happen if the agent called a dry plant fine, to bring out the second way a failure goes unnoticed.

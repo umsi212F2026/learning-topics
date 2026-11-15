@@ -9,7 +9,7 @@ A step fails loudly when, if something goes wrong, it reports the problem where 
 - **goal:** `w-fail-loudly`
 - **move:** DISTINGUISH
 - **type:** compound
-- **tutor note:** the copying step fails fast but not loudly: it stops at the first photo that won't copy, and the only report is a log Rosa never opens. The captioning step fails loudly but not fast: it carries on, and the skipped photo reaches Rosa in an email she reads. A learner who calls the copying step both is reading stopping as being loud; ask how Rosa would find out the backup stopped. One who calls the captioning step neither may think failing loudly means stopping; ask whether Rosa learns about the unreadable photo.
+- **tutor note:** the copying step fails fast but not loudly: it stops at the first photo that won't copy, and the only report is a log file nothing sends Rosa to. The captioning step fails loudly but not fast: it carries on, and the skipped photo reaches Rosa in an email she reads. A learner who calls the copying step both is reading stopping as being loud; ask how Rosa would find out the backup stopped. One who calls the captioning step neither may think failing loudly means stopping; ask whether Rosa learns about the unreadable photo.
 
 #### a
 
@@ -27,12 +27,13 @@ A step fails loudly when, if something goes wrong, it reports the problem where 
 - **move:** CATCH
 - **type:** mcq
 - **answer:** 2
-- **credit:** full for 2 only. The step's only report is a note in a folder Sam never opens, so the problem never reaches a person: it does not fail loudly. Choice 1 reads fail loudly as its confusable: stopping at once is failing fast, and this step stops and still says nothing Sam will see. Choice 3 stretches the word to any written note; a note nobody reads is not a report a person will see. Choice 4 takes stopping as part of failing loudly; a step can carry on and still tell Sam about the bad record.
+- **credit:** full for 2 only. The program's only report is a note in a folder nothing sends Sam to (he looks over the training sheet, not that folder), so the problem never reaches a person: it does not fail loudly. Choice 1 reads fail loudly as its confusable: stopping at once is failing fast, and this step stops and still says nothing Sam will see. Choice 3 stretches the word to any written note; a note nobody reads is not a report a person will see. Choice 4 takes stopping as part of failing loudly; a step can carry on and still tell Sam about the bad record.
 
 ### catch-red-warning
 
 - **goal:** `w-fail-loudly`
 - **move:** CATCH
-- **answer:** The warning is shown on a computer nobody logs into, at 2 a.m., so nobody sees it. Failing loudly means the problem is reported where a person will see it, and how big or red the warning is doesn't matter if nobody is looking. So the unmatched payment goes unnoticed, and the step doesn't fail loudly.
-- **credit:** full for naming that nobody sees the warning, because nobody uses that computer, and that failing loudly is about the report reaching a person, not about how striking it is. Half for "nobody is there to see it" with nothing on why that rules out failing loudly, or for "failing loudly means a person sees it" with nothing tying it to this computer. None for a different quibble alone, such as that the step should stop instead of going on to the next payment.
-- **tutor note:** a learner who says the step should stop at an unmatched payment is reaching for fail fast; ask whether stopping would tell the treasurer anything if the computer is still in the closet.
+- **type:** mcq
+- **answer:** 2
+- **credit:** full for 2 only. The warning is on a computer in a storage closet at 2 a.m., and the treasurer works from home; nothing sends anyone to that screen, so nobody sees it. Failing loudly means the problem is reported where a person will see it, and how big or red the warning is doesn't matter if nobody is looking. Choice 1 agrees with the treasurer, taking how striking the warning is for whether it reaches anyone. Choice 3 reads fail loudly as its confusable: stopping is failing fast, and a step can carry on and still fail loudly. Choice 4 is the same mistake as 1 with sound in place of color.
+- **tutor note:** a learner who picks 3 is reaching for fail fast; ask whether stopping would tell the treasurer anything if the computer is still in the closet.
