@@ -1,0 +1,13 @@
+{"at":"2026-11-13T21:53:05.481Z","kind":"created"}
+{"at":"2026-11-13T21:53:05.482Z","kind":"goal-added","goal":"o-orientation","needs":"curation"}
+{"at":"2026-11-13T23:11:33.620Z","kind":"goal-added","goal":"w-idempotent","needs":"curation"}
+{"at":"2026-11-13T23:11:33.921Z","kind":"goal-added","goal":"w-silent-failure","needs":"curation"}
+{"at":"2026-11-13T23:11:34.184Z","kind":"goal-added","goal":"w-fail-loudly","needs":"curation"}
+{"at":"2026-11-13T23:12:11.238Z","kind":"goal-added","goal":"c-judge-rerunnable","needs":"curation"}
+{"at":"2026-11-13T23:12:11.503Z","kind":"goal-added","goal":"c-judge-detection","needs":"curation"}
+{"at":"2026-11-15T16:30:24.711Z","kind":"curated","goal":"o-orientation"}
+{"at":"2026-11-15T16:30:25.008Z","kind":"curated","goal":"w-idempotent"}
+{"at":"2026-11-15T16:30:25.238Z","kind":"curated","goal":"w-silent-failure"}
+{"at":"2026-11-15T16:30:25.468Z","kind":"curated","goal":"w-fail-loudly"}
+{"at":"2026-11-15T16:30:25.696Z","kind":"curated","goal":"c-judge-rerunnable"}
+{"at":"2026-11-15T16:30:25.925Z","kind":"curated","goal":"c-judge-detection"}
