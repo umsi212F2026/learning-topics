@@ -12,7 +12,7 @@ bank holds at least one pair of scenarios that between them carry all six of tho
 and the tutor skips any question whose case is already passed, so a learner who meets such a pair
 needs about eight questions. The first of a scenario takes about 3 minutes with the reading and
 each later one about 1, so about 12 minutes through `a-look-over-steps` and about 10 through
-`a-read-agent-audit`, whose facts are laid out step by step. A learner served two scenarios that
+`a-read-agent-audit`, whose agent's audit states each executor's reach outright. A learner served two scenarios that
 leave a case uncarried needs a third, about 3 minutes more. `c-judge-limits` needs three
 compound questions, one per case (`sound-limit`, `stops-work`, `no-effect`): about 3 or 4 minutes
 each in `a-weigh-one-limit`, so about 11, or about 9 through `a-weigh-proposals`, whose questions
@@ -33,9 +33,11 @@ file the person wrote. Never the learner's own workflow, app, repo or machine; n
 or job postings tracker, which is Problem Set 5's default, though most scenarios are in its spirit
 (a program collects items from somewhere, an agent judges them, a step pulls out what matters);
 never the reading's grading example or any other homework or grading workflow. Every scenario
-states every fact its answers need: everything each executor can reach, in all four kinds the
-reading names (files, shell commands, the network, accounts), what its step uses, and, for an
-agent, everything it reads and who wrote each part. No scenario contains code, a query, SQL, a
+states every fact its answers need: how each executor runs (as which user, and with which
+limits, if any) and what is in the places it could get to, or, in an agent's audit, what it can
+reach in the four kinds the reading names (files, including secrets saved in them; shell commands;
+the network; what its secrets let it do), what its step uses, and, for an agent, everything it
+reads and who wrote each part. No scenario contains code, a query, SQL, a
 command or the contents of a settings file, and no answer depends on reading one. No real product,
 site or brand is named: "a typical coding agent", "a rentals site any landlord can post to". The
 topic's words (prompt injection, untrusted input, sandbox, scoped token, allowlist, human in the
@@ -49,7 +51,8 @@ limit prevents.
 ## Check notes
 
 Within each capability the two checks are the same kind of task, judging a described instance, and
-differ in layout: a story against an agent's audit for spotting excess reach and untrusted input,
+differ in layout: a list of steps whose reach the learner works out, against an agent's audit that
+states it, for spotting excess reach and untrusted input,
 and a fresh harm each time against one harm with several proposals for judging limits. Choose
 between them by which layout the learner will meet in Problem Set 5, or which they find harder,
 rather than for a different kind of practice.
@@ -59,9 +62,9 @@ rather than for a different kind of practice.
 | id                 | Goal | Criterion: what gets examined, and what counts |
 | ------------------ | ---- | ---------------------------------------------- |
 | `o-orientation`    | get the shape of this area before working on any particular part of it | `orientation` |
-| `c-spot-excess`    | spot a workflow step whose executor can reach more than the step needs | given a described workflow step, who or what runs it (a program, an agent or a person), and what that executor can reach (files, shell commands, the network, or accounts), says whether it can reach anything the step does not need. Cases: `excess`, `no-excess` |
+| `c-spot-excess`    | spot a workflow step whose executor can reach more than the step needs | given a described workflow step, who or what runs it (a program, an agent or a person), how that executor runs (as which user, and with which limits, if any), and what is in the places it could get to, says whether it can reach anything the step does not need (files, shell commands, the network, or what its secrets let it do). Cases: `excess`, `no-excess` |
 | `c-spot-injection` | spot where an agent could take text from outside the workflow as instructions | given a described workflow step done by an agent, says whether text that someone outside the workflow could have written ends up in what the agent reads (its context), where it could be taken as instructions. Text the step only moves along, or that a program reduces to something it produced itself before the agent sees it, does not end up in the agent's context. Cases: `outside-text`, `owner-only`, `shielded`, `passed-through` |
-| `c-judge-limits`   | judge whether a limit an agent proposes would significantly reduce the risk of a harm and still let the step do its work | given a described workflow step, a specific harm that could follow from one of its problems (its executor can reach something the step does not need, or text from outside the workflow reaches an agent's context), and an agent's description of one limit that could be put in place (such as the agent's permission settings, a folder or sandbox it cannot leave, read-only access, a narrowly scoped token or account, a program that handles outside text so the agent never sees it, the agent proposing a change that a program checks and applies, or a person who checks the step's output before it takes effect), says whether that limit would significantly reduce the risk of that harm, and says whether the step could still do its work under it. Both answers must be right. Cases: `stops-work`, `no-effect`, `sound-limit` |
+| `c-judge-limits`   | judge whether a limit an agent proposes would significantly reduce the risk of a harm and still let the step do its work | given a described workflow step, a specific harm that could follow from one of its problems (its executor can reach something the step does not need, or text from outside the workflow reaches an agent's context), and an agent's description of one limit that could be put in place, saying what it would restrict or check and how it would be imposed, says whether that limit would significantly reduce the risk of that harm, and says whether the step could still do its work under it. Both answers must be right. Cases: `stops-work`, `no-effect`, `sound-limit` |
 
 ## Coverage
 
@@ -181,11 +184,11 @@ rather than for a different kind of practice.
 - **serves:** `c-spot-excess`, `c-spot-injection`
 - **supports:** attempt
 - **checks:** `c-spot-excess`, `c-spot-injection`
-- **artifact:** no external source. A described personal workflow, told in one paragraph of running
-  prose, with a yes-or-no question about each executor's reach and, for each agent, one about its
-  context, asked one at a time, from this activity's bank or written live per the generator below.
-  About 3 minutes for a scenario's first question, with the reading, and about 1 for each after.
-- **verified:** 2026-11-13
+- **artifact:** no external source. A described personal workflow, a short opening and then one
+  bullet per step with sub-bullets saying how its executor runs, with a yes-or-no question about each
+  executor's reach and, for each agent, one about its context, asked one at a time, from this
+  activity's bank or written live per the generator below. About 3 minutes for a scenario's first
+  question, with the reading, and about 1 for each after.
 - **learner does:** reads the scenario, then answers its questions one at a time, each by picking
   yes or no: whether an executor can reach anything its step does not need, and, for an agent,
   whether untrusted input ends up in its context.
@@ -205,57 +208,72 @@ rather than for a different kind of practice.
   is the agent's.
 - **done when:** the criterion of each goal met with no help, case by case: a right answer passes
   the case its question carries.
-- **generator:** **A scenario** is one made-up personal workflow on one person's laptop, told in one
-  paragraph of running prose, seven to eleven sentences, in the third person about that person, who
-  is named. It says what the workflow is for and what its steps are, in order, in plain words. At
-  least half of a bank's scenarios are a small personal tracker with acquire, assess and extract
+- **generator:** **A scenario** is one made-up personal workflow on one person's laptop, in the
+  third person about that person, who is named. One or two short opening sentences say what the
+  workflow is for. Then comes one top-level bullet per step, in order, in plain words. At least half of a bank's scenarios are a small personal tracker with acquire, assess and extract
   steps (a program collects items from somewhere, an agent judges each one, some step pulls out what
   matters); the rest are other personal workflows (sorting a household's receipts, drafting replies
   to a club's messages). It has two or three executors, each a program or an agent following a skill
   file the person wrote, each with a short handle the questions can use ("the fetcher", "the rating
   agent"); at least one is an agent and at most two are. A step the person does by hand may appear,
-  but no question is asked about it. Mixed through the paragraph, never under labels, are these
-  facts:
-  - for each executor, what its step does, concretely enough that what it uses follows: which files
-    or folders it reads and which it writes, whether it fetches anything from the internet, and which
-    account it acts on and what it does there;
-  - for each executor, everything it can reach, in all four kinds, each stated: which folders it can
-    read and which it can change, whether it can run shell commands, whether it can reach the
-    internet (and if only certain sites, which), and which logins, keys or tokens it can use and what
-    each lets it do ("a token for her bank that can read her balance and also move money"; "no
-    account"). Nothing about reach is left to assume: where an agent runs "with its default settings,
-    started in her home folder", the paragraph says what that means, as the reading does (it can read
-    and change every file there, run shell commands and reach the internet), and names anything in
-    that folder the answer needs ("her email login is saved in a settings file there");
-  - for each agent, everything it reads while doing its step, and who wrote each part: the skill
+  but no question is asked about it; its bullet has no sub-bullets.
+  - **The step bullet**, one or two sentences, says what the step does, concretely enough that what
+    it uses follows: who or what runs it, which files or folders it reads and which it writes,
+    whether it fetches anything from the internet (and from which sites), which account it acts on
+    and what it does there, and, for an agent, everything it reads and who wrote each part: the skill
     file (always the person's), and each other thing ("the listings, which any landlord can post";
     "the notes Ana types after each viewing"; "the count the fetcher writes into a file"). Where a
     program handles outside text before the agent sees it, exactly what the program hands the agent.
+    The step bullet never uses the word "can".
+  - **Indented sub-bullets**, one short fact each, say how the step's executor runs: as which user
+    or started how ("runs as Lena"; "Lena starts it in her home folder with its harness's default
+    settings"; "runs as a separate user Lena set up for it, which has been given the posts folder");
+    and each limit, if any, said as what was set up ("runs in a sandbox holding the skill file, the
+    posts folder and the picks file"; "its harness's permission settings allow reading and writing
+    files in the posts folder and refuse shell commands"; "the posts folder is read-only to it";
+    "holds a scoped token that reads her calendar"; "holds a token for her bank that reads her
+    balance and moves money"; "holds no logins, keys or tokens"). Further sub-bullets state plainly
+    what sits in places it could get to ("her home folder holds her tax returns and a settings file
+    with her bank login"; "the sandbox also holds a folder of her old photos").
 
-  **How pointed a fact may be.** A fact states what an executor does, what it can reach, what it
-  reads and who wrote that. It never says whether reach is more or less than a step needs, never
-  calls text trusted, untrusted, safe, outside or risky, and never uses the words untrusted input,
-  prompt injection, least privilege, blast radius or "more than it needs". Every executor's reach is
-  stated in all four kinds, so the length of a reach statement gives nothing away.
+  **How pointed a fact may be.** A fact states what an executor does, how it runs, what limits it
+  runs under, what sits where, what it reads and who wrote that. The scenario never spells out what
+  that means for reach: no "so it can read and change every file there", no "it can't run shell
+  commands" unless that refusal is itself the stated limit; the learner works out reach from the
+  reading's rule. It never says whether reach is more or less than a step needs, never calls text
+  trusted, untrusted, safe, outside or risky, and never uses the words untrusted input, prompt
+  injection, least privilege, blast radius or "more than it needs". **No wording cue gives the
+  answer without comparing step and reach:** a limit's contents are listed neutrally, never with
+  "only", "just" or "nothing else", and an executor with no limit is never described with "every",
+  "whole", "all" or "any". Both kinds of executor get sub-bullets of about the same number and
+  length.
 
-  **Reach.** An executor keyed `excess` can reach at least one thing its step never uses, and the
-  key names each such thing: every file in the home folder for a step that uses one folder; a token
-  that can also change, delete, send or move money for a step that only reads; a folder it can read
-  that holds something it never uses (a settings file with a login in it, other personal files);
-  the internet for a step that works only on files already on the laptop; the whole internet for a
-  step that fetches from named sites. Shell commands are never the only unneeded thing, since
-  whether a step needs one can turn on how the agent works; but where an `excess` executor can also
-  run shell commands and its step runs no named program, the key lists them beside the other
-  unneeded things. An executor keyed `no-excess` uses everything it can reach: it can read only the
-  folders it reads, change only what it writes, reach on the internet only the sites it fetches
-  from (and nothing on the internet if it fetches nothing), run shell commands only if its step runs
-  a named program, and hold only a token whose permissions its step uses. Its reach is said as a plain fact ("it runs in a sandbox holding
-  only the posts folder and the picks file"; "it is set up so that it can change only the posts
-  folder and read nothing else"). Since a sandbox or a narrow setup must not mark the answer, at
-  least two `excess` executors in a bank are also described as running in a sandbox or a narrow
-  setup that still leaves one unneeded thing (the sandbox folder also holds the settings file with
-  her email login; the agent can't run shell commands but can still reach the internet, for a step
-  that works only on saved files).
+  **Reach**, as the key works it out from the reading's rule: an executor can do whatever the user
+  it runs as can do (read and change that user's files, including secrets saved in them, run shell
+  commands, reach the internet, and use any login, key or token it holds or can read) unless a
+  stated limit narrows it. An agent started with its harness's default settings is narrowed by
+  nothing, as the reading tells learners to assume. A sandbox, a separate user or a scoped token
+  narrows everything the executor runs. The harness's permission settings narrow only what the agent
+  asks the harness to do: where they let the agent run shell commands without asking, those commands
+  can do anything the user could, so a file or network limit in the harness does not cover them.
+  An executor keyed `excess` can reach at least one thing its step never uses, and the key names
+  each such thing: other files in the folder it starts in, for a step that uses one folder; a login
+  saved there, and what it lets one do; a token that can also change, delete, send or move money,
+  for a step that only reads; a folder in its sandbox that the step never uses; the internet, for a
+  step that works only on files already on the laptop; sites beyond the ones its step fetches from.
+  Shell commands are never the only unneeded thing, since whether a step needs one can turn on how
+  the agent works; but where an `excess` executor can also run shell commands and its step runs no
+  named program, the key lists them beside the other unneeded things. An executor keyed `no-excess`
+  runs under limits that leave it exactly what its step uses: the folders it reads, change of only
+  what it writes, on the internet the sites it fetches from (and no network if it fetches nothing),
+  shell commands only if its step runs a named program, and a token whose permissions its step all
+  uses. So every `no-excess` executor is limited, and since a limit must not mark the answer, at
+  least a third of a bank's `excess` executors, and never fewer than two, are limited too, by a limit
+  that still leaves one unneeded thing: a sandbox that also holds a folder the step never uses, or the
+  settings file with her email login; harness settings that refuse shell commands but leave the
+  network, for a step that works on saved files; a separate user that has also been given a shared
+  folder holding her tax returns; a scoped token that also deletes; or harness settings that limit
+  files to one folder while letting the agent run shell commands without asking.
 
   **Context**, for each agent, by case:
   - `outside-text`: the agent itself reads text someone other than the person could have written or
@@ -290,41 +308,54 @@ rather than for a different kind of practice.
   its `cases:` line lists `outside-text` or `passed-through` (answer 1), or `owner-only` or
   `shielded` (answer 2).
 
-  **Illustration**, not a bank item; its domain is used by no bank in this topic. "Lena wants to find
-  weekend volunteer shifts near her apartment. Every morning the fetcher, a program on her laptop,
-  downloads the new posts from a community volunteering board, where any organization can post, and
-  saves them in a folder called posts. It is set up so that it can change only the posts folder and
-  read nothing else, it can't run shell commands, it can reach only the volunteering board on the
-  internet, and it uses no account. Then the sorting agent, following a skill file Lena wrote, reads
-  each new post and her own list of what she likes doing and when she is free, and writes a one-line
-  verdict on each post into a file called picks. Lena started it with its default settings in her
-  home folder, so it can read and change every file there, run shell commands and reach the
-  internet, and her email login is saved in a settings file in that folder. On Sunday evenings the
-  planning agent, also following a skill file Lena wrote, reads the list of shifts she has signed up
-  for and her list of other plans for the week, both of which she types herself, and writes a draft
-  plan for the week into a file called plan. It runs in a sandbox holding only those four files, can't run shell commands or reach
-  the internet, and uses no account." Questions and keys, in order: the fetcher's reach, No
-  (`no-excess`: it fetches from the board and writes into the posts folder, and can do nothing
-  else); the sorting agent's reach, Yes (`excess`: its step reads the posts and Lena's list and
-  writes picks, but it can read every file in her home folder, including the settings file with her
-  email login, run shell commands and reach the internet, none of which a step working on saved
-  posts and running no program uses); the sorting
-  agent's context, Yes (`outside-text`: it reads the posts, which any organization can write); the
-  planning agent's reach, No (`no-excess`: the sandbox holds the skill file, the two files it reads
-  and the plan it writes); the planning agent's context, No (`owner-only`: it reads only the skill
-  file and the two lists Lena types). A `shielded` variant: the fetcher also counts how many new
+  **Illustration**, not a bank item; its domain is used by no bank in this topic.
+
+  > Lena wants to find weekend volunteer shifts near her apartment. Her workflow has three steps.
+  >
+  > - Every morning the fetcher, a program, downloads the new posts from a community volunteering
+  >   board, where any organization can post, and saves them in a folder called posts.
+  >   - It runs in a sandbox holding the posts folder, with shell commands turned off.
+  >   - The sandbox's network allowlist has the volunteering board's site on it.
+  >   - It holds no logins, keys or tokens.
+  > - Then the sorting agent, following a skill file Lena wrote, reads each new post and her own list
+  >   of what she likes doing and when she is free, and writes a one-line verdict on each post into a
+  >   file called picks.
+  >   - Lena starts it in her home folder with its harness's default settings.
+  >   - Her home folder holds the skill file, the posts folder, her list, the picks file, her tax
+  >     returns and a settings file with her email login.
+  > - On Sunday evenings the planning agent, also following a skill file Lena wrote, reads the list
+  >   of shifts she has signed up for and her list of other plans for the week, both of which she
+  >   types herself, and writes a draft plan for the week into a file called plan.
+  >   - It runs in a sandbox holding its skill file, those two lists and the plan file, with shell
+  >     commands and the network turned off.
+  >   - It holds no logins, keys or tokens.
+
+  Questions and keys, in order: the fetcher's reach, No (`no-excess`: the sandbox leaves it the
+  posts folder it writes and the board it fetches from, and nothing in its step runs a command or
+  uses a login); the sorting agent's reach, Yes (`excess`: nothing narrows it, so it can do whatever
+  Lena can; its step reads the posts and her list and writes picks, but it can read her tax returns
+  and the settings file with her email login, which would let it send mail as her, run shell
+  commands and reach the internet, none of which a step working on saved posts and running no
+  program uses); the sorting agent's context, Yes (`outside-text`: it reads the posts, which any
+  organization can write); the planning agent's reach, No (`no-excess`: the sandbox holds the skill
+  file, the two lists it reads and the plan it writes, with no commands, network or logins); the
+  planning agent's context, No (`owner-only`: it reads only the skill file and the two lists Lena
+  types). An `excess` variant of a limited executor: the planning agent's sandbox also holds her
+  journal folder; key Yes, naming the journal folder. A `shielded` variant: the fetcher also counts how many new
   posts fall on a weekend and writes only that number into a file in the posts folder, and the
   planning agent instead reads only that file and Lena's list of other plans; key No. A `passed-through`
   variant: the fetcher writes each post's title into a file that the planning agent reads; key Yes.
 
-  **How hard.** Medium when the excess is plain (an agent with its default settings in the home
-  folder, against a step that uses one folder), a `no-excess` executor's reach plainly matches its
-  step, and the outside text is plainly someone else's (listings any landlord can post). Hard when
-  the excess is one item among things the step does use (a token that can also delete, for a step
-  that only reads; the internet, for a step that works on saved files; the whole internet, for a
-  step that fetches from two named sites; a sandbox that also holds the settings file), when a
-  `no-excess` executor's reach looks broad but is all used (a token that can change entries, for a
-  step that changes them; several folders, each of which the step reads), when outside text arrives indirectly (copied into a list earlier
+  **How hard.** Medium when the excess is plain (an agent started with its harness's default
+  settings in the home folder, against a step that uses one folder), a `no-excess` executor's
+  limits plainly match its step, and the outside text is plainly someone else's (listings any
+  landlord can post). Hard when the excess is one item a limit leaves among things the step does
+  use (a token that also deletes, for a step that only reads; the network left on, for a step that
+  works on saved files; no network allowlist, for a step that fetches from two named sites; a
+  sandbox that also holds the settings file or an unused folder; harness file limits beside shell
+  commands allowed without asking), when a `no-excess` executor's limits look broad but leave only
+  what is used (a token that changes entries, for a step that changes them; a sandbox holding
+  several folders, each of which the step reads), when outside text arrives indirectly (copied into a list earlier
   by a program; a message the person forwarded to herself; a shared document others can edit; only
   titles passed through), when an `owner-only` agent can reach the internet or the workflow collects
   outside text elsewhere that this agent never reads, or when a `shielded` program reads a great
@@ -348,32 +379,36 @@ rather than for a different kind of practice.
   or illustration in this topic.
 
   **The key**, per question. For a reach question: the verdict; for `excess`, each thing the executor
-  can reach that its step never uses, with the sentence saying it can reach it and the sentence
-  saying what the step does; for `no-excess`, each thing it can reach and the part of the step that
-  uses it. For a context question: the verdict; each thing the agent reads and who wrote it, citing
+  can reach that its step never uses, citing the sub-bullets that give it that reach (or, where no
+  limit covers it, the reading's rule that it can do whatever its user can) and the step bullet
+  saying what the step does; for `no-excess`, each limit, what it leaves, and the part of the step
+  that uses that. For a context question: the verdict; each thing the agent reads and who wrote it, citing
   the sentence; for `shielded`, what the program hands over and that the program produced it
   itself; for `passed-through`, which part of the outside text arrives. The key notes that the
   question asks what the step does as described, not what could go wrong next or how to fix it.
   Credit: full for the key's choice; none for the other. A `tutor note` gives the follow-up's
   answer (what is unneeded, or where the text comes from).
 - **worked example:** shown only as help when asked for, which records the attempt as helped. The
-  tutor works the illustration aloud (filling out a variant into a paragraph in this activity's
-  style, adding no fact): for a reach question, lists what the executor can reach in the four kinds
-  beside what its step uses, and says whether anything is left over; for a context question, lists
+  tutor works the illustration aloud (filling out a variant into bullets in this activity's style,
+  adding no fact): for a reach question, starts from the reading's rule (it can do whatever the user
+  it runs as can, unless a limit narrows it), applies each stated limit, lists what that leaves it
+  in the four kinds beside what its step uses, and says whether anything is left over; for a context question, lists
   everything the agent reads and who wrote each part, and says whether anyone but Lena could have
   written any of it. It may point to What a step can reach and When data becomes instructions in
   `tasks/read-permissions.md`.
-- **doesn't show:** every scenario states each executor's reach in all four kinds and everything each
-  agent reads, so a pass doesn't show the learner would find reach or a source nobody mentioned; in
-  Problem Set 5 their agent's audit supplies those facts. A yes-or-no answer is right half the time by
+- **doesn't show:** every scenario states how each executor runs, every limit it runs under, what
+  sits in the places it could get to, and everything each agent reads, so a pass doesn't show the
+  learner would find a limit, a saved login or a source nobody mentioned; in Problem Set 5 their
+  agent's audit supplies those facts. A yes-or-no answer is right half the time by
   guessing, and no reason is asked. The learner isn't asked to name the unneeded reach or the
   source of the outside text, only to say whether there is one; the tutor's follow-up asks, ungraded.
   No question is asked about a person's step. The context question uses the word untrusted input
   unglossed, so a learner who has that word wrong may fail a question whose facts they read right.
-- **offer as:** the read-it-as-a-story check: a short paragraph about a personal workflow, then, step
-  by step, whether each executor can reach anything it doesn't need and whether untrusted input ends
-  up in each agent's context, each a yes or no. About 3 minutes for a scenario's first question and 1
-  for each after. Harder than `a-read-agent-audit`, since the facts are mixed through the prose.
+- **offer as:** the work-out-the-reach check: a personal workflow, one bullet per step saying how its
+  executor runs, then, step by step, whether each executor can reach anything it doesn't need and
+  whether untrusted input ends up in each agent's context, each a yes or no. About 3 minutes for a
+  scenario's first question and 1 for each after. Harder than `a-read-agent-audit`, since the
+  learner works out each executor's reach from how it runs instead of being told it.
 - **check note:** Skip only at the end of a scenario, as `tutor does` says, never question by
   question as the opening paragraph's "skips any question whose case is already passed" could be
   read: once `excess` is passed, skipping single reach questions would leave only No answers. Even
@@ -388,7 +423,8 @@ rather than for a different kind of practice.
 
   The `shielded` and `passed-through` variants change what the planning agent reads. When working
   one aloud as help, say that its sandbox holds the file the fetcher writes in place of the shifts
-  list; that is the only fact the variant implies.
+  list; that is the only fact the variant implies. In the `shielded` variant the fetcher's step now
+  also writes the count file in the posts folder, which its sandbox already holds.
 
 ### `a-read-agent-audit`
 
@@ -411,15 +447,22 @@ rather than for a different kind of practice.
 - **done when:** the criterion of each goal met with no help, case by case: a right answer passes
   the case its question carries.
 - **generator:** **A scenario** uses `a-look-over-steps`'s executors, reach rules, context cases,
-  pointedness rule, questions, question order, key and credit, with one difference: its facts are not
-  running prose. One or two sentences say what the workflow is for and that the person asked her
-  agent to describe each step: what it does, what runs it, what it can read, change, run and log
-  into, and what each agent step reads. Then comes the agent's answer, one short block per step,
-  each headed by the step's handle, giving one sentence each, in this order: what the step does
-  (what it reads and writes, what it fetches, what it does with an account); what runs it (a
-  program, or an agent following the person's skill file); what it can reach, one sentence per kind
-  (files, shell commands, the network, accounts); and, for an agent, what it reads and who wrote
-  each part. The answer states facts only. It never says whether reach is more than the step needs
+  pointedness rule, questions, question order, key and credit, with one difference: the learner is
+  told each executor's reach instead of working it out. One or two sentences say what the workflow
+  is for and that the person asked her agent to describe each step: what it does, what runs it,
+  how it runs, what it can read, change, run and reach, what its secrets let it do, and what each
+  agent step reads. Then comes the agent's answer, one short block per step, each headed by the
+  step's handle, giving one sentence each, in this order: what the step does (what it reads and
+  writes, what it fetches, what it does with an account); what runs it (a program, or an agent
+  following the person's skill file); how it runs (as which user, and with which limits, if any);
+  what it can reach, one sentence per kind (files, including any secrets saved in them; shell
+  commands; the network; what its secrets let it do); and, for an agent, what it reads and who
+  wrote each part. Each reach sentence agrees with the reading's rule applied to how the executor
+  runs: whatever its user can do, unless a stated limit narrows it, with a harness limit not
+  covering shell commands the harness lets run without asking. The reach sentences name places and
+  what is in them, under the same wording rule as `a-look-over-steps` (no "only", "just" or "nothing
+  else" for a limited executor, no "every", "whole", "all" or "any" for an unlimited one). The
+  answer states facts only. It never says whether reach is more than the step needs
   and never says whether untrusted input reaches an agent: the person did not ask that, so the
   reading's third audit question ("Where does text from outside the workflow end up in an agent's
   context?") is never answered here. A step the person does by hand gets one sentence and no
@@ -430,11 +473,17 @@ rather than for a different kind of practice.
   is its answer." Then three blocks. The sorting agent's block reads: "**The sorting agent.** Reads
   each new post in the posts folder and your list of what you like doing and when you are free, and
   writes a one-line verdict on each post into the picks file. An agent following your skill file.
-  Files: it can read and change every file in your home folder, including the settings file where
-  your email login is saved. Shell commands: it can run any. Network: it can reach the whole
-  internet. Accounts: none of its own, though your email login is in that settings file. It reads
-  the skill file and your list, which you wrote, and the posts, which organizations put on the
-  volunteering board." Same questions and keys.
+  You start it in your home folder with its harness's default settings, which set no limits. Files:
+  it can read and change the files in your home folder, which hold the skill file, the posts folder,
+  your list, the picks file, your tax returns and the settings file where your email login is
+  saved. Shell commands: it can run them, with no limit set. Network: it can reach the internet,
+  with no limit set. Secrets: it holds none of its own, but it can read your email login in that
+  settings file, which would let it send mail as you. It reads the skill file and your list, which
+  you wrote, and the posts, which organizations put on the volunteering board." The fetcher's block
+  says it runs in a sandbox holding the posts folder, with shell commands turned off, and then, kind
+  by kind, that it can change the posts folder, that shell commands are off, that it can reach the
+  volunteering board's site, which is on the sandbox's network allowlist, and that it holds no
+  secrets. Same questions and keys.
 
   **How hard**, labeled exactly as in `a-look-over-steps`, by the facts: a scenario is Hard here
   when its facts would make it Hard there. The layout makes every question somewhat easier than the
@@ -453,15 +502,16 @@ rather than for a different kind of practice.
 - **worked example:** shown only as help when asked for, which records the attempt as helped. As
   `a-look-over-steps`'s, using the example above, reading each block's reach sentences against its
   first sentence, what the step does.
-- **doesn't show:** as `a-look-over-steps`'s, and the facts are laid out one to a sentence under each
-  step's heading, so a pass doesn't show the learner would find them in a looser description;
-  `a-look-over-steps` mixes them through prose. Problem Set 5's agent audit will look more like this
+- **doesn't show:** as `a-look-over-steps`'s, and the agent states each executor's reach, so a pass
+  doesn't show the learner would work out reach from how an executor runs; `a-look-over-steps`
+  asks for that. Problem Set 5's agent audit will look more like this
   than like a story, but a real agent's answer may leave out a kind of reach or call something safe,
   which no scenario here does.
 - **offer as:** the read-the-audit check: the same questions, asked of a workflow described the way
   an agent's audit lays it out, one block per step. About 2 or 3 minutes for a scenario's first
-  question and 1 for each after. Easier than `a-look-over-steps`, and closer to what Problem Set 5
-  will hand you.
+  question and 1 for each after. Easier than `a-look-over-steps`, since the agent says what each
+  executor can reach and you compare it with the step, and closer to what Problem Set 5 will hand
+  you.
 - **check note:** This entry runs as `a-look-over-steps` does, so the notes there on skipping and on
   recording copied text apply here too.
 
@@ -495,8 +545,11 @@ rather than for a different kind of practice.
   prose, five to eight sentences, in the third person about that person, who is named. It says what
   the step does and what it uses (what it reads and writes, whether it fetches anything from the
   internet, which account it acts on and what it does there); who runs it (in at least four of a
-  bank's six scenarios, an agent following a skill file the person wrote; otherwise a program); what
-  that executor can reach, in all four kinds; and, for an agent, what it reads and who wrote each
+  bank's six scenarios, an agent following a skill file the person wrote; otherwise a program); how
+  that executor runs (as which user, and with which limits, if any, including, for an agent, what
+  its harness lets it run without asking) and what it can reach as a result, in all four kinds
+  (files, including secrets saved in them; shell commands; the network; what its secrets let it
+  do), stated as the reading's rule gives it; and, for an agent, what it reads and who wrote each
   part. Where a person already checks anything, the paragraph says so, and where nobody does, it
   says what happens to the step's output (it goes straight onto the list she calls from; the reply
   is sent). Then two sentences in fixed frames:
@@ -508,14 +561,19 @@ rather than for a different kind of practice.
     Pictures folder"; "a hidden line in a listing makes the agent rate a scam as a great deal, and it
     goes onto the list she calls from".
   - "Her agent proposes: '<limit>'" One limit, in the agent's words, one to three sentences, saying
-    concretely what would change: what the executor could then read, change, run, reach or use, or
-    who or what would stand between the step and its effect. It never says what the limit prevents,
-    which harm it addresses, whether the step could still work, or what it costs. It is one of the
-    limits the criterion lists: the agent's permission settings (something left off its allowlist), a
-    folder or sandbox it cannot leave, read-only access, a narrowly scoped token or account, a
-    program that handles the outside text so the agent sees only what the program produced, the
-    agent proposing changes that a program checks and applies, or a person who checks every output
-    before it takes effect.
+    what it would restrict or check and how it would be imposed. It never says what the limit
+    prevents, which harm it addresses, whether the step could still work, or what it costs. It comes
+    from one of the reading's three groups:
+    - narrowing what the executor can reach (which files, read-only access, which shell commands,
+      which sites on the network, or what a secret lets it do), imposed in one of the reading's four
+      ways: a separate user, a sandbox, the harness's permission settings (for an agent only), or a
+      scoped token;
+    - keeping untrusted text out of the agent's context: a program handles the untrusted input and
+      the agent sees only what the program produced;
+    - checking what the step produced before it takes effect: the agent proposes changes and a
+      program applies them, or a person checks every output.
+    Never an agent's approval prompts, which the reading calls a weak check, so their effect is
+    not a clear call.
 
   **Clear calls only.** Each limit either clearly cuts off the harm's route or adds a check on every
   change before it takes effect, or clearly has little or nothing to do with the harm. Never a limit
@@ -525,9 +583,17 @@ rather than for a different kind of practice.
   an allowlist that still allows the harmful action. Every limit is set up as the agent describes it
   and works as described. Whether the step can still work is as clear: a limit that stops the work
   takes away something the paragraph says the step uses, and any other limit leaves everything the
-  step uses. A limit that turns off the internet always covers everything the executor runs: either
-  the proposal says so ("for the agent and every command it runs") or the paragraph says the
-  executor can't run shell commands, so nobody need wonder whether a command could still reach out.
+  step uses. **How a limit is imposed settles what it covers**, as the reading says: a sandbox, a
+  separate user or a scoped token covers everything the executor runs, and the harness's permission
+  settings cover only what the agent asks the harness to do. So wherever a proposal uses the
+  harness's permission settings, the paragraph says what the harness lets the agent run without
+  asking (no shell commands, or shell commands, because its step runs a named program), and nobody
+  need wonder whether a command could get around it. The one limit that works as described and is
+  still got around is this one, which the reading teaches: a file or network limit in the harness's
+  permission settings, when the paragraph says the harness lets the agent run shell commands without
+  asking and the harm's route can go through a command (network left off the harness allowlist,
+  while the step runs an allowed download program and any command it runs still reaches the
+  network). That limit is keyed `no-effect`.
 
   **A question** is a compound: the `###` stem is the paragraph and the two framed sentences, then
   two mcq parts.
@@ -556,7 +622,10 @@ rather than for a different kind of practice.
     step is meant to write it), or adds a check that comes after the harm has happened (the person
     reviews the step's output, when the harm is the agent sending something out during its run), or
     a program that applies the agent's changes, when the harm is a wrong value of a kind the program
-    does apply (as the reading says, propose-apply still lets bad values through).
+    does apply (as the reading says, propose-apply still lets bad values through), or a limit the
+    step gets around because of how it is imposed (a file or network limit in the harness's
+    permission settings, when the harness lets the agent run shell commands without asking and the
+    harm's route goes through a command).
 
   **Illustrations**, not bank items; their domain is used by no bank in this topic. The paragraph:
   "Omar is looking for a cat to adopt. Each evening the matching agent, following a skill file Omar
@@ -570,12 +639,18 @@ rather than for a different kind of practice.
     holding only the skill file and the shortlist, still able to fetch pages from the internet.'" a
     Yes (the login isn't in the sandbox, so the agent can't read it to send it); b Yes (it still
     reads its skill file, fetches the listings and writes the shortlist).
-  - `stops-work`, Medium: "His agent proposes: 'I can turn off internet access for the matching
-    agent and every command it runs.'" a Yes (it can't send anything anywhere); b No (it fetches the listings from the
-    shelter websites).
+  - `stops-work`, Medium: "His agent proposes: 'I can run the matching agent in a sandbox with the
+    network turned off.'" a Yes (it can't send anything anywhere); b No (it fetches the listings
+    from the shelter websites).
   - `no-effect`, Hard: "His agent proposes: 'You could look over the shortlist each morning before
     contacting any shelter.'" a No (the login would be sent during the evening run, before Omar
     looks at anything, and the shortlist needn't show it); b Yes (the step runs as before).
+  - `no-effect`, Hard, a variant of the paragraph: the agent fetches the listings by running a
+    download program Omar wrote, and Omar set its harness's permission settings to let it run
+    shell commands without asking. "His agent proposes: 'I can leave the network off the matching
+    agent's allowlist in its harness's permission settings.'" a No (the harness checks only what the
+    agent asks it to do; a command the agent runs can still read the login and reach the internet
+    to send it); b Yes (it still runs the download program, which still fetches the listings).
 
   **How hard.** Medium when the limit plainly closes or plainly misses the harm's route (a sandbox
   without the login, against sending the login; read-only access to a folder the harm never
@@ -584,12 +659,17 @@ rather than for a different kind of practice.
   check that leaves the agent's reach alone and still counts, since every output is checked before
   it takes effect; a limit on reach against a harm from untrusted input, where the steered action
   needs that reach; a shield from the outside text that would stop the harm, for a step whose job is
-  to write about that text. The question wording is unchanged.
+  to write about that text; a harness limit the step gets around because the harness lets the agent
+  run shell commands without asking. The question wording is unchanged.
 
   **Spread across the bank.** A bank is six scenarios, six questions: each case twice, one of each
   pair Hard. Three harms follow from reach the step doesn't need and three from untrusted input
   (alone, or steering the agent into using reach). At least five different kinds of limit appear,
-  none more than twice, and at least one is a person checking every output. When the generator is
+  none more than twice, counting as kinds each of the four ways of narrowing reach (a separate
+  user, a sandbox, the harness's permission settings, a scoped token), a program that handles the
+  untrusted input, propose-apply, and a person checking every output. Each of the reading's three
+  groups appears at least once, at least one limit is a person checking every output, and one of
+  the two `no-effect` questions is a harness limit the step gets around. When the generator is
   run live, the tutor picks each next case to be one the learner hasn't passed.
 
   **Domains** vary by scenario, none repeating within the bank: a wedding's RSVP inbox, a vintage
@@ -599,8 +679,8 @@ rather than for a different kind of practice.
 
   **The key** gives both answers. For part a: the harm's route (what the executor would have to
   read, reach, use or do for the harm to happen, and when it would take effect), citing the
-  sentences, and whether the limit cuts that route, checks every change before it takes effect, or
-  leaves the route as it was. For part b: what the step uses, citing the sentence, and whether the
+  sentences, and whether the limit, as it is imposed, cuts that route, checks every change before
+  it takes effect, or leaves the route as it was. For part b: what the step uses, citing the sentence, and whether the
   limit leaves it. Credit, per part: full for the key's choice, none for the other; the question
   passes its case only when both parts are right. A `tutor note` on the entry gives, for a
   `no-effect` question, what the limit does do, so the tutor can say afterward that it isn't
@@ -613,7 +693,9 @@ rather than for a different kind of practice.
   point to Limits you can put on a step and Judging a proposed limit in `tasks/read-permissions.md`.
 - **doesn't show:** every limit is clearly on one side of "significantly", and every limit works as
   described, so a pass shows nothing about the borderline calls or about catching a limit built
-  wrong, which the instructor left to the agent. One limit at a time, so a pass shows nothing about
+  wrong, which the instructor left to the agent; the one way a limit is got around that a question
+  may turn on is a harness limit beside shell commands allowed without asking, as the reading
+  teaches. Approval prompts never appear, so a pass shows nothing about judging them. One limit at a time, so a pass shows nothing about
   combining limits, which the reading says often takes more than one. The agent's proposal is given,
   so a pass doesn't show the learner would think of a limit, which is the agent's work here. Each
   part is a yes or no, so guessing passes a question a quarter of the time. No question has both
@@ -625,10 +707,11 @@ rather than for a different kind of practice.
   say whether the limit would significantly reduce the risk and whether the step could still work.
   About 3 or 4 minutes a question. Harms vary from question to question, so each one is read from
   scratch.
-- **check note:** A limit on what files, folders or accounts an agent can use covers every command
-  it runs, just as the generator says outright for turning off the internet. If a learner asks
-  whether a shell command could get around such a limit, say no: that is a fact of the scenario,
-  not a hint.
+- **check note:** A limit imposed by a sandbox, a separate user or a scoped token covers every
+  command the executor runs. If a learner asks whether a shell command could get around one, say
+  no: that is a fact of the scenario, not a hint. For a limit in the harness's permission settings,
+  don't answer that question, since it is what part a judges; point to the paragraph's sentence on
+  what the harness lets the agent run without asking.
 
 ### `a-weigh-proposals`
 
@@ -666,19 +749,22 @@ rather than for a different kind of practice.
   to an answer.
 
   **Example**, the cat adoption illustration in `a-weigh-one-limit` set as one scenario: the
-  paragraph and the harm, then three proposals in this order: "I can turn off internet access for
-  the matching agent and every command it runs" (`stops-work`); "You could look over the shortlist
-  each morning before contacting any shelter" (`no-effect`); "I can set the matching agent up so it
-  can read and change only the files in a folder holding the skill file and the shortlist"
-  (`sound-limit`, since the internet stays as the paragraph describes it). A bank scenario would
+  paragraph and the harm, then three proposals in this order: "I can run the matching agent in a
+  sandbox with the network turned off" (`stops-work`); "You could look over the shortlist each
+  morning before contacting any shelter" (`no-effect`); "I can run the matching agent as a separate
+  user that has been given the skill file and the shortlist" (`sound-limit`, since the operating
+  system then keeps it and every command it runs from the settings file with the login, and the
+  internet stays as the paragraph describes it). A bank scenario would
   break that one-of-each pattern in at least two of its four scenarios.
 
   **How hard**, as in `a-weigh-one-limit`. The question wording is unchanged.
 
   **Spread across the bank.** A bank is four scenarios and ten or eleven questions, at least three
   carrying each case, about half Hard. Two harms follow from reach the step doesn't need and two
-  from untrusted input. At least five different kinds of limit appear across the bank, and a
-  scenario never offers the same kind twice.
+  from untrusted input. At least five different kinds of limit appear across the bank, counted as
+  `a-weigh-one-limit` counts them, each of the reading's three groups appears, and a scenario never
+  offers the same kind twice. At least one `no-effect` question is a harness limit the step gets
+  around because the harness lets the agent run shell commands without asking.
 
   **Domains** are this activity's own, none repeating within the bank: a seed swap forum watch, a
   newsletter digest from the person's subscriptions, a band's gig inquiries, a language-exchange
@@ -696,8 +782,9 @@ rather than for a different kind of practice.
 - **check note:** The notes on `a-weigh-one-limit` and on skipping in `a-look-over-steps` apply
   here. In particular, a scenario's last proposal asked only because its case is still unpassed
   gives away its two answers to a learner who notices the pattern; when only one proposal would
-  remain, ask it anyway or move to a fresh scenario. The example's folder-only proposal covers the
-  commands the matching agent runs, so it cannot read the bank login by any route.
+  remain, ask it anyway or move to a fresh scenario. The example's separate-user proposal covers
+  every command the matching agent runs, as the reading says of a separate user, so it cannot read
+  the bank login by any route.
 
 ### `a-words`
 
