@@ -9,12 +9,13 @@ minutes on its own, plus its stop and close) and about 3 a word, so 15. That is 
 topic's 60-minute budget.
 The capability carries `taught elsewhere` (the session 23 class), so its three activities are
 offered after that class, as practice and review. Meeting `c-weigh-cloud-plan` takes one passed
-question per case, ten in all. Through `a-pick-better-plan` that is ten scenarios at about 2 or
-3 minutes each, so about 25 minutes. Through `a-flip-one-fact` it is nine scenarios (the
-correctness scenario carries both correctness cases), about 3 minutes for a scenario's first
-question and 1 for its second, so about 36. Through `a-score-two-plans` it is six scenarios, about
-3 minutes for a scenario's first question and about 1 for each after, with the tutor skipping
-questions whose cases are already passed, so about 25. The rest of the hour is room for missed
+question per case, thirteen in all. Through `a-pick-better-plan` that is thirteen scenarios at
+about 2 or 3 minutes each, so about 32 minutes. Through `a-flip-one-fact` it is thirteen scenarios,
+since only a pair's first question carries a case, at about 3 minutes for the first question and 1
+for the second, so about 52: more than one sitting, and meant as review spread over several.
+Through `a-score-two-plans` it is eight scenarios, about 3 minutes for a scenario's first question
+and about 1 for each after, with the tutor skipping questions whose cases are already passed, so
+about 29. The rest of the hour is room for missed
 questions.
 
 Every question asks for one thing and works on its own as a bank question, never relying on a
@@ -47,7 +48,7 @@ throughout, and no em dash or en dash in any form.
 | id                   | Goal | Criterion: what gets examined, and what counts |
 | -------------------- | ---- | ---------------------------------------------- |
 | `o-orientation`      | get the shape of this area before working on any particular part of it | `orientation` |
-| `c-weigh-cloud-plan` | say what a plan for where a workflow's agent steps run, and who pays for them, does to one goal | given a described workflow with at least one agent step, two plans for where that step runs and who pays for it, and one named goal (cost to the service's owner or to its users, privacy, access or correctness), says which plan does better on that goal, or that they do about as well on it. The facts about the workflow that decide it include who its users are and how many runs they will make, whose bill the agent compute lands on and how it is priced (per token, as part of a subscription, or as the rent of a server), whose data the agent step sees and which companies would then see it, who needs to start it or see its results, and whether the step needs a model as capable as the ones model companies sell. The plans are drawn from five: each user runs it on their own machine under their own subscription; it runs in the cloud on each user's own API key; it runs in the cloud and the service pays a model company from its own account; the service runs an open-weight model on servers it pays for; or an open-weight model runs in each user's browser. Cases: `cost-who-bears`, `cost-fixed-servers`, `cost-subscription`, `privacy-own-device`, `privacy-no-vendor`, `privacy-same-parties`, `privacy-own-machine`, `access-no-subscription`, `correctness-capable`, `correctness-enough` |
+| `c-weigh-cloud-plan` | say what a plan for where a workflow's agent steps run, and who pays for them, does to one goal | given a described workflow with at least one agent step, two plans for where that step runs and who pays for it, and one named goal (cost to the service's owner or to its users, privacy, access or correctness), says which plan does better on that goal, or that they do about as well on it. The facts about the workflow that decide it include who its users are and how many runs they will make, whose bill the agent compute lands on and how it is priced (per token, as part of a subscription, or as the rent of a server), whose data the agent step sees and which companies would then see it, who needs to start it or see its results, and whether the step needs a model as capable as the ones model companies sell. The plans are drawn from five: each user runs it on their own machine under their own subscription; it runs in the cloud on each user's own API key; it runs in the cloud and the service pays a model company from its own account; the service runs an open-weight model on servers it pays for; or an open-weight model runs in each user's browser. Cases: `cost-who-bears`, `cost-fixed-servers`, `cost-subscription`, `cost-light-user`, `privacy-own-device`, `privacy-no-vendor`, `privacy-same-parties`, `privacy-own-machine`, `privacy-public-input`, `access-no-subscription`, `access-all-equipped`, `correctness-capable`, `correctness-enough` |
 
 ## Coverage
 
@@ -84,9 +85,10 @@ throughout, and no em dash or en dash in any form.
   against a subscription's low cost for one more run, so a heavy user who already subscribes pays
   far less under plan 1, and a light user with no subscription pays less under plan 2); Privacy (who besides the user sees the step's data
   under each plan, BYOK and the service paying doing about as well, retention, and public data
-  making every plan tie); Access (who can start it: a laptop and subscription, a model-company
-  account for BYOK, a browser for the service plans, a capable device and a large download for the
-  browser plan); Correctness (open-weight models less capable, the small browser ones still less,
+  making every plan tie); Access (who can start it: a laptop, a subscription and setting the
+  workflow up for plan 1, with plan 1 tying the service plans if every user had all three; a
+  model-company account and API key for BYOK; a browser for the service plans; a capable device
+  and a large download for the browser plan); Correctness (open-weight models less capable, the small browser ones still less,
   and Nadia's trial: the extraction step about as well, the judging step better with a model
   company's model; "about as well" as an honest answer on every goal); Weighing a plan (no plan
   wins on every goal, and what to tell your agent). Words in place, each in bold where introduced:
@@ -107,11 +109,13 @@ throughout, and no em dash or en dash in any form.
   `tasks/read-cloud-workflows.md` from the topic folder on the local filesystem, so the learner's
   agent shows it formatted in a sidebar; does not paste it into the chat. Stays quiet through the
   reading except at the stop and when asked. At the stop, takes the learner's answer first and
-  replies with one near-miss question rather than a verdict, then lets the learner read on to the
-  page's own answer. The page's answer is plan 2, since under BYOK the hourly users' runs are billed
+  gives no verdict, then lets the learner read on to the page's own answer. The page's answer is plan 2, since under BYOK the hourly users' runs are billed
   to their own keys; what the tutor looks for is an answer that turns on who is billed for whose
-  runs. An answer that picks plan 3 because "one key is simpler", or that names no fact about
-  Nadia's users, gets one near-miss question ("who pays for the runs of the students who run it
+  runs. An answer that picks plan 2 for that reason, or any reason resting on whose bill the runs
+  land on, gets no question: the tutor says "read on and see" and the learner goes straight on to
+  the Cost section. So does "I don't know yet", with no question asked. An answer that picks plan 3
+  because "one key is simpler", or that names no fact about Nadia's users, gets one near-miss
+  question ("who pays for the runs of the students who run it
   every hour, under each plan?"). Does not set or rehearse any word question from `a-words`: does
   not ask the learner to define any of the five words, to say what separates a word from its
   nearest confusable in goals.md (an open-weight model and a free tier, an API key and a
@@ -166,7 +170,8 @@ throughout, and no em dash or en dash in any form.
   has chosen. Gives help whenever it is asked for, and records the attempt as helped. When the
   generator is run live, writes the key and the case into the record before showing the question.
   Labels the attempt with the question's path, or `a-pick-better-plan/<shape>` when run live, and
-  records the case with `--cases` (none for a tie shape that carries no case). Rules from the
+  records the case with `--cases` (none for `cost-reimbursed` or `cost-break-even`, the two shapes
+  that carry no case). Rules from the
   rubric's `answer`. If the learner asks which real company or product to use, or how to deploy
   it, says this question doesn't ask that.
 - **done when:** the criterion met with no help, case by case: a right choice passes the case its
@@ -183,12 +188,15 @@ throughout, and no em dash or en dash in any form.
   - **the data**: what the agent step reads, and whose it is (members' health notes, tenants'
     complaints, public bus timetables), and any wish or rule about who may see it;
   - **starting it and seeing results**: what devices the users have, whether they have a
-    subscription to a model company's chat app or an API key, and who needs to start a run or see
-    its results, from where;
+    subscription to a model company's chat app or an API key, whether they have set the workflow
+    up on their own laptops, and who needs to start a run or see its results, from where;
   - **what the step asks of a model**: what the agent step has to do, and a stated result of trying
     an open-weight model on it ("When she tried an open-weight model on last month's messages, it
     sorted them as well as the model she uses now", or "it got about one in four wrong, where the
-    model she uses now got nearly all right").
+    model she uses now got nearly all right"). When either plan is the browser plan, the trial is
+    always of a model small enough to run in a browser, and says so ("a small open-weight model of
+    the kind that runs in a web browser"); when the other plan is the service's open-weight model,
+    the scenario states a trial of each.
   Where cost is the goal, the paragraph also states made-up round prices: what a run costs through
   a model company under usage-based pricing (at API prices, per token, said as a price a run), for a
   plan with the service's own servers what renting a server able to run the open-weight model
@@ -231,7 +239,9 @@ throughout, and no em dash or en dash in any form.
     model company); a plan does better when fewer do, and they do about as well when the same ones
     do, or when the step reads no one's private data;
   - access: how many of the intended users can start a run and see its results, given what they
-    have (a laptop, a subscription, an API key, a device able to run a model);
+    have and have done: for the own-machine plan, a laptop, a subscription and the workflow set up
+    on it; for BYOK, a model-company account and an API key; for the browser plan, a device able to
+    run the model; for the other service plans, only a web browser;
   - correctness: how often the agent step's output is right, by the scenario's stated trial.
 
   **A question** reads: "On <goal as named>, which plan does better?", then three numbered options:
@@ -239,8 +249,11 @@ throughout, and no em dash or en dash in any form.
 
   **Shapes**, each with the case it carries, which its rubric `cases:` line lists. A shape marked
   "no case" carries none; its `cases:` line is left empty and a pass on it meets no case.
-  - `cost-who-bears` (`cost-who-bears`): service pays against BYOK, cost to the owner; a few users
-    run it many times as often as the rest. Answer BYOK.
+  - `cost-who-bears` (`cost-who-bears`): service pays against BYOK, cost to the owner. What decides
+    it is whose bill the runs land on: under BYOK each user's runs are billed to their own key, so
+    the owner pays for none of them, however the runs are spread. The paragraph says how many users
+    there are and how often they run it, evenly or not, as ordinary facts; neither decides it.
+    Answer BYOK.
   - `cost-reimbursed` (no case, tie): the same pair, cost to an organization that has said it will
     repay each member's API bill from its own budget. Answer about as well.
   - `cost-fixed-servers` (`cost-fixed-servers`): service open-weight against service pays, cost to
@@ -254,27 +267,28 @@ throughout, and no em dash or en dash in any form.
     runs (many a day) fit within its limits, and whose runs on an API key would cost a stated
     made-up price each. Answer own machine (the subscription adds nothing; the API key's bill grows
     with every run).
-  - `cost-light-user` (no case): the same pair, cost to one named user who has no subscription and
+  - `cost-light-user` (`cost-light-user`): the same pair, cost to one named user who has no subscription and
     would buy one only for this, and who runs it a few times a month at a stated made-up price a
     run on an API key, far below the subscription's monthly price. Answer BYOK.
   - `privacy-own-device` (`privacy-own-device`): browser against service open-weight; the step reads
-    each user's own private data, and the users have said they don't want it on anyone's server.
-    Answer browser.
+    each user's own private data (their health notes, their household budgets), said as what it is
+    and nothing more. Answer browser.
   - `privacy-no-vendor` (`privacy-no-vendor`): service open-weight against service pays; the step
     reads private data the owner is allowed to see (a club's records of its own members) but that
     the members have not agreed to share with any outside company. Answer service open-weight.
   - `privacy-own-machine` (`privacy-own-machine`): own machine against BYOK; the step reads each
     user's private data. Answer own machine (the model company sees it either way; the BYOK service
     also does).
-  - `privacy-public-input` (no case, tie): any of the three privacy pairs above, where the step reads
+  - `privacy-public-input` (`privacy-public-input`): any of the four other privacy pairs, where the step reads
     only public material (published timetables, a shop's public price list) and no user's data.
     Answer about as well.
   - `privacy-same-parties` (`privacy-same-parties`): BYOK against service pays, the step reading
     private data. Answer about as well (the service and the model company see it under both).
   - `access-no-subscription` (`access-no-subscription`): service pays against own machine; among the
     users are many with no subscription, or only a phone, or both. Answer service pays.
-  - `access-all-equipped` (no case, tie): the same pair, where every user is stated to have a laptop
-    and a subscription and needs only their own results on it. Answer about as well.
+  - `access-all-equipped` (`access-all-equipped`): the same pair, where every user is stated to have
+    a laptop and a subscription, to have already set the workflow up on it, and to need only their
+    own results there. Answer about as well.
   - `correctness-capable` (`correctness-capable`): an open-weight plan (service open-weight or
     browser) against a model-company plan (own machine, BYOK or service pays); the stated trial
     shows the open-weight model wrong much more often. Answer the model-company plan.
@@ -295,8 +309,9 @@ throughout, and no em dash or en dash in any form.
     the seedling members' daily runs cost Rosa nothing; under Plan A she pays for every run. Case
     `cost-who-bears`.
   - `correctness-enough`, Hard: a choir's workflow, where the agent step reads each singer's message
-    and pulls out which rehearsals they will miss; the director tried an open-weight model on a
-    month of messages "and it pulled out the same dates as the model she uses now". Plan A: browser;
+    and pulls out which rehearsals they will miss; the director tried a small open-weight model of
+    the kind that runs in a web browser on a month of messages "and it pulled out the same dates as
+    the model she uses now". Plan A: browser;
     Plan B: service pays. "On correctness of the absence list, which plan does better?" Answer 3,
     about as well. Case `correctness-enough`.
 
@@ -307,9 +322,9 @@ throughout, and no em dash or en dash in any form.
   or when the tempting answer comes from a fact in another area (a privacy question in a scenario
   whose trial shows the open-weight model weaker). The question wording is unchanged.
 
-  **Spread across the bank.** A bank is sixteen scenarios: each of the ten case shapes once,
-  except `cost-fixed-servers` twice (once each way), plus `cost-reimbursed`, `cost-break-even`,
-  `cost-light-user`, `privacy-public-input` and `access-all-equipped` once each. At least two of the
+  **Spread across the bank.** A bank is sixteen scenarios: each of the thirteen case shapes once,
+  except `cost-fixed-servers` twice (once each way), plus `cost-reimbursed` and `cost-break-even`
+  once each. At least two of the
   cost questions name a user's cost and at least two the owner's. About half are Hard. "About as well"
   is the answer in six of them, on every goal. Plan A and Plan B are each the answer at least three
   times. No domain is apartment hunting, the reading's example. When the generator is run
@@ -321,8 +336,8 @@ throughout, and no em dash or en dash in any form.
   quotes, a youth soccer league's game reports, a hiking group's trip packing lists, a dog rescue's
   adoption applications, a neighborhood newsletter's submissions, a book club's discussion
   questions, a family's shared recipe box, a theater group's audition notes, a cycling shop's repair
-  tickets, a library volunteer's reading-level labels, a small farm's harvest logs, a pottery
-  class's glaze notes, a commuter group's bike-route plans. No domain from
+  tickets, a library volunteer's reading-level labels, a small farm's harvest logs, a community
+  radio station's show logs, a commuter group's bike-route plans. No domain from
   the other two activities' lists, and no homework or grading workflow.
 
   The rubric gives the `answer` (the 1-based choice) and, in a `tutor note`, the sentence or
@@ -333,8 +348,8 @@ throughout, and no em dash or en dash in any form.
   tutor works the illustration of the nearest shape aloud: says, for the named goal, what each plan
   does (who pays and for what; who sees the data; what a user needs to start it; which model does
   the step), then which facts in the paragraph bear on that and which don't, never adding a fact
-  the illustration leaves out, and then which option follows. It may point to the orientation
-  reading's section on the matching goal, once the reading is chosen.
+  the illustration leaves out, and then which option follows. It may point to the section on the
+  matching goal in `tasks/read-cloud-workflows.md`: Cost, Privacy, Access or Correctness.
 - **doesn't show:** the learner picks among three options and gives no reason, so a pass can be a
   guess, a third of the time. Every scenario states every fact its answer needs, including a trial
   result for the model, so a pass doesn't show the learner would notice a missing fact (who the
@@ -363,8 +378,9 @@ throughout, and no em dash or en dash in any form.
 - **tutor does:** as `a-pick-better-plan`'s, including the offer to wait for session 23, except that
   it labels a live run `a-flip-one-fact/<pair>/first` or `a-flip-one-fact/<pair>/second`. Sets the
   second question only after the first is answered and never says whether the first was right
-  before the second is answered. If the second question's case is already passed, and the first's
-  is not, still sets both in order.
+  before the second is answered. Sets the second question even though, outside `run-count`, it
+  carries no case, since the contrast is what this activity is for; skips it only if the learner
+  asks to stop.
 - **done when:** the criterion met with no help, case by case: a right choice passes the case its
   question carries. There is no half credit.
 - **generator:** **A scenario** is a `a-pick-better-plan` scenario (same paragraph rules, plan
@@ -375,37 +391,52 @@ throughout, and no em dash or en dash in any form.
   same question with the same three options. The changed sentence states a fact, never what it
   means for either plan, and is never phrased in a case line's words.
 
+  **Which question carries a case.** Only the first question of a pair carries one: the second is
+  answered with the change sentence pointing at the fact that matters, so passing it shows less.
+  The one exception is `run-count`, whose second question carries `cost-fixed-servers` too, since
+  the learner must still work out both monthly totals from the new run count. Every other second
+  question's `cases:` line is left empty.
+
   **Pairs**, each naming the shapes of `a-pick-better-plan` its two questions take, in order, and
-  so the cases they carry:
-  - `who-bears`: first `cost-who-bears` (BYOK), second `cost-reimbursed` (tie, no case), the change
-    being that the organization will repay members' API bills.
+  the case the first carries:
+  - `who-bears`: the service's owner is an organization (a club, a garden, a league), and both
+    questions ask the cost to that organization by name. First `cost-who-bears` (BYOK); second
+    `cost-reimbursed` (tie), the change being that the organization will repay every member's API
+    bill from its own budget.
   - `run-count`: `cost-fixed-servers` both times, the change being the runs a month, so the cheaper
-    plan swaps (both carry `cost-fixed-servers`).
-  - `heavy-light`: first `cost-subscription` (own machine), cost to one named user, second
-    `cost-light-user` (BYOK, no case), the change being one sentence replacing what the paragraph
-    says about that user's runs and subscription (they run it a few times a month and would buy a
-    subscription only for this). This is the one pair whose change sentence carries two facts,
-    since both make up how that user would pay.
-  - `own-device`: first `privacy-own-device` (browser), second `privacy-public-input` (tie), the
+    plan swaps.
+  - `heavy-light`: both questions ask the cost to one named user. First `cost-subscription` (own
+    machine); second `cost-light-user` (BYOK), the change being one sentence replacing what the
+    paragraph says about that user's runs and subscription (they run it a few times a month and
+    would buy a subscription only for this).
+  - `light-heavy`: the same, reversed: first `cost-light-user` (BYOK); second `cost-subscription`
+    (own machine), the change saying the user runs it many times a day and has paid for a
+    subscription for some time. These two are the only pairs whose change sentence carries two
+    facts, since both make up how that user would pay.
+  - `own-device`: first `privacy-own-device` (browser); second `privacy-public-input` (tie), the
     change being that the step now reads only public material.
-  - `no-vendor`: first `privacy-no-vendor`, second `privacy-public-input` (tie), likewise.
-  - `own-machine`: first `privacy-own-machine`, second `privacy-public-input` (tie), likewise.
+  - `no-vendor`: first `privacy-no-vendor`; second `privacy-public-input` (tie), likewise.
+  - `own-machine`: first `privacy-own-machine`; second `privacy-public-input` (tie), likewise.
   - `same-parties`: first `privacy-same-parties` (tie). No fact can separate these two plans on
-    privacy while the step reads private data, so the second question is always a `no-bearing`
-    change (how many users run it often, or the trial result): it stays a tie and carries
-    `privacy-same-parties` again. A `public-input` change is never used here, since it would leave
-    the answer a tie while carrying no case.
-  - `subscription`: first `access-no-subscription` (service pays), second `access-all-equipped`
-    (tie), the change being that every user now has a laptop and a subscription.
-  - `trial`: first `correctness-capable` (the model-company plan), second `correctness-enough`
-    (tie), the change being the trial's result. In about half the bank's `trial` scenarios the
-    order is reversed (enough first, capable second).
-  - `no-bearing` variant, applying to any pair: the second question's change is a fact from a
-    different area that doesn't bear on the named goal (the number of runs, in a privacy question;
-    the trial result, in a cost question), so the answer stays the same as the first and the second
-    question carries the same case as the first. About one scenario in three is a `no-bearing`
-    variant, so a learner cannot assume the answer flips.
-  Between the pairs every case is carried.
+    privacy, so the second question is always a `no-bearing` change (how many users run it often,
+    or the trial result), and stays a tie.
+  - `public-input`: first `privacy-public-input` (tie), on the `own-device`, `no-vendor` or
+    `own-machine` pair; second, the change being that the step now also reads each user's own
+    private data, so the answer is that pair's privacy answer.
+  - `subscription`: first `access-no-subscription` (service pays); second `access-all-equipped`
+    (tie), the change being that every user now has a laptop and a subscription and has already
+    set the workflow up on it.
+  - `equipped`: first `access-all-equipped` (tie); second, the change being that most users now
+    have only a phone, so the answer is service pays.
+  - `trial-capable`: first `correctness-capable` (the model-company plan); second
+    `correctness-enough` (tie), the change being the trial's result.
+  - `trial-enough`: the same, reversed: first `correctness-enough`; second `correctness-capable`.
+  - `no-bearing` variant, applying to any pair but `run-count`, `heavy-light` and `light-heavy`:
+    the second question's change is a fact from a different area that doesn't bear on the named
+    goal (the number of runs, in a privacy question; the trial result, in an access question), so
+    the answer stays the same as the first. About one scenario in three is a `no-bearing` variant,
+    so a learner cannot assume the answer flips.
+  Between the first questions every case is carried.
 
   **Illustration**, not a bank item: the garden illustration in `a-pick-better-plan`, with the one
   difference that Rosa runs the service for the garden and its account is the garden's, so both
@@ -417,17 +448,18 @@ throughout, and no em dash or en dash in any form.
   **How hard**, as in `a-pick-better-plan`, judged on the first question; the second is Medium when
   the change flips the answer and Hard in a `no-bearing` variant.
 
-  **Spread across the bank.** A bank is ten scenarios: each pair once and `trial` twice (one each
-  order), with three of them `no-bearing` variants, `same-parties` among them. Plan A and Plan B are
-  each the answer at least three times across the twenty questions, and "About as well" at least
-  six times. When run
+  **Spread across the bank.** A bank is thirteen scenarios, each pair once, with four of them
+  `no-bearing` variants, `same-parties` among them. Plan A and Plan B are each the answer at least
+  five times across the twenty-six questions, and "About as well" at least eight times. When run
   live, the tutor picks pairs to carry cases the learner hasn't passed.
 
   **Domains** are this activity's own, none repeating within the bank: a swim team's meet entries,
   a church food drive's pickup routes, a makerspace's tool-training sign-offs, a small orchestra's
   part assignments, a scout troop's campout menus, a school parents' carpool, a birding club's
-  sighting reports, a ceramics studio's kiln schedule, a cat shelter's foster check-ins, a chess club's game reviews. No domain from the other two activities'
-  lists, and no homework or grading workflow.
+  sighting reports, a cat shelter's foster check-ins, a chess club's game reviews, a rowing club's
+  boat bookings, a ski club's trip sign-ups, a language exchange's partner matches, a
+  bowling league's score sheets. No domain from the other two activities' lists, and no homework
+  or grading workflow.
 
   The rubric gives each question's `answer` and, in a `tutor note`, the settling sentence (for the
   second, the changed fact and why it does or doesn't bear on the goal) and why each other option
@@ -437,7 +469,8 @@ throughout, and no em dash or en dash in any form.
   changed fact is in and whether that area bears on the named goal, then works the choice again.
 - **doesn't show:** as `a-pick-better-plan`'s. The second question is set beside the first, so a
   pass on it shows the learner can tell whether one fact matters to one goal when told which fact
-  changed, not that they would find it unprompted; the `no-bearing` variants keep a flip from being
+  changed, not that they would find it unprompted, which is why it carries no case outside
+  `run-count`; the `no-bearing` variants keep a flip from being
   assumed, though a learner who guesses "it flips" is still right two times in three.
 - **offer as:** the contrast check, after session 23: the same workflow twice, one fact changed,
   and you say each time which plan does better on one goal. About 4 minutes a scenario. Best for a
@@ -461,59 +494,70 @@ throughout, and no em dash or en dash in any form.
 - **done when:** the criterion met with no help, case by case: a right choice passes the case its
   question carries. There is no half credit.
 - **generator:** **A scenario** is a `a-pick-better-plan` scenario (same paragraph rules, plan
-  forms, goal meanings and deciding-fact rule), whose paragraph states the deciding facts for every
-  goal asked about, each among the others. It has three or four `###` questions, one per goal, in
+  forms, goal meanings and deciding-fact rule), except that its paragraph runs ten to fourteen
+  sentences, since it states the deciding facts for every goal asked about, each among the others. It has three or four `###` questions, one per goal, in
   this order where asked: cost, privacy, access, correctness. Each reads "On <goal as named>, which
   plan does better?" with the three options. No question's text gives away another's answer.
 
   **Pairs**, with the answer and case each goal's question takes. A question whose pair and goal
   match no case carries none.
-  - `own-servers-or-pay` (service open-weight against service pays): cost by the run count
-    (`cost-fixed-servers`); privacy, service open-weight (`privacy-no-vendor`, the data being
-    private and allowed to the owner but not to outside companies); access, about as well (both are
-    web services anyone can open; no case); correctness, by the trial (`correctness-capable` or
-    `correctness-enough`).
-  - `byok-or-pay` (BYOK against service pays): cost to the owner, BYOK (`cost-who-bears`, with a few
-    users running it far more often stated as ordinary facts); privacy, about as well (the service
+  - `own-servers-or-pay` (service open-weight against service pays): cost to the owner by the run
+    count (`cost-fixed-servers`); privacy, service open-weight (`privacy-no-vendor`, the data being
+    private and allowed to the owner but not to outside companies) or, where the step reads only
+    public material, about as well (`privacy-public-input`); access, about as well (both are web
+    services anyone can open; no case); correctness, by the trial of the open-weight model the
+    server would run (`correctness-capable` or `correctness-enough`).
+  - `byok-or-pay` (BYOK against service pays): cost to the owner, BYOK (`cost-who-bears`: under BYOK
+    the runs are billed to the users' own keys; how many users run it, and how often, are ordinary
+    facts that don't decide it); privacy, about as well (the service
     and the model company see the data under both; `privacy-same-parties`); access, service pays (many users have
     no API key and would have to set up a paid account; no case); correctness, about as well (the
     same kind of model company's model; no case).
-  - `laptop-or-byok` (own machine against BYOK): cost to one named heavy user, own machine
-    (`cost-subscription`, the user paying for a subscription already and their runs fitting within
-    its limits, stated as ordinary facts); privacy, own machine (`privacy-own-machine`);
-    access, by the facts (BYOK when many users lack a laptop or subscription, about as well when
-    every user has a laptop, a subscription and an API key; no case); correctness, about as well
-    (model companies' models under both; no case).
+  - `laptop-or-byok` (own machine against BYOK): cost to one named user, own machine for a heavy
+    user who has paid for a subscription for some time and whose runs fit within its limits
+    (`cost-subscription`), or BYOK for a light user with no subscription who would buy one only for
+    this (`cost-light-user`), those facts stated as ordinary ones; privacy, own machine
+    (`privacy-own-machine`); access, keyed on what the paragraph states about the users' laptops,
+    subscriptions, set-up and API keys, which it always states for both plans: BYOK when many have
+    an API key or a model-company account but no laptop or subscription, own machine when many
+    have a laptop and a subscription with the workflow set up but no API key, about as well when
+    every user has both or the same share lacks each (no case); correctness, about as well (model
+    companies' models under both; no case).
   - `laptop-or-pay` (own machine against service pays): cost to the owner, own machine (each user's
-    subscription pays; no case); access, service pays (`access-no-subscription`); correctness, about
-    as well (no case). No privacy question.
+    subscription pays; no case); access, service pays where many users have no subscription or only
+    a phone (`access-no-subscription`), or about as well where every user has a laptop and a
+    subscription and has already set the workflow up (`access-all-equipped`); correctness, about as
+    well (no case). No privacy question.
   - `browser-or-server` (browser against service open-weight): privacy, browser
     (`privacy-own-device`); access, by the facts (service open-weight when many users have only
     older phones or computers the scenario says can't run the model; about as well when all have
     recent laptops; no case); correctness, by the trial comparing the small model that fits in a
     browser against the larger one the server runs, about as well or service open-weight (no case).
     No cost question.
-  Between the pairs every case is carried: a bank needs `own-servers-or-pay` at least twice (once
-  with each correctness trial), and each other pair at least once.
+  Between the pairs every case is carried: a bank needs `own-servers-or-pay` twice (once with
+  private data and a weaker trial, once with public material and a trial as good),
+  `laptop-or-byok` twice (a heavy user once, a light user once), `laptop-or-pay` twice (once short
+  of equipment, once all equipped), and `byok-or-pay` and `browser-or-server` once each.
 
   **Illustration**, not a bank item: the choir from `a-pick-better-plan`, with Plan A service
   open-weight and Plan B service pays; facts added for 400 absence messages a month at about 1 cent
   each through the model company, a rented server at about $150 a month, and singers' messages
-  sometimes giving health reasons, which the choir's rules say stay with the choir. Cost to the
+  sometimes giving health reasons, which the choir's rules say stay with the choir, and the trial
+  restated as one of the open-weight model the server would run, with the same result. Cost to the
   choir: Plan B ($4 against $150; `cost-fixed-servers`). Privacy: Plan A (`privacy-no-vendor`).
   Access: about as well. Correctness: about as well (`correctness-enough`).
 
   **How hard**, as in `a-pick-better-plan`, scenario by scenario.
 
-  **Spread across the bank.** A bank is six scenarios: `own-servers-or-pay` twice and each other
-  pair once, about twenty questions, half the scenarios Hard. "About as well" is the answer on each
-  of the four goals at least once, and on at least six questions in all. When run live, the tutor
+  **Spread across the bank.** A bank is eight scenarios, as listed above, about twenty-eight
+  questions, half the scenarios Hard. "About as well" is the answer on each of the four goals at
+  least once, and on at least eight questions in all. When run live, the tutor
   picks pairs to carry cases the learner hasn't passed.
 
   **Domains** are this activity's own, none repeating within the bank: a volunteer fire
   department's training records, a craft fair's vendor applications, a little league's snack
   schedule, a nonprofit's grant reports, a robotics club's parts orders, a senior center's ride
-  requests, a quilting circle's pattern swaps. No domain from the other two activities' lists, and
+  requests, a quilting circle's pattern swaps, a debate team's practice rounds. No domain from the other two activities' lists, and
   no homework or grading workflow.
 
   The rubric gives each question's `answer` and, in a `tutor note`, the settling sentence and why

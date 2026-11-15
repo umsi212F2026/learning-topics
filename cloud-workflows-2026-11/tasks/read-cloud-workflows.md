@@ -1,4 +1,4 @@
-. # Where the agent runs, and who pays
+# Where the agent runs, and who pays
 
 In Problem Set 5 you built a workflow on your own laptop, with at least one step done by an agent
 following a skill file. It ran under your account, on your machine, for you. A final project asks
@@ -107,7 +107,9 @@ results.
 
 Plan 1 works only for someone with a laptop, a subscription and the patience to set the workflow up
 themselves. Many of the 200 students have none of these. Plans 3 and 4 work for anyone with a web
-browser, phones included, so they do about as well on access, and both beat plan 1. Plan 2 also runs
+browser, phones included, so they do about as well on access, and for Nadia's group both beat plan
+1. If every user had a laptop and a subscription and had already set the workflow up, plan 1 would
+do about as well. Plan 2 also runs
 in a browser, but each user must first create an account with a model company, add a payment method
 and get an API key, and many will stop there. Plan 5 needs a device recent enough to run the model,
 and the first visit means downloading hundreds of megabytes or more; recent versions of the major
@@ -131,7 +133,7 @@ when both run in a browser. Saying so is part of weighing plans well.
 ## Weighing a plan
 
 No plan wins on every goal. Plan 5 does best on privacy and worst on correctness for Nadia's judging
-step. Plan 3 is easiest to reach and puts every heavy user's runs on Nadia's bill. Once you know
+step. Plans 3 and 4 are easiest to reach, and plan 3 puts every heavy user's runs on Nadia's bill. Once you know
 which goal matters most for your project, and the facts about your users and their data, you can say
 which of two plans does better on it, or that they do about as well. That is what your agent needs
 to hear from you before it builds anything: "the users have only phones, and their notes should not
