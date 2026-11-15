@@ -216,25 +216,47 @@ rather than for a different kind of practice.
   to a club's messages). It has two or three executors, each a program or an agent following a skill
   file the person wrote, each with a short handle the questions can use ("the fetcher", "the rating
   agent"); at least one is an agent and at most two are. A step the person does by hand may appear,
-  but no question is asked about it; its bullet has no sub-bullets.
-  - **The step bullet**, one or two sentences, says what the step does, concretely enough that what
-    it uses follows: who or what runs it, which files or folders it reads and which it writes,
-    whether it fetches anything from the internet (and from which sites), which account it acts on
-    and what it does there, and, for an agent, everything it reads and who wrote each part: the skill
-    file (always the person's), and each other thing ("the listings, which any landlord can post";
-    "the notes Ana types after each viewing"; "the count the fetcher writes into a file"). Where a
-    program handles outside text before the agent sees it, exactly what the program hands the agent.
-    The step bullet never uses the word "can".
-  - **Indented sub-bullets**, one short fact each, say how the step's executor runs: as which user
-    or started how ("runs as Lena"; "Lena starts it in her home folder with its harness's default
-    settings"; "runs as a separate user Lena set up for it, which has been given the posts folder");
-    and each limit, if any, said as what was set up ("runs in a sandbox holding the skill file, the
-    posts folder and the picks file"; "its harness's permission settings allow reading and writing
-    files in the posts folder and refuse shell commands"; "the posts folder is read-only to it";
-    "holds a scoped token that reads her calendar"; "holds a token for her bank that reads her
-    balance and moves money"; "holds no logins, keys or tokens"). Further sub-bullets state plainly
-    what sits in places it could get to ("her home folder holds her tax returns and a settings file
-    with her bank login"; "the sandbox also holds a folder of her old photos").
+  but no question is asked about it; its bullet has no sub-bullets. Write the opening and each
+  bullet and sub-bullet as one long line; never hard-wrap the scenario's prose.
+  - **The step bullet** says what the step does, concretely enough that what it uses follows: who or
+    what runs it, which files or folders it reads and which it writes, whether it fetches anything
+    from the internet (and from which sites), which account it acts on and what it does there, and,
+    for an agent, everything it reads, saying who wrote each part wherever the source could be
+    unclear: the skill file ("following a skill file Nadia wrote"), anything others write ("the
+    listings, which any landlord can post"; "the pages, which each university's staff write and
+    update"), anything the person types that could be mistaken for someone else's ("her own profile,
+    which she typed"; "her class schedule, which she types herself"), and anything a program writes
+    ("the count the fetcher writes into a file"). Material that is plainly the person's own (her
+    essay drafts in her own essays folder) gets no authorship statement. Where a program handles
+    outside text before the agent sees it, exactly what the program hands the agent. The step bullet
+    never uses the word "can". Its last sentence says how the executor runs. For a sandboxed
+    executor it is "It runs in a sandbox with the following restrictions:", and the sub-bullets
+    below give the restrictions. For one running as a separate user it is "It runs as a separate user
+    <Name> set up for it, with the following restrictions:", and for an agent limited by its harness
+    "Its harness's permission settings set the following restrictions:". For an executor the
+    workflow puts no limit on, it says only who starts it ("Nadia starts it herself."): never that it
+    runs with default settings or its harness's default settings, since the reading says defaults
+    vary between harnesses, and never which folder it starts in, as if that folder were a boundary.
+  - **Restriction sub-bullets**, for a limited executor only, one restriction each, each starting
+    lowercase and ending with a semicolon, the last with a full stop, said as what was set up. The
+    sandbox's or separate user's file access is stated as "it allows access to only <files>" ("it
+    allows access to only the pages folder;"), and every file or folder the step only reads is stated
+    read-only ("it allows access to its skill file, the essays folder, her class schedule and the plan
+    file, all read-only except the plan file;"); a file the step only reads that is not stated
+    read-only is change access the step does not need. Then shell commands ("shell commands are
+    turned off;"), the network, as an allowlist stated with no "and nothing else" ("the network
+    allowlist has the four universities' sites on it;") or as "the network is turned off;", and
+    secrets ("it holds a scoped token that reads her calendar;"; "it holds a token for her bank that
+    reads her balance and moves money;"; "it holds no logins, keys or tokens."). A harness's
+    restrictions are said the same way ("it allows reading and writing files in the posts folder;";
+    "shell commands are refused;").
+  - **Fact sub-bullets**, each a full sentence starting with a capital and ending with a full stop,
+    state plainly what sits in places the executor could get to ("Her home folder holds the skill
+    files, the pages folder, her profile, the matches file, a folder of her essay drafts, her
+    financial aid forms and a settings file with her bank login."; "The shared folder it has been
+    given also holds her tax returns."), and, for an executor with no limit, what secrets it holds of
+    its own ("It holds no logins, keys or tokens of its own."). An executor with no limit gets fact
+    sub-bullets and no restriction sub-bullets.
 
   **How pointed a fact may be.** A fact states what an executor does, how it runs, what limits it
   runs under, what sits where, what it reads and who wrote that. The scenario never spells out what
