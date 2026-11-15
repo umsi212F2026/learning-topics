@@ -299,7 +299,7 @@ topic.
   - `looks-right`: the step produces a wrong result that looks like a right one, such as a
     misread field or a wrong verdict, and no check in the workflow would catch it, either because
     there is none or because the checks there look at something else
-  - `detected`: a mistake that would be noticed, because the run stops, or because a check or a
+  - `detected`: a mistake that would be noticed, because the run stops where a person will see it, or because a check or a
     person's review would catch this particular mistake
 
 ### `o-orientation`
