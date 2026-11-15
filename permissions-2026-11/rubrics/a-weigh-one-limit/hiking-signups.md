@@ -12,7 +12,7 @@ Medium, `stops-work`. A hiking group's sign-up step: an agent Kofi starts himsel
 - **type:** mcq
 - **answer:** 1
 - **credit:** full for 1; none for 2.
-- **tutor note:** Key: Yes. For the harm to happen, the agent would have to change files in the photos folder, which sits in his home folder outside the hikes folder ("His home folder holds the skill files, the hikes folder, a photos folder with pictures from every hike he has led"), and it can today because nothing narrows it ("Kofi starts it himself"), so by the reading's rule it can do whatever Kofi can. The sandbox holds only the skill file and the hikes folder, and a sandbox covers every command the agent runs, so the photos folder is out of reach whatever a hidden line says.
+- **tutor note:** Key: Yes. For the harm to happen, the agent would have to change files in the photos folder, which sits in his home folder outside the hikes folder ("His home folder holds the skill files, the hikes folder, a photos folder with pictures from every hike he has led"), and it can today because nothing narrows it (no limit is stated), so by the reading's rule it can do whatever Kofi can. The sandbox holds only the skill file and the hikes folder, and a sandbox covers every command the agent runs, so the photos folder is out of reach whatever a hidden line says.
 
 #### b
 

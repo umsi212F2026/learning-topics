@@ -1,4 +1,4 @@
-A seed swap forum watch, one step: the swap agent fetches posts anyone can write, reads them, and writes matching offers into the swaps file, running with nothing narrowing it. The harm comes from untrusted input steering the agent into using reach its step doesn't need: a hidden line in a post (untrusted input in its context, "a seed swap forum where anyone can post, reads each one") makes it delete the planting records folder, which it can change ("it can read and change all her files") but its step never touches. The deletion would happen during the evening run, before anything reaches the morning program. The step uses its skill file, the wish list, the forum on the internet, and the swaps file it writes, including a note on what each poster wants in return. Three proposals, one from each of the reading's groups: a sandbox (`sound-limit`, Medium), a person approving every trade offer (`no-effect`, Hard) and a program handling the posts (`stops-work`, Hard).
+A seed swap forum watch, one step: the swap agent fetches posts anyone can write, reads them, and writes matching offers into the swaps file, running with nothing narrowing it. The harm comes from untrusted input steering the agent into using reach its step doesn't need: a hidden line in a post (untrusted input in its context: "reads each one"; "Anyone can post on the forum") makes it delete the planting records folder, which it can change, since nothing narrows it (no limit is stated) and by the reading's rule it can do whatever she can, but which its step never touches. The deletion would happen during the evening run, before anything reaches the morning program. The step uses its skill file, the wish list, the forum on the internet, and the swaps file it writes, including a note on what each poster wants in return. Three proposals, one from each of the reading's groups: a sandbox (`sound-limit`, Medium), a person approving every trade offer (`no-effect`, Hard) and a program handling the posts (`stops-work`, Hard).
 
 ### sandbox
 
@@ -11,7 +11,7 @@ A seed swap forum watch, one step: the swap agent fetches posts anyone can write
 - **type:** mcq
 - **answer:** 1
 - **credit:** full for 1; none for 2.
-- **tutor note:** Key: Yes. To delete the records folder the agent has to be able to change it ("it can read and change all her files"). The sandbox holds only the skill file, the wish list and the swaps file, so the records folder isn't in it, and a sandbox covers every command the agent runs, so no route reaches the folder. A hidden line can still steer the agent, but not into deleting what it can't get to.
+- **tutor note:** Key: Yes. To delete the records folder the agent has to be able to change it, which it can today because nothing narrows it (no limit is stated). The sandbox holds only the skill file, the wish list and the swaps file, so the records folder isn't in it, and a sandbox covers every command the agent runs, so no route reaches the folder. A hidden line can still steer the agent, but not into deleting what it can't get to.
 
 #### b
 
@@ -32,7 +32,7 @@ A seed swap forum watch, one step: the swap agent fetches posts anyone can write
 - **type:** mcq
 - **answer:** 2
 - **credit:** full for 2; none for 1.
-- **tutor note:** Key: No. The deletion would happen during the evening run ("Each evening the swap agent ... reads each one"), while the agent reads the post, with the reach it already has ("it can read and change all her files"). Hana's check comes the next morning and looks only at the swaps file, which needn't show anything about the deletion. The check comes after the harm has happened.
+- **tutor note:** Key: No. The deletion would happen during the evening run ("Each evening the swap agent ... reads each one"), while the agent reads the post, with the reach it already has, since nothing narrows it (no limit is stated). Hana's check comes the next morning and looks only at the swaps file, which needn't show anything about the deletion. The check comes after the harm has happened.
 
 #### b
 

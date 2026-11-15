@@ -11,7 +11,7 @@ Keiko runs on weekends, and her workflow watches for local races she might enter
   - Network: it is turned off.
   - Secrets: it holds none.
   - Reads: the skill file and your list, which you wrote, and the listings, which race organizers post on the race calendar site.
-- **The training agent**, following your skill file, reads your run log and your work schedule for the coming week on Sunday evenings, and writes a plan for which days to run and how far into a file called plan. You start it yourself.
+- **The training agent**, following your skill file, reads your run log and your work schedule for the coming week on Sunday evenings, and writes a plan for which days to run and how far into a file called plan.
   - Files: it can read and change your files; your home folder holds the skill files, the races folder, your list, the shortlist file, your run log, your work schedule, the plan file, your health insurance papers and the settings file where your login for the race sign-up site is saved.
   - Shell commands: it can run them, with no limit set.
   - Network: it can reach the internet, with no limit set.

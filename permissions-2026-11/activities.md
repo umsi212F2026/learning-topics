@@ -223,14 +223,11 @@ rather than for a different kind of practice.
     ("the count the fetcher writes into a file"). Material that is plainly the person's own (her
     essay drafts in her own essays folder) gets no authorship statement. Where a program handles
     outside text before the agent sees it, exactly what the program hands the agent. The step bullet
-    never uses the word "can". Its last sentence says how the executor runs. For a sandboxed
+    never uses the word "can". For a limited executor, its last sentence says how the executor runs. For a sandboxed
     executor it is "It runs in a sandbox with the following restrictions:", and the sub-bullets
     below give the restrictions. For one running as a separate user it is "It runs as a separate user
     <Name> set up for it, with the following restrictions:", and for an agent limited by its harness
-    "Its harness's permission settings set the following restrictions:". For an executor the
-    workflow puts no limit on, it says only who starts it ("Nadia starts it herself."): never that it
-    runs with default settings or its harness's default settings, since the reading says defaults
-    vary between harnesses, and never which folder it starts in, as if that folder were a boundary.
+    "Its harness's permission settings set the following restrictions:". For an executor the workflow puts no limit on, the step bullet says nothing about how it runs, since the reading tells learners to assume an executor can do whatever its user can unless something narrows it: not who starts it ("Nadia starts it herself" clashes with a step that runs on a schedule), never that it runs with default settings or its harness's default settings, since the reading says defaults vary between harnesses, and never which folder it starts in, as if that folder were a boundary.
   - **Restriction sub-bullets**, for a limited executor only, one restriction each, each starting
     lowercase and ending with a semicolon, the last with a full stop, said as what was set up. The
     sandbox's or separate user's file access is stated as "it allows access to only <files>" ("it
@@ -249,7 +246,7 @@ rather than for a different kind of practice.
     files, the pages folder, her profile, the matches file, a folder of her essay drafts, her
     financial aid forms and a settings file with her bank login."; "The shared folder it has been
     given also holds her tax returns."), and, for an executor with no limit, what secrets it holds of
-    its own ("It holds no logins, keys or tokens of its own."). An executor with no limit gets fact
+    its own, saying why where the step reaches a site ("It is given no login, key or token, since reading the forum doesn't require one."; "It holds no logins, keys or tokens of its own."). An executor with no limit gets fact
     sub-bullets and no restriction sub-bullets. Who writes something an agent reads may also go in a fact sub-bullet instead of the step bullet when it would make the step bullet long ("On the website, anyone with an account can post. Anyone can read without logging in.").
 
   **How pointed a fact may be.** A fact states what an executor does, how it runs, what limits it
@@ -269,7 +266,7 @@ rather than for a different kind of practice.
   **Reach**, as the key works it out from the reading's rule: an executor can do whatever the user
   it runs as can do (read and change that user's files, including secrets saved in them, run shell
   commands, reach the internet, and use any login, key or token it holds or can read) unless a
-  stated limit narrows it. An executor described only by who starts it is narrowed by nothing, as
+  stated limit narrows it. An executor with no limit stated is narrowed by nothing, as
   the reading tells learners to assume. A sandbox, a separate user or a scoped token
   narrows everything the executor runs. The harness's permission settings narrow only what the agent
   asks the harness to do: where they let the agent run shell commands without asking, those commands
@@ -337,7 +334,7 @@ rather than for a different kind of practice.
   >   - shell commands are turned off;
   >   - the network allowlist has the volunteering board's site on it;
   >   - it holds no logins, keys or tokens.
-  > - Then the sorting agent, following a skill file Lena wrote, reads each new post and her own list of what she likes doing and when she is free, which she typed, and writes a one-line verdict on each post into a file called picks. Lena starts it herself.
+  > - Then the sorting agent, following a skill file Lena wrote, reads each new post and her own list of what she likes doing and when she is free, which she typed, and writes a one-line verdict on each post into a file called picks.
   >   - Her home folder holds the skill files, the posts folder, her list, the picks file, her tax returns and a settings file with her email login.
   >   - It holds no logins, keys or tokens of its own.
   > - On Sunday evenings the planning agent, also following a skill file Lena wrote, reads the list of shifts she has signed up for and her list of other plans for the week, both of which she types herself, and writes a draft plan for the week into a file called plan. It runs in a sandbox with the following restrictions:
@@ -348,8 +345,7 @@ rather than for a different kind of practice.
 
   Questions and keys, in order: the fetcher's reach, No (`no-excess`: the sandbox leaves it the
   posts folder it writes and the board it fetches from, and nothing in its step runs a command or
-  uses a login); the sorting agent's reach, Yes (`excess`: nothing narrows it ("Lena starts it
-  herself", with no restrictions listed), so it can do whatever Lena can; its step reads the posts and her list and writes picks, but it can read her tax returns
+  uses a login); the sorting agent's reach, Yes (`excess`: nothing narrows it (no limit is stated), so it can do whatever Lena can; its step reads the posts and her list and writes picks, but it can read her tax returns
   and the settings file with her email login, which would let it send mail as her, run shell
   commands and reach the internet, none of which a step working on saved posts and running no
   program uses); the sorting agent's context, Yes (`outside-text`: it reads the posts, which any
@@ -461,7 +457,7 @@ rather than for a different kind of practice.
 - **done when:** the criterion of each goal met with no help, case by case: a right answer passes
   the case its question carries.
 - **generator:** **A scenario** uses `a-look-over-steps`'s executors, reach rules, context cases, pointedness rule, questions, question order, key and credit, with one difference: the learner is told each executor's reach instead of working it out. One or two sentences say what the workflow is for and that the person asked her agent to describe each step: what it does, what runs it, how it runs, what it can read, change, run and reach, what its secrets let it do, and what each agent step reads. Then comes the agent's answer, laid out as `tasks/a-look-over-steps/scholarship-deadlines.md` is, addressing the person as "you": one top-level bullet per step, in order, then labeled sub-bullets under it.
-  - **The step bullet** opens with the step's handle in bold, then in the same sentence says what runs it (a program, or an agent following your skill file) and what the step does (what it reads and writes, what it fetches and from where, what it does with an account): "**The fetcher**, a program, downloads ...". Then comes how it runs, as its own short sentence: "It runs in a sandbox." for a sandboxed executor, "It runs as a separate user you set up for it." for one running as a separate user, "Its harness's permission settings limit it." for an agent limited by its harness, and "You start it yourself." for an executor with no limit, never default settings or its harness's default settings, which the reading says vary between harnesses, and never a starting folder as if it were a boundary. The limits are not listed in the step bullet: the reach sub-bullets are where they show, so nothing is said twice.
+  - **The step bullet** opens with the step's handle in bold, then in the same sentence says what runs it (a program, or an agent following your skill file) and what the step does (what it reads and writes, what it fetches and from where, what it does with an account): "**The fetcher**, a program, downloads ...". Then comes how it runs, as its own short sentence: "It runs in a sandbox." for a sandboxed executor, "It runs as a separate user you set up for it." for one running as a separate user, "Its harness's permission settings limit it." for an agent limited by its harness, and no how-it-runs sentence at all for an executor with no limit (its reach sub-bullets show it), never who starts it, never default settings or its harness's default settings, which the reading says vary between harnesses, and never a starting folder as if it were a boundary. The limits are not listed in the step bullet: the reach sub-bullets are where they show, so nothing is said twice.
   - **The sub-bullets**, in this order: "Files:", "Shell commands:", "Network:", "Secrets:", and for an agent only "Reads:". Each is one sentence starting lowercase after the label and ending with a full stop. Files says what it can read and what it can read and change, including any secrets saved there ("it can read its skill file, the races folder and your list, and it can read and change the shortlist file."; "it can read and change your files; your home folder holds the skill files, ... and the settings file where your email login is saved."). Shell commands says whether it can run them ("they are turned off."; "it can run them, with no limit set."). Network says what it can reach ("it is turned off."; "it can reach the race calendar's site, which is on the sandbox's network allowlist."; "it can reach the internet, with no limit set."). Secrets states as a fact what each secret lets its holder do ("it holds none."; "it holds your token for the race calendar site, which lets its holder read listings and delete the account."; "it holds none of its own, but it can read your email login in that settings file, which lets its holder send mail as you."), never phrased as what the executor would or might do with it. Reads, for an agent, says what it reads, saying who wrote each part wherever the source could be unclear (the skill file, anything others write, a list or profile the person typed, anything a program writes) and not for material plainly the person's own (her essay drafts in her own folder).
   - **Each reach sub-bullet agrees** with the reading's rule applied to how the executor runs: whatever its user can do, unless a stated limit narrows it, with a harness limit not covering shell commands the harness lets run without asking. The reach sub-bullets name places and what is in them, with no "only", "just" or "nothing else" for a limited executor and no "every", "whole", "all" or "any" for an unlimited one; the sub-bullets of `excess` and `no-excess` executors take the same forms. Write the opening, each bullet and each sub-bullet as one long line; never hard-wrap the scenario's prose.
   - **The answer states facts only.** It never says whether reach is more than the step needs and never says whether untrusted input reaches an agent: the person did not ask that, so the reading's third audit question ("Where does text from outside the workflow end up in an agent's context?") is never answered here. A step the person does by hand gets a bullet with no sub-bullets and no question.
@@ -475,7 +471,7 @@ rather than for a different kind of practice.
   >   - Shell commands: they are turned off.
   >   - Network: it can reach the volunteering board's site and a file-sharing site, which are both on the sandbox's network allowlist.
   >   - Secrets: it holds none.
-  > - **The sorting agent**, following your skill file, reads each new post in the posts folder and your list of what you like doing and when you are free, and writes a one-line verdict on each post into a file called picks. You start it yourself.
+  > - **The sorting agent**, following your skill file, reads each new post in the posts folder and your list of what you like doing and when you are free, and writes a one-line verdict on each post into a file called picks.
   >   - Files: it can read and change your files; your home folder holds the skill files, the posts folder, your list, the picks file, your tax returns and the settings file where your email login is saved.
   >   - Shell commands: it can run them, with no limit set.
   >   - Network: it can reach the internet, with no limit set.
@@ -592,7 +588,7 @@ rather than for a different kind of practice.
 
   > Omar is looking for a cat to adopt, and his workflow keeps a shortlist of promising ones.
   >
-  > - Each evening the matching agent, following a skill file Omar wrote, fetches the new listings from three shelter websites, where any shelter can post, reads each one, and writes the promising ones, with a short note on each, into a file called shortlist. Omar starts it himself.
+  > - Each evening the matching agent, following a skill file Omar wrote, fetches the new listings from three shelter websites, where any shelter can post, reads each one, and writes the promising ones, with a short note on each, into a file called shortlist.
   >   - His home folder holds the skill file, the shortlist, his photos and a settings file with his bank login.
   >   - It holds no logins, keys or tokens of its own.
   >   - Nobody looks over the shortlist before Omar emails shelters from it the next morning.

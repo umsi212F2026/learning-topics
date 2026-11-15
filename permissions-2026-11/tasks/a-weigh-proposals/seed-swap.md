@@ -1,4 +1,10 @@
-Hana grows vegetables and trades seeds with other gardeners. Each evening the swap agent, following a skill file Hana wrote, fetches the new posts from a seed swap forum where anyone can post, reads each one, and writes the ones offering seeds on her wish list, which she typed, into a file called swaps, with a note on what each poster wants in return. Hana starts it herself, so it can read and change all her files, run shell commands and reach the internet. Her home folder holds the skill file, the wish list, the swaps file, a folder of planting records she has kept for six years, and a settings file with her forum login. Nobody looks over the swaps file: each morning a program Hana wrote sends a trade offer to each poster on it.
+Hana grows vegetables and trades seeds with other gardeners, and one step of her workflow finds trades she might want.
+
+- Each evening the swap agent, following a skill file Hana wrote, fetches the new posts from a seed swap forum, reads each one, and writes the ones offering seeds on her wish list, which she typed, into a file called swaps, with a note on what each poster wants in return.
+  - Anyone can post on the forum.
+  - Her home folder holds the skill file, the wish list, the swaps file, a folder of planting records she has kept for six years, and a settings file with her forum login.
+  - It is given no login, key or token, since reading the forum doesn't require one.
+  - Nobody looks over the swaps file: each morning a program Hana wrote sends a trade offer to each poster on it.
 
 The harm Hana is worried about: a hidden line in a post makes the agent delete her planting records folder.
 
