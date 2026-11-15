@@ -4,22 +4,23 @@ If the learner misses a question here, set a DEFINE or INTERPRET move for idempo
 
 A step is idempotent when running it several times leaves things the same as running it once, so it is safe to run again after a run stops partway. "Things" includes what the step does outside the workflow: a step that sends a message sends it again on a rerun, even if it changes no file. Changing nothing on a second run is not the same as changing nothing at all; an idempotent step may write plenty the first time. Deterministic is the course's contrast: a deterministic step gives the same output from the same input every time. The two are separate. In the reading's words, a step can be idempotent even when its executor is not predictable, because a step that skips what is already done never asks the agent twice. And a perfectly predictable step that adds to a total is not idempotent, because every run adds again.
 
-### vs-deterministic
+### vs-deterministic-hana
 
 - **goal:** `w-idempotent`
 - **move:** DISTINGUISH
-- **type:** compound
-- **tutor note:** Hana's step is idempotent: it skips any entry that already has a summary and never saves a half-finished one, so a second run changes nothing. It is not deterministic, since the agent words each summary differently. The dues program is deterministic, since it does the same arithmetic every time, but not idempotent: run twice in a month, it adds $40. A learner who calls Hana's step neither is reading idempotent as deterministic, so an unpredictable agent rules it out; ask what a second run would do to an entry that already has a summary. One who calls the dues program both is making the same mistake the other way; ask what a member's balance would be after two runs on the first of the month.
-
-#### a
-
 - **type:** mcq
 - **answer:** 1
+- **credit:** full for 1 only.
+- **tutor note:** Hana's step is idempotent: the program skips any entry that already has a summary and never saves a half-finished one, so a second run changes nothing. It is not deterministic, since the agent words each summary differently. A learner who answers 4 is reading idempotent as deterministic, so an unpredictable agent rules it out; ask what a second run would do to an entry that already has a summary.
 
-#### b
+### vs-deterministic-dues
 
+- **goal:** `w-idempotent`
+- **move:** DISTINGUISH
 - **type:** mcq
 - **answer:** 2
+- **credit:** full for 2 only.
+- **tutor note:** The dues program is deterministic, since it does the same arithmetic every time, but not idempotent: run twice in a month, it adds $40. A learner who answers 3 is reading idempotent as deterministic, so a predictable program seems safe to rerun; ask what a member's balance would be after two runs on the first of the month.
 
 ### catch-pick
 

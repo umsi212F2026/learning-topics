@@ -1,8 +1,6 @@
 # Idempotent
 
-### vs-deterministic
-
-#### a
+### vs-deterministic-hana
 
 Hana keeps a journal in a folder of text files. Each night a program goes through the folder, and for each entry that has no summary yet, it asks an agent to write a three-line summary. The agent words each summary differently every time it is asked. The program saves a summary only once the agent has finished it, and it skips any entry that already has a summary.
 
@@ -13,7 +11,7 @@ Which best describes Hana's summary step?
 3. Both
 4. Neither
 
-#### b
+### vs-deterministic-dues
 
 A chess club keeps members' balances in a sheet. On the first of each month, a program adds $20 of dues to every member's balance. It does the same arithmetic every time and never asks an agent anything. It doesn't record anywhere that this month's dues have been added.
 
