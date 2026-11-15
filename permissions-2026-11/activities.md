@@ -92,18 +92,12 @@ rather than for a different kind of practice.
   file drafts a score and feedback, the TA reviews the drafts, and a posting program sends the final
   grades to the course site. Sections: an untitled opening (two questions about the same executors:
   what else could they touch if something went wrong, and could someone outside the workflow tell an
-  agent what to do); What a step can reach (the four kinds of reach; the grading agent, started with
-  a typical coding agent's default settings, able to read the course site token a few folders up;
-  the download program given the posting program's token; least privilege applied to everything an
-  executor can reach); When data becomes instructions (a program's instructions are its code and its
+  agent what to do); What a step can reach (the four kinds of reach, the fourth being what its secrets let it do; an executor can do whatever the user who started it can unless something narrows it, harness glossed, and students told to assume that when looking over a workflow; the grading agent, running as the TA, able to read the settings file with the course site token; the download program also running as the TA, and given the posting program's token; least privilege applied to everything an executor can reach); When data becomes instructions (a program's instructions are its code and its
   input stays data; the stop; an agent has no such separation, since everything it reads arrives in
   its context; the hidden white-text note; prompt injection; untrusted input; a program that hands
   the agent only something it produced itself, against one that hands over a submission's written
   answer); How the two problems combine (blast radius, with reach as its upper limit; ask both
-  questions of every step); Limits you can put on a step (the agent's permission settings and its
-  allowlist, a sandbox, read-only access, a scoped token, a program that handles the untrusted
-  input, the agent proposing while a program applies, a human in the loop, each shown on the grading
-  workflow); Judging a proposed limit (name the harm, then ask whether the limit significantly
+  questions of every step); Limits you can put on a step, in three groups, each shown on the grading workflow (narrowing what an executor can reach: the four kinds again with read-only access under files, allowlist as the general form, and four ways to impose limits, a separate user, a sandbox, the harness's permission settings, which a command it lets run can get around, and a scoped token; keeping untrusted text out of the agent's context: a program that handles the untrusted input; checking what a step produced before it takes effect: the agent proposing while a program applies, and a human in the loop, with approval prompts as a weak one); Judging a proposed limit (name the harm, then ask whether the limit significantly
   reduces its risk and whether the step can still do its work, with worked yes and no answers to
   each, and why it often takes more than one limit); Talking to your agent (asking the agent to
   audit the workflow and propose limits, and judging each against the two questions). Words in
@@ -241,7 +235,7 @@ rather than for a different kind of practice.
     lowercase and ending with a semicolon, the last with a full stop, said as what was set up. The
     sandbox's or separate user's file access is stated as "it allows access to only <files>" ("it
     allows access to only the pages folder;"), and every file or folder the step only reads is stated
-    read-only ("it allows access to its skill file, the essays folder, her class schedule and the plan
+    read-only ("it allows access to only its skill file, the essays folder, her class schedule and the plan
     file, all read-only except the plan file;"); a file the step only reads that is not stated
     read-only is change access the step does not need. Then shell commands ("shell commands are
     turned off;"), the network, as an allowlist stated with no "and nothing else" ("the network
@@ -266,33 +260,37 @@ rather than for a different kind of practice.
   trusted, untrusted, safe, outside or risky, and never uses the words untrusted input, prompt
   injection, least privilege, blast radius or "more than it needs". **No wording cue gives the
   answer without comparing step and reach:** a limit's contents are listed neutrally, never with
-  "only", "just" or "nothing else", and an executor with no limit is never described with "every",
-  "whole", "all" or "any". Both kinds of executor get sub-bullets of about the same number and
-  length.
+  "just" or "nothing else", and with "only" in one place alone, the fixed phrase "it allows access to
+  only <files>", which says what the sandbox or separate user admits and is used for every limited
+  executor, `excess` or `no-excess`; an executor with no limit is never described with "every",
+  "whole", "all" or "any". The restriction sub-bullets of `excess` and `no-excess` executors take
+  the same forms and about the same number.
 
   **Reach**, as the key works it out from the reading's rule: an executor can do whatever the user
   it runs as can do (read and change that user's files, including secrets saved in them, run shell
   commands, reach the internet, and use any login, key or token it holds or can read) unless a
-  stated limit narrows it. An agent started with its harness's default settings is narrowed by
-  nothing, as the reading tells learners to assume. A sandbox, a separate user or a scoped token
+  stated limit narrows it. An executor described only by who starts it is narrowed by nothing, as
+  the reading tells learners to assume. A sandbox, a separate user or a scoped token
   narrows everything the executor runs. The harness's permission settings narrow only what the agent
   asks the harness to do: where they let the agent run shell commands without asking, those commands
   can do anything the user could, so a file or network limit in the harness does not cover them.
   An executor keyed `excess` can reach at least one thing its step never uses, and the key names
-  each such thing: other files in the folder it starts in, for a step that uses one folder; a login
-  saved there, and what it lets one do; a token that can also change, delete, send or move money,
+  each such thing: the person's other files and folders, for a step that uses one folder; a login
+  saved in one of them, and what it lets one do; change access to a file or folder the step only
+  reads, where a limit admits it without making it read-only; a token that can also change, delete, send or move money,
   for a step that only reads; a folder in its sandbox that the step never uses; the internet, for a
   step that works only on files already on the laptop; sites beyond the ones its step fetches from.
   Shell commands are never the only unneeded thing, since whether a step needs one can turn on how
   the agent works; but where an `excess` executor can also run shell commands and its step runs no
   named program, the key lists them beside the other unneeded things. An executor keyed `no-excess`
-  runs under limits that leave it exactly what its step uses: the folders it reads, change of only
-  what it writes, on the internet the sites it fetches from (and no network if it fetches nothing),
+  runs under limits that leave it exactly what its step uses: the folders it reads, each stated
+  read-only, change of only what it writes, on the internet the sites it fetches from (and no network if it fetches nothing),
   shell commands only if its step runs a named program, and a token whose permissions its step all
   uses. So every `no-excess` executor is limited, and since a limit must not mark the answer, at
   least a third of a bank's `excess` executors, and never fewer than two, are limited too, by a limit
-  that still leaves one unneeded thing: a sandbox that also holds a folder the step never uses, or the
-  settings file with her email login; harness settings that refuse shell commands but leave the
+  that still leaves one unneeded thing: a sandbox that also allows access to a folder the step never
+  uses, or to the settings file with her email login; a sandbox that admits a file the step only
+  reads without stating it read-only; harness settings that refuse shell commands but leave the
   network, for a step that works on saved files; a separate user that has also been given a shared
   folder holding her tax returns; a scoped token that also deletes; or harness settings that limit
   files to one folder while letting the agent run shell commands without asking.
@@ -334,48 +332,47 @@ rather than for a different kind of practice.
 
   > Lena wants to find weekend volunteer shifts near her apartment. Her workflow has three steps.
   >
-  > - Every morning the fetcher, a program, downloads the new posts from a community volunteering
-  >   board, where any organization can post, and saves them in a folder called posts.
-  >   - It runs in a sandbox holding the posts folder, with shell commands turned off.
-  >   - The sandbox's network allowlist has the volunteering board's site on it.
-  >   - It holds no logins, keys or tokens.
-  > - Then the sorting agent, following a skill file Lena wrote, reads each new post and her own list
-  >   of what she likes doing and when she is free, and writes a one-line verdict on each post into a
-  >   file called picks.
-  >   - Lena starts it in her home folder with its harness's default settings.
-  >   - Her home folder holds the skill file, the posts folder, her list, the picks file, her tax
-  >     returns and a settings file with her email login.
-  > - On Sunday evenings the planning agent, also following a skill file Lena wrote, reads the list
-  >   of shifts she has signed up for and her list of other plans for the week, both of which she
-  >   types herself, and writes a draft plan for the week into a file called plan.
-  >   - It runs in a sandbox holding its skill file, those two lists and the plan file, with shell
-  >     commands and the network turned off.
-  >   - It holds no logins, keys or tokens.
+  > - Every morning the fetcher, a program, downloads the new posts from a community volunteering board, where any organization can post, and saves them in a folder called posts. It runs in a sandbox with the following restrictions:
+  >   - it allows access to only the posts folder;
+  >   - shell commands are turned off;
+  >   - the network allowlist has the volunteering board's site on it;
+  >   - it holds no logins, keys or tokens.
+  > - Then the sorting agent, following a skill file Lena wrote, reads each new post and her own list of what she likes doing and when she is free, which she typed, and writes a one-line verdict on each post into a file called picks. Lena starts it herself.
+  >   - Her home folder holds the skill files, the posts folder, her list, the picks file, her tax returns and a settings file with her email login.
+  >   - It holds no logins, keys or tokens of its own.
+  > - On Sunday evenings the planning agent, also following a skill file Lena wrote, reads the list of shifts she has signed up for and her list of other plans for the week, both of which she types herself, and writes a draft plan for the week into a file called plan. It runs in a sandbox with the following restrictions:
+  >   - it allows access to only its skill file, those two lists and the plan file, all read-only except the plan file;
+  >   - shell commands are turned off;
+  >   - the network is turned off;
+  >   - it holds no logins, keys or tokens.
 
   Questions and keys, in order: the fetcher's reach, No (`no-excess`: the sandbox leaves it the
   posts folder it writes and the board it fetches from, and nothing in its step runs a command or
-  uses a login); the sorting agent's reach, Yes (`excess`: nothing narrows it, so it can do whatever
-  Lena can; its step reads the posts and her list and writes picks, but it can read her tax returns
+  uses a login); the sorting agent's reach, Yes (`excess`: nothing narrows it ("Lena starts it
+  herself", with no restrictions listed), so it can do whatever Lena can; its step reads the posts and her list and writes picks, but it can read her tax returns
   and the settings file with her email login, which would let it send mail as her, run shell
   commands and reach the internet, none of which a step working on saved posts and running no
   program uses); the sorting agent's context, Yes (`outside-text`: it reads the posts, which any
-  organization can write); the planning agent's reach, No (`no-excess`: the sandbox holds the skill
-  file, the two lists it reads and the plan it writes, with no commands, network or logins); the
-  planning agent's context, No (`owner-only`: it reads only the skill file and the two lists Lena
-  types). An `excess` variant of a limited executor: the planning agent's sandbox also holds her
-  journal folder; key Yes, naming the journal folder. A `shielded` variant: the fetcher also counts how many new
+  organization can write); the planning agent's reach, No (`no-excess`: the sandbox allows the
+  skill file and the two lists it reads, read-only, and the plan it writes, with no commands,
+  network or logins); the planning agent's context, No (`owner-only`: it reads only the skill file
+  and the two lists Lena types). An `excess` variant of a limited executor: the planning agent's
+  sandbox also allows access to her journal folder; key Yes, naming the journal folder. Another: the
+  planning agent's sandbox allows the same four files with no read-only clause; key Yes, naming
+  change access to the skill file and the two lists. A `shielded` variant: the fetcher also counts how many new
   posts fall on a weekend and writes only that number into a file in the posts folder, and the
   planning agent instead reads only that file and Lena's list of other plans; key No. A `passed-through`
   variant: the fetcher writes each post's title into a file that the planning agent reads; key Yes.
 
-  **How hard.** Medium when the excess is plain (an agent started with its harness's default
-  settings in the home folder, against a step that uses one folder), a `no-excess` executor's
+  **How hard.** Medium when the excess is plain (an agent the person starts herself, with no
+  restrictions, against a step that uses one folder), a `no-excess` executor's
   limits plainly match its step, and the outside text is plainly someone else's (listings any
   landlord can post). Hard when the excess is one item a limit leaves among things the step does
   use (a token that also deletes, for a step that only reads; the network left on, for a step that
   works on saved files; no network allowlist, for a step that fetches from two named sites; a
-  sandbox that also holds the settings file or an unused folder; harness file limits beside shell
-  commands allowed without asking), when a `no-excess` executor's limits look broad but leave only
+  sandbox that also allows access to the settings file or an unused folder; a file the step only
+  reads left without a read-only clause; harness file limits beside shell commands allowed without
+  asking), when a `no-excess` executor's limits look broad but leave only
   what is used (a token that changes entries, for a step that changes them; a sandbox holding
   several folders, each of which the step reads), when outside text arrives indirectly (copied into a list earlier
   by a program; a message the person forwarded to herself; a shared document others can edit; only
@@ -444,8 +441,8 @@ rather than for a different kind of practice.
   descriptions.
 
   The `shielded` and `passed-through` variants change what the planning agent reads. When working
-  one aloud as help, say that its sandbox holds the file the fetcher writes in place of the shifts
-  list; that is the only fact the variant implies. In the `shielded` variant the fetcher's step now
+  one aloud as help, say that its sandbox allows access, read-only, to the file the fetcher writes in
+  place of the shifts list; that is the only fact the variant implies. In the `shielded` variant the fetcher's step now
   also writes the count file in the posts folder, which its sandbox already holds.
 
 ### `a-read-agent-audit`
@@ -476,14 +473,21 @@ rather than for a different kind of practice.
   agent step reads. Then comes the agent's answer, one short block per step, each headed by the
   step's handle, giving one sentence each, in this order: what the step does (what it reads and
   writes, what it fetches, what it does with an account); what runs it (a program, or an agent
-  following the person's skill file); how it runs (as which user, and with which limits, if any);
-  what it can reach, one sentence per kind (files, including any secrets saved in them; shell
-  commands; the network; what its secrets let it do); and, for an agent, what it reads and who
-  wrote each part. Each reach sentence agrees with the reading's rule applied to how the executor
+  following the person's skill file); how it runs (as which user, and with which limits, if any;
+  for an executor with no limit, only who starts it, "You start it yourself.", never default
+  settings or its harness's default settings, which the reading says vary between harnesses, and
+  never a starting folder as if it were a boundary); what it can reach, one sentence per kind
+  (files, including any secrets saved in them; shell commands; the network; what its secrets let it
+  do); and, for an agent, what it reads, saying who wrote each part wherever the source could be
+  unclear (the skill file, anything others write, a list or profile the person typed, anything a
+  program writes) and not for material plainly the person's own (her essay drafts in her own
+  folder). Each reach sentence agrees with the reading's rule applied to how the executor
   runs: whatever its user can do, unless a stated limit narrows it, with a harness limit not
   covering shell commands the harness lets run without asking. The reach sentences name places and
-  what is in them, under the same wording rule as `a-look-over-steps` (no "only", "just" or "nothing
-  else" for a limited executor, no "every", "whole", "all" or "any" for an unlimited one). The
+  what is in them, under the same wording rule as `a-look-over-steps` (no "just" or "nothing else"
+  for a limited executor, and "only" solely in the phrase "it allows access to only <files>" in its
+  how-it-runs sentence; no "every", "whole", "all" or "any" for an unlimited one). Write the opening
+  and each block as one long line; never hard-wrap the scenario's prose. The
   answer states facts only. It never says whether reach is more than the step needs
   and never says whether untrusted input reaches an agent: the person did not ask that, so the
   reading's third audit question ("Where does text from outside the workflow end up in an agent's
@@ -495,14 +499,14 @@ rather than for a different kind of practice.
   is its answer." Then three blocks. The sorting agent's block reads: "**The sorting agent.** Reads
   each new post in the posts folder and your list of what you like doing and when you are free, and
   writes a one-line verdict on each post into the picks file. An agent following your skill file.
-  You start it in your home folder with its harness's default settings, which set no limits. Files:
-  it can read and change the files in your home folder, which hold the skill file, the posts folder,
-  your list, the picks file, your tax returns and the settings file where your email login is
-  saved. Shell commands: it can run them, with no limit set. Network: it can reach the internet,
+  You start it yourself. Files: it can read and change your files; your home folder holds the skill
+  files, the posts folder, your list, the picks file, your tax returns and the settings file where
+  your email login is saved. Shell commands: it can run them, with no limit set. Network: it can reach the internet,
   with no limit set. Secrets: it holds none of its own, but it can read your email login in that
   settings file, which would let it send mail as you. It reads the skill file and your list, which
   you wrote, and the posts, which organizations put on the volunteering board." The fetcher's block
-  says it runs in a sandbox holding the posts folder, with shell commands turned off, and then, kind
+  says it runs in a sandbox that allows access to only the posts folder, with shell commands turned
+  off, and then, kind
   by kind, that it can change the posts folder, that shell commands are off, that it can reach the
   volunteering board's site, which is on the sandbox's network allowlist, and that it holds no
   secrets. Same questions and keys.
@@ -569,12 +573,16 @@ rather than for a different kind of practice.
   internet, which account it acts on and what it does there); who runs it (in at least four of a
   bank's six scenarios, an agent following a skill file the person wrote; otherwise a program); how
   that executor runs (as which user, and with which limits, if any, including, for an agent, what
-  its harness lets it run without asking) and what it can reach as a result, in all four kinds
+  its harness lets it run without asking; an executor with no limit is described only by who starts
+  it, "Omar starts it himself", never as running with default settings or its harness's default
+  settings, which the reading says vary between harnesses, and never with a starting folder named as
+  if it were a boundary) and what it can reach as a result, in all four kinds
   (files, including secrets saved in them; shell commands; the network; what its secrets let it
   do), stated as the reading's rule gives it; and, for an agent, what it reads and who wrote each
   part. Where a person already checks anything, the paragraph says so, and where nobody does, it
   says what happens to the step's output (it goes straight onto the list she calls from; the reply
-  is sent). Then two sentences in fixed frames:
+  is sent). The paragraph is written as one long line, never hard-wrapped. Then two sentences in
+  fixed frames, each its own paragraph and likewise one long line:
   - "The harm <Name> is worried about: <harm>." One specific harm, one thing that could go wrong,
     following from one of the step's problems: its executor can reach something the step does not
     need, or untrusted input reaches an agent's context, or both, where text steers an agent into
@@ -653,9 +661,8 @@ rather than for a different kind of practice.
   "Omar is looking for a cat to adopt. Each evening the matching agent, following a skill file Omar
   wrote, fetches the new listings from three shelter websites, where any shelter can post, reads
   each one, and writes the promising ones, with a short note on each, into a file called shortlist.
-  Omar started it with its default settings in his home folder, so it can read and change every file
-  there, run shell commands and reach the internet, and his bank login is saved in a settings file
-  in that folder. The harm Omar is worried about: a hidden line in a listing makes the agent send
+  Omar starts it himself, so it can read and change his files, run shell commands and reach the
+  internet, and his bank login is saved in a settings file in his home folder. The harm Omar is worried about: a hidden line in a listing makes the agent send
   his bank login to a web address." Then one of these, each a separate scenario:
   - `sound-limit`, Medium: "His agent proposes: 'I can run the matching step in a sandbox folder
     holding only the skill file and the shortlist, still able to fetch pages from the internet.'" a
@@ -760,7 +767,9 @@ rather than for a different kind of practice.
   her agent what limits could reduce the risk of that harm. It proposes several; each question
   below gives one. Each proposal changes only what it names; everything else stays as described
   above." Each `###` question's body is "Proposal: '<limit>'", in the agent's words as
-  `a-weigh-one-limit` describes, then the two parts. A scenario has two or three proposals. Each
+  `a-weigh-one-limit` describes, then the two parts. The paragraph, the harm sentence, the shared
+  setup's closing sentences and each proposal are each written as one long line, never
+  hard-wrapped. A scenario has two or three proposals. Each
   proposal stands on its own: none refers to another ("instead", "as well", "on top of the
   sandbox"), and none is judged as combined with another. No question's text gives away another's
   answer: a proposal names only what it changes, never what it leaves as it was ("still able to
