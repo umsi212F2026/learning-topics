@@ -4,7 +4,7 @@ The reading on workflow design listed two intermediate goals that we take up now
 
 Our scenario. The teaching assistant from the last three readings is still grading about 200 homework submissions a week. A program downloads each submission and runs its tests. An agent, following a skill file, drafts a score and feedback for each one, and its score goes into the grades sheet. The TA reviews the drafts, changes some, and a program posts the final grades to the course site.
 
-## Two places a failure can be
+## Incomplete runs and incorrect results
 
 Some failures stop things. The download program can't reach the course site, and it halts with an error. The test runner hits a submission that crashes it. Failures like these are annoying, but at least they are visible: the run didn't finish, and someone can see that it didn't.
 

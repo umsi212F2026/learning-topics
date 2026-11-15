@@ -88,7 +88,7 @@ what the Problem Set 5 critique and the Nov 17 class ask for.
   three topics' readings, a teaching assistant who grades about 200 homework submissions a week.
   It is a draft the instructor has not yet reviewed, so this entry relies only on its section names
   and the words it bolds. Sections: an untitled opening (two judgments to make about each step, and
-  the TA's workflow); Two places a failure can be; When a run stops partway; Would anyone notice?;
+  the TA's workflow); Incomplete runs and incorrect results; When a run stops partway; Would anyone notice?;
   Failing loudly; Telling your agent. Words in place, each in bold at its definition: idempotent,
   silent failure, fails loudly (the word's form here is fail loudly; "failing loudly" appears
   earlier, unbolded, in the opening and in a heading). Also in bold, though none is
