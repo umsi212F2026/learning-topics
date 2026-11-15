@@ -274,9 +274,11 @@ the cloud hosting, deploy config, deploy pipeline and database hosting topics co
 - **goal:** say what a plan for where a workflow's agent steps run, and who pays for them, does
   to one goal
 - **criterion:** given a described workflow with at least one agent step, two plans for where
-  that step runs and who pays for it, and one named goal (cost, privacy, access or correctness),
-  says which plan does better on that goal, or that they do about as well on it. The facts about
-  the workflow that decide it include who its users are and how many runs they will make, whose
+  that step runs and who pays for it, and one named goal (cost to the service's owner or to its
+  users, privacy, access or correctness), says which plan does better on that goal, or that they
+  do about as well on it. The facts about the workflow that decide it include who its users are
+  and how many runs they will make, whose bill the agent compute lands on and how it is priced
+  (per token, as part of a subscription, or as the rent of a server), whose
   data the agent step sees and which companies would then see it, who needs to start it or see
   its results, and whether the step needs a model as capable as the ones model companies sell.
   The plans are drawn from five: each user runs it on their own machine under their own
@@ -284,14 +286,20 @@ the cloud hosting, deploy config, deploy pipeline and database hosting topics co
   service pays a model company from its own account; the service runs an open-weight model on
   servers it pays for; or an open-weight model runs in each user's browser.
 - **cases:**
-  - `cost-who-bears`: cost, the service paying a model company against each user's own API key,
-    where some users run it far more than others
-  - `cost-fixed-servers`: cost, the service running an open-weight model against the service
-    paying a model company, where the number of runs decides which is cheaper
+  - `cost-who-bears`: cost to the owner, the service paying a model company against each user's
+    own API key, where some users run it far more than others
+  - `cost-fixed-servers`: cost to the owner, the service running an open-weight model, paying
+    only for compute, against the service paying a model company per token, where the number of
+    runs decides which is cheaper
+  - `cost-subscription`: cost to a heavy user, their own machine under a subscription they already
+    have against their own API key at token prices, where the subscription costs them far less
   - `privacy-own-device`: privacy, an open-weight model in the browser against one the service
     runs, where the data should not leave the user's device
   - `privacy-no-vendor`: privacy, the service running an open-weight model against the service
     paying a model company, where the data may reach the service but no model company
+  - `privacy-same-parties`: privacy, each user's own API key against the service paying a model
+    company, where the same parties see the data either way, so the two do about as well on
+    privacy
   - `privacy-own-machine`: privacy, each user's own machine and subscription against the cloud on
     each user's own API key, where the data reaches a model company either way and the cloud plan
     also lets the service see it
