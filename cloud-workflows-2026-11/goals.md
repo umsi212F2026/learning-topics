@@ -287,12 +287,16 @@ the cloud hosting, deploy config, deploy pipeline and database hosting topics co
   servers it pays for; or an open-weight model runs in each user's browser.
 - **cases:**
   - `cost-who-bears`: cost to the owner, the service paying a model company against each user's
-    own API key, where some users run it far more than others
+    own API key, where under the API key plan the runs are billed to the users rather than the
+    owner
   - `cost-fixed-servers`: cost to the owner, the service running an open-weight model, paying
     only for compute, against the service paying a model company per token, where the number of
     runs decides which is cheaper
   - `cost-subscription`: cost to a heavy user, their own machine under a subscription they already
     have against their own API key at token prices, where the subscription costs them far less
+  - `cost-light-user`: cost to a light user with no subscription, their own machine under a
+    subscription they would buy only for this against their own API key at token prices, where
+    their few runs cost less at token prices
   - `privacy-own-device`: privacy, an open-weight model in the browser against one the service
     runs, where the data should not leave the user's device
   - `privacy-no-vendor`: privacy, the service running an open-weight model against the service
@@ -303,8 +307,13 @@ the cloud hosting, deploy config, deploy pipeline and database hosting topics co
   - `privacy-own-machine`: privacy, each user's own machine and subscription against the cloud on
     each user's own API key, where the data reaches a model company either way and the cloud plan
     also lets the service see it
+  - `privacy-public-input`: privacy, any two plans, where the agent step reads only public
+    material and no user's data, so the two do about as well on privacy
   - `access-no-subscription`: access, the service paying against each user's own machine and
     subscription, where many users have no subscription or no laptop to run it on
+  - `access-all-equipped`: access, the service paying against each user's own machine and
+    subscription, where every user has a laptop and a subscription and has set the workflow up,
+    so the two do about as well on access
   - `correctness-capable`: correctness, an open-weight plan against a model company's model, where
     the step needs the most capable model
   - `correctness-enough`: correctness, an open-weight plan against a model company's model, where
