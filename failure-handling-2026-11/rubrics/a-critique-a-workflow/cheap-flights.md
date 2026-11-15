@@ -7,7 +7,7 @@ Three steps and one check. The collecting program adds an entry for every deal i
 - **type:** mcq
 - **answer:** 2
 - **credit:** full for 2 only.
-- **tutor note:** Medium, shape `adds-again`. Settled by "It adds an entry for every deal it finds, even if the list already has one for that deal": a rerun goes through every newsletter from the past day, so each deal from the first two newsletters gets a second entry. Not 1, because of those entries. Not 3, because the program only saves pages and adds entries, nothing outside the workflow. Not 4, because the stop came between newsletters, not while an entry was being written. Not 5, because adding leaves the first entries as they were, and nobody has opened the list since.
+- **tutor note:** Medium, shape `adds-again`. Settled by "it adds an entry for the deal to the deals list", with nothing said about checking the list first, so the program checks nothing: a rerun goes through every newsletter from the past day, so each deal from the first two newsletters gets a second entry. Not 1, because of those entries. Not 3, because the program only saves pages and adds entries, nothing outside the workflow. Not 4, because the stop came between newsletters, not while an entry was being written. Not 5, because adding leaves the first entries as they were, and nobody has opened the list since.
 
 ### rerun-assessing
 
