@@ -2,7 +2,7 @@
 
 ### catch-pick
 
-Each night, a program copies the recipes Ana saved that day into her meal-planning sheet. Last night she had saved four. One recipe's page wouldn't load, so the program skipped that recipe and went on, writing nothing about it anywhere. The run finished, and the sheet showed three new recipes. Ana noticed the missing one a week later, while looking for it.
+Each night, a program copies the recipes Ana saved that day into her meal-planning sheet. Last night she had saved four. One recipe's page wouldn't load, so the program skipped that recipe and went on. The run finished, and the sheet showed three new recipes. Ana noticed the missing one a week later, while looking for it.
 
 Which of these uses the term silent failure correctly?
 
