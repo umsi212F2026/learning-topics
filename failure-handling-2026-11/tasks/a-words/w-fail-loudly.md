@@ -39,13 +39,13 @@ Which of these uses the term fail loudly correctly?
 
 ### catch-red-warning
 
-A hiking club matches members' payments to their names each night. A program does the matching at 2 a.m. on a computer in the club's storage closet. When a payment can't be matched, the program shows a large red warning on that computer's screen and goes on to the next payment. The treasurer, who works from home, says:
+A hiking club's treasurer runs a program each night that matches members' payments to their names. When a payment can't be matched, the program prints a big red warning in its terminal window and goes on to the next payment. The window closes when the run ends. Each Monday the treasurer reads the list of matched payments. The treasurer says:
 
 "That step fails loudly. Nobody could miss a warning like that."
 
 What is wrong with the treasurer's claim?
 
 1. Nothing. A large red warning is as loud as a report can be.
-2. Nobody has a reason to be at that computer, so the warning reaches no one: the step doesn't fail loudly.
+2. The warning is gone before anyone looks, so it reaches no one: the step doesn't fail loudly.
 3. The program goes on to the next payment; to fail loudly it would have to stop.
 4. A warning fails loudly only if it also makes a sound.
