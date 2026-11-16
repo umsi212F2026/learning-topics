@@ -306,10 +306,10 @@ Words and capabilities from earlier topics that this one uses without teaching a
   - `outside-text`: text from outside the workflow, such as a job posting, reaches the agent's
     context
   - `owner-only`: the agent reads only material from the workflow's owner
-  - `shielded`: outside text is read by a model with no reach, and the agent sees only its answers
-    of a fixed form, such as a label or a score
-  - `passed-through`: outside text is handled before the agent sees it, by a program or a model
-    with no reach, but some of it, or the model's own words about it, still reaches the agent
+  - `shielded`: outside text is read by another agent, and this agent sees only that agent's
+    outputs of a fixed form, such as a label or a score
+  - `passed-through`: outside text is handled before the agent sees it, by a program or another
+    agent, but some of it, or that agent's own words about it, still reaches the agent
 
 ### `c-judge-limits`
 
