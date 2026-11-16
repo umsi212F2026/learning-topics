@@ -7,16 +7,15 @@ The initial study, the orientation and one passed question for each of the five 
 about 29 minutes: about 14 for `a-read-cloud-workflows` (the reading is about 1,750 words, about 9
 minutes on its own, plus its stop and close) and about 3 a word, so 15. That is well inside the
 topic's 60-minute budget.
-The capability carries `taught elsewhere` (the session 23 class), so its three activities are
-offered during or after that class: the class works through as much of them as it can, and the learner finishes the rest on their own. Meeting `c-weigh-cloud-plan` takes one passed
+The capability carries `taught elsewhere` (the session 23 class), so its three activities fall
+outside the 60-minute initial study: they are offered during or after that class, and the class works through as much of them as it can, and the learner finishes the rest on their own. Meeting `c-weigh-cloud-plan` takes one passed
 question per case, twelve in all. Through `a-pick-better-plan` that is twelve scenarios at
 about 2 or 3 minutes each, so about 30 minutes. Through `a-flip-one-fact` it is twelve scenarios,
 since only a pair's first question carries a case, at about 3 minutes for the first question and 1
 for the second, so about 48: more than one sitting, and meant as review spread over several.
-Through `a-score-two-plans` it is eight scenarios, about 3 minutes for a scenario's first question
-and about 1 for each after, with the tutor skipping questions whose cases are already passed, so
-about 28. The rest of the hour is room for missed
-questions.
+Through `a-score-two-plans` it is eight scenarios and twenty-seven questions, since the tutor sets
+every question of a scenario once it is begun, at about 3 minutes for a scenario's first question
+and about 1 for each after, so about 43.
 
 Every question asks for one thing and works on its own as a bank question, never relying on a
 tutor's follow-up to collect the rest of an answer. Every capability question is a choice among
@@ -40,6 +39,8 @@ stated in round numbers. The topic's words open-weight model, API key, BYOK, usa
 data retention are used in question text where they fit, with no gloss. American spelling
 throughout, and no em dash or en dash in any form.
 
+**Note for the tutor:** All three capability activities set the same three-option question on the same kind of described workflow. They differ only in arrangement: one question, a changed fact, or several goals. Whichever meets the goal, the learner has judged two given plans on one named goal with every fact supplied. None shows they would notice a missing fact or weigh all four goals together.
+
 ## Check notes
 
 
@@ -55,7 +56,7 @@ throughout, and no em dash or en dash in any form.
 | goal                 | checks | notes |
 | -------------------- | ------ | ----- |
 | `o-orientation`      | `a-read-cloud-workflows` |       |
-| `c-weigh-cloud-plan` | `a-pick-better-plan`, `a-flip-one-fact`, `a-score-two-plans` |       |
+| `c-weigh-cloud-plan` | `a-pick-better-plan`, `a-flip-one-fact`, `a-score-two-plans` | The cases reach only some pairings of plan and goal. None asks what the service's own open-weight servers cost, what the browser plan costs, or how the BYOK or browser plan fares on access. A met goal says nothing about those pairings. |
 
 ---
 
@@ -98,6 +99,7 @@ throughout, and no em dash or en dash in any form.
   It names OpenAI and Anthropic as model companies, ChatGPT and Claude as their chat apps, WebGPU as
   the browser feature, and, in the course's own experience, OpenAI's Sol and Astra models with the
   $20 a month and $50 a month it paid, and no other real product, model or price.
+- **verified:** 2026-11-16
 - **learner does:** reads the page once, top to bottom, and stops once, at the end of Five alternative plans,
   where the page says to stop, answering before reading on ("I don't know yet" is an honest
   answer): if Nadia's service runs the step for all 200 students, does plan 2 or plan 3 cost Nadia
@@ -153,6 +155,7 @@ throughout, and no em dash or en dash in any form.
   apartment-hunting workflow from a laptop to 200 users, through the five plans for where its
   agent step runs and who pays, and what each does to cost, privacy, access and correctness. One
   short stop and a one-question close. About 14 minutes.
+- **note:** The page's Privacy section makes plan 1's edge over plans 2 and 3 depend on the user having turned training off, and says less about a user who hasn't. Every capability question comparing those plans states that training is off, so the topic never sets the other case. If a learner asks about it, say the questions here don't turn on it.
 
 ### `a-pick-better-plan`
 
@@ -239,7 +242,8 @@ throughout, and no em dash or en dash in any form.
     do, or when the step reads no one's private data;
   - access: how many of the intended users can start a run and see its results, given what they
     have and have done: for the own-machine plan, a laptop, a subscription and the workflow set up
-    on it; for BYOK, a model-company account and an API key; for the browser plan, a device able to
+    on it; for BYOK, a model-company account and an API key, and a user without an API key counts
+    as unable to start a BYOK run, even one who could set up a paid account; for the browser plan, a device able to
     run the model; for the other service plans, only a web browser;
   - correctness: how often the agent step's output is right, by the scenario's stated trial.
 
@@ -298,7 +302,7 @@ throughout, and no em dash or en dash in any form.
     Members have phones and most have laptops, and a few have their own API key from a model
     company. The plot notes say little beyond what is planted where. When Rosa tried an open-weight
     model on the notes, its plans were often wrong about timing. Each plan through the model company
-    she uses costs about 5 cents." Plan A: service pays; Plan B: BYOK. "On cost to Rosa, which plan
+    she uses is billed at about 5 cents a run." Plan A: service pays; Plan B: BYOK. "On cost to Rosa, which plan
     does better?" Answer 2, Plan B: under BYOK each member's calls are billed to their own key, so
     the seedling members' daily runs cost Rosa nothing; under Plan A she pays for every run. Case
     `cost-who-bears`.
@@ -355,6 +359,7 @@ throughout, and no em dash or en dash in any form.
   its agent step, one goal, and you pick which plan does better or that they do about as well.
   About 2 or 3 minutes a question. One question per scenario, so it is the most direct way to meet
   a particular case.
+- **note:** The two illustrations are on cost and correctness. For help on a privacy or access question, work from the matching section of the reading rather than stretching an illustration from another goal. Two shapes are settled by the plan pair and goal alone: cost-who-bears (cost to the owner, BYOK against the service paying) and privacy-same-parties (BYOK against the service paying, on privacy). A pass on either shows the learner knows who is billed or who sees the data, not that they read the paragraph closely.
 
 ### `a-flip-one-fact`
 
@@ -398,13 +403,14 @@ throughout, and no em dash or en dash in any form.
     paragraph says about that user's runs and subscription (they run it a few times a month and
     would buy a subscription only for this).
   - `light-heavy`: the same, reversed: first `cost-light-user` (BYOK); second `cost-subscription`
-    (own machine), the change saying the user runs it many times a day and has paid for a
-    subscription for some time. These two are the only pairs whose change sentence carries two
-    facts, since both make up how that user would pay.
+    (own machine), the change saying the user runs it many times a day, has paid for a
+    subscription for some time, and that those runs fit within its limits.
   - `own-device`: first `privacy-own-device` (browser); second `privacy-public-input` (tie), the
     change being that the step now reads only public material.
   - `no-vendor`: first `privacy-no-vendor`; second `privacy-public-input` (tie), likewise.
-  - `own-machine`: first `privacy-own-machine`; second `privacy-public-input` (tie), likewise.
+  - `own-machine`: first `privacy-own-machine`; second `privacy-public-input` (tie), likewise. The
+    fact that each user has turned off training in their subscription's settings is in the shared
+    paragraph from the start.
   - `same-parties`: first `privacy-same-parties` (tie). No fact can separate these two plans on
     privacy, so the second question is always a `no-bearing` change (how many users run it often,
     or the trial result), and stays a tie.
@@ -413,8 +419,8 @@ throughout, and no em dash or en dash in any form.
     private data, so the answer is that pair's privacy answer (on the `own-machine` pair, the
     paragraph also states that each user has turned off training in their subscription's settings).
   - `subscription`: first `access-no-subscription` (service pays); second `access-all-equipped`
-    (tie), the change being that every user now has a laptop and a subscription and has already
-    set the workflow up on it.
+    (tie), the change being that every user now has a laptop and a subscription, has already
+    set the workflow up on it, and needs only their own results there.
   - `equipped`: first `access-all-equipped` (tie); second, the change being that most users now
     have only a phone, so the answer is service pays.
   - `trial-capable`: first `correctness-capable` (the model-company plan); second
@@ -471,14 +477,16 @@ throughout, and no em dash or en dash in any form.
 - **checks:** `c-weigh-cloud-plan`
 - **artifact:** no external source. A described workflow and two plans, then a three-choice question
   for each of three or four goals in turn, from this activity's bank or written live per the
-  generator below. About 3 minutes for a scenario's first question and about 1 for each after.
+  generator below. About 3 minutes for a scenario's first question and about 1 for each after; a
+  full bank is eight scenarios and twenty-seven questions, about 43 minutes.
 - **learner does:** reads the scenario and the two plans, then for each goal asked about picks
   which plan does better on it, or that they do about as well.
 - **tutor role:** examiner
 - **tutor does:** as `a-pick-better-plan`'s, including the offer to wait for session 23, except that
-  it labels a live run `a-score-two-plans/<pair>/<goal>`. Once a scenario's remaining questions
-  would carry only cases the learner has already passed, or no case, skips them, as study skips
-  questions no longer needed.
+  it labels a live run `a-score-two-plans/<pair>/<goal>`. Once a scenario's first question is
+  answered, sets every question in that scenario, including those that carry no case or a case
+  already passed, since the scorecard is what this activity is for. Skips only a whole scenario
+  whose cases the learner has all already passed.
 - **done when:** the criterion met with no help, case by case: a right choice passes the case its
   question carries. There is no half credit.
 - **generator:** **A scenario** is a `a-pick-better-plan` scenario (same paragraph rules, plan
@@ -507,9 +515,9 @@ throughout, and no em dash or en dash in any form.
     (`privacy-own-machine`, the paragraph stating that each user has turned off training in their
     subscription's settings); access, keyed on what the paragraph states about the users' laptops,
     subscriptions, set-up and API keys, which it always states for both plans: BYOK when many have
-    an API key or a model-company account but no laptop or subscription, own machine when many
+    an API key but no laptop or subscription, own machine when many
     have a laptop and a subscription with the workflow set up but no API key, about as well when
-    every user has both or the same share lacks each (no case); correctness, about as well (model
+    every user has both (no case); correctness, about as well (model
     companies' models under both; no case).
   - `laptop-or-pay` (own machine against service pays): cost to the owner, own machine (each user's
     subscription pays; no case); access, service pays where many users have no subscription or only
@@ -536,8 +544,8 @@ throughout, and no em dash or en dash in any form.
   **How hard**, as in `a-pick-better-plan`, scenario by scenario.
 
   **Spread across the bank.** A bank is eight scenarios, as listed above, about twenty-seven
-  questions, half the scenarios Hard. "About as well" is the answer on each of the four goals at
-  least once, and on at least eight questions in all. When run live, the tutor
+  questions, half the scenarios Hard. "About as well" is the answer on each of privacy, access and
+  correctness at least once, and on at least eight questions in all. When run live, the tutor
   picks pairs to carry cases the learner hasn't passed.
 
   **Domains** are this activity's own, none repeating within the bank: a volunteer fire
@@ -558,6 +566,7 @@ throughout, and no em dash or en dash in any form.
 - **offer as:** the scorecard check, during or after session 23: one workflow and two plans, then which plan
   does better on each goal in turn. About 3 minutes for the first question and 1 for each after.
   Shows most clearly that a plan can win on one goal, lose on another and tie on a third.
+- **note:** No pair has a cost question that comes out "about as well", so in this activity every cost answer is a plan. On the laptop-or-byok access question, the key treats a user without an API key as unable to start a BYOK run. A learner who argues such users could get a key has a point worth discussing. The question carries no case.
 
 ### `a-words`
 
