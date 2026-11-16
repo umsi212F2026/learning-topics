@@ -289,9 +289,6 @@ the cloud hosting, deploy config, deploy pipeline and database hosting topics co
   - `cost-who-bears`: cost to the owner, the service paying a model company against each user's
     own API key, where under the API key plan the runs are billed to the users rather than the
     owner
-  - `cost-fixed-servers`: cost to the owner, the service running an open-weight model, paying
-    only for compute, against the service paying a model company per token, where the number of
-    runs decides which is cheaper
   - `cost-subscription`: cost to a heavy user, their own machine under a subscription they already
     have against their own API key at token prices, where the subscription costs them far less
   - `cost-light-user`: cost to a light user with no subscription, their own machine under a
@@ -305,8 +302,9 @@ the cloud hosting, deploy config, deploy pipeline and database hosting topics co
     company, where the same parties see the data either way, so the two do about as well on
     privacy
   - `privacy-own-machine`: privacy, each user's own machine and subscription against the cloud on
-    each user's own API key, where the data reaches a model company either way and the cloud plan
-    also lets the service see it
+    each user's own API key, where the data reaches a model company either way, the user has
+    turned off training in their subscription's settings, and the cloud plan also lets the service
+    see it
   - `privacy-public-input`: privacy, any two plans, where the agent step reads only public
     material and no user's data, so the two do about as well on privacy
   - `access-no-subscription`: access, the service paying against each user's own machine and
