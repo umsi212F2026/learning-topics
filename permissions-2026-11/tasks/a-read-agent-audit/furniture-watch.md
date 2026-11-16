@@ -28,7 +28,7 @@ Can the furniture agent reach anything its step does not need?
 
 ### furniture-agent-context
 
-Does untrusted input end up in the furniture agent's context, where it could be taken as instructions?
+Could untrusted input end up in the furniture agent's context, where it could be taken as instructions?
 
 1. Yes
 2. No

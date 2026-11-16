@@ -31,7 +31,7 @@ Can the rating agent reach anything its step does not need?
 
 ### rating-agent-context
 
-Does untrusted input end up in the rating agent's context, where it could be taken as instructions?
+Could untrusted input end up in the rating agent's context, where it could be taken as instructions?
 
 1. Yes
 2. No
@@ -45,7 +45,7 @@ Can the route agent reach anything its step does not need?
 
 ### route-agent-context
 
-Does untrusted input end up in the route agent's context, where it could be taken as instructions?
+Could untrusted input end up in the route agent's context, where it could be taken as instructions?
 
 1. Yes
 2. No

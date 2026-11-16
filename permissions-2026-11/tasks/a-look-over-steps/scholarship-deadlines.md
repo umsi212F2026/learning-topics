@@ -30,7 +30,7 @@ Can the checking agent reach anything its step does not need?
 
 ### checking-agent-context
 
-Does untrusted input end up in the checking agent's context, where it could be taken as instructions?
+Could untrusted input end up in the checking agent's context, where it could be taken as instructions?
 
 1. Yes
 2. No
@@ -44,7 +44,7 @@ Can the essay agent reach anything its step does not need?
 
 ### essay-agent-context
 
-Does untrusted input end up in the essay agent's context, where it could be taken as instructions?
+Could untrusted input end up in the essay agent's context, where it could be taken as instructions?
 
 1. Yes
 2. No

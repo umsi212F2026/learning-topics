@@ -29,7 +29,7 @@ Can the planning agent reach anything its step does not need?
 
 ### planning-agent-context
 
-Does untrusted input end up in the planning agent's context, where it could be taken as instructions?
+Could untrusted input end up in the planning agent's context, where it could be taken as instructions?
 
 1. Yes
 2. No

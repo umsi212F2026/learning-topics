@@ -3,17 +3,18 @@
 Candidate activities for the study phase. More than will be used; the tutor chooses among them
 with the learner.
 
-The initial study comes to about 54 to 61 minutes, about the topic's 60-minute budget: about 14
+The initial study comes to about 54 to 64 minutes, around the topic's 60-minute budget: about 14
 for `a-read-permissions` (the reading is about 2,000 words, 9 or 10 minutes on its own), about 3 a
 word for the seven words, so 21, and meeting the three capabilities. `c-spot-excess` and
-`c-spot-injection` are met together, from scenarios that ask about each executor in turn. Each
-bank holds at least one pair of scenarios that between them carry all six of those cases
-(`excess` and `no-excess`, then `outside-text`, `owner-only`, `shielded` and `passed-through`),
-and the tutor skips any question whose case is already passed, so a learner who meets such a pair
-needs about eight questions. The first of a scenario takes about 3 minutes with the reading and
-each later one about 1, so about 12 minutes through `a-look-over-steps` and about 10 through
-`a-read-agent-audit`, whose agent's audit states each executor's reach outright. A learner served two scenarios that
-leave a case uncarried needs a third, about 3 minutes more. `c-judge-limits` needs three
+`c-spot-injection` are met together, from scenarios that ask about each executor in turn. Between
+them, a few scenarios carry all six of those cases (`excess` and `no-excess`, then
+`outside-text`, `owner-only`, `shielded` and `passed-through`): a pair in `a-read-agent-audit` and
+a trio in `a-look-over-steps`. The tutor skips any question whose case is already passed, so a
+learner who meets the pair needs about eight questions and one who meets the trio about eleven.
+The first of a scenario takes about 3 minutes with the reading and each later one about 1, so
+about 15 minutes through `a-look-over-steps` and about 10 through `a-read-agent-audit`, whose
+agent's audit states each executor's reach outright. A learner served scenarios that leave a case
+uncarried needs one more, about 3 minutes more. `c-judge-limits` needs three
 compound questions, one per case (`sound-limit`, `stops-work`, `no-effect`): about 3 or 4 minutes
 each in `a-weigh-one-limit`, so about 11, or about 9 through `a-weigh-proposals`, whose questions
 after the first share a scenario. The rest of the hour is room for missed questions.
@@ -305,8 +306,16 @@ rather than for a different kind of practice.
   - `shielded`: the scenario's other agent reads the outside text and hands this agent only outputs
     of a fixed form: a label from a set list its skill file names, a yes or no, or a score from a set
     scale. Never a value copied out of the text, such as a price, a name or a title, and never words
-    of the other agent's own. The other agent is best one with no reach, as the reading recommends,
-    but the case doesn't turn on that; its own context question is `outside-text` or
+    of the other agent's own. The fixed form is held by a fixed set of actions, as the reading says:
+    the other agent cannot change the file this agent reads, and its only way to write there is a
+    recording program the person wrote, which writes one allowed output and refuses anything else.
+    So the other agent runs in a sandbox or as a separate user, or under harness settings that
+    refuse shell commands, with the file read-only to it, and a restriction sub-bullet names the
+    recorder ("the only command it may run is a recorder Chen wrote, which writes one of the three
+    words for a concert into the ratings file and refuses anything else;"); an agent that can run
+    shell commands freely, or change that file itself, could write anything in it, and the call
+    would no longer be clear. Beyond that, the other agent is best one with no reach, as the reading
+    recommends, but the case doesn't turn on that; its own context question is `outside-text` or
     `passed-through`. Never a program's count or verdict standing in for the other agent: the
     reading no longer teaches that, and a program's output is not a model's answer of a fixed form.
   - `passed-through`: a program handles the outside text but hands the agent some of it word for
@@ -326,7 +335,7 @@ rather than for a different kind of practice.
   numbered choices, "Yes" and "No", in that order. `type: mcq`. Its rubric `goal:` is
   `c-spot-excess`, and its `cases:` line lists `excess` (answer 1) or `no-excess` (answer 2).
 
-  **A context question** reads "Does untrusted input end up in <agent>'s context, where it could
+  **A context question** reads "Could untrusted input end up in <agent>'s context, where it could
   be taken as instructions?", then two numbered choices, "Yes" and "No", in that order. `type: mcq`. Its rubric `goal:` is `c-spot-injection`, and
   its `cases:` line lists `outside-text` or `passed-through` (answer 1), or `owner-only` or
   `shielded` (answer 2).
@@ -361,9 +370,12 @@ rather than for a different kind of practice.
   and the two lists Lena types). An `excess` variant of a limited executor: the planning agent's
   sandbox also allows access to her journal folder; key Yes, naming the journal folder. Another: the
   planning agent's sandbox allows the same four files with no read-only clause; key Yes, naming
-  change access to the skill file and the two lists. A `shielded` variant: the sorting agent also writes into a
-  file called count only how many posts it judged a good fit, and the planning agent instead reads
-  only that count and Lena's list of other plans; key No. A `passed-through` variant: the planning
+  change access to the skill file and the two lists. A `shielded` variant: the sorting agent runs in a sandbox that
+  allows access, read-only, to only its skill file, the posts folder, her list and a count file,
+  with the network turned off and no logins, keys or tokens, and the only command it may run is a
+  recorder Lena wrote, which writes a number from 0 to 20 into the count file and refuses anything
+  else; in place of writing the picks file, it records how many posts it judged a good fit, and the
+  planning agent instead reads only that count and Lena's list of other plans; key No. A `passed-through` variant: the planning
   agent instead reads the picks file, the sorting agent's one-line verdicts, and Lena's list of
   other plans; key Yes. Another: the fetcher writes each post's title into a file that the planning
   agent reads; key Yes.
@@ -389,12 +401,13 @@ rather than for a different kind of practice.
   Four scenarios have three executors, two agents and a program (three reach questions and two
   context questions each), and two have two executors, an agent and a program (two reach
   questions and one context question each). That is sixteen reach questions, at least six carrying
-  each of `excess` and `no-excess`, and ten context questions: four `outside-text` and two each of
-  `owner-only`, `shielded` and `passed-through`. Each `shielded` case is in a three-executor
-  scenario, since it needs a second agent. At least four scenarios have both reach answers
-  among their questions. Two of the three-executor scenarios form a pair that between them carry
-  all six cases: both reach cases in the first of them, and the four context cases across their
-  four agents. At least three scenarios are trackers with acquire, assess and extract steps. When the generator is run live, the tutor picks each next
+  each of `excess` and `no-excess`, and ten context questions: four `outside-text`, two
+  `owner-only`, one `shielded` and three `passed-through`, one of which is a split that a harness
+  letting shell commands run without asking gets around. Each `shielded` case is in a
+  three-executor scenario, since it needs a second agent. At least four scenarios have both reach
+  answers among their questions. Three of the three-executor scenarios form a trio that between
+  them carry all six cases: both reach cases in the first of them, and the four context cases
+  across their agents. At least three scenarios are trackers with acquire, assess and extract steps. When the generator is run live, the tutor picks each next
   scenario to carry a case the learner hasn't passed.
 
   **Domains** vary by scenario, none repeating within the bank: an apartment hunt from a rentals
@@ -408,9 +421,10 @@ rather than for a different kind of practice.
   limit covers it, the reading's rule that it can do whatever its user can) and the step bullet
   saying what the step does; for `no-excess`, each limit, what it leaves, and the part of the step
   that uses that. For a context question: the verdict; each thing the agent reads and who wrote it, citing
-  the sentence; for `shielded`, what the program hands over and that the program produced it
-  itself; for `passed-through`, which part of the outside text arrives. The key notes that the
-  question asks what the step does as described, not what could go wrong next or how to fix it.
+  the sentence; for `shielded`, what the other agent hands over, that it is of a fixed form, and
+  the recorder that holds it to that form; for `passed-through`, which part of the outside text
+  arrives, or how the other agent's own words, or words it can write past a recorder, get there.
+  The key notes that the question asks about the step as described, not how to fix it.
   Credit: full for the key's choice; none for the other. A `tutor note` gives the follow-up's
   answer (what is unneeded, or where the text comes from).
 - **worked example:** shown only as help when asked for, which records the attempt as helped. The
@@ -449,8 +463,8 @@ rather than for a different kind of practice.
   The `shielded` and `passed-through` variants change what the planning agent reads. When working
   one aloud as help, say that its sandbox allows access, read-only, to the count file, the picks
   file or the titles file in place of the shifts list; that is the only fact the variant implies.
-  In the `shielded` variant the sorting agent's step now also writes the count file, which it can
-  already reach, since nothing narrows it.
+  In the `shielded` variant the sorting agent writes the count file only through the recorder, and
+  writes no picks file.
 
 ### `a-read-agent-audit`
 
@@ -502,7 +516,7 @@ rather than for a different kind of practice.
   same facts in prose, which `offer as` and `doesn't show` say; it doesn't change the label. The
   question wording is unchanged.
 
-  **Spread across the bank**, as in `a-look-over-steps`, with the same case rules and the same pair of scenarios carrying all six cases, except that this bank is six scenarios and 24 questions: three scenarios with three executors and three with two, fifteen reach questions, at least six carrying each of `excess` and `no-excess`, and nine context questions, three `outside-text` and two each of `owner-only`, `shielded` and `passed-through`. Also except that at least half the scenarios are Hard rather than exactly half, since the answer-pattern rule below makes most of them Hard by the facts and the layout already makes each question easier.
+  **Spread across the bank**, as in `a-look-over-steps`, with the same case rules, except that two of this bank's three-executor scenarios form a pair that between them carry all six cases (both reach cases in the first of them, and the four context cases across their four agents), and this bank is six scenarios and 24 questions: three scenarios with three executors and three with two, fifteen reach questions, at least six carrying each of `excess` and `no-excess`, and nine context questions, three `outside-text` and two each of `owner-only`, `shielded` and `passed-through`. Also except that at least half the scenarios are Hard rather than exactly half, since the answer-pattern rule below makes most of them Hard by the facts and the layout already makes each question easier.
 
   **Answer patterns.** A learner meets this bank after `a-look-over-steps`, so no scenario here has the same sequence of keys, by question position, as any scenario in `a-look-over-steps`'s bank (its `scholarship-deadlines` reads No, Yes, Yes, No, No). Across this bank, at least three of the six scenarios have an `excess` case on a limited executor (a sandbox wider than the step needs, a token broader than the step needs, a site on the allowlist the step never uses), and at least three have a limited agent whose context case is `outside-text` or `passed-through`, so "sandboxed means No" never works as a shortcut. Since the two banks may be drafted at the same time and either may grow later, bank-check compares every scenario's key sequence here with every scenario's in `a-look-over-steps` each time it runs, and reports any match.
 
@@ -562,12 +576,13 @@ rather than for a different kind of practice.
       it was written for);
     - splitting the reading of untrusted text from the acting: a model with no reach reads the
       untrusted input and hands whatever acts only answers of a fixed form, such as a label or a
-      score, with any words of its own going only to a person;
+      score, which it records through a fixed set of actions, a program that accepts only that
+      form, with any words of its own going only to a person;
     - checking what the step produced before it takes effect: a person checks every output.
     Never an agent's approval prompts, which the reading calls a weak check, so their effect is
     not a clear call.
 
-  **Clear calls only.** Each limit either clearly cuts off the harm's route or adds a check on every change before it takes effect, or clearly has little or nothing to do with the harm. Never a limit that cuts the route only partly, a person who checks only some outputs or might not look, or a limit whose effect turns on how carefully it was set up. Never a limit of the right kind built wrong: a sandbox that still holds the login, a scoped token that still has the harmful permission, an allowlist that still allows the harmful action. Every limit is set up as the agent describes it and works as described. Whether the step can still work is as clear: a limit that stops the work takes away something the step bullet says the step uses, and any other limit leaves everything the step uses. **How a limit is imposed settles what it covers**, as the reading says: a sandbox, a separate user or a scoped token covers everything the executor runs, and the harness's permission settings cover only what the agent asks the harness to do. So wherever a proposal uses the harness's permission settings, a sub-bullet under the step says what the harness lets the agent run without asking (no shell commands, or shell commands, because its step runs a named program): a restriction sub-bullet where the harness already sets restrictions ("shell commands are refused;"; "shell commands run without asking;"), otherwise a fact sub-bullet ("Omar has set its harness's permission settings to let it run shell commands without asking."), and nobody need wonder whether a command could get around it. Two limits that work as described are still got around, and the reading teaches both. One is a file or network limit in the harness's permission settings, when a sub-bullet says the harness lets the agent run shell commands without asking and the harm's route goes through a command, which the harm sentence says ("runs a command that deletes ...") (network left off the harness allowlist, while the step runs an allowed download program and any command it runs still reaches the network). The other is a split whose model with no reach also hands words of its own about the text, such as a summary or a note on each item, to an agent that can act, when the harm's route runs through that agent; the proposal says plainly where those words go. Both are keyed `no-effect`.
+  **Clear calls only.** Each limit either clearly cuts off the harm's route or adds a check on every change before it takes effect, or clearly has little or nothing to do with the harm. Never a limit that cuts the route only partly, a person who checks only some outputs or might not look, or a limit whose effect turns on how carefully it was set up. Never a limit of the right kind built wrong: a sandbox that still holds the login, a scoped token that still has the harmful permission, an allowlist that still allows the harmful action, a split whose reading model can write its answers into a file itself rather than only through a recording program. Every limit is set up as the agent describes it and works as described. Whether the step can still work is as clear: a limit that stops the work takes away something the step bullet says the step uses, and any other limit leaves everything the step uses. **How a limit is imposed settles what it covers**, as the reading says: a sandbox, a separate user or a scoped token covers everything the executor runs, and the harness's permission settings cover only what the agent asks the harness to do. So wherever a proposal uses the harness's permission settings, a sub-bullet under the step says what the harness lets the agent run without asking (no shell commands, or shell commands, because its step runs a named program): a restriction sub-bullet where the harness already sets restrictions ("shell commands are refused;"; "shell commands run without asking;"), otherwise a fact sub-bullet ("Omar has set its harness's permission settings to let it run shell commands without asking."), and nobody need wonder whether a command could get around it. Two limits that work as described are still got around, and the reading teaches both. One is a file or network limit in the harness's permission settings, when a sub-bullet says the harness lets the agent run shell commands without asking and the harm's route goes through a command, which the harm sentence says ("runs a command that deletes ...") (network left off the harness allowlist, while the step runs an allowed download program and any command it runs still reaches the network). The other is a split whose model with no reach also hands words of its own about the text, such as a summary or a note on each item, to an agent that can act, when the harm's route runs through that agent; the proposal says plainly where those words go. Both are keyed `no-effect`.
 
   **A question** is a compound: the `###` stem is the scenario (the opening, the step bullets and the two framed sentences), then two mcq parts.
   - `#### a`: "Would this limit significantly reduce the risk of this harm?", then "1. Yes", "2. No".
