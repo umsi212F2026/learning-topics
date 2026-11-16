@@ -643,8 +643,10 @@ rather than for a different kind of practice.
   because the harness lets the agent run shell commands without asking; a split whose reading
   model's words reach an agent that can act. The question wording is unchanged.
 
-  **Spread across the bank.** A bank is six scenarios, six questions: each case twice, one of each
-  pair Hard. Three harms follow from reach the step doesn't need and three from untrusted input
+  **Spread across the bank.** A bank is six scenarios, six questions: each case at least once, about
+  half Hard, and at least one split that is `sound-limit`, so the move the reading recommends is
+  seen working; when a learner needs more of a case than the bank holds, the generator is run
+  live. Three harms follow from reach the step doesn't need and three from untrusted input
   (alone, or steering the agent into using reach). At least five different kinds of limit appear,
   none more than twice, counting as kinds each of the five ways of narrowing reach (a separate
   user, a sandbox, the harness's permission settings, a scoped token, a fixed set of actions), a
@@ -723,8 +725,8 @@ rather than for a different kind of practice.
 
   **How hard**, as in `a-weigh-one-limit`. The question wording is unchanged.
 
-  **Spread across the bank.** A bank is four scenarios and ten or eleven questions, at least three
-  carrying each case, about half Hard. Two harms follow from reach the step doesn't need and two
+  **Spread across the bank.** A bank is four scenarios and ten or eleven questions, at least two
+  carrying each case, about half Hard, and at least one split that is `sound-limit`. Two harms follow from reach the step doesn't need and two
   from untrusted input. At least five different kinds of limit appear across the bank, counted as
   `a-weigh-one-limit` counts them, each of the reading's three groups appears, and a scenario never
   offers the same kind twice. At least one `no-effect` question is a harness limit the step gets

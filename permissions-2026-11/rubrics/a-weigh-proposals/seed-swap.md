@@ -1,4 +1,4 @@
-A seed swap forum watch, one step: the swap agent fetches posts anyone can write, reads them, and writes matching offers into the swaps file, running with nothing narrowing it. The harm comes from untrusted input steering the agent into using reach its step doesn't need: a hidden line in a post (untrusted input in its context: "reads each one"; "Anyone can post on the forum") makes it delete the planting records folder, which it can change, since nothing narrows it (no limit is stated) and by the reading's rule it can do whatever she can, but which its step never touches. The deletion would happen during the evening run, before anything reaches the morning program. The step uses its skill file, the wish list, the forum on the internet, and the swaps file it writes, including a note on what each poster wants in return. Three proposals, one from each of the reading's groups: a sandbox (`sound-limit`, Medium), a person approving every trade offer (`no-effect`, Hard) and a program handling the posts (`stops-work`, Hard).
+A seed swap forum watch, one step: the swap agent fetches posts anyone can write, reads them, and writes matching offers into the swaps file, running with nothing narrowing it. The harm comes from untrusted input steering the agent into using reach its step doesn't need: a hidden line in a post (untrusted input in its context: "reads each one"; "Anyone can post on the forum") makes it delete the planting records folder, which it can change, since nothing narrows it (no limit is stated) and by the reading's rule it can do whatever she can, but which its step never touches. The deletion would happen during the evening run, before anything reaches the morning program. The step uses its skill file, the wish list, the forum on the internet, and the swaps file it writes, with the wish-list seeds each matching post offers. Three proposals, one from each of the reading's groups: a sandbox (`sound-limit`, Medium), a person approving every trade offer (`no-effect`, Hard) and a split, a model with no reach reading the posts and recording only wish-list seeds through a program (`sound-limit`, Hard).
 
 ### sandbox
 
@@ -41,22 +41,23 @@ A seed swap forum watch, one step: the swap agent fetches posts anyone can write
 - **credit:** full for 1; none for 2.
 - **tutor note:** Key: Yes. The agent's run is unchanged: it still reads its skill file and the wish list, fetches the posts and writes the swaps file. Only the morning sending waits on Hana.
 
-### seed-list-program
+### reader-model
 
 - **goal:** `c-judge-limits`
-- **cases:** stops-work
+- **cases:** sound-limit
 - **type:** compound
+- **tutor note:** if asked afterward what the split leaves open, a hidden line can still skew which wish-list seeds the reading model records for a post, so a poor trade could reach the swaps file; that is a different harm from the deletion, and the morning approval would catch it.
 
 #### a
 
 - **type:** mcq
 - **answer:** 1
 - **credit:** full for 1; none for 2.
-- **tutor note:** Key: Yes. The harm needs a hidden line in a post to reach the agent's context ("reads each one"). Under this limit the program fetches the posts and the agent sees only the program's own list of wish-list seeds, so no poster's words reach the agent and nothing in them can steer it. Its reach to the records folder is unchanged, but nothing is left to tell it to use it.
+- **tutor note:** Key: Yes. The harm needs a hidden line in a post to steer an agent that can delete the records folder. Today the swap agent reads the posts ("reads each one"), which anyone can write ("Anyone can post on the forum."), and nothing narrows it (no limit is stated), so by the reading's rule it can do whatever Hana can. Under this limit the model that reads the posts has no files but the post and the wish list, no shell commands, no network and no logins, so a steered reading model has nothing to delete; and its only way to hand anything on is the program that accepts seeds from her wish list, so no poster's words reach the swap agent. The swap agent keeps its reach to the records folder, but nothing is left in its context to tell it to use it.
 
 #### b
 
 - **type:** mcq
-- **answer:** 2
-- **credit:** full for 2; none for 1.
-- **tutor note:** Key: No. The step writes, for each matching post, "a note on what each poster wants in return", which comes from what the poster wrote. A list of the seeds each post offers leaves that out, so the agent can no longer write the notes.
+- **answer:** 1
+- **credit:** full for 1; none for 2.
+- **tutor note:** Key: Yes. The step writes the posts offering seeds on her wish list into the swaps file, with the wish-list seeds each one offers ("writes the ones offering seeds on her wish list ... into a file called swaps, with the wish-list seeds each one offers"). The records say, for each post, which wish-list seeds it offers, which is everything the swaps file needs, and the program that fetches the posts takes over the fetching.
