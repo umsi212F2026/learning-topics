@@ -52,7 +52,7 @@ Could the swap agent still do its work under this limit?
 
 ### reader-model
 
-Proposal: 'I can have a program fetch the posts and save them, and have a separate model read each one, with no files but that post and the wish list, no shell commands, no network and no logins. It would record, through a program that accepts only seeds from your wish list, which of them each post offers. The swap agent would then read only those records and write the swaps file from them.'
+Proposal: 'I can have a program fetch the posts and save them, and have a separate agent read each one, with no files but that post and the wish list, no shell commands, no network and no logins. It would record, through a program that accepts only seeds from your wish list, which of them each post offers. The swap agent would then read only those records and write the swaps file from them.'
 
 #### a
 

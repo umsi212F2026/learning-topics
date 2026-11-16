@@ -98,9 +98,9 @@ rather than for a different kind of practice.
   its context; the hidden white-text note; prompt injection; untrusted input; a program that only moves a submission along is not
   steered by it, against an agent that reads a submission or a part of one a program pulled out
   and handed over); How the two problems combine (blast radius, with reach as its upper limit; ask both
-  questions of every step); Limits you can put on a step, in three groups, each shown on the grading workflow (narrowing what an executor can reach: the four kinds again with read-only access under files, allowlist as the general form, and five ways to impose limits, a separate user, a sandbox, the harness's permission settings, which a command it lets run can get around, a scoped token, and a fixed set of actions, likened to an API with a few endpoints in place of any SQL query; splitting the reading of untrusted text from the acting: why wording in the skill file and markers around the text are not dependable, then a model with no reach that reads the untrusted input and returns only answers of a fixed form, so whatever acts never sees the text, with any words of its own going only to a person; checking what a step produced before it takes effect: a human in the loop, which stops a bad result only if the person looks closely enough to tell it from a good one, with approval prompts as a weak one); Judging a proposed limit (name the harm, then ask whether the limit significantly
+  questions of every step); Limits you can put on a step, in three groups, each shown on the grading workflow (narrowing what an executor can reach: the four kinds again with read-only access under files, allowlist as the general form, and five ways to impose limits, a separate user, a sandbox, the harness's permission settings, which a command it lets run can get around, a scoped token, and a fixed set of actions, likened to an API with a few endpoints in place of any SQL query; splitting the reading of untrusted text from the acting: why wording in the skill file and markers around the text are not dependable, then an agent with no reach that reads the untrusted input and returns only answers of a fixed form, so whatever acts never sees the text, with any words of its own going only to a person; checking what a step produced before it takes effect: a human in the loop, which stops a bad result only if the person looks closely enough to tell it from a good one, with approval prompts as a weak one); Judging a proposed limit (name the harm, then ask whether the limit significantly
   reduces its risk and whether the step can still do its work, with worked yes and no answers to
-  each, and why it often takes more than one limit, ending on the grading step split so a model with no reach drafts the score and feedback, with the TA's careful review kept); Talking to your agent (asking the agent to
+  each, and why it often takes more than one limit, ending on the grading step split so an agent with no reach drafts the score and feedback, with the TA's careful review kept); Talking to your agent (asking the agent to
   audit the workflow and propose limits, and judging each against the two questions). Words in
   place, each in bold where introduced: prompt injection, untrusted input, blast radius, allowlist,
   and, as the labels of their limits, sandbox, scoped token and human in the loop. Also in bold,
@@ -574,7 +574,7 @@ rather than for a different kind of practice.
       ways: a separate user, a sandbox, the harness's permission settings (for an agent only), a
       scoped token, or a fixed set of actions (the agent can only ask a program to make the changes
       it was written for);
-    - splitting the reading of untrusted text from the acting: a model with no reach reads the
+    - splitting the reading of untrusted text from the acting: an agent with no reach reads the
       untrusted input and hands whatever acts only answers of a fixed form, such as a label or a
       score, which it records through a fixed set of actions, a program that accepts only that
       form, with any words of its own going only to a person;
@@ -582,7 +582,7 @@ rather than for a different kind of practice.
     Never an agent's approval prompts, which the reading calls a weak check, so their effect is
     not a clear call.
 
-  **Clear calls only.** Each limit either clearly cuts off the harm's route or adds a check on every change before it takes effect, or clearly has little or nothing to do with the harm. Never a limit that cuts the route only partly, a person who checks only some outputs or might not look, or a limit whose effect turns on how carefully it was set up. Never a limit of the right kind built wrong: a sandbox that still holds the login, a scoped token that still has the harmful permission, an allowlist that still allows the harmful action, a split whose reading model can write its answers into a file itself rather than only through a recording program. Every limit is set up as the agent describes it and works as described. Whether the step can still work is as clear: a limit that stops the work takes away something the step bullet says the step uses, and any other limit leaves everything the step uses. **How a limit is imposed settles what it covers**, as the reading says: a sandbox, a separate user or a scoped token covers everything the executor runs, and the harness's permission settings cover only what the agent asks the harness to do. So wherever a proposal uses the harness's permission settings, a sub-bullet under the step says what the harness lets the agent run without asking (no shell commands, or shell commands, because its step runs a named program): a restriction sub-bullet where the harness already sets restrictions ("shell commands are refused;"; "shell commands run without asking;"), otherwise a fact sub-bullet ("Omar has set its harness's permission settings to let it run shell commands without asking."), and nobody need wonder whether a command could get around it. Two limits that work as described are still got around, and the reading teaches both. One is a file or network limit in the harness's permission settings, when a sub-bullet says the harness lets the agent run shell commands without asking and the harm's route goes through a command, which the harm sentence says ("runs a command that deletes ...") (network left off the harness allowlist, while the step runs an allowed download program and any command it runs still reaches the network). The other is a split whose model with no reach also hands words of its own about the text, such as a summary or a note on each item, to an agent that can act, when the harm's route runs through that agent; the proposal says plainly where those words go. Both are keyed `no-effect`.
+  **Clear calls only.** Each limit either clearly cuts off the harm's route or adds a check on every change before it takes effect, or clearly has little or nothing to do with the harm. Never a limit that cuts the route only partly, a person who checks only some outputs or might not look, or a limit whose effect turns on how carefully it was set up. Never a limit of the right kind built wrong: a sandbox that still holds the login, a scoped token that still has the harmful permission, an allowlist that still allows the harmful action, a split whose reading agent can write its answers into a file itself rather than only through a recording program. Every limit is set up as the agent describes it and works as described. Whether the step can still work is as clear: a limit that stops the work takes away something the step bullet says the step uses, and any other limit leaves everything the step uses. **How a limit is imposed settles what it covers**, as the reading says: a sandbox, a separate user or a scoped token covers everything the executor runs, and the harness's permission settings cover only what the agent asks the harness to do. So wherever a proposal uses the harness's permission settings, a sub-bullet under the step says what the harness lets the agent run without asking (no shell commands, or shell commands, because its step runs a named program): a restriction sub-bullet where the harness already sets restrictions ("shell commands are refused;"; "shell commands run without asking;"), otherwise a fact sub-bullet ("Omar has set its harness's permission settings to let it run shell commands without asking."), and nobody need wonder whether a command could get around it. Two limits that work as described are still got around, and the reading teaches both. One is a file or network limit in the harness's permission settings, when a sub-bullet says the harness lets the agent run shell commands without asking and the harm's route goes through a command, which the harm sentence says ("runs a command that deletes ...") (network left off the harness allowlist, while the step runs an allowed download program and any command it runs still reaches the network). The other is a split whose agent with no reach also hands words of its own about the text, such as a summary or a note on each item, to an agent that can act, when the harm's route runs through that agent; the proposal says plainly where those words go. Both are keyed `no-effect`.
 
   **A question** is a compound: the `###` stem is the scenario (the opening, the step bullets and the two framed sentences), then two mcq parts.
   - `#### a`: "Would this limit significantly reduce the risk of this harm?", then "1. Yes", "2. No".
@@ -595,7 +595,7 @@ rather than for a different kind of practice.
     it can't read, or can't reach the internet to send it, for a step that never fetches; a token
     that can only read can't be used to move money; it can't change a folder it can only read; the
     agent can only ask a program for one kind of change, so a steered agent can't delete entries; a
-    model with no reach reads the outside text and whatever can act sees only its label or score, so
+    agent with no reach reads the outside text and whatever can act sees only its label or score, so
     nothing in the text can steer what has reach, for a harm that needs reach) or checks every change
     before it takes effect (the person approves every reply before it is sent), and leaves the
     executor everything its step uses.
@@ -608,10 +608,10 @@ rather than for a different kind of practice.
     reviews the step's output, when the harm is the agent sending something out during its run), or
     a fixed set of actions, when the harm is a wrong value of a kind the program does apply (as the
     reading says, a steered agent can still ask for a wrong score), or a split, when the harm is a
-    skewed label or score itself (a steered model with no reach can still give a wrong answer of
+    skewed label or score itself (a steered agent with no reach can still give a wrong answer of
     that form), or a limit the step gets around (a file or network limit in the harness's
     permission settings, when the harness lets the agent run shell commands without asking and the
-    harm's route goes through a command; a split whose model with no reach hands words of its own
+    harm's route goes through a command; a split whose agent with no reach hands words of its own
     to an agent that can act, when the harm runs through that agent).
 
   **Illustrations**, not bank items; their domain is used by no bank in this topic. The scenario, up to the harm:
@@ -637,7 +637,7 @@ rather than for a different kind of practice.
   reasoning: a check that comes after the harm; a fixed set of actions against a wrong value; a
   person's check that leaves the agent's reach alone and still counts, since every output is checked
   before it takes effect; a limit on reach against a harm from untrusted input, where the steered
-  action needs that reach; a split against a harm from untrusted input, where the model that reads
+  action needs that reach; a split against a harm from untrusted input, where the agent that reads
   the text is still steered but can't act; a split against a skewed score; a split that would stop
   the harm, for an acting agent that needs the text itself; a harness limit the step gets around
   because the harness lets the agent run shell commands without asking; a split whose reading
@@ -650,7 +650,7 @@ rather than for a different kind of practice.
   (alone, or steering the agent into using reach). At least five different kinds of limit appear,
   none more than twice, counting as kinds each of the five ways of narrowing reach (a separate
   user, a sandbox, the harness's permission settings, a scoped token, a fixed set of actions), a
-  split with a model with no reach, and a person checking every output. Each of the reading's three
+  split with an agent with no reach, and a person checking every output. Each of the reading's three
   groups appears at least once, at least one limit is a person checking every output, and one of
   the two `no-effect` questions is a harness limit the step gets around. When the generator is
   run live, the tutor picks each next case to be one the learner hasn't passed.
@@ -666,7 +666,7 @@ rather than for a different kind of practice.
   described, so a pass shows nothing about the borderline calls or about catching a limit built
   wrong, which the instructor left to the agent; the two ways a limit is got around that a question
   may turn on are a harness limit beside shell commands allowed without asking, and a split whose
-  reading model's own words reach an agent that can act, both as the reading teaches. Approval prompts never appear, so a pass shows nothing about judging them. One limit at a time, so a pass shows nothing about
+  reading agent's own words reach an agent that can act, both as the reading teaches. Approval prompts never appear, so a pass shows nothing about judging them. One limit at a time, so a pass shows nothing about
   combining limits, which the reading says often takes more than one. The agent's proposal is given,
   so a pass doesn't show the learner would think of a limit, which is the agent's work here. Each
   part is a yes or no, so guessing passes a question a quarter of the time. No question has both

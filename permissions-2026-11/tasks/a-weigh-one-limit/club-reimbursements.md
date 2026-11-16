@@ -10,7 +10,7 @@ Jonas is the treasurer of a chess club, and one step of his workflow sorts the r
 
 The harm Jonas is worried about: a hidden line in a request makes the agent delete the folder of the club's accounts from past years.
 
-His agent proposes: 'I can have a separate model read each request, with no files but that request and the budget, no shell commands, no network and no logins. It would record, through a program that accepts only a budget line from the club's budget and a yes or no, which line each request comes under and whether that line has room. The ledger agent would then read only those records and write the ledger from them.'
+His agent proposes: 'I can have a separate agent read each request, with no files but that request and the budget, no shell commands, no network and no logins. It would record, through a program that accepts only a budget line from the club's budget and a yes or no, which line each request comes under and whether that line has room. The ledger agent would then read only those records and write the ledger from them.'
 
 #### a
 
