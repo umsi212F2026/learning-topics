@@ -320,8 +320,8 @@ rather than for a different kind of practice.
   numbered choices, "Yes" and "No", in that order. `type: mcq`. Its rubric `goal:` is
   `c-spot-excess`, and its `cases:` line lists `excess` (answer 1) or `no-excess` (answer 2).
 
-  **A context question** reads "Does untrusted input end up in <agent>'s context while it does its
-  step?", then two numbered choices, "Yes" and "No", in that order. `type: mcq`. Its rubric `goal:` is `c-spot-injection`, and
+  **A context question** reads "Does untrusted input end up in <agent>'s context, where it could
+  be taken as instructions?", then two numbered choices, "Yes" and "No", in that order. `type: mcq`. Its rubric `goal:` is `c-spot-injection`, and
   its `cases:` line lists `outside-text` or `passed-through` (answer 1), or `owner-only` or
   `shielded` (answer 2).
 

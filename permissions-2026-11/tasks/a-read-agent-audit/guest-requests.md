@@ -29,7 +29,7 @@ Can the sorting agent reach anything its step does not need?
 
 ### sorting-agent-context
 
-Does untrusted input end up in the sorting agent's context while it does its step?
+Does untrusted input end up in the sorting agent's context, where it could be taken as instructions?
 
 1. Yes
 2. No

@@ -34,7 +34,7 @@ Can the matching agent reach anything its step does not need?
 
 ### matching-agent-context
 
-Does untrusted input end up in the matching agent's context while it does its step?
+Does untrusted input end up in the matching agent's context, where it could be taken as instructions?
 
 1. Yes
 2. No
@@ -48,7 +48,7 @@ Can the budget agent reach anything its step does not need?
 
 ### budget-agent-context
 
-Does untrusted input end up in the budget agent's context while it does its step?
+Does untrusted input end up in the budget agent's context, where it could be taken as instructions?
 
 1. Yes
 2. No

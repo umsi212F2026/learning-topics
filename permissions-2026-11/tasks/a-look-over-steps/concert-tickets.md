@@ -27,7 +27,7 @@ Can the alert agent reach anything its step does not need?
 
 ### alert-agent-context
 
-Does untrusted input end up in the alert agent's context while it does its step?
+Does untrusted input end up in the alert agent's context, where it could be taken as instructions?
 
 1. Yes
 2. No

@@ -34,7 +34,7 @@ Can the race-picking agent reach anything its step does not need?
 
 ### race-picking-agent-context
 
-Does untrusted input end up in the race-picking agent's context while it does its step?
+Does untrusted input end up in the race-picking agent's context, where it could be taken as instructions?
 
 1. Yes
 2. No
@@ -48,7 +48,7 @@ Can the training agent reach anything its step does not need?
 
 ### training-agent-context
 
-Does untrusted input end up in the training agent's context while it does its step?
+Does untrusted input end up in the training agent's context, where it could be taken as instructions?
 
 1. Yes
 2. No

@@ -34,7 +34,7 @@ Can the camp-picking agent reach anything its step does not need?
 
 ### camp-picking-agent-context
 
-Does untrusted input end up in the camp-picking agent's context while it does its step?
+Does untrusted input end up in the camp-picking agent's context, where it could be taken as instructions?
 
 1. Yes
 2. No
@@ -48,7 +48,7 @@ Can the reminder agent reach anything its step does not need?
 
 ### reminder-agent-context
 
-Does untrusted input end up in the reminder agent's context while it does its step?
+Does untrusted input end up in the reminder agent's context, where it could be taken as instructions?
 
 1. Yes
 2. No

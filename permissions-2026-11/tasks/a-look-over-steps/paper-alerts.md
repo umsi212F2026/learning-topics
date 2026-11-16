@@ -32,7 +32,7 @@ Can the reading agent reach anything its step does not need?
 
 ### reading-agent-context
 
-Does untrusted input end up in the reading agent's context while it does its step?
+Does untrusted input end up in the reading agent's context, where it could be taken as instructions?
 
 1. Yes
 2. No
@@ -46,7 +46,7 @@ Can the planning agent reach anything its step does not need?
 
 ### planning-agent-context
 
-Does untrusted input end up in the planning agent's context while it does its step?
+Does untrusted input end up in the planning agent's context, where it could be taken as instructions?
 
 1. Yes
 2. No
