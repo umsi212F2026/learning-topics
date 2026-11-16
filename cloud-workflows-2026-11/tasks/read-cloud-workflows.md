@@ -69,7 +69,7 @@ runs, which takes care. Plan 5 costs Nadia almost nothing for the step, since th
 Cost to the users is a different question, and it turns on how the compute is priced. Use of an API
 key is billed per token, so every run adds to the bill. A subscription costs a fixed amount each month
 however much it is used, up to its limits. So for someone who already pays for a subscription and doesn't hit the limits, another run costs nothing extra. At the limits OpenAI and Anthropic currently set, a subscription used heavily
-buys far more model use than the same money would buy at API prices. We discovered that in this course, when we found that a $20/month subscription was enough to use OpenAI's Sol model for all the interactions and problem sets while $50/month in token credits using a university-provided API key was not enough even when using the much less capable Terra model.
+buys far more model use than the same money would buy at API prices. We discovered that in this course, when we found that a $20/month subscription was enough to use OpenAI's Sol model for all the interactions and problem sets while $50/month in token credits using a university-provided API key was not enough even when using the much less capable Astra model.
 
 So for one of Nadia's hourly
 users who already has a subscription, plan 1 costs far less than plan 2. For a student who would
