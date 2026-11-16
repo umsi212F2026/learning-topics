@@ -16,3 +16,9 @@ Which of these uses the term open-weight model correctly?
 2. Because the model is open-weight, the publisher need not see any members' notes.
 3. Because the model is open-weight, the club pays nothing at all to run the agent step.
 4. Because the model is open-weight, it is as capable as any model a model company sells.
+
+### catch-free
+
+Volunteers at a free clinic want a model to sort patients' intake notes, running on a server the clinic rents. One volunteer says: "We can't use an open-weight model for this: with open weights, the notes it reads get published for anyone to see."
+
+What is wrong with how the volunteer uses the term open-weight model? Answer in one or two sentences.

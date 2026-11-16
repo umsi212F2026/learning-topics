@@ -19,3 +19,11 @@ An open-weight model is one whose trained weights, the numbers that make up the 
 - **type:** mcq
 - **answer:** 2
 - **credit:** full for 2 only. The club runs the published model on its own rented server, so the notes go to that server and no model company sees them. Choice 1 treats an open-weight model as one still run by its publisher, which is what calling a model company's model would be. Choice 3 reads open-weight as a free tier: the club pays rent for the server the model runs on. Choice 4 stretches the term past what it names: open-weight says the weights are published, not how capable the model is, and the best open-weight models are less capable than the best ones model companies sell.
+
+### catch-free
+
+- **goal:** `w-open-weight-model`
+- **move:** CATCH
+- **answer:** What an open-weight model publishes is the model itself, its trained weights, not the data sent to it. Run on the clinic's own rented server, the notes go only to that server, and neither the public nor the company that published the model sees them.
+- **credit:** full for saying that open-weight means the model's weights are published, not the notes it reads. None for a different quibble, such as that an open-weight model may be less capable, without saying what is published.
+- **tutor note:** a learner who agrees with the volunteer may be reading "open" as "public data"; ask what the company that published the model put online, and where the notes go when the clinic runs it.

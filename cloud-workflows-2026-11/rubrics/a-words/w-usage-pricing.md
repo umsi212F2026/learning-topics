@@ -20,3 +20,20 @@ Usage-based pricing is paying according to how much is used, such as per token o
 - **type:** mcq
 - **answer:** 4
 - **credit:** full for 4 only. The club pays for each million tokens, so twice the runs used about twice the tokens and cost about twice as much. Choice 1 reads the doubled bill as an overage, but the billing has no monthly limit to go past. Choice 2 reads usage-based pricing as a subscription, a fixed amount each month. Choice 3 stretches the term: the price per million tokens is set, and the bill grew because more tokens were used, not because each cost more.
+
+### vs-overage
+
+- **goal:** `w-usage-pricing`
+- **move:** DISTINGUISH
+- **type:** mcq
+- **answer:** 2
+- **credit:** full for 2 only. Plan B includes 1 million tokens a month, and in April the club used 0.6 million past that, so part of its April bill is an overage. Plan A is usage-based pricing with nothing included to go past: its bill grew because every token adds to it, and that is not an overage. Choice 1 reads a bill that grows with use as an overage. Choice 3 counts Plan A's growth as an overage too. Choice 4 misses that Plan B's April use went past what the plan includes.
+- **tutor note:** a learner who picks 1 or 3 may think any extra charge for using more is an overage; ask how many tokens Plan A includes for the club to go past.
+
+### catch-free
+
+- **goal:** `w-usage-pricing`
+- **move:** CATCH
+- **answer:** Usage-based pricing is about the amount following how much is used, not about when the bill is paid. A fixed $20 charged at the end of the month would still be the same however much Jo chatted, so it would still be a subscription, not usage-based pricing.
+- **credit:** full for saying that usage-based pricing means the amount depends on how much is used, and that a fixed $20 stays fixed whenever it is charged. None for a different quibble, such as that the chat plan has limits, without saying that what makes pricing usage-based is the amount following use.
+- **tutor note:** a learner who agrees with Jo may be reading pay-as-you-go as paying after you go; ask what Jo's bill would be under the end-of-month version in a month of light chatting and in one of heavy chatting.
