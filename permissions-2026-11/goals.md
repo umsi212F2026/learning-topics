@@ -105,7 +105,7 @@ Words and capabilities from earlier topics that this one uses without teaching a
 - `w-context`, from coding-agents-2026-09
 - `w-secret`, from deploy-config-2026-10
 - `w-workflow-step`, `w-executor`, `w-ai-agent` and `w-skill`, from understanding-workflows-2026-10
-- the propose-apply pattern (`w-design-pattern`), from workflow-steps-design-2026-10
+- `w-api`, `w-endpoint` and `w-sql`, from web-backends-2026-09
 - a person trigger, from triggers-2026-11
 
 ## Sequence
@@ -301,16 +301,15 @@ Words and capabilities from earlier topics that this one uses without teaching a
 - **goal:** spot where an agent could take text from outside the workflow as instructions
 - **criterion:** given a described workflow step done by an agent, says whether text that someone
   outside the workflow could have written ends up in what the agent reads (its context), where it
-  could be taken as instructions. Text the step only moves along, or that a program reduces to
-  something it produced itself before the agent sees it, does not end up in the agent's context.
+  could be taken as instructions. An agent can't be steered by a label or a score from a set scale that another agent produced after reading outside text, but it can be steered by free text that agent wrote about it.
 - **cases:**
   - `outside-text`: text from outside the workflow, such as a job posting, reaches the agent's
     context
   - `owner-only`: the agent reads only material from the workflow's owner
-  - `shielded`: outside text is handled by a program, and the agent sees only what the program
-    produced, such as a count or a yes or no
-  - `passed-through`: a program handles the outside text but hands some of it, such as a
-    posting's description, to the agent
+  - `shielded`: outside text is read by a model with no reach, and the agent sees only its answers
+    of a fixed form, such as a label or a score
+  - `passed-through`: outside text is handled before the agent sees it, by a program or a model
+    with no reach, but some of it, or the model's own words about it, still reaches the agent
 
 ### `c-judge-limits`
 

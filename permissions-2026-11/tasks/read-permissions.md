@@ -37,7 +37,7 @@ The TA never sees that line. The agent does, in the same context as its real ins
 
 What makes this possible is that the submission is **untrusted input**: text that someone outside the workflow could have written or changed. The rubric and the skill file came from the TA. The submissions came from 200 students, any of whom might try something.
 
-Where the untrusted text goes matters. If a program reads the submissions and hands the agent only something it produced itself, such as the number of tests a submission passed, the agent never sees the students' words, and there is nothing to be taken as instructions. But if the program pulls out a submission's written answer and hands that to the agent, the students' words are back in the agent's context, and so is the risk.
+Where the untrusted text goes matters. A program that only moves a submission along, as the download program does, is not steered by it. But an agent that reads a submission, or reads part of one that a program pulled out and handed over, such as a written answer, has the students' words in its context, and with them the risk.
 
 ## How the two problems combine
 
@@ -47,7 +47,7 @@ So when you look over a step, ask both questions. Can its executor reach more th
 
 ## Limits you can put on a step
 
-You don't need to know how to set up each of these. Your agent does. What you need is to recognize them when your agent proposes one, and to judge whether it fits. They come in three groups: narrowing what an executor can reach, keeping untrusted text out of an agent's context, and checking what a step produced before it takes effect.
+You don't need to know how to set up each of these. Your agent does. What you need is to recognize them when your agent proposes one, and to judge whether it fits. They come in three groups: narrowing what an executor can reach, splitting the reading of untrusted text from the acting, and checking what a step produced before it takes effect.
 
 ### Narrowing what an executor can reach
 
@@ -62,23 +62,25 @@ For the grading agent, that might mean only the rubric, the submissions and the 
 
 Most of these limits take the form of an **allowlist**: a list of what is allowed, such as certain folders, commands or sites, so that anything not on it is refused.
 
-There are four common ways to impose these limits.
+There are five common ways to impose these limits.
 
 - **A separate user.** The executor runs as a user set up just for it, which has been given only the files and logins the step needs. The operating system then lets it do only what that user can. This works for programs and agents alike.
 - **A sandbox.** The executor runs in a closed-off place that it cannot reach out of, such as a folder the operating system keeps it inside, or a separate environment. A sandbox can also cut off shell commands and the network. In a sandbox holding only the rubric, the submissions and the drafts, the agent can't read the settings file with the token in it. This too works for programs and agents.
 - **The harness's permission settings.** This one is for agents only. An agent's harness can be told what the agent may do without asking, what it must ask about first, and what it may never do. Its allowlist is the list of what is allowed without asking, so anything not on it is refused or waits for approval. Shell commands and the network can be left off the grading step's allowlist. A limit on files in the harness covers only the files the agent opens itself. If the grading agent may also run shell commands without asking, a command it runs acts as the TA, and can read the settings file with the token in it even though the harness would not let the agent open that file. A sandbox does not have this gap, because a command run inside it is kept inside it too.
 - **A scoped token.** A secret that lets its holder do only certain things with an account, not everything the account can do. The download program gets a token that can read submissions and nothing else; only the posting program's token can change grades. (Note: this is a different meaning of "token" than the units of text a model reads and writes. Here an access token is a secret used to access a service.)
+- **A fixed set of actions.** Instead of editing the grades sheet itself, the agent can only ask a program to make a change, and the program makes only the changes it was written for, such as setting one student's score. This is analogous to giving an app an API with a few endpoints instead of letting it send any SQL query it likes to the database. An agent that's been steered by rogue text can't delete rows or rewrite the sheet, but it can still ask for a wrong score, or a score in another student's row.
 
-### Keeping untrusted text out of the agent's context
+### Splitting the reading of untrusted text from the acting
 
-**A program can handle the untrusted input.** It does whatever work can be done without reading the students' words, such as counting the tests each submission passes, and the agent sees only what the program produced. This leaves the agent's reach alone and takes away what could steer it.
+You might hope to stop prompt injection with wording. You could put a line in the skill file telling the agent to ignore any instructions inside a submission, or put markers around each submission showing where the student's words start and end. These help sometimes, but none of them is reliable. The warning, the markers and the submission all reach the model as text in one context, and the model still judges what to follow by how the text reads. The dependable fix is to split the work in two: the model that reads the untrusted text can't do harm whatever it decides, and whatever can do harm never sees the text.
+
+**A model with no reach reads the untrusted input.** One model reads the submission, but it has no shell commands, no network, no secrets, and no files except the rubric and the one submission it is handed. It returns only answers of a fixed form, such as a score from the rubric's scale or a yes or no for each rubric item. Anything that acts, whether a program or an agent with reach of its own, sees only those answers, never the students' words. A hidden note can still steer the reading model, but a steered model can only give a wrong answer of that form: a full-marks score, not a sent token. If the model also returns words of its own, such as feedback, those words can carry the student's instructions onward, so they go only to a person, such as the TA, and never into the context of an agent that can act. What acts on the answers is best held to a fixed set of actions, so that even a wrong answer can only become a wrong score.
 
 ### Checking what a step produced before it takes effect
 
-These leave the agent's reach alone too. Instead they shrink the blast radius, by stopping a bad result from taking effect.
+This one leaves the agent's reach alone. Instead it shrinks the blast radius, by stopping a bad result from taking effect.
 
-- **The agent proposes, a program applies.** Instead of editing the grades sheet itself, the agent writes the changes it wants to a file, and a program carries them out. The program can make only the kinds of change it was written to make, such as setting a score in a row, so a steered agent can't delete rows or rewrite the sheet. It can still propose bad values: a wrong score, or a score for another student's row. Catching those takes something else, such as the TA's review.
-- **A human in the loop.** A person checks or approves what a step produced before it takes effect. The TA reviews every draft before grades are posted, so a skewed draft can be caught. It costs the person's time on every run, and it works only if they really look. An agent's approval prompts, where it asks before changing a file or running a command, are a human in the loop too, and a weak one: after the twentieth prompt, most people approve without reading.
+- **A human in the loop.** A person looks at what a step produced and approves it before it takes effect. The TA reviews every draft before grades are posted, so a skewed draft can be caught. It stops a bad result only if the person looks closely enough to tell a bad result from a good one: the TA has to compare each score with the submission. It costs the person's time on every run. An agent's approval prompts, where it asks before changing a file or running a command, are a human in the loop too, and a weak one: after the twentieth prompt, most people approve without reading.
 
 ## Judging a proposed limit
 
@@ -86,9 +88,9 @@ When your agent proposes a limit, name the harm you're worried about, and ask tw
 
 **Does it significantly reduce the risk of that harm?** Say the harm is that a hidden instruction makes the grading agent send the course site token somewhere. A sandbox the token isn't in cuts that off: the agent can't send what it can't read. Read-only access to the submissions folder does nothing about it. Now say the harm is a skewed score for the student who hid the note. No limit on reach stops that, because writing a score is the agent's job. But the TA reviewing every draft makes it much less likely that the skewed score gets posted, so that limit counts, even though a tired reviewer could still miss one.
 
-**Can the step still do its work?** Making the drafts folder read-only would stop the agent from doing anything harmful there, and from writing its drafts. Shielding the agent from the students' words entirely works for a step that counts passing tests, and doesn't work for a step whose job is to write feedback on what the student wrote.
+**Can the step still do its work?** Making the drafts folder read-only would stop the agent from doing anything harmful there, and from writing its drafts.
 
-A limit is a good one when both answers are yes. Often it takes more than one, because each one reduces the risk of a different harm. For the grading agent, a sandbox holding only the rubric, the submissions and the drafts, with the submissions read-only and shell commands and the network turned off, takes care of the token and the other students' work, and still lets it write feedback. It doesn't solve the prompt injection possibility, so it's a good idea to keep the TA's review of every draft in the workflow.
+A limit is a good one when both answers are yes. Often it takes more than one, because each one reduces the risk of a different harm. For the grading step, splitting it works well: a model with no reach reads the rubric and one submission and returns a score from the rubric's scale and a feedback draft, and a program saves them for the TA. That takes care of the token and the other students' work, and still produces feedback. It doesn't stop a hidden note from skewing a score, so it's a good idea to keep the TA's careful review of every draft in the workflow.
 
 ## Talking to your agent
 
