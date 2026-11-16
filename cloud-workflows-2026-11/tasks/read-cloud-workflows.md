@@ -36,7 +36,7 @@ Here are five ways the agent step could run once other people use it.
    service. An **API key** is a secret a program sends with each request to a model company like OpenAI or Anthropic. It tells the company whose account to bill. 
    This approach is called **BYOK** ("bring your own key"): each user gets
    their own API key from a model company and gives it to Nadia's service, so the model calls made
-   for them are billed to them. A chat subscription does not cover these calls: both OpenAI and
+   for them are billed to them. A chat subscription generally does not cover these calls: both OpenAI and
    Anthropic bill use of their API separately from their chat plans.
 
 3. **It runs in the cloud, and the service pays a model company.** Nadia's service uses one API key,
