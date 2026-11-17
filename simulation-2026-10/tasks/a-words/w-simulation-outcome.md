@@ -14,10 +14,12 @@ question? Answer in two or three sentences, in your own words.
 
 A toy store had a simulation model of its holiday week, built to see whether it would run out of
 the year's most popular toy. Each trial was one simulated week, recording the day the toy sold out,
-if it did. Looking back after the real holiday week, the manager says:
+if it did.
 
-"The simulation outcome was that we sold out on Thursday afternoon, and we turned customers away
-all day Friday."
+After the real holiday week, the manager adds the store's sales records for that week to the
+results of the simulated weeks, and says:
+
+"We have one more simulation run now. This time we sold out on Thursday afternoon."
 
 What is wrong with that? Answer in two or three sentences, in your own words.
 
