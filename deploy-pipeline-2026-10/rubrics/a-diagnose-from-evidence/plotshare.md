@@ -44,9 +44,7 @@ another. Difficulty: q1 `uncommitted` Easy, q2 `failed-deploy` Easy, q3 `other-b
 - **goal:** `c-find-missing-change`
 - **cases:** not-on-main
 - **answer:** The commit `4b9d0e7` was pushed to the branch `footer-text`, not to `main`, so
-  neither host, both linked to `main`, deployed it; `main` on GitHub still ends at `8e2b5d1`. Get
-  it onto `main`: open a pull request from `footer-text` into `main` and merge it (or merge the
-  branch into `main` and push).
+  neither host, both linked to `main`, deployed it; `main` on GitHub still ends at `8e2b5d1`.
 - **credit:** full for naming the push to another branch, not `main`, as the reason. A next step
   is not asked for: none is needed, and one given, right or wrong, neither earns nor costs credit.
   None for a wrong reason, such as a failed deploy or a cache.
@@ -60,8 +58,7 @@ another. Difficulty: q1 `uncommitted` Easy, q2 `failed-deploy` Easy, q3 `other-b
 - **answer:** The setting saved at 10:40 was built into the 10:43 deploy, which is Live, but that
   deploy says "CDN cache kept" and is under an hour old, and a reload skipping the browser's cache
   still shows the old banner while `?v=2` shows the new one, so Pinecart's CDN is serving its old
-  copy. Clear Pinecart's CDN cache (the Clear CDN cache button) so every visitor gets the new
-  banner.
+  copy.
 - **credit:** full for naming the CDN's old copy as the reason. A next step is not asked for: none
   is needed, and one given, right or wrong, neither earns nor costs credit. None for a wrong
   reason, such as the browser's own cache, or a setting saved after the last build.
