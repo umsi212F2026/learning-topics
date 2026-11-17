@@ -63,10 +63,8 @@ another. Difficulty: q1 `uncommitted` Easy, q2 `failed-deploy` Easy, q3 `other-b
   still shows the old banner while `?v=2` shows the new one, so Pinecart's CDN is serving its old
   copy. Clear Pinecart's CDN cache (the Clear CDN cache button) so every visitor gets the new
   banner.
-- **credit:** full for naming the CDN's old copy as the reason, and clearing Pinecart's CDN cache
-  as the next step (the browser block already shows the changed URL, so proposing it again is not
-  needed). Half for the right reason with the next step missing or wrong (such as clearing the
-  browser's cache, clicking Rebuild, or waiting). None for a wrong reason, such as the browser's
-  own cache, or a setting saved after the last build.
+- **credit:** full for naming the CDN's old copy as the reason. A next step is not asked for: none
+  is needed, and one given, right or wrong, neither earns nor costs credit. None for a wrong
+  reason, such as the browser's own cache, or a setting saved after the last build.
 - **tutor note:** if they say the setting needs a rebuild, ask them to compare the setting's save
   time with the time of the Live Pinecart deploy, and what `?v=2` showed.
