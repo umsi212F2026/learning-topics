@@ -2,13 +2,14 @@
 
 ### vs-training
 
-Two model companies publish policies for what happens to the prompts sent to their APIs. Company X keeps each prompt for 3 days and then deletes it, and may use prompts to train its models during that time. Company Y keeps each prompt for 30 days and then deletes it, and never uses prompts to train its models.
+A model company's policy for its API says two things: it keeps each prompt for 3 days and then deletes it, and it may use prompts to train its models during that time.
 
-Which company has the shorter data retention?
+Which part of the policy describes its data retention?
 
-1. Company X
-2. Company Y
-3. About the same
+1. Keeping each prompt for 3 days, then deleting it
+2. Using prompts to train its models
+3. Both
+4. Neither
 
 ### catch-pick
 
@@ -41,4 +42,4 @@ Which of these uses the term data retention correctly?
 1. The model got the first page wrong because the company's data retention ran out.
 2. With 30-day data retention, the company keeps Sam's document a month, then deletes it.
 3. With 30-day data retention, Sam can get the document back from the company if he loses it.
-4. With 30-day data retention, the company trains its models on Sam's document for a month.
+4. With 30-day data retention, the company may use Sam's chat session to improve its models during those 30 days.

@@ -10,8 +10,8 @@ Data retention is how long a company keeps the prompts and other data sent to it
 - **move:** DISTINGUISH
 - **type:** mcq
 - **answer:** 1
-- **credit:** full for 1 only. Company X keeps prompts 3 days and Company Y keeps them 30, so X's retention is shorter, whatever each does about training. Choice 2 reads data retention as whether the company trains on prompts, which is where Y does better. Choice 3 treats the two policies as even because each is better on one thing.
-- **tutor note:** a learner who picks 2 or 3 is weighing training into retention; ask how long each company keeps a prompt before deleting it.
+- **credit:** full for 1 only. How long the company keeps each prompt before deleting it is its data retention. Choice 2 reads data retention as whether the company trains on prompts, which is training on user data. Choice 3 counts everything the policy says about prompts as retention. Choice 4 misses that the 3 days is a retention period.
+- **tutor note:** a learner who picks 2 or 3 is folding training into retention; ask which part of the policy would change if the company kept prompts for 30 days instead of 3.
 
 ### catch-pick
 

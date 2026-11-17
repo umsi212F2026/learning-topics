@@ -24,11 +24,11 @@ Which of these uses the term BYOK correctly?
 
 ### catch-pick-2
 
-A flashcard service makes cards from each user's notes with a model company's model. The service is BYOK.
+A flashcard service uses a model company's model to make cards from each user's notes. The service is BYOK.
 
 Which of these uses the term BYOK correctly?
 
 1. Because the service is BYOK, users need no account at any model company.
 2. Because the service is BYOK, it pays for every user's cards from its own account.
 3. Because the service is BYOK, each user needs their own account at a model company.
-4. Because the service is BYOK, each user's key is also what signs them in to it.
+4. Because the service is BYOK, each user's key is also what signs them in to the service.
