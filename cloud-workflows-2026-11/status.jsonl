@@ -1,0 +1,16 @@
+{"at":"2026-11-13T21:53:07.682Z","kind":"created"}
+{"at":"2026-11-13T21:53:07.683Z","kind":"goal-added","goal":"o-orientation","needs":"curation"}
+{"at":"2026-11-15T16:54:41.823Z","kind":"goal-added","goal":"w-open-weight-model","needs":"curation"}
+{"at":"2026-11-15T16:54:48.304Z","kind":"goal-added","goal":"w-api-key","needs":"curation"}
+{"at":"2026-11-15T16:54:48.579Z","kind":"goal-added","goal":"w-byok","needs":"curation"}
+{"at":"2026-11-15T16:54:48.853Z","kind":"goal-added","goal":"w-usage-pricing","needs":"curation"}
+{"at":"2026-11-15T16:54:49.136Z","kind":"goal-added","goal":"w-data-retention","needs":"curation"}
+{"at":"2026-11-15T16:55:29.404Z","kind":"goal-added","goal":"c-weigh-cloud-plan","needs":"curation"}
+{"at":"2026-11-15T23:16:09.001Z","kind":"goal-added","goal":"c-weigh-cloud-plan","needs":"curation"}
+{"at":"2026-11-17T00:18:46.328Z","kind":"curated","goal":"o-orientation"}
+{"at":"2026-11-17T00:18:46.383Z","kind":"curated","goal":"w-open-weight-model"}
+{"at":"2026-11-17T00:18:46.432Z","kind":"curated","goal":"w-api-key"}
+{"at":"2026-11-17T00:18:46.480Z","kind":"curated","goal":"w-byok"}
+{"at":"2026-11-17T00:18:46.528Z","kind":"curated","goal":"w-usage-pricing"}
+{"at":"2026-11-17T00:18:46.575Z","kind":"curated","goal":"w-data-retention"}
+{"at":"2026-11-17T00:18:46.625Z","kind":"curated","goal":"c-weigh-cloud-plan"}
