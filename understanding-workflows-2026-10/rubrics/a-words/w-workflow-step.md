@@ -16,8 +16,10 @@ diagram, not the size of the job. "Action" and "task" are other names for a step
   step that has its own diagram underneath: "Arrange catering", with its plus sign, opens into
   quotes, choosing and confirming. Size is not what decides it: "Book the venue" takes longer but
   has no diagram underneath, so it is a plain step.
-- **credit:** full for naming that a subprocess has its own diagram underneath it and a plain step
-  does not; saying a subprocess is still a step is welcome but not required. Half for the right
+- **credit:** full for naming that a subprocess is made of smaller steps of its own and a plain
+  step is not, whether the answer says those steps are drawn in a diagram underneath it or only
+  that the subprocess contains several smaller tasks or steps; saying a subprocess is still a step
+  is welcome but not required. Half for the right
   difference with "Book the venue" called a subprocess because it takes longer. None for size or
   importance alone, such as "a subprocess is a bigger step".
 - **tutor note:** a learner who says "a subprocess is a bigger step" is reaching for size; ask
