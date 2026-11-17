@@ -32,8 +32,7 @@ another. Difficulty: q1 `uncommitted` Easy, q2 `failed-deploy` Easy, q3 `other-b
 - **cases:** deploy-failed
 - **answer:** After the setting was saved at 09:10, Pinecart built `8e2b5d1` again at 09:12 with
   the new value, and that deploy Failed, so the previous build of `8e2b5d1` (Friday 16 October,
-  16:42, with the old banner) is still Live. Look at the failed 09:12 deploy to see what went
-  wrong.
+  16:42, with the old banner) is still Live.
 - **credit:** full for naming the failed 09:12 deploy, with the older build still live, as the
   reason. A next step is not asked for: none is needed, and one given, right or wrong, neither
   earns nor costs credit (nor does finding why the deploy failed). None for a wrong reason, such

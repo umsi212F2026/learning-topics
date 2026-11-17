@@ -110,7 +110,7 @@ Reload skipping the browser's cache
   Button: "Request a plot"
 ```
 
-Why isn't the change showing, and what would you do next? Answer in two or three sentences.
+Why isn't the change showing? Answer in two or three sentences.
 
 ### q2
 
@@ -178,7 +178,7 @@ Reload skipping the browser's cache
   Banner: "Autumn workday: Saturday 24 October"
 ```
 
-Why isn't the change showing, and what would you do next? Answer in two or three sentences.
+Why isn't the change showing? Answer in two or three sentences.
 
 ### q3
 
@@ -246,7 +246,7 @@ Reload skipping the browser's cache
   Footer: "Questions? Email the garden committee"
 ```
 
-Why isn't the change showing, and what would you do next? Answer in two or three sentences.
+Why isn't the change showing? Answer in two or three sentences.
 
 ### q4
 
@@ -316,4 +316,4 @@ Load of https://plotshare.pinecart.app/?v=2
   Banner: "Bulb planting: Saturday 7 November"
 ```
 
-Why isn't the change showing, and what would you do next? Answer in two or three sentences.
+Why isn't the change showing? Answer in two or three sentences.
