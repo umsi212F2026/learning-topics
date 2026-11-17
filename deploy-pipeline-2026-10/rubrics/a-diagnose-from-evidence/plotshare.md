@@ -48,11 +48,9 @@ another. Difficulty: q1 `uncommitted` Easy, q2 `failed-deploy` Easy, q3 `other-b
   neither host, both linked to `main`, deployed it; `main` on GitHub still ends at `8e2b5d1`. Get
   it onto `main`: open a pull request from `footer-text` into `main` and merge it (or merge the
   branch into `main` and push).
-- **credit:** full for naming the push to another branch as the reason, and getting the commit
-  onto `main` (merging the branch, through a pull request or directly, and pushing) as the next
-  step. Half for the right reason with the next step missing or wrong (such as pushing
-  `footer-text` again, or clicking Rebuild). None for a wrong reason, such as a failed deploy or a
-  cache.
+- **credit:** full for naming the push to another branch, not `main`, as the reason. A next step
+  is not asked for: none is needed, and one given, right or wrong, neither earns nor costs credit.
+  None for a wrong reason, such as a failed deploy or a cache.
 - **tutor note:** if they point at the Failed Pinecart deploy, ask which commit it built and what
   is Live now.
 
