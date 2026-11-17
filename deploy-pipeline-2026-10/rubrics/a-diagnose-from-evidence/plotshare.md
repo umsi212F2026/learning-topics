@@ -34,11 +34,10 @@ another. Difficulty: q1 `uncommitted` Easy, q2 `failed-deploy` Easy, q3 `other-b
   the new value, and that deploy Failed, so the previous build of `8e2b5d1` (Friday 16 October,
   16:42, with the old banner) is still Live. Look at the failed 09:12 deploy to see what went
   wrong.
-- **credit:** full for naming the failed deploy, with the older one still live, as the reason, and
-  looking at that failed deploy as the next step (finding its cause is not asked for). Half for
-  the right reason with the next step missing or wrong (such as clearing a cache, or waiting).
-  None for a wrong reason, such as a setting saved after the last build with no build since, or a
-  cache.
+- **credit:** full for naming the failed 09:12 deploy, with the older build still live, as the
+  reason. A next step is not asked for: none is needed, and one given, right or wrong, neither
+  earns nor costs credit (nor does finding why the deploy failed). None for a wrong reason, such
+  as a setting saved after the last build with no build since, or a cache.
 - **tutor note:** if they say the frontend was never built after the save, ask what the 09:12 line
   in Pinecart's deploy list is.
 
