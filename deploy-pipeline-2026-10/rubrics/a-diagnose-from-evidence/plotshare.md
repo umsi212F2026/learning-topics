@@ -18,11 +18,10 @@ another. Difficulty: q1 `uncommitted` Easy, q2 `failed-deploy` Easy, q3 `other-b
 - **cases:** not-pushed
 - **answer:** `git status` shows `PlotRequestForm.jsx` modified and not committed: the change is
   only on your machine, so neither GitHub nor either host has it (the latest commit, `0c94af7`, is
-  live on both). Commit the change and push it to `main`.
-- **credit:** full for naming the uncommitted change as why it isn't live, and committing and
-  pushing as the next step. Half for the right reason with the next step missing or wrong (such as
-  pushing without committing, or clicking Rebuild). None for a wrong reason, such as a cache or a
-  failed deploy.
+  live on both).
+- **credit:** full for naming the uncommitted change as why it isn't live. A next step is not
+  asked for: none is needed, and one given, right or wrong, neither earns nor costs credit. None
+  for a wrong reason, such as a cache or a failed deploy.
 - **tutor note:** if they say the change was pushed, ask what `git status` lists under "Changes not
   staged for commit".
 
