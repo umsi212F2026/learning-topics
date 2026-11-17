@@ -44,7 +44,8 @@ subprocess, not a confusable.
   sign. "Arrange home care" has none in this diagram, so here it is a plain step, however many
   smaller jobs the social worker does inside it. It would become a subprocess only if someone drew
   those jobs as a diagram beneath it.
-- **credit:** full for naming that what makes a subprocess is its own diagram underneath, which
-  this step doesn't have. Half for "there's no plus sign" with nothing on what the plus sign
+- **credit:** full for saying that what makes a subprocess is that its smaller jobs are
+  represented in the workflow beneath the step, and that this step's jobs are not, however many
+  there are in practice; the answer need not say "diagram" in so many words. Half for "there's no plus sign" with nothing on what the plus sign
   marks. None for a different quibble alone, such as that the step should be split into several
   steps.
