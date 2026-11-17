@@ -17,11 +17,12 @@ rules never use, however much it matters in the real world.
   scope, not its parameters. A model parameter is a value chosen before a run that the model's
   rules use, such as the number of plows or how fast the snow falls; change one and the model
   plays out the storm differently.
-- **credit:** full for naming that the limits are what the model covers or leaves out, not
-  parameters; saying what a parameter is (a value set before a run that the rules use) is welcome
-  but not required. Half for a correct parameter named without saying why the limits aren't
-  parameters. None for a different quibble alone, such as that the model ought to
-  cover ice.
+- **credit:** full for saying what a parameter is (a value set before a run that the rules use)
+  with a correct example from the plow model, such as the number of plows or how fast the snow
+  falls; full also for naming that the limits are what the model covers or leaves out, not
+  parameters. Calling the limits the model's scope is welcome but not required. Half for a correct
+  parameter named without saying what a parameter is or why the limits aren't parameters. None
+  for a different quibble alone, such as that the model ought to cover ice.
 - **tutor note:** "within these parameters" means "within these limits" in everyday speech, which
   is where this comes from; if the learner defends it on those grounds, ask what the plow model's
   rules need to be told before a storm can be played out.
