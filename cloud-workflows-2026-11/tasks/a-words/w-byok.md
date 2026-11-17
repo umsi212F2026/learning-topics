@@ -22,8 +22,13 @@ Which of these uses the term BYOK correctly?
 3. Under BYOK, no model company sees the notes a user sends for a quiz.
 4. Under BYOK, users sign in to the service with their key in place of a password.
 
-### catch-free
+### catch-pick-2
 
-A flashcard service makes cards from each user's notes with a model company's model. Its sign-up page says: "Because we're BYOK, you won't need an account at any model company to use our flashcards."
+A flashcard service makes cards from each user's notes with a model company's model. The service is BYOK.
 
-What is wrong with how the sign-up page uses the term BYOK? Answer in one or two sentences.
+Which of these uses the term BYOK correctly?
+
+1. Because the service is BYOK, users need no account at any model company.
+2. Because the service is BYOK, it pays for every user's cards from its own account.
+3. Because the service is BYOK, each user needs their own account at a model company.
+4. Because the service is BYOK, each user's key is also what signs them in to it.

@@ -2,7 +2,7 @@ Arjun built a workflow on his laptop that reads a chess club member's record of 
 
 The club has about fifty members, and most will review a game or two a month. Dev plays one online game most evenings and would review each one. He has paid for a chat subscription since last fall, mostly for work, and a review every evening would fit well within its limits.
 
-The club would run the service. When Arjun tried an open-weight model on some old club games, it often picked the wrong move as the blunder.
+When Arjun tried an open-weight model on some old club games, it often picked the wrong move as the blunder.
 
 Plan A: Each member runs the workflow on their own laptop, with the agent step working under their own subscription to a model company's chat app.
 

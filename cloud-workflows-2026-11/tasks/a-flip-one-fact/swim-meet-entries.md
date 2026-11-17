@@ -1,8 +1,8 @@
-Tom built a workflow on his laptop for his swim team: an agent, following his skill file, reads a swimmer's own recent times and the next meet's event list and picks which events they should enter.
+Tom built a workflow on his laptop for his swim team. An agent, following his skill file, reads a swimmer's own recent times and the next meet's event list and picks which events they should enter.
 
 The team has about sixty swimmers, and each would run it before each of the season's eight meets. When Tom tried a small open-weight model of the kind that runs in a web browser on last season's times, about one entry list in three broke the meet's rules, where the model he uses now got nearly all right.
 
-Each swimmer's times are kept in the team's private results sheet. The team would run the service.
+Each swimmer's times are kept in the team's private results sheet.
 
 Plan A: The team runs the workflow as a web service, BYOK: each swimmer gives it their own API key, and the agent step's model calls are billed to that key.
 

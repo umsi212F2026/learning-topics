@@ -1,8 +1,8 @@
-Ruth built a workflow on her laptop for her cat shelter: a foster volunteer types a few lines about how their foster cat is doing, and an agent, following her skill file, sorts them into the shelter's weekly check-in form and flags anything for the vet.
+Ruth built a workflow on her laptop for her cat shelter. A foster volunteer types a few lines about how their foster cat is doing, and an agent, following her skill file, sorts them into the shelter's weekly check-in form and flags anything for the vet.
 
 The shelter has about forty fosters, and each would run it once a week. When Ruth tried an open-weight model on last month's notes, it flagged the same vet needs as the model she uses now.
 
-The notes are about the cats, not the fosters. The shelter would run the service.
+The notes are about the cats, not the fosters.
 
 Plan A: The shelter runs the workflow as a web service, with the agent step done by an open-weight model on a server the shelter rents.
 

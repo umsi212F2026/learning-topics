@@ -1,8 +1,8 @@
-Elena built a workflow on her laptop for her community orchestra: a player types which passages in this season's music are giving them trouble, and an agent, following her skill file, drafts that player's practice plan for the week.
+Elena built a workflow on her laptop for her community orchestra. A player types which passages in this season's music are giving them trouble, and an agent, following her skill file, drafts that player's practice plan for the week.
 
 The orchestra has about thirty-five players, and each would run it once a week before rehearsal. Every player has a laptop and has paid for a chat subscription for a year or more, and each wants to see only their own plan, on that laptop.
 
-The notes say nothing about the players beyond which parts they play. The orchestra would run the service.
+The notes say nothing about the players beyond which parts they play.
 
 Plan A: The orchestra runs the workflow as a web service and pays a model company for the agent step's model calls from the orchestra's own account.
 

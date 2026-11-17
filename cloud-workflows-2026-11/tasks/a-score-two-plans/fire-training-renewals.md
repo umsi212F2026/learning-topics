@@ -1,8 +1,8 @@
 Tomas, the training officer for a volunteer fire department, built a workflow on his laptop. A firefighter types in their own training log for the year, and an agent following Tomas's skill file drafts a list of the certifications they must renew and the drills they still need.
 
-The department has about thirty-five firefighters, and each would run it a few times a year, before renewal deadlines come up. Every firefighter has a laptop, and every one of them has paid for a subscription to a model company's chat app for a year or more. Each needs to see only their own list. The department pays for training out of a small yearly budget.
+The department has about thirty-five firefighters, and each would run it a few times a year, before renewal deadlines come up. Every firefighter has a laptop, and every one of them has paid for a subscription to a model company's chat app for a year or more. Each needs to see only their own list.
 
-Through a developer account at a model company, usage-based pricing on the text one run sends and gets back comes to about 3 cents.
+At API prices, which charge by the text sent and returned, one run comes to about 3 cents.
 
 Plan A: Each firefighter runs the workflow on their own laptop, with the agent step working under their own subscription to a model company's chat app.
 

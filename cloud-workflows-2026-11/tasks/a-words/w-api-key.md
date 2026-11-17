@@ -2,23 +2,14 @@
 
 ### vs-subscription
 
-Priya pays a model company a fixed amount each month and chats with its model in the company's app as much as she likes, within the plan's limits. She also writes a script that sends apartment listings to the same company's model, through a separate developer account she set up for it. The script sends a long secret string with every request, which tells the company which developer account to charge. The amount to charge is determined by how much text each request sends and gets back.
+Priya pays a model company a fixed amount each month and chats with its model in the company's app as much as she likes, within the plan's limits. She also writes a script that sends apartment listings to the same company's model, through a separate developer account she set up for it. She copied a long string of letters and numbers from that account's settings page into the script, and the script sends it with every request. Requests through the developer account are charged by how much text each one sends and gets back.
 
-#### a
+Which of these is an API key?
 
-Which term names the fixed amount Priya pays each month for the chat app?
-
-1. API key
-2. Subscription
-3. Neither
-
-#### b
-
-Which term names the secret string the script sends with every request?
-
-1. API key
-2. Subscription
-3. Neither
+1. The amount Priya pays each month for the chat app
+2. The long string the script sends with every request
+3. Both
+4. Neither
 
 ### catch-pick
 
@@ -42,8 +33,13 @@ Which of these states the difference between Lena's API key and her password?
 3. The workflow sends the API key to say whose account to charge; Lena types the password to sign in.
 4. The API key is longer and harder to guess than the password, but the two do the same job.
 
-### catch-free
+### catch-pick-2
 
-Dana runs a study-guide service in the cloud. It sends every user's request to a model company's model with one API key, which comes from a developer account Dana set up there. Users of the service have no account at the model company. Dana says: "Our API key just lets the service reach the model; each user's study guides will be charged to that user, since they are the ones who asked for them."
+Dana runs a study-guide service in the cloud. It sends every user's request to a model company's model with one API key, which comes from a developer account Dana set up there. Users of the service have no account at the model company.
 
-What is wrong with how Dana uses the term API key? Answer in one or two sentences.
+Which of these uses the term API key correctly?
+
+1. Since every request carries Dana's API key, every user's study guides are charged to Dana.
+2. Since each user asked for their guides, requests made with the API key are charged to them.
+3. The API key is what each user types to sign in to Dana's service.
+4. If Dana subscribes to the company's chat app, requests made with the API key cost nothing extra.

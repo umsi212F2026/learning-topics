@@ -1,8 +1,6 @@
 Lena built a workflow on her laptop for the parents' group at her children's school: an agent, following her skill file, drafts a parent's carpool requests for the coming week. It works from that parent's own notes on the week, which list their work hours, their children's names and where each child needs to be after school.
 
-The group has about seventy families, and most parents would run it once a week, on Sunday evening. Every parent has a laptop or phone recent enough to run a small model in its web browser.
-
-Lena would run the service.
+The group has about seventy families. Most parents would run it once a week, on Sunday evening. Every parent has a laptop or phone recent enough to run a small model in its web browser.
 
 Plan A: Lena runs the workflow as a web service, with the agent step done by an open-weight model on a server Lena rents.
 

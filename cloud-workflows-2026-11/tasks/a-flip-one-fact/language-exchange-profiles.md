@@ -1,8 +1,6 @@
 Hana built a workflow on her laptop for her city's language exchange: an agent, following her skill file, drafts a member's profile for matching with a practice partner. It reads that member's own notes on their work, family, weekly schedule and reasons for learning.
 
-The exchange has about a hundred and twenty members, and each would run it once on joining and again when their schedule changes. Every member has a laptop and a chat subscription, and each has switched off the setting in it that lets the model company train on their chats.
-
-The exchange would run the service.
+The exchange has about a hundred and twenty members, and each would run it once on joining and again when their schedule changes. Every member has a laptop and a chat subscription. Each has switched off the setting in it that lets the model company train on their chats.
 
 Plan A: Each member runs the workflow on their own laptop, with the agent step working under their own subscription to a model company's chat app.
 
@@ -18,7 +16,7 @@ On privacy for the members, which plan does better?
 
 ### second
 
-Now suppose one thing is different: the agent step works only from the exchange's published list of meeting times and languages on offer, and reads nothing a member writes. Everything else is as before.
+Now suppose one thing is different: the workflow suggests which practice sessions a member could join, and the agent step works only from the exchange's published list of languages on offer and its meeting times, reading nothing a member wrote. Everything else is as before.
 
 On privacy for the members, which plan does better?
 

@@ -8,18 +8,10 @@ An API key is a secret a program sends with each request to a provider, and it t
 
 - **goal:** `w-api-key`
 - **move:** DISTINGUISH
-- **type:** compound
-- **tutor note:** the fixed monthly amount is the subscription, and the secret the script sends with each request is the API key. A learner who calls the monthly payment the API key may think the key is what you buy; ask what the script has to send for the company to know whose bill a request goes on. One who calls the secret string the subscription may think the key is part of the chat plan; ask which account each request is charged to.
-
-#### a
-
 - **type:** mcq
 - **answer:** 2
-
-#### b
-
-- **type:** mcq
-- **answer:** 1
+- **credit:** full for 2 only. The string the script sends with every request is the API key: it tells the company which developer account each request is charged to. The fixed monthly amount for the chat app is a subscription, and it does not cover the script's requests, which are charged separately by how much text each sends and gets back. Choice 1 reads the API key as the monthly plan. Choice 3 counts the subscription as an API key too. Choice 4 misses that the string the script sends is the key.
+- **tutor note:** a learner who picks 1 or 3 may think the key is what you buy; ask what the script has to send for the company to know whose bill a request goes on.
 
 ### catch-pick
 
@@ -39,10 +31,11 @@ An API key is a secret a program sends with each request to a provider, and it t
 - **credit:** full for 3 only. The long string is the API key: the workflow sends it with each request, and it tells the company which developer account to charge. The phrase Lena types to open her dashboard is her password. Choice 1 swaps the two: the setup has Lena typing the phrase and the workflow sending the string. Choice 2 reads them as two names for one secret, but Lena chose one and created the other, and they do different jobs. Choice 4 names an incidental difference, length, and misses that the two do different jobs.
 - **tutor note:** a learner who picks 2 or 4 may think of an API key as a password for programs; ask what the company learns from the string that it would not learn from a sign-in.
 
-### catch-free
+### catch-pick-2
 
 - **goal:** `w-api-key`
 - **move:** CATCH
-- **answer:** An API key does more than let the service reach the model: it tells the model company whose account each request is charged to. Every request is sent with Dana's key, so every user's study guides are charged to Dana's developer account, by how much text each request sends and gets back, not to the users, who have no account there.
-- **credit:** full for saying that requests made with the key are charged to the account the key comes from, Dana's, and not to the users. None for a different quibble, such as that the key must be kept secret, or that the users would need a subscription, without saying whose account is charged.
-- **tutor note:** a learner who says the users pay may be picturing each user signing in somewhere; ask what the model company receives with each request that tells it whose account to charge.
+- **type:** mcq
+- **answer:** 1
+- **credit:** full for 1 only. An API key tells the model company whose account each request is charged to, and every request is sent with Dana's key, so every user's study guides are charged to Dana's developer account. Choice 2 has the billing going to whoever asked: the users have no account at the model company, and the key says whose account is charged. Choice 3 reads the key as a password: the service sends the key with its requests, and the users never see it. Choice 4 is the confusion the word is watched for: a subscription to the chat app generally does not cover requests made with an API key.
+- **tutor note:** a learner who picks 2 may be picturing each user signing in somewhere; ask what the model company receives with each request that tells it whose account to charge.

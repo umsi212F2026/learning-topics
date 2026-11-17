@@ -1,6 +1,6 @@
 Priya built a workflow on her laptop for her makerspace: an agent, following her skill file, turns a member's own notes from a tool training into the sign-off record the space keeps. The notes say what the member practiced and any slips or small injuries along the way.
 
-The makerspace has about ninety members, and each would run it after each training, a few times a year. The makerspace would run the service.
+The makerspace has about ninety members. Each would run it after each training, a few times a year.
 
 When Priya tried an open-weight model on old notes, it often left the slips out of the record.
 

@@ -24,17 +24,22 @@ Which of these uses the term usage-based pricing correctly?
 
 ### vs-overage
 
-A model company offers two API plans. Plan A has no monthly fee and charges a set price for each million tokens. Plan B costs $20 a month, which includes 1 million tokens, and charges a set price for each million tokens used past that. A club's workflow used 0.8 million tokens in March and 1.6 million in April, and its April bill was higher than its March bill under either plan.
+A model company offers two API plans. Plan A has no monthly fee and charges a set price for each million tokens. Plan B costs $20 a month, which includes 1 million tokens, and charges a set price for each million tokens used past that. A club's workflow used 0.8 million tokens in March and 1.6 million in April.
 
-Under which plan does the club's April bill include an overage?
+If the club were on each plan in turn, under which would its April bill include an overage?
 
 1. Plan A only
 2. Plan B only
 3. Both plans
 4. Neither plan
 
-### catch-free
+### catch-pick-2
 
-A model company offers two ways to pay. Its API is billed at a set price for each million tokens, and the bill comes at the end of each month. Its chat app costs $20 a month, charged at the start of the month, for as much chatting as the plan's limits allow. Jo says: "The chat app isn't usage-based pricing only because you pay up front. If they charged the $20 at the end of the month, it would be."
+A model company offers two ways to pay. Its API is billed at a set price for each million tokens, with no monthly limit, and the bill comes at the end of each month. Its chat app costs $20 a month, charged at the start of the month, for as much chatting as the plan's limits allow.
 
-What is wrong with how Jo uses the term usage-based pricing? Answer in one or two sentences.
+Which of these uses the term usage-based pricing correctly?
+
+1. The API is usage-based pricing because its bill comes at the end of the month.
+2. The chat app is usage-based pricing, since its plan limits how much you may chat.
+3. Under the API's usage-based pricing, tokens past a monthly amount cost extra.
+4. The API is usage-based pricing because its bill grows with the tokens used.

@@ -1,4 +1,4 @@
-Pair `laptop-or-byok`: Plan A is each member's own laptop and subscription, Plan B is BYOK. Medium. Jonah is a light user with no subscription, who would buy one only for this; his two or three runs a month at about 5 cents each come to well under $1, against $20 a month. The notebooks are private, and the members with a subscription have turned off training. Every member has an API key, and most have neither a laptop nor a subscription.
+Pair `laptop-or-byok`: Plan A is each member's own laptop and subscription, Plan B is BYOK. Medium. Jonah is a light user with no subscription, who would buy one only for this; his two or three runs a month at about 5 cents each come to well under $1, against $20 a month. The notebooks are private, and anyone in the club who uses a chat subscription has turned off, or would turn off, training. Every member set up an API key for the club's programming lessons, and most have neither a laptop nor a subscription.
 
 ### cost
 
@@ -16,7 +16,7 @@ Pair `laptop-or-byok`: Plan A is each member's own laptop and subscription, Plan
 - **type:** mcq
 - **answer:** 1
 - **credit:** full for 1 only.
-- **tutor note:** under both plans a model company sees the notebook page, and members with a subscription have turned off training in its settings. Under Plan B, Kenji's service also sees it, so Plan B adds a party Plan A lacks. "About as well" fails for that reason. A learner who objects that most members could not run Plan A at all is answering on access, not privacy.
+- **tutor note:** under both plans a model company sees the notebook page, and anyone in the club who uses a chat subscription has turned off, or would turn off, the setting that lets the model company train on their chats, so a member who started one for Plan A would have it off too. Under Plan B, Kenji's service also sees it, so Plan B adds a party Plan A lacks. "About as well" fails for that reason. A learner who objects that most members could not run Plan A at all is answering on access, not privacy.
 
 ### access
 
@@ -25,7 +25,7 @@ Pair `laptop-or-byok`: Plan A is each member's own laptop and subscription, Plan
 - **type:** mcq
 - **answer:** 2
 - **credit:** full for 2 only.
-- **tutor note:** every member has an API key, which is what Plan B needs; most work on school tablets and only a few have a laptop or a subscription, which Plan A needs. "About as well" fails because most members could start a Plan B run and only a few a Plan A run.
+- **tutor note:** every member set up an API key for the club's programming lessons, which is what Plan B needs; most work on school tablets and only a few have a laptop or a subscription, which Plan A needs. "About as well" fails because most members could start a Plan B run and only a few a Plan A run.
 
 ### correctness
 

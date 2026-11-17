@@ -1,6 +1,6 @@
 Owen built a workflow on his laptop for his scout troop: an agent, following his skill file, drafts the campout meal plan for one scout. It reads the health form the troop keeps for that scout, which lists allergies, medicines and diet rules. Parents gave the troop those forms for its own use and have not agreed to their going to any other company.
 
-The troop has about forty scouts, and each family would run it for its own scout before each monthly campout. The troop would run the service.
+The troop has about forty scouts, and each family would run it for its own scout before each monthly campout.
 
 When Owen tried an open-weight model on last year's forms, it missed about one allergy in ten, where the model he uses now missed none.
 
@@ -18,7 +18,7 @@ On privacy for the scouts and their families, which plan does better?
 
 ### second
 
-Now suppose one thing is different: the agent step works only from the campground store's published price list, and reads no scout's form. Everything else is as before.
+Now suppose one thing is different: the agent step works only from the troop's posted campout menu and the campground store's published price list, and reads no scout's form. Everything else is as before.
 
 On privacy for the scouts and their families, which plan does better?
 

@@ -184,7 +184,7 @@ throughout, and no em dash or en dash in any form.
   - **Short paragraphs, never one long one**: usually one for the workflow, one for who would use it and how often, and one for any other facts. Each plan stays on its own line below them.
   - **About five to seven sentences in all**, counted before the plans.
   - **Only the facts that decide the answer**, with any the shape below calls for, **plus at most two facts that bear on other goals**, so the plan pair alone still can't settle it. Nothing else.
-  - **No fact says or implies that either plan is already in place.** "Every member has a laptop" is acceptable; "most members have set the workflow up on their laptops" is not.
+  - **No fact says or implies that either plan is already in place.** "Every member has a laptop" is acceptable; "most members have set the workflow up on their laptops" is not, and neither is "the club would run the service" when one plan has each user run it on their own machine. The plan lines say who runs and pays, so the scenario needn't.
   - **Each user runs the workflow only on their own data** (their own plot notes, their own training log), unless the question is about someone seeing another person's data. Never a coach running it on each beginner's logs.
   - **Run counts are believable for what the workflow does.** A heavy user is someone whose task naturally repeats (a plan rerun every morning, a report after every practice), never someone given a big number: not a weekly training plan regenerated ten times a day.
 

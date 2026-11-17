@@ -32,8 +32,13 @@ Which of these states the difference between the model company's data retention 
 3. One is held by a model company, one by a storage company, but both are for restoring notes.
 4. The backup is kept to restore notes; retention is how long the company keeps them before deleting.
 
-### catch-free
+### catch-pick-2
 
-Sam pastes a long document into a model company's chat app and, twenty messages later, asks about its first page. The model's answer gets the first page wrong. Sam says: "This company must have short data retention: the model has already forgotten what I sent."
+Sam pastes a long document into a model company's chat app and, twenty messages later, asks about its first page. The model's answer gets the first page wrong. The company's policy says it keeps what is sent to it for 30 days and then deletes it, and that it does not train its models on it.
 
-What is wrong with how Sam uses the term data retention? Answer in one or two sentences.
+Which of these uses the term data retention correctly?
+
+1. The model got the first page wrong because the company's data retention ran out.
+2. With 30-day data retention, the company keeps Sam's document a month, then deletes it.
+3. With 30-day data retention, Sam can get the document back from the company if he loses it.
+4. With 30-day data retention, the company trains its models on Sam's document for a month.

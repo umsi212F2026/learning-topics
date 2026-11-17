@@ -1,8 +1,8 @@
 Kenji built a workflow on his laptop for his school's robotics club. A member types in a page of their own design notebook, and an agent following Kenji's skill file drafts an order for the parts that design needs. Members keep their notebooks to themselves until the competition season ends.
 
-The club has about twenty-five members. Last fall the school's coding class had each of them open a developer account at a model company, so every member has an API key. Most do their club work on the school's tablets, and only a few own a laptop or pay for a chat subscription; those few have turned off training in their subscription's settings.
+The club has about twenty-five members. Every member set up an API key last fall for the club's programming lessons. Most do their club work on the school's tablets, and only a few own a laptop or pay for a chat subscription. Anyone in the club who uses a chat subscription has turned off, or would turn off, the setting that lets the model company train on their chats.
 
-Jonah, who builds the club's robot arm, orders parts two or three times a month. He has never paid for a chat subscription, which costs about $20 a month. On his developer account, usage-based pricing on the text one run sends and gets back comes to about 5 cents.
+Jonah, who builds the club's robot arm, orders parts two or three times a month. He has never paid for a chat subscription, which costs about $20 a month. At API prices, which charge by the text sent and returned, one run comes to about 5 cents.
 
 Plan A: Each member runs the workflow on their own laptop, with the agent step working under their own subscription to a model company's chat app.
 

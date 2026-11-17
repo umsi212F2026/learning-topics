@@ -2,7 +2,7 @@ Marcus volunteers at a senior center, and he built a workflow on his laptop that
 
 Every member can open a web page, on a phone or on one of the center's computers. Only a handful of members have ever had an account with a model company, and none of them has an API key.
 
-About eighty members would use it. Most will run it once a week, but about ten who go to physical therapy several times a week will run it every couple of days, as their appointments shift. Each run through the model company Marcus uses is billed at about 4 cents.
+About eighty members would use it. Most will run it once a week, but about ten who go to physical therapy several times a week will run it every couple of days, as their appointments shift. At API prices, which charge by the text sent and returned, one run comes to about 4 cents.
 
 Plan A: Marcus runs the workflow as a web service, BYOK: each member gives it their own API key, and the agent step's model calls are billed to that key.
 

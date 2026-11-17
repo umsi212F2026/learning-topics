@@ -30,10 +30,11 @@ Data retention is how long a company keeps the prompts and other data sent to it
 - **credit:** full for 4 only. The nightly copy is a backup, kept so the service can restore the notes. The 30 days is the model company's data retention: how long it keeps what was sent before deleting it, for its own purposes, not to hand back. Choice 1 swaps the two. Choice 2 reads retention as a backup. Choice 3 names an incidental difference, who holds each copy, and keeps the backup reading of retention.
 - **tutor note:** a learner who picks 2 or 3 may think retained prompts are there for the user's benefit; ask whether the service could get a lost note back from the model company.
 
-### catch-free
+### catch-pick-2
 
 - **goal:** `w-data-retention`
 - **move:** CATCH
-- **answer:** Data retention is how long the company keeps what was sent to it before deleting it, not how much the model holds in mind during a conversation. The company may still have Sam's document stored while the model answers about it wrongly, so the wrong answer says nothing about the company's retention.
-- **credit:** full for saying that data retention is how long the company keeps the data before deleting it, and not what the model remembers or uses while answering. None for a different quibble, such as that the model simply made a mistake, without saying what data retention is about.
-- **tutor note:** a learner who agrees with Sam may be reading retention as remembering; ask where the document is kept and for how long, apart from whatever the model does with it.
+- **type:** mcq
+- **answer:** 2
+- **credit:** full for 2 only. A 30-day retention policy means the company keeps what was sent for 30 days and then deletes it. Choice 1 reads retention as what the model remembers during a conversation: the company still has Sam's document stored, so the wrong answer says nothing about its retention. Choice 3 reads retention as a backup: retained prompts are kept for the company's own purposes, not to be handed back. Choice 4 reads retention as training on user data, and the policy says the company does not train on what is sent.
+- **tutor note:** a learner who picks 1 may be reading retention as remembering; ask where the document is kept and for how long, apart from whatever the model does with it.

@@ -1,8 +1,8 @@
-Kofi built a workflow on his laptop for his rowing club: a rower types when they can row and which boat they row in, and an agent, following his skill file, drafts a booking message that the rower then sends to the boat captain.
+Kofi built a workflow on his laptop for his rowing club. A rower types when they can row and which boat they row in, and an agent, following his skill file, drafts a booking message that the rower then sends to the boat captain.
 
 The club has about eighty rowers, and each would run it once or twice a week. About fifty of them are juniors, who mostly have only a phone and none of whom pay for a chat subscription.
 
-The messages mention nothing beyond names, boats and times. The club would run the service.
+The messages mention nothing beyond names, boats and times.
 
 Plan A: The club runs the workflow as a web service and pays a model company for the agent step's model calls from the club's own account.
 

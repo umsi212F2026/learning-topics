@@ -2,7 +2,7 @@ Ravi built a workflow on his laptop for his high school debate team. After a pra
 
 The team has about thirty debaters, and most do one or two practice rounds a week. Priya, the captain, does a practice round every day after school and would run it after each one. She has paid about $20 a month for a chat subscription since last spring, mostly for her coursework, and her daily runs fit within its limits.
 
-Every debater has a laptop and a chat subscription, and each has turned off training in their subscription's settings. None of them has a developer account at a model company or an API key. Through a developer account, usage-based pricing on the text one run sends and gets back comes to about 5 cents.
+Every debater has a laptop and a chat subscription, and each has turned off training in their subscription's settings. None of them has a developer account at a model company or an API key. At API prices, which charge by the text sent and returned, one run comes to about 5 cents.
 
 Plan A: Ravi runs the workflow as a web service, BYOK: each debater gives it their own API key, and the agent step's model calls are billed to that key.
 

@@ -2,7 +2,7 @@ Lena organizes a yearly craft fair, and she built a workflow on her laptop for i
 
 About a hundred and twenty vendors apply each year, and each would run it once or twice while preparing an application. Most vendors run their shops from their phones, and only about a third own a laptop. About half pay for a subscription to a model company's chat app.
 
-Through a developer account at a model company, usage-based pricing on the text one run sends and gets back comes to about 4 cents. Vendors would start it whenever they apply, from wherever they are.
+At API prices, which charge by the text sent and returned, one run comes to about 4 cents. Vendors would start it whenever they apply, from wherever they are.
 
 Plan A: Lena runs the workflow as a web service and pays a model company for the agent step's model calls from Lena's own account.
 

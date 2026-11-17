@@ -2,7 +2,7 @@ Mei built a workflow on her laptop that reads a birding club member's field note
 
 The club has about eighty members, and most go out birding once or twice a month. About ten of them walk the same marsh trail every morning before work and file a report after each walk.
 
-The club would run the service. The field notes list species, counts and places, and say nothing about the members themselves. When Mei tried an open-weight model on last spring's notes, it often mixed up similar species.
+The field notes list species, counts and places, and say nothing about the members themselves. When Mei tried an open-weight model on last spring's notes, it often mixed up similar species.
 
 Plan A: The club runs the workflow as a web service, BYOK: each member gives it their own API key, and the agent step's model calls are billed to that key.
 

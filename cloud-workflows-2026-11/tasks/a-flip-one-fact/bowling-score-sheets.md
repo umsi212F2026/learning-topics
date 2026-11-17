@@ -2,7 +2,7 @@ Nadia built a workflow on her laptop that reads a bowler's own typed-in scores f
 
 The league has about sixty bowlers. Grace bowls with friends about twice a month and would write up each of those nights. She has never paid for a chat subscription, and one would run her $20 a month.
 
-The league would run the service. The scores carry nothing but names and pin counts.
+The scores carry nothing but names and pin counts.
 
 Plan A: The league runs the workflow as a web service, BYOK: each bowler gives it their own API key, and the agent step's model calls are billed to that key.
 
@@ -18,7 +18,7 @@ On cost to Grace, which plan does better?
 
 ### second
 
-Now suppose one thing is different: Grace bowls in a league match most evenings and would write up every night, she has paid for a chat subscription for two years, and those write-ups would fit well within its limits. Everything else is as before.
+Now suppose one thing is different: Grace bowls most evenings, in league matches and practice, and would write up every night; she has paid for a chat subscription for two years, and those write-ups would fit well within its limits. Everything else is as before.
 
 On cost to Grace, which plan does better?
 
