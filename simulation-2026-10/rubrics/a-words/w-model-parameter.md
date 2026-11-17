@@ -35,12 +35,13 @@ rules never use, however much it matters in the real world.
   the number of drivers on shift (and the rate orders come in). A simulation outcome is what a
   trial produces that the question cares about: here, how many pizzas arrived late that Friday.
   The shop sets the drivers; it doesn't set the late pizzas, the trial tells it.
-- **credit:** full for naming that a parameter goes in, chosen before the run, and an outcome
-  comes out of a trial; examples from the pizza shop are not required, but any given must be
-  matched correctly, and a mismatched one makes it half. Half also for "parameters are what you
-  control and outcomes are results" with no word on when each is fixed, before or by the run. None
-  for an incidental difference alone, such as that outcomes vary from trial to trial and
-  parameters don't.
+- **credit:** full for naming that a parameter is an input to the model and an outcome is an
+  output of a trial, and saying which is which in the pizza shop: the number of drivers on shift
+  (or the rate orders come in) goes in, and the number of pizzas more than 45 minutes late comes
+  out. Any example given must be matched correctly, and a mismatched one makes it half. Half also
+  for stating the input and output difference in general terms, with no reference to the pizza
+  shop. None for an incidental difference alone, such as that outcomes vary from trial to trial
+  and parameters don't.
 
 ### catch-pick
 
